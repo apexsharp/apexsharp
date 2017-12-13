@@ -1,0 +1,955 @@
+[
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src",
+            "isDirectory": true,
+            "size": 0,
+            "modifiedTime": 1513023031766,
+            "changeTime": 1512580135481,
+            "contentHash": "0803afd433bedf4fb3c621888196f3a590a9c016",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes",
+            "isDirectory": true,
+            "size": 0,
+            "modifiedTime": 1513023031764,
+            "changeTime": 1512580334352,
+            "contentHash": "e520056f5039873dec4bcc7ded1c2b946d721b4d",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoController.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoController.cls",
+            "isDirectory": false,
+            "size": 964,
+            "modifiedTime": 1512600956765,
+            "changeTime": 1512599983464,
+            "contentHash": "4f686815ffa5cd4f33533f158bae5b1f865cbd18",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoController.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoController.cls-meta.xml",
+            "isDirectory": false,
+            "size": 177,
+            "modifiedTime": 1512578044686,
+            "changeTime": 1512578044686,
+            "contentHash": "d1db78898fac7cd8e7bf53bbf5f457c59318d685",
+            "isMetadataFile": true,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoControllerTests.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoControllerTests.cls",
+            "isDirectory": false,
+            "size": 662,
+            "modifiedTime": 1512600956771,
+            "changeTime": 1512600038867,
+            "contentHash": "8d7af4f10a44ca84b98ec73ad2f3eac440cfe0f8",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoControllerTests.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoControllerTests.cls-meta.xml",
+            "isDirectory": false,
+            "size": 179,
+            "modifiedTime": 1512578044690,
+            "changeTime": 1512580126729,
+            "contentHash": "36653e7488879c0ed6d7bd08805295fa678ca822",
+            "isMetadataFile": true,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages",
+            "isDirectory": true,
+            "size": 0,
+            "modifiedTime": 1513023031781,
+            "changeTime": 1512580117318,
+            "contentHash": "8321bf938eae81fc8c55f4bafb5c03e963cd1dbb",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages\\DemoPage.page",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages\\DemoPage.page",
+            "isDirectory": false,
+            "size": 1589,
+            "modifiedTime": 1512578044687,
+            "changeTime": 1512578044687,
+            "contentHash": "40b01ddd0e7400a56f2aec05d63fa7cacbe5cdf3",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages\\DemoPage.page-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\pages\\DemoPage.page-meta.xml",
+            "isDirectory": false,
+            "size": 281,
+            "modifiedTime": 1512578044687,
+            "changeTime": 1512578044687,
+            "contentHash": "191b7b49953e47befa9a2b51cc0cd52158c35eb0",
+            "isMetadataFile": true,
+            "state": "u",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce",
+            "isDirectory": true,
+            "size": 0,
+            "modifiedTime": 1513023031368,
+            "changeTime": 1512580189836,
+            "contentHash": "4626fa5c623b3b5518a455ef4c80d3443e3084aa",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": true,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassAbstract.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassAbstract.cls",
+            "isDirectory": false,
+            "size": 67,
+            "modifiedTime": 1512600956652,
+            "changeTime": 1512595335249,
+            "contentHash": "ffe401656250acf2efd0b032366adf8b36760eb8",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassAbstract.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassAbstract.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797747,
+            "changeTime": 1511822805290,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassEnum.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassEnum.cls",
+            "isDirectory": false,
+            "size": 66,
+            "modifiedTime": 1512600956658,
+            "changeTime": 1512600956658,
+            "contentHash": "745f3963b5335609cfe3da6dd8bb6802b1b5aed5",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassEnum.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassEnum.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797928,
+            "changeTime": 1511822806140,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassException.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassException.cls",
+            "isDirectory": false,
+            "size": 51,
+            "modifiedTime": 1512600956661,
+            "changeTime": 1512600956661,
+            "contentHash": "5b4ff16658998fc9c03286b2cc5e70bb6901e065",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassException.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassException.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797803,
+            "changeTime": 1511822805877,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassGlobal.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassGlobal.cls",
+            "isDirectory": false,
+            "size": 30,
+            "modifiedTime": 1512600956666,
+            "changeTime": 1512600956666,
+            "contentHash": "3f241d516e4e8f07d3b77eef7c416d363befffb0",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassGlobal.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassGlobal.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797910,
+            "changeTime": 1511822805543,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInitialization.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInitialization.cls",
+            "isDirectory": false,
+            "size": 418,
+            "modifiedTime": 1512600956674,
+            "changeTime": 1512600956674,
+            "contentHash": "45d6ffa01b2db63a12400eb96d3b4fd6c9cfd654",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInitialization.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInitialization.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797732,
+            "changeTime": 1511822800253,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInterface.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInterface.cls",
+            "isDirectory": false,
+            "size": 204,
+            "modifiedTime": 1512600956684,
+            "changeTime": 1512600956684,
+            "contentHash": "1617539301a8d5507ba950d04f69879e2c897078",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInterface.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInterface.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797757,
+            "changeTime": 1511822805667,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInternal.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInternal.cls",
+            "isDirectory": false,
+            "size": 276,
+            "modifiedTime": 1512600956693,
+            "changeTime": 1512600956693,
+            "contentHash": "752424c40fca4b7d8af6079d9f4e2f84068672b2",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInternal.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassInternal.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797713,
+            "changeTime": 1511822805308,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassNoApex.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassNoApex.cls",
+            "isDirectory": false,
+            "size": 460,
+            "modifiedTime": 1512600956698,
+            "changeTime": 1512600956698,
+            "contentHash": "aac54fda2cfdce639fb0c2370c564ed1e1da800a",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassNoApex.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassNoApex.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797858,
+            "changeTime": 1511822805350,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRest.cls",
+        {
+            "state": "u",
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRest.cls",
+            "isDirectory": false,
+            "isMetadataFile": false,
+            "size": 999,
+            "modifiedTime": 1513048795366,
+            "changeTime": 1513048795366,
+            "contentHash": "8c02d3c0f033c7d93d765fa02c95f9a388616292"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRest.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRest.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797786,
+            "changeTime": 1511822800231,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRestTest.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRestTest.cls",
+            "isDirectory": false,
+            "size": 632,
+            "modifiedTime": 1512600956710,
+            "changeTime": 1512600956710,
+            "contentHash": "cf4be5ce4ff93d4cb311c7bf50496aa6b88e34ee",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRestTest.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassRestTest.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797823,
+            "changeTime": 1511822805836,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTest.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTest.cls",
+            "isDirectory": false,
+            "size": 847,
+            "modifiedTime": 1512600956718,
+            "changeTime": 1512600956718,
+            "contentHash": "d3cc9e078c3d79cddbdd339ac916ba06ad79f9b5",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTest.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTest.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797849,
+            "changeTime": 1511822800258,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls",
+            "isDirectory": false,
+            "size": 193,
+            "modifiedTime": 1512600956728,
+            "changeTime": 1512600956728,
+            "contentHash": "a1b91f0038f22d0cadcd86f81ee58b6662831213",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797920,
+            "changeTime": 1511822805713,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls",
+            "isDirectory": false,
+            "size": 68,
+            "modifiedTime": 1512600956731,
+            "changeTime": 1512600956731,
+            "contentHash": "3102f460ebce06015060b32ea74e124ec070b08c",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797695,
+            "changeTime": 1511822805706,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithOutSharing.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithOutSharing.cls",
+            "isDirectory": false,
+            "size": 54,
+            "modifiedTime": 1512600956734,
+            "changeTime": 1512600956734,
+            "contentHash": "7ce7e97be412ff987e6ce6e8a3e52909c9a63c82",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797966,
+            "changeTime": 1511822805567,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithSharing.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithSharing.cls",
+            "isDirectory": false,
+            "size": 48,
+            "modifiedTime": 1512600956737,
+            "changeTime": 1512600956737,
+            "contentHash": "3d4021bfceb57ed72d90e5b4726ec2de3e104c85",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithSharing.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ClassWithSharing.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797840,
+            "changeTime": 1511822800197,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Collections.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Collections.cls",
+            "isDirectory": false,
+            "size": 1633,
+            "modifiedTime": 1512600956746,
+            "changeTime": 1512600956746,
+            "contentHash": "0744285fe544c5c5991c3241185e4bcdd1076d14",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Collections.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Collections.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797868,
+            "changeTime": 1511822800228,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Comments.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Comments.cls",
+            "isDirectory": false,
+            "size": 355,
+            "modifiedTime": 1512600956752,
+            "changeTime": 1512600956752,
+            "contentHash": "e5c2ce8de5df544cb1fb5807b1974290c82c5e92",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Comments.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Comments.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797984,
+            "changeTime": 1511822805293,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Demo.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Demo.cls",
+            "isDirectory": false,
+            "size": 1229,
+            "modifiedTime": 1512600956761,
+            "changeTime": 1512600956761,
+            "contentHash": "61007e03122e4081ec57696f81593f63f2256834",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Demo.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\Demo.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797776,
+            "changeTime": 1511822805320,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoTest.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoTest.cls",
+            "isDirectory": false,
+            "size": 840,
+            "modifiedTime": 1512600956787,
+            "changeTime": 1512600956787,
+            "contentHash": "394614f3622a1d25653388fb092014601d3bb0e8",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoTest.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\DemoTest.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797767,
+            "changeTime": 1511822805281,
+            "contentHash": "cb0f9f01e3f3aa0ea1a9985ea3caf2b33d167a49",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ExceptionDemo.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ExceptionDemo.cls",
+            "isDirectory": false,
+            "size": 431,
+            "modifiedTime": 1512600956797,
+            "changeTime": 1512600956797,
+            "contentHash": "ee2fafe31a0ef721e6168ef7515f510c6b635da2",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ExceptionDemo.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ExceptionDemo.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797992,
+            "changeTime": 1511822800224,
+            "contentHash": "7c5945136a59f83dacd1f358b3f57ec242ee7bbe",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ForIfWhile.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ForIfWhile.cls",
+            "isDirectory": false,
+            "size": 1664,
+            "modifiedTime": 1512600956807,
+            "changeTime": 1512600956807,
+            "contentHash": "688b9d5694625e53032f59f58d66ae035a25b9ed",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ForIfWhile.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\ForIfWhile.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797813,
+            "changeTime": 1511822805644,
+            "contentHash": "7c5945136a59f83dacd1f358b3f57ec242ee7bbe",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\GetSetDemo.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\GetSetDemo.cls",
+            "isDirectory": false,
+            "size": 1187,
+            "modifiedTime": 1512600956816,
+            "changeTime": 1512600956816,
+            "contentHash": "2c81688d051e97db4cd58791ea68af4c062756af",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\GetSetDemo.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\GetSetDemo.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797705,
+            "changeTime": 1511822800241,
+            "contentHash": "7c5945136a59f83dacd1f358b3f57ec242ee7bbe",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterface.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterface.cls",
+            "isDirectory": false,
+            "size": 89,
+            "modifiedTime": 1512600956821,
+            "changeTime": 1512600956821,
+            "contentHash": "91e454831568c65a1fc178061a572cb4728d2bb1",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterface.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterface.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797795,
+            "changeTime": 1511822805534,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterfaceExt.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterfaceExt.cls",
+            "isDirectory": false,
+            "size": 59,
+            "modifiedTime": 1512600956828,
+            "changeTime": 1512600956828,
+            "contentHash": "b0f7a6a3239359740816d48e1200d7ff69f547be",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797740,
+            "changeTime": 1511822805662,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\JsonExample.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\JsonExample.cls",
+            "isDirectory": false,
+            "size": 337,
+            "modifiedTime": 1512600956831,
+            "changeTime": 1512600956831,
+            "contentHash": "c357f87bb4c514145b16e64403e04abc336dd38c",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\JsonExample.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\JsonExample.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797946,
+            "changeTime": 1511822800209,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodAndConstructor.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodAndConstructor.cls",
+            "isDirectory": false,
+            "size": 1469,
+            "modifiedTime": 1512600956838,
+            "changeTime": 1512600956838,
+            "contentHash": "b442e64f375146dba3215fc2542ef1d1dc4214e3",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797938,
+            "changeTime": 1511822805883,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodComplex.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodComplex.cls",
+            "isDirectory": false,
+            "size": 404,
+            "modifiedTime": 1512600956841,
+            "changeTime": 1512600956841,
+            "contentHash": "fc28ec0e5ff19091fb70ca516bd3ed1b01fbf25c",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodComplex.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\MethodComplex.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797894,
+            "changeTime": 1511822800247,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PrimitiveTypes.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PrimitiveTypes.cls",
+            "isDirectory": false,
+            "size": 675,
+            "modifiedTime": 1512600956852,
+            "changeTime": 1512600956852,
+            "contentHash": "ede614b5b81ef352837c0a313785c80f63905e8e",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797687,
+            "changeTime": 1511822805285,
+            "contentHash": "734b048ce41db916f2088ea40ecdc25c420434ef",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PropertyAndField.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PropertyAndField.cls",
+            "isDirectory": false,
+            "size": 1227,
+            "modifiedTime": 1512600956865,
+            "changeTime": 1512600956865,
+            "contentHash": "62d221d53905fee8c949cbb49e5f8245b52cd311",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PropertyAndField.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\PropertyAndField.cls-meta.xml",
+            "isDirectory": false,
+            "size": 174,
+            "modifiedTime": 1511822797955,
+            "changeTime": 1511822805313,
+            "contentHash": "7c5945136a59f83dacd1f358b3f57ec242ee7bbe",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\RunAll.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\RunAll.cls",
+            "isDirectory": false,
+            "size": 827,
+            "modifiedTime": 1512600956870,
+            "changeTime": 1512580396971,
+            "contentHash": "2660a3ef5c0d2597993343943b2eae3a84504b40",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\RunAll.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\RunAll.cls-meta.xml",
+            "isDirectory": false,
+            "size": 179,
+            "modifiedTime": 1511982890345,
+            "changeTime": 1511982890360,
+            "contentHash": "0a15b49880adb4316e2657cfbee30a236c1592e4",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\SoqlDemo.cls",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\SoqlDemo.cls",
+            "isDirectory": false,
+            "size": 2106,
+            "modifiedTime": 1512600956876,
+            "changeTime": 1511984874707,
+            "contentHash": "7301617cab35a18bd9310a7e66ef22df8d02c9b7",
+            "isMetadataFile": false,
+            "state": "u"
+        }
+    ],
+    [
+        "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\SoqlDemo.cls-meta.xml",
+        {
+            "sourcePath": "C:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\classes\\SoqlDemo.cls-meta.xml",
+            "isDirectory": false,
+            "size": 179,
+            "modifiedTime": 1511889277166,
+            "changeTime": 1511889277178,
+            "contentHash": "0a15b49880adb4316e2657cfbee30a236c1592e4",
+            "isMetadataFile": true,
+            "state": "u"
+        }
+    ]
+]

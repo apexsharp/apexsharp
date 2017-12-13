@@ -1,0 +1,16 @@
+{
+  "SalesForceUrl": "https://na73.salesforce.com/services/Soap/c/40.0/00D1I000003oQHJ",
+  "HttpProxy": null,
+  "SalesForceUserId": "apexsharpdx@jayonsoftware.com",
+  "SalesForcePassword": "JugCnkhExxMWuVvLWN8wccEM",
+  "SalesForcePasswordToken": "jiiZsAh3L0zP0KPw6iJqdqGd",
+  "SalesForceApiVersion": 40,
+  "SessionId": "00D1I000003oQHJ!ARoAQJ9j6c5Azxzc1LrG3nHnibAuINGOeObdO7LkjOTlCtmJaHZtFlqWuC81ftTdm7Shn7vCtld.Us1TptChKamNZ0X4vaZQ",
+  "RestUrl": "https://na73.salesforce.com/services",
+  "RestSessionId": "Bearer 00D1I000003oQHJ!ARoAQJ9j6c5Azxzc1LrG3nHnibAuINGOeObdO7LkjOTlCtmJaHZtFlqWuC81ftTdm7Shn7vCtld.Us1TptChKamNZ0X4vaZQ",
+  "ConfigLocation": "c:\\DevSharp\\ApexSharpVsCode\\config.json",
+  "VsProjectLocation": "c:\\DevSharp\\ApexSharpVsCode\\Demo",
+  "SalesForceLocation": "c:\\DevSharp\\ApexSharpVsCode\\SalesForce\\src\\",
+  "SessionCreationDateTime": 1513055955,
+  "VsProjectName": null
+}
