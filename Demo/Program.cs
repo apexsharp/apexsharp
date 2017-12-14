@@ -8,7 +8,7 @@
 
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             // Always Initialize your settings when ever you are connecting to SF
