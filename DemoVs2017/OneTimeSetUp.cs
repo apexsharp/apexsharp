@@ -1,8 +1,7 @@
 ﻿namespace DemoVs2017
 {
-    using System;
-    using ApexSharpApi;
     using NUnit.Framework;
+    using System;
 
     [SetUpFixture]
     public class OneTimeSetUp
