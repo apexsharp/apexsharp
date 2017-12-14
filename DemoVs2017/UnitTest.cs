@@ -1,9 +1,9 @@
-﻿using Apex.ApexSharp.NUnit;
-
-namespace DemoVs2017
+﻿namespace DemoVs2017
 {
+    using Apex.ApexSharp.NUnit;
+
     [TestFixture]
-    public class ClassUnitTest
+    public class UnitTest
     {
         [SetUp]
         public static void setup()

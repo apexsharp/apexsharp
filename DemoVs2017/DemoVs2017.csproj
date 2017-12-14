@@ -180,7 +180,7 @@
     <Compile Include="CSharpClasses\RunAll.cs" />
     <Compile Include="CSharpClasses\SoqlDemo.cs" />
     <Compile Include="NoApex\Serilog.cs" />
-    <Compile Include="NUnitTest.cs" />
+    <Compile Include="UnitTest.cs" />
     <Compile Include="OneTimeSetUp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
