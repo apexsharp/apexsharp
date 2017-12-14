@@ -13,8 +13,8 @@ I am working on a detail documentation, but for now I assume you are a C# develo
 #### Setting up and Running 
 
 0. Create a new SF Dev org, get your API Token
-1. Download the whole Git Repo
-2. Start the Demo Solution
+1. Download the whole Git Repo, save it in a folder at root leave under /ApexSharp
+2. Start the apexSharpDemo Solution
 3. Demo Project is the project you want to work on
 4. On Setup.cs, set your SF Id, PW, Token
 
@@ -24,9 +24,7 @@ I am working on a detail documentation, but for now I assume you are a C# develo
 .AndToken("Token")
 ```
 
+5. Run the demo project.
 
-This is very early stage Beta Software use it at your own risk :-).
+Questions, Post it at https://github.com/apexsharp/apexsharp/issues
 
-Jay
-EMail: <Jay@JayOnSoftware.com>  
-[LinkedIn](https://www.linkedin.com/in/jayonsoftware/) 
