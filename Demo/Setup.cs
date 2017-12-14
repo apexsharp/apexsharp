@@ -37,9 +37,9 @@
                     // This example assumes you cloned your GIT repo to the root level.
                     ConnectionUtil.Session = new ApexSharp().SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
-                        .WithUserId("apexsharpdx@jayonsoftware.com")
-                        .AndPassword("JugCnkhExxMWuVvLWN8wccEM")
-                        .AndToken("jiiZsAh3L0zP0KPw6iJqdqGd")
+                        .WithUserId("You SF Id")
+                        .AndPassword("You SF Password")
+                        .AndToken("Token")
                         .SalesForceLocation(@"\ApexSharp\SalesForce\src\")
                         .VsProjectLocation(@"\ApexSharp\Demo\")
                         .SaveConfigAt(@"\ApexSharp\config.json")

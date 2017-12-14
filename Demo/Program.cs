@@ -28,7 +28,6 @@
             Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
             Console.WriteLine("Done");
-            Console.ReadKey();
         }
 
         public static void CreateOffLineClasses()
