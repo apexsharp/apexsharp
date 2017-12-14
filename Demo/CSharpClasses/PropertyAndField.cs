@@ -30,7 +30,7 @@ namespace Demo.CSharpClasses
 
         public static readonly string NameStaticFinal = "jay";
 
-        public List<Contact> ContactList = Soql.Query<Contact>("SELECT Id, Email FROM Contact");
+        public List<Contact> ContactList = Soql.query<Contact>("SELECT Id, Email FROM Contact");
 
         public Set<string> stringSet = new Set<string>{};
 

@@ -16,14 +16,14 @@ namespace Demo.CSharpClasses
             Contact contactNew = new Contact();
             contactNew.LastName = "Jay";
             contactNew.Email = "jay@jay.com";
-            Soql.Insert(contactNew);
+            Soql.insert(contactNew);
         }
 
         [Test]
         public static void updatePhoneTestValidEmail()
         {
             Demo.updatePhone("jay@jay.com", "555-1212");
-            List<Contact> contacts = Soql.Query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'jay@jay.com'");
+            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'jay@jay.com'");
             System.assertEquals(contacts[0].Phone, "555-1212");
         }
 
@@ -31,7 +31,7 @@ namespace Demo.CSharpClasses
         public static void updatePhoneTestNotValidEmail()
         {
             Demo.updatePhone("nojay@jay.com", "555-1212");
-            List<Contact> contacts = Soql.Query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'nojay@jay.com'");
+            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'nojay@jay.com'");
             System.assertEquals(contacts.size(), 0);
         }
     }

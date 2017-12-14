@@ -16,10 +16,6 @@
     <ProjectReference Include="..\Apex\Apex.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <CodeAnalysisRuleSet>..\Disabled.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
   <ItemGroup>
     <Folder Include="CSharpClasses\" />
     <Folder Include="SObjects\" />

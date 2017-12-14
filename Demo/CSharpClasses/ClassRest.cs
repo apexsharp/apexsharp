@@ -35,7 +35,7 @@ namespace Demo.CSharpClasses
         {
             Contact contact = new Contact();
             contact.LastName = contactToSave.LastName;
-            Soql.Insert(contact);
+            Soql.insert(contact);
         }
 
         [HttpGet]

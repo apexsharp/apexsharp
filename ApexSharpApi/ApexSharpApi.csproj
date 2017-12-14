@@ -22,10 +22,6 @@
     </PackageReference>
   </ItemGroup>
 
-  <PropertyGroup>
-    <CodeAnalysisRuleSet>..\Disabled.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn />
     <WarningsAsErrors />

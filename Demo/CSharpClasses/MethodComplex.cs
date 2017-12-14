@@ -11,7 +11,7 @@ namespace Demo.CSharpClasses
     {
         public static void methodOne()
         {
-            foreach (Account a in Soql.Query<Account>("SELECT Id FROM Account"))
+            foreach (Account a in Soql.query<Account>("SELECT Id FROM Account"))
             {
                 System.debug(a.Id);
             }
@@ -23,7 +23,7 @@ namespace Demo.CSharpClasses
 
         public Database.QueryLocator queryLocator(Database.BatchableContext bc)
         {
-            return Database.getQueryLocator(Soql.Query<Contact>("SELECT Id FROM Contact"));
+            return Database.getQueryLocator(Soql.query<Contact>("SELECT Id FROM Contact"));
         }
     }
 }

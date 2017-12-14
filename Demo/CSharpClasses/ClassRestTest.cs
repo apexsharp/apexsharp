@@ -20,7 +20,7 @@ namespace Demo.CSharpClasses
             RestContext.Request.RequestBody = Blob.valueOf(JSON.serialize(contact));
             ClassRest.post();
             System.assertEquals(200, RestContext.Response.StatusCode);
-            List<Contact> contacts = Soql.Query<Contact>("SELECT Id FROM Contact WHERE LastName = 'LastName'");
+            List<Contact> contacts = Soql.query<Contact>("SELECT Id FROM Contact WHERE LastName = 'LastName'");
             System.assertEquals(1, contacts.size());
         }
     }

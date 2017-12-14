@@ -53,7 +53,7 @@ namespace Demo.CSharpClasses
         public void mapSoqlExample()
         {
             // Map<Id, Contact> m = new Map<Id, Contact>(Soql.Query<Contact>("SELECT Id FROM Jay__c"));
-            Map<ID, Contact> m = new Map<ID, Contact>(Soql.Query<Contact>("SELECT Id, Name FROM Contact LIMIT 10"));
+            Map<ID, Contact> m = new Map<ID, Contact>(Soql.query<Contact>("SELECT Id, Name FROM Contact LIMIT 10"));
             foreach (ID idKey in m.keySet())
             {
                 Contact contact = m.get(idKey);

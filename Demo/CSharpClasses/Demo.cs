@@ -19,7 +19,7 @@ namespace Demo.CSharpClasses
         {
             try
             {
-                Soql.Insert(contact);
+                Soql.insert(contact);
             }
             catch (DmlException e)
             {
@@ -46,19 +46,19 @@ namespace Demo.CSharpClasses
 
         public static List<Contact> getContactByEMail(string email)
         {
-            List<Contact> contacts = Soql.Query<Contact>("SELECT Id, Email, Phone FROM Contact WHERE Email = :email", email);
+            List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact WHERE Email = :email", email);
             return contacts;
         }
 
         public static List<Contact> getContacts()
         {
-            List<Contact> contacts = Soql.Query<Contact>("SELECT Id, Email, Phone FROM Contact");
+            List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact");
             return contacts;
         }
 
         public static void updateContacts(List<Contact> contacts)
         {
-            Soql.Update(contacts);
+            Soql.update(contacts);
         }
     }
 }

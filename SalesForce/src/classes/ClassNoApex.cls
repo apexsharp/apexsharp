@@ -12,6 +12,10 @@ public class ClassNoApex
         {
             {
                 {
+                    {
+                        //:NoApex NoApex.Serilog.LogInfo("Jay");
+                    }
+
                     //:NoApex NoApex.Serilog.LogInfo("Jay");
                 }
 

@@ -290,3 +290,5 @@ __pycache__/
 # Jays Files
 config.json
 *.bak
+/JayPrivate
+JayPrivate.sln

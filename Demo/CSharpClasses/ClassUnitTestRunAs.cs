@@ -10,8 +10,8 @@ namespace Demo.CSharpClasses
     {
         static void RunAsExample()
         {
-            User newUser = Soql.Query<User>("SELECT Id FROM User LIMIT 1");
-            using (System.RunAs(newUser))
+            User newUser = Soql.query<User>("SELECT Id FROM User LIMIT 1");
+            using (System.runAs(newUser))
             {
             }
         }

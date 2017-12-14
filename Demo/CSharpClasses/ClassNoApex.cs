@@ -19,6 +19,10 @@ namespace Demo.CSharpClasses
         {
             {
                 {
+                    {
+                        NoApex.Serilog.LogInfo("Jay");
+                    }
+
                     NoApex.Serilog.LogInfo("Jay");
                 }
 
