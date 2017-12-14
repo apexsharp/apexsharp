@@ -23,6 +23,13 @@ We are working on a detail documentation, but for now we assume you are a C# dev
 
 5. Run the demo project.
 
+Folder Structure
+
+
+<a href="https://github.com/apexsharp/apexsharp/tree/master/Demo" target="_blank">/Demo</a> is the folder you will be working on. It contains few examples
+
+<a href="https://github.com/apexsharp/apexsharp/tree/master/SalesForce" target="_blank">/Salesforce </a>contains a SF project that is used for the above demo
+
 Questions ? Post it at https://github.com/apexsharp/apexsharp/issues
 
 
