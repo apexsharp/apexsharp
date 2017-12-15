@@ -1,4 +1,7 @@
-﻿namespace Demo
+﻿using System;
+using Serilog;
+
+namespace Demo
 {
     using ApexSharpApi;
     using NUnit.Framework;
@@ -11,7 +14,8 @@
         {
            // Always Initialize your settings before using it.
            Setup.Init();
-           UnitTestDataManager.UnitTestDataManagerOn();
+
+           //UnitTestDataManager.UnitTestDataManagerOn();
         }
 
         [OneTimeTearDown]

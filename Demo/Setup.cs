@@ -17,11 +17,13 @@
             // Fatal - critical errors causing complete failure of the application
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .MinimumLevel.Debug()
+                .MinimumLevel.Verbose()
                 // If you are using https://getseq.net
-                // .WriteTo.Seq("http://localhost:9999")
+                .WriteTo.Seq("http://localhost:9999")
                 .CreateLogger();
 
+            Log.ForContext<Setup>().Debug("One Time Setup Got Called");
+            
             File.Delete(@"\ApexSharp\config.json");
 
             try
@@ -35,10 +37,11 @@
                 try
                 {
                     // This example assumes you cloned your GIT repo to the root level.
-                    ConnectionUtil.Session = new ApexSharp().SalesForceUrl("https://login.salesforce.com/")
+                    ConnectionUtil.Session = new ApexSharp().
+                         SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
-                        .WithUserId("You SF Id")
-                        .AndPassword("You SF Password")
+                        .WithUserId("User ID")
+                        .AndPassword("Password")
                         .AndToken("Token")
                         .SalesForceLocation(@"\ApexSharp\SalesForce\src\")
                         .VsProjectLocation(@"\ApexSharp\Demo\")
