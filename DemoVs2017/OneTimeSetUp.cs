@@ -1,14 +1,18 @@
 ﻿namespace DemoVs2017
 {
-    using System;
-    using ApexSharpApi;
     using NUnit.Framework;
+    using System;
 
     [SetUpFixture]
     public class OneTimeSetUp
     {
+        public OneTimeSetUp()
+        {
+
+        }
+
         [OneTimeSetUp]
-        public static void Init()
+        public void Init()
         {
            Console.WriteLine("One Time Setup Got Called");
            //UnitTestDataManager.UnitTestDataManagerOn();

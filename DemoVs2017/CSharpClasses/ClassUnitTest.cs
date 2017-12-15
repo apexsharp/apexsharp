@@ -1,11 +1,7 @@
 namespace DemoVs2017.CSharpClasses
 {
-    using Apex.ApexSharp;
-    using Apex.ApexSharp.ApexAttributes;
     using Apex.ApexSharp.NUnit;
     using Apex.System;
-    using ApexSharpApi.ApexApi;
-    using SObjects;
 
     [TestFixture]
     public class ClassUnitTest
@@ -13,7 +9,7 @@ namespace DemoVs2017.CSharpClasses
         [SetUp]
         public static void setup()
         {
-            System.debug("One Time Setup Got Called");
+            System.debug("Class Setup Called");
         }
 
         [Test]
