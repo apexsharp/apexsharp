@@ -25,9 +25,11 @@
                     ConnectionUtil.Session = new ApexSharp().
                          SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
-                        .WithUserId("User ID")
-                        .AndPassword("Password")
-                        .AndToken("Token")
+
+                        .SalesForceUrl("https://login.salesforce.com/";)
+                        .AndSalesForceApiVersion(40)
+                        .WithUserId("apexsharpdx@jayonsoftware.com")
+
                         .SalesForceLocation(@"\home\osboxes\apexsharp\SalesForce\src\")
                         .VsProjectLocation(@"\home\osboxes\apexsharp\Demo\")
                         .SaveConfigAt(@"\home\osboxes\apexsharp\config.json")
