@@ -13,18 +13,18 @@ namespace ApexSharpApi
 {
     public class ModelGen
     {
-        public List<string> GetAllObjectNames()
+        public IEnumerable<string> GetAllObjectNames()
         {
-            List<string> objectList = new List<string>();
+            var objectList = new List<string>();
 
-            HttpManager httpManager = new HttpManager();
-            var requestJson = httpManager.Get($"sobjects/");
+            var httpManager = new HttpManager();
+            var requestJson = httpManager.Get("sobjects/");
 
-            var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache");
-            File.WriteAllText(cacheLocation + "/objectList.json", requestJson);
-            var json = File.ReadAllText(cacheLocation + "/objectList.json");
+            var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache", "objectList.json");
+            File.WriteAllText(cacheLocation, requestJson);
+            var json = File.ReadAllText(cacheLocation);
 
-            SObjectDescribe sObjectList = JsonConvert.DeserializeObject<SObjectDescribe>(json);
+            var sObjectList = JsonConvert.DeserializeObject<SObjectDescribe>(json);
             foreach (var sobject in sObjectList.sobjects)
             {
                 objectList.Add(sobject.name);
@@ -37,23 +37,24 @@ namespace ApexSharpApi
         {
             var nameSpace = ConnectionUtil.GetSession().VsProjectName + ".SObjects";
 
-            Parallel.ForEach(sobjectList, (sobject) =>
+            Parallel.ForEach(sobjectList, sobject =>
             {
-                HttpManager httpManager = new HttpManager();
+                var httpManager = new HttpManager();
                 var objectDetailjson = httpManager.Get($"sobjects/{sobject}/describe");
 
-                SObjectDetail sObjectDetail = JsonConvert.DeserializeObject<SObjectDetail>(objectDetailjson);
+                var sObjectDetail = JsonConvert.DeserializeObject<SObjectDetail>(objectDetailjson);
 
                 objectDetailjson = JsonConvert.SerializeObject(sObjectDetail, Formatting.Indented);
-                var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache");
-                var jsonFileName = cacheLocation + "/" + sobject + ".json";
-                File.WriteAllText(jsonFileName, objectDetailjson);
+                var jsonFileName =  sobject + ".json";
+                var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache", jsonFileName);
+                
+                File.WriteAllText(cacheLocation, objectDetailjson);
 
                 var sObjectClass = CreateSalesForceClasses(nameSpace, sObjectDetail);
-
-                var sobjectLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "SObjects");
-                var saveFileName = sobjectLocation + "\\" + sobject + ".cs";
-                File.WriteAllText(saveFileName, sObjectClass);
+                var saveFileName = sobject + ".cs";
+                var sobjectLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "SObjects", saveFileName);
+                
+                File.WriteAllText(sobjectLocation, sObjectClass);
 
                 Log.ForContext<ModelGen>().Debug("Saved {sobject}", saveFileName);
             });
@@ -104,23 +105,15 @@ namespace ApexSharpApi
 
         public List<Sobject> GetAllObjects()
         {
-            string dirPath = ConnectionUtil.GetSession().VsProjectLocation;
+            string objectListPath = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "objectList.json");
 
             HttpManager httpManager = new HttpManager();
-            var requestJson = httpManager.Get($"sobjects/");
-            File.WriteAllText(dirPath + @"\objectList.json", requestJson);
+            var requestJson = httpManager.Get("sobjects/");
+            File.WriteAllText(objectListPath, requestJson);
 
-            var json = File.ReadAllText(dirPath + @"\objectList.json");
+            var json = File.ReadAllText(objectListPath);
             SObjectDescribe sObjectList = JsonConvert.DeserializeObject<SObjectDescribe>(json);
             return sObjectList.sobjects.ToList();
-
-            //var customObjectCount = allSobjects.Where(x => x.custom).ToList();
-            //var customSetting = allSobjects.Where(x => x.customSetting).ToList();
-            //var objectCount = allSobjects.Where(x => x.custom == false && x.customSetting == false).ToList();
-
-            //System.Console.WriteLine(customObjectCount.Count());
-            //System.Console.WriteLine(customSetting.Count());
-            //System.Console.WriteLine(objectCount.Count());
         }
 
         private string GetField(Field salesForceField)
@@ -134,7 +127,7 @@ namespace ApexSharpApi
             return "NOT FOUND";
         }
 
-        public static Dictionary<string, string> FieldDictionary = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> FieldDictionary = new Dictionary<string, string>
         {
             {"address", "Address" },
             {"id","ID" },
@@ -159,7 +152,7 @@ namespace ApexSharpApi
             {"int","int" },
             {"anyType", "object" },
             {"base64", "string" },
-            {"complexvalue", "string" },
+            {"complexvalue", "string" }
         };
     }
 }
