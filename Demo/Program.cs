@@ -10,6 +10,8 @@
     {
         public static void Main(string[] args)
         {
+            // Start Logging
+            Logging.EnableLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
             Setup.Init();
@@ -28,6 +30,9 @@
             Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
             Console.WriteLine("Done");
+
+            // Flush and Close
+            Logging.CloseLogging();
         }
 
         public static void CreateOffLineClasses()
