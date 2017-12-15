@@ -9,7 +9,7 @@ namespace DemoVs2017.CSharpClasses
         [SetUp]
         public static void setup()
         {
-            System.debug("One Time Setup Got Called");
+            System.debug("Class Setup Called");
         }
 
         [Test]

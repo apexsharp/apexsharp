@@ -6,8 +6,13 @@
     [SetUpFixture]
     public class OneTimeSetUp
     {
+        public OneTimeSetUp()
+        {
+
+        }
+
         [OneTimeSetUp]
-        public static void Init()
+        public void Init()
         {
            Console.WriteLine("One Time Setup Got Called");
            //UnitTestDataManager.UnitTestDataManagerOn();
