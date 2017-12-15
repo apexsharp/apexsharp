@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-
 namespace DemoVs2017.CSharpClasses
 {
+    using NUnit.Framework;
 
     [TestFixture]
     public class NUnitTest

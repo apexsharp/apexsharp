@@ -184,7 +184,7 @@
     <Compile Include="CSharpClasses\SoqlDemo.cs" />
     <Compile Include="NoApex\Serilog.cs" />
     <Compile Include="UnitTest.cs" />
-    <Compile Include="OneTimeSetUp.cs" />
+    <Compile Include="CSharpClasses\OneTimeSetUp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />

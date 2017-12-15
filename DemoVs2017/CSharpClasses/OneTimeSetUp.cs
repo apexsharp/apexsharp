@@ -1,16 +1,11 @@
-﻿namespace DemoVs2017
+﻿namespace DemoVs2017.CSharpClasses
 {
-    using NUnit.Framework;
     using System;
+    using NUnit.Framework;
 
     [SetUpFixture]
     public class OneTimeSetUp
     {
-        public OneTimeSetUp()
-        {
-
-        }
-
         [OneTimeSetUp]
         public void Init()
         {
