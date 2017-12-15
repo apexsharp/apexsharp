@@ -23,8 +23,6 @@ namespace Demo
                 .CreateLogger();
 
             Log.ForContext<Setup>().Debug("One Time Setup Got Called");
-
-
         }
 
         public static void CloseLogging()

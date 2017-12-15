@@ -9,16 +9,17 @@
     {
         public static bool Init()
         { 
-            File.Delete(@"\home\osboxes\apexsharp\config.json");
+            File.Delete(@"/home/osboxes/apexsharp/config.json");
 
             try
             {
                 // See if we have an existing connection
-                ConnectionUtil.Session = ConnectionUtil.GetSession(@"\home\osboxes\apexsharp\config.json");
+                ConnectionUtil.Session = ConnectionUtil.GetSession(@"/home/osboxes/apexsharp/config.json");
             }
             // Else Create a new session
             catch (SalesForceNoFileFoundException)
             {
+                string vSprojectocation = Path.GetFullPath(@"/home/osboxes/apexsharp/Demo/");
                 try
                 {
                     // This example assumes you cloned your GIT repo to the root level.
@@ -32,9 +33,9 @@
                         .AndToken("jiiZsAh3L0zP0KPw6iJqdqGd")
 
 
-                        .SalesForceLocation(@"\home\osboxes\apexsharp\SalesForce\src\")
-                        .VsProjectLocation(@"\home\osboxes\apexsharp\Demo\")
-                        .SaveConfigAt(@"\home\osboxes\apexsharp\config.json")
+                        .SalesForceLocation(@"/home/sboxes/apexsharp/SalesForce/src/")
+                        .VsProjectLocation(vSprojectocation)
+                        .SaveConfigAt(@"/home/osboxes/apexsharp/config.json")
                         .CreateSession();
                 }
                 catch (SalesForceInvalidLoginException ex)
