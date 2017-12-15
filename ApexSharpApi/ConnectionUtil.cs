@@ -60,6 +60,7 @@ namespace ApexSharpApi
             config = GetNewConnection(config);
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
+            Console.WriteLine(Path.GetDirectoryName(config.ConfigLocation));
             Directory.CreateDirectory(Path.GetDirectoryName(config.ConfigLocation));
             File.WriteAllText(config.ConfigLocation, json);
 
