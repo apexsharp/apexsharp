@@ -291,5 +291,6 @@ __pycache__/
 config.json
 *.bak
 /JayPrivate
+/DemoVs2017
 JayPrivate.sln
 .DS_Store
