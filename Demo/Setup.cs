@@ -26,9 +26,11 @@
                          SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
 
-                        .SalesForceUrl("https://login.salesforce.com/";)
-                        .AndSalesForceApiVersion(40)
+                        
                         .WithUserId("apexsharpdx@jayonsoftware.com")
+                        .AndPassword("JugCnkhExxMWuVvLWN8wccEM")
+                        .AndToken("jiiZsAh3L0zP0KPw6iJqdqGd")
+
 
                         .SalesForceLocation(@"\home\osboxes\apexsharp\SalesForce\src\")
                         .VsProjectLocation(@"\home\osboxes\apexsharp\Demo\")
