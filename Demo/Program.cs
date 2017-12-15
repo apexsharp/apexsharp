@@ -11,28 +11,30 @@
         public static void Main(string[] args)
         {
             // Start Logging
-            Logging.EnableLogging();
+
+
+            //Logging.EnableLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
-            Setup.Init();
+           Setup.Init();
 
             // Keep Track of the API Limits
-            Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
+            //Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
             // Create Offline classes for SObjects
             // CreateOffLineClasses();
 
             // ConvertToCSharp();
-            CSharpClasses.RunAll.TestClassess();
+            //CSharpClasses.RunAll.TestClassess();
             // ConvertToApex();
 
             // Keep Track of the API Limits
-            Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
+            //Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
             Console.WriteLine("Done");
 
             // Flush and Close
-            Logging.CloseLogging();
+            //Logging.CloseLogging();
         }
 
         public static void CreateOffLineClasses()

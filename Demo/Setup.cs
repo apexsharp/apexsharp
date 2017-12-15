@@ -9,12 +9,12 @@
     {
         public static bool Init()
         { 
-            File.Delete(@"\ApexSharp\config.json");
+            File.Delete(@"\home\osboxes\apexsharp\config.json");
 
             try
             {
                 // See if we have an existing connection
-                ConnectionUtil.Session = ConnectionUtil.GetSession(@"\ApexSharp\config.json");
+                ConnectionUtil.Session = ConnectionUtil.GetSession(@"\home\osboxes\apexsharp\config.json");
             }
             // Else Create a new session
             catch (SalesForceNoFileFoundException)
@@ -28,9 +28,9 @@
                         .WithUserId("User ID")
                         .AndPassword("Password")
                         .AndToken("Token")
-                        .SalesForceLocation(@"\ApexSharp\SalesForce\src\")
-                        .VsProjectLocation(@"\ApexSharp\Demo\")
-                        .SaveConfigAt(@"\ApexSharp\config.json")
+                        .SalesForceLocation(@"\home\osboxes\apexsharp\SalesForce\src\")
+                        .VsProjectLocation(@"\home\osboxes\apexsharp\Demo\")
+                        .SaveConfigAt(@"\home\osboxes\apexsharp\config.json")
                         .CreateSession();
                 }
                 catch (SalesForceInvalidLoginException ex)
