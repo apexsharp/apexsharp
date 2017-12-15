@@ -177,6 +177,7 @@
     <Compile Include="CSharpClasses\JsonExample.cs" />
     <Compile Include="CSharpClasses\MethodAndConstructor.cs" />
     <Compile Include="CSharpClasses\MethodComplex.cs" />
+    <Compile Include="CSharpClasses\NUnitTest.cs" />
     <Compile Include="CSharpClasses\PrimitiveTypes.cs" />
     <Compile Include="CSharpClasses\PropertyAndField.cs" />
     <Compile Include="CSharpClasses\RunAll.cs" />
