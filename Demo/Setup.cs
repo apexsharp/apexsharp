@@ -9,33 +9,37 @@
     {
         public static bool Init()
         { 
-            File.Delete(@"/home/osboxes/apexsharp/config.json");
+            // Due to different OS and how they manage file paths, its best to to use the Path.GetFullPath Method.
+            // This example assumes you cloned your GIT repo to the root level.
+            // SessionLocation is where your SF session will be Saved
+            var sessionLocation = Path.GetFullPath(@"/apexsharp/config.json");
+            // SalesForceLocation is the location of your Salesofrce project
+            var salesForceLocation = Path.GetFullPath(@"/apexsharp/SalesForce/src/");
+            // VsProjectLocation is the location of your Visual Studio Project
+            var vSprojectocation = Path.GetFullPath(@"/apexsharp/Demo/");
 
             try
             {
-                // See if we have an existing connection
-                ConnectionUtil.Session = ConnectionUtil.GetSession(@"/home/osboxes/apexsharp/config.json");
+                // See if we have an existing connection use it.
+                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
             }
             // Else Create a new session
             catch (SalesForceNoFileFoundException)
             {
-                string vSprojectocation = Path.GetFullPath(@"/home/osboxes/apexsharp/Demo/");
                 try
                 {
-                    // This example assumes you cloned your GIT repo to the root level.
+                    
                     ConnectionUtil.Session = new ApexSharp().
                          SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
-
                         
                         .WithUserId("apexsharpdx@jayonsoftware.com")
                         .AndPassword("JugCnkhExxMWuVvLWN8wccEM")
                         .AndToken("jiiZsAh3L0zP0KPw6iJqdqGd")
 
-
-                        .SalesForceLocation(@"/home/sboxes/apexsharp/SalesForce/src/")
+                        .SalesForceLocation(salesForceLocation)
                         .VsProjectLocation(vSprojectocation)
-                        .SaveConfigAt(@"/home/osboxes/apexsharp/config.json")
+                        .SaveConfigAt(sessionLocation)
                         .CreateSession();
                 }
                 catch (SalesForceInvalidLoginException ex)
