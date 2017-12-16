@@ -13,10 +13,7 @@ namespace ApexSharpApi
     {
         public static ApexSharpConfig Session { get; set; }
 
-        public static ApexSharpConfig GetSession()
-        {
-            return GetSession(null);
-        }
+ 
 
         public static ApexSharpConfig GetSession(string configFileLocation)
         {

@@ -11,6 +11,7 @@ public class Demo
     {
         try
         {
+            
             insert contact;
         }
         catch (DmlException e)

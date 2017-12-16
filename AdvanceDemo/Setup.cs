@@ -1,10 +1,9 @@
-﻿namespace Demo
-{
-    using System;
-    using System.IO;
-    using ApexSharpApi;
-    using Serilog;
+﻿using System;
+using System.IO;
+using ApexSharpApi;
 
+namespace AdvanceDemo
+{
     public class Setup
     {
         public static bool Init()
@@ -12,11 +11,11 @@
             // Due to different OS and how they manage file paths, its best to to use the Path.GetFullPath Method.
             // This example assumes you cloned your GIT repo to the root level.
             // SessionLocation is where your SF session will be Saved
-            var sessionLocation = Path.GetFullPath(@"/apexsharp/config.json");
+            var sessionLocation = Path.GetFullPath(@"/apexsharp/advanceConfig.json");
             // SalesForceLocation is the location of your Salesofrce project
             var salesForceLocation = Path.GetFullPath(@"/apexsharp/SalesForce/src/");
             // VsProjectLocation is the location of your Visual Studio Project
-            var vSprojectocation = Path.GetFullPath(@"/apexsharp/Demo/");
+            var vSprojectocation = Path.GetFullPath(@"/apexsharp/AdvanceDemo/");
 
             try
             {
