@@ -16,8 +16,6 @@ namespace Apex.Apex
             Self = self;
         }
 
-        dynamic Self { get; set; }
-
         static dynamic Implementation
         {
             get
@@ -29,30 +27,30 @@ namespace Apex.Apex
         // API
         public EmptyStackException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public EmptyStackException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public EmptyStackException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public EmptyStackException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
-        public object clone()
+        public override object clone()
         {
             return Self.clone();
         }
 
-        public string getTypeName()
+        public override string getTypeName()
         {
             return Self.getTypeName();
         }

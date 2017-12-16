@@ -1,14 +1,14 @@
-﻿using Apex.ApexSharp.Implementation;
-using Apex.System;
-
-namespace Apex.ApexSharp.Default.System
+namespace Apex.ApexSharp.Implementation.Default.Apex
 {
-    [Implements(typeof(Exception))]
-    public class ExceptionImplementation
+    using System;
+    using global::Apex.Apex;
+
+    [Implements(typeof(EmptyStackException))]
+    public class EmptyStackExceptionImplementation
     {
         // Self
 
-        public class ExceptionInstance
+        public class EmptyStackExceptionInstance
         {
             public Exception Cause { get; set; }
 
@@ -20,7 +20,7 @@ namespace Apex.ApexSharp.Default.System
 
             public int getLineNumber() => LineNumber;
 
-            public string Message { get; set; } = "Exception occured.";
+            public string Message { get; set; } = "The stack is empty.";
 
             public string getMessage() => Message;
 
@@ -30,33 +30,33 @@ namespace Apex.ApexSharp.Default.System
 
             public string getStackTraceString() => StackTrace;
 
-            public string TypeName => nameof(Exception);
+            public string TypeName => nameof(EmptyStackException);
 
             public string getTypeName() => TypeName;
 
-            public object clone() => new Exception(this);
+            public object clone() => new EmptyStackException(this);
         }
 
         // Implementation
 
         public dynamic Constructor()
         {
-            return new ExceptionInstance();
+            return new EmptyStackExceptionInstance();
         }
 
         public dynamic Constructor(string message)
         {
-            return new ExceptionInstance { Message = message };
+            return new EmptyStackExceptionInstance { Message = message };
         }
 
         public dynamic Constructor(Exception cause)
         {
-            return new ExceptionInstance { Cause = cause };
+            return new EmptyStackExceptionInstance { Cause = cause };
         }
 
         public dynamic Constructor(string message, Exception cause)
         {
-            return new ExceptionInstance { Message = message, Cause = cause };
+            return new EmptyStackExceptionInstance { Message = message, Cause = cause };
         }
     }
 }

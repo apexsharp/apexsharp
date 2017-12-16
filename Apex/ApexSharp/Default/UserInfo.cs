@@ -19,11 +19,10 @@ namespace ApexImpl
 
         // Implementation
 
-        public Apex.UserInfo Constructor(string name, int age)
+        public dynamic Constructor(string name, int age)
         {
             Console.WriteLine("You Called the Real Construtor");
-            dynamic self = new RealUserInfo { Name = name, Age = age };
-            return new Apex.UserInfo(self);
+            return new RealUserInfo { Name = name, Age = age };
         }
 
         public void StaticMethod(int a, string b)

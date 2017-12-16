@@ -29,7 +29,7 @@ namespace Apex.WaveTemplate
         // API
         public Access()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static List<string> checkIntegUserAccessToArrayOfSObjectFields(string variableName, WaveTemplateInfo template, Answers answers)

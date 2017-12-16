@@ -16,7 +16,7 @@ namespace Apex.System
             Self = self;
         }
 
-        dynamic Self { get; set; }
+        protected virtual dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -47,7 +47,7 @@ namespace Apex.System
             Self = Implementation.Constructor(cause);
         }
 
-        public object clone()
+        public virtual object clone()
         {
             return Self.clone();
         }
@@ -72,7 +72,7 @@ namespace Apex.System
             return Self.getStackTraceString();
         }
 
-        public string getTypeName()
+        public virtual string getTypeName()
         {
             return Self.getTypeName();
         }

@@ -1,5 +1,8 @@
-﻿using Apex.System;
+﻿using System.Dynamic;
+using Apex.ApexSharp.Implementation;
+using Apex.System;
 using NUnit.Framework;
+using IDisposable = System.IDisposable;
 
 namespace ApexTest.System
 {
@@ -47,6 +50,41 @@ namespace ApexTest.System
                 Assert.AreEqual(exc.getMessage(), clone.getMessage());
                 Assert.AreEqual(exc.getTypeName(), clone.getTypeName());
             });
+        }
+
+        [Test]
+        public void ExceptionImplementationCanBeReplacedByExpandoObjectInstance()
+        {
+            var customMessage = "Hello World!";
+
+            // dummy implementation for the Exception class
+            IDisposable UseDummyImplementation()
+            {
+                // implement the parameterless constructor
+                dynamic x = new ExpandoObject();
+                x.Constructor = new global::System.Func<Exception>(() =>
+                {
+                    // implement getMessage() instance method
+                    dynamic self = new ExpandoObject();
+                    self.getMessage = new global::System.Func<string>(() => customMessage);
+                    return new Exception(self);
+                });
+
+                // set the new implementation
+                Implementor.SetImplementation<Exception>(x);
+                return new Disposable(() => Implementor.ResetToDefault<Exception>());
+            }
+
+            using (UseDummyImplementation())
+            {
+                // try out the dummy implementation
+                Assert.DoesNotThrow(() =>
+                {
+                    var exc = new Exception();
+                    Assert.NotNull(exc);
+                    Assert.AreEqual(customMessage, exc.getMessage());
+                });
+            }
         }
     }
 }

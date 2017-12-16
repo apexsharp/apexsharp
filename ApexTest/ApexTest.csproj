@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apex\EmptyStackExceptionTests.cs" />
     <Compile Include="ImplementorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StubImplementationTests.cs" />
