@@ -3,43 +3,30 @@ namespace ApexSharpApi.ApexApi
     public class ID : System.IEquatable<ID>
     {
         private string _id;
-        public static implicit operator ID(string v)
-        {
-            var id = new ID { _id = v };
-            return id;
-        }
 
-        public override string ToString()
-        {
-            return _id;
-        }
+        public static implicit operator ID(string v) => new ID(v);
 
-        public void AddError(object msg)
-        {
-            throw new global::System.NotImplementedException("ID.AddError");
-        }
+        public ID(ID other) => _id = other._id;
 
-        public void AddError(object msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("ID.AddError");
-        }
+        public ID(string other) => _id = other;
 
-        public void AddError(string msg)
-        {
-            throw new global::System.NotImplementedException("ID.AddError");
-        }
+        public string toString() => _id;
 
-        public void AddError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("ID.AddError");
-        }
+        public void addError(object msg) => throw new global::System.NotImplementedException("ID.AddError");
 
-        //    public SObjectType GetSobjectType() { throw new global::System.NotImplementedException("ID.GetSobjectType"); }
-        public static ID ValueOf(string v)
-        {
-            var id = new ID { _id = v };
-            return id;
-        }
+        public void addError(object msg, bool escape) => throw new global::System.NotImplementedException("ID.AddError");
+
+        public void addError(string msg) => throw new global::System.NotImplementedException("ID.AddError");
+
+        public void addError(string msg, bool escape) => throw new global::System.NotImplementedException("ID.AddError");
+
+        //public SObjectType GetSobjectType() { throw new global::System.NotImplementedException("ID.GetSobjectType"); }
+
+        public static ID valueOf(string v) => new ID(v);
+
+        public bool equals(string other) => Equals(other);
+
+        public bool equals(ID other) => Equals(other);
 
         public bool Equals(string o) => _id == o;
 
@@ -48,5 +35,7 @@ namespace ApexSharpApi.ApexApi
         public override bool Equals(object obj) => Equals(obj as ID);
 
         public override int GetHashCode() => $"{_id}".GetHashCode();
+
+        public override string ToString() => _id;
     }
 }

@@ -4,167 +4,167 @@ namespace ApexSharpApi.ApexApi
     {
         public ID Id { get; set; }
 
-        public void AddError(object msg)
+        public void addError(object msg)
         {
             throw new global::System.NotImplementedException("SObject.AddError");
         }
 
-        public void AddError(object msg, bool escape)
+        public void addError(object msg, bool escape)
         {
             throw new global::System.NotImplementedException("SObject.AddError");
         }
 
-        public void AddError(string msg)
+        public void addError(string msg)
         {
             throw new global::System.NotImplementedException("SObject.AddError");
         }
 
-        public void AddError(string msg, bool escape)
+        public void addError(string msg, bool escape)
         {
             throw new global::System.NotImplementedException("SObject.AddError");
         }
 
-        public void Clear()
+        public void clear()
         {
             throw new global::System.NotImplementedException("SObject.Clear");
         }
 
-        public SObject Clone()
+        public SObject clone()
         {
             throw new global::System.NotImplementedException("SObject.Clone");
         }
 
-        public SObject Clone(bool preserveId)
+        public SObject clone(bool preserveId)
         {
             throw new global::System.NotImplementedException("SObject.Clone");
         }
 
-        public SObject Clone(bool preserveId, bool deep)
+        public SObject clone(bool preserveId, bool deep)
         {
             throw new global::System.NotImplementedException("SObject.Clone");
         }
 
-        public SObject Clone(bool preserveId, bool deep, bool preserveReadOnlyTimestamps)
+        public SObject clone(bool preserveId, bool deep, bool preserveReadOnlyTimestamps)
         {
             throw new global::System.NotImplementedException("SObject.Clone");
         }
 
-        public SObject Clone(bool preserveId, bool deep, bool preserveReadOnlyTimestamps, bool preserveAutoNumbers)
+        public SObject clone(bool preserveId, bool deep, bool preserveReadOnlyTimestamps, bool preserveAutoNumbers)
         {
             throw new global::System.NotImplementedException("SObject.Clone");
         }
 
-        //  public object Get(SObjectField field)
+        //  public object get(SObjectField field)
         //  {
         //      throw new global::System.NotImplementedException("SObject.Get");
         //  }
 
-        public object Get(string field)
+        public object get(string field)
         {
             throw new global::System.NotImplementedException("SObject.Get");
         }
 
-        //public Map<String, SObject> GetAll()
+        //public Map<String, SObject> getAll()
         //{
         //    throw new global::System.NotImplementedException("SObject.GetAll");
         // }
 
-        public ID GetCloneSourceId()
+        public ID getCloneSourceId()
         {
             throw new global::System.NotImplementedException("SObject.GetCloneSourceId");
         }
 
-        public SObject GetInstance()
+        public SObject getInstance()
         {
             throw new global::System.NotImplementedException("SObject.GetInstance");
         }
 
-        public SObject GetInstance(string id)
+        public SObject getInstance(string id)
         {
             throw new global::System.NotImplementedException("SObject.GetInstance");
         }
 
-        //     public DMLOptions GetOptions()
+        //     public DMLOptions getOptions()
         //     {
         //        throw new global::System.NotImplementedException("SObject.GetOptions");
         //    }
 
-        public SObject GetOrgDefaults()
+        public SObject getOrgDefaults()
         {
             throw new global::System.NotImplementedException("SObject.GetOrgDefaults");
         }
 
-        ////   public Map<String, Object> GetPopulatedFieldsAsMap()
+        ////   public Map<String, Object> getPopulatedFieldsAsMap()
         //  {
         //      throw new global::System.NotImplementedException("SObject.GetPopulatedFieldsAsMap");
         //  }
 
-        //  public string GetQuickActionName()
+        //  public string getQuickActionName()
         //  {
         //       throw new global::System.NotImplementedException("SObject.GetQuickActionName");
         //   }
 
-        //public SObject GetSObject(SObjectField field)
+        //public SObject getSObject(SObjectField field)
         //{
         //    throw new global::System.NotImplementedException("SObject.GetSObject");
         //}
 
-        //public SObject GetSObject(string field)
+        //public SObject getSObject(string field)
         //{
         //    throw new global::System.NotImplementedException("SObject.GetSObject");
         //}
 
-        //public SObjectType GetSObjectType()
+        //public SObjectType getSObjectType()
         //{
         //    throw new global::System.NotImplementedException("SObject.GetSObjectType");
         //}
 
-        //public List<SObject> GetSObjects(SObjectField field)
+        //public List<SObject> getSObjects(SObjectField field)
         //{
         //    throw new global::System.NotImplementedException("SObject.GetSObjects");
         //}
 
-        //public List<SObject> GetSObjects(string field)
+        //public List<SObject> getSObjects(string field)
         //{
         //    throw new global::System.NotImplementedException("SObject.GetSObjects");
         //}
 
-        public SObject GetValues(string id)
+        public SObject getValues(string id)
         {
             throw new global::System.NotImplementedException("SObject.GetValues");
         }
 
-        public bool IsClone()
+        public bool isClone()
         {
             throw new global::System.NotImplementedException("SObject.IsClone");
         }
 
-        //public object Put(SObjectField field, object value)
+        //public object put(SObjectField field, object value)
         //{
         //    throw new global::System.NotImplementedException("SObject.Put");
         //}
 
-        public object Put(string field, object value)
+        public object put(string field, object value)
         {
             throw new global::System.NotImplementedException("SObject.Put");
         }
 
-        //public SObject PutSObject(SObjectField field, SObject value)
+        //public SObject putSObject(SObjectField field, SObject value)
         //{
         //    throw new global::System.NotImplementedException("SObject.PutSObject");
         //}
 
-        public SObject PutSObject(string field, SObject value)
+        public SObject putSObject(string field, SObject value)
         {
             throw new global::System.NotImplementedException("SObject.PutSObject");
         }
 
-        public void RecalculateFormulas()
+        public void recalculateFormulas()
         {
             throw new global::System.NotImplementedException("SObject.RecalculateFormulas");
         }
 
-        public void SetOptions(object options)
+        public void setOptions(object options)
         {
             throw new global::System.NotImplementedException("SObject.SetOptions");
         }

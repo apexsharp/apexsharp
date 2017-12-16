@@ -1,6 +1,7 @@
 namespace Apex.Databinding
 {
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
     using System;
 
     public class ObjectMapper

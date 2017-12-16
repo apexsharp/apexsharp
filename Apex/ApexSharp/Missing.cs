@@ -4,80 +4,91 @@
 
 namespace Apex.ConnectApi
 {
-	public class ChatterGroupSummaryPage { }
+    public class ChatterGroupSummaryPage { }
 
-	public class ConnectContentHubItemType { }
+    public class ConnectContentHubItemType { }
 }
 
 namespace Apex.Auth
 {
-	public class AuthConfig { }
+    public class AuthConfig { }
 
-	public class AuthConfigProviders { }
+    public class AuthConfigProviders { }
 
-	public class AuthProvider { }
+    public class AuthProvider { }
 
-	public class SamlSsoConfig { }
+    public class SamlSsoConfig { }
 
-	public class SessionLevel { }
+    public class SessionLevel { }
 
-	public class VerificationPolicy { }
+    public class VerificationPolicy { }
 }
 
 namespace Apex.System
 {
-    public class Id : ID { public Id(dynamic self) : base((object)self) { } }
+    using ApexSharpApi.ApexApi;
 
-	public class Idea { }
+    public class Id : ID
+    {
+        public Id(string id) : base(id)
+        {
+        }
 
-	public class IdeaComment { }
+        public Id(ID id) : base(id)
+        {
+        }
+    }
 
-	public class Question { }
+    public class Idea { }
 
-	public class AsyncInsertCallback { }
+    public class IdeaComment { }
 
-	public class AsyncUpdateCallback { }
+    public class Question { }
+
+    public class AsyncInsertCallback { }
+
+    public class AsyncUpdateCallback { }
 }
 
 namespace Apex.Database
 {
-	public class LocaleOptions { }
+    public class LocaleOptions { }
 
-	public class Savepoint { }
+    public class Savepoint { }
 }
 
 namespace Apex.DataSource
 {
-	public class DataType { }
+    public class DataType { }
 
-	public class OrderDirection { }
+    public class OrderDirection { }
 
-	public class Capability { }
+    public class Capability { }
 
-	public class AuthenticationCapability { }
+    public class AuthenticationCapability { }
 
-	public class FilterType { }
+    public class FilterType { }
 
-	public class IdentityType { }
+    public class IdentityType { }
 
-	public class QueryAggregation { }
+    public class QueryAggregation { }
 }
 
 namespace Apex.UserProvisioning
 {
-	public class ConnectedApplication { }
+    public class ConnectedApplication { }
 
     public class UserProvisioningRequest { }
 }
 
 namespace Apex.Search
 {
-	public class KnowledegeSuggestionFilter { }
+    public class KnowledegeSuggestionFilter { }
 }
 
 namespace Apex.Social
 {
-	public class SocialPersona { }
+    public class SocialPersona { }
 
-	public class SocialPost { }
+    public class SocialPost { }
 }

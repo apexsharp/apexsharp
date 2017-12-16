@@ -3,8 +3,9 @@ namespace Apex.Auth
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
+    using global::Apex.Dom;
     using global::Apex.System;
-    using XmlNode = global::System.Object;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Auth_ConnectedAppPlugin.htm#apex_class_Auth_ConnectedAppPlugin

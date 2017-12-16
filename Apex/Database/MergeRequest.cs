@@ -3,6 +3,7 @@ namespace Apex.Database
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
     using global::Apex.Datacloud;
     using global::Apex.System;
 

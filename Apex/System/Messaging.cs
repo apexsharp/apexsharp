@@ -3,6 +3,7 @@ namespace Apex.System
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
     using global::Apex.Messaging;
     using global::Apex.System;
 

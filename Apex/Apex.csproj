@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Compile Remove="DataSource\DataSource.cs" />
+    <Compile Remove="System\Id.cs" />
+    <Compile Remove="System\sObject.cs" />
   </ItemGroup>
 
   <ItemGroup>

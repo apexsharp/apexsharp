@@ -3,6 +3,7 @@ namespace Apex.Auth
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
     using global::Apex.ConnectApi;
     using global::Apex.System;
 

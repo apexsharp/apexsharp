@@ -3,6 +3,7 @@ namespace Apex.Approval
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi.ApexApi;
     using global::Apex.Database;
     using global::Apex.System;
 
