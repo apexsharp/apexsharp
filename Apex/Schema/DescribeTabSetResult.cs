@@ -1,42 +1,149 @@
-using Apex.System;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_schema_describetabsetresult.htm#apex_class_schema_describetabsetresult
+    /// </summary>
     public class DescribeTabSetResult
     {
+        // infrastructure
+        public DescribeTabSetResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeTabSetResult));
+            }
+        }
+
+        // API
         public string getDescription()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetDescription");
+            return Self.getDescription();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetLabel");
+            return Self.getLabel();
         }
 
         public string getLogoUrl()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetLogoUrl");
+            return Self.getLogoUrl();
         }
 
         public string getNamespace()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetNamespace");
+            return Self.getNamespace();
         }
 
-        public string getTabSetId()
+        public List<DescribeTabResult> getTabs()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetTabSetId");
-        }
-
-        public List<Schema.DescribeTabResult> getTabs()
-        {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.GetTabs");
+            return Self.getTabs();
         }
 
         public bool isSelected()
         {
-            throw new global::System.NotImplementedException("DescribeTabSetResult.IsSelected");
+            return Self.isSelected();
+        }
+
+        string description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        string logoUrl
+        {
+            get
+            {
+                return Self.logoUrl;
+            }
+            set
+            {
+                Self.logoUrl = value;
+            }
+        }
+
+        string @namespace
+        {
+            get
+            {
+                return Self.@namespace;
+            }
+            set
+            {
+                Self.@namespace = value;
+            }
+        }
+
+        bool selected
+        {
+            get
+            {
+                return Self.selected;
+            }
+            set
+            {
+                Self.selected = value;
+            }
+        }
+
+        List<DescribeTabResult> tabs
+        {
+            get
+            {
+                return Self.tabs;
+            }
+            set
+            {
+                Self.tabs = value;
+            }
+        }
+
+        string tabSetId
+        {
+            get
+            {
+                return Self.tabSetId;
+            }
+            set
+            {
+                Self.tabSetId = value;
+            }
+        }
+
+        public string getTabSetId()
+        {
+            return Self.getTabSetId();
         }
     }
 }

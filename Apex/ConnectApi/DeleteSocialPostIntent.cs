@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DeleteSocialPostIntent
     {
+        // infrastructure
+        public DeleteSocialPostIntent(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DeleteSocialPostIntent));
+            }
+        }
+
+        // API
+        object externalSocialAccountId
+        {
+            get
+            {
+                return Self.externalSocialAccountId;
+            }
+            set
+            {
+                Self.externalSocialAccountId = value;
+            }
+        }
+
+        object socialPostId
+        {
+            get
+            {
+                return Self.socialPostId;
+            }
+            set
+            {
+                Self.socialPostId = value;
+            }
+        }
+
         public DeleteSocialPostIntent()
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DeleteSocialPostIntent.ToString");
+            return Self.toString();
         }
     }
 }

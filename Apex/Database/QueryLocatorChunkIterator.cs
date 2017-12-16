@@ -1,23 +1,45 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class QueryLocatorChunkIterator
     {
+        // infrastructure
+        public QueryLocatorChunkIterator(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueryLocatorChunkIterator));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("QueryLocatorChunkIterator.Clone");
+            return Self.clone();
         }
 
         public bool hasNext()
         {
-            throw new global::System.NotImplementedException("QueryLocatorChunkIterator.HasNext");
+            return Self.hasNext();
         }
 
         public List<SObject> next()
         {
-            throw new global::System.NotImplementedException("QueryLocatorChunkIterator.Next");
+            return Self.next();
         }
     }
 }

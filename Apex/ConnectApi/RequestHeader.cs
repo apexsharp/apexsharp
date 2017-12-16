@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RequestHeader
     {
+        // infrastructure
+        public RequestHeader(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RequestHeader));
+            }
+        }
+
+        // API
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object value
+        {
+            get
+            {
+                return Self.value;
+            }
+            set
+            {
+                Self.value = value;
+            }
+        }
+
         public RequestHeader()
         {
-            throw new global::System.NotImplementedException("RequestHeader");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RequestHeader.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RequestHeader.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RequestHeader.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RequestHeader.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RequestHeader.ToString");
+            return Self.toString();
         }
     }
 }

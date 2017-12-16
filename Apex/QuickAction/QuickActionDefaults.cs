@@ -1,33 +1,55 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_QuickAction_QuickActionDefaults.htm#apex_class_QuickAction_QuickActionDefaults
+    /// </summary>
     public class QuickActionDefaults
     {
-        public object clone()
+        // infrastructure
+        public QuickActionDefaults(dynamic self)
         {
-            throw new global::System.NotImplementedException("QuickActionDefaults.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuickActionDefaults));
+            }
+        }
+
+        // API
         public string getActionName()
         {
-            throw new global::System.NotImplementedException("QuickActionDefaults.GetActionName");
+            return Self.getActionName();
         }
 
         public string getActionType()
         {
-            throw new global::System.NotImplementedException("QuickActionDefaults.GetActionType");
+            return Self.getActionType();
         }
 
         public ID getContextId()
         {
-            throw new global::System.NotImplementedException("QuickActionDefaults.GetContextId");
+            return Self.getContextId();
         }
 
         public SObject getTargetSObject()
         {
-            throw new global::System.NotImplementedException("QuickActionDefaults.GetTargetSObject");
+            return Self.getTargetSObject();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

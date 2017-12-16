@@ -1,78 +1,100 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_CrossFilter.htm#apex_class_reports_CrossFilter
+    /// </summary>
     public class CrossFilter
     {
+        // infrastructure
+        public CrossFilter(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CrossFilter));
+            }
+        }
+
+        // API
+        public CrossFilter(List<ReportFilter> criteria, bool includesObject, string primaryEntityField, string relatedEntity, string relatedEntityJoinField)
+        {
+            Implementation.Constructor(criteria, includesObject, primaryEntityField, relatedEntity, relatedEntityJoinField);
+        }
+
         public CrossFilter()
         {
-            throw new global::System.NotImplementedException("CrossFilter");
-        }
-
-        public CrossFilter(List<ReportFilter> criteria, bool includesObject, string primaryEntityField,
-            string relatedEntity, string relatedEntityJoinField)
-        {
-            throw new global::System.NotImplementedException("CrossFilter");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("CrossFilter.Clone");
+            Implementation.Constructor();
         }
 
         public List<ReportFilter> getCriteria()
         {
-            throw new global::System.NotImplementedException("CrossFilter.GetCriteria");
+            return Self.getCriteria();
         }
 
         public bool getIncludesObject()
         {
-            throw new global::System.NotImplementedException("CrossFilter.GetIncludesObject");
+            return Self.getIncludesObject();
         }
 
         public string getPrimaryEntityField()
         {
-            throw new global::System.NotImplementedException("CrossFilter.GetPrimaryEntityField");
+            return Self.getPrimaryEntityField();
         }
 
         public string getRelatedEntity()
         {
-            throw new global::System.NotImplementedException("CrossFilter.GetRelatedEntity");
+            return Self.getRelatedEntity();
         }
 
         public string getRelatedEntityJoinField()
         {
-            throw new global::System.NotImplementedException("CrossFilter.GetRelatedEntityJoinField");
+            return Self.getRelatedEntityJoinField();
         }
 
         public void setCriteria(List<ReportFilter> criteria)
         {
-            throw new global::System.NotImplementedException("CrossFilter.SetCriteria");
+            Self.setCriteria(criteria);
         }
 
         public void setIncludesObject(bool includesObject)
         {
-            throw new global::System.NotImplementedException("CrossFilter.SetIncludesObject");
+            Self.setIncludesObject(includesObject);
         }
 
         public void setPrimaryEntityField(string primaryEntityField)
         {
-            throw new global::System.NotImplementedException("CrossFilter.SetPrimaryEntityField");
+            Self.setPrimaryEntityField(primaryEntityField);
         }
 
         public void setRelatedEntity(string relatedEntity)
         {
-            throw new global::System.NotImplementedException("CrossFilter.SetRelatedEntity");
+            Self.setRelatedEntity(relatedEntity);
         }
 
         public void setRelatedEntityJoinField(string relatedEntityJoinField)
         {
-            throw new global::System.NotImplementedException("CrossFilter.SetRelatedEntityJoinField");
+            Self.setRelatedEntityJoinField(relatedEntityJoinField);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CrossFilter.ToString");
+            return Self.toString();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

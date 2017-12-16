@@ -1,76 +1,100 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_groupinginfo.htm#apex_class_reports_groupinginfo
+    /// </summary>
     public class GroupingInfo
     {
-        public GroupingInfo()
+        // infrastructure
+        public GroupingInfo(dynamic self)
         {
-            throw new global::System.NotImplementedException("GroupingInfo");
+            Self = self;
         }
 
-        public GroupingInfo(string name, ColumnSortOrder sortOrder, DateGranularity dateGranularity,
-            string sortAggregate)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("GroupingInfo");
+            get
+            {
+                return Implementor.GetImplementation(typeof(GroupingInfo));
+            }
+        }
+
+        // API
+        public GroupingInfo()
+        {
+            Implementation.Constructor();
+        }
+
+        public GroupingInfo(string name, ColumnSortOrder sortOrder, DateGranularity dateGranularity, string sortAggregate)
+        {
+            Implementation.Constructor(name, sortOrder, dateGranularity, sortAggregate);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.Clone");
+            return Self.clone();
         }
 
         public DateGranularity getDateGranularity()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.GetDateGranularity");
+            return Self.getDateGranularity();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.GetName");
+            return Self.getName();
         }
 
         public string getSortAggregate()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.GetSortAggregate");
+            return Self.getSortAggregate();
         }
 
         public ColumnSortOrder getSortOrder()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.GetSortOrder");
-        }
-
-        public void setDateGranularity(string value)
-        {
-            throw new global::System.NotImplementedException("GroupingInfo.SetDateGranularity");
+            return Self.getSortOrder();
         }
 
         public void setDateGranularity(DateGranularity dateGranularity)
         {
-            throw new global::System.NotImplementedException("GroupingInfo.SetDateGranularity");
+            Self.setDateGranularity(dateGranularity);
+        }
+
+        public void setDateGranularity(string value)
+        {
+            Self.setDateGranularity(value);
         }
 
         public void setName(string name)
         {
-            throw new global::System.NotImplementedException("GroupingInfo.SetName");
+            Self.setName(name);
         }
 
         public void setSortAggregate(string sortAggregate)
         {
-            throw new global::System.NotImplementedException("GroupingInfo.SetSortAggregate");
-        }
-
-        public void setSortOrder(string value)
-        {
-            throw new global::System.NotImplementedException("GroupingInfo.SetSortOrder");
+            Self.setSortAggregate(sortAggregate);
         }
 
         public void setSortOrder(ColumnSortOrder sortOrder)
         {
-            throw new global::System.NotImplementedException("GroupingInfo.SetSortOrder");
+            Self.setSortOrder(sortOrder);
+        }
+
+        public void setSortOrder(string value)
+        {
+            Self.setSortOrder(value);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GroupingInfo.ToString");
+            return Self.toString();
         }
     }
 }

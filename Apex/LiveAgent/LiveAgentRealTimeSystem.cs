@@ -1,33 +1,55 @@
-using Apex.System;
-
 namespace Apex.LiveAgent
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LiveAgentRealTimeSystem
     {
+        // infrastructure
+        public LiveAgentRealTimeSystem(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LiveAgentRealTimeSystem));
+            }
+        }
+
+        // API
         public LiveAgentRealTimeSystem()
         {
-            throw new global::System.NotImplementedException("LiveAgentRealTimeSystem");
+            Implementation.Constructor();
         }
 
         public static void cancelChatRequests(List<string> requests)
         {
-            throw new global::System.NotImplementedException("LiveAgentRealTimeSystem.CancelChatRequests");
+            Implementation.cancelChatRequests(requests);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LiveAgentRealTimeSystem.Clone");
+            return Self.clone();
         }
 
-        public static List<LiveAgent.LiveChatRoutingResult> routeChatRequests(
-            List<LiveAgent.LiveChatRoutingRoute> routes)
+        public static List<LiveChatRoutingResult> routeChatRequests(List<LiveChatRoutingRoute> routes)
         {
-            throw new global::System.NotImplementedException("LiveAgentRealTimeSystem.RouteChatRequests");
+            return Implementation.routeChatRequests(routes);
         }
 
         public static void setButtonStatus(string liveChatButtonId, bool online)
         {
-            throw new global::System.NotImplementedException("LiveAgentRealTimeSystem.SetButtonStatus");
+            Implementation.setButtonStatus(liveChatButtonId, online);
         }
     }
 }

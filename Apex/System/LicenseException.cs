@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LicenseException
     {
+        // infrastructure
+        public LicenseException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LicenseException));
+            }
+        }
+
+        // API
         public LicenseException()
         {
-            throw new global::System.NotImplementedException("LicenseException");
+            Implementation.Constructor();
         }
 
         public LicenseException(Exception param1)
         {
-            throw new global::System.NotImplementedException("LicenseException");
+            Implementation.Constructor(param1);
         }
 
         public LicenseException(string param1)
         {
-            throw new global::System.NotImplementedException("LicenseException");
+            Implementation.Constructor(param1);
         }
 
         public LicenseException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("LicenseException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("LicenseException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("LicenseException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("LicenseException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("LicenseException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("LicenseException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("LicenseException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("LicenseException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

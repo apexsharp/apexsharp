@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RepositoryUserSummary
     {
+        // infrastructure
+        public RepositoryUserSummary(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RepositoryUserSummary));
+            }
+        }
+
+        // API
+        object firstName
+        {
+            get
+            {
+                return Self.firstName;
+            }
+            set
+            {
+                Self.firstName = value;
+            }
+        }
+
+        object lastName
+        {
+            get
+            {
+                return Self.lastName;
+            }
+            set
+            {
+                Self.lastName = value;
+            }
+        }
+
         public RepositoryUserSummary()
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RepositoryUserSummary.ToString");
+            return Self.toString();
         }
     }
 }

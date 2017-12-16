@@ -1,27 +1,25 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FeedFilter
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FeedFilter
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FeedFilter.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FeedFilter.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FeedFilter.Ordinal");
-        }
-
-        public static List<FeedFilter> values()
-        {
-            throw new global::System.NotImplementedException("FeedFilter.Values");
-        }
+        AllQuestions,
+        AuthoredBy,
+        CommunityScoped,
+        QuestionsWithCandidateAnswers,
+        QuestionsWithCandidateAnswersReviewedPublished,
+        Read,
+        SolvedQuestions,
+        UnansweredQuestions,
+        UnansweredQuestionsWithCandidateAnswers,
+        Unread,
+        UnsolvedQuestions
     }
 }

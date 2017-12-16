@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class GroupRecord
     {
+        // infrastructure
+        public GroupRecord(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(GroupRecord));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object record
+        {
+            get
+            {
+                return Self.record;
+            }
+            set
+            {
+                Self.record = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public GroupRecord()
         {
-            throw new global::System.NotImplementedException("GroupRecord");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("GroupRecord.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("GroupRecord.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("GroupRecord.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("GroupRecord.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GroupRecord.ToString");
+            return Self.toString();
         }
     }
 }

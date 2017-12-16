@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RecommendedObject
     {
+        // infrastructure
+        public RecommendedObject(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RecommendedObject));
+            }
+        }
+
+        // API
+        object idOrEnum
+        {
+            get
+            {
+                return Self.idOrEnum;
+            }
+            set
+            {
+                Self.idOrEnum = value;
+            }
+        }
+
+        object motif
+        {
+            get
+            {
+                return Self.motif;
+            }
+            set
+            {
+                Self.motif = value;
+            }
+        }
+
         public RecommendedObject()
         {
-            throw new global::System.NotImplementedException("RecommendedObject");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RecommendedObject.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RecommendedObject.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RecommendedObject.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RecommendedObject.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RecommendedObject.ToString");
+            return Self.toString();
         }
     }
 }

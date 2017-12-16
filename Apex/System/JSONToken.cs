@@ -1,25 +1,27 @@
 namespace Apex.System
 {
-    public class JSONToken
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum JSONToken
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("JSONToken.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("JSONToken.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("JSONToken.Ordinal");
-        }
-
-        public static List<JSONToken> values()
-        {
-            throw new global::System.NotImplementedException("JSONToken.Values");
-        }
+        END_ARRAY,
+        END_OBJECT,
+        FIELD_NAME,
+        NOT_AVAILABLE,
+        START_ARRAY,
+        START_OBJECT,
+        VALUE_EMBEDDED_OBJECT,
+        VALUE_FALSE,
+        VALUE_NULL,
+        VALUE_NUMBER_FLOAT,
+        VALUE_NUMBER_INT,
+        VALUE_STRING,
+        VALUE_TRUE
     }
 }

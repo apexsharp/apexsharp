@@ -1,184 +1,200 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_ChatterUsers_static_methods.htm#apex_ConnectAPI_ChatterUsers_static_methods
+    /// </summary>
     public class ChatterUsers
     {
-        public object clone()
+        // infrastructure
+        public ChatterUsers(dynamic self)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterUsers));
+            }
+        }
+
+        // API
         public static void deletePhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.DeletePhoto");
+            Implementation.deletePhoto(communityId, userId);
         }
 
         public static Subscription follow(string communityId, string userId, string subjectId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.Follow");
+            return Implementation.follow(communityId, userId, subjectId);
         }
 
         public static UserChatterSettings getChatterSettings(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetChatterSettings");
+            return Implementation.getChatterSettings(communityId, userId);
         }
 
         public static FollowerPage getFollowers(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowers");
+            return Implementation.getFollowers(communityId, userId);
         }
 
         public static FollowerPage getFollowers(string communityId, string userId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowers");
+            return Implementation.getFollowers(communityId, userId, pageParam, pageSize);
         }
 
         public static FollowingPage getFollowings(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId);
         }
 
         public static FollowingPage getFollowings(string communityId, string userId, int pageParam)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId, pageParam);
         }
 
         public static FollowingPage getFollowings(string communityId, string userId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId, pageParam, pageSize);
         }
 
         public static FollowingPage getFollowings(string communityId, string userId, string filterType)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId, filterType);
         }
 
         public static FollowingPage getFollowings(string communityId, string userId, string filterType, int pageParam)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId, filterType, pageParam);
         }
 
-        public static FollowingPage getFollowings(string communityId, string userId, string filterType, int pageParam,
-            int pageSize)
+        public static FollowingPage getFollowings(string communityId, string userId, string filterType, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetFollowings");
+            return Implementation.getFollowings(communityId, userId, filterType, pageParam, pageSize);
         }
 
         public static UserGroupPage getGroups(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetGroups");
+            return Implementation.getGroups(communityId, userId);
         }
 
         public static UserGroupPage getGroups(string communityId, string userId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetGroups");
+            return Implementation.getGroups(communityId, userId, pageParam, pageSize);
         }
 
         public static Photo getPhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetPhoto");
+            return Implementation.getPhoto(communityId, userId);
         }
 
         public static Reputation getReputation(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetReputation");
+            return Implementation.getReputation(communityId, userId);
         }
 
-        public static UserDetail getUser(string communityId, string userId)
+        public static UserSummary getUser(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetUser");
+            return Implementation.getUser(communityId, userId);
         }
 
-        public static List<BatchResult> getUserBatch(string communityId, List<string> userIds)
+        public static BatchResult[] getUserBatch(string communityId, List<string> userIds)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetUserBatch");
+            return Implementation.getUserBatch(communityId, userIds);
         }
 
         public static UserPage getUsers(string communityId)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetUsers");
+            return Implementation.getUsers(communityId);
         }
 
         public static UserPage getUsers(string communityId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.GetUsers");
+            return Implementation.getUsers(communityId, pageParam, pageSize);
         }
 
         public static UserGroupPage searchUserGroups(string communityId, string userId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SearchUserGroups");
+            return Implementation.searchUserGroups(communityId, userId, q);
         }
 
-        public static UserGroupPage searchUserGroups(string communityId, string userId, string q, int pageParam,
-            int pageSize)
+        public static UserGroupPage searchUserGroups(string communityId, string userId, string q, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SearchUserGroups");
+            return Implementation.searchUserGroups(communityId, userId, q, pageParam, pageSize);
         }
 
         public static UserPage searchUsers(string communityId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SearchUsers");
+            return Implementation.searchUsers(communityId, q);
         }
 
         public static UserPage searchUsers(string communityId, string q, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SearchUsers");
+            return Implementation.searchUsers(communityId, q, pageParam, pageSize);
         }
 
-        public static UserPage searchUsers(string communityId, string q, string searchContextId, int pageParam,
-            int pageSize)
+        public static UserPage searchUsers(string communityId, string q, string searchContextId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SearchUsers");
-        }
-
-        public static Photo setPhoto(string communityId, string userId, BinaryInput fileUpload)
-        {
-            throw new global::System.NotImplementedException("ChatterUsers.SetPhoto");
+            return Implementation.searchUsers(communityId, q, searchContextId, pageParam, pageSize);
         }
 
         public static Photo setPhoto(string communityId, string userId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SetPhoto");
+            return Implementation.setPhoto(communityId, userId, fileId, versionNumber);
+        }
+
+        public static Photo setPhoto(string communityId, string userId, BinaryInput fileUpload)
+        {
+            return Implementation.setPhoto(communityId, userId, fileUpload);
         }
 
         public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, userId, photo);
         }
 
-        public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo,
-            BinaryInput fileUpload)
+        public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, userId, photo, fileUpload);
         }
 
-        public static void setTestSearchUsers(string communityId, string q, UserPage result)
+        public static UserChatterSettings updateChatterSettings(string communityId, string userId, GroupEmailFrequency defaultGroupEmailFrequency)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.SetTestSearchUsers");
-        }
-
-        public static void setTestSearchUsers(string communityId, string q, int pageParam, int pageSize,
-            UserPage result)
-        {
-            throw new global::System.NotImplementedException("ChatterUsers.SetTestSearchUsers");
-        }
-
-        public static void setTestSearchUsers(string communityId, string q, string searchContextId, int pageParam,
-            int pageSize, UserPage result)
-        {
-            throw new global::System.NotImplementedException("ChatterUsers.SetTestSearchUsers");
-        }
-
-        public static UserChatterSettings updateChatterSettings(string communityId, string userId,
-            GroupEmailFrequency defaultGroupEmailFrequency)
-        {
-            throw new global::System.NotImplementedException("ChatterUsers.UpdateChatterSettings");
+            return Implementation.updateChatterSettings(communityId, userId, defaultGroupEmailFrequency);
         }
 
         public static UserDetail updateUser(string communityId, string userId, UserInput userInput)
         {
-            throw new global::System.NotImplementedException("ChatterUsers.UpdateUser");
+            return Implementation.updateUser(communityId, userId, userInput);
+        }
+
+        public static void setTestSearchUsers(string communityId, string q, UserPage result)
+        {
+            Implementation.setTestSearchUsers(communityId, q, result);
+        }
+
+        public static void setTestSearchUsers(string communityId, string q, int pageParam, int pageSize, UserPage result)
+        {
+            Implementation.setTestSearchUsers(communityId, q, pageParam, pageSize, result);
+        }
+
+        public static void setTestSearchUsers(string communityId, string q, string searchContextId, int pageParam, int pageSize, UserPage result)
+        {
+            Implementation.setTestSearchUsers(communityId, q, searchContextId, pageParam, pageSize, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

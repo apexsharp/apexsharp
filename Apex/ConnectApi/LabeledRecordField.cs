@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LabeledRecordField
     {
+        // infrastructure
+        public LabeledRecordField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LabeledRecordField));
+            }
+        }
+
+        // API
+        object label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        object text
+        {
+            get
+            {
+                return Self.text;
+            }
+            set
+            {
+                Self.text = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("LabeledRecordField.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("LabeledRecordField.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("LabeledRecordField.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("LabeledRecordField.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("LabeledRecordField.ToString");
+            return Self.toString();
         }
     }
 }

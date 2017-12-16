@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ClientInfo
     {
+        // infrastructure
+        public ClientInfo(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ClientInfo));
+            }
+        }
+
+        // API
+        object applicationName
+        {
+            get
+            {
+                return Self.applicationName;
+            }
+            set
+            {
+                Self.applicationName = value;
+            }
+        }
+
+        object applicationUrl
+        {
+            get
+            {
+                return Self.applicationUrl;
+            }
+            set
+            {
+                Self.applicationUrl = value;
+            }
+        }
+
         public ClientInfo()
         {
-            throw new global::System.NotImplementedException("ClientInfo");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ClientInfo.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ClientInfo.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ClientInfo.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ClientInfo.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ClientInfo.ToString");
+            return Self.toString();
         }
     }
 }

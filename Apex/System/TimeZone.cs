@@ -1,35 +1,60 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_timezone.htm#apex_methods_system_timezone
+    /// </summary>
     public class TimeZone
     {
-        public object clone()
+        // infrastructure
+        public TimeZone(dynamic self)
         {
-            throw new global::System.NotImplementedException("TimeZone.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TimeZone));
+            }
+        }
+
+        // API
         public string getDisplayName()
         {
-            throw new global::System.NotImplementedException("TimeZone.GetDisplayName");
+            return Self.getDisplayName();
         }
 
         public string getID()
         {
-            throw new global::System.NotImplementedException("TimeZone.GetID");
+            return Self.getID();
         }
 
-        public int getOffset(DateTime dt)
+        public int getOffset(Datetime date)
         {
-            throw new global::System.NotImplementedException("TimeZone.GetOffset");
+            return Self.getOffset(date);
         }
 
-        public static TimeZone getTimeZone(string id)
+        public static TimeZone getTimeZone(string timeZoneIdString)
         {
-            throw new global::System.NotImplementedException("TimeZone.GetTimeZone");
+            return Implementation.getTimeZone(timeZoneIdString);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TimeZone.ToString");
+            return Self.toString();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

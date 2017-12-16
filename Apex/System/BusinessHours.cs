@@ -1,42 +1,80 @@
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_businesshours.htm#apex_classes_businesshours
+    /// </summary>
     public class BusinessHours
     {
+        // infrastructure
+        public BusinessHours(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BusinessHours));
+            }
+        }
+
+        // API
+        public static Datetime add(string businessHoursId, Datetime startDate, long intervalMilliseconds)
+        {
+            return Implementation.add(businessHoursId, startDate, intervalMilliseconds);
+        }
+
+        public static Datetime addGmt(string businessHoursId, Datetime startDate, long intervalMilliseconds)
+        {
+            return Implementation.addGmt(businessHoursId, startDate, intervalMilliseconds);
+        }
+
+        public static long diff(string businessHoursId, Datetime startDate, Datetime endDate)
+        {
+            return Implementation.diff(businessHoursId, startDate, endDate);
+        }
+
+        public static bool isWithin(string businessHoursId, Datetime targetDate)
+        {
+            return Implementation.isWithin(businessHoursId, targetDate);
+        }
+
+        public static Datetime nextStartDate(string businessHoursId, Datetime targetDate)
+        {
+            return Implementation.nextStartDate(businessHoursId, targetDate);
+        }
+
         public BusinessHours()
         {
-            throw new global::System.NotImplementedException("BusinessHours");
+            Implementation.Constructor();
         }
 
-        public static DateTime add(ID businessHoursId, DateTime startDate, long interval)
+        public static Datetime add(ID businessHoursId, Datetime startDate, long interval)
         {
-            throw new global::System.NotImplementedException("BusinessHours.Add");
+            return Implementation.add(businessHoursId, startDate, interval);
         }
 
-        public static DateTime addGmt(ID businessHoursId, DateTime startDate, long interval)
+        public static Datetime addGmt(ID businessHoursId, Datetime startDate, long interval)
         {
-            throw new global::System.NotImplementedException("BusinessHours.AddGmt");
+            return Implementation.addGmt(businessHoursId, startDate, interval);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BusinessHours.Clone");
+            return Self.clone();
         }
 
-        public static long diff(string businessHoursId, DateTime startDate, DateTime endDate)
+        public static Datetime nextStartDate(ID businessHoursId, Datetime targetDate)
         {
-            throw new global::System.NotImplementedException("BusinessHours.Diff");
-        }
-
-        public static bool isWithin(string businessHoursId, DateTime targetDate)
-        {
-            throw new global::System.NotImplementedException("BusinessHours.IsWithin");
-        }
-
-        public static DateTime nextStartDate(ID businessHoursId, DateTime targetDate)
-        {
-            throw new global::System.NotImplementedException("BusinessHours.NextStartDate");
+            return Implementation.nextStartDate(businessHoursId, targetDate);
         }
     }
 }

@@ -1,22 +1,45 @@
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SandboxContext
     {
+        // infrastructure
+        public SandboxContext(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SandboxContext));
+            }
+        }
+
+        // API
         public ID organizationId()
         {
-            throw new global::System.NotImplementedException("SandboxContext.OrganizationId");
+            return Self.organizationId();
         }
 
         public ID sandboxId()
         {
-            throw new global::System.NotImplementedException("SandboxContext.SandboxId");
+            return Self.sandboxId();
         }
 
         public string sandboxName()
         {
-            throw new global::System.NotImplementedException("SandboxContext.SandboxName");
+            return Self.sandboxName();
         }
     }
 }

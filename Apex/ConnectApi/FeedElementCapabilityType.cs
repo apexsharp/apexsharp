@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FeedElementCapabilityType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FeedElementCapabilityType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FeedElementCapabilityType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FeedElementCapabilityType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FeedElementCapabilityType.Ordinal");
-        }
-
-        public static List<FeedElementCapabilityType> values()
-        {
-            throw new global::System.NotImplementedException("FeedElementCapabilityType.Values");
-        }
+        Approval,
+        AssociatedActions,
+        Banner,
+        Bookmarks,
+        Bundle,
+        Canvas,
+        CaseComment,
+        ChatterLikes,
+        Comments,
+        Content,
+        DashboardComponentSnapshot,
+        DirectMessage,
+        Edit,
+        EmailMessage,
+        EnhancedLink,
+        Extensions,
+        FeedEntityShare,
+        Files,
+        Interactions,
+        Link,
+        MediaReferences,
+        Moderation,
+        Mute,
+        Origin,
+        Pin,
+        Poll,
+        QuestionAndAnswers,
+        ReadBy,
+        Recommendations,
+        RecordSnapshot,
+        SocialPost,
+        Status,
+        Topics,
+        TrackedChanges,
+        UpDownVote,
+        Verified
     }
 }

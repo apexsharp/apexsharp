@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubRepositoryCollection
     {
+        // infrastructure
+        public ContentHubRepositoryCollection(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubRepositoryCollection));
+            }
+        }
+
+        // API
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
+        object repositories
+        {
+            get
+            {
+                return Self.repositories;
+            }
+            set
+            {
+                Self.repositories = value;
+            }
+        }
+
         public ContentHubRepositoryCollection()
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ContentHubRepositoryCollection.ToString");
+            return Self.toString();
         }
     }
 }

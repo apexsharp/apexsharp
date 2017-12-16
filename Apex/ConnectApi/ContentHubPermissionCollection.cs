@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubPermissionCollection
     {
+        // infrastructure
+        public ContentHubPermissionCollection(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubPermissionCollection));
+            }
+        }
+
+        // API
+        object permissions
+        {
+            get
+            {
+                return Self.permissions;
+            }
+            set
+            {
+                Self.permissions = value;
+            }
+        }
+
         public ContentHubPermissionCollection()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionCollection.ToString");
+            return Self.toString();
         }
     }
 }

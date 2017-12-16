@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RecommendationDefinitionPage
     {
+        // infrastructure
+        public RecommendationDefinitionPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RecommendationDefinitionPage));
+            }
+        }
+
+        // API
+        object recommendationDefinitions
+        {
+            get
+            {
+                return Self.recommendationDefinitions;
+            }
+            set
+            {
+                Self.recommendationDefinitions = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public RecommendationDefinitionPage()
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RecommendationDefinitionPage.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,27 +1,33 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FeedType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FeedType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FeedType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FeedType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FeedType.Ordinal");
-        }
-
-        public static List<FeedType> values()
-        {
-            throw new global::System.NotImplementedException("FeedType.Values");
-        }
+        Bookmarks,
+        Company,
+        DirectMessageModeration,
+        DirectMessages,
+        Files,
+        Filter,
+        Groups,
+        Home,
+        Landing,
+        Moderation,
+        Muted,
+        News,
+        PendingReview,
+        People,
+        Record,
+        Streams,
+        To,
+        Topics,
+        UserProfile
     }
 }

@@ -1,25 +1,22 @@
 namespace Apex.System
 {
-    public class RoundingMode
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum RoundingMode
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("RoundingMode.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("RoundingMode.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("RoundingMode.Ordinal");
-        }
-
-        public static List<RoundingMode> values()
-        {
-            throw new global::System.NotImplementedException("RoundingMode.Values");
-        }
+        CEILING,
+        DOWN,
+        FLOOR,
+        HALF_DOWN,
+        HALF_EVEN,
+        HALF_UP,
+        UNNECESSARY,
+        UP
     }
 }

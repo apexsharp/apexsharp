@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedReadStatus
     {
+        // infrastructure
+        public FeedReadStatus(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedReadStatus));
+            }
+        }
+
+        // API
+        object isReadByMe
+        {
+            get
+            {
+                return Self.isReadByMe;
+            }
+            set
+            {
+                Self.isReadByMe = value;
+            }
+        }
+
         public FeedReadStatus()
         {
-            throw new global::System.NotImplementedException("FeedReadStatus");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedReadStatus.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedReadStatus.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedReadStatus.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedReadStatus.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedReadStatus.ToString");
+            return Self.toString();
         }
     }
 }

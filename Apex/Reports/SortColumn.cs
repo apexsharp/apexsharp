@@ -1,50 +1,75 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_SortColumn.htm#apex_class_reports_SortColumn
+    /// </summary>
     public class SortColumn
     {
-        public SortColumn()
+        // infrastructure
+        public SortColumn(dynamic self)
         {
-            throw new global::System.NotImplementedException("SortColumn");
+            Self = self;
         }
 
-        public SortColumn(string sortColumn, ColumnSortOrder sortOrder)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("SortColumn");
+            get
+            {
+                return Implementor.GetImplementation(typeof(SortColumn));
+            }
         }
 
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("SortColumn.Clone");
-        }
-
+        // API
         public string getSortColumn()
         {
-            throw new global::System.NotImplementedException("SortColumn.GetSortColumn");
+            return Self.getSortColumn();
         }
 
         public ColumnSortOrder getSortOrder()
         {
-            throw new global::System.NotImplementedException("SortColumn.GetSortOrder");
+            return Self.getSortOrder();
         }
 
         public void setSortColumn(string sortColumn)
         {
-            throw new global::System.NotImplementedException("SortColumn.SetSortColumn");
-        }
-
-        public void setSortOrder(string value)
-        {
-            throw new global::System.NotImplementedException("SortColumn.SetSortOrder");
+            Self.setSortColumn(sortColumn);
         }
 
         public void setSortOrder(ColumnSortOrder sortOrder)
         {
-            throw new global::System.NotImplementedException("SortColumn.SetSortOrder");
+            Self.setSortOrder(sortOrder);
+        }
+
+        public SortColumn()
+        {
+            Implementation.Constructor();
+        }
+
+        public SortColumn(string sortColumn, ColumnSortOrder sortOrder)
+        {
+            Implementation.Constructor(sortColumn, sortOrder);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public void setSortOrder(string value)
+        {
+            Self.setSortOrder(value);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("SortColumn.ToString");
+            return Self.toString();
         }
     }
 }

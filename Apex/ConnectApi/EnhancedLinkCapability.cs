@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EnhancedLinkCapability
     {
+        // infrastructure
+        public EnhancedLinkCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EnhancedLinkCapability));
+            }
+        }
+
+        // API
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object icon
+        {
+            get
+            {
+                return Self.icon;
+            }
+            set
+            {
+                Self.icon = value;
+            }
+        }
+
+        object linkRecordId
+        {
+            get
+            {
+                return Self.linkRecordId;
+            }
+            set
+            {
+                Self.linkRecordId = value;
+            }
+        }
+
+        object linkUrl
+        {
+            get
+            {
+                return Self.linkUrl;
+            }
+            set
+            {
+                Self.linkUrl = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
         public EnhancedLinkCapability()
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EnhancedLinkCapability.ToString");
+            return Self.toString();
         }
     }
 }

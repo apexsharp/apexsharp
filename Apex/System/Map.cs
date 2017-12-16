@@ -1,122 +1,141 @@
-using System;
-using ApexSharpApi;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
-    public class Map<T, K> : global::System.Collections.Generic.SortedDictionary<T, K>
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm#apex_methods_system_map
+    /// </summary>
+    public class Map<T1, T2>
     {
+        // infrastructure
+        public Map(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Map<T1, T2>));
+            }
+        }
+
+        // API
         public Map()
         {
+            Implementation.Constructor();
         }
 
-        public Map(SoqlQuery<K> soqlQuery)
+        public Map(Map<T1, T2> mapToCopy)
         {
-            // make sure that Map<T, K> is Map<ID, SObject>
-            if (!typeof(SObject).IsAssignableFrom(typeof(K)) ||
-                !typeof(ID).IsAssignableFrom(typeof(T)))
-            {
-                throw new NotSupportedException("Only Map<ID, SObject> can be initialized via SOQL query data.");
-            }
-
-            foreach (object row in soqlQuery.QueryResult.Value)
-            {
-                var sobj = (SObject)row;
-                object key = sobj.Id;
-                this[(T)key] = (K)row;
-            }
+            Implementation.Constructor(mapToCopy);
         }
 
-        public Map(List<K> objectList)
+        public Map(List<SObject> recordList)
         {
-
-        }
-
-        public Map(List<object> param1)
-        {
-            throw new global::System.NotImplementedException("Map");
-        }
-
-        public Map(Map<object, object> param1)
-        {
-            throw new global::System.NotImplementedException("Map");
+            Implementation.Constructor(recordList);
         }
 
         public void clear()
         {
-            throw new global::System.NotImplementedException("Map.Clear");
+            Self.clear();
         }
 
-        public Map<String, String> clone()
+        public Map<object, object> clone()
         {
-            throw new global::System.NotImplementedException("Map.Clone");
+            return Self.clone();
         }
 
         public bool containsKey(object key)
         {
-            throw new global::System.NotImplementedException("Map.ContainsKey");
+            return Self.containsKey(key);
         }
 
-        public Map<String, String> deepClone()
+        public Map<object, object> deepClone()
         {
-            throw new global::System.NotImplementedException("Map.DeepClone");
+            return Self.deepClone();
         }
 
-        public bool equals(object obj)
+        public bool equals(Map<T1, T2> map2)
         {
-            throw new global::System.NotImplementedException("Map.Equals");
+            return Self.equals(map2);
         }
 
-        public K get(T key)
+        public object get(object key)
         {
-            return default(K);
+            return Self.get(key);
         }
 
-        //public Schema.SObjectType GetSObjectType() { throw new global::System.NotImplementedException("Map.GetSObjectType"); }
+        public SObjectType getSObjectType()
+        {
+            return Self.getSObjectType();
+        }
+
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Map.HashCode");
+            return Self.hashCode();
         }
 
         public bool isEmpty()
         {
-            throw new global::System.NotImplementedException("Map.IsEmpty");
+            return Self.isEmpty();
         }
 
-        public Set<T> keySet()
+        public Set<object> keySet()
         {
-            return new Set<T>();
+            return Self.keySet();
         }
 
-        public string put(object key, object value)
+        public object put(object key, object value)
         {
-            //throw new global::System.NotImplementedException("Map.Put");
-            return "";
+            return Self.put(key, value);
         }
 
-        public void putAll(List<T> entries)
+        public void putAll(Map<T1, T2> fromMap)
         {
-            throw new global::System.NotImplementedException("Map.PutAll");
+            Self.putAll(fromMap);
         }
 
-        public void putAll(Map<T, K> entries)
+        public void putAll(SObject[] sobjectArray)
         {
-            throw new global::System.NotImplementedException("Map.PutAll");
+            Self.putAll(sobjectArray);
         }
 
-        public string remove(object key)
+        public object remove(T1 key)
         {
-            throw new global::System.NotImplementedException("Map.Remove");
+            return Self.remove(key);
         }
 
         public int size()
         {
-            throw new global::System.NotImplementedException("Map.Size");
+            return Self.size();
         }
 
-        public List<string> values()
+        public List<object> values()
         {
-            throw new global::System.NotImplementedException("Map.Values");
+            return Self.values();
+        }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public void putAll(List<SObject> entries)
+        {
+            Self.putAll(entries);
+        }
+
+        public string remove(object key)
+        {
+            return Self.remove(key);
         }
     }
 }

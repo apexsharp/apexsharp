@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class HashtagSegmentInput
     {
+        // infrastructure
+        public HashtagSegmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(HashtagSegmentInput));
+            }
+        }
+
+        // API
+        object tag
+        {
+            get
+            {
+                return Self.tag;
+            }
+            set
+            {
+                Self.tag = value;
+            }
+        }
+
         public HashtagSegmentInput()
         {
-            throw new global::System.NotImplementedException("HashtagSegmentInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("HashtagSegmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("HashtagSegmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("HashtagSegmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("HashtagSegmentInput.ToString");
+            return Self.toString();
         }
     }
 }

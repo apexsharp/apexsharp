@@ -1,27 +1,17 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class GroupVisibilityType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum GroupVisibilityType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("GroupVisibilityType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("GroupVisibilityType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("GroupVisibilityType.Ordinal");
-        }
-
-        public static List<GroupVisibilityType> values()
-        {
-            throw new global::System.NotImplementedException("GroupVisibilityType.Values");
-        }
+        PrivateAccess,
+        PublicAccess,
+        UnlistedAccess
     }
 }

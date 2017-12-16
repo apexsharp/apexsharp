@@ -1,57 +1,80 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_BucketFieldValue.htm#apex_class_reports_BucketFieldValue
+    /// </summary>
     public class BucketFieldValue
     {
-        public BucketFieldValue()
+        // infrastructure
+        public BucketFieldValue(dynamic self)
         {
-            throw new global::System.NotImplementedException("BucketFieldValue");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BucketFieldValue));
+            }
+        }
+
+        // API
         public BucketFieldValue(string label, List<string> sourceDimensionValues, double rangeUpperBound)
         {
-            throw new global::System.NotImplementedException("BucketFieldValue");
+            Implementation.Constructor(label, sourceDimensionValues, rangeUpperBound);
         }
 
-        public object clone()
+        public BucketFieldValue()
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.Clone");
+            Implementation.Constructor();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.GetLabel");
+            return Self.getLabel();
         }
 
         public double getRangeUpperBound()
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.GetRangeUpperBound");
+            return Self.getRangeUpperBound();
         }
 
         public List<string> getSourceDimensionValues()
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.GetSourceDimensionValues");
+            return Self.getSourceDimensionValues();
         }
 
         public void setLabel(string label)
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.SetLabel");
+            Self.setLabel(label);
         }
 
         public void setRangeUpperBound(double rangeUpperBound)
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.SetRangeUpperBound");
+            Self.setRangeUpperBound(rangeUpperBound);
         }
 
         public void setSourceDimensionValues(List<string> sourceDimensionValues)
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.SetSourceDimensionValues");
+            Self.setSourceDimensionValues(sourceDimensionValues);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BucketFieldValue.ToString");
+            return Self.toString();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

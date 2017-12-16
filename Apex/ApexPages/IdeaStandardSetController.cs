@@ -1,119 +1,145 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_ideastandardsetcontroller.htm#apex_pages_ideastandardsetcontroller
+    /// </summary>
     public class IdeaStandardSetController
     {
-        public void addFields(List<string> fieldNames)
+        // infrastructure
+        public IdeaStandardSetController(dynamic self)
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.AddFields");
+            Self = self;
         }
 
-        public System.PageReference cancel()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.Cancel");
+            get
+            {
+                return Implementor.GetImplementation(typeof(IdeaStandardSetController));
+            }
+        }
+
+        // API
+        public Idea[] getIdeaList()
+        {
+            return Self.getIdeaList();
+        }
+
+        public void addFields(List<string> fieldNames)
+        {
+            Self.addFields(fieldNames);
+        }
+
+        public PageReference cancel()
+        {
+            return Self.cancel();
         }
 
         public void first()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.First");
+            Self.first();
         }
 
         public bool getCompleteResult()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetCompleteResult");
+            return Self.getCompleteResult();
         }
 
         public string getFilterId()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetFilterId");
+            return Self.getFilterId();
         }
 
         public bool getHasNext()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetHasNext");
+            return Self.getHasNext();
         }
 
         public bool getHasPrevious()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetHasPrevious");
+            return Self.getHasPrevious();
         }
 
-        //public List<Idea> GetIdeaList(){throw new global::System.NotImplementedException("IdeaStandardSetController.GetIdeaList");}
-        public List<System.SelectOption> getListViewOptions()
+        public List<SelectOption> getListViewOptions()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetListViewOptions");
+            return Self.getListViewOptions();
         }
 
         public int getPageNumber()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetPageNumber");
+            return Self.getPageNumber();
         }
 
         public int getPageSize()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetPageSize");
+            return Self.getPageSize();
         }
 
         public SObject getRecord()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetRecord");
+            return Self.getRecord();
         }
 
         public List<SObject> getRecords()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetRecords");
+            return Self.getRecords();
         }
 
         public int getResultSize()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetResultSize");
+            return Self.getResultSize();
         }
 
         public List<SObject> getSelected()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.GetSelected");
+            return Self.getSelected();
         }
 
         public void last()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.Last");
+            Self.last();
         }
 
         public void next()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.Next");
+            Self.next();
         }
 
         public void previous()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.Previous");
+            Self.previous();
         }
 
-        public System.PageReference save()
+        public PageReference save()
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.Save");
+            return Self.save();
         }
 
         public void setFilterId(string filterId)
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.SetFilterId");
+            Self.setFilterId(filterId);
         }
 
         public void setPageNumber(int pageNumber)
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.SetPageNumber");
+            Self.setPageNumber(pageNumber);
         }
 
         public void setPageSize(int pageSize)
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.SetPageSize");
+            Self.setPageSize(pageSize);
         }
 
         public void setSelected(List<SObject> selected)
         {
-            throw new global::System.NotImplementedException("IdeaStandardSetController.SetSelected");
+            Self.setSelected(selected);
         }
     }
 }

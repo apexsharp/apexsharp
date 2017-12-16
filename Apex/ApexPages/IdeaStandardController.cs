@@ -1,49 +1,75 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_ideastandardcontroller.htm#apex_pages_ideastandardcontroller
+    /// </summary>
     public class IdeaStandardController
     {
+        // infrastructure
+        public IdeaStandardController(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(IdeaStandardController));
+            }
+        }
+
+        // API
+        public IdeaComment[] getCommentList()
+        {
+            return Self.getCommentList();
+        }
+
         public void addFields(List<string> fieldNames)
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.AddFields");
+            Self.addFields(fieldNames);
         }
 
-        public System.PageReference cancel()
+        public PageReference cancel()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.Cancel");
+            return Self.cancel();
         }
 
-        public System.PageReference delete()
+        public PageReference delete()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.Delete");
+            return Self.delete();
         }
 
-        public System.PageReference edit()
+        public PageReference edit()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.Edit");
+            return Self.edit();
         }
 
-        //public List<IdeaComment> GetCommentList(){throw new global::System.NotImplementedException("IdeaStandardController.GetCommentList");}
         public string getId()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.GetId");
+            return Self.getId();
         }
 
         public SObject getRecord()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.GetRecord");
+            return Self.getRecord();
         }
 
-        public System.PageReference save()
+        public PageReference save()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.Save");
+            return Self.save();
         }
 
-        public System.PageReference view()
+        public PageReference view()
         {
-            throw new global::System.NotImplementedException("IdeaStandardController.View");
+            return Self.view();
         }
     }
 }

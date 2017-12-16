@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubFieldValueInput
     {
+        // infrastructure
+        public ContentHubFieldValueInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubFieldValueInput));
+            }
+        }
+
+        // API
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object value
+        {
+            get
+            {
+                return Self.value;
+            }
+            set
+            {
+                Self.value = value;
+            }
+        }
+
         public ContentHubFieldValueInput()
         {
-            throw new global::System.NotImplementedException("ContentHubFieldValueInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ContentHubFieldValueInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubFieldValueInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubFieldValueInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ContentHubFieldValueInput.ToString");
+            return Self.toString();
         }
     }
 }

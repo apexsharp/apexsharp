@@ -1,40 +1,65 @@
 namespace Apex.VisualEditor
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_VisualEditor_DataRow.htm#apex_class_VisualEditor_DataRow
+    /// </summary>
     public class DataRow
     {
-        public DataRow(string label, object value)
+        // infrastructure
+        public DataRow(dynamic self)
         {
-            throw new global::System.NotImplementedException("DataRow");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DataRow));
+            }
+        }
+
+        // API
         public DataRow(string label, object value, bool selected)
         {
-            throw new global::System.NotImplementedException("DataRow");
+            Implementation.Constructor(label, value, selected);
+        }
+
+        public DataRow(string label, object value)
+        {
+            Implementation.Constructor(label, value);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DataRow.Clone");
+            return Self.clone();
         }
 
-        public int compareTo(VisualEditor.DataRow o)
+        public int compareTo(DataRow o)
         {
-            throw new global::System.NotImplementedException("DataRow.CompareTo");
+            return Self.compareTo(o);
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DataRow.GetLabel");
+            return Self.getLabel();
         }
 
         public object getValue()
         {
-            throw new global::System.NotImplementedException("DataRow.GetValue");
+            return Self.getValue();
         }
 
         public bool isSelected()
         {
-            throw new global::System.NotImplementedException("DataRow.IsSelected");
+            return Self.isSelected();
         }
     }
 }

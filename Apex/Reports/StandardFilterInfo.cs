@@ -1,25 +1,50 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardFilterInfo.htm#apex_class_reports_StandardFilterInfo
+    /// </summary>
     public class StandardFilterInfo
     {
-        public object clone()
+        // infrastructure
+        public StandardFilterInfo(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardFilterInfo.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardFilterInfo));
+            }
+        }
+
+        // API
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfo.GetLabel");
+            return Self.getLabel();
         }
 
         public StandardFilterType getType()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfo.GetType");
+            return Self.getType();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfo.ToString");
+            return Self.toString();
         }
     }
 }

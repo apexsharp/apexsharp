@@ -1,27 +1,86 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_email_outbound_sendemailerror.htm#apex_classes_email_outbound_sendemailerror
+    /// </summary>
     public class SendEmailError
     {
-        public List<string> getFields()
+        // infrastructure
+        public SendEmailError(dynamic self)
         {
-            throw new global::System.NotImplementedException("SendEmailError.GetFields");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SendEmailError));
+            }
+        }
+
+        // API
+        public string[] getFields()
+        {
+            return Self.getFields();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("SendEmailError.GetMessage");
+            return Self.getMessage();
         }
 
-        public System.StatusCode getStatusCode()
+        public StatusCode getStatusCode()
         {
-            throw new global::System.NotImplementedException("SendEmailError.GetStatusCode");
+            return Self.getStatusCode();
         }
 
         public string getTargetObjectId()
         {
-            throw new global::System.NotImplementedException("SendEmailError.GetTargetObjectId");
+            return Self.getTargetObjectId();
+        }
+
+        string message
+        {
+            get
+            {
+                return Self.message;
+            }
+            set
+            {
+                Self.message = value;
+            }
+        }
+
+        StatusCode statusCode
+        {
+            get
+            {
+                return Self.statusCode;
+            }
+            set
+            {
+                Self.statusCode = value;
+            }
+        }
+
+        string targetObjectId
+        {
+            get
+            {
+                return Self.targetObjectId;
+            }
+            set
+            {
+                Self.targetObjectId = value;
+            }
         }
     }
 }

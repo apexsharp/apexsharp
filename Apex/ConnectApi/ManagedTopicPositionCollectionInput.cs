@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ManagedTopicPositionCollectionInput
     {
+        // infrastructure
+        public ManagedTopicPositionCollectionInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ManagedTopicPositionCollectionInput));
+            }
+        }
+
+        // API
+        object managedTopicPositions
+        {
+            get
+            {
+                return Self.managedTopicPositions;
+            }
+            set
+            {
+                Self.managedTopicPositions = value;
+            }
+        }
+
         public ManagedTopicPositionCollectionInput()
         {
-            throw new global::System.NotImplementedException("ManagedTopicPositionCollectionInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ManagedTopicPositionCollectionInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ManagedTopicPositionCollectionInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ManagedTopicPositionCollectionInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ManagedTopicPositionCollectionInput.ToString");
+            return Self.toString();
         }
     }
 }

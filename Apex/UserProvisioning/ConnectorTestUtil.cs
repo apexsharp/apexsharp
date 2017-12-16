@@ -1,17 +1,45 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ConnectorTestUtil
     {
+        // infrastructure
+        public ConnectorTestUtil(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ConnectorTestUtil));
+            }
+        }
+
+        // API
         public ConnectorTestUtil()
         {
-            throw new global::System.NotImplementedException("ConnectorTestUtil");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ConnectorTestUtil.Clone");
+            return Self.clone();
         }
 
-        //public static ConnectedApplication CreateConnectedApp(string connectedAppName){throw new global::System.NotImplementedException("ConnectorTestUtil.CreateConnectedApp");}
+        public static ConnectedApplication createConnectedApp(string connectedAppName)
+        {
+            return Implementation.createConnectedApp(connectedAppName);
+        }
     }
 }

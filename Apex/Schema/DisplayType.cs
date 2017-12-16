@@ -1,27 +1,41 @@
-using Apex.System;
-
 namespace Apex.Schema
 {
-    public class DisplayType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum DisplayType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("DisplayType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("DisplayType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("DisplayType.Ordinal");
-        }
-
-        public static List<Schema.DisplayType> values()
-        {
-            throw new global::System.NotImplementedException("DisplayType.Values");
-        }
+        ADDRESS,
+        ANYTYPE,
+        BASE64,
+        BOOLEAN,
+        COMBOBOX,
+        COMPLEXVALUE,
+        CURRENCY,
+        DATACATEGORYGROUPREFERENCE,
+        DATE,
+        DATETIME,
+        DOUBLE,
+        EMAIL,
+        ENCRYPTEDSTRING,
+        ID,
+        INTEGER,
+        JSON,
+        LOCATION,
+        MULTIPICKLIST,
+        PERCENT,
+        PHONE,
+        PICKLIST,
+        REFERENCE,
+        SOBJECT,
+        STRING,
+        TEXTAREA,
+        TIME,
+        URL
     }
 }

@@ -1,45 +1,70 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class InvalidParameterValueException
     {
+        // infrastructure
+        public InvalidParameterValueException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidParameterValueException));
+            }
+        }
+
+        // API
         public InvalidParameterValueException(string param1, string param2)
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("InvalidParameterValueException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

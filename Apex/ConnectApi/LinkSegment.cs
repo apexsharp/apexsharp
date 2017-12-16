@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LinkSegment
     {
+        // infrastructure
+        public LinkSegment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LinkSegment));
+            }
+        }
+
+        // API
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public LinkSegment()
         {
-            throw new global::System.NotImplementedException("LinkSegment");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LinkSegment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("LinkSegment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("LinkSegment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("LinkSegment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("LinkSegment.ToString");
+            return Self.toString();
         }
     }
 }

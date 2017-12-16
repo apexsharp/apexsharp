@@ -1,115 +1,140 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_userinfo.htm#apex_methods_system_userinfo
+    /// </summary>
     public class UserInfo
     {
-        public UserInfo()
+        // infrastructure
+        public UserInfo(dynamic self)
         {
-            throw new global::System.NotImplementedException("UserInfo");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("UserInfo.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserInfo));
+            }
         }
 
+        // API
         public static string getDefaultCurrency()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetDefaultCurrency");
+            return Implementation.getDefaultCurrency();
         }
 
         public static string getFirstName()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetFirstName");
+            return Implementation.getFirstName();
         }
 
         public static string getLanguage()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetLanguage");
+            return Implementation.getLanguage();
         }
 
         public static string getLastName()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetLastName");
+            return Implementation.getLastName();
         }
 
         public static string getLocale()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetLocale");
+            return Implementation.getLocale();
         }
 
         public static string getName()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetName");
+            return Implementation.getName();
         }
 
         public static string getOrganizationId()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetOrganizationId");
+            return Implementation.getOrganizationId();
         }
 
         public static string getOrganizationName()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetOrganizationName");
+            return Implementation.getOrganizationName();
         }
 
         public static string getProfileId()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetProfileId");
+            return Implementation.getProfileId();
         }
 
         public static string getSessionId()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetSessionId");
+            return Implementation.getSessionId();
         }
 
         public static TimeZone getTimeZone()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetTimeZone");
+            return Implementation.getTimeZone();
         }
 
         public static string getUiTheme()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUiTheme");
+            return Implementation.getUiTheme();
         }
 
         public static string getUiThemeDisplayed()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUiThemeDisplayed");
+            return Implementation.getUiThemeDisplayed();
         }
 
         public static string getUserEmail()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUserEmail");
+            return Implementation.getUserEmail();
         }
 
         public static string getUserId()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUserId");
+            return Implementation.getUserId();
         }
 
         public static string getUserName()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUserName");
+            return Implementation.getUserName();
         }
 
         public static string getUserRoleId()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUserRoleId");
+            return Implementation.getUserRoleId();
         }
 
         public static string getUserType()
         {
-            throw new global::System.NotImplementedException("UserInfo.GetUserType");
+            return Implementation.getUserType();
         }
 
-        public static bool isCurrentUserLicensed(string namespacePrefix)
+        public static bool isCurrentUserLicensed(string @namespace)
         {
-            throw new global::System.NotImplementedException("UserInfo.IsCurrentUserLicensed");
+            return Implementation.isCurrentUserLicensed(@namespace);
         }
 
         public static bool isMultiCurrencyOrganization()
         {
-            throw new global::System.NotImplementedException("UserInfo.IsMultiCurrencyOrganization");
+            return Implementation.isMultiCurrencyOrganization();
+        }
+
+        public UserInfo()
+        {
+            Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

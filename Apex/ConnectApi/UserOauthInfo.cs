@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserOauthInfo
     {
+        // infrastructure
+        public UserOauthInfo(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserOauthInfo));
+            }
+        }
+
+        // API
+        object availableExternalEmailService
+        {
+            get
+            {
+                return Self.availableExternalEmailService;
+            }
+            set
+            {
+                Self.availableExternalEmailService = value;
+            }
+        }
+
+        object isAuthenticated
+        {
+            get
+            {
+                return Self.isAuthenticated;
+            }
+            set
+            {
+                Self.isAuthenticated = value;
+            }
+        }
+
         public UserOauthInfo()
         {
-            throw new global::System.NotImplementedException("UserOauthInfo");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserOauthInfo.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UserOauthInfo.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UserOauthInfo.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UserOauthInfo.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UserOauthInfo.ToString");
+            return Self.toString();
         }
     }
 }

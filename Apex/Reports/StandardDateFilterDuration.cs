@@ -1,35 +1,60 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardDateFilterDuration.htm#apex_class_reports_StandardDateFilterDuration
+    /// </summary>
     public class StandardDateFilterDuration
     {
-        public object clone()
+        // infrastructure
+        public StandardDateFilterDuration(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardDateFilterDuration));
+            }
+        }
+
+        // API
         public string getEndDate()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.GetEndDate");
+            return Self.getEndDate();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.GetLabel");
+            return Self.getLabel();
         }
 
         public string getStartDate()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.GetStartDate");
+            return Self.getStartDate();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.GetValue");
+            return Self.getValue();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDuration.ToString");
+            return Self.toString();
         }
     }
 }

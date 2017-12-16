@@ -1,61 +1,80 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Zones_static_methods.htm#apex_ConnectAPI_Zones_static_methods
+    /// </summary>
     public class Zones
     {
-        public object clone()
+        // infrastructure
+        public Zones(dynamic self)
         {
-            throw new global::System.NotImplementedException("Zones.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Zones));
+            }
+        }
+
+        // API
         public static Zone getZone(string communityId, string zoneId)
         {
-            throw new global::System.NotImplementedException("Zones.GetZone");
+            return Implementation.getZone(communityId, zoneId);
         }
 
         public static ZonePage getZones(string communityId)
         {
-            throw new global::System.NotImplementedException("Zones.GetZones");
+            return Implementation.getZones(communityId);
         }
 
-        public static ZonePage getZones(string communityId, int pageParam, int pageSize)
+        public static Zone getZones(string communityId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("Zones.GetZones");
+            return Implementation.getZones(communityId, pageParam, pageSize);
         }
 
-        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q,
-            ZoneSearchResultType filter)
+        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter)
         {
-            throw new global::System.NotImplementedException("Zones.SearchInZone");
+            return Implementation.searchInZone(communityId, zoneId, q, filter);
         }
 
-        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q,
-            ZoneSearchResultType filter, string language)
+        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter, string pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("Zones.SearchInZone");
+            return Implementation.searchInZone(communityId, zoneId, q, filter, pageParam, pageSize);
         }
 
-        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q,
-            ZoneSearchResultType filter, string pageParam, int pageSize)
+        public static ZoneSearchPage searchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter, string language)
         {
-            throw new global::System.NotImplementedException("Zones.SearchInZone");
+            return Implementation.searchInZone(communityId, zoneId, q, filter, language);
         }
 
-        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter,
-            ZoneSearchPage result)
+        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter, ZoneSearchPage result)
         {
-            throw new global::System.NotImplementedException("Zones.SetTestSearchInZone");
+            Implementation.setTestSearchInZone(communityId, zoneId, q, filter, result);
         }
 
-        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter,
-            string language, ZoneSearchPage result)
+        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter, string pageParam, int pageSize, ZoneSearchPage result)
         {
-            throw new global::System.NotImplementedException("Zones.SetTestSearchInZone");
+            Implementation.setTestSearchInZone(communityId, zoneId, q, filter, pageParam, pageSize, result);
         }
 
-        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter,
-            string pageParam, int pageSize, ZoneSearchPage result)
+        public static void setTestSearchInZone(string communityId, string zoneId, string q, ZoneSearchResultType filter, string language, ZoneSearchPage result)
         {
-            throw new global::System.NotImplementedException("Zones.SetTestSearchInZone");
+            Implementation.setTestSearchInZone(communityId, zoneId, q, filter, language, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

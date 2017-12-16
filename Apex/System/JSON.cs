@@ -1,70 +1,85 @@
-using SysType = System.Type;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_System_Json.htm#apex_class_System_Json
+    /// </summary>
     public class JSON
     {
-        public JSON()
+        // infrastructure
+        public JSON(dynamic self)
         {
-            throw new global::System.NotImplementedException("JSON");
+            Self = self;
         }
 
-        public static string serialize(object o)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(o);
+            get
+            {
+                return Implementor.GetImplementation(typeof(JSON));
+            }
         }
 
-        public static T deserialize<T>(string jsonString)
+        // API
+        public static JSONGenerator createGenerator(bool prettyPrint)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonString);
-        }
-
-        public static object deserialize(string jsonString, SysType type)
-        {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject(jsonString, type);
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("JSON.Clone");
-        }
-
-        public static JSONGenerator createGenerator(bool pretty)
-        {
-            throw new global::System.NotImplementedException("JSON.CreateGenerator");
+            return Implementation.createGenerator(prettyPrint);
         }
 
         public static JSONParser createParser(string jsonString)
         {
-            throw new global::System.NotImplementedException("JSON.CreateParser");
+            return Implementation.createParser(jsonString);
         }
 
+        public static object deserialize(string jsonString, Type apexType)
+        {
+            return Implementation.deserialize(jsonString, apexType);
+        }
 
         public static object deserializeStrict(string jsonString, Type apexType)
         {
-            throw new global::System.NotImplementedException("JSON.DeserializeStrict");
+            return Implementation.deserializeStrict(jsonString, apexType);
         }
 
         public static object deserializeUntyped(string jsonString)
         {
-            throw new global::System.NotImplementedException("JSON.DeserializeUntyped");
+            return Implementation.deserializeUntyped(jsonString);
         }
 
-
-
-        public static string serialize(object o, bool suppressApexObjectNulls)
+        public static string serialize(object objectToSerialize)
         {
-            throw new global::System.NotImplementedException("JSON.Serialize");
+            return Implementation.serialize(objectToSerialize);
         }
 
-        public static string serializePretty(object o)
+        public static string serialize(object objectToSerialize, bool suppressApexObjectNulls)
         {
-            throw new global::System.NotImplementedException("JSON.SerializePretty");
+            return Implementation.serialize(objectToSerialize, suppressApexObjectNulls);
         }
 
-        public static string serializePretty(object o, bool suppressApexObjectNulls)
+        public static string serializePretty(object objectToSerialize)
         {
-            throw new global::System.NotImplementedException("JSON.SerializePretty");
+            return Implementation.serializePretty(objectToSerialize);
+        }
+
+        public static string serializePretty(object objectToSerialize, bool suppressApexObjectNulls)
+        {
+            return Implementation.serializePretty(objectToSerialize, suppressApexObjectNulls);
+        }
+
+        public JSON()
+        {
+            Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

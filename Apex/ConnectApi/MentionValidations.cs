@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class MentionValidations
     {
+        // infrastructure
+        public MentionValidations(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MentionValidations));
+            }
+        }
+
+        // API
+        object hasErrors
+        {
+            get
+            {
+                return Self.hasErrors;
+            }
+            set
+            {
+                Self.hasErrors = value;
+            }
+        }
+
+        object mentionValidations
+        {
+            get
+            {
+                return Self.mentionValidations;
+            }
+            set
+            {
+                Self.mentionValidations = value;
+            }
+        }
+
         public MentionValidations()
         {
-            throw new global::System.NotImplementedException("MentionValidations");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("MentionValidations.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("MentionValidations.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("MentionValidations.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("MentionValidations.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("MentionValidations.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,144 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserCapabilities
     {
+        // infrastructure
+        public UserCapabilities(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserCapabilities));
+            }
+        }
+
+        // API
+        object canChat
+        {
+            get
+            {
+                return Self.canChat;
+            }
+            set
+            {
+                Self.canChat = value;
+            }
+        }
+
+        object canDirectMessage
+        {
+            get
+            {
+                return Self.canDirectMessage;
+            }
+            set
+            {
+                Self.canDirectMessage = value;
+            }
+        }
+
+        object canEdit
+        {
+            get
+            {
+                return Self.canEdit;
+            }
+            set
+            {
+                Self.canEdit = value;
+            }
+        }
+
+        object canFollow
+        {
+            get
+            {
+                return Self.canFollow;
+            }
+            set
+            {
+                Self.canFollow = value;
+            }
+        }
+
+        object canViewFeed
+        {
+            get
+            {
+                return Self.canViewFeed;
+            }
+            set
+            {
+                Self.canViewFeed = value;
+            }
+        }
+
+        object canViewFullProfile
+        {
+            get
+            {
+                return Self.canViewFullProfile;
+            }
+            set
+            {
+                Self.canViewFullProfile = value;
+            }
+        }
+
+        object isModerator
+        {
+            get
+            {
+                return Self.isModerator;
+            }
+            set
+            {
+                Self.isModerator = value;
+            }
+        }
+
         public UserCapabilities()
         {
-            throw new global::System.NotImplementedException("UserCapabilities");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserCapabilities.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UserCapabilities.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UserCapabilities.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UserCapabilities.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UserCapabilities.ToString");
+            return Self.toString();
         }
     }
 }

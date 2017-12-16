@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DigestPeriod
     {
+        // infrastructure
+        public DigestPeriod(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DigestPeriod));
+            }
+        }
+
+        // API
+        object DailyDigest
+        {
+            get
+            {
+                return Self.DailyDigest;
+            }
+            set
+            {
+                Self.DailyDigest = value;
+            }
+        }
+
+        object WeeklyDigest
+        {
+            get
+            {
+                return Self.WeeklyDigest;
+            }
+            set
+            {
+                Self.WeeklyDigest = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DigestPeriod.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DigestPeriod.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("DigestPeriod.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<DigestPeriod> values()
         {
-            throw new global::System.NotImplementedException("DigestPeriod.Values");
+            return Implementation.values();
         }
     }
 }

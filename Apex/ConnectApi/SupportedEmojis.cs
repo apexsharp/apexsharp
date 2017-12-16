@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SupportedEmojis
     {
+        // infrastructure
+        public SupportedEmojis(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SupportedEmojis));
+            }
+        }
+
+        // API
+        object supportedEmojis
+        {
+            get
+            {
+                return Self.supportedEmojis;
+            }
+            set
+            {
+                Self.supportedEmojis = value;
+            }
+        }
+
         public SupportedEmojis()
         {
-            throw new global::System.NotImplementedException("SupportedEmojis");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("SupportedEmojis.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("SupportedEmojis.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("SupportedEmojis.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("SupportedEmojis.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("SupportedEmojis.ToString");
+            return Self.toString();
         }
     }
 }

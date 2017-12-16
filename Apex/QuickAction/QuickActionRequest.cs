@@ -1,43 +1,101 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_quickaction_quickactionrequest.htm#apex_class_quickaction_quickactionrequest
+    /// </summary>
     public class QuickActionRequest
     {
+        // infrastructure
+        public QuickActionRequest(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuickActionRequest));
+            }
+        }
+
+        // API
         public QuickActionRequest()
         {
-            throw new global::System.NotImplementedException("QuickActionRequest");
+            Implementation.Constructor();
         }
 
         public ID getContextId()
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.GetContextId");
+            return Self.getContextId();
         }
 
         public string getQuickActionName()
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.GetQuickActionName");
+            return Self.getQuickActionName();
         }
 
         public SObject getRecord()
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.GetRecord");
+            return Self.getRecord();
         }
 
-        public void setContextId(ID param1)
+        public void setContextId(ID contextId)
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.SetContextId");
+            Self.setContextId(contextId);
         }
 
-        public void setQuickActionName(string param1)
+        public void setQuickActionName(string name)
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.SetQuickActionName");
+            Self.setQuickActionName(name);
         }
 
-        public void setRecord(SObject param1)
+        public void setRecord(SObject record)
         {
-            throw new global::System.NotImplementedException("QuickActionRequest.SetRecord");
+            Self.setRecord(record);
+        }
+
+        ID contextId
+        {
+            get
+            {
+                return Self.contextId;
+            }
+            set
+            {
+                Self.contextId = value;
+            }
+        }
+
+        string quickActionName
+        {
+            get
+            {
+                return Self.quickActionName;
+            }
+            set
+            {
+                Self.quickActionName = value;
+            }
+        }
+
+        SObject record
+        {
+            get
+            {
+                return Self.record;
+            }
+            set
+            {
+                Self.record = value;
+            }
         }
     }
 }

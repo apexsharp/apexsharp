@@ -1,25 +1,50 @@
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_action.htm#apex_pages_action
+    /// </summary>
     public class Action
     {
-        public Action(string expression)
+        // infrastructure
+        public Action(dynamic self)
         {
-            throw new global::System.NotImplementedException("Action");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Action.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Action));
+            }
+        }
+
+        // API
+        public Action(string action)
+        {
+            Implementation.Constructor(action);
         }
 
         public string getExpression()
         {
-            throw new global::System.NotImplementedException("Action.GetExpression");
+            return Self.getExpression();
         }
 
-        public System.PageReference invoke()
+        public PageReference invoke()
         {
-            throw new global::System.NotImplementedException("Action.Invoke");
+            return Self.invoke();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

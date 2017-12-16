@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BasicTemplateAttachment
     {
+        // infrastructure
+        public BasicTemplateAttachment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BasicTemplateAttachment));
+            }
+        }
+
+        // API
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object icon
+        {
+            get
+            {
+                return Self.icon;
+            }
+            set
+            {
+                Self.icon = value;
+            }
+        }
+
+        object linkRecordId
+        {
+            get
+            {
+                return Self.linkRecordId;
+            }
+            set
+            {
+                Self.linkRecordId = value;
+            }
+        }
+
+        object linkUrl
+        {
+            get
+            {
+                return Self.linkUrl;
+            }
+            set
+            {
+                Self.linkUrl = value;
+            }
+        }
+
+        object subtype
+        {
+            get
+            {
+                return Self.subtype;
+            }
+            set
+            {
+                Self.subtype = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
         public BasicTemplateAttachment()
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BasicTemplateAttachment.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,72 +1,105 @@
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PageReference
     {
+        // infrastructure
+        public PageReference(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PageReference));
+            }
+        }
+
+        // API
         public PageReference(SObject sobject)
         {
-            throw new global::System.NotImplementedException("PageReference");
+            Implementation.Constructor(sobject);
         }
 
         public PageReference(string url)
         {
-            throw new global::System.NotImplementedException("PageReference");
+            Implementation.Constructor(url);
+        }
+
+        public static PageReference forResource(string resourceName)
+        {
+            return Implementation.forResource(resourceName);
+        }
+
+        public static PageReference forResource(string resourceName, string path)
+        {
+            return Implementation.forResource(resourceName, path);
         }
 
         public string getAnchor()
         {
-            throw new global::System.NotImplementedException("PageReference.GetAnchor");
+            return Self.getAnchor();
         }
 
         public Blob getContent()
         {
-            throw new global::System.NotImplementedException("PageReference.GetContent");
+            return Self.getContent();
         }
 
         public Blob getContentAsPDF()
         {
-            throw new global::System.NotImplementedException("PageReference.GetContentAsPDF");
+            return Self.getContentAsPDF();
         }
 
-        public Map<String, Cookie> getCookies()
+        public Map<string, Cookie> getCookies()
         {
-            throw new global::System.NotImplementedException("PageReference.GetCookies");
+            return Self.getCookies();
         }
 
-        public Map<String, String> getHeaders()
+        public Map<string, string> getHeaders()
         {
-            throw new global::System.NotImplementedException("PageReference.GetHeaders");
+            return Self.getHeaders();
         }
 
-        public Map<String, String> getParameters()
+        public Map<string, string> getParameters()
         {
-            throw new global::System.NotImplementedException("PageReference.GetParameters");
+            return Self.getParameters();
         }
 
         public bool getRedirect()
         {
-            throw new global::System.NotImplementedException("PageReference.GetRedirect");
+            return Self.getRedirect();
         }
 
         public string getUrl()
         {
-            throw new global::System.NotImplementedException("PageReference.GetUrl");
+            return Self.getUrl();
         }
 
         public PageReference setAnchor(string anchor)
         {
-            throw new global::System.NotImplementedException("PageReference.SetAnchor");
+            return Self.setAnchor(anchor);
         }
 
         public void setCookies(List<Cookie> cookies)
         {
-            throw new global::System.NotImplementedException("PageReference.SetCookies");
+            Self.setCookies(cookies);
         }
 
         public PageReference setRedirect(bool redirect)
         {
-            throw new global::System.NotImplementedException("PageReference.SetRedirect");
+            return Self.setRedirect(redirect);
         }
     }
 }

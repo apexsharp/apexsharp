@@ -1,25 +1,50 @@
 namespace Apex.Package
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Version
     {
-        public bool isGreaterThan(Package.Version other)
+        // infrastructure
+        public Version(dynamic self)
         {
-            throw new global::System.NotImplementedException("Version.IsGreaterThan");
+            Self = self;
         }
 
-        public bool isGreaterThanOrEqual(Package.Version other)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Version.IsGreaterThanOrEqual");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Version));
+            }
         }
 
-        public bool isLessThan(Package.Version other)
+        // API
+        public bool isGreaterThan(Version other)
         {
-            throw new global::System.NotImplementedException("Version.IsLessThan");
+            return Self.isGreaterThan(other);
         }
 
-        public bool isLessThanOrEqual(Package.Version other)
+        public bool isGreaterThanOrEqual(Version other)
         {
-            throw new global::System.NotImplementedException("Version.IsLessThanOrEqual");
+            return Self.isGreaterThanOrEqual(other);
+        }
+
+        public bool isLessThan(Version other)
+        {
+            return Self.isLessThan(other);
+        }
+
+        public bool isLessThanOrEqual(Version other)
+        {
+            return Self.isLessThanOrEqual(other);
         }
     }
 }

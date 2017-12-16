@@ -1,42 +1,65 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class InvalidFilterException
     {
+        // infrastructure
+        public InvalidFilterException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidFilterException));
+            }
+        }
+
+        // API
         public InvalidFilterException()
         {
-            throw new global::System.NotImplementedException("InvalidFilterException");
+            Implementation.Constructor();
         }
 
         public InvalidFilterException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidFilterException");
+            Implementation.Constructor(param1);
         }
 
         public InvalidFilterException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidFilterException");
+            Implementation.Constructor(param1);
         }
 
         public InvalidFilterException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidFilterException");
+            Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("InvalidFilterException.Clone");
+            return Self.clone();
         }
 
         public List<string> getFilterErrors()
         {
-            throw new global::System.NotImplementedException("InvalidFilterException.GetFilterErrors");
+            return Self.getFilterErrors();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("InvalidFilterException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

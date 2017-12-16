@@ -1,32 +1,55 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportextendedmetadata.htm#apex_class_reports_reportextendedmetadata
+    /// </summary>
     public class ReportExtendedMetadata
     {
+        // infrastructure
+        public ReportExtendedMetadata(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportExtendedMetadata));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportExtendedMetadata.Clone");
+            return Self.clone();
         }
 
-        public Map<String, AggregateColumn> getAggregateColumnInfo()
+        public Map<string, AggregateColumn> getAggregateColumnInfo()
         {
-            throw new global::System.NotImplementedException("ReportExtendedMetadata.GetAggregateColumnInfo");
+            return Self.getAggregateColumnInfo();
         }
 
-        public Map<String, DetailColumn> getDetailColumnInfo()
+        public Map<string, DetailColumn> getDetailColumnInfo()
         {
-            throw new global::System.NotImplementedException("ReportExtendedMetadata.GetDetailColumnInfo");
+            return Self.getDetailColumnInfo();
         }
 
-        public Map<String, GroupingColumn> getGroupingColumnInfo()
+        public Map<string, GroupingColumn> getGroupingColumnInfo()
         {
-            throw new global::System.NotImplementedException("ReportExtendedMetadata.GetGroupingColumnInfo");
+            return Self.getGroupingColumnInfo();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportExtendedMetadata.ToString");
+            return Self.toString();
         }
     }
 }

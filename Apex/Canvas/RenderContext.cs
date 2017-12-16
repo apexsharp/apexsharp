@@ -1,15 +1,17 @@
 namespace Apex.Canvas
 {
-    public class RenderContext
-    {
-        public Canvas.ApplicationContext getApplicationContext()
-        {
-            throw new global::System.NotImplementedException("RenderContext.GetApplicationContext");
-        }
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-        public Canvas.EnvironmentContext getEnvironmentContext()
-        {
-            throw new global::System.NotImplementedException("RenderContext.GetEnvironmentContext");
-        }
+    /// <summary>
+    ///
+    /// </summary>
+    public interface RenderContext
+    {
+        ApplicationContext getApplicationContext();
+
+        EnvironmentContext getEnvironmentContext();
     }
 }

@@ -1,101 +1,145 @@
 namespace Apex.System
 {
-    public class Set<T> : global::System.Collections.Generic.HashSet<T>
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_set.htm#apex_methods_system_set
+    /// </summary>
+    public class Set<T>
     {
+        // infrastructure
+        public Set(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Set<T>));
+            }
+        }
+
+        // API
         public Set()
         {
-            throw new global::System.NotImplementedException("Set");
+            Implementation.Constructor();
         }
 
-        public Set(object param1)
+        ////public Set(object param1)
+        ////{
+        ////    Implementation.Constructor(param1);
+        ////}
+
+        public Set(Set<T> setToCopy)
         {
-            throw new global::System.NotImplementedException("Set");
+            Implementation.Constructor(setToCopy);
         }
 
-        public bool add(object element)
+        public Set(List<T> listToCopy)
         {
-            throw new global::System.NotImplementedException("Set.Add");
+            Implementation.Constructor(listToCopy);
         }
 
-        public bool addAll(List<T> elements)
+        public bool add(object setElement)
         {
-            throw new global::System.NotImplementedException("Set.AddAll");
+            return Self.add(setElement);
         }
 
-        public bool addAll(Set<T> elements)
+        public bool addAll(List<object> fromList)
         {
-            throw new global::System.NotImplementedException("Set.AddAll");
+            return Self.addAll(fromList);
+        }
+
+        public bool addAll(Set<object> fromSet)
+        {
+            return Self.addAll(fromSet);
         }
 
         public void clear()
         {
-            throw new global::System.NotImplementedException("Set.Clear");
+            Self.clear();
         }
 
-        public Set<String> clone()
+        public Set<object> clone()
         {
-            throw new global::System.NotImplementedException("Set.Clone");
+            return Self.clone();
         }
 
-        public bool contains(object element)
+        public bool contains(object setElement)
         {
-            throw new global::System.NotImplementedException("Set.Contains");
+            return Self.contains(setElement);
         }
 
-        public bool containsAll(List<T> elements)
+        public bool containsAll(List<object> listToCompare)
         {
-            throw new global::System.NotImplementedException("Set.ContainsAll");
+            return Self.containsAll(listToCompare);
         }
 
-        public bool containsAll(Set<T> elements)
+        public bool containsAll(Set<object> setToCompare)
         {
-            throw new global::System.NotImplementedException("Set.ContainsAll");
+            return Self.containsAll(setToCompare);
         }
 
-        public bool equals(object obj)
+        public bool equals(Set<object> set2)
         {
-            throw new global::System.NotImplementedException("Set.Equals");
+            return Self.equals(set2);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Set.HashCode");
+            return Self.hashCode();
         }
 
         public bool isEmpty()
         {
-            throw new global::System.NotImplementedException("Set.IsEmpty");
+            return Self.isEmpty();
         }
 
-        //public ListIterator Iterator(){throw new global::System.NotImplementedException("Set.Iterator");}
-        public bool remove(object element)
+        public bool remove(object setElement)
         {
-            throw new global::System.NotImplementedException("Set.Remove");
+            return Self.remove(setElement);
         }
 
-        public bool removeAll(List<T> elements)
+        public bool removeAll(List<object> listOfElementsToRemove)
         {
-            throw new global::System.NotImplementedException("Set.RemoveAll");
+            return Self.removeAll(listOfElementsToRemove);
         }
 
-        public bool removeAll(Set<T> elements)
+        public bool removeAll(Set<object> setOfElementsToRemove)
         {
-            throw new global::System.NotImplementedException("Set.RemoveAll");
+            return Self.removeAll(setOfElementsToRemove);
         }
 
-        public bool retainAll(List<T> elements)
+        public bool retainAll(List<object> listOfElementsToRetain)
         {
-            throw new global::System.NotImplementedException("Set.RetainAll");
+            return Self.retainAll(listOfElementsToRetain);
         }
 
-        public bool retainAll(Set<T> elements)
+        public bool retainAll(Set<object> setOfElementsToRetain)
         {
-            throw new global::System.NotImplementedException("Set.RetainAll");
+            return Self.retainAll(setOfElementsToRetain);
         }
 
         public int size()
         {
-            throw new global::System.NotImplementedException("Set.Size");
+            return Self.size();
+        }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public Iterator iterator()
+        {
+            return Self.iterator();
         }
     }
 }

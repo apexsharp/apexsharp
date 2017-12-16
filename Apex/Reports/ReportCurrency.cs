@@ -1,25 +1,50 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportcurrency.htm#apex_class_reports_reportcurrency
+    /// </summary>
     public class ReportCurrency
     {
+        // infrastructure
+        public ReportCurrency(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportCurrency));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportCurrency.Clone");
+            return Self.clone();
         }
 
         public decimal getAmount()
         {
-            throw new global::System.NotImplementedException("ReportCurrency.GetAmount");
+            return Self.getAmount();
         }
 
         public string getCurrencyCode()
         {
-            throw new global::System.NotImplementedException("ReportCurrency.GetCurrencyCode");
+            return Self.getCurrencyCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportCurrency.ToString");
+            return Self.toString();
         }
     }
 }

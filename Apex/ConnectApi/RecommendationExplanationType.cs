@@ -1,27 +1,41 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class RecommendationExplanationType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum RecommendationExplanationType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("RecommendationExplanationType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("RecommendationExplanationType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("RecommendationExplanationType.Ordinal");
-        }
-
-        public static List<RecommendationExplanationType> values()
-        {
-            throw new global::System.NotImplementedException("RecommendationExplanationType.Values");
-        }
+        ArticleHasRelatedContent,
+        ArticleViewedTogether,
+        ArticleViewedTogetherWithViewers,
+        Custom,
+        FilePopular,
+        FileViewedTogether,
+        FollowedTogetherWithFollowees,
+        GroupMembersFollowed,
+        GroupNew,
+        GroupPopular,
+        ItemViewedTogether,
+        PopularApp,
+        RecordOwned,
+        RecordParentOfFollowed,
+        RecordViewed,
+        TopicFollowedTogether,
+        TopicFollowedTogetherWithFollowees,
+        TopicPopularFollowed,
+        TopicPopularLiked,
+        UserDirectReport,
+        UserFollowedTogether,
+        UserFollowsSameUsers,
+        UserManager,
+        UserNew,
+        UserPeer,
+        UserPopular,
+        UserViewingSameRecords
     }
 }

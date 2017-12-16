@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RepositoryPermissionTypeCollection
     {
+        // infrastructure
+        public RepositoryPermissionTypeCollection(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RepositoryPermissionTypeCollection));
+            }
+        }
+
+        // API
+        object permissionTypes
+        {
+            get
+            {
+                return Self.permissionTypes;
+            }
+            set
+            {
+                Self.permissionTypes = value;
+            }
+        }
+
         public RepositoryPermissionTypeCollection()
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RepositoryPermissionTypeCollection.ToString");
+            return Self.toString();
         }
     }
 }

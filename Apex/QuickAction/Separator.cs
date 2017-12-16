@@ -1,25 +1,50 @@
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Separator
     {
+        // infrastructure
+        public Separator(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Separator));
+            }
+        }
+
+        // API
         public int getDisplayLines()
         {
-            throw new global::System.NotImplementedException("Separator.GetDisplayLines");
+            return Self.getDisplayLines();
         }
 
         public int getTabOrder()
         {
-            throw new global::System.NotImplementedException("Separator.GetTabOrder");
+            return Self.getTabOrder();
         }
 
         public string getType()
         {
-            throw new global::System.NotImplementedException("Separator.GetType");
+            return Self.getType();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("Separator.GetValue");
+            return Self.getValue();
         }
     }
 }

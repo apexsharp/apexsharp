@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DatacloudImport
     {
+        // infrastructure
+        public DatacloudImport(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatacloudImport));
+            }
+        }
+
+        // API
+        object duplicatesSkippedCount
+        {
+            get
+            {
+                return Self.duplicatesSkippedCount;
+            }
+            set
+            {
+                Self.duplicatesSkippedCount = value;
+            }
+        }
+
+        object errorCount
+        {
+            get
+            {
+                return Self.errorCount;
+            }
+            set
+            {
+                Self.errorCount = value;
+            }
+        }
+
+        object errorMessageDescriptionUrl
+        {
+            get
+            {
+                return Self.errorMessageDescriptionUrl;
+            }
+            set
+            {
+                Self.errorMessageDescriptionUrl = value;
+            }
+        }
+
+        object importStatus
+        {
+            get
+            {
+                return Self.importStatus;
+            }
+            set
+            {
+                Self.importStatus = value;
+            }
+        }
+
+        object orgAllowsDuplicates
+        {
+            get
+            {
+                return Self.orgAllowsDuplicates;
+            }
+            set
+            {
+                Self.orgAllowsDuplicates = value;
+            }
+        }
+
+        object successCount
+        {
+            get
+            {
+                return Self.successCount;
+            }
+            set
+            {
+                Self.successCount = value;
+            }
+        }
+
         public DatacloudImport()
         {
-            throw new global::System.NotImplementedException("DatacloudImport");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DatacloudImport.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DatacloudImport.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DatacloudImport.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DatacloudImport.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DatacloudImport.ToString");
+            return Self.toString();
         }
     }
 }

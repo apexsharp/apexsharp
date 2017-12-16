@@ -1,185 +1,210 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_ChatterMessages_static_methods.htm#apex_ConnectAPI_ChatterMessages_static_methods
+    /// </summary>
     public class ChatterMessages
     {
-        public object clone()
+        // infrastructure
+        public ChatterMessages(dynamic self)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.Clone");
+            Self = self;
         }
 
-        public static ChatterConversation getConversation(string communityId, string conversationId)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversation");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterMessages));
+            }
         }
 
-        public static ChatterConversation getConversation(string communityId, string conversationId, string pageParam,
-            int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversation");
-        }
-
+        // API
         public static ChatterConversation getConversation(string conversationId)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversation");
+            return Implementation.getConversation(conversationId);
         }
 
         public static ChatterConversation getConversation(string conversationId, string pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversation");
+            return Implementation.getConversation(conversationId, pageParam, pageSize);
+        }
+
+        public static ChatterConversation getConversation(string communityId, string conversationId)
+        {
+            return Implementation.getConversation(communityId, conversationId);
+        }
+
+        public static ChatterConversation getConversation(string communityId, string conversationId, string pageParam, string pageSize)
+        {
+            return Implementation.getConversation(communityId, conversationId, pageParam, pageSize);
         }
 
         public static ChatterConversationPage getConversations()
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversations");
-        }
-
-        public static ChatterConversationPage getConversations(string communityId)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversations");
-        }
-
-        public static ChatterConversationPage getConversations(string communityId, string pageParam, int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversations");
+            return Implementation.getConversations();
         }
 
         public static ChatterConversationPage getConversations(string pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetConversations");
+            return Implementation.getConversations(pageParam, pageSize);
         }
 
-        public static ChatterMessage getMessage(string communityId, string messageId)
+        public static ChatterConversationPage getConversations(string communityId)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessage");
+            return Implementation.getConversations(communityId);
+        }
+
+        public static ChatterConversationPage getConversations(string communityId, string pageParam, int pageSize)
+        {
+            return Implementation.getConversations(communityId, pageParam, pageSize);
         }
 
         public static ChatterMessage getMessage(string messageId)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessage");
+            return Implementation.getMessage(messageId);
+        }
+
+        public static ChatterMessage getMessage(string communityId, string messageId)
+        {
+            return Implementation.getMessage(communityId, messageId);
         }
 
         public static ChatterMessagePage getMessages()
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessages");
-        }
-
-        public static ChatterMessagePage getMessages(string communityId)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessages");
-        }
-
-        public static ChatterMessagePage getMessages(string communityId, string pageParam, int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessages");
+            return Implementation.getMessages();
         }
 
         public static ChatterMessagePage getMessages(string pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetMessages");
+            return Implementation.getMessages(pageParam, pageSize);
+        }
+
+        public static ChatterMessagePage getMessages(string communityId)
+        {
+            return Implementation.getMessages(communityId);
+        }
+
+        public static ChatterMessagePage getMessages(string communityId, string pageParam, int pageSize)
+        {
+            return Implementation.getMessages(communityId, pageParam, pageSize);
         }
 
         public static UnreadConversationCount getUnreadCount()
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetUnreadCount");
+            return Implementation.getUnreadCount();
         }
 
         public static UnreadConversationCount getUnreadCount(string communityId)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.GetUnreadCount");
-        }
-
-        public static ChatterConversationSummary markConversationRead(string communityId, string conversationId,
-            bool read)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.MarkConversationRead");
+            return Implementation.getUnreadCount(communityId);
         }
 
         public static ChatterConversationSummary markConversationRead(string conversationId, bool read)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.MarkConversationRead");
+            return Implementation.markConversationRead(conversationId, read);
         }
 
-        public static ChatterMessage replyToMessage(string communityId, string text, string inReplyTo)
+        public static ChatterConversationSummary markConversationRead(string communityId, string conversationID, bool read)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.ReplyToMessage");
+            return Implementation.markConversationRead(communityId, conversationID, read);
         }
 
         public static ChatterMessage replyToMessage(string text, string inReplyTo)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.ReplyToMessage");
+            return Implementation.replyToMessage(text, inReplyTo);
         }
 
-        public static ChatterConversation searchConversation(string communityId, string conversationId,
-            string pageParam, int pageSize, string q)
+        public static ChatterMessage replyToMessage(string communityId, string text, string inReplyTo)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversation");
-        }
-
-        public static ChatterConversation searchConversation(string communityId, string conversationId, string q)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversation");
-        }
-
-        public static ChatterConversation searchConversation(string conversationId, string pageParam, int pageSize,
-            string q)
-        {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversation");
+            return Implementation.replyToMessage(communityId, text, inReplyTo);
         }
 
         public static ChatterConversation searchConversation(string conversationId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversation");
+            return Implementation.searchConversation(conversationId, q);
         }
 
-        public static ChatterConversationPage searchConversations(string communityId, string pageParam, int pageSize,
-            string q)
+        public static ChatterConversation searchConversation(string conversationId, string pageParam, int pageSize, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversations");
+            return Implementation.searchConversation(conversationId, pageParam, pageSize, q);
         }
 
-        public static ChatterConversationPage searchConversations(string communityId, string q)
+        public static ChatterConversation searchConversation(string communityId, string conversationId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversations");
+            return Implementation.searchConversation(communityId, conversationId, q);
         }
 
-        public static ChatterConversationPage searchConversations(string pageParam, int pageSize, string q)
+        public static ChatterConversation searchConversation(string communityId, string conversationId, string pageParam, int pageSize, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversations");
+            return Implementation.searchConversation(communityId, conversationId, pageParam, pageSize, q);
         }
 
         public static ChatterConversationPage searchConversations(string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchConversations");
+            return Implementation.searchConversations(q);
         }
 
-        public static ChatterMessagePage searchMessages(string communityId, string pageParam, int pageSize, string q)
+        public static ChatterConversationPage searchConversations(string pageParam, int pageSize, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchMessages");
+            return Implementation.searchConversations(pageParam, pageSize, q);
         }
 
-        public static ChatterMessagePage searchMessages(string communityId, string q)
+        public static ChatterConversationPage searchConversations(string communityId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchMessages");
+            return Implementation.searchConversations(communityId, q);
         }
 
-        public static ChatterMessagePage searchMessages(string pageParam, int pageSize, string q)
+        public static ChatterConversationPage searchConversations(string communityId, string pageParam, int pageSize, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchMessages");
+            return Implementation.searchConversations(communityId, pageParam, pageSize, q);
         }
 
         public static ChatterMessagePage searchMessages(string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SearchMessages");
+            return Implementation.searchMessages(q);
         }
 
-        public static ChatterMessage sendMessage(string communityId, string text, string recipients)
+        public static ChatterMessagePage searchMessages(string pageParam, int pageSize, string q)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SendMessage");
+            return Implementation.searchMessages(pageParam, pageSize, q);
+        }
+
+        public static ChatterMessagePage searchMessages(string communityId, string q)
+        {
+            return Implementation.searchMessages(communityId, q);
+        }
+
+        public static ChatterMessagePage searchMessages(string communityId, string pageParam, int pageSize, string q)
+        {
+            return Implementation.searchMessages(communityId, pageParam, pageSize, q);
         }
 
         public static ChatterMessage sendMessage(string text, string recipients)
         {
-            throw new global::System.NotImplementedException("ChatterMessages.SendMessage");
+            return Implementation.sendMessage(text, recipients);
+        }
+
+        public static ChatterMessage sendMessage(string communityId, string text, string recipients)
+        {
+            return Implementation.sendMessage(communityId, text, recipients);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static ChatterConversation getConversation(string communityId, string conversationId, string pageParam, int pageSize)
+        {
+            return Implementation.getConversation(communityId, conversationId, pageParam, pageSize);
         }
     }
 }

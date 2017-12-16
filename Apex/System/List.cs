@@ -1,151 +1,156 @@
-using Apex.Schema;
-using ApexSharpApi.ApexApi;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using ApexSharpApi;
-
 namespace Apex.System
 {
-    public class List<T> : global::System.Collections.Generic.List<T>
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list
+    /// </summary>
+    public class List<T>
     {
-        private global::System.Collections.Generic.List<T> list;
-        public List()
+        // infrastructure
+        public List(dynamic self)
         {
-            list = new global::System.Collections.Generic.List<T>();
+            Self = self;
         }
 
-        public List(int size)
-        {
-            list = new global::System.Collections.Generic.List<T>(size);
-        }
+        dynamic Self { get; set; }
 
-        public T this[int index]
+        static dynamic Implementation
         {
-            get => list[index];
-            set => list[index] = value;
-        }
-
-        public void add(T item)
-        {
-            list.Add(item);
-        }
-
-        public IEnumerator<T> getEnumerator()
-        {
-            return list.GetEnumerator();
-        }
-
-        public void addAll(List<T> elements)
-        {
-            foreach (var element in elements)
+            get
             {
-                Add(element);
+                return Implementor.GetImplementation(typeof(List<T>));
             }
         }
 
-        public int size()
+        // API
+        public List()
         {
-            return list.Count;
+            Implementation.Constructor();
         }
 
-        public void add(int index, object element)
+        public List(List<T> listToCopy)
         {
-            throw new global::System.NotImplementedException("List.Add");
+            Implementation.Constructor(listToCopy);
         }
 
-        public void addAll(Set<T> elements)
+        public List(Set<T> setToCopy)
         {
-            throw new global::System.NotImplementedException("List.AddAll");
+            Implementation.Constructor(setToCopy);
+        }
+
+        public void add(object listElement)
+        {
+            Self.add(listElement);
+        }
+
+        public void add(int index, object listElement)
+        {
+            Self.add(index, listElement);
+        }
+
+        public void addAll(List<T> fromList)
+        {
+            Self.addAll(fromList);
+        }
+
+        public void addAll(Set<T> fromSet)
+        {
+            Self.addAll(fromSet);
         }
 
         public void clear()
         {
-            list.Clear();
+            Self.clear();
         }
 
-        public List<string> clone()
+        public List<object> clone()
         {
-            throw new global::System.NotImplementedException("List.Clone");
+            return Self.clone();
         }
 
-        public List<string> deepClone()
+        public List<object> deepClone(bool preserveId, bool preserveReadonlyTimestamps, bool preserveAutonumber)
         {
-            throw new global::System.NotImplementedException("List.DeepClone");
+            return Self.deepClone(preserveId, preserveReadonlyTimestamps, preserveAutonumber);
         }
 
-        public List<string> deepClone(bool preserveId)
+        public bool equals(List<T> list2)
         {
-            throw new global::System.NotImplementedException("List.DeepClone");
+            return Self.equals(list2);
         }
 
-        public List<string> deepClone(bool preserveId, bool preserveReadOnlyTimestamps)
+        public object get(int index)
         {
-            throw new global::System.NotImplementedException("List.DeepClone");
-        }
-
-        public List<string> deepClone(bool preserveId, bool preserveReadOnlyTimestamps, bool preserveAutoNumbers)
-        {
-            throw new global::System.NotImplementedException("List.DeepClone");
-        }
-
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("List.Equals");
-        }
-
-        public T get(int index)
-        {
-            return list[index];
+            return Self.get(index);
         }
 
         public SObjectType getSObjectType()
         {
-            throw new global::System.NotImplementedException("List.GetSObjectType");
+            return Self.getSObjectType();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("List.HashCode");
+            return Self.hashCode();
         }
 
         public bool isEmpty()
         {
-            return list.Count == 0;
+            return Self.isEmpty();
         }
 
-        public Iterable iterator()
+        public Iterator iterator()
         {
-            throw new global::System.NotImplementedException("List.Iterator");
+            return Self.iterator();
         }
 
-        public T remove(int index)
+        public object remove(int index)
         {
-            var value = list[index];
-            list.RemoveAt(index);
-            return value;
+            return Self.remove(index);
         }
 
-        public void set(int index, object value)
+        public void set(int index, object listElement)
         {
-            throw new global::System.NotImplementedException("List.Set");
+            Self.set(index, listElement);
+        }
+
+        public int size()
+        {
+            return Self.size();
         }
 
         public void sort()
         {
-            list.Sort();
+            Self.sort();
         }
 
-        public static implicit operator List<T>(SoqlQuery<T> query)
+        public List(int param1)
         {
-            var result = new List<T>();
-            foreach (var row in query.QueryResult.Value)
-            {
-                result.Add(row);
-            }
+            Implementation.Constructor(param1);
+        }
 
-            return result;
+        public List<object> deepClone(bool preserveId, bool preserveReadOnlyTimestamps)
+        {
+            return Self.deepClone(preserveId, preserveReadOnlyTimestamps);
+        }
+
+        public List<object> deepClone(bool preserveId)
+        {
+            return Self.deepClone(preserveId);
+        }
+
+        public List<object> deepClone()
+        {
+            return Self.deepClone();
+        }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
         }
     }
 }

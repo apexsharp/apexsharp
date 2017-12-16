@@ -1,27 +1,26 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class DateGranularity
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum DateGranularity
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("DateGranularity.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("DateGranularity.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("DateGranularity.Ordinal");
-        }
-
-        public static List<DateGranularity> values()
-        {
-            throw new global::System.NotImplementedException("DateGranularity.Values");
-        }
+        DAY,
+        DAY_IN_MONTH,
+        FISCAL_PERIOD,
+        FISCAL_QUARTER,
+        FISCAL_WEEK,
+        FISCAL_YEAR,
+        MONTH,
+        MONTH_IN_YEAR,
+        NONE,
+        QUARTER,
+        WEEK,
+        YEAR
     }
 }

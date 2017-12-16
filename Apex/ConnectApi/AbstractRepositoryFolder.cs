@@ -1,30 +1,91 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class AbstractRepositoryFolder
     {
+        // infrastructure
+        public AbstractRepositoryFolder(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AbstractRepositoryFolder));
+            }
+        }
+
+        // API
+        object externalFolderUrl
+        {
+            get
+            {
+                return Self.externalFolderUrl;
+            }
+            set
+            {
+                Self.externalFolderUrl = value;
+            }
+        }
+
+        object folderItemsUrl
+        {
+            get
+            {
+                return Self.folderItemsUrl;
+            }
+            set
+            {
+                Self.folderItemsUrl = value;
+            }
+        }
+
+        object path
+        {
+            get
+            {
+                return Self.path;
+            }
+            set
+            {
+                Self.path = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("AbstractRepositoryFolder.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("AbstractRepositoryFolder.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("AbstractRepositoryFolder.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("AbstractRepositoryFolder.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("AbstractRepositoryFolder.ToString");
+            return Self.toString();
         }
     }
 }

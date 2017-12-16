@@ -1,20 +1,45 @@
 namespace Apex.Flow
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/flow_interview_class.htm#flow_interview_class
+    /// </summary>
     public class Interview
     {
-        public object clone()
+        // infrastructure
+        public Interview(dynamic self)
         {
-            throw new global::System.NotImplementedException("Interview.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Interview));
+            }
+        }
+
+        // API
         public object getVariableValue(string variableName)
         {
-            throw new global::System.NotImplementedException("Interview.GetVariableValue");
+            return Self.getVariableValue(variableName);
         }
 
         public void start()
         {
-            throw new global::System.NotImplementedException("Interview.Start");
+            Self.start();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

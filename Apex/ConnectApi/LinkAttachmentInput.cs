@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LinkAttachmentInput
     {
+        // infrastructure
+        public LinkAttachmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LinkAttachmentInput));
+            }
+        }
+
+        // API
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
+        object urlName
+        {
+            get
+            {
+                return Self.urlName;
+            }
+            set
+            {
+                Self.urlName = value;
+            }
+        }
+
         public LinkAttachmentInput()
         {
-            throw new global::System.NotImplementedException("LinkAttachmentInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LinkAttachmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("LinkAttachmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("LinkAttachmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("LinkAttachmentInput.ToString");
+            return Self.toString();
         }
     }
 }

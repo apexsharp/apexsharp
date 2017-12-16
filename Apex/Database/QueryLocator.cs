@@ -1,23 +1,45 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database_batch.htm#apex_methods_system_database_batch
+    /// </summary>
     public class QueryLocator
     {
-        public string getQuery()
+        // infrastructure
+        public QueryLocator(dynamic self)
         {
-            throw new global::System.NotImplementedException("QueryLocator.GetQuery");
+            Self = self;
         }
 
-        public Database.QueryLocatorIterator iterator()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("QueryLocator.Iterator");
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueryLocator));
+            }
+        }
+
+        // API
+        public string getQuery()
+        {
+            return Self.getQuery();
+        }
+
+        public QueryLocatorIterator iterator()
+        {
+            return Self.iterator();
         }
 
         public List<SObject> querymore(int num)
         {
-            throw new global::System.NotImplementedException("QueryLocator.Querymore");
+            return Self.querymore(num);
         }
     }
 }

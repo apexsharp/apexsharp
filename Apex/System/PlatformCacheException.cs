@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PlatformCacheException
     {
+        // infrastructure
+        public PlatformCacheException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PlatformCacheException));
+            }
+        }
+
+        // API
         public PlatformCacheException()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException");
+            Implementation.Constructor();
         }
 
         public PlatformCacheException(Exception param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheException");
+            Implementation.Constructor(param1);
         }
 
         public PlatformCacheException(string param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheException");
+            Implementation.Constructor(param1);
         }
 
         public PlatformCacheException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("PlatformCacheException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("PlatformCacheException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

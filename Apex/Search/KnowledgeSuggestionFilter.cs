@@ -1,46 +1,75 @@
 namespace Apex.Search
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Search_KnowledgeSuggestionFilter.htm#apex_class_Search_KnowledgeSuggestionFilter
+    /// </summary>
     public class KnowledgeSuggestionFilter
     {
-        public KnowledgeSuggestionFilter()
+        // infrastructure
+        public KnowledgeSuggestionFilter(dynamic self)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(KnowledgeSuggestionFilter));
+            }
+        }
+
+        // API
         public void addArticleType(string articleType)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.AddArticleType");
+            Self.addArticleType(articleType);
         }
 
         public void addDataCategory(string dataCategoryGroupName, string dataCategoryName)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.AddDataCategory");
+            Self.addDataCategory(dataCategoryGroupName, dataCategoryName);
         }
 
         public void addTopic(string topic)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.AddTopic");
+            Self.addTopic(topic);
         }
 
         public void setChannel(string channelName)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.SetChannel");
+            Self.setChannel(channelName);
         }
 
-        //public void SetDataCategories(Map<T,K> dataCategoryFilters){throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.SetDataCategories");}
+        public void setDataCategories(Map<string, string> dataCategoryFilters)
+        {
+            Self.setDataCategories(dataCategoryFilters);
+        }
+
         public void setLanguage(string localeCode)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.SetLanguage");
+            Self.setLanguage(localeCode);
         }
 
         public void setPublishStatus(string publishStatus)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.SetPublishStatus");
+            Self.setPublishStatus(publishStatus);
         }
 
         public void setValidationStatus(string validationStatus)
         {
-            throw new global::System.NotImplementedException("KnowledgeSuggestionFilter.SetValidationStatus");
+            Self.setValidationStatus(validationStatus);
+        }
+
+        public KnowledgeSuggestionFilter()
+        {
+            Implementation.Constructor();
         }
     }
 }

@@ -1,30 +1,91 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DirectMessageCapabilityInput
     {
+        // infrastructure
+        public DirectMessageCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DirectMessageCapabilityInput));
+            }
+        }
+
+        // API
+        object membersToAdd
+        {
+            get
+            {
+                return Self.membersToAdd;
+            }
+            set
+            {
+                Self.membersToAdd = value;
+            }
+        }
+
+        object membersToRemove
+        {
+            get
+            {
+                return Self.membersToRemove;
+            }
+            set
+            {
+                Self.membersToRemove = value;
+            }
+        }
+
+        object subject
+        {
+            get
+            {
+                return Self.subject;
+            }
+            set
+            {
+                Self.subject = value;
+            }
+        }
+
         public DirectMessageCapabilityInput()
         {
-            throw new global::System.NotImplementedException("DirectMessageCapabilityInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DirectMessageCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DirectMessageCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DirectMessageCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DirectMessageCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

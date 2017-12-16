@@ -1,15 +1,40 @@
-namespace Apex.Networkspulse
+namespace Apex.NetworksPulse
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PulseApexActionsUtil
     {
+        // infrastructure
+        public PulseApexActionsUtil(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PulseApexActionsUtil));
+            }
+        }
+
+        // API
         public PulseApexActionsUtil()
         {
-            throw new global::System.NotImplementedException("PulseApexActionsUtil");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PulseApexActionsUtil.Clone");
+            return Self.clone();
         }
     }
 }

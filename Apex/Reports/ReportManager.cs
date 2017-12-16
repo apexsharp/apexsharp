@@ -1,78 +1,100 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportmanager.htm#apex_class_reports_reportmanager
+    /// </summary>
     public class ReportManager
     {
+        // infrastructure
+        public ReportManager(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportManager));
+            }
+        }
+
+        // API
         public ReportManager()
         {
-            throw new global::System.NotImplementedException("ReportManager");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportManager.Clone");
+            return Self.clone();
         }
 
         public static ReportDescribeResult describeReport(ID reportId)
         {
-            throw new global::System.NotImplementedException("ReportManager.DescribeReport");
+            return Implementation.describeReport(reportId);
         }
 
-        public static Map<String, List<FilterOperator>> getDatatypeFilterOperatorMap()
+        public static Map<string, List<FilterOperator>> getDatatypeFilterOperatorMap()
         {
-            throw new global::System.NotImplementedException("ReportManager.GetDatatypeFilterOperatorMap");
+            return Implementation.getDatatypeFilterOperatorMap();
         }
 
         public static ReportInstance getReportInstance(ID instanceId)
         {
-            throw new global::System.NotImplementedException("ReportManager.GetReportInstance");
+            return Implementation.getReportInstance(instanceId);
         }
 
         public static List<ReportInstance> getReportInstances(ID reportId)
         {
-            throw new global::System.NotImplementedException("ReportManager.GetReportInstances");
-        }
-
-        public static ReportInstance runAsyncReport(ID reportId)
-        {
-            throw new global::System.NotImplementedException("ReportManager.RunAsyncReport");
+            return Implementation.getReportInstances(reportId);
         }
 
         public static ReportInstance runAsyncReport(ID reportId, bool includeDetails)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunAsyncReport");
+            return Implementation.runAsyncReport(reportId, includeDetails);
         }
 
-        public static ReportInstance runAsyncReport(ID reportId, ReportMetadata rmData)
+        public static ReportInstance runAsyncReport(ID reportId)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunAsyncReport");
+            return Implementation.runAsyncReport(reportId);
         }
 
         public static ReportInstance runAsyncReport(ID reportId, ReportMetadata rmData, bool includeDetails)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunAsyncReport");
+            return Implementation.runAsyncReport(reportId, rmData, includeDetails);
         }
 
-        public static ReportResults runReport(ID reportId)
+        public static ReportInstance runAsyncReport(ID reportId, ReportMetadata rmData)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunReport");
+            return Implementation.runAsyncReport(reportId, rmData);
         }
 
         public static ReportResults runReport(ID reportId, bool includeDetails)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunReport");
-        }
-
-        public static ReportResults runReport(ID reportId, ReportMetadata rmData)
-        {
-            throw new global::System.NotImplementedException("ReportManager.RunReport");
+            return Implementation.runReport(reportId, includeDetails);
         }
 
         public static ReportResults runReport(ID reportId, ReportMetadata rmData, bool includeDetails)
         {
-            throw new global::System.NotImplementedException("ReportManager.RunReport");
+            return Implementation.runReport(reportId, rmData, includeDetails);
+        }
+
+        public static ReportResults runReport(ID reportId, ReportMetadata rmData)
+        {
+            return Implementation.runReport(reportId, rmData);
+        }
+
+        public static ReportResults runReport(ID reportId)
+        {
+            return Implementation.runReport(reportId);
         }
     }
 }

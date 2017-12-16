@@ -1,15 +1,40 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ExternalEmailService
     {
+        // infrastructure
+        public ExternalEmailService(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ExternalEmailService));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ExternalEmailService.Clone");
+            return Self.clone();
         }
 
         public static UserOauthInfo getUserOauthInfo(string landingPage)
         {
-            throw new global::System.NotImplementedException("ExternalEmailService.GetUserOauthInfo");
+            return Implementation.getUserOauthInfo(landingPage);
         }
     }
 }

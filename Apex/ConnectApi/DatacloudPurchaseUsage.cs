@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DatacloudPurchaseUsage
     {
+        // infrastructure
+        public DatacloudPurchaseUsage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatacloudPurchaseUsage));
+            }
+        }
+
+        // API
+        object listpoolCreditsAvailable
+        {
+            get
+            {
+                return Self.listpoolCreditsAvailable;
+            }
+            set
+            {
+                Self.listpoolCreditsAvailable = value;
+            }
+        }
+
+        object listpoolCreditsUsed
+        {
+            get
+            {
+                return Self.listpoolCreditsUsed;
+            }
+            set
+            {
+                Self.listpoolCreditsUsed = value;
+            }
+        }
+
+        object monthlyCreditsAvailable
+        {
+            get
+            {
+                return Self.monthlyCreditsAvailable;
+            }
+            set
+            {
+                Self.monthlyCreditsAvailable = value;
+            }
+        }
+
+        object monthlyCreditsUsed
+        {
+            get
+            {
+                return Self.monthlyCreditsUsed;
+            }
+            set
+            {
+                Self.monthlyCreditsUsed = value;
+            }
+        }
+
         public DatacloudPurchaseUsage()
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DatacloudPurchaseUsage.ToString");
+            return Self.toString();
         }
     }
 }

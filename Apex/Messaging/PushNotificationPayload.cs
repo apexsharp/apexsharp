@@ -1,29 +1,50 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PushNotificationPayload
     {
+        // infrastructure
+        public PushNotificationPayload(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PushNotificationPayload));
+            }
+        }
+
+        // API
         public PushNotificationPayload()
         {
-            throw new global::System.NotImplementedException("PushNotificationPayload");
+            Implementation.Constructor();
         }
 
-        public static Map<String, object> apple(string alert, string sound, int badgeCount,
-            Map<String, object> userData)
+        public static Map<string, object> apple(string alert, string sound, int badgeCount, Map<string, object> userData)
         {
-            throw new global::System.NotImplementedException("PushNotificationPayload.Apple");
+            return Implementation.apple(alert, sound, badgeCount, userData);
         }
 
-        public static Map<String, object> apple(string alertBody, string actionLocKey, string locKey,
-            List<string> locArgs, string launchImage, string sound, int badgeCount, Map<String, object> userData)
+        public static Map<string, object> apple(string alertBody, string actionLocKey, string locKey, List<string> locArgs, string launchImage, string sound, int badgeCount, Map<string, object> userData)
         {
-            throw new global::System.NotImplementedException("PushNotificationPayload.Apple");
+            return Implementation.apple(alertBody, actionLocKey, locKey, locArgs, launchImage, sound, badgeCount, userData);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PushNotificationPayload.Clone");
+            return Self.clone();
         }
     }
 }

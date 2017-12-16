@@ -1,35 +1,228 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DatacloudContact
     {
+        // infrastructure
+        public DatacloudContact(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatacloudContact));
+            }
+        }
+
+        // API
+        object address
+        {
+            get
+            {
+                return Self.address;
+            }
+            set
+            {
+                Self.address = value;
+            }
+        }
+
+        object companyId
+        {
+            get
+            {
+                return Self.companyId;
+            }
+            set
+            {
+                Self.companyId = value;
+            }
+        }
+
+        object companyName
+        {
+            get
+            {
+                return Self.companyName;
+            }
+            set
+            {
+                Self.companyName = value;
+            }
+        }
+
+        object contactId
+        {
+            get
+            {
+                return Self.contactId;
+            }
+            set
+            {
+                Self.contactId = value;
+            }
+        }
+
+        object department
+        {
+            get
+            {
+                return Self.department;
+            }
+            set
+            {
+                Self.department = value;
+            }
+        }
+
+        object email
+        {
+            get
+            {
+                return Self.email;
+            }
+            set
+            {
+                Self.email = value;
+            }
+        }
+
+        object firstName
+        {
+            get
+            {
+                return Self.firstName;
+            }
+            set
+            {
+                Self.firstName = value;
+            }
+        }
+
+        object isInactive
+        {
+            get
+            {
+                return Self.isInactive;
+            }
+            set
+            {
+                Self.isInactive = value;
+            }
+        }
+
+        object isOwned
+        {
+            get
+            {
+                return Self.isOwned;
+            }
+            set
+            {
+                Self.isOwned = value;
+            }
+        }
+
+        object lastName
+        {
+            get
+            {
+                return Self.lastName;
+            }
+            set
+            {
+                Self.lastName = value;
+            }
+        }
+
+        object level
+        {
+            get
+            {
+                return Self.level;
+            }
+            set
+            {
+                Self.level = value;
+            }
+        }
+
+        object phoneNumbers
+        {
+            get
+            {
+                return Self.phoneNumbers;
+            }
+            set
+            {
+                Self.phoneNumbers = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
+        object updatedDate
+        {
+            get
+            {
+                return Self.updatedDate;
+            }
+            set
+            {
+                Self.updatedDate = value;
+            }
+        }
+
         public DatacloudContact()
         {
-            throw new global::System.NotImplementedException("DatacloudContact");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DatacloudContact.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DatacloudContact.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DatacloudContact.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DatacloudContact.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DatacloudContact.ToString");
+            return Self.toString();
         }
     }
 }

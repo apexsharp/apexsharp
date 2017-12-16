@@ -1,660 +1,685 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_string.htm#apex_methods_system_string
+    /// </summary>
     public class String
     {
+        // infrastructure
+        public String(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(string));
+            }
+        }
+
+        // API
         public string abbreviate(int maxWidth)
         {
-            throw new global::System.NotImplementedException("String.Abbreviate");
+            return Self.abbreviate(maxWidth);
         }
 
         public string abbreviate(int maxWidth, int offset)
         {
-            throw new global::System.NotImplementedException("String.Abbreviate");
-        }
-
-        public void addError(object msg)
-        {
-            throw new global::System.NotImplementedException("String.AddError");
-        }
-
-        public void addError(object msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("String.AddError");
-        }
-
-        public void addError(string msg)
-        {
-            throw new global::System.NotImplementedException("String.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("String.AddError");
+            return Self.abbreviate(maxWidth, offset);
         }
 
         public string capitalize()
         {
-            throw new global::System.NotImplementedException("String.Capitalize");
+            return Self.capitalize();
         }
 
         public string center(int size)
         {
-            throw new global::System.NotImplementedException("String.Center");
+            return Self.center(size);
         }
 
-        public string center(int size, string padStr)
+        public string center(int size, string paddingString)
         {
-            throw new global::System.NotImplementedException("String.Center");
+            return Self.center(size, paddingString);
         }
 
         public int charAt(int index)
         {
-            throw new global::System.NotImplementedException("String.CharAt");
+            return Self.charAt(index);
         }
 
         public int codePointAt(int index)
         {
-            throw new global::System.NotImplementedException("String.CodePointAt");
+            return Self.codePointAt(index);
         }
 
         public int codePointBefore(int index)
         {
-            throw new global::System.NotImplementedException("String.CodePointBefore");
+            return Self.codePointBefore(index);
         }
 
         public int codePointCount(int beginIndex, int endIndex)
         {
-            throw new global::System.NotImplementedException("String.CodePointCount");
+            return Self.codePointCount(beginIndex, endIndex);
         }
 
-        public int compareTo(string str)
+        public int compareTo(string secondString)
         {
-            throw new global::System.NotImplementedException("String.CompareTo");
+            return Self.compareTo(secondString);
         }
 
-        public bool contains(string str)
+        public bool contains(string substring)
         {
-            throw new global::System.NotImplementedException("String.Contains");
+            return Self.contains(substring);
         }
 
-        public bool containsAny(string validChars)
+        public bool containsAny(string inputString)
         {
-            throw new global::System.NotImplementedException("String.ContainsAny");
+            return Self.containsAny(inputString);
         }
 
-        public bool containsIgnoreCase(string searchStr)
+        public bool containsIgnoreCase(string substring)
         {
-            throw new global::System.NotImplementedException("String.ContainsIgnoreCase");
+            return Self.containsIgnoreCase(substring);
         }
 
-        public bool containsNone(string invalidChars)
+        public bool containsNone(string inputString)
         {
-            throw new global::System.NotImplementedException("String.ContainsNone");
+            return Self.containsNone(inputString);
         }
 
-        public bool containsOnly(string validChars)
+        public bool containsOnly(string inputString)
         {
-            throw new global::System.NotImplementedException("String.ContainsOnly");
+            return Self.containsOnly(inputString);
         }
 
         public bool containsWhitespace()
         {
-            throw new global::System.NotImplementedException("String.ContainsWhitespace");
+            return Self.containsWhitespace();
         }
 
-        public int countMatches(string searchStr)
+        public int countMatches(string substring)
         {
-            throw new global::System.NotImplementedException("String.CountMatches");
+            return Self.countMatches(substring);
         }
 
         public string deleteWhitespace()
         {
-            throw new global::System.NotImplementedException("String.DeleteWhitespace");
+            return Self.deleteWhitespace();
         }
 
-        public string difference(string other)
+        public string difference(string secondString)
         {
-            throw new global::System.NotImplementedException("String.Difference");
+            return Self.difference(secondString);
         }
 
-        public bool endsWith(string str)
+        public bool endsWith(string suffix)
         {
-            throw new global::System.NotImplementedException("String.EndsWith");
+            return Self.endsWith(suffix);
         }
 
         public bool endsWithIgnoreCase(string suffix)
         {
-            throw new global::System.NotImplementedException("String.EndsWithIgnoreCase");
+            return Self.endsWithIgnoreCase(suffix);
         }
 
-        public bool equals(object other)
+        public bool equals(string secondString)
         {
-            throw new global::System.NotImplementedException("String.Equals");
+            return Self.equals(secondString);
         }
 
-        public bool equalsIgnoreCase(string other)
+        public bool equals(object stringOrId)
         {
-            throw new global::System.NotImplementedException("String.EqualsIgnoreCase");
+            return Self.equals(stringOrId);
+        }
+
+        public bool equalsIgnoreCase(string secondString)
+        {
+            return Self.equalsIgnoreCase(secondString);
         }
 
         public string escapeCsv()
         {
-            throw new global::System.NotImplementedException("String.EscapeCsv");
+            return Self.escapeCsv();
         }
 
         public string escapeEcmaScript()
         {
-            throw new global::System.NotImplementedException("String.EscapeEcmaScript");
+            return Self.escapeEcmaScript();
         }
 
         public string escapeHtml3()
         {
-            throw new global::System.NotImplementedException("String.EscapeHtml3");
+            return Self.escapeHtml3();
         }
 
         public string escapeHtml4()
         {
-            throw new global::System.NotImplementedException("String.EscapeHtml4");
+            return Self.escapeHtml4();
         }
 
         public string escapeJava()
         {
-            throw new global::System.NotImplementedException("String.EscapeJava");
+            return Self.escapeJava();
         }
 
-        public static string escapeSingleQuotes(string s)
+        public static string escapeSingleQuotes(string stringToEscape)
         {
-            throw new global::System.NotImplementedException("String.EscapeSingleQuotes");
+            return Implementation.escapeSingleQuotes(stringToEscape);
         }
 
         public string escapeUnicode()
         {
-            throw new global::System.NotImplementedException("String.EscapeUnicode");
+            return Self.escapeUnicode();
         }
 
         public string escapeXml()
         {
-            throw new global::System.NotImplementedException("String.EscapeXml");
+            return Self.escapeXml();
         }
 
-        public static string format(string format, List<string> arguments)
+        public static string format(string stringToFormat, List<string> formattingArguments)
         {
-            throw new global::System.NotImplementedException("String.Format");
+            return Implementation.format(stringToFormat, formattingArguments);
         }
 
-        public static string fromCharArray(List<Integer> charArr)
+        public static string fromCharArray(List<int> charArray)
         {
-            throw new global::System.NotImplementedException("String.FromCharArray");
+            return Implementation.fromCharArray(charArray);
         }
 
-        public List<Integer> getChars()
+        public List<int> getChars()
         {
-            throw new global::System.NotImplementedException("String.GetChars");
+            return Self.getChars();
         }
 
         public static string getCommonPrefix(List<string> strings)
         {
-            throw new global::System.NotImplementedException("String.GetCommonPrefix");
+            return Implementation.getCommonPrefix(strings);
         }
 
-        public int getLevenshteinDistance(string other)
+        public int getLevenshteinDistance(string stringToCompare)
         {
-            throw new global::System.NotImplementedException("String.GetLevenshteinDistance");
+            return Self.getLevenshteinDistance(stringToCompare);
         }
 
-        public int getLevenshteinDistance(string other, int threshold)
+        public int getLevenshteinDistance(string stringToCompare, int threshold)
         {
-            throw new global::System.NotImplementedException("String.GetLevenshteinDistance");
+            return Self.getLevenshteinDistance(stringToCompare, threshold);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("String.HashCode");
+            return Self.hashCode();
         }
 
-        public int indexOf(string str)
+        public int indexOf(string substring)
         {
-            throw new global::System.NotImplementedException("String.IndexOf");
+            return Self.indexOf(substring);
         }
 
-        public int indexOf(string str, int startPos)
+        public int indexOf(string substring, int index)
         {
-            throw new global::System.NotImplementedException("String.IndexOf");
+            return Self.indexOf(substring, index);
         }
 
-        public int indexOfAny(string searchChars)
+        public int indexOfAny(string substring)
         {
-            throw new global::System.NotImplementedException("String.IndexOfAny");
+            return Self.indexOfAny(substring);
         }
 
-        public int indexOfAnyBut(string searchChars)
+        public int indexOfAnyBut(string substring)
         {
-            throw new global::System.NotImplementedException("String.IndexOfAnyBut");
+            return Self.indexOfAnyBut(substring);
         }
 
-        public int indexOfChar(int ch)
+        public int indexOfChar(int character)
         {
-            throw new global::System.NotImplementedException("String.IndexOfChar");
+            return Self.indexOfChar(character);
         }
 
-        public int indexOfChar(int ch, int fromIndex)
+        public int indexOfChar(int character, int startIndex)
         {
-            throw new global::System.NotImplementedException("String.IndexOfChar");
+            return Self.indexOfChar(character, startIndex);
         }
 
-        public int indexOfDifference(string other)
+        public int indexOfDifference(string stringToCompare)
         {
-            throw new global::System.NotImplementedException("String.IndexOfDifference");
+            return Self.indexOfDifference(stringToCompare);
         }
 
-        public int indexOfIgnoreCase(string searchStr)
+        public int indexOfIgnoreCase(string substring)
         {
-            throw new global::System.NotImplementedException("String.IndexOfIgnoreCase");
+            return Self.indexOfIgnoreCase(substring);
         }
 
-        public int indexOfIgnoreCase(string searchStr, int startPos)
+        public int indexOfIgnoreCase(string substring, int startPosition)
         {
-            throw new global::System.NotImplementedException("String.IndexOfIgnoreCase");
+            return Self.indexOfIgnoreCase(substring, startPosition);
         }
 
         public bool isAllLowerCase()
         {
-            throw new global::System.NotImplementedException("String.IsAllLowerCase");
+            return Self.isAllLowerCase();
         }
 
         public bool isAllUpperCase()
         {
-            throw new global::System.NotImplementedException("String.IsAllUpperCase");
+            return Self.isAllUpperCase();
         }
 
         public bool isAlpha()
         {
-            throw new global::System.NotImplementedException("String.IsAlpha");
+            return Self.isAlpha();
         }
 
         public bool isAlphaSpace()
         {
-            throw new global::System.NotImplementedException("String.IsAlphaSpace");
+            return Self.isAlphaSpace();
         }
 
         public bool isAlphanumeric()
         {
-            throw new global::System.NotImplementedException("String.IsAlphanumeric");
+            return Self.isAlphanumeric();
         }
 
         public bool isAlphanumericSpace()
         {
-            throw new global::System.NotImplementedException("String.IsAlphanumericSpace");
+            return Self.isAlphanumericSpace();
         }
 
         public bool isAsciiPrintable()
         {
-            throw new global::System.NotImplementedException("String.IsAsciiPrintable");
+            return Self.isAsciiPrintable();
         }
 
-        public static bool isBlank(string str)
+        public static bool isBlank(string inputString)
         {
-            throw new global::System.NotImplementedException("String.IsBlank");
+            return Implementation.isBlank(inputString);
         }
 
-        public static bool isEmpty(string str)
+        public static bool isEmpty(string inputString)
         {
-            throw new global::System.NotImplementedException("String.IsEmpty");
+            return Implementation.isEmpty(inputString);
         }
 
-        public static bool isNotBlank(string str)
+        public static bool isNotBlank(string inputString)
         {
-            throw new global::System.NotImplementedException("String.IsNotBlank");
+            return Implementation.isNotBlank(inputString);
         }
 
-        public static bool isNotEmpty(string str)
+        public static bool isNotEmpty(string inputString)
         {
-            throw new global::System.NotImplementedException("String.IsNotEmpty");
+            return Implementation.isNotEmpty(inputString);
         }
 
         public bool isNumeric()
         {
-            throw new global::System.NotImplementedException("String.IsNumeric");
+            return Self.isNumeric();
         }
 
         public bool isNumericSpace()
         {
-            throw new global::System.NotImplementedException("String.IsNumericSpace");
+            return Self.isNumericSpace();
         }
 
         public bool isWhitespace()
         {
-            throw new global::System.NotImplementedException("String.IsWhitespace");
+            return Self.isWhitespace();
         }
 
         public static string join(object iterableObj, string separator)
         {
-            throw new global::System.NotImplementedException("String.Join");
+            return Implementation.join(iterableObj, separator);
         }
 
-        public int lastIndexOf(string searchStr, int startPos)
+        public int lastIndexOf(string substring)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOf");
+            return Self.lastIndexOf(substring);
         }
 
-        public int lastIndexOf(string str)
+        public int lastIndexOf(string substring, int endPosition)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOf");
+            return Self.lastIndexOf(substring, endPosition);
         }
 
-        public int lastIndexOfChar(int ch)
+        public int lastIndexOfChar(int character)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOfChar");
+            return Self.lastIndexOfChar(character);
         }
 
-        public int lastIndexOfChar(int ch, int fromIndex)
+        public int lastIndexOfChar(int character, int endIndex)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOfChar");
+            return Self.lastIndexOfChar(character, endIndex);
         }
 
-        public int lastIndexOfIgnoreCase(string searchStr)
+        public int lastIndexOfIgnoreCase(string substring)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOfIgnoreCase");
+            return Self.lastIndexOfIgnoreCase(substring);
         }
 
-        public int lastIndexOfIgnoreCase(string searchStr, int startPos)
+        public int lastIndexOfIgnoreCase(string substring, int endPosition)
         {
-            throw new global::System.NotImplementedException("String.LastIndexOfIgnoreCase");
+            return Self.lastIndexOfIgnoreCase(substring, endPosition);
         }
 
-        public string left(int len)
+        public string left(int length)
         {
-            throw new global::System.NotImplementedException("String.Left");
+            return Self.left(length);
         }
 
-        public string leftPad(int len)
+        public string leftPad(int length)
         {
-            throw new global::System.NotImplementedException("String.LeftPad");
+            return Self.leftPad(length);
         }
 
-        public string leftPad(int len, string padStr)
+        public string leftPad(int length, string padStr)
         {
-            throw new global::System.NotImplementedException("String.LeftPad");
+            return Self.leftPad(length, padStr);
         }
 
         public int length()
         {
-            throw new global::System.NotImplementedException("String.Length");
+            return Self.length();
         }
 
-        public string mid(int pos, int len)
+        public string mid(int startIndex, int length)
         {
-            throw new global::System.NotImplementedException("String.Mid");
+            return Self.mid(startIndex, length);
         }
 
         public string normalizeSpace()
         {
-            throw new global::System.NotImplementedException("String.NormalizeSpace");
+            return Self.normalizeSpace();
         }
 
         public int offsetByCodePoints(int index, int codePointOffset)
         {
-            throw new global::System.NotImplementedException("String.OffsetByCodePoints");
+            return Self.offsetByCodePoints(index, codePointOffset);
         }
 
-        public string overlay(string overlay, int start, int end)
+        public string remove(string substring)
         {
-            throw new global::System.NotImplementedException("String.Overlay");
+            return Self.remove(substring);
         }
 
-        public string remove(string toRemove)
+        public string removeEnd(string substring)
         {
-            throw new global::System.NotImplementedException("String.Remove");
+            return Self.removeEnd(substring);
         }
 
-        public string removeEnd(string toRemove)
+        public string removeEndIgnoreCase(string substring)
         {
-            throw new global::System.NotImplementedException("String.RemoveEnd");
+            return Self.removeEndIgnoreCase(substring);
         }
 
-        public string removeEndIgnoreCase(string toRemove)
+        public string removeStart(string substring)
         {
-            throw new global::System.NotImplementedException("String.RemoveEndIgnoreCase");
+            return Self.removeStart(substring);
         }
 
-        public string removeStart(string toRemove)
+        public string removeStartIgnoreCase(string substring)
         {
-            throw new global::System.NotImplementedException("String.RemoveStart");
+            return Self.removeStartIgnoreCase(substring);
         }
 
-        public string removeStartIgnoreCase(string toRemove)
+        public string repeat(int numberOfTimes)
         {
-            throw new global::System.NotImplementedException("String.RemoveStartIgnoreCase");
+            return Self.repeat(numberOfTimes);
         }
 
-        public string repeat(int numTimes)
+        public string repeat(string separator, int numberOfTimes)
         {
-            throw new global::System.NotImplementedException("String.Repeat");
-        }
-
-        public string repeat(string separator, int numTimes)
-        {
-            throw new global::System.NotImplementedException("String.Repeat");
+            return Self.repeat(separator, numberOfTimes);
         }
 
         public string replace(string target, string replacement)
         {
-            throw new global::System.NotImplementedException("String.Replace");
+            return Self.replace(target, replacement);
         }
 
-        public string replaceAll(string regex, string replacement)
+        public string replaceAll(string regExp, string replacement)
         {
-            throw new global::System.NotImplementedException("String.ReplaceAll");
+            return Self.replaceAll(regExp, replacement);
         }
 
-        public string replaceFirst(string regex, string replacement)
+        public string replaceFirst(string regExp, string replacement)
         {
-            throw new global::System.NotImplementedException("String.ReplaceFirst");
+            return Self.replaceFirst(regExp, replacement);
         }
 
         public string reverse()
         {
-            throw new global::System.NotImplementedException("String.Reverse");
+            return Self.reverse();
         }
 
-        public string right(int len)
+        public string right(int length)
         {
-            throw new global::System.NotImplementedException("String.Right");
+            return Self.right(length);
         }
 
-        public string rightPad(int len)
+        public string rightPad(int length)
         {
-            throw new global::System.NotImplementedException("String.RightPad");
+            return Self.rightPad(length);
         }
 
-        public string rightPad(int len, string padStr)
+        public string rightPad(int length, string padStr)
         {
-            throw new global::System.NotImplementedException("String.RightPad");
+            return Self.rightPad(length, padStr);
         }
 
-        public List<string> split(string regex)
+        public string[] split(string regExp)
         {
-            throw new global::System.NotImplementedException("String.Split");
+            return Self.split(regExp);
         }
 
-        public List<string> split(string regex, int limit)
+        public string[] split(string regExp, int limit)
         {
-            throw new global::System.NotImplementedException("String.Split");
+            return Self.split(regExp, limit);
         }
 
         public List<string> splitByCharacterType()
         {
-            throw new global::System.NotImplementedException("String.SplitByCharacterType");
+            return Self.splitByCharacterType();
         }
 
         public List<string> splitByCharacterTypeCamelCase()
         {
-            throw new global::System.NotImplementedException("String.SplitByCharacterTypeCamelCase");
+            return Self.splitByCharacterTypeCamelCase();
         }
 
-        public bool startsWith(string str)
+        public bool startsWith(string prefix)
         {
-            throw new global::System.NotImplementedException("String.StartsWith");
+            return Self.startsWith(prefix);
         }
 
         public bool startsWithIgnoreCase(string prefix)
         {
-            throw new global::System.NotImplementedException("String.StartsWithIgnoreCase");
+            return Self.startsWithIgnoreCase(prefix);
         }
 
-        public string stripHtmlTags()
+        public string stripHtmlTags(string htmlInput)
         {
-            throw new global::System.NotImplementedException("String.StripHtmlTags");
+            return Self.stripHtmlTags(htmlInput);
         }
 
-        public string substring(int start)
+        public string substring(int startIndex)
         {
-            throw new global::System.NotImplementedException("String.Substring");
+            return Self.substring(startIndex);
         }
 
-        public string substring(int start, int end)
+        public string substring(int startIndex, int endIndex)
         {
-            throw new global::System.NotImplementedException("String.Substring");
+            return Self.substring(startIndex, endIndex);
         }
 
         public string substringAfter(string separator)
         {
-            throw new global::System.NotImplementedException("String.SubstringAfter");
+            return Self.substringAfter(separator);
         }
 
         public string substringAfterLast(string separator)
         {
-            throw new global::System.NotImplementedException("String.SubstringAfterLast");
+            return Self.substringAfterLast(separator);
         }
 
         public string substringBefore(string separator)
         {
-            throw new global::System.NotImplementedException("String.SubstringBefore");
+            return Self.substringBefore(separator);
         }
 
         public string substringBeforeLast(string separator)
         {
-            throw new global::System.NotImplementedException("String.SubstringBeforeLast");
-        }
-
-        public string substringBetween(string open, string close)
-        {
-            throw new global::System.NotImplementedException("String.SubstringBetween");
+            return Self.substringBeforeLast(separator);
         }
 
         public string substringBetween(string tag)
         {
-            throw new global::System.NotImplementedException("String.SubstringBetween");
+            return Self.substringBetween(tag);
+        }
+
+        public string substringBetween(string open, string close)
+        {
+            return Self.substringBetween(open, close);
         }
 
         public string swapCase()
         {
-            throw new global::System.NotImplementedException("String.SwapCase");
+            return Self.swapCase();
         }
 
         public string toLowerCase()
         {
-            throw new global::System.NotImplementedException("String.ToLowerCase");
+            return Self.toLowerCase();
         }
 
         public string toLowerCase(string locale)
         {
-            throw new global::System.NotImplementedException("String.ToLowerCase");
+            return Self.toLowerCase(locale);
         }
 
         public string toUpperCase()
         {
-            throw new global::System.NotImplementedException("String.ToUpperCase");
+            return Self.toUpperCase();
         }
 
         public string toUpperCase(string locale)
         {
-            throw new global::System.NotImplementedException("String.ToUpperCase");
+            return Self.toUpperCase(locale);
         }
 
         public string trim()
         {
-            throw new global::System.NotImplementedException("String.Trim");
+            return Self.trim();
         }
 
         public string uncapitalize()
         {
-            throw new global::System.NotImplementedException("String.Uncapitalize");
+            return Self.uncapitalize();
         }
 
         public string unescapeCsv()
         {
-            throw new global::System.NotImplementedException("String.UnescapeCsv");
+            return Self.unescapeCsv();
         }
 
         public string unescapeEcmaScript()
         {
-            throw new global::System.NotImplementedException("String.UnescapeEcmaScript");
+            return Self.unescapeEcmaScript();
         }
 
         public string unescapeHtml3()
         {
-            throw new global::System.NotImplementedException("String.UnescapeHtml3");
+            return Self.unescapeHtml3();
         }
 
         public string unescapeHtml4()
         {
-            throw new global::System.NotImplementedException("String.UnescapeHtml4");
+            return Self.unescapeHtml4();
         }
 
         public string unescapeJava()
         {
-            throw new global::System.NotImplementedException("String.UnescapeJava");
+            return Self.unescapeJava();
         }
 
         public string unescapeUnicode()
         {
-            throw new global::System.NotImplementedException("String.UnescapeUnicode");
+            return Self.unescapeUnicode();
         }
 
         public string unescapeXml()
         {
-            throw new global::System.NotImplementedException("String.UnescapeXml");
+            return Self.unescapeXml();
         }
 
-        public static string valueOf(Date d)
+        public static string valueOf(Date dateToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(dateToConvert);
         }
 
-        public static string valueOf(DateTime dt)
+        public static string valueOf(Datetime datetimeToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(datetimeToConvert);
         }
 
-        public static string valueOf(decimal d)
+        public static string valueOf(decimal decimalToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(decimalToConvert);
         }
 
-        public static string valueOf(double d)
+        public static string valueOf(double doubleToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(doubleToConvert);
         }
 
-        public static string valueOf(int i)
+        public static string valueOf(int integerToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(integerToConvert);
         }
 
-        public static string valueOf(long l)
+        public static string valueOf(long longToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(longToConvert);
         }
 
-        public static string valueOf(object o)
+        public static string valueOf(object toConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOf");
+            return Implementation.valueOf(toConvert);
         }
 
-        public static string valueOfGmt(DateTime dt)
+        public static string valueOfGmt(Datetime datetimeToConvert)
         {
-            throw new global::System.NotImplementedException("String.ValueOfGmt");
+            return Implementation.valueOfGmt(datetimeToConvert);
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
+        }
+
+        public string overlay(string overlay, int start, int end)
+        {
+            return Self.overlay(overlay, start, end);
+        }
+
+        public string stripHtmlTags()
+        {
+            return Self.stripHtmlTags();
         }
     }
 }

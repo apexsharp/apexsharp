@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ActionLinkTemplateBindingInput
     {
+        // infrastructure
+        public ActionLinkTemplateBindingInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ActionLinkTemplateBindingInput));
+            }
+        }
+
+        // API
+        object key
+        {
+            get
+            {
+                return Self.key;
+            }
+            set
+            {
+                Self.key = value;
+            }
+        }
+
+        object value
+        {
+            get
+            {
+                return Self.value;
+            }
+            set
+            {
+                Self.value = value;
+            }
+        }
+
         public ActionLinkTemplateBindingInput()
         {
-            throw new global::System.NotImplementedException("ActionLinkTemplateBindingInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ActionLinkTemplateBindingInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ActionLinkTemplateBindingInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ActionLinkTemplateBindingInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ActionLinkTemplateBindingInput.ToString");
+            return Self.toString();
         }
     }
 }

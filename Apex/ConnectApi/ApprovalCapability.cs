@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ApprovalCapability
     {
+        // infrastructure
+        public ApprovalCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ApprovalCapability));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object postTemplateFields
+        {
+            get
+            {
+                return Self.postTemplateFields;
+            }
+            set
+            {
+                Self.postTemplateFields = value;
+            }
+        }
+
+        object processInstanceStepId
+        {
+            get
+            {
+                return Self.processInstanceStepId;
+            }
+            set
+            {
+                Self.processInstanceStepId = value;
+            }
+        }
+
+        object status
+        {
+            get
+            {
+                return Self.status;
+            }
+            set
+            {
+                Self.status = value;
+            }
+        }
+
         public ApprovalCapability()
         {
-            throw new global::System.NotImplementedException("ApprovalCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ApprovalCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ApprovalCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ApprovalCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ApprovalCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ApprovalCapability.ToString");
+            return Self.toString();
         }
     }
 }

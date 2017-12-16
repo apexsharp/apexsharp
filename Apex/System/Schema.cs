@@ -1,48 +1,81 @@
-using Apex.Schema;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_schema.htm#apex_methods_system_schema
+    /// </summary>
     public class Schema
     {
-        public static List<DescribeDataCategoryGroupStructureResult> describeDataCategoryGroupStructures(
-            List<DataCategoryGroupSobjectTypePair> pairs, bool topCategoriesOnly)
+        // infrastructure
+        public Schema(dynamic self)
         {
-            throw new global::System.NotImplementedException("Schema.DescribeDataCategoryGroupStructures");
+            Self = self;
         }
 
-        public static List<DescribeDataCategoryGroupResult> describeDataCategoryGroups(List<string> sobjects)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Schema.DescribeDataCategoryGroups");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Schema));
+            }
         }
 
-        public static List<DescribeSObjectResult> describeSObjects(List<string> types)
+        // API
+        public static Map<string, SObjectType> getGlobalDescribe()
         {
-            throw new global::System.NotImplementedException("Schema.DescribeSObjects");
+            return Implementation.getGlobalDescribe();
+        }
+
+        public static List<DescribeDataCategoryGroupResult> describeDataCategoryGroups(string sObjectNames)
+        {
+            return Implementation.describeDataCategoryGroups(sObjectNames);
+        }
+
+        public static List<DescribeSObjectResult> describeSObjects(List<string> sObjectTypes)
+        {
+            return Implementation.describeSObjects(sObjectTypes);
         }
 
         public static List<DescribeTabSetResult> describeTabs()
         {
-            throw new global::System.NotImplementedException("Schema.DescribeTabs");
+            return Implementation.describeTabs();
         }
 
-        public static Map<String, SObjectType> getAppDescribe(string appName)
+        public static List<DescribeDataCategoryGroupStructureResult> GroupStructures(List<DataCategoryGroupSobjectTypePair> pairs)
         {
-            throw new global::System.NotImplementedException("Schema.GetAppDescribe");
+            return Implementation.GroupStructures(pairs);
         }
 
-        public static Map<String, SObjectType> getGlobalDescribe()
+        public static List<DescribeDataCategoryGroupResult> describeDataCategoryGroups(List<string> sobjects)
         {
-            throw new global::System.NotImplementedException("Schema.GetGlobalDescribe");
+            return Implementation.describeDataCategoryGroups(sobjects);
         }
 
-        public static Map<String, SObjectType> getModuleDescribe()
+        public static List<DescribeDataCategoryGroupStructureResult> describeDataCategoryGroupStructures(List<DataCategoryGroupSobjectTypePair> pairs, bool topCategoriesOnly)
         {
-            throw new global::System.NotImplementedException("Schema.GetModuleDescribe");
+            return Implementation.describeDataCategoryGroupStructures(pairs, topCategoriesOnly);
         }
 
-        public static Map<String, SObjectType> getModuleDescribe(string moduleName)
+        public static Map<string, SObjectType> getAppDescribe(string appName)
         {
-            throw new global::System.NotImplementedException("Schema.GetModuleDescribe");
+            return Implementation.getAppDescribe(appName);
+        }
+
+        public static Map<string, SObjectType> getModuleDescribe()
+        {
+            return Implementation.getModuleDescribe();
+        }
+
+        public static Map<string, SObjectType> getModuleDescribe(string moduleName)
+        {
+            return Implementation.getModuleDescribe(moduleName);
         }
     }
 }

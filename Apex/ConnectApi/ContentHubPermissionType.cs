@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubPermissionType
     {
+        // infrastructure
+        public ContentHubPermissionType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubPermissionType));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
         public ContentHubPermissionType()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ContentHubPermissionType.ToString");
+            return Self.toString();
         }
     }
 }

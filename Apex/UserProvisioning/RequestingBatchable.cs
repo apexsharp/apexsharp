@@ -1,29 +1,56 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RequestingBatchable
     {
+        // infrastructure
+        public RequestingBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RequestingBatchable));
+            }
+        }
+
+        // API
         public RequestingBatchable(List<SObject> newRows)
         {
-            throw new global::System.NotImplementedException("RequestingBatchable");
+            Implementation.Constructor(newRows);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RequestingBatchable.Clone");
+            return Self.clone();
         }
 
-        //public void Execute(Database.BatchableContext BC,List<UserProvisioningRequest> scope){throw new global::System.NotImplementedException("RequestingBatchable.Execute");}
-        public void finish(Database.BatchableContext BC)
+        public void execute(BatchableContext BC, List<UserProvisioningRequest> scope)
         {
-            throw new global::System.NotImplementedException("RequestingBatchable.Finish");
+            Self.execute(BC, scope);
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public void finish(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("RequestingBatchable.Start");
+            Self.finish(BC);
+        }
+
+        public QueryLocator start(BatchableContext BC)
+        {
+            return Self.start(BC);
         }
     }
 }

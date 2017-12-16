@@ -1,25 +1,50 @@
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Test
     {
+        // infrastructure
+        public Test(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Test));
+            }
+        }
+
+        // API
         public Test()
         {
-            throw new global::System.NotImplementedException("Test");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Test.Clone");
+            return Self.clone();
         }
 
         public static Answers getDefaultAnswersForApexTesting(string templateDevName)
         {
-            throw new global::System.NotImplementedException("Test.GetDefaultAnswersForApexTesting");
+            return Implementation.getDefaultAnswersForApexTesting(templateDevName);
         }
 
         public static WaveTemplateInfo getWaveTemplateInfoForApexTesting(string templateDevName)
         {
-            throw new global::System.NotImplementedException("Test.GetWaveTemplateInfoForApexTesting");
+            return Implementation.getWaveTemplateInfoForApexTesting(templateDevName);
         }
     }
 }

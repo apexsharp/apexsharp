@@ -1,27 +1,86 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ActivitySharingType
     {
+        // infrastructure
+        public ActivitySharingType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ActivitySharingType));
+            }
+        }
+
+        // API
+        object Everyone
+        {
+            get
+            {
+                return Self.Everyone;
+            }
+            set
+            {
+                Self.Everyone = value;
+            }
+        }
+
+        object MyGroups
+        {
+            get
+            {
+                return Self.MyGroups;
+            }
+            set
+            {
+                Self.MyGroups = value;
+            }
+        }
+
+        object OnlyMe
+        {
+            get
+            {
+                return Self.OnlyMe;
+            }
+            set
+            {
+                Self.OnlyMe = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ActivitySharingType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ActivitySharingType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("ActivitySharingType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<ActivitySharingType> values()
         {
-            throw new global::System.NotImplementedException("ActivitySharingType.Values");
+            return Implementation.values();
         }
     }
 }

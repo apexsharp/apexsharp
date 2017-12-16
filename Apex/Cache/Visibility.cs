@@ -1,27 +1,16 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class Visibility
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_enum_cache_Visibility.htm
+    /// </summary>
+    public enum Visibility
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("Visibility.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("Visibility.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("Visibility.Ordinal");
-        }
-
-        public static List<Cache.Visibility> values()
-        {
-            throw new global::System.NotImplementedException("Visibility.Values");
-        }
+        ALL,
+        NAMESPACE
     }
 }

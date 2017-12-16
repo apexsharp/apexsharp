@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Reputation
     {
+        // infrastructure
+        public Reputation(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Reputation));
+            }
+        }
+
+        // API
+        object reputationLevel
+        {
+            get
+            {
+                return Self.reputationLevel;
+            }
+            set
+            {
+                Self.reputationLevel = value;
+            }
+        }
+
+        object reputationPoints
+        {
+            get
+            {
+                return Self.reputationPoints;
+            }
+            set
+            {
+                Self.reputationPoints = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public Reputation()
         {
-            throw new global::System.NotImplementedException("Reputation");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Reputation.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Reputation.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Reputation.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Reputation.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Reputation.ToString");
+            return Self.toString();
         }
     }
 }

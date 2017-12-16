@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EntityLinkSegment
     {
+        // infrastructure
+        public EntityLinkSegment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EntityLinkSegment));
+            }
+        }
+
+        // API
+        object motif
+        {
+            get
+            {
+                return Self.motif;
+            }
+            set
+            {
+                Self.motif = value;
+            }
+        }
+
+        object reference
+        {
+            get
+            {
+                return Self.reference;
+            }
+            set
+            {
+                Self.reference = value;
+            }
+        }
+
         public EntityLinkSegment()
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EntityLinkSegment.ToString");
+            return Self.toString();
         }
     }
 }

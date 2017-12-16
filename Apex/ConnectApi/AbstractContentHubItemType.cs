@@ -1,30 +1,127 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class AbstractContentHubItemType
     {
+        // infrastructure
+        public AbstractContentHubItemType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AbstractContentHubItemType));
+            }
+        }
+
+        // API
+        object contentStreamSupport
+        {
+            get
+            {
+                return Self.contentStreamSupport;
+            }
+            set
+            {
+                Self.contentStreamSupport = value;
+            }
+        }
+
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object displayName
+        {
+            get
+            {
+                return Self.displayName;
+            }
+            set
+            {
+                Self.displayName = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object isVersionable
+        {
+            get
+            {
+                return Self.isVersionable;
+            }
+            set
+            {
+                Self.isVersionable = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("AbstractContentHubItemType.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("AbstractContentHubItemType.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("AbstractContentHubItemType.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("AbstractContentHubItemType.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("AbstractContentHubItemType.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,28 +1,63 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Schema_SObjectType.htm#apex_class_Schema_SObjectType
+    /// </summary>
     public class SObjectType
     {
-        public Schema.DescribeSObjectResult getDescribe()
+        // infrastructure
+        public SObjectType(dynamic self)
         {
-            throw new global::System.NotImplementedException("SObjectType.GetDescribe");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SObjectType));
+            }
+        }
+
+        // API
+        public DescribeSObjectResult getDescribe()
+        {
+            return Self.getDescribe();
         }
 
         public SObject newSObject()
         {
-            throw new global::System.NotImplementedException("SObjectType.NewSObject");
+            return Self.newSObject();
         }
 
         public SObject newSObject(ID id)
         {
-            throw new global::System.NotImplementedException("SObjectType.NewSObject");
+            return Self.newSObject(id);
         }
 
-        public SObject newSObject(ID recordTypeId, bool loadDefaultValues)
+        public SObject newSObject(ID recordTypeId, bool loadDefaults)
         {
-            throw new global::System.NotImplementedException("SObjectType.NewSObject");
+            return Self.newSObject(recordTypeId, loadDefaults);
+        }
+
+        [Final]
+        static SObjectTypeFields fields
+        {
+            get
+            {
+                return Implementation.fields;
+            }
+            set
+            {
+                Implementation.fields = value;
+            }
         }
     }
 }

@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ManagedSocialAccounts
     {
+        // infrastructure
+        public ManagedSocialAccounts(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ManagedSocialAccounts));
+            }
+        }
+
+        // API
+        object managedSocialAccounts
+        {
+            get
+            {
+                return Self.managedSocialAccounts;
+            }
+            set
+            {
+                Self.managedSocialAccounts = value;
+            }
+        }
+
         public ManagedSocialAccounts()
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ManagedSocialAccounts.ToString");
+            return Self.toString();
         }
     }
 }

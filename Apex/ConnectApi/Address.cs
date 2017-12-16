@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Address
     {
+        // infrastructure
+        public Address(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Address));
+            }
+        }
+
+        // API
+        object city
+        {
+            get
+            {
+                return Self.city;
+            }
+            set
+            {
+                Self.city = value;
+            }
+        }
+
+        object country
+        {
+            get
+            {
+                return Self.country;
+            }
+            set
+            {
+                Self.country = value;
+            }
+        }
+
+        object formattedAddress
+        {
+            get
+            {
+                return Self.formattedAddress;
+            }
+            set
+            {
+                Self.formattedAddress = value;
+            }
+        }
+
+        object state
+        {
+            get
+            {
+                return Self.state;
+            }
+            set
+            {
+                Self.state = value;
+            }
+        }
+
+        object street
+        {
+            get
+            {
+                return Self.street;
+            }
+            set
+            {
+                Self.street = value;
+            }
+        }
+
+        object zip
+        {
+            get
+            {
+                return Self.zip;
+            }
+            set
+            {
+                Self.zip = value;
+            }
+        }
+
         public Address()
         {
-            throw new global::System.NotImplementedException("Address");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Address.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Address.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Address.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Address.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Address.ToString");
+            return Self.toString();
         }
     }
 }

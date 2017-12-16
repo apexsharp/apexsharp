@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Actor
     {
+        // infrastructure
+        public Actor(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Actor));
+            }
+        }
+
+        // API
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object type
+        {
+            get
+            {
+                return Self.type;
+            }
+            set
+            {
+                Self.type = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("Actor.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Actor.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Actor.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Actor.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Actor.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,40 +1,65 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_sites_cookie.htm#apex_classes_sites_cookie
+    /// </summary>
     public class Cookie
     {
+        // infrastructure
+        public Cookie(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Cookie));
+            }
+        }
+
+        // API
         public Cookie(string name, string value, string path, int maxAge, bool isSecure)
         {
-            throw new global::System.NotImplementedException("Cookie");
+            Implementation.Constructor(name, value, path, maxAge, isSecure);
         }
 
         public string getDomain()
         {
-            throw new global::System.NotImplementedException("Cookie.GetDomain");
+            return Self.getDomain();
         }
 
         public int getMaxAge()
         {
-            throw new global::System.NotImplementedException("Cookie.GetMaxAge");
+            return Self.getMaxAge();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("Cookie.GetName");
+            return Self.getName();
         }
 
         public string getPath()
         {
-            throw new global::System.NotImplementedException("Cookie.GetPath");
+            return Self.getPath();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("Cookie.GetValue");
+            return Self.getValue();
         }
 
         public bool isSecure()
         {
-            throw new global::System.NotImplementedException("Cookie.IsSecure");
+            return Self.isSecure();
         }
     }
 }

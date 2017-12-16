@@ -1,33 +1,60 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Knowledge_static_methods.htm#apex_ConnectAPI_Knowledge_static_methods
+    /// </summary>
     public class Knowledge
     {
-        public object clone()
+        // infrastructure
+        public Knowledge(dynamic self)
         {
-            throw new global::System.NotImplementedException("Knowledge.Clone");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Knowledge));
+            }
+        }
+
+        // API
+        public static KnowledgeArticleVersionCollection getTopViewedArticlesForTopic(string communityId, string topicId, int maxResults)
+        {
+            return Implementation.getTopViewedArticlesForTopic(communityId, topicId, maxResults);
         }
 
         public static KnowledgeArticleVersionCollection getTrendingArticles(string communityId, int maxResults)
         {
-            throw new global::System.NotImplementedException("Knowledge.GetTrendingArticles");
+            return Implementation.getTrendingArticles(communityId, maxResults);
         }
 
-        public static KnowledgeArticleVersionCollection getTrendingArticlesForTopic(string communityId, string topicId,
-            int maxResults)
+        public static KnowledgeArticleVersionCollection getTrendingArticlesForTopic(string communityId, string topicId, int maxResults)
         {
-            throw new global::System.NotImplementedException("Knowledge.GetTrendingArticlesForTopic");
+            return Implementation.getTrendingArticlesForTopic(communityId, topicId, maxResults);
         }
 
-        public static void setTestGetTrendingArticles(string communityId, int maxResults,
-            KnowledgeArticleVersionCollection result)
+        public static void setTestGetTrendingArticles(string communityId, int maxResults, KnowledgeArticleVersionCollection result)
         {
-            throw new global::System.NotImplementedException("Knowledge.SetTestGetTrendingArticles");
+            Implementation.setTestGetTrendingArticles(communityId, maxResults, result);
         }
 
-        public static void setTestGetTrendingArticlesForTopic(string communityId, string topicId, int maxResults,
-            KnowledgeArticleVersionCollection result)
+        public static void setTestGetTrendingArticlesForTopic(string communityId, string topicId, int maxResults, KnowledgeArticleVersionCollection result)
         {
-            throw new global::System.NotImplementedException("Knowledge.SetTestGetTrendingArticlesForTopic");
+            Implementation.setTestGetTrendingArticlesForTopic(communityId, topicId, maxResults, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

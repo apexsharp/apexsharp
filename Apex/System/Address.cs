@@ -1,65 +1,186 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_system_Address.htm#apex_class_system_Address
+    /// </summary>
     public class Address
     {
-        public Address()
+        // infrastructure
+        public Address(dynamic self)
         {
-            throw new global::System.NotImplementedException("Address");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Address));
+            }
+        }
+
+        // API
         public string getCity()
         {
-            throw new global::System.NotImplementedException("Address.GetCity");
+            return Self.getCity();
         }
 
         public string getCountry()
         {
-            throw new global::System.NotImplementedException("Address.GetCountry");
+            return Self.getCountry();
         }
 
         public string getCountryCode()
         {
-            throw new global::System.NotImplementedException("Address.GetCountryCode");
+            return Self.getCountryCode();
         }
 
-        public double getDistance(Location other, string unit)
+        public double getDistance(Location toLocation, string unit)
         {
-            throw new global::System.NotImplementedException("Address.GetDistance");
+            return Self.getDistance(toLocation, unit);
         }
 
         public string getGeocodeAccuracy()
         {
-            throw new global::System.NotImplementedException("Address.GetGeocodeAccuracy");
+            return Self.getGeocodeAccuracy();
         }
 
         public double getLatitude()
         {
-            throw new global::System.NotImplementedException("Address.GetLatitude");
+            return Self.getLatitude();
         }
 
         public double getLongitude()
         {
-            throw new global::System.NotImplementedException("Address.GetLongitude");
+            return Self.getLongitude();
         }
 
         public string getPostalCode()
         {
-            throw new global::System.NotImplementedException("Address.GetPostalCode");
+            return Self.getPostalCode();
         }
 
         public string getState()
         {
-            throw new global::System.NotImplementedException("Address.GetState");
+            return Self.getState();
         }
 
         public string getStateCode()
         {
-            throw new global::System.NotImplementedException("Address.GetStateCode");
+            return Self.getStateCode();
         }
 
         public string getStreet()
         {
-            throw new global::System.NotImplementedException("Address.GetStreet");
+            return Self.getStreet();
+        }
+
+        string city
+        {
+            get
+            {
+                return Self.city;
+            }
+            set
+            {
+                Self.city = value;
+            }
+        }
+
+        string country
+        {
+            get
+            {
+                return Self.country;
+            }
+            set
+            {
+                Self.country = value;
+            }
+        }
+
+        string countryCode
+        {
+            get
+            {
+                return Self.countryCode;
+            }
+            set
+            {
+                Self.countryCode = value;
+            }
+        }
+
+        string geocodeAccuracy
+        {
+            get
+            {
+                return Self.geocodeAccuracy;
+            }
+            set
+            {
+                Self.geocodeAccuracy = value;
+            }
+        }
+
+        string postalCode
+        {
+            get
+            {
+                return Self.postalCode;
+            }
+            set
+            {
+                Self.postalCode = value;
+            }
+        }
+
+        string state
+        {
+            get
+            {
+                return Self.state;
+            }
+            set
+            {
+                Self.state = value;
+            }
+        }
+
+        string stateCode
+        {
+            get
+            {
+                return Self.stateCode;
+            }
+            set
+            {
+                Self.stateCode = value;
+            }
+        }
+
+        string street
+        {
+            get
+            {
+                return Self.street;
+            }
+            set
+            {
+                Self.street = value;
+            }
+        }
+
+        public Address()
+        {
+            Implementation.Constructor();
         }
     }
 }

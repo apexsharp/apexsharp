@@ -1,10 +1,15 @@
 namespace Apex.System
 {
-    public class HttpCalloutMock
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_httpcalloutmock.htm#apex_interface_httpcalloutmock
+    /// </summary>
+    public interface HttpCalloutMock
     {
-        public HttpResponse respond(HttpRequest param1)
-        {
-            throw new global::System.NotImplementedException("HttpCalloutMock.Respond");
-        }
+        HttpResponse respond(HttpRequest request);
     }
 }

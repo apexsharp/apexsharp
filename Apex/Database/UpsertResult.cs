@@ -1,28 +1,98 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database_upsertresult.htm#apex_methods_system_database_upsertresult
+    /// </summary>
     public class UpsertResult
     {
-        public List<Database.Error> getErrors()
+        // infrastructure
+        public UpsertResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("UpsertResult.GetErrors");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UpsertResult));
+            }
+        }
+
+        // API
+        public Error[] getErrors()
+        {
+            return Self.getErrors();
         }
 
         public ID getId()
         {
-            throw new global::System.NotImplementedException("UpsertResult.GetId");
+            return Self.getId();
         }
 
         public bool isCreated()
         {
-            throw new global::System.NotImplementedException("UpsertResult.IsCreated");
+            return Self.isCreated();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("UpsertResult.IsSuccess");
+            return Self.isSuccess();
+        }
+
+        bool created
+        {
+            get
+            {
+                return Self.created;
+            }
+            set
+            {
+                Self.created = value;
+            }
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        ID id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
         }
     }
 }

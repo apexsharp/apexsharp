@@ -1,38 +1,80 @@
-using Apex.System;
-
 namespace Apex.Social
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class InboundSocialPostHandlerImpl
     {
+        // infrastructure
+        public InboundSocialPostHandlerImpl(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InboundSocialPostHandlerImpl));
+            }
+        }
+
+        // API
         public InboundSocialPostHandlerImpl()
         {
-            throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.Clone");
+            return Self.clone();
         }
 
-        //public SObject CreatePersonaParent(SocialPersona persona){throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.CreatePersonaParent");}
+        public SObject createPersonaParent(SocialPersona persona)
+        {
+            return Self.createPersonaParent(persona);
+        }
+
+        public string getCaseSubject(SocialPost post)
+        {
+            return Self.getCaseSubject(post);
+        }
+
         public string getDefaultAccountId()
         {
-            throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.GetDefaultAccountId");
+            return Self.getDefaultAccountId();
         }
 
         public int getMaxNumberOfDaysClosedToReopenCase()
         {
-            throw new global::System.NotImplementedException(
-                "InboundSocialPostHandlerImpl.GetMaxNumberOfDaysClosedToReopenCase");
+            return Self.getMaxNumberOfDaysClosedToReopenCase();
         }
 
-        //public string GetPersonaFirstName(SocialPersona persona){throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.GetPersonaFirstName");}
-        //public string GetPersonaLastName(SocialPersona persona){throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.GetPersonaLastName");}
-        public Set<String> getPostTagsThatCreateCase()
+        public string getPersonaFirstName(SocialPersona persona)
         {
-            throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.GetPostTagsThatCreateCase");
+            return Self.getPersonaFirstName(persona);
         }
 
-        //public Social.InboundSocialPostResult HandleInboundSocialPost(SocialPost post,SocialPersona persona,Map<String,ANY> rawData){throw new global::System.NotImplementedException("InboundSocialPostHandlerImpl.HandleInboundSocialPost");}
+        public string getPersonaLastName(SocialPersona persona)
+        {
+            return Self.getPersonaLastName(persona);
+        }
+
+        public Set<string> getPostTagsThatCreateCase()
+        {
+            return Self.getPostTagsThatCreateCase();
+        }
+
+        public InboundSocialPostResult handleInboundSocialPost(SocialPost post, SocialPersona persona, Map<string, object> rawData)
+        {
+            return Self.handleInboundSocialPost(post, persona, rawData);
+        }
     }
 }

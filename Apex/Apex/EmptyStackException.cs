@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.Apex
 {
-    public class EmptyStackException : Exception
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class EmptyStackException
     {
+        // infrastructure
+        public EmptyStackException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmptyStackException));
+            }
+        }
+
+        // API
         public EmptyStackException()
         {
-
+            Implementation.Constructor();
         }
 
         public EmptyStackException(Exception param1)
         {
-            throw new global::System.NotImplementedException("EmptyStackException");
+            Implementation.Constructor(param1);
         }
 
         public EmptyStackException(string param1)
         {
-            throw new global::System.NotImplementedException("EmptyStackException");
+            Implementation.Constructor(param1);
         }
 
         public EmptyStackException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("EmptyStackException");
+            Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EmptyStackException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("EmptyStackException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

@@ -1,23 +1,45 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BatchableContextImpl
     {
+        // infrastructure
+        public BatchableContextImpl(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BatchableContextImpl));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("BatchableContextImpl.Clone");
+            return Self.clone();
         }
 
         public ID getChildJobId()
         {
-            throw new global::System.NotImplementedException("BatchableContextImpl.GetChildJobId");
+            return Self.getChildJobId();
         }
 
         public ID getJobId()
         {
-            throw new global::System.NotImplementedException("BatchableContextImpl.GetJobId");
+            return Self.getJobId();
         }
     }
 }

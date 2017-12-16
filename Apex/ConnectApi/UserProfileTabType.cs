@@ -1,27 +1,19 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class UserProfileTabType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum UserProfileTabType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("UserProfileTabType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("UserProfileTabType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("UserProfileTabType.Ordinal");
-        }
-
-        public static List<UserProfileTabType> values()
-        {
-            throw new global::System.NotImplementedException("UserProfileTabType.Values");
-        }
+        CustomVisualForce,
+        CustomWeb,
+        Element,
+        Feed,
+        Overview
     }
 }

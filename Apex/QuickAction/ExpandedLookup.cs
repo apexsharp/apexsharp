@@ -1,25 +1,50 @@
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ExpandedLookup
     {
+        // infrastructure
+        public ExpandedLookup(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ExpandedLookup));
+            }
+        }
+
+        // API
         public int getDisplayLines()
         {
-            throw new global::System.NotImplementedException("ExpandedLookup.GetDisplayLines");
+            return Self.getDisplayLines();
         }
 
         public int getTabOrder()
         {
-            throw new global::System.NotImplementedException("ExpandedLookup.GetTabOrder");
+            return Self.getTabOrder();
         }
 
         public string getType()
         {
-            throw new global::System.NotImplementedException("ExpandedLookup.GetType");
+            return Self.getType();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("ExpandedLookup.GetValue");
+            return Self.getValue();
         }
     }
 }

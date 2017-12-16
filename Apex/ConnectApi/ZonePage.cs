@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ZonePage
     {
+        // infrastructure
+        public ZonePage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ZonePage));
+            }
+        }
+
+        // API
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object zones
+        {
+            get
+            {
+                return Self.zones;
+            }
+            set
+            {
+                Self.zones = value;
+            }
+        }
+
         public ZonePage()
         {
-            throw new global::System.NotImplementedException("ZonePage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ZonePage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ZonePage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ZonePage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ZonePage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ZonePage.ToString");
+            return Self.toString();
         }
     }
 }

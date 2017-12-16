@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BookmarksCapabilityInput
     {
+        // infrastructure
+        public BookmarksCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BookmarksCapabilityInput));
+            }
+        }
+
+        // API
+        object isBookmarkedByCurrentUser
+        {
+            get
+            {
+                return Self.isBookmarkedByCurrentUser;
+            }
+            set
+            {
+                Self.isBookmarkedByCurrentUser = value;
+            }
+        }
+
         public BookmarksCapabilityInput()
         {
-            throw new global::System.NotImplementedException("BookmarksCapabilityInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BookmarksCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("BookmarksCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("BookmarksCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BookmarksCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

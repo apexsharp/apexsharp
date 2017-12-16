@@ -1,80 +1,147 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CollectingBatchable
     {
+        // infrastructure
+        public CollectingBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CollectingBatchable));
+            }
+        }
+
+        // API
+        object nextReconOffset
+        {
+            get
+            {
+                return Self.nextReconOffset;
+            }
+            set
+            {
+                Self.nextReconOffset = value;
+            }
+        }
+
+        object reconOffset
+        {
+            get
+            {
+                return Self.reconOffset;
+            }
+            set
+            {
+                Self.reconOffset = value;
+            }
+        }
+
+        object status
+        {
+            get
+            {
+                return Self.status;
+            }
+            set
+            {
+                Self.status = value;
+            }
+        }
+
         public CollectingBatchable(string reconOffset, string uprId, string connectedAppId)
         {
-            throw new global::System.NotImplementedException("CollectingBatchable");
+            Implementation.Constructor(reconOffset, uprId, connectedAppId);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.Clone");
+            return Self.clone();
         }
 
-        //public void Execute(Database.BatchableContext BC,List<UserProvisioningRequest> scope){throw new global::System.NotImplementedException("CollectingBatchable.Execute");}
-        public void finish(Database.BatchableContext BC)
+        public void execute(BatchableContext BC, List<UserProvisioningRequest> scope)
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.Finish");
+            Self.execute(BC, scope);
         }
 
-        public Map<String, object> flowInputPreprocessing(Map<String, object> myMap)
+        public void finish(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.FlowInputPreprocessing");
+            Self.finish(BC);
         }
 
-        public void flowPostProcessing(UserProvisioning.ProvisioningProcessHandlerOutput provOutput, SObject thisUPR)
+        public Map<string, object> flowInputPreprocessing(Map<string, object> myMap)
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.FlowPostProcessing");
+            return Self.flowInputPreprocessing(myMap);
+        }
+
+        public void flowPostProcessing(ProvisioningProcessHandlerOutput provOutput, SObject thisUPR)
+        {
+            Self.flowPostProcessing(provOutput, thisUPR);
         }
 
         public string getEventPrefix()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.GetEventPrefix");
+            return Self.getEventPrefix();
         }
 
         public string getFlowName()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.GetFlowName");
+            return Self.getFlowName();
         }
 
         public string getFlowNamespace()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.GetFlowNamespace");
+            return Self.getFlowNamespace();
         }
 
         public List<SObject> getPerBatchUPL()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.GetPerBatchUPL");
+            return Self.getPerBatchUPL();
         }
 
-        //public List<UserProvisioningRequest> GetPerBatchUPR(){throw new global::System.NotImplementedException("CollectingBatchable.GetPerBatchUPR");}
+        public List<UserProvisioningRequest> getPerBatchUPR()
+        {
+            return Self.getPerBatchUPR();
+        }
+
         public Map<ID, SObject> getUprToNewUplMap()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.GetUprToNewUplMap");
+            return Self.getUprToNewUplMap();
         }
 
         public bool hasFlow()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.HasFlow");
+            return Self.hasFlow();
         }
 
         public bool hasFlowOrApex()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.HasFlowOrApex");
+            return Self.hasFlowOrApex();
         }
 
         public void postBatchProcessing()
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.PostBatchProcessing");
+            Self.postBatchProcessing();
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public QueryLocator start(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("CollectingBatchable.Start");
+            return Self.start(BC);
         }
     }
 }

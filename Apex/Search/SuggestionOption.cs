@@ -1,20 +1,50 @@
 namespace Apex.Search
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Search_SuggestionOption.htm#apex_class_Search_SuggestionOption
+    /// </summary>
     public class SuggestionOption
     {
-        public SuggestionOption()
+        // infrastructure
+        public SuggestionOption(dynamic self)
         {
-            throw new global::System.NotImplementedException("SuggestionOption");
+            Self = self;
         }
 
-        public void setFilter(object filter)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("SuggestionOption.SetFilter");
+            get
+            {
+                return Implementor.GetImplementation(typeof(SuggestionOption));
+            }
+        }
+
+        // API
+        public void setFilter(KnowledegeSuggestionFilter knowledgeSuggestionFilter)
+        {
+            Self.setFilter(knowledgeSuggestionFilter);
         }
 
         public void setLimit(int limit)
         {
-            throw new global::System.NotImplementedException("SuggestionOption.SetLimit");
+            Self.setLimit(limit);
+        }
+
+        public SuggestionOption()
+        {
+            Implementation.Constructor();
+        }
+
+        public void setFilter(object filter)
+        {
+            Self.setFilter(filter);
         }
     }
 }

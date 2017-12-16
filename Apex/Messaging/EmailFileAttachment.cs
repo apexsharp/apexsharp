@@ -1,52 +1,160 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_email_outbound_attachment.htm#apex_classes_email_outbound_attachment
+    /// </summary>
     public class EmailFileAttachment
     {
+        // infrastructure
+        public EmailFileAttachment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailFileAttachment));
+            }
+        }
+
+        // API
         public EmailFileAttachment()
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment");
+            Implementation.Constructor();
+        }
+
+        Blob body
+        {
+            get
+            {
+                return Self.body;
+            }
+            set
+            {
+                Self.body = value;
+            }
+        }
+
+        string contenttype
+        {
+            get
+            {
+                return Self.contenttype;
+            }
+            set
+            {
+                Self.contenttype = value;
+            }
+        }
+
+        string filename
+        {
+            get
+            {
+                return Self.filename;
+            }
+            set
+            {
+                Self.filename = value;
+            }
+        }
+
+        ID id
+        {
+            get
+            {
+                return Self.id;
+            }
+        }
+
+        bool inline
+        {
+            get
+            {
+                return Self.inline;
+            }
+            set
+            {
+                Self.inline = value;
+            }
+        }
+
+        string contentType
+        {
+            get
+            {
+                return Self.contentType;
+            }
+            set
+            {
+                Self.contentType = value;
+            }
+        }
+
+        string fileName
+        {
+            get
+            {
+                return Self.fileName;
+            }
+            set
+            {
+                Self.fileName = value;
+            }
         }
 
         public Blob getBody()
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.GetBody");
+            return Self.getBody();
         }
 
         public string getContentType()
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.GetContentType");
+            return Self.getContentType();
         }
 
         public string getFileName()
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.GetFileName");
+            return Self.getFileName();
+        }
+
+        public ID getId()
+        {
+            return Self.getId();
         }
 
         public bool getInline()
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.GetInline");
+            return Self.getInline();
         }
 
         public void setBody(Blob param1)
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.SetBody");
+            Self.setBody(param1);
         }
 
         public void setContentType(string param1)
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.SetContentType");
+            Self.setContentType(param1);
         }
 
         public void setFileName(string param1)
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.SetFileName");
+            Self.setFileName(param1);
         }
 
         public void setInline(bool param1)
         {
-            throw new global::System.NotImplementedException("EmailFileAttachment.SetInline");
+            Self.setInline(param1);
         }
     }
 }

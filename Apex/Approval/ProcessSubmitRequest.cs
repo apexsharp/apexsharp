@@ -1,73 +1,143 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Approval
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ProcessSubmitRequest.htm#apex_ProcessSubmitRequest
+    /// </summary>
     public class ProcessSubmitRequest
     {
-        public ProcessSubmitRequest()
+        // infrastructure
+        public ProcessSubmitRequest(dynamic self)
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest");
+            Self = self;
         }
 
-        public string getComments()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetComments");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ProcessSubmitRequest));
+            }
         }
 
-        public List<ID> getNextApproverIds()
-        {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetNextApproverIds");
-        }
-
+        // API
         public string getObjectId()
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetObjectId");
+            return Self.getObjectId();
         }
 
         public string getProcessDefinitionNameOrId()
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetProcessDefinitionNameOrId");
+            return Self.getProcessDefinitionNameOrId();
         }
 
         public bool getSkipEntryCriteria()
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetSkipEntryCriteria");
+            return Self.getSkipEntryCriteria();
         }
 
         public string getSubmitterId()
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.GetSubmitterId");
+            return Self.getSubmitterId();
+        }
+
+        public void setObjectId(string recordId)
+        {
+            Self.setObjectId(recordId);
+        }
+
+        public void setProcessDefinitionNameOrId(string nameOrId)
+        {
+            Self.setProcessDefinitionNameOrId(nameOrId);
+        }
+
+        public void setSkipEntryCriteria(bool skipEntryCriteria)
+        {
+            Self.setSkipEntryCriteria(skipEntryCriteria);
+        }
+
+        public void setSubmitterId(string userID)
+        {
+            Self.setSubmitterId(userID);
+        }
+
+        string objectId
+        {
+            get
+            {
+                return Self.objectId;
+            }
+            set
+            {
+                Self.objectId = value;
+            }
+        }
+
+        string processDefinitionNameOrId
+        {
+            get
+            {
+                return Self.processDefinitionNameOrId;
+            }
+            set
+            {
+                Self.processDefinitionNameOrId = value;
+            }
+        }
+
+        bool skipEntryCriteria
+        {
+            get
+            {
+                return Self.skipEntryCriteria;
+            }
+            set
+            {
+                Self.skipEntryCriteria = value;
+            }
+        }
+
+        string submitterId
+        {
+            get
+            {
+                return Self.submitterId;
+            }
+            set
+            {
+                Self.submitterId = value;
+            }
+        }
+
+        public ProcessSubmitRequest()
+        {
+            Implementation.Constructor();
+        }
+
+        public string getComments()
+        {
+            return Self.getComments();
+        }
+
+        public List<ID> getNextApproverIds()
+        {
+            return Self.getNextApproverIds();
         }
 
         public void setComments(string param1)
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetComments");
+            Self.setComments(param1);
         }
 
         public void setNextApproverIds(List<ID> param1)
         {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetNextApproverIds");
-        }
-
-        public void setObjectId(string param1)
-        {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetObjectId");
-        }
-
-        public void setProcessDefinitionNameOrId(string param1)
-        {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetProcessDefinitionNameOrId");
-        }
-
-        public void setSkipEntryCriteria(bool param1)
-        {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetSkipEntryCriteria");
-        }
-
-        public void setSubmitterId(string param1)
-        {
-            throw new global::System.NotImplementedException("ProcessSubmitRequest.SetSubmitterId");
+            Self.setNextApproverIds(param1);
         }
     }
 }

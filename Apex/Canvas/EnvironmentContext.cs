@@ -1,47 +1,29 @@
-using Apex.System;
-
 namespace Apex.Canvas
 {
-    public class EnvironmentContext
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public interface EnvironmentContext
     {
-        public void addEntityField(string param1)
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.AddEntityField");
-        }
+        void addEntityField(string param1);
 
-        public void addEntityFields(Set<String> param1)
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.AddEntityFields");
-        }
+        void addEntityFields(Set<string> param1);
 
-        public string getDisplayLocation()
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.GetDisplayLocation");
-        }
+        string getDisplayLocation();
 
-        public List<string> getEntityFields()
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.GetEntityFields");
-        }
+        List<string> getEntityFields();
 
-        public string getLocationUrl()
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.GetLocationUrl");
-        }
+        string getLocationUrl();
 
-        public string getParametersAsJSON()
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.GetParametersAsJSON");
-        }
+        string getParametersAsJSON();
 
-        public string getSublocation()
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.GetSublocation");
-        }
+        string getSublocation();
 
-        public void setParametersAsJSON(string param1)
-        {
-            throw new global::System.NotImplementedException("EnvironmentContext.SetParametersAsJSON");
-        }
+        void setParametersAsJSON(string param1);
     }
 }

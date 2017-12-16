@@ -1,40 +1,55 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_long.htm#apex_methods_system_long
+    /// </summary>
     public class Long
     {
-        public void addError(object msg)
+        // infrastructure
+        public Long(dynamic self)
         {
-            throw new global::System.NotImplementedException("Long.AddError");
+            Self = self;
         }
 
-        public void addError(object msg, bool escape)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Long.AddError");
+            get
+            {
+                return Implementor.GetImplementation(typeof(long));
+            }
         }
 
-        public void addError(string msg)
-        {
-            throw new global::System.NotImplementedException("Long.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Long.AddError");
-        }
-
+        // API
         public string format()
         {
-            throw new global::System.NotImplementedException("Long.Format");
+            return Self.format();
         }
 
         public int intValue()
         {
-            throw new global::System.NotImplementedException("Long.IntValue");
+            return Self.intValue();
         }
 
-        public static long valueOf(string str)
+        public static long valueOf(string stringToLong)
         {
-            throw new global::System.NotImplementedException("Long.ValueOf");
+            return Implementation.valueOf(stringToLong);
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

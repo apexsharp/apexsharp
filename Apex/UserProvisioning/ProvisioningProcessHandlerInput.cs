@@ -1,68 +1,150 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ProvisioningProcessHandlerInput
     {
-        public ProvisioningProcessHandlerInput(string userProvisioningRequestId, string userId, string namedCredDevName,
-            string reconFilter, string reconOffset)
+        // infrastructure
+        public ProvisioningProcessHandlerInput(dynamic self)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ProvisioningProcessHandlerInput));
+            }
+        }
+
+        // API
+        string namedCredDevName
+        {
+            get
+            {
+                return Self.namedCredDevName;
+            }
+            set
+            {
+                Self.namedCredDevName = value;
+            }
+        }
+
+        string reconFilter
+        {
+            get
+            {
+                return Self.reconFilter;
+            }
+            set
+            {
+                Self.reconFilter = value;
+            }
+        }
+
+        string reconOffset
+        {
+            get
+            {
+                return Self.reconOffset;
+            }
+            set
+            {
+                Self.reconOffset = value;
+            }
+        }
+
+        string userId
+        {
+            get
+            {
+                return Self.userId;
+            }
+            set
+            {
+                Self.userId = value;
+            }
+        }
+
+        string userProvisioningRequestId
+        {
+            get
+            {
+                return Self.userProvisioningRequestId;
+            }
+            set
+            {
+                Self.userProvisioningRequestId = value;
+            }
+        }
+
+        public ProvisioningProcessHandlerInput(string userProvisioningRequestId, string userId, string namedCredDevName, string reconFilter, string reconOffset)
+        {
+            Implementation.Constructor(userProvisioningRequestId, userId, namedCredDevName, reconFilter, reconOffset);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.Clone");
+            return Self.clone();
         }
 
         public string getNamedCredDevName()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.GetNamedCredDevName");
+            return Self.getNamedCredDevName();
         }
 
         public string getReconFilter()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.GetReconFilter");
+            return Self.getReconFilter();
         }
 
         public string getReconOffset()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.GetReconOffset");
+            return Self.getReconOffset();
         }
 
         public string getUserId()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.GetUserId");
+            return Self.getUserId();
         }
 
         public string getUserProvisioningRequestId()
         {
-            throw new global::System.NotImplementedException(
-                "ProvisioningProcessHandlerInput.GetUserProvisioningRequestId");
+            return Self.getUserProvisioningRequestId();
         }
 
         public void setNamedCredDevName(string namedCredDevName)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.SetNamedCredDevName");
+            Self.setNamedCredDevName(namedCredDevName);
         }
 
         public void setReconFilter(string reconFilter)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.SetReconFilter");
+            Self.setReconFilter(reconFilter);
         }
 
         public void setReconOffset(string reconOffset)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.SetReconOffset");
+            Self.setReconOffset(reconOffset);
         }
 
         public void setUserId(string userId)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerInput.SetUserId");
+            Self.setUserId(userId);
         }
 
         public void setUserProvisioningRequestId(string userProvisioningRequestId)
         {
-            throw new global::System.NotImplementedException(
-                "ProvisioningProcessHandlerInput.SetUserProvisioningRequestId");
+            Self.setUserProvisioningRequestId(userProvisioningRequestId);
         }
     }
 }

@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class GroupChatterSettings
     {
+        // infrastructure
+        public GroupChatterSettings(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(GroupChatterSettings));
+            }
+        }
+
+        // API
+        object emailFrequency
+        {
+            get
+            {
+                return Self.emailFrequency;
+            }
+            set
+            {
+                Self.emailFrequency = value;
+            }
+        }
+
         public GroupChatterSettings()
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GroupChatterSettings.ToString");
+            return Self.toString();
         }
     }
 }

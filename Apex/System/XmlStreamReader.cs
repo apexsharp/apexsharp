@@ -1,170 +1,200 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_xml_XmlStream_reader.htm#apex_classes_xml_XmlStream_reader
+    /// </summary>
     public class XmlStreamReader
     {
-        public XmlStreamReader(string xml)
+        // infrastructure
+        public XmlStreamReader(dynamic self)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(XmlStreamReader));
+            }
+        }
+
+        // API
+        public XmlStreamReader(string xmlInput)
+        {
+            Implementation.Constructor(xmlInput);
         }
 
         public int getAttributeCount()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeCount");
+            return Self.getAttributeCount();
         }
 
         public string getAttributeLocalName(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeLocalName");
+            return Self.getAttributeLocalName(index);
         }
 
         public string getAttributeNamespace(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeNamespace");
+            return Self.getAttributeNamespace(index);
         }
 
         public string getAttributePrefix(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributePrefix");
+            return Self.getAttributePrefix(index);
         }
 
         public string getAttributeType(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeType");
+            return Self.getAttributeType(index);
         }
 
-        public string getAttributeValue(string namespaceURI, string localName)
+        public string getAttributeValue(string namespaceUri, string localName)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeValue");
+            return Self.getAttributeValue(namespaceUri, localName);
         }
 
         public string getAttributeValueAt(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetAttributeValueAt");
+            return Self.getAttributeValueAt(index);
         }
 
         public XmlTag getEventType()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetEventType");
+            return Self.getEventType();
         }
 
         public string getLocalName()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetLocalName");
+            return Self.getLocalName();
         }
 
         public string getLocation()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetLocation");
+            return Self.getLocation();
         }
 
         public string getNamespace()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetNamespace");
+            return Self.getNamespace();
         }
 
         public int getNamespaceCount()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetNamespaceCount");
+            return Self.getNamespaceCount();
         }
 
         public string getNamespacePrefix(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetNamespacePrefix");
+            return Self.getNamespacePrefix(index);
         }
 
         public string getNamespaceURI(string prefix)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetNamespaceURI");
+            return Self.getNamespaceURI(prefix);
         }
 
         public string getNamespaceURIAt(int index)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetNamespaceURIAt");
+            return Self.getNamespaceURIAt(index);
         }
 
         public string getPIData()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetPIData");
+            return Self.getPIData();
         }
 
         public string getPITarget()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetPITarget");
+            return Self.getPITarget();
         }
 
         public string getPrefix()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetPrefix");
+            return Self.getPrefix();
         }
 
         public string getText()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetText");
+            return Self.getText();
         }
 
         public string getVersion()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.GetVersion");
+            return Self.getVersion();
         }
 
         public bool hasName()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.HasName");
+            return Self.hasName();
         }
 
         public bool hasNext()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.HasNext");
+            return Self.hasNext();
         }
 
         public bool hasText()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.HasText");
+            return Self.hasText();
         }
 
         public bool isCharacters()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.IsCharacters");
+            return Self.isCharacters();
         }
 
         public bool isEndElement()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.IsEndElement");
+            return Self.isEndElement();
         }
 
         public bool isStartElement()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.IsStartElement");
+            return Self.isStartElement();
         }
 
-        public bool isWhitespace()
+        public bool isWhiteSpace()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.IsWhitespace");
+            return Self.isWhiteSpace();
         }
 
         public int next()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.Next");
+            return Self.next();
         }
 
         public int nextTag()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.NextTag");
+            return Self.nextTag();
         }
 
-        public void setCoalescing(bool flag)
+        public void setCoalescing(bool returnAsSingleBlock)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.SetCoalescing");
+            Self.setCoalescing(returnAsSingleBlock);
         }
 
-        public void setNamespaceAware(bool flag)
+        public void setNamespaceAware(bool isNamespaceAware)
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.SetNamespaceAware");
+            Self.setNamespaceAware(isNamespaceAware);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("XmlStreamReader.ToString");
+            return Self.toString();
+        }
+
+        public bool isWhitespace()
+        {
+            return Self.isWhitespace();
         }
     }
 }

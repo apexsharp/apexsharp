@@ -1,25 +1,50 @@
 namespace Apex.LiveAgent
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LiveChatRoutingResult
     {
+        // infrastructure
+        public LiveChatRoutingResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LiveChatRoutingResult));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("LiveChatRoutingResult.Clone");
+            return Self.clone();
         }
 
         public string getChatKey()
         {
-            throw new global::System.NotImplementedException("LiveChatRoutingResult.GetChatKey");
+            return Self.getChatKey();
         }
 
-        public LiveAgent.LiveChatRoutingResultType getResult()
+        public LiveChatRoutingResultType getResult()
         {
-            throw new global::System.NotImplementedException("LiveChatRoutingResult.GetResult");
+            return Self.getResult();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("LiveChatRoutingResult.IsSuccess");
+            return Self.isSuccess();
         }
     }
 }

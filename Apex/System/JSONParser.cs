@@ -1,117 +1,145 @@
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_System_JsonParser.htm#apex_class_System_JsonParser
+    /// </summary>
     public class JSONParser
     {
-        public void clearCurrentToken()
+        // infrastructure
+        public JSONParser(dynamic self)
         {
-            throw new global::System.NotImplementedException("JSONParser.ClearCurrentToken");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("JSONParser.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(JSONParser));
+            }
+        }
+
+        // API
+        public void clearCurrentToken()
+        {
+            Self.clearCurrentToken();
         }
 
         public Blob getBlobValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetBlobValue");
+            return Self.getBlobValue();
         }
 
         public bool getBooleanValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetBooleanValue");
+            return Self.getBooleanValue();
         }
 
         public string getCurrentName()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetCurrentName");
+            return Self.getCurrentName();
         }
 
         public JSONToken getCurrentToken()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetCurrentToken");
+            return Self.getCurrentToken();
         }
 
-        public DateTime getDateTimeValue()
+        public Datetime getDatetimeValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetDateTimeValue");
+            return Self.getDatetimeValue();
         }
 
         public Date getDateValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetDateValue");
+            return Self.getDateValue();
         }
 
         public decimal getDecimalValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetDecimalValue");
+            return Self.getDecimalValue();
         }
 
         public double getDoubleValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetDoubleValue");
+            return Self.getDoubleValue();
         }
 
         public ID getIdValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetIdValue");
+            return Self.getIdValue();
         }
 
         public int getIntegerValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetIntegerValue");
+            return Self.getIntegerValue();
         }
 
         public JSONToken getLastClearedToken()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetLastClearedToken");
+            return Self.getLastClearedToken();
         }
 
         public long getLongValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetLongValue");
+            return Self.getLongValue();
         }
 
         public string getText()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetText");
+            return Self.getText();
         }
 
         public Time getTimeValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.GetTimeValue");
+            return Self.getTimeValue();
         }
 
         public bool hasCurrentToken()
         {
-            throw new global::System.NotImplementedException("JSONParser.HasCurrentToken");
+            return Self.hasCurrentToken();
         }
 
         public JSONToken nextToken()
         {
-            throw new global::System.NotImplementedException("JSONParser.NextToken");
+            return Self.nextToken();
         }
 
         public JSONToken nextValue()
         {
-            throw new global::System.NotImplementedException("JSONParser.NextValue");
+            return Self.nextValue();
         }
 
         public object readValueAs(Type apexType)
         {
-            throw new global::System.NotImplementedException("JSONParser.ReadValueAs");
+            return Self.readValueAs(apexType);
         }
 
         public object readValueAsStrict(Type apexType)
         {
-            throw new global::System.NotImplementedException("JSONParser.ReadValueAsStrict");
+            return Self.readValueAsStrict(apexType);
         }
 
         public void skipChildren()
         {
-            throw new global::System.NotImplementedException("JSONParser.SkipChildren");
+            Self.skipChildren();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public Datetime getDateTimeValue()
+        {
+            return Self.getDateTimeValue();
         }
     }
 }

@@ -1,85 +1,110 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_xml_XmlStream_writer.htm#apex_classes_XmlStream_writer
+    /// </summary>
     public class XmlStreamWriter
     {
+        // infrastructure
+        public XmlStreamWriter(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(XmlStreamWriter));
+            }
+        }
+
+        // API
         public XmlStreamWriter()
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter");
+            Implementation.Constructor();
         }
 
         public void close()
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.Close");
+            Self.close();
         }
 
         public string getXmlString()
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.GetXmlString");
+            return Self.getXmlString();
         }
 
         public void setDefaultNamespace(string uri)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.SetDefaultNamespace");
+            Self.setDefaultNamespace(uri);
         }
 
-        public void writeAttribute(string prefix, string namespaceURI, string localName, string value)
+        public void writeAttribute(string prefix, string namespaceUri, string localName, string value)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteAttribute");
+            Self.writeAttribute(prefix, namespaceUri, localName, value);
         }
 
         public void writeCData(string data)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteCData");
+            Self.writeCData(data);
         }
 
         public void writeCharacters(string text)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteCharacters");
+            Self.writeCharacters(text);
         }
 
-        public void writeComment(string data)
+        public void writeComment(string comment)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteComment");
+            Self.writeComment(comment);
         }
 
-        public void writeDefaultNamespace(string namesapceURI)
+        public void writeDefaultNamespace(string namespaceUri)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteDefaultNamespace");
+            Self.writeDefaultNamespace(namespaceUri);
         }
 
-        public void writeEmptyElement(string prefix, string localName, string namesapceURI)
+        public void writeEmptyElement(string prefix, string localName, string namespaceUri)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteEmptyElement");
+            Self.writeEmptyElement(prefix, localName, namespaceUri);
         }
 
         public void writeEndDocument()
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteEndDocument");
+            Self.writeEndDocument();
         }
 
         public void writeEndElement()
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteEndElement");
+            Self.writeEndElement();
         }
 
-        public void writeNamespace(string prefix, string namesapceURI)
+        public void writeNamespace(string prefix, string namespaceUri)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteNamespace");
+            Self.writeNamespace(prefix, namespaceUri);
         }
 
         public void writeProcessingInstruction(string target, string data)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteProcessingInstruction");
+            Self.writeProcessingInstruction(target, data);
         }
 
         public void writeStartDocument(string encoding, string version)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteStartDocument");
+            Self.writeStartDocument(encoding, version);
         }
 
-        public void writeStartElement(string prefix, string localName, string namesapceURI)
+        public void writeStartElement(string prefix, string localName, string namespaceUri)
         {
-            throw new global::System.NotImplementedException("XmlStreamWriter.WriteStartElement");
+            Self.writeStartElement(prefix, localName, namespaceUri);
         }
     }
 }

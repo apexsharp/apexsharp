@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SerializationException
     {
+        // infrastructure
+        public SerializationException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SerializationException));
+            }
+        }
+
+        // API
         public SerializationException()
         {
-            throw new global::System.NotImplementedException("SerializationException");
+            Implementation.Constructor();
         }
 
         public SerializationException(Exception param1)
         {
-            throw new global::System.NotImplementedException("SerializationException");
+            Implementation.Constructor(param1);
         }
 
         public SerializationException(string param1)
         {
-            throw new global::System.NotImplementedException("SerializationException");
+            Implementation.Constructor(param1);
         }
 
         public SerializationException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("SerializationException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("SerializationException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("SerializationException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("SerializationException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("SerializationException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("SerializationException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("SerializationException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("SerializationException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

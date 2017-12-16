@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedEntityIsEditable
     {
+        // infrastructure
+        public FeedEntityIsEditable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedEntityIsEditable));
+            }
+        }
+
+        // API
+        object areAttachmentsEditableByMe
+        {
+            get
+            {
+                return Self.areAttachmentsEditableByMe;
+            }
+            set
+            {
+                Self.areAttachmentsEditableByMe = value;
+            }
+        }
+
+        object feedEntityUrl
+        {
+            get
+            {
+                return Self.feedEntityUrl;
+            }
+            set
+            {
+                Self.feedEntityUrl = value;
+            }
+        }
+
+        object isEditableByMe
+        {
+            get
+            {
+                return Self.isEditableByMe;
+            }
+            set
+            {
+                Self.isEditableByMe = value;
+            }
+        }
+
         public FeedEntityIsEditable()
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedEntityIsEditable.ToString");
+            return Self.toString();
         }
     }
 }

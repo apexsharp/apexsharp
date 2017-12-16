@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FollowerPage
     {
+        // infrastructure
+        public FollowerPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FollowerPage));
+            }
+        }
+
+        // API
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object followers
+        {
+            get
+            {
+                return Self.followers;
+            }
+            set
+            {
+                Self.followers = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
+        object total
+        {
+            get
+            {
+                return Self.total;
+            }
+            set
+            {
+                Self.total = value;
+            }
+        }
+
         public FollowerPage()
         {
-            throw new global::System.NotImplementedException("FollowerPage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FollowerPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FollowerPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FollowerPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FollowerPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FollowerPage.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Icon
     {
+        // infrastructure
+        public Icon(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Icon));
+            }
+        }
+
+        // API
+        object height
+        {
+            get
+            {
+                return Self.height;
+            }
+            set
+            {
+                Self.height = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
+        object width
+        {
+            get
+            {
+                return Self.width;
+            }
+            set
+            {
+                Self.width = value;
+            }
+        }
+
         public Icon()
         {
-            throw new global::System.NotImplementedException("Icon");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Icon.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Icon.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Icon.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Icon.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Icon.ToString");
+            return Self.toString();
         }
     }
 }

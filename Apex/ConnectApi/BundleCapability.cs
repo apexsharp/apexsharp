@@ -1,30 +1,91 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BundleCapability
     {
+        // infrastructure
+        public BundleCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BundleCapability));
+            }
+        }
+
+        // API
+        object bundleType
+        {
+            get
+            {
+                return Self.bundleType;
+            }
+            set
+            {
+                Self.bundleType = value;
+            }
+        }
+
+        object page
+        {
+            get
+            {
+                return Self.page;
+            }
+            set
+            {
+                Self.page = value;
+            }
+        }
+
+        object totalElements
+        {
+            get
+            {
+                return Self.totalElements;
+            }
+            set
+            {
+                Self.totalElements = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("BundleCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("BundleCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("BundleCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("BundleCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BundleCapability.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DirectMessageMemberPage
     {
+        // infrastructure
+        public DirectMessageMemberPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DirectMessageMemberPage));
+            }
+        }
+
+        // API
+        object currentPageToken
+        {
+            get
+            {
+                return Self.currentPageToken;
+            }
+            set
+            {
+                Self.currentPageToken = value;
+            }
+        }
+
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageToken
+        {
+            get
+            {
+                return Self.nextPageToken;
+            }
+            set
+            {
+                Self.nextPageToken = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object users
+        {
+            get
+            {
+                return Self.users;
+            }
+            set
+            {
+                Self.users = value;
+            }
+        }
+
         public DirectMessageMemberPage()
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DirectMessageMemberPage.ToString");
+            return Self.toString();
         }
     }
 }

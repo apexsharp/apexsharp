@@ -1,122 +1,265 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ProvisioningProcessHandlerOutput
     {
-        public ProvisioningProcessHandlerOutput()
+        // infrastructure
+        public ProvisioningProcessHandlerOutput(dynamic self)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput");
+            Self = self;
         }
 
-        public ProvisioningProcessHandlerOutput(string status, string details, string externalUserId,
-            string externalUsername, string externalEmail, string externalFirstName, string externalLastName,
-            string UPAStatus, string nextReconOffset)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ProvisioningProcessHandlerOutput));
+            }
+        }
+
+        // API
+        string details
+        {
+            get
+            {
+                return Self.details;
+            }
+            set
+            {
+                Self.details = value;
+            }
+        }
+
+        string externalEmail
+        {
+            get
+            {
+                return Self.externalEmail;
+            }
+            set
+            {
+                Self.externalEmail = value;
+            }
+        }
+
+        string externalFirstName
+        {
+            get
+            {
+                return Self.externalFirstName;
+            }
+            set
+            {
+                Self.externalFirstName = value;
+            }
+        }
+
+        string externalLastName
+        {
+            get
+            {
+                return Self.externalLastName;
+            }
+            set
+            {
+                Self.externalLastName = value;
+            }
+        }
+
+        string externalUserId
+        {
+            get
+            {
+                return Self.externalUserId;
+            }
+            set
+            {
+                Self.externalUserId = value;
+            }
+        }
+
+        string externalUsername
+        {
+            get
+            {
+                return Self.externalUsername;
+            }
+            set
+            {
+                Self.externalUsername = value;
+            }
+        }
+
+        string nextReconOffset
+        {
+            get
+            {
+                return Self.nextReconOffset;
+            }
+            set
+            {
+                Self.nextReconOffset = value;
+            }
+        }
+
+        string reconState
+        {
+            get
+            {
+                return Self.reconState;
+            }
+            set
+            {
+                Self.reconState = value;
+            }
+        }
+
+        string status
+        {
+            get
+            {
+                return Self.status;
+            }
+            set
+            {
+                Self.status = value;
+            }
+        }
+
+        string UPAStatus
+        {
+            get
+            {
+                return Self.UPAStatus;
+            }
+            set
+            {
+                Self.UPAStatus = value;
+            }
+        }
+
+        public ProvisioningProcessHandlerOutput()
+        {
+            Implementation.Constructor();
+        }
+
+        public ProvisioningProcessHandlerOutput(string status, string details, string externalUserId, string externalUsername, string externalEmail, string externalFirstName, string externalLastName, string UPAStatus, string nextReconOffset)
+        {
+            Implementation.Constructor(status, details, externalUserId, externalUsername, externalEmail, externalFirstName, externalLastName, UPAStatus, nextReconOffset);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.Clone");
+            return Self.clone();
         }
 
         public string getDetails()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetDetails");
+            return Self.getDetails();
         }
 
         public string getExternalEmail()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetExternalEmail");
+            return Self.getExternalEmail();
         }
 
         public string getExternalFirstName()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetExternalFirstName");
+            return Self.getExternalFirstName();
         }
 
         public string getExternalLastName()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetExternalLastName");
+            return Self.getExternalLastName();
         }
 
         public string getExternalUserId()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetExternalUserId");
+            return Self.getExternalUserId();
         }
 
         public string getExternalUsername()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetExternalUsername");
+            return Self.getExternalUsername();
         }
 
         public string getNextReconOffset()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetNextReconOffset");
+            return Self.getNextReconOffset();
         }
 
         public string getReconState()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetReconState");
+            return Self.getReconState();
         }
 
         public string getStatus()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetStatus");
+            return Self.getStatus();
         }
 
         public string getUPAStatus()
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.GetUPAStatus");
+            return Self.getUPAStatus();
         }
 
         public void setDetails(string details)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetDetails");
+            Self.setDetails(details);
         }
 
         public void setExternalEmail(string externalEmail)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetExternalEmail");
+            Self.setExternalEmail(externalEmail);
         }
 
         public void setExternalFirstName(string externalFirstName)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetExternalFirstName");
+            Self.setExternalFirstName(externalFirstName);
         }
 
         public void setExternalLastName(string externalLastName)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetExternalLastName");
+            Self.setExternalLastName(externalLastName);
         }
 
         public void setExternalUserId(string externalUserId)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetExternalUserId");
+            Self.setExternalUserId(externalUserId);
         }
 
         public void setExternalUsername(string externalUsername)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetExternalUsername");
+            Self.setExternalUsername(externalUsername);
         }
 
         public void setNextReconOffset(string nextReconOffset)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetNextReconOffset");
+            Self.setNextReconOffset(nextReconOffset);
         }
 
         public void setReconState(string reconState)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetReconState");
+            Self.setReconState(reconState);
         }
 
         public void setStatus(string status)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetStatus");
+            Self.setStatus(status);
         }
 
         public void setUPAStatus(string UPAStatus)
         {
-            throw new global::System.NotImplementedException("ProvisioningProcessHandlerOutput.SetUPAStatus");
+            Self.setUPAStatus(UPAStatus);
         }
     }
 }

@@ -1,27 +1,81 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Messaging_RenderEmailTemplateBodyResult.htm#apex_class_Messaging_RenderEmailTemplateBodyResult
+    /// </summary>
     public class RenderEmailTemplateBodyResult
     {
-        public RenderEmailTemplateBodyResult()
+        // infrastructure
+        public RenderEmailTemplateBodyResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("RenderEmailTemplateBodyResult");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RenderEmailTemplateBodyResult));
+            }
+        }
+
+        // API
         public List<RenderEmailTemplateError> getErrors()
         {
-            throw new global::System.NotImplementedException("RenderEmailTemplateBodyResult.GetErrors");
+            return Self.getErrors();
         }
 
         public string getMergedBody()
         {
-            throw new global::System.NotImplementedException("RenderEmailTemplateBodyResult.GetMergedBody");
+            return Self.getMergedBody();
         }
 
         public bool getSuccess()
         {
-            throw new global::System.NotImplementedException("RenderEmailTemplateBodyResult.GetSuccess");
+            return Self.getSuccess();
+        }
+
+        List<RenderEmailTemplateError> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        string mergedBody
+        {
+            get
+            {
+                return Self.mergedBody;
+            }
+            set
+            {
+                Self.mergedBody = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
         }
     }
 }

@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubItemInput
     {
+        // infrastructure
+        public ContentHubItemInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubItemInput));
+            }
+        }
+
+        // API
+        object fields
+        {
+            get
+            {
+                return Self.fields;
+            }
+            set
+            {
+                Self.fields = value;
+            }
+        }
+
+        object itemTypeId
+        {
+            get
+            {
+                return Self.itemTypeId;
+            }
+            set
+            {
+                Self.itemTypeId = value;
+            }
+        }
+
         public ContentHubItemInput()
         {
-            throw new global::System.NotImplementedException("ContentHubItemInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ContentHubItemInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubItemInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubItemInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ContentHubItemInput.ToString");
+            return Self.toString();
         }
     }
 }

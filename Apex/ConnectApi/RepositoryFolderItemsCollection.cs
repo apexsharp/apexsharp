@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RepositoryFolderItemsCollection
     {
+        // infrastructure
+        public RepositoryFolderItemsCollection(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RepositoryFolderItemsCollection));
+            }
+        }
+
+        // API
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object items
+        {
+            get
+            {
+                return Self.items;
+            }
+            set
+            {
+                Self.items = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
         public RepositoryFolderItemsCollection()
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RepositoryFolderItemsCollection.ToString");
+            return Self.toString();
         }
     }
 }

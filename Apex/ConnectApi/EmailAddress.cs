@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EmailAddress
     {
+        // infrastructure
+        public EmailAddress(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailAddress));
+            }
+        }
+
+        // API
+        object displayName
+        {
+            get
+            {
+                return Self.displayName;
+            }
+            set
+            {
+                Self.displayName = value;
+            }
+        }
+
+        object emailAddress
+        {
+            get
+            {
+                return Self.emailAddress;
+            }
+            set
+            {
+                Self.emailAddress = value;
+            }
+        }
+
+        object relatedRecord
+        {
+            get
+            {
+                return Self.relatedRecord;
+            }
+            set
+            {
+                Self.relatedRecord = value;
+            }
+        }
+
         public EmailAddress()
         {
-            throw new global::System.NotImplementedException("EmailAddress");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EmailAddress.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EmailAddress.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EmailAddress.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EmailAddress.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EmailAddress.ToString");
+            return Self.toString();
         }
     }
 }

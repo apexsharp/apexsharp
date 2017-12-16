@@ -1,75 +1,106 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PluginBatchable
     {
+        // infrastructure
+        public PluginBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PluginBatchable));
+            }
+        }
+
+        // API
         public PluginBatchable(List<SObject> newRows)
         {
-            throw new global::System.NotImplementedException("PluginBatchable");
+            Implementation.Constructor(newRows);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.Clone");
+            return Self.clone();
         }
 
-        //public void Execute(Database.BatchableContext BC,List<UserProvisioningRequest> scope){throw new global::System.NotImplementedException("PluginBatchable.Execute");}
-        public Map<String, object> flowInputPreprocessing(Map<String, object> param1)
+        public void execute(BatchableContext BC, List<UserProvisioningRequest> scope)
         {
-            throw new global::System.NotImplementedException("PluginBatchable.FlowInputPreprocessing");
+            Self.execute(BC, scope);
         }
 
-        public void flowPostProcessing(UserProvisioning.ProvisioningProcessHandlerOutput param1, SObject param2)
+        public Map<string, object> flowInputPreprocessing(Map<string, object> param1)
         {
-            throw new global::System.NotImplementedException("PluginBatchable.FlowPostProcessing");
+            return Self.flowInputPreprocessing(param1);
+        }
+
+        public void flowPostProcessing(ProvisioningProcessHandlerOutput param1, SObject param2)
+        {
+            Self.flowPostProcessing(param1, param2);
         }
 
         public string getEventPrefix()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.GetEventPrefix");
+            return Self.getEventPrefix();
         }
 
         public string getFlowName()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.GetFlowName");
+            return Self.getFlowName();
         }
 
         public string getFlowNamespace()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.GetFlowNamespace");
+            return Self.getFlowNamespace();
         }
 
         public List<SObject> getPerBatchUPL()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.GetPerBatchUPL");
+            return Self.getPerBatchUPL();
         }
 
-        //public List<UserProvisioningRequest> GetPerBatchUPR(){throw new global::System.NotImplementedException("PluginBatchable.GetPerBatchUPR");}
+        public List<UserProvisioningRequest> getPerBatchUPR()
+        {
+            return Self.getPerBatchUPR();
+        }
+
         public Map<ID, SObject> getUprToNewUplMap()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.GetUprToNewUplMap");
+            return Self.getUprToNewUplMap();
         }
 
         public bool hasFlow()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.HasFlow");
+            return Self.hasFlow();
         }
 
         public bool hasFlowOrApex()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.HasFlowOrApex");
+            return Self.hasFlowOrApex();
         }
 
         public void postBatchProcessing()
         {
-            throw new global::System.NotImplementedException("PluginBatchable.PostBatchProcessing");
+            Self.postBatchProcessing();
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public QueryLocator start(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("PluginBatchable.Start");
+            return Self.start(BC);
         }
     }
 }

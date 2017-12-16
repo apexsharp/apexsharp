@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PlatformCacheInvalidOperationException
     {
+        // infrastructure
+        public PlatformCacheInvalidOperationException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PlatformCacheInvalidOperationException));
+            }
+        }
+
+        // API
         public PlatformCacheInvalidOperationException()
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Implementation.Constructor();
         }
 
         public PlatformCacheInvalidOperationException(Exception param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Implementation.Constructor(param1);
         }
 
         public PlatformCacheInvalidOperationException(string param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Implementation.Constructor(param1);
         }
 
         public PlatformCacheInvalidOperationException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

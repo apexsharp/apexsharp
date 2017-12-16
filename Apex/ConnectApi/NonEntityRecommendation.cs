@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class NonEntityRecommendation
     {
+        // infrastructure
+        public NonEntityRecommendation(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(NonEntityRecommendation));
+            }
+        }
+
+        // API
+        object displayLabel
+        {
+            get
+            {
+                return Self.displayLabel;
+            }
+            set
+            {
+                Self.displayLabel = value;
+            }
+        }
+
+        object motif
+        {
+            get
+            {
+                return Self.motif;
+            }
+            set
+            {
+                Self.motif = value;
+            }
+        }
+
         public NonEntityRecommendation()
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("NonEntityRecommendation.ToString");
+            return Self.toString();
         }
     }
 }

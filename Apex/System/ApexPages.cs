@@ -1,37 +1,60 @@
-using Apex.ApexPages;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_apexpages.htm#apex_methods_system_apexpages
+    /// </summary>
     public class ApexPages
     {
-        public static void addMessage(Message message)
+        // infrastructure
+        public ApexPages(dynamic self)
         {
-            throw new global::System.NotImplementedException("ApexPages.AddMessage");
+            Self = self;
         }
 
-        public static void addMessages(object ex)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ApexPages.AddMessages");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ApexPages));
+            }
         }
 
-        public static PageReference currentPage()
+        // API
+        public void addMessage(global::Apex.ApexPages.Message message)
         {
-            throw new global::System.NotImplementedException("ApexPages.CurrentPage");
+            Self.addMessage(message);
         }
 
-        public static List<Message> getMessages()
+        public void addMessages(Exception exceptionThrown)
         {
-            throw new global::System.NotImplementedException("ApexPages.GetMessages");
+            Self.addMessages(exceptionThrown);
         }
 
-        public static bool hasMessages()
+        public PageReference currentPage()
         {
-            throw new global::System.NotImplementedException("ApexPages.HasMessages");
+            return Self.currentPage();
         }
 
-        public static bool hasMessages(Severity severity)
+        public global::Apex.ApexPages.Message[] getMessages()
         {
-            throw new global::System.NotImplementedException("ApexPages.HasMessages");
+            return Self.getMessages();
+        }
+
+        public bool hasMessages()
+        {
+            return Self.hasMessages();
+        }
+
+        public bool hasMessages(global::Apex.ApexPages.Severity severity)
+        {
+            return Self.hasMessages(severity);
         }
     }
 }

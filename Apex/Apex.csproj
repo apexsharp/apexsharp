@@ -1,11 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\ApexSharpApi\ApexSharpApi.csproj"/>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.9.0"/>
-  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataSource\DataSource.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApexSharpApi\ApexSharpApi.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
+    <PackageReference Include="NUnit" Version="3.9.0"/>
+  </ItemGroup>
+
 </Project>

@@ -1,27 +1,19 @@
-using Apex.System;
-
 namespace Apex.ApexPages
 {
-    public class Severity
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum Severity
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("Severity.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("Severity.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("Severity.Ordinal");
-        }
-
-        public static List<ApexPages.Severity> values()
-        {
-            throw new global::System.NotImplementedException("Severity.Values");
-        }
+        CONFIRM,
+        ERROR,
+        FATAL,
+        INFO,
+        WARNING
     }
 }

@@ -1,35 +1,156 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CanvasCapability
     {
+        // infrastructure
+        public CanvasCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CanvasCapability));
+            }
+        }
+
+        // API
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object developerName
+        {
+            get
+            {
+                return Self.developerName;
+            }
+            set
+            {
+                Self.developerName = value;
+            }
+        }
+
+        object height
+        {
+            get
+            {
+                return Self.height;
+            }
+            set
+            {
+                Self.height = value;
+            }
+        }
+
+        object icon
+        {
+            get
+            {
+                return Self.icon;
+            }
+            set
+            {
+                Self.icon = value;
+            }
+        }
+
+        object namespacePrefix
+        {
+            get
+            {
+                return Self.namespacePrefix;
+            }
+            set
+            {
+                Self.namespacePrefix = value;
+            }
+        }
+
+        object parameters
+        {
+            get
+            {
+                return Self.parameters;
+            }
+            set
+            {
+                Self.parameters = value;
+            }
+        }
+
+        object thumbnailUrl
+        {
+            get
+            {
+                return Self.thumbnailUrl;
+            }
+            set
+            {
+                Self.thumbnailUrl = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
         public CanvasCapability()
         {
-            throw new global::System.NotImplementedException("CanvasCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CanvasCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("CanvasCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("CanvasCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("CanvasCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CanvasCapability.ToString");
+            return Self.toString();
         }
     }
 }

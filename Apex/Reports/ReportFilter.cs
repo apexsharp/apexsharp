@@ -1,55 +1,80 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportfilter.htm#apex_class_reports_reportfilter
+    /// </summary>
     public class ReportFilter
     {
-        public ReportFilter()
+        // infrastructure
+        public ReportFilter(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportFilter");
+            Self = self;
         }
 
-        public ReportFilter(string column, string operatorApex, string value)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ReportFilter");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportFilter));
+            }
+        }
+
+        // API
+        public ReportFilter()
+        {
+            Implementation.Constructor();
+        }
+
+        public ReportFilter(string column, string @operator, string value)
+        {
+            Implementation.Constructor(column, @operator, value);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportFilter.Clone");
+            return Self.clone();
         }
 
         public string getColumn()
         {
-            throw new global::System.NotImplementedException("ReportFilter.GetColumn");
+            return Self.getColumn();
         }
 
         public string getOperator()
         {
-            throw new global::System.NotImplementedException("ReportFilter.GetOperator");
+            return Self.getOperator();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("ReportFilter.GetValue");
+            return Self.getValue();
         }
 
         public void setColumn(string column)
         {
-            throw new global::System.NotImplementedException("ReportFilter.SetColumn");
+            Self.setColumn(column);
         }
 
-        public void setOperator(string operatorApex)
+        public void setOperator(string @operator)
         {
-            throw new global::System.NotImplementedException("ReportFilter.SetOperator");
+            Self.setOperator(@operator);
         }
 
         public void setValue(string value)
         {
-            throw new global::System.NotImplementedException("ReportFilter.SetValue");
+            Self.setValue(value);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportFilter.ToString");
+            return Self.toString();
         }
     }
 }

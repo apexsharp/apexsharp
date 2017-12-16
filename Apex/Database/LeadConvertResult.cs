@@ -1,38 +1,132 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_database_leadconvertresult.htm#apex_class_database_leadconvertresult
+    /// </summary>
     public class LeadConvertResult
     {
+        // infrastructure
+        public LeadConvertResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LeadConvertResult));
+            }
+        }
+
+        // API
         public ID getAccountId()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.GetAccountId");
+            return Self.getAccountId();
         }
 
         public ID getContactId()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.GetContactId");
+            return Self.getContactId();
         }
 
-        public List<Database.Error> getErrors()
+        public Error[] getErrors()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.GetErrors");
+            return Self.getErrors();
         }
 
         public ID getLeadId()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.GetLeadId");
+            return Self.getLeadId();
         }
 
         public ID getOpportunityId()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.GetOpportunityId");
+            return Self.getOpportunityId();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("LeadConvertResult.IsSuccess");
+            return Self.isSuccess();
+        }
+
+        ID accountId
+        {
+            get
+            {
+                return Self.accountId;
+            }
+            set
+            {
+                Self.accountId = value;
+            }
+        }
+
+        ID contactId
+        {
+            get
+            {
+                return Self.contactId;
+            }
+            set
+            {
+                Self.contactId = value;
+            }
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        ID leadId
+        {
+            get
+            {
+                return Self.leadId;
+            }
+            set
+            {
+                Self.leadId = value;
+            }
+        }
+
+        ID opportunityId
+        {
+            get
+            {
+                return Self.opportunityId;
+            }
+            set
+            {
+                Self.opportunityId = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
         }
     }
 }

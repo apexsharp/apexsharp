@@ -1,27 +1,17 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class CsfGroupType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_enum_reports_CsfGroupType.htm
+    /// </summary>
+    public enum CsfGroupType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("CsfGroupType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("CsfGroupType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("CsfGroupType.Ordinal");
-        }
-
-        public static List<CsfGroupType> values()
-        {
-            throw new global::System.NotImplementedException("CsfGroupType.Values");
-        }
+        ALL,
+        CUSTOM,
+        GRAND_TOTAL
     }
 }

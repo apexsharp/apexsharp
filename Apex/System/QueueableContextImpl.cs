@@ -1,17 +1,40 @@
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class QueueableContextImpl
     {
+        // infrastructure
+        public QueueableContextImpl(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueueableContextImpl));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("QueueableContextImpl.Clone");
+            return Self.clone();
         }
 
         public ID getJobId()
         {
-            throw new global::System.NotImplementedException("QueueableContextImpl.GetJobId");
+            return Self.getJobId();
         }
     }
 }

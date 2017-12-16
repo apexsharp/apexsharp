@@ -1,25 +1,50 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Communities_static_methods.htm#apex_ConnectAPI_Communities_static_methods
+    /// </summary>
     public class Communities
     {
-        public object clone()
+        // infrastructure
+        public Communities(dynamic self)
         {
-            throw new global::System.NotImplementedException("Communities.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Communities));
+            }
+        }
+
+        // API
         public static CommunityPage getCommunities()
         {
-            throw new global::System.NotImplementedException("Communities.GetCommunities");
+            return Implementation.getCommunities();
         }
 
-        public static CommunityPage getCommunities(CommunityStatus status)
+        public static CommunityPage getCommunities(CommunityStatus communityStatus)
         {
-            throw new global::System.NotImplementedException("Communities.GetCommunities");
+            return Implementation.getCommunities(communityStatus);
         }
 
         public static Community getCommunity(string communityId)
         {
-            throw new global::System.NotImplementedException("Communities.GetCommunity");
+            return Implementation.getCommunity(communityId);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

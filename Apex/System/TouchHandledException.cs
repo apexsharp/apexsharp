@@ -1,45 +1,70 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TouchHandledException
     {
+        // infrastructure
+        public TouchHandledException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TouchHandledException));
+            }
+        }
+
+        // API
         public TouchHandledException(string param1)
         {
-            throw new global::System.NotImplementedException("TouchHandledException");
+            Implementation.Constructor(param1);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("TouchHandledException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("TouchHandledException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("TouchHandledException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("TouchHandledException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("TouchHandledException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("TouchHandledException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("TouchHandledException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

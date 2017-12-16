@@ -1,21 +1,45 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DummyConnectorApexHandler
     {
+        // infrastructure
+        public DummyConnectorApexHandler(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DummyConnectorApexHandler));
+            }
+        }
+
+        // API
         public DummyConnectorApexHandler()
         {
-            throw new global::System.NotImplementedException("DummyConnectorApexHandler");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DummyConnectorApexHandler.Clone");
+            return Self.clone();
         }
 
-        public UserProvisioning.ProvisioningProcessHandlerOutput invoke(
-            UserProvisioning.ProvisioningProcessHandlerInput input)
+        public ProvisioningProcessHandlerOutput invoke(ProvisioningProcessHandlerInput input)
         {
-            throw new global::System.NotImplementedException("DummyConnectorApexHandler.Invoke");
+            return Self.invoke(input);
         }
     }
 }

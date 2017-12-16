@@ -1,18 +1,40 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Search
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Search_SuggestionResult.htm#apex_class_Search_SuggestionResult
+    /// </summary>
     public class SuggestionResult
     {
-        public object clone()
+        // infrastructure
+        public SuggestionResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("SuggestionResult.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SuggestionResult));
+            }
+        }
+
+        // API
         public SObject getSObject()
         {
-            throw new global::System.NotImplementedException("SuggestionResult.GetSObject");
+            return Self.getSObject();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

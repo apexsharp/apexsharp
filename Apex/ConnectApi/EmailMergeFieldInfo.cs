@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EmailMergeFieldInfo
     {
+        // infrastructure
+        public EmailMergeFieldInfo(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailMergeFieldInfo));
+            }
+        }
+
+        // API
+        object entityToMergeFieldsMap
+        {
+            get
+            {
+                return Self.entityToMergeFieldsMap;
+            }
+            set
+            {
+                Self.entityToMergeFieldsMap = value;
+            }
+        }
+
         public EmailMergeFieldInfo()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldInfo.ToString");
+            return Self.toString();
         }
     }
 }

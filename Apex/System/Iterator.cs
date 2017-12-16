@@ -1,15 +1,40 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Iterator
     {
+        // infrastructure
+        public Iterator(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Iterator));
+            }
+        }
+
+        // API
         public bool hasNext()
         {
-            throw new global::System.NotImplementedException("Iterator.HasNext");
+            return Self.hasNext();
         }
 
         public object next()
         {
-            throw new global::System.NotImplementedException("Iterator.Next");
+            return Self.next();
         }
     }
 }

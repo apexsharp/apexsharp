@@ -1,12 +1,35 @@
-using Apex.System;
-
 namespace Apex.LiveAgent
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LiveChatRouter
     {
-        public void doRouting(List<LiveAgent.LiveChatRoutingRequest> param1)
+        // infrastructure
+        public LiveChatRouter(dynamic self)
         {
-            throw new global::System.NotImplementedException("LiveChatRouter.DoRouting");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LiveChatRouter));
+            }
+        }
+
+        // API
+        public void doRouting(List<LiveChatRoutingRequest> param1)
+        {
+            Self.doRouting(param1);
         }
     }
 }

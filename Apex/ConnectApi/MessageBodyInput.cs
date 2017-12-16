@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class MessageBodyInput
     {
+        // infrastructure
+        public MessageBodyInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MessageBodyInput));
+            }
+        }
+
+        // API
+        object messageSegments
+        {
+            get
+            {
+                return Self.messageSegments;
+            }
+            set
+            {
+                Self.messageSegments = value;
+            }
+        }
+
         public MessageBodyInput()
         {
-            throw new global::System.NotImplementedException("MessageBodyInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("MessageBodyInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("MessageBodyInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("MessageBodyInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("MessageBodyInput.ToString");
+            return Self.toString();
         }
     }
 }

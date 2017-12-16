@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CanvasException
     {
+        // infrastructure
+        public CanvasException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CanvasException));
+            }
+        }
+
+        // API
         public CanvasException()
         {
-            throw new global::System.NotImplementedException("CanvasException");
+            Implementation.Constructor();
         }
 
         public CanvasException(Exception param1)
         {
-            throw new global::System.NotImplementedException("CanvasException");
+            Implementation.Constructor(param1);
         }
 
         public CanvasException(string param1)
         {
-            throw new global::System.NotImplementedException("CanvasException");
+            Implementation.Constructor(param1);
         }
 
         public CanvasException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("CanvasException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("CanvasException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("CanvasException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("CanvasException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("CanvasException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("CanvasException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("CanvasException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("CanvasException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

@@ -1,120 +1,488 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm#apex_methods_system_sobject_describe
+    /// </summary>
     public class DescribeSObjectResult
     {
-        public List<Schema.ChildRelationship> getChildRelationships()
+        // infrastructure
+        public DescribeSObjectResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetChildRelationships");
+            Self = self;
         }
 
-        //public Schema.SObjectTypeFieldSets GetFieldSets(){throw new global::System.NotImplementedException("DescribeSObjectResult.GetFieldSets");}
-        //public Schema.SObjectTypeFields GetFields(){throw new global::System.NotImplementedException("DescribeSObjectResult.GetFields");}
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeSObjectResult));
+            }
+        }
+
+        // API
+        public ChildRelationship getChildRelationships()
+        {
+            return Self.getChildRelationships();
+        }
+
+        public bool getHasSubtypes()
+        {
+            return Self.getHasSubtypes();
+        }
+
         public string getKeyPrefix()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetKeyPrefix");
+            return Self.getKeyPrefix();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetLabel");
+            return Self.getLabel();
         }
 
         public string getLabelPlural()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetLabelPlural");
+            return Self.getLabelPlural();
         }
 
         public string getLocalName()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetLocalName");
+            return Self.getLocalName();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetName");
+            return Self.getName();
         }
 
-        public List<Schema.RecordTypeInfo> getRecordTypeInfos()
+        public List<RecordTypeInfo> getRecordTypeInfos()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetRecordTypeInfos");
+            return Self.getRecordTypeInfos();
         }
 
-        public Map<ID, Schema.RecordTypeInfo> getRecordTypeInfosById()
+        public RecordTypeInfo getRecordTypeInfosById()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetRecordTypeInfosById");
+            return Self.getRecordTypeInfosById();
         }
 
-        public Map<String, Schema.RecordTypeInfo> getRecordTypeInfosByName()
+        public RecordTypeInfo getRecordTypeInfosByName()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetRecordTypeInfosByName");
+            return Self.getRecordTypeInfosByName();
         }
 
-        public Schema.SObjectType getSObjectType()
+        public SObjectType getSobjectType()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.GetSObjectType");
+            return Self.getSobjectType();
         }
 
         public bool isAccessible()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsAccessible");
+            return Self.isAccessible();
         }
 
         public bool isCreateable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsCreateable");
+            return Self.isCreateable();
         }
 
         public bool isCustom()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsCustom");
+            return Self.isCustom();
         }
 
         public bool isCustomSetting()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsCustomSetting");
+            return Self.isCustomSetting();
         }
 
         public bool isDeletable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsDeletable");
+            return Self.isDeletable();
         }
 
         public bool isDeprecatedAndHidden()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsDeprecatedAndHidden");
+            return Self.isDeprecatedAndHidden();
         }
 
         public bool isFeedEnabled()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsFeedEnabled");
+            return Self.isFeedEnabled();
         }
 
         public bool isMergeable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsMergeable");
+            return Self.isMergeable();
+        }
+
+        public bool isMruEnabled()
+        {
+            return Self.isMruEnabled();
         }
 
         public bool isQueryable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsQueryable");
+            return Self.isQueryable();
         }
 
         public bool isSearchable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsSearchable");
+            return Self.isSearchable();
         }
 
         public bool isUndeletable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsUndeletable");
+            return Self.isUndeletable();
         }
 
         public bool isUpdateable()
         {
-            throw new global::System.NotImplementedException("DescribeSObjectResult.IsUpdateable");
+            return Self.isUpdateable();
+        }
+
+        bool accessible
+        {
+            get
+            {
+                return Self.accessible;
+            }
+            set
+            {
+                Self.accessible = value;
+            }
+        }
+
+        List<ChildRelationship> childRelationships
+        {
+            get
+            {
+                return Self.childRelationships;
+            }
+            set
+            {
+                Self.childRelationships = value;
+            }
+        }
+
+        bool createable
+        {
+            get
+            {
+                return Self.createable;
+            }
+            set
+            {
+                Self.createable = value;
+            }
+        }
+
+        bool custom
+        {
+            get
+            {
+                return Self.custom;
+            }
+            set
+            {
+                Self.custom = value;
+            }
+        }
+
+        bool customSetting
+        {
+            get
+            {
+                return Self.customSetting;
+            }
+            set
+            {
+                Self.customSetting = value;
+            }
+        }
+
+        bool deletable
+        {
+            get
+            {
+                return Self.deletable;
+            }
+            set
+            {
+                Self.deletable = value;
+            }
+        }
+
+        bool deprecatedAndHidden
+        {
+            get
+            {
+                return Self.deprecatedAndHidden;
+            }
+            set
+            {
+                Self.deprecatedAndHidden = value;
+            }
+        }
+
+        bool feedEnabled
+        {
+            get
+            {
+                return Self.feedEnabled;
+            }
+            set
+            {
+                Self.feedEnabled = value;
+            }
+        }
+
+        [Final]
+        static SObjectTypeFields fields
+        {
+            get
+            {
+                return Implementation.fields;
+            }
+        }
+
+        [Final]
+        static SObjectTypeFieldSets fieldSets
+        {
+            get
+            {
+                return Implementation.fieldSets;
+            }
+        }
+
+        bool hasSubtypes
+        {
+            get
+            {
+                return Self.hasSubtypes;
+            }
+            set
+            {
+                Self.hasSubtypes = value;
+            }
+        }
+
+        bool isSubtype
+        {
+            get
+            {
+                return Self.isSubtype;
+            }
+            set
+            {
+                Self.isSubtype = value;
+            }
+        }
+
+        string keyPrefix
+        {
+            get
+            {
+                return Self.keyPrefix;
+            }
+            set
+            {
+                Self.keyPrefix = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        string labelPlural
+        {
+            get
+            {
+                return Self.labelPlural;
+            }
+            set
+            {
+                Self.labelPlural = value;
+            }
+        }
+
+        string localName
+        {
+            get
+            {
+                return Self.localName;
+            }
+            set
+            {
+                Self.localName = value;
+            }
+        }
+
+        bool mergeable
+        {
+            get
+            {
+                return Self.mergeable;
+            }
+            set
+            {
+                Self.mergeable = value;
+            }
+        }
+
+        bool mruEnabled
+        {
+            get
+            {
+                return Self.mruEnabled;
+            }
+            set
+            {
+                Self.mruEnabled = value;
+            }
+        }
+
+        string name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        bool queryable
+        {
+            get
+            {
+                return Self.queryable;
+            }
+            set
+            {
+                Self.queryable = value;
+            }
+        }
+
+        List<RecordTypeInfo> recordTypeInfos
+        {
+            get
+            {
+                return Self.recordTypeInfos;
+            }
+            set
+            {
+                Self.recordTypeInfos = value;
+            }
+        }
+
+        Map<ID, RecordTypeInfo> recordTypeInfosById
+        {
+            get
+            {
+                return Self.recordTypeInfosById;
+            }
+            set
+            {
+                Self.recordTypeInfosById = value;
+            }
+        }
+
+        Map<string, RecordTypeInfo> recordTypeInfosByName
+        {
+            get
+            {
+                return Self.recordTypeInfosByName;
+            }
+            set
+            {
+                Self.recordTypeInfosByName = value;
+            }
+        }
+
+        bool searchable
+        {
+            get
+            {
+                return Self.searchable;
+            }
+            set
+            {
+                Self.searchable = value;
+            }
+        }
+
+        SObjectType SObjectType
+        {
+            get
+            {
+                return Self.SObjectType;
+            }
+            set
+            {
+                Self.SObjectType = value;
+            }
+        }
+
+        bool undeletable
+        {
+            get
+            {
+                return Self.undeletable;
+            }
+            set
+            {
+                Self.undeletable = value;
+            }
+        }
+
+        bool updateable
+        {
+            get
+            {
+                return Self.updateable;
+            }
+            set
+            {
+                Self.updateable = value;
+            }
+        }
+
+        public SObjectTypeFields getFields()
+        {
+            return Self.getFields();
+        }
+
+        public SObjectTypeFieldSets getFieldSets()
+        {
+            return Self.getFieldSets();
+        }
+
+        public bool getIsSubtype()
+        {
+            return Self.getIsSubtype();
+        }
+
+        public SObjectType getSObjectType()
+        {
+            return Self.getSObjectType();
         }
     }
 }

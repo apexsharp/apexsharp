@@ -1,45 +1,70 @@
 namespace Apex.System
 {
-    public class NullPointerException : Exception
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class NullPointerException
     {
+        // infrastructure
+        public NullPointerException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(NullPointerException));
+            }
+        }
+
+        // API
         public NullPointerException()
         {
-            throw new global::System.NotImplementedException("NullPointerException");
+            Implementation.Constructor();
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("NullPointerException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("NullPointerException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("NullPointerException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("NullPointerException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("NullPointerException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("NullPointerException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("NullPointerException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

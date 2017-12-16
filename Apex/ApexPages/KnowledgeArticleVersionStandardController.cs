@@ -1,49 +1,75 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_knowledgearticleversionstandardcontroller.htm#apex_pages_knowledgearticleversionstandardcontroller
+    /// </summary>
     public class KnowledgeArticleVersionStandardController
     {
-        public KnowledgeArticleVersionStandardController(SObject sobject)
+        // infrastructure
+        public KnowledgeArticleVersionStandardController(dynamic self)
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController");
+            Self = self;
         }
 
-        public void addFields(List<string> fieldNames)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.AddFields");
+            get
+            {
+                return Implementor.GetImplementation(typeof(KnowledgeArticleVersionStandardController));
+            }
         }
 
-        public System.PageReference cancel()
+        // API
+        public KnowledgeArticleVersionStandardController(SObject article)
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.Cancel");
-        }
-
-        public string getId()
-        {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.GetId");
-        }
-
-        public SObject getRecord()
-        {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.GetRecord");
+            Implementation.Constructor(article);
         }
 
         public string getSourceId()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.GetSourceId");
+            return Self.getSourceId();
+        }
+
+        public void setDataCategory(string categoryGroup, string category)
+        {
+            Self.setDataCategory(categoryGroup, category);
+        }
+
+        public void addFields(List<string> fieldNames)
+        {
+            Self.addFields(fieldNames);
+        }
+
+        public PageReference cancel()
+        {
+            return Self.cancel();
+        }
+
+        public string getId()
+        {
+            return Self.getId();
+        }
+
+        public SObject getRecord()
+        {
+            return Self.getRecord();
         }
 
         public void selectDataCategory(string categoryGroup, string category)
         {
-            throw new global::System.NotImplementedException(
-                "KnowledgeArticleVersionStandardController.SelectDataCategory");
+            Self.selectDataCategory(categoryGroup, category);
         }
 
-        public System.PageReference view()
+        public PageReference view()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersionStandardController.View");
+            return Self.view();
         }
     }
 }

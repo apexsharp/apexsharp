@@ -1,55 +1,90 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Datacloud_static_methods.htm#apex_ConnectAPI_Datacloud_static_methods
+    /// </summary>
     public class Datacloud
     {
-        public object clone()
+        // infrastructure
+        public Datacloud(dynamic self)
         {
-            throw new global::System.NotImplementedException("Datacloud.Clone");
+            Self = self;
         }
 
-        public static DatacloudCompanies getCompaniesFromOrder(string orderId)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Datacloud.GetCompaniesFromOrder");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Datacloud));
+            }
         }
 
-        public static DatacloudCompanies getCompaniesFromOrder(string orderId, int pageParam, int pageSize)
+        // API
+        public static DatacloudCompanies getCompaniesFromOrder(string orderId, string pageSize, string page)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetCompaniesFromOrder");
+            return Implementation.getCompaniesFromOrder(orderId, pageSize, page);
         }
 
         public static DatacloudCompany getCompany(string companyId)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetCompany");
+            return Implementation.getCompany(companyId);
         }
 
         public static DatacloudContact getContact(string contactId)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetContact");
+            return Implementation.getContact(contactId);
         }
 
-        public static DatacloudContacts getContactsFromOrder(string orderId)
+        public static DatacloudContacts getContactsFromOrder(string orderId, string page, string pageSize)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetContactsFromOrder");
-        }
-
-        public static DatacloudContacts getContactsFromOrder(string orderId, int pageParam, int pageSize)
-        {
-            throw new global::System.NotImplementedException("Datacloud.GetContactsFromOrder");
+            return Implementation.getContactsFromOrder(orderId, page, pageSize);
         }
 
         public static DatacloudOrder getOrder(string orderId)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetOrder");
+            return Implementation.getOrder(orderId);
         }
 
         public static DatacloudPurchaseUsage getUsage(string userId)
         {
-            throw new global::System.NotImplementedException("Datacloud.GetUsage");
+            return Implementation.getUsage(userId);
         }
 
         public static DatacloudOrder postOrder(DatacloudOrderInput orderInput)
         {
-            throw new global::System.NotImplementedException("Datacloud.PostOrder");
+            return Implementation.postOrder(orderInput);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static DatacloudCompanies getCompaniesFromOrder(string orderId)
+        {
+            return Implementation.getCompaniesFromOrder(orderId);
+        }
+
+        public static DatacloudCompanies getCompaniesFromOrder(string orderId, int pageParam, int pageSize)
+        {
+            return Implementation.getCompaniesFromOrder(orderId, pageParam, pageSize);
+        }
+
+        public static DatacloudContacts getContactsFromOrder(string orderId)
+        {
+            return Implementation.getContactsFromOrder(orderId);
+        }
+
+        public static DatacloudContacts getContactsFromOrder(string orderId, int pageParam, int pageSize)
+        {
+            return Implementation.getContactsFromOrder(orderId, pageParam, pageSize);
         }
     }
 }

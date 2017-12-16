@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EmailMergeFieldCollectionInfo
     {
+        // infrastructure
+        public EmailMergeFieldCollectionInfo(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailMergeFieldCollectionInfo));
+            }
+        }
+
+        // API
+        object mergeFields
+        {
+            get
+            {
+                return Self.mergeFields;
+            }
+            set
+            {
+                Self.mergeFields = value;
+            }
+        }
+
         public EmailMergeFieldCollectionInfo()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EmailMergeFieldCollectionInfo.ToString");
+            return Self.toString();
         }
     }
 }

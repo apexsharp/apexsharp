@@ -1,35 +1,84 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_system_Location.htm#apex_class_system_Location
+    /// </summary>
     public class Location
     {
-        public Location()
+        // infrastructure
+        public Location(dynamic self)
         {
-            throw new global::System.NotImplementedException("Location");
+            Self = self;
         }
 
-        public static double getDistance(Location loc1, Location loc2, string unit)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Location.GetDistance");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Location));
+            }
         }
 
-        public double getDistance(Location other, string unit)
+        // API
+        public double getDistance(Location toLocation, string unit)
         {
-            throw new global::System.NotImplementedException("Location.GetDistance");
+            return Self.getDistance(toLocation, unit);
+        }
+
+        public static double getDistance(Location firstLocation, Location secondLocation, string unit)
+        {
+            return Implementation.getDistance(firstLocation, secondLocation, unit);
         }
 
         public double getLatitude()
         {
-            throw new global::System.NotImplementedException("Location.GetLatitude");
+            return Self.getLatitude();
         }
 
         public double getLongitude()
         {
-            throw new global::System.NotImplementedException("Location.GetLongitude");
+            return Self.getLongitude();
         }
 
         public static Location newInstance(decimal latitude, decimal longitude)
         {
-            throw new global::System.NotImplementedException("Location.NewInstance");
+            return Implementation.newInstance(latitude, longitude);
+        }
+
+        double latitude
+        {
+            get
+            {
+                return Self.latitude;
+            }
+            set
+            {
+                Self.latitude = value;
+            }
+        }
+
+        double longitude
+        {
+            get
+            {
+                return Self.longitude;
+            }
+            set
+            {
+                Self.longitude = value;
+            }
+        }
+
+        public Location()
+        {
+            Implementation.Constructor();
         }
     }
 }

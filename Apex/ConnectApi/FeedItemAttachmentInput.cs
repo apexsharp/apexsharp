@@ -1,25 +1,50 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedItemAttachmentInput
     {
+        // infrastructure
+        public FeedItemAttachmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedItemAttachmentInput));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedItemAttachmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedItemAttachmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedItemAttachmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedItemAttachmentInput.ToString");
+            return Self.toString();
         }
     }
 }

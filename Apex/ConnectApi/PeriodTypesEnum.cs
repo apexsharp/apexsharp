@@ -1,27 +1,98 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PeriodTypesEnum
     {
+        // infrastructure
+        public PeriodTypesEnum(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PeriodTypesEnum));
+            }
+        }
+
+        // API
+        object Month
+        {
+            get
+            {
+                return Self.Month;
+            }
+            set
+            {
+                Self.Month = value;
+            }
+        }
+
+        object Quarter
+        {
+            get
+            {
+                return Self.Quarter;
+            }
+            set
+            {
+                Self.Quarter = value;
+            }
+        }
+
+        object Week
+        {
+            get
+            {
+                return Self.Week;
+            }
+            set
+            {
+                Self.Week = value;
+            }
+        }
+
+        object Year
+        {
+            get
+            {
+                return Self.Year;
+            }
+            set
+            {
+                Self.Year = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("PeriodTypesEnum.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("PeriodTypesEnum.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("PeriodTypesEnum.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<PeriodTypesEnum> values()
         {
-            throw new global::System.NotImplementedException("PeriodTypesEnum.Values");
+            return Implementation.values();
         }
     }
 }

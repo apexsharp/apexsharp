@@ -1,50 +1,76 @@
-using Apex.QuickAction;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.QuickAction;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_system_quickaction.htm#apex_class_system_quickaction
+    /// </summary>
     public class QuickAction
     {
+        // infrastructure
+        public QuickAction(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuickAction));
+            }
+        }
+
+        // API
         public static List<DescribeAvailableQuickActionResult> describeAvailableQuickActions(string parentType)
         {
-            throw new global::System.NotImplementedException("QuickAction.DescribeAvailableQuickActions");
+            return Implementation.describeAvailableQuickActions(parentType);
+        }
+
+        public static List<DescribeQuickActionResult> describeAvailableQuickActions(List<string> sObjectNames)
+        {
+            return Implementation.describeAvailableQuickActions(sObjectNames);
+        }
+
+        public static QuickActionResult performQuickAction(QuickActionRequest quickActionRequest)
+        {
+            return Implementation.performQuickAction(quickActionRequest);
+        }
+
+        public static QuickActionResult performQuickAction(QuickActionRequest quickActionRequest, bool allOrNothing)
+        {
+            return Implementation.performQuickAction(quickActionRequest, allOrNothing);
+        }
+
+        public static List<QuickActionResult> performQuickActions(List<QuickActionRequest> quickActionRequests)
+        {
+            return Implementation.performQuickActions(quickActionRequests);
+        }
+
+        public static List<QuickActionResult> performQuickActions(List<QuickActionRequest> quickActionRequests, bool allOrNothing)
+        {
+            return Implementation.performQuickActions(quickActionRequests, allOrNothing);
         }
 
         public static List<DescribeQuickActionResult> describeQuickActions(List<string> actions)
         {
-            throw new global::System.NotImplementedException("QuickAction.DescribeQuickActions");
-        }
-
-        public static QuickActionResult performQuickAction(QuickActionRequest performQuickAction)
-        {
-            throw new global::System.NotImplementedException("QuickAction.PerformQuickAction");
-        }
-
-        public static QuickActionResult performQuickAction(QuickActionRequest performQuickAction, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("QuickAction.PerformQuickAction");
-        }
-
-        public static List<QuickActionResult> performQuickActions(List<QuickActionRequest> performQuickActions)
-        {
-            throw new global::System.NotImplementedException("QuickAction.PerformQuickActions");
-        }
-
-        public static List<QuickActionResult> performQuickActions(List<QuickActionRequest> performQuickActions,
-            bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("QuickAction.PerformQuickActions");
+            return Implementation.describeQuickActions(actions);
         }
 
         public static QuickActionTemplateResult retrieveQuickActionTemplate(string quickActionName, ID contextId)
         {
-            throw new global::System.NotImplementedException("QuickAction.RetrieveQuickActionTemplate");
+            return Implementation.retrieveQuickActionTemplate(quickActionName, contextId);
         }
 
-        public static List<QuickActionTemplateResult> retrieveQuickActionTemplates(List<string> quickActionNames,
-            ID contextId)
+        public static List<QuickActionTemplateResult> retrieveQuickActionTemplates(List<string> quickActionNames, ID contextId)
         {
-            throw new global::System.NotImplementedException("QuickAction.RetrieveQuickActionTemplates");
+            return Implementation.retrieveQuickActionTemplates(quickActionNames, contextId);
         }
     }
 }

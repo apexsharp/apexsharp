@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ManagedTopic
     {
+        // infrastructure
+        public ManagedTopic(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ManagedTopic));
+            }
+        }
+
+        // API
+        object children
+        {
+            get
+            {
+                return Self.children;
+            }
+            set
+            {
+                Self.children = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object managedTopicType
+        {
+            get
+            {
+                return Self.managedTopicType;
+            }
+            set
+            {
+                Self.managedTopicType = value;
+            }
+        }
+
+        object parent
+        {
+            get
+            {
+                return Self.parent;
+            }
+            set
+            {
+                Self.parent = value;
+            }
+        }
+
+        object topic
+        {
+            get
+            {
+                return Self.topic;
+            }
+            set
+            {
+                Self.topic = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public ManagedTopic()
         {
-            throw new global::System.NotImplementedException("ManagedTopic");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ManagedTopic.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ManagedTopic.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ManagedTopic.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ManagedTopic.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ManagedTopic.ToString");
+            return Self.toString();
         }
     }
 }

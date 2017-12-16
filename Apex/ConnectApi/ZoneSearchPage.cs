@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ZoneSearchPage
     {
+        // infrastructure
+        public ZoneSearchPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ZoneSearchPage));
+            }
+        }
+
+        // API
+        object currentPageToken
+        {
+            get
+            {
+                return Self.currentPageToken;
+            }
+            set
+            {
+                Self.currentPageToken = value;
+            }
+        }
+
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object items
+        {
+            get
+            {
+                return Self.items;
+            }
+            set
+            {
+                Self.items = value;
+            }
+        }
+
+        object nextPageToken
+        {
+            get
+            {
+                return Self.nextPageToken;
+            }
+            set
+            {
+                Self.nextPageToken = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
         public ZoneSearchPage()
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ZoneSearchPage.ToString");
+            return Self.toString();
         }
     }
 }

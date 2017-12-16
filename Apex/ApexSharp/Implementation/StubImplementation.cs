@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -15,6 +15,11 @@ namespace Apex.ApexSharp.Implementation
     public class StubImplementation : DynamicObject
     {
         public StubImplementation(string className) => ClassName = className;
+
+        public StubImplementation(Type type)
+            : this(type.FullName)
+        {
+        }
 
         public string ClassName { get; }
 

@@ -1,27 +1,16 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FeedItemVisibilityType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FeedItemVisibilityType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FeedItemVisibilityType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FeedItemVisibilityType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FeedItemVisibilityType.Ordinal");
-        }
-
-        public static List<FeedItemVisibilityType> values()
-        {
-            throw new global::System.NotImplementedException("FeedItemVisibilityType.Values");
-        }
+        AllUsers,
+        InternalUsers
     }
 }

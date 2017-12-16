@@ -1,20 +1,50 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_http.htm#apex_classes_restful_http_http
+    /// </summary>
     public class Http
     {
-        public Http()
+        // infrastructure
+        public Http(dynamic self)
         {
-            throw new global::System.NotImplementedException("Http");
+            Self = self;
         }
 
-        public HttpResponse send(object request)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Http.Send");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Http));
+            }
+        }
+
+        // API
+        public HttpResponse send(HttpRequest request)
+        {
+            return Self.send(request);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Http.ToString");
+            return Self.toString();
+        }
+
+        public Http()
+        {
+            Implementation.Constructor();
+        }
+
+        public HttpResponse send(object request)
+        {
+            return Self.send(request);
         }
     }
 }

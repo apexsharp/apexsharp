@@ -1,96 +1,126 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EmailException
     {
+        // infrastructure
+        public EmailException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailException));
+            }
+        }
+
+        // API
         public EmailException()
         {
-            throw new global::System.NotImplementedException("EmailException");
+            Implementation.Constructor();
         }
 
         public EmailException(Exception param1)
         {
-            throw new global::System.NotImplementedException("EmailException");
+            Implementation.Constructor(param1);
         }
 
         public EmailException(string param1)
         {
-            throw new global::System.NotImplementedException("EmailException");
+            Implementation.Constructor(param1);
         }
 
         public EmailException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("EmailException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("EmailException.GetCause");
+            return Self.getCause();
         }
 
         public List<string> getDmlFieldNames(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlFieldNames");
+            return Self.getDmlFieldNames(index);
         }
 
-        //public List<Schema.SObjectField> GetDmlFields(int index){throw new global::System.NotImplementedException("EmailException.GetDmlFields");}
+        public List<SObjectField> getDmlFields(int index)
+        {
+            return Self.getDmlFields(index);
+        }
+
         public string getDmlId(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlId");
+            return Self.getDmlId(index);
         }
 
         public int getDmlIndex(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlIndex");
+            return Self.getDmlIndex(index);
         }
 
         public string getDmlMessage(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlMessage");
+            return Self.getDmlMessage(index);
         }
 
         public string getDmlStatusCode(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlStatusCode");
+            return Self.getDmlStatusCode(index);
         }
 
         public StatusCode getDmlType(int index)
         {
-            throw new global::System.NotImplementedException("EmailException.GetDmlType");
+            return Self.getDmlType(index);
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("EmailException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("EmailException.GetMessage");
+            return Self.getMessage();
         }
 
         public int getNumDml()
         {
-            throw new global::System.NotImplementedException("EmailException.GetNumDml");
+            return Self.getNumDml();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("EmailException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("EmailException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("EmailException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("EmailException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EntityRecommendation
     {
+        // infrastructure
+        public EntityRecommendation(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EntityRecommendation));
+            }
+        }
+
+        // API
+        object action
+        {
+            get
+            {
+                return Self.action;
+            }
+            set
+            {
+                Self.action = value;
+            }
+        }
+
+        object actOnUrl
+        {
+            get
+            {
+                return Self.actOnUrl;
+            }
+            set
+            {
+                Self.actOnUrl = value;
+            }
+        }
+
+        object entity
+        {
+            get
+            {
+                return Self.entity;
+            }
+            set
+            {
+                Self.entity = value;
+            }
+        }
+
         public EntityRecommendation()
         {
-            throw new global::System.NotImplementedException("EntityRecommendation");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EntityRecommendation.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("EntityRecommendation.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("EntityRecommendation.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("EntityRecommendation.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("EntityRecommendation.ToString");
+            return Self.toString();
         }
     }
 }

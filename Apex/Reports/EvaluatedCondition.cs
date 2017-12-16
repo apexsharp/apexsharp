@@ -1,51 +1,75 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_EvaluatedCondition.htm#apex_class_reports_EvaluatedCondition
+    /// </summary>
     public class EvaluatedCondition
     {
-        public EvaluatedCondition(string aggregateName, string aggregateLabel, double compareTo, double value,
-            string displayCompareTo, string displayValue, EvaluatedConditionOperator operatorApex)
+        // infrastructure
+        public EvaluatedCondition(dynamic self)
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(EvaluatedCondition));
+            }
+        }
+
+        // API
+        public EvaluatedCondition(string aggregateName, string aggregateLabel, double compareToValue, double aggregateValue, string displayCompareTo, string displayValue, EvaluatedConditionOperator @operator)
+        {
+            Implementation.Constructor(aggregateName, aggregateLabel, compareToValue, aggregateValue, displayCompareTo, displayValue, @operator);
         }
 
         public string getAggregateLabel()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetAggregateLabel");
+            return Self.getAggregateLabel();
         }
 
         public string getAggregateName()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetAggregateName");
+            return Self.getAggregateName();
         }
 
         public double getCompareTo()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetCompareTo");
+            return Self.getCompareTo();
         }
 
         public string getDisplayCompareTo()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetDisplayCompareTo");
+            return Self.getDisplayCompareTo();
         }
 
         public string getDisplayValue()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetDisplayValue");
+            return Self.getDisplayValue();
         }
 
         public EvaluatedConditionOperator getOperator()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetOperator");
+            return Self.getOperator();
         }
 
         public double getValue()
         {
-            throw new global::System.NotImplementedException("EvaluatedCondition.GetValue");
+            return Self.getValue();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

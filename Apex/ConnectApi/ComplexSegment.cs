@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ComplexSegment
     {
+        // infrastructure
+        public ComplexSegment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ComplexSegment));
+            }
+        }
+
+        // API
+        object segments
+        {
+            get
+            {
+                return Self.segments;
+            }
+            set
+            {
+                Self.segments = value;
+            }
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("ComplexSegment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ComplexSegment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ComplexSegment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ComplexSegment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ComplexSegment.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserReferencePage
     {
+        // infrastructure
+        public UserReferencePage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserReferencePage));
+            }
+        }
+
+        // API
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
+        object userCount
+        {
+            get
+            {
+                return Self.userCount;
+            }
+            set
+            {
+                Self.userCount = value;
+            }
+        }
+
+        object users
+        {
+            get
+            {
+                return Self.users;
+            }
+            set
+            {
+                Self.users = value;
+            }
+        }
+
         public UserReferencePage()
         {
-            throw new global::System.NotImplementedException("UserReferencePage");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserReferencePage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UserReferencePage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UserReferencePage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UserReferencePage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UserReferencePage.ToString");
+            return Self.toString();
         }
     }
 }

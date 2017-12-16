@@ -1,160 +1,195 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_CommunityModeration_static_methods.htm#apex_ConnectAPI_CommunityModeration_static_methods
+    /// </summary>
     public class CommunityModeration
     {
+        // infrastructure
+        public CommunityModeration(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CommunityModeration));
+            }
+        }
+
+        // API
         public static ModerationFlags addFlagToComment(string communityId, string commentId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
+            return Implementation.addFlagToComment(communityId, commentId);
+        }
+
+        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagVisibility visibility)
+        {
+            return Implementation.addFlagToComment(communityId, commentId, visibility);
         }
 
         public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
-        }
-
-        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type,
-            CommunityFlagVisibility visibility)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
-        }
-
-        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type,
-            CommunityFlagVisibility visibility, string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
-        }
-
-        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type,
-            string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
-        }
-
-        public static ModerationFlags addFlagToComment(string communityId, string commentId,
-            CommunityFlagVisibility visibility)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
-        }
-
-        public static ModerationFlags addFlagToComment(string communityId, string commentId,
-            CommunityFlagVisibility visibility, string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
+            return Implementation.addFlagToComment(communityId, commentId, type);
         }
 
         public static ModerationFlags addFlagToComment(string communityId, string commentId, string note)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToComment");
+            return Implementation.addFlagToComment(communityId, commentId, note);
+        }
+
+        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type, string note)
+        {
+            return Implementation.addFlagToComment(communityId, commentId, type, note);
+        }
+
+        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type, CommunityFlagVisibility visibility)
+        {
+            return Implementation.addFlagToComment(communityId, commentId, type, visibility);
+        }
+
+        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagVisibility visibility, string note)
+        {
+            return Implementation.addFlagToComment(communityId, commentId, visibility, note);
+        }
+
+        public static ModerationFlags addFlagToComment(string communityId, string commentId, CommunityFlagType type, CommunityFlagVisibility visibility, string note)
+        {
+            return Implementation.addFlagToComment(communityId, commentId, type, visibility, note);
         }
 
         public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
+            return Implementation.addFlagToFeedElement(communityId, feedElementId);
         }
 
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagType type)
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagVisibility visibility)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, visibility);
         }
 
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagType type, CommunityFlagVisibility visibility)
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagType type)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
-        }
-
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagType type, CommunityFlagVisibility visibility, string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
-        }
-
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagType type, string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
-        }
-
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagVisibility visibility)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
-        }
-
-        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId,
-            CommunityFlagVisibility visibility, string note)
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, type);
         }
 
         public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, string note)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedElement");
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, note);
+        }
+
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagType type, string note)
+        {
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, type, note);
+        }
+
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagType type, CommunityFlagVisibility visibility)
+        {
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, type, visibility);
+        }
+
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagVisibility visibility, string note)
+        {
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, visibility, note);
+        }
+
+        public static ModerationCapability addFlagToFeedElement(string communityId, string feedElementId, CommunityFlagType type, CommunityFlagVisibility visibility, string note)
+        {
+            return Implementation.addFlagToFeedElement(communityId, feedElementId, type, visibility, note);
         }
 
         public static ModerationFlags addFlagToFeedItem(string communityId, string feedItemId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedItem");
+            return Implementation.addFlagToFeedItem(communityId, feedItemId);
         }
 
-        public static ModerationFlags addFlagToFeedItem(string communityId, string feedItemId,
-            CommunityFlagVisibility visibility)
+        public static ModerationFlags addFlagToFeedItem(string communityId, string feedItemId, CommunityFlagVisibility visibility)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.AddFlagToFeedItem");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("CommunityModeration.Clone");
+            return Implementation.addFlagToFeedItem(communityId, feedItemId, visibility);
         }
 
         public static ModerationFlags getFlagsOnComment(string communityId, string commentId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnComment");
+            return Implementation.getFlagsOnComment(communityId, commentId);
         }
 
-        public static ModerationFlags getFlagsOnComment(string communityId, string commentId,
-            CommunityFlagVisibility visibility)
+        public static ModerationFlags getFlagsOnComment(string communityId, string commentId, CommunityFlagVisibility visibility)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnComment");
+            return Implementation.getFlagsOnComment(communityId, commentId, visibility);
+        }
+
+        public static ModerationFlags getFlagsOnComment(string communityId, string commentId, int pageSize, string pageParam)
+        {
+            return Implementation.getFlagsOnComment(communityId, commentId, pageSize, pageParam);
+        }
+
+        public static ModerationFlags getFlagsOnComment(string communityId, string commentId, CommunityFlagVisibility visibility, int pageSize, string pageParam)
+        {
+            return Implementation.getFlagsOnComment(communityId, commentId, visibility, pageSize, pageParam);
         }
 
         public static ModerationCapability getFlagsOnFeedElement(string communityId, string feedElementId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnFeedElement");
+            return Implementation.getFlagsOnFeedElement(communityId, feedElementId);
         }
 
-        public static ModerationCapability getFlagsOnFeedElement(string communityId, string feedElementId,
-            CommunityFlagVisibility visibility)
+        public static ModerationCapability getFlagsOnFeedElement(string communityId, string feedElementId, CommunityFlagVisibility visibility)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnFeedElement");
+            return Implementation.getFlagsOnFeedElement(communityId, feedElementId, visibility);
+        }
+
+        public static ModerationCapability getFlagsOnFeedElement(string communityId, string feedElementId, string pageParam, int pageSize)
+        {
+            return Implementation.getFlagsOnFeedElement(communityId, feedElementId, pageParam, pageSize);
+        }
+
+        public static ModerationCapability getFlagsOnFeedElement(string communityId, string feedElementId, CommunityFlagVisibility visibility, int pageSize, string pageParam)
+        {
+            return Implementation.getFlagsOnFeedElement(communityId, feedElementId, visibility, pageSize, pageParam);
         }
 
         public static ModerationFlags getFlagsOnFeedItem(string communityId, string feedItemId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnFeedItem");
+            return Implementation.getFlagsOnFeedItem(communityId, feedItemId);
         }
 
-        public static ModerationFlags getFlagsOnFeedItem(string communityId, string feedItemId,
-            CommunityFlagVisibility visibility)
+        public static ModerationFlags getFlagsOnFeedItem(string communityId, string feedItemId, CommunityFlagVisibility visibility)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.GetFlagsOnFeedItem");
+            return Implementation.getFlagsOnFeedItem(communityId, feedItemId, visibility);
         }
 
-        public static void removeFlagFromComment(string communityId, string commentId, string userId)
+        public static ModerationFlags removeFlagFromComment(string communityId, string commentId, string userId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.RemoveFlagFromComment");
+            return Implementation.removeFlagFromComment(communityId, commentId, userId);
         }
 
         public static void removeFlagFromFeedElement(string communityId, string feedElementId, string userId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.RemoveFlagFromFeedElement");
+            Implementation.removeFlagFromFeedElement(communityId, feedElementId, userId);
+        }
+
+        public static ModerationFlags removeFlagsOnFeedItem(string communityId, string feedItemId, string userId)
+        {
+            return Implementation.removeFlagsOnFeedItem(communityId, feedItemId, userId);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public static void removeFlagFromFeedItem(string communityId, string feedItemId, string userId)
         {
-            throw new global::System.NotImplementedException("CommunityModeration.RemoveFlagFromFeedItem");
+            Implementation.removeFlagFromFeedItem(communityId, feedItemId, userId);
         }
     }
 }

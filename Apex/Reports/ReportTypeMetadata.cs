@@ -1,42 +1,65 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_ReportTypeMetadata.htm#apex_class_reports_reporttypemetadata
+    /// </summary>
     public class ReportTypeMetadata
     {
-        public object clone()
+        // infrastructure
+        public ReportTypeMetadata(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.Clone");
+            Self = self;
         }
 
-        public List<ReportTypeColumnCategory> getCategories()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.GetCategories");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportTypeMetadata));
+            }
         }
 
+        // API
         public ReportDivisionInfo getDivisionInfo()
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.GetDivisionInfo");
+            return Self.getDivisionInfo();
         }
 
         public ReportScopeInfo getScopeInfo()
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.GetScopeInfo");
+            return Self.getScopeInfo();
         }
 
         public List<StandardDateFilterDurationGroup> getStandardDateFilterDurationGroups()
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.GetStandardDateFilterDurationGroups");
+            return Self.getStandardDateFilterDurationGroups();
         }
 
-        public Map<String, StandardFilterInfo> getStandardFilterInfos()
+        public Map<string, StandardFilterInfo> getStandardFilterInfos()
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.GetStandardFilterInfos");
+            return Self.getStandardFilterInfos();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public List<ReportTypeColumnCategory> getCategories()
+        {
+            return Self.getCategories();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportTypeMetadata.ToString");
+            return Self.toString();
         }
     }
 }

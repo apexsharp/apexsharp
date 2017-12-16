@@ -1,108 +1,119 @@
-using Apex.Approval;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+    using LockResult = global::Apex.Approval.LockResult;
+    using ProcessRequest = global::Apex.Approval.ProcessRequest;
+    using ProcessResult = global::Apex.Approval.ProcessResult;
+    using UnlockResult = global::Apex.Approval.UnlockResult;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_approval.htm#apex_methods_system_approval
+    /// </summary>
     public class Approval
     {
-        //public static bool isLocked(ID id)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.IsLocked");
-        //}
+        // infrastructure
+        public Approval(dynamic self)
+        {
+            Self = self;
+        }
 
-        //public static Map<ID, Boolean> isLocked(List<ID> ids)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.IsLocked");
-        //}
+        dynamic Self { get; set; }
 
-        //public static Map<ID, Boolean> isLocked(List<SObject> sobjects)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.IsLocked");
-        //}
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Approval));
+            }
+        }
 
-        //public static bool isLocked(SObject sobject)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.IsLocked");
-        //}
+        // API
+        public static bool isLocked(ID id)
+        {
+            return Implementation.isLocked(id);
+        }
 
-        //public static LockResult lock(ID id)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static Map<ID, bool> isLocked(List<ID> ids)
+        {
+            return Implementation.isLocked(ids);
+        }
 
-        //public static LockResult lock(ID id, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static bool isLocked(SObject sobject)
+        {
+            return Implementation.isLocked(sobject);
+        }
 
-        //public static List<LockResult> lock(List<ID> ids)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static LockResult @lock(ID recordId)
+        {
+            return Implementation.@lock(recordId);
+        }
 
-        //public static List<LockResult> lock(List<ID> ids, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static List<LockResult> @lock(List<ID> ids)
+        {
+            return Implementation.@lock(ids);
+        }
 
-        //public static List<LockResult> lock(List<SObject> sobjects)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static LockResult @lock(SObject recordToLock)
+        {
+            return Implementation.@lock(recordToLock);
+        }
 
-        //public static List<LockResult> lock(List<SObject> sobjects, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static LockResult @lock(ID recordId, bool allOrNothing)
+        {
+            return Implementation.@lock(recordId, allOrNothing);
+        }
 
-        //public static LockResult lock(SObject sobject)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static List<LockResult> @lock(List<ID> recordIds, bool allOrNothing)
+        {
+            return Implementation.@lock(recordIds, allOrNothing);
+        }
 
-        //public static LockResult lock(SObject sobject, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Lock");
-        //}
+        public static LockResult @lock(SObject recordToLock, bool allOrNothing)
+        {
+            return Implementation.@lock(recordToLock, allOrNothing);
+        }
 
-        //public static UnlockResult unlock(ID id)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static ProcessResult process(ProcessRequest approvalRequest)
+        {
+            return Implementation.process(approvalRequest);
+        }
 
-        //public static UnlockResult unlock(ID id, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static ProcessResult process(ProcessRequest approvalRequests, bool allOrNone)
+        {
+            return Implementation.process(approvalRequests, allOrNone);
+        }
 
-        //public static List<UnlockResult> unlock(List<ID> ids)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static UnlockResult unlock(ID recordId)
+        {
+            return Implementation.unlock(recordId);
+        }
 
-        //public static List<UnlockResult> unlock(List<ID> ids, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static List<UnlockResult> unlock(List<ID> recordIds)
+        {
+            return Implementation.unlock(recordIds);
+        }
 
-        //public static List<UnlockResult> unlock(List<SObject> sobjects)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static UnlockResult unlock(SObject recordToUnlock)
+        {
+            return Implementation.unlock(recordToUnlock);
+        }
 
-        //public static List<UnlockResult> unlock(List<SObject> sobjects, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static UnlockResult unlock(ID recordId, bool allOrNothing)
+        {
+            return Implementation.unlock(recordId, allOrNothing);
+        }
 
-        //public static UnlockResult unlock(SObject sobject)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static List<UnlockResult> unlock(List<ID> recordIds, bool allOrNothing)
+        {
+            return Implementation.unlock(recordIds, allOrNothing);
+        }
 
-        //public static UnlockResult unlock(SObject sobject, bool allOrNothing)
-        //{
-        //    throw new global::System.NotImplementedException("Approval.Unlock");
-        //}
+        public static UnlockResult unlock(SObject recordToUnlock, bool allOrNothing)
+        {
+            return Implementation.unlock(recordToUnlock, allOrNothing);
+        }
     }
 }

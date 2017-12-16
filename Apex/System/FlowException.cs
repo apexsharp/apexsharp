@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FlowException
     {
+        // infrastructure
+        public FlowException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FlowException));
+            }
+        }
+
+        // API
         public FlowException()
         {
-            throw new global::System.NotImplementedException("FlowException");
+            Implementation.Constructor();
         }
 
         public FlowException(Exception param1)
         {
-            throw new global::System.NotImplementedException("FlowException");
+            Implementation.Constructor(param1);
         }
 
         public FlowException(string param1)
         {
-            throw new global::System.NotImplementedException("FlowException");
+            Implementation.Constructor(param1);
         }
 
         public FlowException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("FlowException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("FlowException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("FlowException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("FlowException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("FlowException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("FlowException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("FlowException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("FlowException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

@@ -1,28 +1,99 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class QuickActionTemplateResult
     {
+        // infrastructure
+        public QuickActionTemplateResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuickActionTemplateResult));
+            }
+        }
+
+        // API
+        SObject defaultValueFormulas
+        {
+            get
+            {
+                return Self.defaultValueFormulas;
+            }
+            set
+            {
+                Self.defaultValueFormulas = value;
+            }
+        }
+
+        SObject defaultValues
+        {
+            get
+            {
+                return Self.defaultValues;
+            }
+            set
+            {
+                Self.defaultValues = value;
+            }
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
+        }
+
         public SObject getDefaultValueFormulas()
         {
-            throw new global::System.NotImplementedException("QuickActionTemplateResult.GetDefaultValueFormulas");
+            return Self.getDefaultValueFormulas();
         }
 
         public SObject getDefaultValues()
         {
-            throw new global::System.NotImplementedException("QuickActionTemplateResult.GetDefaultValues");
+            return Self.getDefaultValues();
         }
 
-        public List<Database.Error> getErrors()
+        public List<Error> getErrors()
         {
-            throw new global::System.NotImplementedException("QuickActionTemplateResult.GetErrors");
+            return Self.getErrors();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("QuickActionTemplateResult.IsSuccess");
+            return Self.isSuccess();
         }
     }
 }

@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RepositoryDirectoryEntryCollection
     {
+        // infrastructure
+        public RepositoryDirectoryEntryCollection(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RepositoryDirectoryEntryCollection));
+            }
+        }
+
+        // API
+        object directoryEntries
+        {
+            get
+            {
+                return Self.directoryEntries;
+            }
+            set
+            {
+                Self.directoryEntries = value;
+            }
+        }
+
         public RepositoryDirectoryEntryCollection()
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RepositoryDirectoryEntryCollection.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedEntityShareCapability
     {
+        // infrastructure
+        public FeedEntityShareCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedEntityShareCapability));
+            }
+        }
+
+        // API
+        object feedEntity
+        {
+            get
+            {
+                return Self.feedEntity;
+            }
+            set
+            {
+                Self.feedEntity = value;
+            }
+        }
+
         public FeedEntityShareCapability()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapability.ToString");
+            return Self.toString();
         }
     }
 }

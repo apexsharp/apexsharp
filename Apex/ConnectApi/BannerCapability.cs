@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BannerCapability
     {
+        // infrastructure
+        public BannerCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BannerCapability));
+            }
+        }
+
+        // API
+        object motif
+        {
+            get
+            {
+                return Self.motif;
+            }
+            set
+            {
+                Self.motif = value;
+            }
+        }
+
+        object style
+        {
+            get
+            {
+                return Self.style;
+            }
+            set
+            {
+                Self.style = value;
+            }
+        }
+
         public BannerCapability()
         {
-            throw new global::System.NotImplementedException("BannerCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BannerCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("BannerCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("BannerCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("BannerCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BannerCapability.ToString");
+            return Self.toString();
         }
     }
 }

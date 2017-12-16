@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FileSharingOption
     {
+        // infrastructure
+        public FileSharingOption(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FileSharingOption));
+            }
+        }
+
+        // API
+        object Allowed
+        {
+            get
+            {
+                return Self.Allowed;
+            }
+            set
+            {
+                Self.Allowed = value;
+            }
+        }
+
+        object Restricted
+        {
+            get
+            {
+                return Self.Restricted;
+            }
+            set
+            {
+                Self.Restricted = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FileSharingOption.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FileSharingOption.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("FileSharingOption.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<FileSharingOption> values()
         {
-            throw new global::System.NotImplementedException("FileSharingOption.Values");
+            return Implementation.values();
         }
     }
 }

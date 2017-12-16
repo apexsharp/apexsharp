@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TextSegmentInput
     {
+        // infrastructure
+        public TextSegmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TextSegmentInput));
+            }
+        }
+
+        // API
+        object text
+        {
+            get
+            {
+                return Self.text;
+            }
+            set
+            {
+                Self.text = value;
+            }
+        }
+
         public TextSegmentInput()
         {
-            throw new global::System.NotImplementedException("TextSegmentInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("TextSegmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("TextSegmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("TextSegmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TextSegmentInput.ToString");
+            return Self.toString();
         }
     }
 }

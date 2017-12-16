@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RelatedQuestion
     {
+        // infrastructure
+        public RelatedQuestion(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RelatedQuestion));
+            }
+        }
+
+        // API
+        object hasBestAnswer
+        {
+            get
+            {
+                return Self.hasBestAnswer;
+            }
+            set
+            {
+                Self.hasBestAnswer = value;
+            }
+        }
+
+        object interactions
+        {
+            get
+            {
+                return Self.interactions;
+            }
+            set
+            {
+                Self.interactions = value;
+            }
+        }
+
         public RelatedQuestion()
         {
-            throw new global::System.NotImplementedException("RelatedQuestion");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RelatedQuestion.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RelatedQuestion.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RelatedQuestion.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RelatedQuestion.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RelatedQuestion.ToString");
+            return Self.toString();
         }
     }
 }

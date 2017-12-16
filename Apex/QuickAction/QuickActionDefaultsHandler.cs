@@ -1,12 +1,17 @@
-using Apex.System;
-
 namespace Apex.QuickAction
 {
-    public class QuickActionDefaultsHandler
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_QuickAction_QuickActionDefaultsHandler.htm#apex_interface_QuickAction_QuickActionDefaultsHandler
+    /// </summary>
+    public interface QuickActionDefaultsHandler
     {
-        public void onInitDefaults(List<QuickActionDefaults> param1)
-        {
-            throw new global::System.NotImplementedException("QuickActionDefaultsHandler.OnInitDefaults");
-        }
+        void onInitDefaults(QuickActionDefaults[] actionDefaults);
+
+        void onInitDefaults(List<QuickActionDefaults> param1);
     }
 }

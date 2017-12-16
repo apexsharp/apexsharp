@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SecurityException
     {
+        // infrastructure
+        public SecurityException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SecurityException));
+            }
+        }
+
+        // API
         public SecurityException()
         {
-            throw new global::System.NotImplementedException("SecurityException");
+            Implementation.Constructor();
         }
 
         public SecurityException(Exception param1)
         {
-            throw new global::System.NotImplementedException("SecurityException");
+            Implementation.Constructor(param1);
         }
 
         public SecurityException(string param1)
         {
-            throw new global::System.NotImplementedException("SecurityException");
+            Implementation.Constructor(param1);
         }
 
         public SecurityException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("SecurityException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("SecurityException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("SecurityException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("SecurityException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("SecurityException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("SecurityException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("SecurityException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("SecurityException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

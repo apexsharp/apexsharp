@@ -1,105 +1,135 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Url
     {
+        // infrastructure
+        public Url(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Url));
+            }
+        }
+
+        // API
+        public Url(string spec)
+        {
+            Implementation.Constructor(spec);
+        }
+
         public Url(string protocol, string host, int port, string file)
         {
-            throw new global::System.NotImplementedException("Url");
+            Implementation.Constructor(protocol, host, port, file);
         }
 
         public Url(string protocol, string host, string file)
         {
-            throw new global::System.NotImplementedException("Url");
-        }
-
-        public Url(string spec)
-        {
-            throw new global::System.NotImplementedException("Url");
+            Implementation.Constructor(protocol, host, file);
         }
 
         public Url(Url context, string spec)
         {
-            throw new global::System.NotImplementedException("Url");
+            Implementation.Constructor(context, spec);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Url.Clone");
+            return Self.clone();
         }
 
         public string getAuthority()
         {
-            throw new global::System.NotImplementedException("Url.GetAuthority");
+            return Self.getAuthority();
         }
 
         public static Url getCurrentRequestUrl()
         {
-            throw new global::System.NotImplementedException("Url.GetCurrentRequestUrl");
+            return Implementation.getCurrentRequestUrl();
         }
 
         public int getDefaultPort()
         {
-            throw new global::System.NotImplementedException("Url.GetDefaultPort");
+            return Self.getDefaultPort();
         }
 
         public string getFile()
         {
-            throw new global::System.NotImplementedException("Url.GetFile");
+            return Self.getFile();
         }
 
         public static string getFileFieldURL(string objectId, string fieldName)
         {
-            throw new global::System.NotImplementedException("Url.GetFileFieldURL");
+            return Implementation.getFileFieldURL(objectId, fieldName);
         }
 
         public string getHost()
         {
-            throw new global::System.NotImplementedException("Url.GetHost");
+            return Self.getHost();
         }
 
         public string getPath()
         {
-            throw new global::System.NotImplementedException("Url.GetPath");
+            return Self.getPath();
         }
 
         public int getPort()
         {
-            throw new global::System.NotImplementedException("Url.GetPort");
+            return Self.getPort();
         }
 
         public string getProtocol()
         {
-            throw new global::System.NotImplementedException("Url.GetProtocol");
+            return Self.getProtocol();
         }
 
         public string getQuery()
         {
-            throw new global::System.NotImplementedException("Url.GetQuery");
+            return Self.getQuery();
         }
 
         public string getRef()
         {
-            throw new global::System.NotImplementedException("Url.GetRef");
+            return Self.getRef();
         }
 
         public static Url getSalesforceBaseUrl()
         {
-            throw new global::System.NotImplementedException("Url.GetSalesforceBaseUrl");
+            return Implementation.getSalesforceBaseUrl();
         }
 
         public string getUserInfo()
         {
-            throw new global::System.NotImplementedException("Url.GetUserInfo");
+            return Self.getUserInfo();
         }
 
         public bool sameFile(Url other)
         {
-            throw new global::System.NotImplementedException("Url.SameFile");
+            return Self.sameFile(other);
         }
 
         public string toExternalForm()
         {
-            throw new global::System.NotImplementedException("Url.ToExternalForm");
+            return Self.toExternalForm();
+        }
+
+        public string toString()
+        {
+            return Self.toString();
         }
     }
 }

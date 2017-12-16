@@ -1,52 +1,123 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class EmailAttachment
     {
+        // infrastructure
+        public EmailAttachment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailAttachment));
+            }
+        }
+
+        // API
+        Blob body
+        {
+            get
+            {
+                return Self.body;
+            }
+            set
+            {
+                Self.body = value;
+            }
+        }
+
+        string contentId
+        {
+            get
+            {
+                return Self.contentId;
+            }
+            set
+            {
+                Self.contentId = value;
+            }
+        }
+
+        string contentType
+        {
+            get
+            {
+                return Self.contentType;
+            }
+            set
+            {
+                Self.contentType = value;
+            }
+        }
+
+        string fileName
+        {
+            get
+            {
+                return Self.fileName;
+            }
+            set
+            {
+                Self.fileName = value;
+            }
+        }
+
         public EmailAttachment()
         {
-            throw new global::System.NotImplementedException("EmailAttachment");
+            Implementation.Constructor();
         }
 
         public Blob getBody()
         {
-            throw new global::System.NotImplementedException("EmailAttachment.GetBody");
+            return Self.getBody();
         }
 
         public string getContentId()
         {
-            throw new global::System.NotImplementedException("EmailAttachment.GetContentId");
+            return Self.getContentId();
         }
 
         public string getContentType()
         {
-            throw new global::System.NotImplementedException("EmailAttachment.GetContentType");
+            return Self.getContentType();
         }
 
         public string getFileName()
         {
-            throw new global::System.NotImplementedException("EmailAttachment.GetFileName");
+            return Self.getFileName();
         }
 
         public void setBody(Blob param1)
         {
-            throw new global::System.NotImplementedException("EmailAttachment.SetBody");
+            Self.setBody(param1);
         }
 
         public void setContentId(string param1)
         {
-            throw new global::System.NotImplementedException("EmailAttachment.SetContentId");
+            Self.setContentId(param1);
         }
 
         public void setContentType(string param1)
         {
-            throw new global::System.NotImplementedException("EmailAttachment.SetContentType");
+            Self.setContentType(param1);
         }
 
         public void setFileName(string param1)
         {
-            throw new global::System.NotImplementedException("EmailAttachment.SetFileName");
+            Self.setFileName(param1);
         }
     }
 }

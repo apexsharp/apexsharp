@@ -1,315 +1,330 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_ChatterGroups_static_methods.htm#apex_ConnectAPI_ChatterGroups_static_methods
+    /// </summary>
     public class ChatterGroups
     {
-        public static GroupMember addMember(string communityId, string groupId, string userId)
+        // infrastructure
+        public ChatterGroups(dynamic self)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.AddMember");
+            Self = self;
         }
 
-        public static GroupMember addMemberWithRole(string communityId, string groupId, string userId,
-            GroupMembershipType role)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ChatterGroups.AddMemberWithRole");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterGroups));
+            }
+        }
+
+        // API
+        public static GroupMember addMember(string communityId, string groupId, string userId)
+        {
+            return Implementation.addMember(communityId, groupId, userId);
+        }
+
+        public static GroupMember addMemberWithRole(string communityId, string groupId, string userId, GroupMembershipType role)
+        {
+            return Implementation.addMemberWithRole(communityId, groupId, userId, role);
         }
 
         public static GroupRecord addRecord(string communityId, string groupId, string recordId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.AddRecord");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.Clone");
+            return Implementation.addRecord(communityId, groupId, recordId);
         }
 
         public static ChatterGroupDetail createGroup(string communityId, ChatterGroupInput groupInput)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.CreateGroup");
+            return Implementation.createGroup(communityId, groupInput);
         }
 
         public static void deleteBannerPhoto(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.DeleteBannerPhoto");
+            Implementation.deleteBannerPhoto(communityId, groupId);
         }
 
         public static void deleteGroup(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.DeleteGroup");
+            Implementation.deleteGroup(communityId, groupId);
         }
 
         public static void deleteMember(string communityId, string membershipId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.DeleteMember");
+            Implementation.deleteMember(communityId, membershipId);
         }
 
         public static void deletePhoto(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.DeletePhoto");
-        }
-
-        public static Subscription follow(string communityId, string groupId, string subjectId)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.Follow");
+            Implementation.deletePhoto(communityId, groupId);
         }
 
         public static AnnouncementPage getAnnouncements(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetAnnouncements");
+            return Implementation.getAnnouncements(communityId, groupId);
         }
 
         public static AnnouncementPage getAnnouncements(string communityId, string groupId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetAnnouncements");
+            return Implementation.getAnnouncements(communityId, groupId, pageParam, pageSize);
         }
 
         public static BannerPhoto getBannerPhoto(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetBannerPhoto");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId, int pageParam)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId, int pageParam, int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId, string filterType)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId, string filterType, int pageParam)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
-        }
-
-        public static FollowingPage getFollowings(string communityId, string groupId, string filterType, int pageParam,
-            int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetFollowings");
+            return Implementation.getBannerPhoto(communityId, groupId);
         }
 
         public static ChatterGroupDetail getGroup(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroup");
+            return Implementation.getGroup(communityId, groupId);
         }
 
-        public static List<BatchResult> getGroupBatch(string communityId, List<string> groupIds)
+        public static BatchResult[] getGroupBatch(string communityId, List<string> groupIds)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroupBatch");
+            return Implementation.getGroupBatch(communityId, groupIds);
         }
 
         public static GroupMembershipRequest getGroupMembershipRequest(string communityId, string requestId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroupMembershipRequest");
+            return Implementation.getGroupMembershipRequest(communityId, requestId);
         }
 
         public static GroupMembershipRequests getGroupMembershipRequests(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroupMembershipRequests");
+            return Implementation.getGroupMembershipRequests(communityId, groupId);
         }
 
-        public static GroupMembershipRequests getGroupMembershipRequests(string communityId, string groupId,
-            GroupMembershipRequestStatus status)
+        public static GroupMembershipRequests getGroupMembershipRequests(string communityId, string groupId, GroupMembershipRequestStatus status)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroupMembershipRequests");
+            return Implementation.getGroupMembershipRequests(communityId, groupId, status);
         }
 
         public static ChatterGroupPage getGroups(string communityId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroups");
-        }
-
-        public static ChatterGroupPage getGroups(string communityId, GroupArchiveStatus archiveStatus, int pageParam,
-            int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroups");
+            return Implementation.getGroups(communityId);
         }
 
         public static ChatterGroupPage getGroups(string communityId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetGroups");
+            return Implementation.getGroups(communityId, pageParam, pageSize);
+        }
+
+        public static ChatterGroupPage getGroups(string communityId, int pageParam, int pageSize, GroupArchiveStatus archiveStatus)
+        {
+            return Implementation.getGroups(communityId, pageParam, pageSize, archiveStatus);
         }
 
         public static GroupMember getMember(string communityId, string membershipId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetMember");
+            return Implementation.getMember(communityId, membershipId);
         }
 
         public static GroupMemberPage getMembers(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetMembers");
+            return Implementation.getMembers(communityId, groupId);
         }
 
         public static GroupMemberPage getMembers(string communityId, string groupId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetMembers");
+            return Implementation.getMembers(communityId, groupId, pageParam, pageSize);
         }
 
-        public static List<BatchResult> getMembershipBatch(string communityId, List<string> membershipIds)
+        public static BatchResult[] getMembershipBatch(string communityId, List<string> membershipIds)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetMembershipBatch");
+            return Implementation.getMembershipBatch(communityId, membershipIds);
         }
 
         public static GroupChatterSettings getMyChatterSettings(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetMyChatterSettings");
+            return Implementation.getMyChatterSettings(communityId, groupId);
         }
 
         public static Photo getPhoto(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetPhoto");
+            return Implementation.getPhoto(communityId, groupId);
         }
 
         public static GroupRecord getRecord(string communityId, string groupRecordId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetRecord");
+            return Implementation.getRecord(communityId, groupRecordId);
         }
 
         public static GroupRecordPage getRecords(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetRecords");
+            return Implementation.getRecords(communityId, groupId);
         }
 
         public static GroupRecordPage getRecords(string communityId, string groupId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.GetRecords");
+            return Implementation.getRecords(communityId, groupId, pageParam, pageSize);
         }
 
         public static Invitations inviteUsers(string groupId, InviteInput invite)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.InviteUsers");
+            return Implementation.inviteUsers(groupId, invite);
         }
 
         public static Announcement postAnnouncement(string communityId, string groupId, AnnouncementInput announcement)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.PostAnnouncement");
+            return Implementation.postAnnouncement(communityId, groupId, announcement);
         }
 
         public static void removeRecord(string communityId, string groupRecordId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.RemoveRecord");
+            Implementation.removeRecord(communityId, groupRecordId);
         }
 
         public static GroupMembershipRequest requestGroupMembership(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.RequestGroupMembership");
+            return Implementation.requestGroupMembership(communityId, groupId);
         }
 
         public static ChatterGroupPage searchGroups(string communityId, string q)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SearchGroups");
-        }
-
-        public static ChatterGroupPage searchGroups(string communityId, string q, GroupArchiveStatus archiveStatus,
-            int pageParam, int pageSize)
-        {
-            throw new global::System.NotImplementedException("ChatterGroups.SearchGroups");
+            return Implementation.searchGroups(communityId, q);
         }
 
         public static ChatterGroupPage searchGroups(string communityId, string q, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SearchGroups");
+            return Implementation.searchGroups(communityId, q, pageParam, pageSize);
         }
 
-        public static BannerPhoto setBannerPhoto(string communityId, string groupId, BinaryInput fileUpload)
+        public static ChatterGroupPage searchGroups(string communityId, string q, GroupArchiveStatus archiveStatus, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetBannerPhoto");
+            return Implementation.searchGroups(communityId, q, archiveStatus, pageParam, pageSize);
         }
 
         public static BannerPhoto setBannerPhoto(string communityId, string groupId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetBannerPhoto");
+            return Implementation.setBannerPhoto(communityId, groupId, fileId, versionNumber);
         }
 
-        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string groupId,
-            BannerPhotoInput bannerPhoto)
+        public static BannerPhoto setBannerPhoto(string communityId, string groupId, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetBannerPhotoWithAttributes");
+            return Implementation.setBannerPhoto(communityId, groupId, fileUpload);
         }
 
-        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string groupId,
-            BannerPhotoInput bannerPhoto, BinaryInput fileUpload)
+        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string groupId, BannerPhotoInput bannerPhoto)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetBannerPhotoWithAttributes");
+            return Implementation.setBannerPhotoWithAttributes(communityId, groupId, bannerPhoto);
         }
 
-        public static Photo setPhoto(string communityId, string groupId, BinaryInput fileUpload)
+        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string groupId, BannerPhotoInput bannerPhoto, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetPhoto");
+            return Implementation.setBannerPhotoWithAttributes(communityId, groupId, bannerPhoto, fileUpload);
         }
 
         public static Photo setPhoto(string communityId, string groupId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetPhoto");
+            return Implementation.setPhoto(communityId, groupId, fileId, versionNumber);
+        }
+
+        public static Photo setPhoto(string communityId, string groupId, BinaryInput fileUpload)
+        {
+            return Implementation.setPhoto(communityId, groupId, fileUpload);
         }
 
         public static Photo setPhotoWithAttributes(string communityId, string groupId, PhotoInput photo)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, groupId, photo);
         }
 
-        public static Photo setPhotoWithAttributes(string communityId, string groupId, PhotoInput photo,
-            BinaryInput fileUpload)
+        public static Photo setPhotoWithAttributes(string communityId, string groupId, PhotoInput photo, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, groupId, photo, fileUpload);
+        }
+
+        public static ChatterGroup updateGroup(string communityId, string groupId, ChatterGroupInput groupInput)
+        {
+            return Implementation.updateGroup(communityId, groupId, groupInput);
+        }
+
+        public static ChatterGroup updateGroupMember(string communityId, string membershipId, GroupMembershipType role)
+        {
+            return Implementation.updateGroupMember(communityId, membershipId, role);
+        }
+
+        public static GroupChatterSettings updateMyChatterSettings(string communityId, string groupId, GroupEmailFrequency emailFrequency)
+        {
+            return Implementation.updateMyChatterSettings(communityId, groupId, emailFrequency);
+        }
+
+        public static GroupMembershipRequest updateRequestStatus(string communityId, string requestId, GroupMembershipRequestStatus status)
+        {
+            return Implementation.updateRequestStatus(communityId, requestId, status);
+        }
+
+        public static GroupMembershipRequest updateRequestStatus(string communityId, string requestId, GroupMembershipRequestStatus status, string responseMessage)
+        {
+            return Implementation.updateRequestStatus(communityId, requestId, status, responseMessage);
         }
 
         public static void setTestSearchGroups(string communityId, string q, ChatterGroupPage result)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetTestSearchGroups");
+            Implementation.setTestSearchGroups(communityId, q, result);
         }
 
-        public static void setTestSearchGroups(string communityId, string q, GroupArchiveStatus archiveStatus,
-            int pageParam, int pageSize, ChatterGroupPage result)
+        public static void setTestSearchGroups(string communityId, string q, int pageParam, int pageSize, ChatterGroupPage result)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetTestSearchGroups");
+            Implementation.setTestSearchGroups(communityId, q, pageParam, pageSize, result);
         }
 
-        public static void setTestSearchGroups(string communityId, string q, int pageParam, int pageSize,
-            ChatterGroupPage result)
+        public static void setTestSearchGroups(string communityId, string q, GroupArchiveStatus archiveStatus, int pageParam, int pageSize, ChatterGroupPage result)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.SetTestSearchGroups");
+            Implementation.setTestSearchGroups(communityId, q, archiveStatus, pageParam, pageSize, result);
         }
 
-        public static ChatterGroupDetail updateGroup(string communityId, string groupId, ChatterGroupInput groupInput)
+        public object clone()
         {
-            throw new global::System.NotImplementedException("ChatterGroups.UpdateGroup");
+            return Self.clone();
         }
 
-        public static GroupMember updateGroupMember(string communityId, string membershipId, GroupMembershipType role)
+        public static Subscription follow(string communityId, string groupId, string subjectId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.UpdateGroupMember");
+            return Implementation.follow(communityId, groupId, subjectId);
         }
 
-        public static GroupChatterSettings updateMyChatterSettings(string communityId, string groupId,
-            GroupEmailFrequency emailFrequency)
+        public static FollowingPage getFollowings(string communityId, string groupId)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.UpdateMyChatterSettings");
+            return Implementation.getFollowings(communityId, groupId);
         }
 
-        public static GroupMembershipRequest updateRequestStatus(string communityId, string requestId,
-            GroupMembershipRequestStatus status)
+        public static FollowingPage getFollowings(string communityId, string groupId, int pageParam)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.UpdateRequestStatus");
+            return Implementation.getFollowings(communityId, groupId, pageParam);
         }
 
-        public static GroupMembershipRequest updateRequestStatus(string communityId, string requestId,
-            GroupMembershipRequestStatus status, string responseMessage)
+        public static FollowingPage getFollowings(string communityId, string groupId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("ChatterGroups.UpdateRequestStatus");
+            return Implementation.getFollowings(communityId, groupId, pageParam, pageSize);
+        }
+
+        public static FollowingPage getFollowings(string communityId, string groupId, string filterType)
+        {
+            return Implementation.getFollowings(communityId, groupId, filterType);
+        }
+
+        public static FollowingPage getFollowings(string communityId, string groupId, string filterType, int pageParam)
+        {
+            return Implementation.getFollowings(communityId, groupId, filterType, pageParam);
+        }
+
+        public static FollowingPage getFollowings(string communityId, string groupId, string filterType, int pageParam, int pageSize)
+        {
+            return Implementation.getFollowings(communityId, groupId, filterType, pageParam, pageSize);
+        }
+
+        public static ChatterGroupPage getGroups(string communityId, GroupArchiveStatus archiveStatus, int pageParam, int pageSize)
+        {
+            return Implementation.getGroups(communityId, archiveStatus, pageParam, pageSize);
         }
     }
 }

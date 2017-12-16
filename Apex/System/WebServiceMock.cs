@@ -1,11 +1,15 @@
 namespace Apex.System
 {
-    public class WebServiceMock
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_webservicemock.htm#apex_interface_webservicemock
+    /// </summary>
+    public interface WebServiceMock
     {
-        public void doInvoke(object param1, object param2, Map<String, object> param3, string param4, string param5,
-            string param6, string param7, string param8, string param9)
-        {
-            throw new global::System.NotImplementedException("WebServiceMock.DoInvoke");
-        }
+        void doInvoke(object stub, object soapRequest, Map<string, object> responseMap, string endpoint, string soapAction, string requestName, string responseNamespace, string responseName, string responseType);
     }
 }

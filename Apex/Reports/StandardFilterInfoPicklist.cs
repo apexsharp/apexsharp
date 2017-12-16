@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardFilterInfoPicklist.htm#apex_class_reports_StandardFilterInfoPicklist
+    /// </summary>
     public class StandardFilterInfoPicklist
     {
-        public object clone()
+        // infrastructure
+        public StandardFilterInfoPicklist(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardFilterInfoPicklist));
+            }
+        }
+
+        // API
         public string getDefaultValue()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public List<FilterValue> getFilterValues()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.GetFilterValues");
+            return Self.getFilterValues();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.GetLabel");
+            return Self.getLabel();
         }
 
         public StandardFilterType getType()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.GetType");
+            return Self.getType();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardFilterInfoPicklist.ToString");
+            return Self.toString();
         }
     }
 }

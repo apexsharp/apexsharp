@@ -1,45 +1,70 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class NoDataFoundException
     {
+        // infrastructure
+        public NoDataFoundException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(NoDataFoundException));
+            }
+        }
+
+        // API
         public NoDataFoundException()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException");
+            Implementation.Constructor();
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("NoDataFoundException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

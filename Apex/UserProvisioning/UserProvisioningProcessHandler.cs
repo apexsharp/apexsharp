@@ -1,21 +1,45 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserProvisioningProcessHandler
     {
+        // infrastructure
+        public UserProvisioningProcessHandler(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserProvisioningProcessHandler));
+            }
+        }
+
+        // API
         public UserProvisioningProcessHandler()
         {
-            throw new global::System.NotImplementedException("UserProvisioningProcessHandler");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserProvisioningProcessHandler.Clone");
+            return Self.clone();
         }
 
-        public UserProvisioning.ProvisioningProcessHandlerOutput invoke(
-            UserProvisioning.ProvisioningProcessHandlerInput input)
+        public ProvisioningProcessHandlerOutput invoke(ProvisioningProcessHandlerInput input)
         {
-            throw new global::System.NotImplementedException("UserProvisioningProcessHandler.Invoke");
+            return Self.invoke(input);
         }
     }
 }

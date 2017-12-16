@@ -1,112 +1,125 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_ChatterFavorites_static_methods.htm#apex_ConnectAPI_ChatterFavorites_static_methods
+    /// </summary>
     public class ChatterFavorites
     {
+        // infrastructure
+        public ChatterFavorites(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterFavorites));
+            }
+        }
+
+        // API
         public static FeedFavorite addFavorite(string communityId, string subjectId, string searchText)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.AddFavorite");
+            return Implementation.addFavorite(communityId, subjectId, searchText);
         }
 
         public static FeedFavorite addRecordFavorite(string communityId, string subjectId, string targetId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.AddRecordFavorite");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("ChatterFavorites.Clone");
+            return Implementation.addRecordFavorite(communityId, subjectId, targetId);
         }
 
         public static void deleteFavorite(string communityId, string subjectId, string favoriteId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.DeleteFavorite");
+            Implementation.deleteFavorite(communityId, subjectId, favoriteId);
         }
 
         public static FeedFavorite getFavorite(string communityId, string subjectId, string favoriteId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFavorite");
+            return Implementation.getFavorite(communityId, subjectId, favoriteId);
         }
 
         public static FeedFavorites getFavorites(string communityId, string subjectId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFavorites");
+            return Implementation.getFavorites(communityId, subjectId);
         }
 
         public static FeedElementPage getFeedElements(string communityId, string subjectId, string favoriteId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedElements");
+            return Implementation.getFeedElements(communityId, subjectId, favoriteId);
         }
 
-        public static FeedElementPage getFeedElements(string communityId, string subjectId, string favoriteId,
-            int recentCommentCount, int elementsPerBundle, string pageParam, int pageSize, FeedSortOrder sortParam)
+        public static FeedElementPage getFeedElements(string communityId, string subjectId, string favoriteId, string pageParam, int pageSize, FeedSortOrder sortParam)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedElements");
+            return Implementation.getFeedElements(communityId, subjectId, favoriteId, pageParam, pageSize, sortParam);
         }
 
-        public static FeedElementPage getFeedElements(string communityId, string subjectId, string favoriteId,
-            string pageParam, int pageSize, FeedSortOrder sortParam)
+        public static FeedElementPage getFeedElements(string communityId, string subjectId, string favoriteId, int recentCommentCount, int elementsPerBundle, string pageParam, int pageSize, FeedSortOrder sortParam)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedElements");
+            return Implementation.getFeedElements(communityId, subjectId, favoriteId, recentCommentCount, elementsPerBundle, pageParam, pageSize, sortParam);
         }
 
         public static FeedItemPage getFeedItems(string communityId, string subjectId, string favoriteId)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedItems");
+            return Implementation.getFeedItems(communityId, subjectId, favoriteId);
         }
 
-        public static FeedItemPage getFeedItems(string communityId, string subjectId, string favoriteId,
-            int recentCommentCount, string pageParam, int pageSize, FeedSortOrder sortParam)
+        public static FeedItemPage getFeedItems(string communityId, string subjectId, string favoriteId, string pageParam, int pageSize, FeedSortOrder sortParam)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedItems");
+            return Implementation.getFeedItems(communityId, subjectId, favoriteId, pageParam, pageSize, sortParam);
         }
 
-        public static FeedItemPage getFeedItems(string communityId, string subjectId, string favoriteId,
-            string pageParam, int pageSize, FeedSortOrder sortParam)
+        public static FeedItemPage getFeedItems(string communityId, string subjectId, string favoriteId, int recentCommentCount, string pageParam, int pageSize, FeedSortOrder sortParam)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.GetFeedItems");
+            return Implementation.getFeedItems(communityId, subjectId, favoriteId, recentCommentCount, pageParam, pageSize, sortParam);
         }
 
-        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId,
-            FeedElementPage result)
+        public static FeedFavorite updateFavorite(string communityId, string subjectId, string favoriteId, bool updateLastViewDate)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedElements");
+            return Implementation.updateFavorite(communityId, subjectId, favoriteId, updateLastViewDate);
         }
 
-        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId,
-            int recentCommentCount, int elementsPerBundle, string pageParam, int pageSize, FeedSortOrder sortParam,
-            FeedElementPage result)
+        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId, FeedElementPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedElements");
+            Implementation.setTestGetFeedElements(communityId, subjectId, favoriteId, result);
         }
 
-        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId,
-            string pageParam, int pageSize, FeedSortOrder sortParam, FeedElementPage result)
+        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId, string pageParam, int pageSize, FeedSortOrder sortParam, FeedElementPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedElements");
+            Implementation.setTestGetFeedElements(communityId, subjectId, favoriteId, pageParam, pageSize, sortParam, result);
         }
 
-        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId,
-            FeedItemPage result)
+        public static void setTestGetFeedElements(string communityId, string subjectId, string favoriteId, int recentCommentCount, int elementsPerBundle, string pageParam, int pageSize, FeedSortOrder sortParam, FeedElementPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedItems");
+            Implementation.setTestGetFeedElements(communityId, subjectId, favoriteId, recentCommentCount, elementsPerBundle, pageParam, pageSize, sortParam, result);
         }
 
-        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId,
-            int recentCommentCount, string pageParam, int pageSize, FeedSortOrder sortParam, FeedItemPage result)
+        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId, FeedItemPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedItems");
+            Implementation.setTestGetFeedItems(communityId, subjectId, favoriteId, result);
         }
 
-        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId,
-            string pageParam, int pageSize, FeedSortOrder sortParam, FeedItemPage result)
+        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId, string pageParam, int pageSize, FeedSortOrder sortParam, FeedItemPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.SetTestGetFeedItems");
+            Implementation.setTestGetFeedItems(communityId, subjectId, favoriteId, pageParam, pageSize, sortParam, result);
         }
 
-        public static FeedFavorite updateFavorite(string communityId, string subjectId, string favoriteId,
-            bool updateLastViewDate)
+        public static void setTestGetFeedItems(string communityId, string subjectId, string favoriteId, int recentCommentCount, string pageParam, int pageSize, FeedSortOrder sortParam, FeedItemPage result)
         {
-            throw new global::System.NotImplementedException("ChatterFavorites.UpdateFavorite");
+            Implementation.setTestGetFeedItems(communityId, subjectId, favoriteId, recentCommentCount, pageParam, pageSize, sortParam, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

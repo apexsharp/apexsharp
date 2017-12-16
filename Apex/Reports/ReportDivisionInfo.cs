@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_ReportDivisionInfo.htm#apex_class_reports_ReportDivisionInfo
+    /// </summary>
     public class ReportDivisionInfo
     {
-        public object clone()
+        // infrastructure
+        public ReportDivisionInfo(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportDivisionInfo.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportDivisionInfo));
+            }
+        }
+
+        // API
         public string getDefaultValue()
         {
-            throw new global::System.NotImplementedException("ReportDivisionInfo.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public List<FilterValue> getValues()
         {
-            throw new global::System.NotImplementedException("ReportDivisionInfo.GetValues");
+            return Self.getValues();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportDivisionInfo.ToString");
+            return Self.toString();
         }
     }
 }

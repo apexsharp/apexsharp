@@ -1,33 +1,55 @@
-using Apex.System;
-
 namespace Apex.DataProtection
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DbBackupPortalConnector
     {
+        // infrastructure
+        public DbBackupPortalConnector(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DbBackupPortalConnector));
+            }
+        }
+
+        // API
         public DbBackupPortalConnector()
         {
-            throw new global::System.NotImplementedException("DbBackupPortalConnector");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DbBackupPortalConnector.Clone");
+            return Self.clone();
         }
 
         public void getInstanceList(List<string> instancesToFill)
         {
-            throw new global::System.NotImplementedException("DbBackupPortalConnector.GetInstanceList");
+            Self.getInstanceList(instancesToFill);
         }
 
         public string getRmanStats(List<string> instanceNames, string userMessage, long timeoutMilli)
         {
-            throw new global::System.NotImplementedException("DbBackupPortalConnector.GetRmanStats");
+            return Self.getRmanStats(instanceNames, userMessage, timeoutMilli);
         }
 
-        public string getRmanStats(List<string> instanceNames, string userMessage, long timeoutMilli,
-            string soapEndPoint)
+        public string getRmanStats(List<string> instanceNames, string userMessage, long timeoutMilli, string soapEndPoint)
         {
-            throw new global::System.NotImplementedException("DbBackupPortalConnector.GetRmanStats");
+            return Self.getRmanStats(instanceNames, userMessage, timeoutMilli, soapEndPoint);
         }
     }
 }

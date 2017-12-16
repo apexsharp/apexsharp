@@ -1,27 +1,16 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FieldChangeValueType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FieldChangeValueType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FieldChangeValueType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FieldChangeValueType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FieldChangeValueType.Ordinal");
-        }
-
-        public static List<FieldChangeValueType> values()
-        {
-            throw new global::System.NotImplementedException("FieldChangeValueType.Values");
-        }
+        NewValue,
+        OldValue
     }
 }

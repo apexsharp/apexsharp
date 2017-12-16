@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedPoll
     {
+        // infrastructure
+        public FeedPoll(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedPoll));
+            }
+        }
+
+        // API
+        object choices
+        {
+            get
+            {
+                return Self.choices;
+            }
+            set
+            {
+                Self.choices = value;
+            }
+        }
+
+        object myChoiceId
+        {
+            get
+            {
+                return Self.myChoiceId;
+            }
+            set
+            {
+                Self.myChoiceId = value;
+            }
+        }
+
+        object totalVoteCount
+        {
+            get
+            {
+                return Self.totalVoteCount;
+            }
+            set
+            {
+                Self.totalVoteCount = value;
+            }
+        }
+
         public FeedPoll()
         {
-            throw new global::System.NotImplementedException("FeedPoll");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedPoll.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedPoll.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedPoll.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedPoll.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedPoll.ToString");
+            return Self.toString();
         }
     }
 }

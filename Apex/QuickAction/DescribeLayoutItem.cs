@@ -1,37 +1,137 @@
-using Apex.System;
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_quickaction_describelayoutitem.htm#apex_class_quickaction_describelayoutitem
+    /// </summary>
     public class DescribeLayoutItem
     {
+        // infrastructure
+        public DescribeLayoutItem(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeLayoutItem));
+            }
+        }
+
+        // API
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.GetLabel");
+            return Self.getLabel();
         }
 
         public List<DescribeLayoutComponent> getLayoutComponents()
         {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.GetLayoutComponents");
+            return Self.getLayoutComponents();
         }
 
-        public bool isEditableForNew()
+        public bool isEditable()
         {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.IsEditableForNew");
-        }
-
-        public bool isEditableForUpdate()
-        {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.IsEditableForUpdate");
+            return Self.isEditable();
         }
 
         public bool isPlaceholder()
         {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.IsPlaceholder");
+            return Self.isPlaceholder();
         }
 
         public bool isRequired()
         {
-            throw new global::System.NotImplementedException("DescribeLayoutItem.IsRequired");
+            return Self.isRequired();
+        }
+
+        bool editableForNew
+        {
+            get
+            {
+                return Self.editableForNew;
+            }
+            set
+            {
+                Self.editableForNew = value;
+            }
+        }
+
+        bool editableForUpdate
+        {
+            get
+            {
+                return Self.editableForUpdate;
+            }
+            set
+            {
+                Self.editableForUpdate = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        List<DescribeLayoutComponent> layoutComponents
+        {
+            get
+            {
+                return Self.layoutComponents;
+            }
+            set
+            {
+                Self.layoutComponents = value;
+            }
+        }
+
+        bool placeholder
+        {
+            get
+            {
+                return Self.placeholder;
+            }
+            set
+            {
+                Self.placeholder = value;
+            }
+        }
+
+        bool required
+        {
+            get
+            {
+                return Self.required;
+            }
+            set
+            {
+                Self.required = value;
+            }
+        }
+
+        public bool isEditableForNew()
+        {
+            return Self.isEditableForNew();
+        }
+
+        public bool isEditableForUpdate()
+        {
+            return Self.isEditableForUpdate();
         }
     }
 }

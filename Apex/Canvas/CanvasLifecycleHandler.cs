@@ -1,17 +1,17 @@
-using Apex.System;
-
 namespace Apex.Canvas
 {
-    public class CanvasLifecycleHandler
-    {
-        public Set<Canvas.ContextTypeEnum> excludeContextTypes()
-        {
-            throw new global::System.NotImplementedException("CanvasLifecycleHandler.ExcludeContextTypes");
-        }
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-        public void onRender(Canvas.RenderContext param1)
-        {
-            throw new global::System.NotImplementedException("CanvasLifecycleHandler.OnRender");
-        }
+    /// <summary>
+    ///
+    /// </summary>
+    public interface CanvasLifecycleHandler
+    {
+        Set<ContextTypeEnum> excludeContextTypes();
+
+        void onRender(RenderContext param1);
     }
 }

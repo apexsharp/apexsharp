@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RequiredFeatureMissingException
     {
+        // infrastructure
+        public RequiredFeatureMissingException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RequiredFeatureMissingException));
+            }
+        }
+
+        // API
         public RequiredFeatureMissingException()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException");
+            Implementation.Constructor();
         }
 
         public RequiredFeatureMissingException(Exception param1)
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException");
+            Implementation.Constructor(param1);
         }
 
         public RequiredFeatureMissingException(string param1)
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException");
+            Implementation.Constructor(param1);
         }
 
         public RequiredFeatureMissingException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("RequiredFeatureMissingException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

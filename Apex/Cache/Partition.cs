@@ -1,132 +1,175 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_cache_Partition.htm#apex_class_cache_Partition
+    /// </summary>
     public class Partition
     {
-        public Partition()
+        // infrastructure
+        public Partition(dynamic self)
         {
-            throw new global::System.NotImplementedException("Partition");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Partition.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Partition));
+            }
         }
 
+        // API
         public bool contains(string key)
         {
-            throw new global::System.NotImplementedException("Partition.Contains");
+            return Self.contains(key);
         }
 
-        public static string createFullyQualifiedKey(string namespaceApex, string partition, string key)
+        public static string createFullyQualifiedKey(string @namespace, string partition, string key)
         {
-            throw new global::System.NotImplementedException("Partition.CreateFullyQualifiedKey");
+            return Implementation.createFullyQualifiedKey(@namespace, partition, key);
         }
 
-        public static string createFullyQualifiedPartition(string namespaceApex, string partition)
+        public static string createFullyQualifiedPartition(string @namespace, string partition)
         {
-            throw new global::System.NotImplementedException("Partition.CreateFullyQualifiedPartition");
+            return Implementation.createFullyQualifiedPartition(@namespace, partition);
         }
 
         public object get(string key)
         {
-            throw new global::System.NotImplementedException("Partition.Get");
+            return Self.get(key);
+        }
+
+        public object get(Type cacheBuilder, string key)
+        {
+            return Self.get(cacheBuilder, key);
         }
 
         public long getAvgGetTime()
         {
-            throw new global::System.NotImplementedException("Partition.GetAvgGetTime");
+            return Self.getAvgGetTime();
         }
 
         public long getAvgValueSize()
         {
-            throw new global::System.NotImplementedException("Partition.GetAvgValueSize");
+            return Self.getAvgValueSize();
         }
 
         public double getCapacity()
         {
-            throw new global::System.NotImplementedException("Partition.GetCapacity");
+            return Self.getCapacity();
         }
 
-        public Set<String> getKeys()
+        public Set<string> getKeys()
         {
-            throw new global::System.NotImplementedException("Partition.GetKeys");
+            return Self.getKeys();
         }
 
         public long getMaxGetTime()
         {
-            throw new global::System.NotImplementedException("Partition.GetMaxGetTime");
+            return Self.getMaxGetTime();
         }
 
         public long getMaxValueSize()
         {
-            throw new global::System.NotImplementedException("Partition.GetMaxValueSize");
+            return Self.getMaxValueSize();
         }
 
         public double getMissRate()
         {
-            throw new global::System.NotImplementedException("Partition.GetMissRate");
+            return Self.getMissRate();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("Partition.GetName");
+            return Self.getName();
         }
 
         public long getNumKeys()
         {
-            throw new global::System.NotImplementedException("Partition.GetNumKeys");
+            return Self.getNumKeys();
         }
 
         public bool isAvailable()
         {
-            throw new global::System.NotImplementedException("Partition.IsAvailable");
+            return Self.isAvailable();
         }
 
         public void put(string key, object value)
         {
-            throw new global::System.NotImplementedException("Partition.Put");
+            Self.put(key, value);
+        }
+
+        public void put(string key, object value, Visibility visibility)
+        {
+            Self.put(key, value, visibility);
         }
 
         public void put(string key, object value, int ttlSecs)
         {
-            throw new global::System.NotImplementedException("Partition.Put");
+            Self.put(key, value, ttlSecs);
         }
 
-        public void put(string key, object value, int ttlSecs, Cache.Visibility visibility, bool immutable)
+        public void put(string key, object value, int ttlSecs, Visibility visibility, bool immutable)
         {
-            throw new global::System.NotImplementedException("Partition.Put");
-        }
-
-        public void put(string key, object value, Cache.Visibility visibility)
-        {
-            throw new global::System.NotImplementedException("Partition.Put");
+            Self.put(key, value, ttlSecs, visibility, immutable);
         }
 
         public bool remove(string key)
         {
-            throw new global::System.NotImplementedException("Partition.Remove");
+            return Self.remove(key);
+        }
+
+        public bool remove(Type cacheBuilder, string key)
+        {
+            return Self.remove(cacheBuilder, key);
+        }
+
+        public static void validateCacheBuilder(Type cacheBuilder)
+        {
+            Implementation.validateCacheBuilder(cacheBuilder);
         }
 
         public static void validateKey(bool isDefault, string key)
         {
-            throw new global::System.NotImplementedException("Partition.ValidateKey");
+            Implementation.validateKey(isDefault, key);
         }
 
         public static void validateKeyValue(bool isDefault, string key, object value)
         {
-            throw new global::System.NotImplementedException("Partition.ValidateKeyValue");
+            Implementation.validateKeyValue(isDefault, key, value);
         }
 
-        public static void validateKeys(bool isDefault, List<string> keys)
+        public static void validateKeys(bool isDefault, Set<string> keys)
         {
-            throw new global::System.NotImplementedException("Partition.ValidateKeys");
+            Implementation.validateKeys(isDefault, keys);
         }
 
         public static void validatePartitionName(string name)
         {
-            throw new global::System.NotImplementedException("Partition.ValidatePartitionName");
+            Implementation.validatePartitionName(name);
+        }
+
+        public Partition()
+        {
+            Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static void validateKeys(bool isDefault, List<string> keys)
+        {
+            Implementation.validateKeys(isDefault, keys);
         }
     }
 }

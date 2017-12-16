@@ -1,25 +1,50 @@
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FieldLayoutComponent
     {
+        // infrastructure
+        public FieldLayoutComponent(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FieldLayoutComponent));
+            }
+        }
+
+        // API
         public int getDisplayLines()
         {
-            throw new global::System.NotImplementedException("FieldLayoutComponent.GetDisplayLines");
+            return Self.getDisplayLines();
         }
 
         public int getTabOrder()
         {
-            throw new global::System.NotImplementedException("FieldLayoutComponent.GetTabOrder");
+            return Self.getTabOrder();
         }
 
         public string getType()
         {
-            throw new global::System.NotImplementedException("FieldLayoutComponent.GetType");
+            return Self.getType();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("FieldLayoutComponent.GetValue");
+            return Self.getValue();
         }
     }
 }

@@ -1,10 +1,15 @@
 namespace Apex.Reports
 {
-    public class NotificationAction
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_reports_NotificationAction.htm#apex_interface_reports_NotificationAction
+    /// </summary>
+    public interface NotificationAction
     {
-        public void execute(NotificationActionContext param1)
-        {
-            throw new global::System.NotImplementedException("NotificationAction.Execute");
-        }
+        void execute(NotificationActionContext context);
     }
 }

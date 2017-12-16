@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedEnabledEntity
     {
+        // infrastructure
+        public FeedEnabledEntity(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedEnabledEntity));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object motif
+        {
+            get
+            {
+                return Self.motif;
+            }
+            set
+            {
+                Self.motif = value;
+            }
+        }
+
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object networkId
+        {
+            get
+            {
+                return Self.networkId;
+            }
+            set
+            {
+                Self.networkId = value;
+            }
+        }
+
+        object type
+        {
+            get
+            {
+                return Self.type;
+            }
+            set
+            {
+                Self.type = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public FeedEnabledEntity()
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedEnabledEntity.ToString");
+            return Self.toString();
         }
     }
 }

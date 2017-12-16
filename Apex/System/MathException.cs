@@ -1,60 +1,85 @@
 namespace Apex.System
 {
-    public class MathException : global::System.Exception
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class MathException
     {
+        // infrastructure
+        public MathException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MathException));
+            }
+        }
+
+        // API
         public MathException()
         {
-            throw new global::System.NotImplementedException("MathException");
+            Implementation.Constructor();
         }
 
         public MathException(Exception param1)
         {
-            throw new global::System.NotImplementedException("MathException");
+            Implementation.Constructor(param1);
         }
 
         public MathException(string param1)
         {
-            throw new global::System.NotImplementedException("MathException");
+            Implementation.Constructor(param1);
         }
 
         public MathException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("MathException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("MathException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("MathException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("MathException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("MathException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("MathException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("MathException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("MathException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

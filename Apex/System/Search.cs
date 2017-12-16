@@ -1,23 +1,46 @@
-using Apex.Search;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Search;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_search.htm#apex_methods_system_search
+    /// </summary>
     public class Search
     {
+        // infrastructure
+        public Search(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Search));
+            }
+        }
+
+        // API
         public static SearchResults find(string searchQuery)
         {
-            throw new global::System.NotImplementedException("Search.Find");
+            return Implementation.find(searchQuery);
         }
 
-        public static List<List<SObject>> query(string searchQuery)
+        public static SObject[] query(string query)
         {
-            throw new global::System.NotImplementedException("Search.Query");
+            return Implementation.query(query);
         }
 
-        public static SuggestionResults suggest(string searchQuery, string sObjectType, object options)
+        public static SuggestionResults suggest(string searchQuery, string sObjectType, SuggestionOption suggestions)
         {
-            throw new global::System.NotImplementedException("Search.Suggest");
+            return Implementation.suggest(searchQuery, sObjectType, suggestions);
         }
     }
 }

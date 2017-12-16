@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CacheException
     {
+        // infrastructure
+        public CacheException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CacheException));
+            }
+        }
+
+        // API
         public CacheException()
         {
-            throw new global::System.NotImplementedException("CacheException");
+            Implementation.Constructor();
         }
 
         public CacheException(Exception param1)
         {
-            throw new global::System.NotImplementedException("CacheException");
+            Implementation.Constructor(param1);
         }
 
         public CacheException(string msg)
         {
-            throw new global::System.NotImplementedException("CacheException");
+            Implementation.Constructor(msg);
         }
 
         public CacheException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("CacheException");
+            Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CacheException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("CacheException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class OriginCapability
     {
+        // infrastructure
+        public OriginCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(OriginCapability));
+            }
+        }
+
+        // API
+        object actor
+        {
+            get
+            {
+                return Self.actor;
+            }
+            set
+            {
+                Self.actor = value;
+            }
+        }
+
+        object originRecord
+        {
+            get
+            {
+                return Self.originRecord;
+            }
+            set
+            {
+                Self.originRecord = value;
+            }
+        }
+
         public OriginCapability()
         {
-            throw new global::System.NotImplementedException("OriginCapability");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("OriginCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("OriginCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("OriginCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("OriginCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("OriginCapability.ToString");
+            return Self.toString();
         }
     }
 }

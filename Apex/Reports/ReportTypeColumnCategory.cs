@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reporttypecolumncategory.htm#apex_class_reports_reporttypecolumncategory
+    /// </summary>
     public class ReportTypeColumnCategory
     {
-        public object clone()
+        // infrastructure
+        public ReportTypeColumnCategory(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportTypeColumnCategory.Clone");
+            Self = self;
         }
 
-        public Map<String, ReportTypeColumn> getColumns()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ReportTypeColumnCategory.GetColumns");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportTypeColumnCategory));
+            }
+        }
+
+        // API
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public Map<string, ReportTypeColumn> getColumns()
+        {
+            return Self.getColumns();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("ReportTypeColumnCategory.GetLabel");
+            return Self.getLabel();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportTypeColumnCategory.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,42 +1,60 @@
 namespace Apex.Apex
 {
-    public class Stack<T>
-    {
-        readonly global::System.Collections.Generic.Stack<T> _Stack;
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
+    /// <summary>
+    ///
+    /// </summary>
+    public class Stack
+    {
+        // infrastructure
+        public Stack(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Stack));
+            }
+        }
+
+        // API
         public Stack()
         {
-            _Stack = new global::System.Collections.Generic.Stack<T>();
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Stack.Clone");
+            return Self.clone();
         }
 
         public bool empty()
         {
-            _Stack.Clear();
-            return true;
+            return Self.empty();
         }
 
-        public T peek()
+        public string peek()
         {
-            return _Stack.Peek();
+            return Self.peek();
         }
 
-        public T pop()
+        public string pop()
         {
-            if (_Stack.Count == 0) throw new EmptyStackException();
-            else
-            {
-                return _Stack.Pop();
-            }
+            return Self.pop();
         }
 
-        public void push(T item)
+        public void push(string item)
         {
-            _Stack.Push(item);
+            Self.push(item);
         }
     }
 }

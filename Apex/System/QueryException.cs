@@ -1,60 +1,85 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class QueryException
     {
+        // infrastructure
+        public QueryException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueryException));
+            }
+        }
+
+        // API
         public QueryException()
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Implementation.Constructor();
         }
 
         public QueryException(Exception param1)
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Implementation.Constructor(param1);
         }
 
         public QueryException(string param1)
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Implementation.Constructor(param1);
         }
 
         public QueryException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("QueryException.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("QueryException.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("QueryException.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("QueryException.GetStackTraceString");
+            return Self.getStackTraceString();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("QueryException.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("QueryException.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("QueryException.SetMessage");
+            Self.setMessage(message);
         }
     }
 }

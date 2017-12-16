@@ -1,146 +1,140 @@
 namespace Apex.System
 {
-    using SysDateTime = global::System.DateTime;
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_date.htm#apex_methods_system_date
+    /// </summary>
     public class Date
     {
-        internal SysDateTime date;
-
-        internal Date(SysDateTime dt) => date = dt;
-
-        internal Date(int year, int month, int day)
+        // infrastructure
+        public Date(dynamic self)
         {
-            date = new SysDateTime(year, month, day);
+            Self = self;
         }
 
-        public Date addDays(int days)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            ////throw new global::System.NotImplementedException("Date.AddDays");
-            return new Date(date.AddDays(days));
+            get
+            {
+                return Implementor.GetImplementation(typeof(Date));
+            }
         }
 
-        public void addError(object msg)
+        // API
+        public Date addDays(int additionalDays)
         {
-            throw new global::System.NotImplementedException("Date.AddError");
+            return Self.addDays(additionalDays);
         }
 
-        public void addError(object msg, bool escape)
+        public Date addMonths(int additionalMonths)
         {
-            throw new global::System.NotImplementedException("Date.AddError");
+            return Self.addMonths(additionalMonths);
         }
 
-        public void addError(string msg)
+        public Date addYears(int additionalYears)
         {
-            throw new global::System.NotImplementedException("Date.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Date.AddError");
-        }
-
-        public Date addMonths(int months)
-        {
-            ////throw new global::System.NotImplementedException("Date.AddMonths");
-            return new Date(date.AddMonths(months));
-        }
-
-        public Date addYears(int years)
-        {
-            ////throw new global::System.NotImplementedException("Date.AddYears");
-            return new Date(date.AddYears(years));
+            return Self.addYears(additionalYears);
         }
 
         public int day()
         {
-            ////throw new global::System.NotImplementedException("Date.Day");
-            return date.Day;
+            return Self.day();
         }
 
         public int dayOfYear()
         {
-            ////throw new global::System.NotImplementedException("Date.DayOfYear");
-            return date.DayOfYear;
+            return Self.dayOfYear();
         }
 
-        public int daysBetween(Date other)
+        public int daysBetween(Date secondDate)
         {
-            throw new global::System.NotImplementedException("Date.DaysBetween");
+            return Self.daysBetween(secondDate);
         }
 
         public static int daysInMonth(int year, int month)
         {
-            throw new global::System.NotImplementedException("Date.DaysInMonth");
+            return Implementation.daysInMonth(year, month);
         }
 
         public string format()
         {
-            throw new global::System.NotImplementedException("Date.Format");
+            return Self.format();
         }
 
         public static bool isLeapYear(int year)
         {
-            throw new global::System.NotImplementedException("Date.IsLeapYear");
+            return Implementation.isLeapYear(year);
         }
 
-        public bool isSameDay(Date other)
+        public bool isSameDay(Date dateToCompare)
         {
-            throw new global::System.NotImplementedException("Date.IsSameDay");
+            return Self.isSameDay(dateToCompare);
         }
 
         public int month()
         {
-            ////throw new global::System.NotImplementedException("Date.Month");
-            return date.Month;
+            return Self.month();
         }
 
-        public int monthsBetween(Date other)
+        public int monthsBetween(Date secondDate)
         {
-            throw new global::System.NotImplementedException("Date.MonthsBetween");
+            return Self.monthsBetween(secondDate);
         }
 
-        public static Date newInstance(int year, int month, int day)
+        public static Date newInstance(int year, int month, int date)
         {
-            ////throw new global::System.NotImplementedException("Date.NewInstance");
-            return new Date(year, month, day);
+            return Implementation.newInstance(year, month, date);
         }
 
-        public static Date parse(string str)
+        public static Date parse(string stringDate)
         {
-            ////throw new global::System.NotImplementedException("Date.Parse");
-            return new Date(SysDateTime.Parse(str));
-        }
-
-        public Date toStartOfMonth()
-        {
-            throw new global::System.NotImplementedException("Date.ToStartOfMonth");
-        }
-
-        public Date toStartOfWeek()
-        {
-            throw new global::System.NotImplementedException("Date.ToStartOfWeek");
+            return Implementation.parse(stringDate);
         }
 
         public static Date today()
         {
-            ////throw new global::System.NotImplementedException("Date.Today");
-            return new Date(SysDateTime.Today);
+            return Implementation.today();
         }
 
-        public static Date valueOf(object o)
+        public Date toStartOfMonth()
         {
-            throw new global::System.NotImplementedException("Date.ValueOf");
+            return Self.toStartOfMonth();
         }
 
-        public static Date valueOf(string str)
+        public Date toStartOfWeek()
         {
-            throw new global::System.NotImplementedException("Date.ValueOf");
+            return Self.toStartOfWeek();
+        }
+
+        public static Date valueOf(string stringDate)
+        {
+            return Implementation.valueOf(stringDate);
+        }
+
+        public static Date valueOf(object fieldValue)
+        {
+            return Implementation.valueOf(fieldValue);
         }
 
         public int year()
         {
-            ////throw new global::System.NotImplementedException("Date.Year");
-            return date.Year;
+            return Self.year();
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

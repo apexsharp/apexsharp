@@ -1,42 +1,65 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BatchInput
     {
-        public BatchInput(object input)
+        // infrastructure
+        public BatchInput(dynamic self)
         {
-            throw new global::System.NotImplementedException("BatchInput");
+            Self = self;
         }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BatchInput));
+            }
+        }
+
+        // API
+        ////public BatchInput(object input)
+        ////{
+        ////    Implementation.Constructor(input);
+        ////}
 
         public BatchInput(object input, BinaryInput binary)
         {
-            throw new global::System.NotImplementedException("BatchInput");
+            Implementation.Constructor(input, binary);
         }
 
         public BatchInput(object input, List<BinaryInput> binaries)
         {
-            throw new global::System.NotImplementedException("BatchInput");
+            Implementation.Constructor(input, binaries);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BatchInput.Clone");
+            return Self.clone();
         }
 
         public List<BinaryInput> getBinaries()
         {
-            throw new global::System.NotImplementedException("BatchInput.GetBinaries");
+            return Self.getBinaries();
         }
 
         public object getInput()
         {
-            throw new global::System.NotImplementedException("BatchInput.GetInput");
+            return Self.getInput();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BatchInput.ToString");
+            return Self.toString();
         }
     }
 }

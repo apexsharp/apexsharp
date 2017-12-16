@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class StatusCapabilityInput
     {
+        // infrastructure
+        public StatusCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StatusCapabilityInput));
+            }
+        }
+
+        // API
+        object feedEntityStatus
+        {
+            get
+            {
+                return Self.feedEntityStatus;
+            }
+            set
+            {
+                Self.feedEntityStatus = value;
+            }
+        }
+
         public StatusCapabilityInput()
         {
-            throw new global::System.NotImplementedException("StatusCapabilityInput");
+            Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("StatusCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("StatusCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("StatusCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StatusCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

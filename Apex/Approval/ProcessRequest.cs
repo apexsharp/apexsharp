@@ -1,28 +1,79 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Approval
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ProcessRequest.htm#apex_ProcessRequest
+    /// </summary>
     public class ProcessRequest
     {
+        // infrastructure
+        public ProcessRequest(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ProcessRequest));
+            }
+        }
+
+        // API
         public string getComments()
         {
-            throw new global::System.NotImplementedException("ProcessRequest.GetComments");
+            return Self.getComments();
         }
 
-        public List<ID> getNextApproverIds()
+        public ID[] getNextApproverIds()
         {
-            throw new global::System.NotImplementedException("ProcessRequest.GetNextApproverIds");
+            return Self.getNextApproverIds();
         }
 
-        public void setComments(string param1)
+        public void setComments(string comments)
         {
-            throw new global::System.NotImplementedException("ProcessRequest.SetComments");
+            Self.setComments(comments);
+        }
+
+        public void setNextApproverIds(ID[] nextApproverIds)
+        {
+            Self.setNextApproverIds(nextApproverIds);
+        }
+
+        string comments
+        {
+            get
+            {
+                return Self.comments;
+            }
+            set
+            {
+                Self.comments = value;
+            }
+        }
+
+        List<ID> nextApproverIds
+        {
+            get
+            {
+                return Self.nextApproverIds;
+            }
+            set
+            {
+                Self.nextApproverIds = value;
+            }
         }
 
         public void setNextApproverIds(List<ID> param1)
         {
-            throw new global::System.NotImplementedException("ProcessRequest.SetNextApproverIds");
+            Self.setNextApproverIds(param1);
         }
     }
 }
