@@ -1,20 +1,40 @@
 namespace Apex.Wave
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class Query
     {
+        // infrastructure
+        public Query(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Query));
+            }
+        }
+
+        // API
         public Query()
         {
-            throw new global::System.NotImplementedException("Query");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Query.Clone");
+            return Self.clone();
         }
 
         public static string execute(string saql)
         {
-            throw new global::System.NotImplementedException("Query.Execute");
+            return Implementation.execute(saql);
         }
     }
 }

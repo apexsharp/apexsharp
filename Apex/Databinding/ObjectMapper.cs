@@ -1,39 +1,56 @@
-using Apex.System;
-using ApexSharpApi.ApexApi;
-
 namespace Apex.Databinding
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectMapper
     {
+        // infrastructure
+        public ObjectMapper(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectMapper));
+            }
+        }
+
+        // API
         public ObjectMapper()
         {
-            throw new global::System.NotImplementedException("ObjectMapper");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ObjectMapper.Clone");
+            return Self.clone();
         }
 
         public static List<SObject> transform(string targetType, List<SObject> sourceRecords)
         {
-            throw new global::System.NotImplementedException("ObjectMapper.Transform");
+            return Implementation.transform(targetType, sourceRecords);
         }
 
         public static List<SObject> transform(string targetType, List<SObject> sourceRecords,
             Map<String, String> fieldMapping)
         {
-            throw new global::System.NotImplementedException("ObjectMapper.Transform");
+            return Implementation.transform(targetType, sourceRecords, fieldMapping);
         }
 
         public static SObject transform(string targetType, SObject sourceRecord)
         {
-            throw new global::System.NotImplementedException("ObjectMapper.Transform");
+            return Implementation.transform(targetType, sourceRecord);
         }
 
         public static SObject transform(string targetType, SObject sourceRecord, Map<String, String> fieldMapping)
         {
-            throw new global::System.NotImplementedException("ObjectMapper.Transform");
+            return Implementation.transform(targetType, sourceRecord, fieldMapping);
         }
     }
 }

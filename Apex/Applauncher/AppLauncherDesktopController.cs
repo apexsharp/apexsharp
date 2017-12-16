@@ -1,10 +1,30 @@
-namespace Apex.Applauncher
+namespace Apex.AppLauncher
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class AppLauncherDesktopController
     {
+        // infrastructure
+        public AppLauncherDesktopController(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AppLauncherDesktopController));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("AppLauncherDesktopController.Clone");
+            return Self.clone();
         }
     }
 }

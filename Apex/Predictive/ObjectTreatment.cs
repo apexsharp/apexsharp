@@ -1,37 +1,55 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectTreatment
     {
+        // infrastructure
+        public ObjectTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectTreatment));
+            }
+        }
+
+        // API
         public ObjectTreatment()
         {
-            throw new global::System.NotImplementedException("ObjectTreatment");
+            Self = Implementation.Constructor();
         }
 
         public ObjectTreatment(Map<String, FieldTreatment> fieldTreatments)
         {
-            throw new global::System.NotImplementedException("ObjectTreatment");
+            Self = Implementation.Constructor(fieldTreatments);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ObjectTreatment.Clone");
+            return Self.clone();
         }
 
         public Map<String, FieldTreatment> getFieldTreatments()
         {
-            throw new global::System.NotImplementedException("ObjectTreatment.GetFieldTreatments");
+            return Self.getFieldTreatments();
         }
 
         public void setFieldTreatments(Map<String, FieldTreatment> fieldTreatments)
         {
-            throw new global::System.NotImplementedException("ObjectTreatment.SetFieldTreatments");
+            Self.setFieldTreatments(fieldTreatments);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ObjectTreatment.ToString");
+            return Self.toString();
         }
     }
 }

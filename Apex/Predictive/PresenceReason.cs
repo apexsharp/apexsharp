@@ -1,20 +1,40 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class PresenceReason
     {
+        // infrastructure
+        public PresenceReason(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PresenceReason));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("PresenceReason.Clone");
+            return Self.clone();
         }
 
         public ReasonType getType()
         {
-            throw new global::System.NotImplementedException("PresenceReason.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("PresenceReason.ToString");
+            return Self.toString();
         }
     }
 }

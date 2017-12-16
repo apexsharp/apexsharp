@@ -1,32 +1,50 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class PredictiveException
     {
+        // infrastructure
+        public PredictiveException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PredictiveException));
+            }
+        }
+
+        // API
         public PredictiveException()
         {
-            throw new global::System.NotImplementedException("PredictiveException");
+            Self = Implementation.Constructor();
         }
 
         public PredictiveException(Exception param1)
         {
-            throw new global::System.NotImplementedException("PredictiveException");
+            Self = Implementation.Constructor(param1);
         }
 
         public PredictiveException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("PredictiveException");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PredictiveException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("PredictiveException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

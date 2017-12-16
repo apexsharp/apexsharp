@@ -1,25 +1,45 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class StringPredictedField
     {
+        // infrastructure
+        public StringPredictedField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StringPredictedField));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("StringPredictedField.Clone");
+            return Self.clone();
         }
 
         public string getPointEstimate()
         {
-            throw new global::System.NotImplementedException("StringPredictedField.GetPointEstimate");
+            return Self.getPointEstimate();
         }
 
         public PredictedFieldType getType()
         {
-            throw new global::System.NotImplementedException("StringPredictedField.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StringPredictedField.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,25 +1,45 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class OmittedFieldTreatment
     {
+        // infrastructure
+        public OmittedFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(OmittedFieldTreatment));
+            }
+        }
+
+        // API
         public OmittedFieldTreatment()
         {
-            throw new global::System.NotImplementedException("OmittedFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("OmittedFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("OmittedFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("OmittedFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }

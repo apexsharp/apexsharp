@@ -1,37 +1,55 @@
-using Apex.System;
-
 namespace Apex.Databinding
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectMappingException
     {
+        // infrastructure
+        public ObjectMappingException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectMappingException));
+            }
+        }
+
+        // API
         public ObjectMappingException()
         {
-            throw new global::System.NotImplementedException("ObjectMappingException");
+            Self = Implementation.Constructor();
         }
 
         public ObjectMappingException(Exception param1)
         {
-            throw new global::System.NotImplementedException("ObjectMappingException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ObjectMappingException(string param1)
         {
-            throw new global::System.NotImplementedException("ObjectMappingException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ObjectMappingException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("ObjectMappingException");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ObjectMappingException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("ObjectMappingException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

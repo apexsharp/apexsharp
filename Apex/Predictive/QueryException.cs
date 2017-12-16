@@ -1,32 +1,50 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class QueryException
     {
+        // infrastructure
+        public QueryException(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueryException));
+            }
+        }
+
+        // API
         public QueryException()
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Self = Implementation.Constructor();
         }
 
         public QueryException(Exception param1)
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Self = Implementation.Constructor(param1);
         }
 
         public QueryException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("QueryException");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("QueryException.Clone");
+            return Self.clone();
         }
 
         public string getTypeName()
         {
-            throw new global::System.NotImplementedException("QueryException.GetTypeName");
+            return Self.getTypeName();
         }
     }
 }

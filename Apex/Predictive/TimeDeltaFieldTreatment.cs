@@ -1,40 +1,60 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class TimeDeltaFieldTreatment
     {
+        // infrastructure
+        public TimeDeltaFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TimeDeltaFieldTreatment));
+            }
+        }
+
+        // API
         public TimeDeltaFieldTreatment()
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public TimeDeltaFieldTreatment(string fromField)
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment");
+            Self = Implementation.Constructor(fromField);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public string getFromField()
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment.GetFromField");
+            return Self.getFromField();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public void setFromField(string fromField)
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment.SetFromField");
+            Self.setFromField(fromField);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TimeDeltaFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,40 +1,60 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class SetFieldTreatment
     {
+        // infrastructure
+        public SetFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SetFieldTreatment));
+            }
+        }
+
+        // API
         public SetFieldTreatment()
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public SetFieldTreatment(string bin)
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment");
+            Self = Implementation.Constructor(bin);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public string getBin()
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment.GetBin");
+            return Self.getBin();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public void setBin(string bin)
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment.SetBin");
+            Self.setBin(bin);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("SetFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }

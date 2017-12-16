@@ -4,17 +4,21 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1006;1701;1702;1705</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="DataSource\DataSource.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApexSharpApi\ApexSharpApi.csproj"/>
+    <ProjectReference Include="..\ApexSharpApi\ApexSharpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
-    <PackageReference Include="NUnit" Version="3.9.0"/>
+    <PackageReference Include="NUnit" Version="3.9.0" />
   </ItemGroup>
 
 </Project>

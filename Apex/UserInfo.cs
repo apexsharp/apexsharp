@@ -1,7 +1,8 @@
-﻿using Apex.ApexSharp.Implementation;
-
-namespace Apex
+﻿namespace Apex
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class UserInfo
     {
         // infrastructure methods and properties — the same code for all API classes

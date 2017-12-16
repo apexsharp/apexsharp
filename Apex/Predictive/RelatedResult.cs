@@ -1,47 +1,65 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class RelatedResult
     {
+        // infrastructure
+        public RelatedResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RelatedResult));
+            }
+        }
+
+        // API
         public RelatedResult()
         {
-            throw new global::System.NotImplementedException("RelatedResult");
+            Self = Implementation.Constructor();
         }
 
         public RelatedResult(List<RelatedField> relatedFields, List<string> warnings)
         {
-            throw new global::System.NotImplementedException("RelatedResult");
+            Self = Implementation.Constructor(relatedFields, warnings);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RelatedResult.Clone");
+            return Self.clone();
         }
 
         public List<RelatedField> getRelatedFields()
         {
-            throw new global::System.NotImplementedException("RelatedResult.GetRelatedFields");
+            return Self.getRelatedFields();
         }
 
         public List<string> getWarnings()
         {
-            throw new global::System.NotImplementedException("RelatedResult.GetWarnings");
+            return Self.getWarnings();
         }
 
         public void setRelatedFields(List<RelatedField> relatedFields)
         {
-            throw new global::System.NotImplementedException("RelatedResult.SetRelatedFields");
+            Self.setRelatedFields(relatedFields);
         }
 
         public void setWarnings(List<string> warnings)
         {
-            throw new global::System.NotImplementedException("RelatedResult.SetWarnings");
+            Self.setWarnings(warnings);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RelatedResult.ToString");
+            return Self.toString();
         }
     }
 }

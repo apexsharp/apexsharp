@@ -1,25 +1,45 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class NumberFieldTreatment
     {
+        // infrastructure
+        public NumberFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(NumberFieldTreatment));
+            }
+        }
+
+        // API
         public NumberFieldTreatment()
         {
-            throw new global::System.NotImplementedException("NumberFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("NumberFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("NumberFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("NumberFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }

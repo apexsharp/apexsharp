@@ -1,25 +1,45 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class CategoricalFieldTreatment
     {
+        // infrastructure
+        public CategoricalFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CategoricalFieldTreatment));
+            }
+        }
+
+        // API
         public CategoricalFieldTreatment()
         {
-            throw new global::System.NotImplementedException("CategoricalFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CategoricalFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("CategoricalFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CategoricalFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }
