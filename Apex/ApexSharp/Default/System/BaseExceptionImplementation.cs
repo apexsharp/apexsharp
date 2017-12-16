@@ -4,11 +4,11 @@ using Activator = System.Activator;
 
 namespace Apex.ApexSharp.Default.System
 {
-    [Implements(typeof(Exception))]
-    public class ExceptionImplementation : BaseExceptionImplementation<Exception>
-    {
-    }
-
+    /// <summary>
+    /// Base class for all exception implementations.
+    /// To use, subclass and decorate the type with the <see cref="ImplementsAttribute"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the Apex exception to implement.</typeparam>
     public class BaseExceptionImplementation<T> where T : Exception, new()
     {
         // Self

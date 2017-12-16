@@ -14,19 +14,23 @@ namespace ApexTest.System
         {
             Assert.DoesNotThrow(() =>
             {
+                // parameterless constructor
                 var exc = new Exception();
                 Assert.NotNull(exc);
                 Assert.AreEqual("Exception occured.", exc.getMessage());
 
+                // constructor with string parameter
                 exc = new Exception("Custom message");
                 Assert.NotNull(exc);
                 Assert.AreEqual("Custom message", exc.getMessage());
 
+                // constructor with string and Exception parameters
                 var newExc = new Exception("Another message", exc);
                 Assert.NotNull(newExc);
                 Assert.AreEqual("Another message", newExc.getMessage());
                 Assert.AreEqual(exc, newExc.getCause());
 
+                // constructor with Exception parameter
                 var lastExc = new Exception(newExc);
                 Assert.NotNull(lastExc);
                 Assert.AreEqual("Exception occured.", lastExc.getMessage());
