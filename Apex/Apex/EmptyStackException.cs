@@ -8,7 +8,7 @@ namespace Apex.Apex
     /// <summary>
     ///
     /// </summary>
-    public class EmptyStackException
+    public class EmptyStackException : Exception
     {
         // infrastructure
         public EmptyStackException(dynamic self)

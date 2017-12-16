@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     ///
     /// </summary>
-    public class Exception
+    public class Exception : global::System.Exception
     {
         // infrastructure
         public Exception(dynamic self)
@@ -27,6 +27,31 @@ namespace Apex.System
         }
 
         // API
+        public Exception()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public Exception(string message)
+        {
+            Self = Implementation.Constructor(message);
+        }
+
+        public Exception(string message, Exception cause)
+        {
+            Self = Implementation.Constructor(message, cause);
+        }
+
+        public Exception(Exception cause)
+        {
+            Self = Implementation.Constructor(cause);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
         public Exception getCause()
         {
             return Self.getCause();

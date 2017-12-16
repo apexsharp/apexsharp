@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Apex.ApexSharp.Implementation;
 using NUnit.Framework;
 
-namespace ApexParserTest.Apex
+namespace ApexTest
 {
     [TestFixture]
     public class StubImplementationTests

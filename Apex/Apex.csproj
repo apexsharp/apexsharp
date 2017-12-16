@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ApexSharp\Default\Apex\EmptyStackException.cs" />
     <Compile Remove="DataSource\DataSource.cs" />
     <Compile Remove="System\Id.cs" />
     <Compile Remove="System\sObject.cs" />

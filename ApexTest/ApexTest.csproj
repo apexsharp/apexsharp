@@ -46,6 +46,7 @@
     <Compile Include="ImplementorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StubImplementationTests.cs" />
+    <Compile Include="System\ExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
