@@ -1,6 +1,5 @@
 namespace Apex.ApexSharp.Implementation.Default.Apex
 {
-    using System;
     using global::Apex.Apex;
     using global::Apex.ApexSharp.Default.System;
 

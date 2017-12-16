@@ -8,7 +8,7 @@ namespace Apex.Apex
     /// <summary>
     ///
     /// </summary>
-    public class Stack
+    public class Stack<T>
     {
         // infrastructure
         public Stack(dynamic self)
@@ -22,14 +22,14 @@ namespace Apex.Apex
         {
             get
             {
-                return Implementor.GetImplementation(typeof(Stack));
+                return Implementor.GetImplementation(typeof(Stack<T>));
             }
         }
 
         // API
         public Stack()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()
@@ -42,17 +42,17 @@ namespace Apex.Apex
             return Self.empty();
         }
 
-        public string peek()
+        public T peek()
         {
             return Self.peek();
         }
 
-        public string pop()
+        public T pop()
         {
             return Self.pop();
         }
 
-        public void push(string item)
+        public void push(T item)
         {
             Self.push(item);
         }
