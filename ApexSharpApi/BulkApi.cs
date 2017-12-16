@@ -19,7 +19,7 @@ namespace ApexSharpApi
 
         public BulkApi()
         {
-            _connectionDetail = ConnectionUtil.GetSession();
+            _connectionDetail = ApexSharp.GetSession();
         }
 
         // ToDo : Remove All this duplicate code

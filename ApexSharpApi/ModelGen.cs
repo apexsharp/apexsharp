@@ -20,7 +20,7 @@ namespace ApexSharpApi
             var httpManager = new HttpManager();
             var requestJson = httpManager.Get("sobjects/");
 
-            var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache", "objectList.json");
+            var cacheLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", "objectList.json");
             File.WriteAllText(cacheLocation, requestJson);
             var json = File.ReadAllText(cacheLocation);
 
@@ -35,7 +35,7 @@ namespace ApexSharpApi
 
         public void CreateOfflineSymbolTable(List<string> sobjectList)
         {
-            var nameSpace = ConnectionUtil.GetSession().VsProjectName + ".SObjects";
+            var nameSpace = ApexSharp.GetSession().VsProjectName + ".SObjects";
 
             Parallel.ForEach(sobjectList, sobject =>
             {
@@ -46,13 +46,13 @@ namespace ApexSharpApi
 
                 objectDetailjson = JsonConvert.SerializeObject(sObjectDetail, Formatting.Indented);
                 var jsonFileName =  sobject + ".json";
-                var cacheLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "Cache", jsonFileName);
+                var cacheLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", jsonFileName);
                 
                 File.WriteAllText(cacheLocation, objectDetailjson);
 
                 var sObjectClass = CreateSalesForceClasses(nameSpace, sObjectDetail);
                 var saveFileName = sobject + ".cs";
-                var sobjectLocation = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "SObjects", saveFileName);
+                var sobjectLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "SObjects", saveFileName);
                 
                 File.WriteAllText(sobjectLocation, sObjectClass);
 
@@ -105,7 +105,7 @@ namespace ApexSharpApi
 
         public List<Sobject> GetAllObjects()
         {
-            string objectListPath = Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "objectList.json");
+            string objectListPath = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "objectList.json");
 
             HttpManager httpManager = new HttpManager();
             var requestJson = httpManager.Get("sobjects/");

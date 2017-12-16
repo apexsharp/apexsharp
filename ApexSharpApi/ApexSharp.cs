@@ -9,25 +9,34 @@ namespace ApexSharpApi
 
         private readonly ApexSharpConfig _apexSharpConfigSettings = new ApexSharpConfig();
 
-        public static object ApexParser { get; private set; }
-
         // Double Check For All These Values
         public ApexSharpConfig CreateSession()
         {
-
             FileInfo configLocation = new FileInfo(_apexSharpConfigSettings.ConfigLocation);
+
             DirectoryInfo configDirectory = configLocation.Directory;
 
             DirectoryInfo vsProjectLocation = new DirectoryInfo(_apexSharpConfigSettings.VsProjectLocation);
 
             DirectoryInfo salesForceLocation = new DirectoryInfo(_apexSharpConfigSettings.SalesForceLocation);
 
+            // Only Create If we do not have it
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "CSharpClasses");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "NoApex");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "Cache");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "SObjects");
 
             return ConnectionUtil.CreateSession(_apexSharpConfigSettings);
+        }
+
+        public static ApexSharpConfig GetSession(string configFileLocation)
+        {
+            return ConnectionUtil.GetSession(configFileLocation);
+        }
+
+        public static ApexSharpConfig GetSession()
+        {
+            return ConnectionUtil.GetSession(null);
         }
 
         public ApexSharp SalesForceUrl(string salesForceUrl)

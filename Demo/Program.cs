@@ -12,10 +12,13 @@
         // Location of your APEX and C# Files that we will be converting
         public static DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
         public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
+
         public static void Main(string[] args)
         {
             // Start Logging
             Logging.EnableLogging();
+
+  
 
             // Always Initialize your settings when ever you are connecting to SF
             Setup.Init();
@@ -44,10 +47,6 @@
             try
             {
                 ModelGen modelGen = new ModelGen();
-
-                // If you want to create offline classes for all the objects
-                // var allObjects = modelGen.GetAllObjectNames().ToList();
-                /// modelGen.CreateOfflineSymbolTable(allObjects);
 
                 // To save time we will only create objects we are going to work with
                 List<string> onlyObjects = new List<string>
