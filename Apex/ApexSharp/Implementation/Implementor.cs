@@ -43,6 +43,18 @@ namespace Apex.ApexSharp.Implementation
                 return Activator.CreateInstance(implType);
             }
 
+            // if the type is generic — try to deconstruct it
+            if (type.IsGenericType)
+            {
+                var typeDef = type.GetGenericTypeDefinition();
+                if (DefaultImplementations.TryGetValue(typeDef, out var getImplType))
+                {
+                    // and reconstruct the implementation type with the same parameters
+                    implType = getImplType.MakeGenericType(type.GetGenericArguments());
+                    return Activator.CreateInstance(implType);
+                }
+            }
+
             // no default implementation — create the stub
             return new StubImplementation(type);
         }

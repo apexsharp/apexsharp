@@ -214,5 +214,57 @@ namespace ApexTest
                 Assert.Throws<NotImplementedException>(() => new SomeApiClass("Name", 123));
             }
         }
+
+        public class MyList<T>
+        {
+            // infrastructure
+            public MyList(dynamic self) => Self = self;
+
+            dynamic Self { get; set; }
+
+            static dynamic Implementation => Implementor.GetImplementation(typeof(MyList<T>));
+
+            // API
+            public MyList(int x)
+            {
+                Self = Implementation.Constructor(x);
+            }
+
+            public int X => Self.X;
+
+            public string TypeName => Self.TypeName;
+        }
+
+        public class MyListImplementation<TOuter>
+        {
+            public class MyListInstance<TInner>
+            {
+                public int X { get; set; }
+                public string TypeName => typeof(TInner).Name;
+            }
+
+            public dynamic Constructor(int x)
+            {
+                return new MyListInstance<TOuter> { X = x };
+            }
+        }
+
+        [Test]
+        public void DefaultImplementationCanBeGeneric()
+        {
+            // make sure no default implementation exists
+            Assert.Throws<NotImplementedException>(() => new MyList<int>(123));
+
+            // set the default implementation
+            Implementor.DefaultImplementations[typeof(MyList<>)] = typeof(MyListImplementation<>);
+
+            // check if it works
+            Assert.DoesNotThrow(() =>
+            {
+                var list = new MyList<DateTime>(2017);
+                Assert.AreEqual(2017, list.X);
+                Assert.AreEqual(nameof(DateTime), list.TypeName);
+            });
+        }
     }
 }
