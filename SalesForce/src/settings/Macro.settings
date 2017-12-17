@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MacroSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableAdvancedSearch>false</enableAdvancedSearch>
+</MacroSettings>

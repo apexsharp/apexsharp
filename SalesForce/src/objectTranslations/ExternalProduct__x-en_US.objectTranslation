@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Externa lProduct</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- CategoryID --></label>
+        <name>CategoryID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discontinued --></label>
+        <name>Discontinued__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProductID --></label>
+        <name>ProductID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProductName --></label>
+        <name>ProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuantityPerUnit --></label>
+        <name>QuantityPerUnit__c</name>
+    </fields>
+    <fields>
+        <label><!-- ReorderLevel --></label>
+        <name>ReorderLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- SupplierID --></label>
+        <name>SupplierID__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitPrice --></label>
+        <name>UnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitsInStock --></label>
+        <name>UnitsInStock__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitsOnOrder --></label>
+        <name>UnitsOnOrder__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

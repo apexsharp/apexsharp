@@ -287,11 +287,15 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# Mac
+.DS_Store
+
 # Jays Files
 config.json
 *.bak
 /JayPrivate
-/DemoVs2017
 JayPrivate.sln
-.DS_Store
 advanceConfig.json
+/SalesForce/IlluminatedCloud
+.idea
+/AdvanceSalesForce

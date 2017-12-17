@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivitiesSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowUsersToRelateMultipleContactsToTasksAndEvents>false</allowUsersToRelateMultipleContactsToTasksAndEvents>
+    <enableActivityReminders>true</enableActivityReminders>
+    <enableClickCreateEvents>false</enableClickCreateEvents>
+    <enableDragAndDropScheduling>true</enableDragAndDropScheduling>
+    <enableEmailTracking>true</enableEmailTracking>
+    <enableGroupTasks>true</enableGroupTasks>
+    <enableListViewScheduling>false</enableListViewScheduling>
+    <enableLogNote>false</enableLogNote>
+    <enableMultidayEvents>true</enableMultidayEvents>
+    <enableRecurringEvents>true</enableRecurringEvents>
+    <enableRecurringTasks>true</enableRecurringTasks>
+    <enableSidebarCalendarShortcut>false</enableSidebarCalendarShortcut>
+    <enableSimpleTaskCreateUI>true</enableSimpleTaskCreateUI>
+    <enableUNSTaskDelegatedToNotifications>true</enableUNSTaskDelegatedToNotifications>
+    <showCustomLogoMeetingRequests>false</showCustomLogoMeetingRequests>
+    <showEventDetailsMultiUserCalendar>false</showEventDetailsMultiUserCalendar>
+    <showHomePageHoverLinksForEvents>true</showHomePageHoverLinksForEvents>
+    <showMyTasksHoverLinks>true</showMyTasksHoverLinks>
+</ActivitiesSettings>
