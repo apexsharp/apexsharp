@@ -47,8 +47,6 @@ namespace Demo
 
         public static void MokDemo()
         {
-
-
             // Call the Default Implementaiton
 
             Console.WriteLine("Using Real Implementation");
