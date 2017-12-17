@@ -1,0 +1,37 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+**applications
+**appMenus
+**assignmentRules
+**autoResponseRules
+**cleanDataServices
+**communities
+**connectedApps
+**customMetadata
+**dataSources
+**duplicateRules
+**email
+**escalationRules
+**homePageLayouts
+**installedPackages
+**labels
+**layouts
+**matchingRules
+**objects
+**objectTranslations
+**pages
+**profiles
+**quickActions
+**remoteSiteSettings
+**roles
+**settings
+**sharingRules
+**standardValueSets
+**tabs
+**testSuites
+**topicsForObjects
+**workflows
+

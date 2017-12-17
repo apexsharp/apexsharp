@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace Demo.CSharpClasses
 {
     using Apex.ApexSharp;
@@ -13,7 +15,7 @@ namespace Demo.CSharpClasses
         [SetUp]
         public static void setup()
         {
-            System.debug("One Time Setup Got Called");
+            System.debug("Setup Got Called");
         }
 
         [Test]

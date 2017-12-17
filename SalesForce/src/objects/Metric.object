@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>OrigMetricId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>OrigMetricId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <recordTypes>
+        <fullName>Completion</fullName>
+        <active>true</active>
+        <description>Measure achievement based on whether or not the metric is finished. Ideal for tracking milestones, or when you don&apos;t have metrics based on hard numbers. For example: Become Salesforce Certified.</description>
+        <label>Completion</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Progress</fullName>
+        <active>true</active>
+        <description>Measure achievement based on how much is finished compared to a targeted value. Ideal for tracking hard numbers and percentages. For example: Convert 50 Leads or Achieve 100% Customer Satisfaction.</description>
+        <label>Progress</label>
+    </recordTypes>
+</CustomObject>

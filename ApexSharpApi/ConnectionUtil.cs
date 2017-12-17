@@ -13,10 +13,7 @@ namespace ApexSharpApi
     {
         public static ApexSharpConfig Session { get; set; }
 
-        public static ApexSharpConfig GetSession()
-        {
-            return GetSession(null);
-        }
+ 
 
         public static ApexSharpConfig GetSession(string configFileLocation)
         {
@@ -60,6 +57,7 @@ namespace ApexSharpApi
             config = GetNewConnection(config);
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
+            Console.WriteLine(Path.GetDirectoryName(config.ConfigLocation));
             Directory.CreateDirectory(Path.GetDirectoryName(config.ConfigLocation));
             File.WriteAllText(config.ConfigLocation, json);
 

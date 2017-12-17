@@ -8,28 +8,18 @@ namespace Demo.CSharpClasses
 
     public class ClassNoApex
     {
-        // Any classes in NoApex name space will be commented out in Apex and uncommented on c#.
-        public static void methodOne()
+        // Any MetodName that starts with noApex will be commented out. In this example the whole method will be commented out. 
+        public static void noApexMethodOne(string name)
         {
-            NoApex.Serilog.LogInfo("Jay");
+            System.debug(name);
         }
 
-        // Any method in NoApex name space will be commented out in Apex and uncommented on c#.
-        public static void noApexMethodTwo()
+        // Any Class name that has the NoApex name space will be commented out, in this example the line "NoApex.Serilog.LogInfo will be commneted out when we convert to Apex
+        public static void methodTwo(string name)
         {
-            {
-                {
-                    {
-                        NoApex.Serilog.LogInfo("Jay");
-                    }
-
-                    NoApex.Serilog.LogInfo("Jay");
-                }
-
-                NoApex.Serilog.LogInfo("Jay");
-            }
-
-            NoApex.Serilog.LogInfo("Jay");
+            System.debug(name);
+            NoApex.Serilog.LogInfo(name);
+            System.debug(name);
         }
     }
 }

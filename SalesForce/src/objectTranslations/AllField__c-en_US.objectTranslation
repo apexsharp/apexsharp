@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AllField</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>All Fields</value>
+    </caseValues>
+    <fields>
+        <label><!-- AuttoNumberDemo --></label>
+        <name>AuttoNumberDemo__c</name>
+    </fields>
+    <fields>
+        <label><!-- CheckboxDemo --></label>
+        <name>CheckboxDemo__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrencyDemo --></label>
+        <name>CurrencyDemo__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateDemo --></label>
+        <name>DateDemo__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTimeDemo --></label>
+        <name>DateTimeDemo__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

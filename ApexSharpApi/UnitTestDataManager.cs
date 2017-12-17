@@ -10,7 +10,7 @@ namespace ApexSharpApi
 
 
 
-        private static string IdFileName => Path.Combine(ConnectionUtil.GetSession().VsProjectLocation, "ApexSharp.UnitTestDataManager.id.txt");
+        private static string IdFileName => Path.Combine(ApexSharp.GetSession().VsProjectLocation, "ApexSharp.UnitTestDataManager.id.txt");
 
         public static void UnitTestDataManagerOn()
         {

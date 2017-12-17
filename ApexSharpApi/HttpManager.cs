@@ -13,8 +13,8 @@ namespace ApexSharpApi
         {
             HttpRequestMessage request = new HttpRequestMessage
             {
-                RequestUri = new Uri(ConnectionUtil.GetSession().RestUrl + "/data/v" +
-                                     ConnectionUtil.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
+                RequestUri = new Uri(ApexSharp.GetSession().RestUrl + "/data/v" +
+                                     ApexSharp.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
                 Method = HttpMethod.Get,
             };
             return Http(request);
@@ -25,8 +25,8 @@ namespace ApexSharpApi
         {
             HttpRequestMessage request = new HttpRequestMessage
             {
-                RequestUri = new Uri(ConnectionUtil.GetSession().RestUrl + "/data/v" +
-                                     ConnectionUtil.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
+                RequestUri = new Uri(ApexSharp.GetSession().RestUrl + "/data/v" +
+                                     ApexSharp.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
                 Method = HttpMethod.Post,
                 Content = new StringContent(json, Encoding.UTF8, "application/json"),
             };
@@ -37,8 +37,8 @@ namespace ApexSharpApi
         {
             HttpRequestMessage request = new HttpRequestMessage
             {
-                RequestUri = new Uri(ConnectionUtil.GetSession().RestUrl + "/data/v" +
-                                     ConnectionUtil.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
+                RequestUri = new Uri(ApexSharp.GetSession().RestUrl + "/data/v" +
+                                     ApexSharp.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
                 Method = new HttpMethod("PATCH"),
                 Content = new StringContent(json, Encoding.UTF8, "application/json"),
             };
@@ -49,8 +49,8 @@ namespace ApexSharpApi
         {
             HttpRequestMessage request = new HttpRequestMessage
             {
-                RequestUri = new Uri(ConnectionUtil.GetSession().RestUrl + "/data/v" +
-                         ConnectionUtil.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
+                RequestUri = new Uri(ApexSharp.GetSession().RestUrl + "/data/v" +
+                                     ApexSharp.GetSession().SalesForceApiVersion + ".0/" + uriFunction),
                 Method = HttpMethod.Delete,
             };
             return Http(request);
@@ -61,7 +61,7 @@ namespace ApexSharpApi
         private string Http(HttpRequestMessage request)
         {
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.Add("Authorization", ConnectionUtil.GetSession().RestSessionId);
+            request.Headers.Add("Authorization", ApexSharp.GetSession().RestSessionId);
 
             //WebProxy proxy = new WebProxy { Address = new Uri("http://naproxy.gm.com:80") };
 

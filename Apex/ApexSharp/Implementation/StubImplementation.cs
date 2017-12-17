@@ -16,6 +16,11 @@ namespace Apex.ApexSharp.Implementation
     {
         public StubImplementation(string className) => ClassName = className;
 
+        public StubImplementation(Type type)
+            : this(type.FullName)
+        {
+        }
+
         public string ClassName { get; }
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
