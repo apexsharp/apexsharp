@@ -20,7 +20,7 @@ namespace Apex
         {
             get
             {
-                return Implementor.GetImplementation(typeof(UserInfo));
+                return Implementor.GetImplementation(typeof(DemoApexClass));
             }
         }
 

@@ -20,11 +20,10 @@ namespace ApexMok
 
         // Implementation
 
-        public ApexMok.DemoApexClass Constructor(string name, int age)
+        public dynamic Constructor(string name, int age)
         {
             Console.WriteLine("You Called the Mok Constructor");
-            dynamic self = new RealUserInfo { Name = name, Age = age };
-            return new ApexMok.DemoApexClass();;
+            return new RealUserInfo { Name = name, Age = age };
         }
 
         public void StaticMethod(int a, string b)
