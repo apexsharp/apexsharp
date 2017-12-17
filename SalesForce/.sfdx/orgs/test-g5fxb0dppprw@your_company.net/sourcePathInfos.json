@@ -1,8 +1,8 @@
 [
     [
-        "C:\\apexsharp\\salesforce\\src",
+        "C:\\apexsharp\\SalesForce\\src",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src",
             "isDirectory": true,
             "size": 0,
             "modifiedTime": 1513380529054,
@@ -15,9 +15,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes",
+        "C:\\apexsharp\\SalesForce\\src\\classes",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes",
             "isDirectory": true,
             "size": 0,
             "modifiedTime": 1513380529413,
@@ -30,9 +30,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoController.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoController.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoController.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoController.cls",
             "isDirectory": false,
             "size": 978,
             "modifiedTime": 1513223963436,
@@ -45,9 +45,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoController.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoController.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoController.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoController.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963452,
@@ -60,9 +60,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoControllerTests.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoControllerTests.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoControllerTests.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoControllerTests.cls",
             "isDirectory": false,
             "size": 230,
             "modifiedTime": 1513223963460,
@@ -75,9 +75,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoControllerTests.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoControllerTests.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoControllerTests.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoControllerTests.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963482,
@@ -90,9 +90,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce",
+        "C:\\apexsharp\\SalesForce",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce",
+            "sourcePath": "C:\\apexsharp\\SalesForce",
             "isDirectory": true,
             "size": 0,
             "modifiedTime": 1513380536118,
@@ -104,9 +104,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassAbstract.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassAbstract.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassAbstract.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassAbstract.cls",
             "isDirectory": false,
             "size": 69,
             "modifiedTime": 1513223962730,
@@ -119,9 +119,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassAbstract.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassAbstract.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassAbstract.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassAbstract.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223962740,
@@ -134,9 +134,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassEnum.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassEnum.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassEnum.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassEnum.cls",
             "isDirectory": false,
             "size": 68,
             "modifiedTime": 1513223962760,
@@ -149,9 +149,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassEnum.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassEnum.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassEnum.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassEnum.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223962773,
@@ -164,9 +164,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassException.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassException.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassException.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassException.cls",
             "isDirectory": false,
             "size": 53,
             "modifiedTime": 1513223962817,
@@ -179,9 +179,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassException.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassException.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassException.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassException.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223962849,
@@ -194,9 +194,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassGlobal.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassGlobal.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassGlobal.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassGlobal.cls",
             "isDirectory": false,
             "size": 32,
             "modifiedTime": 1513223962886,
@@ -209,9 +209,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassGlobal.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassGlobal.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassGlobal.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassGlobal.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223962909,
@@ -224,9 +224,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInitialization.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInitialization.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInitialization.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInitialization.cls",
             "isDirectory": false,
             "size": 431,
             "modifiedTime": 1513223963050,
@@ -239,9 +239,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInitialization.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInitialization.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInitialization.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInitialization.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963063,
@@ -254,9 +254,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInterface.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInterface.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInterface.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInterface.cls",
             "isDirectory": false,
             "size": 206,
             "modifiedTime": 1513223963087,
@@ -269,9 +269,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInterface.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInterface.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInterface.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInterface.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963100,
@@ -284,9 +284,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInternal.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInternal.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInternal.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInternal.cls",
             "isDirectory": false,
             "size": 280,
             "modifiedTime": 1513223963108,
@@ -299,9 +299,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassInternal.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInternal.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassInternal.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassInternal.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963120,
@@ -314,9 +314,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassNoApex.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassNoApex.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassNoApex.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassNoApex.cls",
             "isDirectory": false,
             "size": 937,
             "modifiedTime": 1513223963133,
@@ -329,9 +329,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassNoApex.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassNoApex.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassNoApex.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassNoApex.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963146,
@@ -344,9 +344,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassRest.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRest.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassRest.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRest.cls",
             "isDirectory": false,
             "size": 1053,
             "modifiedTime": 1513223963199,
@@ -359,9 +359,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassRest.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRest.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassRest.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRest.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963210,
@@ -374,9 +374,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassRestTest.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRestTest.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassRestTest.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRestTest.cls",
             "isDirectory": false,
             "size": 630,
             "modifiedTime": 1513223963215,
@@ -389,9 +389,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassRestTest.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRestTest.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassRestTest.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassRestTest.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963229,
@@ -404,9 +404,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTest.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTest.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTest.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTest.cls",
             "isDirectory": false,
             "size": 895,
             "modifiedTime": 1513223963235,
@@ -419,9 +419,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTest.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTest.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTest.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTest.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963247,
@@ -434,9 +434,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestRunAs.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestRunAs.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls",
             "isDirectory": false,
             "size": 193,
             "modifiedTime": 1513223963262,
@@ -449,9 +449,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestRunAs.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963272,
@@ -464,9 +464,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestSeeAllData.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestSeeAllData.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls",
             "isDirectory": false,
             "size": 70,
             "modifiedTime": 1513223963277,
@@ -479,9 +479,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassUnitTestSeeAllData.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963293,
@@ -494,9 +494,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithOutSharing.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithOutSharing.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithOutSharing.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithOutSharing.cls",
             "isDirectory": false,
             "size": 56,
             "modifiedTime": 1513223963298,
@@ -509,9 +509,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithOutSharing.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963316,
@@ -524,9 +524,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithSharing.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithSharing.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithSharing.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithSharing.cls",
             "isDirectory": false,
             "size": 50,
             "modifiedTime": 1513223963324,
@@ -539,9 +539,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithSharing.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithSharing.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ClassWithSharing.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ClassWithSharing.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963335,
@@ -554,9 +554,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Collections.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Collections.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Collections.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Collections.cls",
             "isDirectory": false,
             "size": 1624,
             "modifiedTime": 1513223963371,
@@ -569,9 +569,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Collections.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Collections.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Collections.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Collections.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963382,
@@ -584,9 +584,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Comments.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Comments.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Comments.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Comments.cls",
             "isDirectory": false,
             "size": 250,
             "modifiedTime": 1513223963400,
@@ -599,9 +599,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Comments.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Comments.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Comments.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Comments.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963410,
@@ -614,9 +614,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Demo.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Demo.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Demo.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Demo.cls",
             "isDirectory": false,
             "size": 1245,
             "modifiedTime": 1513379439275,
@@ -629,9 +629,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\Demo.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\Demo.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\Demo.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\Demo.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963431,
@@ -644,9 +644,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoTest.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoTest.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoTest.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoTest.cls",
             "isDirectory": false,
             "size": 846,
             "modifiedTime": 1513223963488,
@@ -659,9 +659,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\DemoTest.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\DemoTest.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\DemoTest.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\DemoTest.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963501,
@@ -674,9 +674,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ExceptionDemo.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ExceptionDemo.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ExceptionDemo.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ExceptionDemo.cls",
             "isDirectory": false,
             "size": 433,
             "modifiedTime": 1513223963514,
@@ -689,9 +689,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ExceptionDemo.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ExceptionDemo.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ExceptionDemo.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ExceptionDemo.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963527,
@@ -704,9 +704,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ForIfWhile.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ForIfWhile.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ForIfWhile.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ForIfWhile.cls",
             "isDirectory": false,
             "size": 1915,
             "modifiedTime": 1513223963550,
@@ -719,9 +719,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\ForIfWhile.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\ForIfWhile.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\ForIfWhile.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\ForIfWhile.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963569,
@@ -734,9 +734,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\GetSetDemo.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\GetSetDemo.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\GetSetDemo.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\GetSetDemo.cls",
             "isDirectory": false,
             "size": 1293,
             "modifiedTime": 1513223963579,
@@ -749,9 +749,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\GetSetDemo.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\GetSetDemo.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\GetSetDemo.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\GetSetDemo.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963604,
@@ -764,9 +764,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterface.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterface.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterface.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterface.cls",
             "isDirectory": false,
             "size": 90,
             "modifiedTime": 1513223963629,
@@ -779,9 +779,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterface.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterface.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterface.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterface.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963653,
@@ -794,9 +794,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterfaceExt.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterfaceExt.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterfaceExt.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterfaceExt.cls",
             "isDirectory": false,
             "size": 66,
             "modifiedTime": 1513223963677,
@@ -809,9 +809,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\IClassInterfaceExt.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963690,
@@ -824,9 +824,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\JsonExample.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\JsonExample.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\JsonExample.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\JsonExample.cls",
             "isDirectory": false,
             "size": 337,
             "modifiedTime": 1513223963713,
@@ -839,9 +839,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\JsonExample.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\JsonExample.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\JsonExample.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\JsonExample.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963732,
@@ -854,9 +854,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\MethodAndConstructor.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\MethodAndConstructor.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\MethodAndConstructor.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\MethodAndConstructor.cls",
             "isDirectory": false,
             "size": 1493,
             "modifiedTime": 1513223963737,
@@ -869,9 +869,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\MethodAndConstructor.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963762,
@@ -884,9 +884,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\MethodComplex.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\MethodComplex.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\MethodComplex.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\MethodComplex.cls",
             "isDirectory": false,
             "size": 429,
             "modifiedTime": 1513223963770,
@@ -899,9 +899,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\MethodComplex.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\MethodComplex.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\MethodComplex.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\MethodComplex.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963787,
@@ -914,9 +914,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\PrimitiveTypes.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\PrimitiveTypes.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\PrimitiveTypes.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\PrimitiveTypes.cls",
             "isDirectory": false,
             "size": 693,
             "modifiedTime": 1513223963803,
@@ -929,9 +929,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\PrimitiveTypes.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963815,
@@ -944,9 +944,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\PropertyAndField.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\PropertyAndField.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\PropertyAndField.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\PropertyAndField.cls",
             "isDirectory": false,
             "size": 1199,
             "modifiedTime": 1513223963820,
@@ -959,9 +959,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\PropertyAndField.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\PropertyAndField.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\PropertyAndField.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\PropertyAndField.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963840,
@@ -974,23 +974,23 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\RunAll.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\RunAll.cls",
         {
-            "state": "u",
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\RunAll.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\RunAll.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 782,
             "modifiedTime": 1513381637653,
             "changeTime": 1513381637653,
-            "isWorkspace": false,
-            "contentHash": "e5fae618dbdd22ac23e8a8e82f78e218e89bb37a"
+            "contentHash": "e5fae618dbdd22ac23e8a8e82f78e218e89bb37a",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\RunAll.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\RunAll.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\RunAll.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\RunAll.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963870,
@@ -1003,9 +1003,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\SoqlDemo.cls",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\SoqlDemo.cls",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\SoqlDemo.cls",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\SoqlDemo.cls",
             "isDirectory": false,
             "size": 2166,
             "modifiedTime": 1513223963878,
@@ -1018,9 +1018,9 @@
         }
     ],
     [
-        "C:\\apexsharp\\salesforce\\src\\classes\\SoqlDemo.cls-meta.xml",
+        "C:\\apexsharp\\SalesForce\\src\\classes\\SoqlDemo.cls-meta.xml",
         {
-            "sourcePath": "C:\\apexsharp\\salesforce\\src\\classes\\SoqlDemo.cls-meta.xml",
+            "sourcePath": "C:\\apexsharp\\SalesForce\\src\\classes\\SoqlDemo.cls-meta.xml",
             "isDirectory": false,
             "size": 177,
             "modifiedTime": 1513223963897,

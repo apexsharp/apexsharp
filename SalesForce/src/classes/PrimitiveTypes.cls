@@ -6,7 +6,7 @@ public class PrimitiveTypes
 
     public Date MyDate = Date.today();
 
-    public Datetime MyDateTime = Datetime.now();
+    public DateTime MyDateTime = DateTime.now();
 
     // public Decimal MyDecimal = 12.4567;
     public Double d = 3.133433;

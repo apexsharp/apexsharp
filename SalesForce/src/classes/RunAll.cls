@@ -1,6 +1,8 @@
+@IsTest
 public with sharing class RunAll
 {
-    public RunAll()
+    @IsTest
+    public static void TestClassess()
     {
         System.debug(ClassEnum.America);
         System.debug(new ClassException());
