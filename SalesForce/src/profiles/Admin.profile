@@ -95,23 +95,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ClassUnitTestOnInstall</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>ClassUnitTestRunAs</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ClassUnitTestSeeAllData</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ClassVirtual</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ClassWebService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -128,10 +116,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Comments</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CustomMetaData</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -167,10 +151,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Label</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>MethodAndConstructor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -184,10 +164,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PropertyAndField</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Soql</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
