@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jay@jayonsoftware.com</contactEmail>
+    <label>ApexSharp</label>
+    <oauthConfig>
+        <callbackUrl>https://www.google.com</callbackUrl>
+        <consumerKey>3MVG9uudbyLbNPZO_h9sK0Qs1kDEHj9VtKRBUk8Yw1pbO_3Kbrj40fhc6YPB92Qd_quzW_xu0JCPq4xYFd52D</consumerKey>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

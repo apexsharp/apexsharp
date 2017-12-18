@@ -1,0 +1,15 @@
+<apex:page controller="Demo" tabstyle="Contact">
+    <apex:form >
+        <apex:pageBlock mode="edit">
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+              <apex:inputField value="{!Contact.LastName}"/>
+                <apex:inputField value="{!Contact.EMail}"/>
+                <apex:inputField value="{!Contact.Phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

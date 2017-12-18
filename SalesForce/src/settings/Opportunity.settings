@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpportunitySettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoActivateNewReminders>true</autoActivateNewReminders>
+    <enableFindSimilarOpportunities>false</enableFindSimilarOpportunities>
+    <enableOpportunityTeam>false</enableOpportunityTeam>
+    <enableUpdateReminders>true</enableUpdateReminders>
+    <promptToAddProducts>false</promptToAddProducts>
+</OpportunitySettings>

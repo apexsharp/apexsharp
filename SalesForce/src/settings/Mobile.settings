@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chatterMobile>
+        <enablePushNotifications>true</enablePushNotifications>
+    </chatterMobile>
+    <dashboardMobile>
+        <enableDashboardIPadApp>true</enableDashboardIPadApp>
+    </dashboardMobile>
+    <salesforceMobile>
+        <enableMobileLite>false</enableMobileLite>
+        <enableUserToDeviceLinking>false</enableUserToDeviceLinking>
+    </salesforceMobile>
+    <touchMobile>
+        <enableTouchAppIPad>true</enableTouchAppIPad>
+        <enableTouchAppIPhone>true</enableTouchAppIPhone>
+        <enableTouchBrowserIPad>false</enableTouchBrowserIPad>
+        <enableVisualforceInTouch>false</enableVisualforceInTouch>
+    </touchMobile>
+</MobileSettings>

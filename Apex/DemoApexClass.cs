@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Apex.ApexSharp.Implementation;
-using Apex.System;
 
 namespace Apex
 {
@@ -16,13 +13,7 @@ namespace Apex
 
         public dynamic Self { get; set; }
 
-        public static dynamic Implementation
-        {
-            get
-            {
-                return Implementor.GetImplementation(typeof(DemoApexClass));
-            }
-        }
+        public static dynamic Implementation => Implementor.GetImplementation(typeof(DemoApexClass));
 
         // generated API methods and properties — all follow the same pattern
         // 1) static methods use Implementation object
@@ -31,39 +22,78 @@ namespace Apex
 
         public DemoApexClass(string name, int age)
         {
+            //Console.WriteLine("You Called the Real Constructor");
             Self = Implementation.Constructor(name, age);
         }
 
         public string Name
         {
-            get { return Self.Name; }
-            set { Self.Name = value; }
+            get => Self.Name;
+            set => Self.Name = value;
         }
 
         public int Age
         {
-            get { return Self.Age; }
-            set { Self.Age = value; }
+            get => Self.Age;
+            set => Self.Age = value;
         }
 
         public string NonStaticMethod()
         {
+            //return "Real NonStaticMethod";
             return Self.NonStaticMethod();
         }
 
-        public static void StaticMethod(int a, string b)
+        public static void StaticMethod(string name)
         {
-            Implementation.StaticMethod(a, b);
+            //Console.WriteLine("Real StaticMethod " +name);
+            Implementation.StaticMethod(name);
         }
 
-        public static void AnotherStaticMethod(string name)
+        public static void StaticMethodWithMokAndReal(string name)
         {
-            Implementation.AnotherStaticMethod(name);
+            //Console.WriteLine("Real StaticMethodWithMokAndReal " + name);
+            Implementation.StaticMethodWithMokAndReal(name);
+        }
+    }
+
+    [Implements(typeof(DemoApexClass))]
+    public class DemoApexClassImplementation
+    {
+        // Self
+
+        public class DemoApexClassInstance
+        {
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+
+            public string NonStaticMethod()
+            {
+                return "Real NonStatic Method";
+            }
         }
 
-        public static void StaticMethodMokAndReal(string name)
+        // Implementation
+
+        public dynamic Constructor(string name, int age)
         {
-            Implementation.StaticMethodMokAndReal(name);
+            return new DemoApexClassInstance { Name = name, Age = age };
+        }
+
+        public void StaticMethod(string name)
+        {
+            Console.WriteLine($"Real.StaticMethod: {name}");
+        }
+
+        public void AnotherStaticMethod(string name)
+        {
+            Console.WriteLine($"Real.AnotherStaticMethod: {name}");
+        }
+
+        public void StaticMethodWithMokAndReal(string name)
+        {
+            Console.WriteLine($"Real.StaticMethodWithMokAndReal: {name}");
         }
     }
 }

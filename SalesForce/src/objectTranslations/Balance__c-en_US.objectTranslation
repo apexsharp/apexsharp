@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Balance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Balances</value>
+    </caseValues>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>BalanceFinal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

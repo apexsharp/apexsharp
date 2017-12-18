@@ -1,11 +1,8 @@
-﻿using System;
-using Serilog;
-
-namespace Demo
+﻿namespace Demo
 {
-    using ApexSharpApi;
     using NUnit.Framework;
 
+    // This class gets called once every time any Unit Test runs. 
     [SetUpFixture]
     public class OneTimeSetUp
     {
@@ -13,7 +10,7 @@ namespace Demo
         public static void Init()
         {
             // Start Logging
-            Logging.EnableLogging();
+            Logging.StartLogging();
             // Always Initialize your settings before using it.
             Setup.Init();
 
@@ -26,7 +23,7 @@ namespace Demo
             //UnitTestDataManager.UnitTestDataManagerOff();
 
             // Flush and Close
-            Logging.CloseLogging();
+            Logging.StopLogging();
         }
     }
 }

@@ -3,7 +3,6 @@
     using System;
     using System.IO;
     using ApexSharpApi;
-    using Serilog;
 
     public class Setup
     {
@@ -11,6 +10,7 @@
         { 
             // Due to different OS and how they manage file paths, its best to to use the Path.GetFullPath Method.
             // This example assumes you cloned your GIT repo to the root level.
+
             // SessionLocation is where your SF session will be Saved
             var sessionLocation = Path.GetFullPath(@"/apexsharp/config.json");
             // SalesForceLocation is the location of your Salesofrce project
@@ -27,15 +27,14 @@
             catch (SalesForceNoFileFoundException)
             {
                 try
-                {
-                    
+                {                    
                     ConnectionUtil.Session = new ApexSharp().
                          SalesForceUrl("https://login.salesforce.com/")
                         .AndSalesForceApiVersion(40)
                         
-                        .WithUserId("apexsharpdx@jayonsoftware.com")
-                        .AndPassword("JugCnkhExxMWuVvLWN8wccEM")
-                        .AndToken("jiiZsAh3L0zP0KPw6iJqdqGd")
+                        .WithUserId("SF Login ID")
+                        .AndPassword("Password")
+                        .AndToken("Token")
 
                         .SalesForceLocation(salesForceLocation)
                         .VsProjectLocation(vSprojectocation)

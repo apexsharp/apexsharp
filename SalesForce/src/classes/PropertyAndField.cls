@@ -1,18 +1,18 @@
 public class PropertyAndField
 {
-    public Datetime DateTimeGetSet { get; set; }
+    public DateTime DateTimeGetSet { get; set; }
 
-    public List<Datetime> DateTimeGetSetGeneric { get; set; }
+    public List<DateTime> DateTimeGetSetGeneric { get; set; }
 
-    public Datetime[] DateTimeGetSetArray { get; set; }
+    public DateTime[] DateTimeGetSetArray { get; set; }
 
-    public Datetime DateTimeEmpty;
+    public DateTime DateTimeEmpty;
 
-    public Datetime DateTimeInitialized = Datetime.now();
+    public DateTime DateTimeInitialized = DateTime.now();
 
-    public List<Datetime> DateTimeList = new List<Datetime>();
+    public List<DateTime> DateTimeList = new List<DateTime>();
 
-    public Datetime[] DateTimeArray = new Datetime[5];
+    public DateTime[] DateTimeArray = new DateTime[5];
 
     public String Name = 'jay';
 
@@ -32,11 +32,11 @@ public class PropertyAndField
 
     public void MethodOne()
     {
-        Datetime dateTimeEmpty;
-        dateTimeEmpty = Datetime.now();
-        Datetime dateTimeInitilized = Datetime.now();
-        List<Datetime> dateTimeList = new List<Datetime>();
-        Datetime[] dateTimeArrary = new Datetime[5];
+        DateTime dateTimeEmpty;
+        dateTimeEmpty = DateTime.now();
+        DateTime dateTimeInitilized = DateTime.now();
+        List<DateTime> dateTimeList = new List<DateTime>();
+        DateTime[] dateTimeArrary = new DateTime[5];
         String name;
         name = 'Jay';
     }

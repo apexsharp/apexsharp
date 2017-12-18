@@ -1,19 +1,27 @@
+@isTest
 public with sharing class RunAll
 {
-    public RunAll()
-    {
-        System.debug(ClassEnum.America);
-        System.debug(new ClassException());
-        System.debug(new ClassGlobal());
+    @isTest
+    public static void TestClassess() {
+        System.Debug(ClassEnum.America);
+        System.Debug(new ClassException());
+        System.Debug(new ClassGlobal());
+
         ClassInitialization newClassInitialization = new ClassInitialization();
-        System.debug(ClassInitialization.colorMap);
-        System.debug(newClassInitialization.contactList);
+        System.Debug(ClassInitialization.colorMap);
+        System.Debug(newClassInitialization.contactList);
+
         ClassInterface classInterface = new ClassInterface();
-        System.debug(classInterface.getName());
-        System.debug(new ClassInternal.InternalClassOne());
-        System.debug(new ClassInternal.InternalClassTwo());
-        System.debug(new ClassUnitTestSeeAllData());
-        System.debug(new ClassWithOutSharing());
-        System.debug(new ClassWithSharing());
+        System.Debug(classInterface.GetName());
+
+        System.Debug(new ClassInternal.InternalClassOne());
+        System.Debug(new ClassInternal.InternalClassTwo());
+
+        System.Debug(ClassNoApex.MethodOne());
+
+        System.Debug(new ClassUnitTestSeeAllData());
+
+        System.Debug(new ClassWithOutSharing());
+        System.Debug(new ClassWithSharing());
     }
 }

@@ -4,7 +4,7 @@ public class ClassUnitTest
     @TestSetup
     public static void setup()
     {
-        System.debug('One Time Setup Got Called');
+        System.debug('Setup Got Called');
     }
 
     @IsTest

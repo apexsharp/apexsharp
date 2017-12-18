@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ForthChild</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Forth Children</value>
+    </caseValues>
+    <fields>
+        <label><!-- ThirdChild --></label>
+        <name>ThirdChild__c</name>
+        <relationshipLabel><!-- Forth Children --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
