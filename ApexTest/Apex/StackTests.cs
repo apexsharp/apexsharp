@@ -17,7 +17,7 @@ namespace ApexTest.Apex
         }
 
         [Test]
-        public void PoppingAndPeekingFromEmptyStackThrowsException()
+        public void PoppingAndPeekingFromAnEmptyStackThrowsException()
         {
             Assert.Throws<EmptyStackException>(() => new Stack<int>().pop());
             Assert.Throws<EmptyStackException>(() => new Stack<string>().peek());
