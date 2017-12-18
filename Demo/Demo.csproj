@@ -14,6 +14,7 @@
     <PackageReference Include="Sprache" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApexMok\ApexMok.csproj" />
     <ProjectReference Include="..\Apex\Apex.csproj" />
   </ItemGroup>
   <ItemGroup>

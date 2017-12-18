@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using Apex;
+
+namespace Demo
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +17,7 @@
 
         public static void Main(string[] args)
         {
-            Start();
+            MokDemo();
         }
 
         public static void Start()
@@ -24,7 +26,7 @@
             Logging.StartLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
-            Setup.Init();
+            //Setup.Init();
 
             // Keep Track of the API Limits
             Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
@@ -39,10 +41,60 @@
             // Keep Track of the API Limits
             Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
-            Console.WriteLine("Done");
-
             // Flush and Close
             Logging.StopLogging();
+
+            Console.WriteLine("Done, Press Any Key To Exit");
+            Console.ReadLine();       
+        }
+
+        public static void MokDemo()
+        {
+            // Call the Default Implementaiton
+            Console.WriteLine("Using Real Implementation");
+            Console.WriteLine();
+
+            DemoApexClass demo = new DemoApexClass("Mickey Mouse", 80);
+            Console.WriteLine("Name = {0}", demo.Name);
+            Console.WriteLine("Age = {0}", demo.Age);
+
+            Console.WriteLine(demo.NonStaticMethod());
+
+
+            DemoApexClass.StaticMethod("Hello");
+            DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
+
+
+            Console.WriteLine();
+            Console.WriteLine("Using Mok Implementation");
+            Console.WriteLine();
+
+            MokSetup.InitMok();
+
+            DemoApexClass mok = new DemoApexClass("Mickey Mouse", 80);
+            Console.WriteLine("Name = {0}", mok.Name);
+            Console.WriteLine("Age = {0}", mok.Age);
+
+            Console.WriteLine(mok.NonStaticMethod());
+
+
+            DemoApexClass.StaticMethod("ApexSharp");
+
+            try
+            {
+                DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
+                // This line falls back to the default implementation
+                DemoApexClass.StaticMethodWithMokAndReal("apexSharp"); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Not implemented: {0}", ex.Message);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Done, Press any key to exit");
+            Console.ReadKey();
         }
 
         public static void CreateOffLineClasses()
