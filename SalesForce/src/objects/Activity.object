@@ -44,6 +44,16 @@
         <label>My Activities</label>
     </listViews>
     <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
         <fullName>TodaysTasks</fullName>
         <filterScope>Mine</filterScope>
         <filters>

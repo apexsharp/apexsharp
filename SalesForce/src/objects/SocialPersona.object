@@ -32,17 +32,65 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <fields>
+        <fullName>AreWeFollowing</fullName>
+    </fields>
+    <fields>
+        <fullName>AuthorLabels</fullName>
+    </fields>
+    <fields>
+        <fullName>Bio</fullName>
+    </fields>
+    <fields>
         <fullName>ExternalId</fullName>
     </fields>
     <fields>
         <fullName>ExternalPictureURL</fullName>
     </fields>
     <fields>
+        <fullName>Followers</fullName>
+    </fields>
+    <fields>
+        <fullName>Following</fullName>
+    </fields>
+    <fields>
+        <fullName>InfluencerScore</fullName>
+    </fields>
+    <fields>
+        <fullName>IsBlacklisted</fullName>
+    </fields>
+    <fields>
+        <fullName>IsFollowingUs</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVerified</fullName>
+    </fields>
+    <fields>
+        <fullName>Klout</fullName>
+    </fields>
+    <fields>
+        <fullName>ListedCount</fullName>
+    </fields>
+    <fields>
+        <fullName>MediaProvider</fullName>
+    </fields>
+    <fields>
+        <fullName>MediaType</fullName>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfFriends</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfTweets</fullName>
     </fields>
     <fields>
         <fullName>ParentId</fullName>
         <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>ProfileType</fullName>
     </fields>
     <fields>
         <fullName>ProfileUrl</fullName>
@@ -51,7 +99,19 @@
         <fullName>Provider</fullName>
     </fields>
     <fields>
+        <fullName>R6SourceId</fullName>
+    </fields>
+    <fields>
+        <fullName>RealName</fullName>
+    </fields>
+    <fields>
         <fullName>SourceApp</fullName>
+    </fields>
+    <fields>
+        <fullName>TopicType</fullName>
+    </fields>
+    <fields>
+        <fullName>UserId</fullName>
     </fields>
     <searchLayouts>
         <customTabListAdditionalFields>Provider</customTabListAdditionalFields>

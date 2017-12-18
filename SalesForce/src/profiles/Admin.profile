@@ -123,6 +123,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DemoController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DemoTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -164,6 +168,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PropertyAndField</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RunAll</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SoqlDemo</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
