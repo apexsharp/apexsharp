@@ -34,12 +34,12 @@ namespace Apex.ConnectApi
 
         public BatchInput(object input, BinaryInput binary)
         {
-            Implementation.Constructor(input, binary);
+            Self = Implementation.Constructor(input, binary);
         }
 
         public BatchInput(object input, List<BinaryInput> binaries)
         {
-            Implementation.Constructor(input, binaries);
+            Self = Implementation.Constructor(input, binaries);
         }
 
         public object clone()

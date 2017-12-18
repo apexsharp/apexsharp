@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public PlatformActionGroup()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

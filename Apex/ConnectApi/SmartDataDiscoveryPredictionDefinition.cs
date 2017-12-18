@@ -269,7 +269,7 @@ namespace Apex.ConnectApi
 
         public SmartDataDiscoveryPredictionDefinition()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

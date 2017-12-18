@@ -29,17 +29,17 @@ namespace Apex.Wave
         // API
         public WaveQueryException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public WaveQueryException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public WaveQueryException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

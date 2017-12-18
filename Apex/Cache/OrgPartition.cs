@@ -29,7 +29,7 @@ namespace Apex.Cache
         // API
         public OrgPartition(string fullyQualifiedPartitionName)
         {
-            Implementation.Constructor(fullyQualifiedPartitionName);
+            Self = Implementation.Constructor(fullyQualifiedPartitionName);
         }
 
         public object clone()

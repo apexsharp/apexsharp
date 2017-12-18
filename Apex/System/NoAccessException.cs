@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public NoAccessException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public Exception getCause()

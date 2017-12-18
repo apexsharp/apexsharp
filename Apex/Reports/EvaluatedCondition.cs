@@ -29,7 +29,7 @@ namespace Apex.Reports
         // API
         public EvaluatedCondition(string aggregateName, string aggregateLabel, double compareToValue, double aggregateValue, string displayCompareTo, string displayValue, EvaluatedConditionOperator @operator)
         {
-            Implementation.Constructor(aggregateName, aggregateLabel, compareToValue, aggregateValue, displayCompareTo, displayValue, @operator);
+            Self = Implementation.Constructor(aggregateName, aggregateLabel, compareToValue, aggregateValue, displayCompareTo, displayValue, @operator);
         }
 
         public string getAggregateLabel()

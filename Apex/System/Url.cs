@@ -29,22 +29,22 @@ namespace Apex.System
         // API
         public Url(string spec)
         {
-            Implementation.Constructor(spec);
+            Self = Implementation.Constructor(spec);
         }
 
         public Url(string protocol, string host, int port, string file)
         {
-            Implementation.Constructor(protocol, host, port, file);
+            Self = Implementation.Constructor(protocol, host, port, file);
         }
 
         public Url(string protocol, string host, string file)
         {
-            Implementation.Constructor(protocol, host, file);
+            Self = Implementation.Constructor(protocol, host, file);
         }
 
         public Url(Url context, string spec)
         {
-            Implementation.Constructor(context, spec);
+            Self = Implementation.Constructor(context, spec);
         }
 
         public object clone()

@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public CustomConsoleComponents()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

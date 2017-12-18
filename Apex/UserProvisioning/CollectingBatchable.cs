@@ -67,7 +67,7 @@ namespace Apex.UserProvisioning
 
         public CollectingBatchable(string reconOffset, string uprId, string connectedAppId)
         {
-            Implementation.Constructor(reconOffset, uprId, connectedAppId);
+            Self = Implementation.Constructor(reconOffset, uprId, connectedAppId);
         }
 
         public object clone()

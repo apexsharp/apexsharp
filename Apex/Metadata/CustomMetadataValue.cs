@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public CustomMetadataValue()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

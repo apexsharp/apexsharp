@@ -29,7 +29,7 @@ namespace Apex.Support
         // API
         public EmailToCaseHandler()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public XmlStreamReader(string xmlInput)
         {
-            Implementation.Constructor(xmlInput);
+            Self = Implementation.Constructor(xmlInput);
         }
 
         public int getAttributeCount()

@@ -281,7 +281,7 @@ namespace Apex.ConnectApi
 
         public ContentAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

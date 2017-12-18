@@ -69,7 +69,7 @@ namespace Apex.Search
 
         public KnowledgeSuggestionFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Apex.Social
         // API
         public InboundSocialPostHandlerImpl()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

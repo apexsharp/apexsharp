@@ -125,7 +125,7 @@ namespace Apex.Canvas
 
         public Test()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

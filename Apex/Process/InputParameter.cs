@@ -77,12 +77,12 @@ namespace Apex.Process
 
         public InputParameter(string name, ParameterType parameterType, bool required)
         {
-            Implementation.Constructor(name, parameterType, required);
+            Self = Implementation.Constructor(name, parameterType, required);
         }
 
         public InputParameter(string name, string description, ParameterType parameterType, bool required)
         {
-            Implementation.Constructor(name, description, parameterType, required);
+            Self = Implementation.Constructor(name, description, parameterType, required);
         }
 
         public object clone()

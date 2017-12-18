@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public BatchResult(object result, Exception error)
         {
-            Implementation.Constructor(result, error);
+            Self = Implementation.Constructor(result, error);
         }
 
         public object clone()

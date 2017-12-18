@@ -58,7 +58,7 @@ namespace Apex.VisualEditor
 
         public DesignTimePageContext()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

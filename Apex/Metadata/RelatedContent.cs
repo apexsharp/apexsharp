@@ -46,7 +46,7 @@ namespace Apex.Metadata
 
         public RelatedContent()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

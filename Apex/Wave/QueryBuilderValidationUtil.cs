@@ -29,7 +29,7 @@ namespace Apex.Wave
         // API
         public QueryBuilderValidationUtil()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,17 +29,17 @@ namespace Apex.Reports
         // API
         public ReportRunException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ReportRunException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public ReportRunException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

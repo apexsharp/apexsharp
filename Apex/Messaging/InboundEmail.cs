@@ -29,7 +29,7 @@ namespace Apex.Messaging
         // API
         public InboundEmail()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         BinaryAttachment[] binaryAttachments

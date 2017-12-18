@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public ReferenceWithDateRecordField()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

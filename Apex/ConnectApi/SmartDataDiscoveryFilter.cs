@@ -65,7 +65,7 @@ namespace Apex.ConnectApi
 
         public SmartDataDiscoveryFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

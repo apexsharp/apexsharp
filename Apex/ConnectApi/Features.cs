@@ -533,7 +533,7 @@ namespace Apex.ConnectApi
 
         public Features()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

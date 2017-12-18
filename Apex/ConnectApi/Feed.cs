@@ -125,7 +125,7 @@ namespace Apex.ConnectApi
 
         public Feed()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

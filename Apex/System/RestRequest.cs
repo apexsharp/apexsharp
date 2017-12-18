@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public RestRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         Map<string, string> headers

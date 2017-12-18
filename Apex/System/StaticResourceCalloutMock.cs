@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public StaticResourceCalloutMock()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void setHeader(string headerName, string headerValue)

@@ -70,7 +70,7 @@ namespace Apex.Metadata
 
         public PlatformActionList()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

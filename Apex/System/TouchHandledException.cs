@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public TouchHandledException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public Exception getCause()

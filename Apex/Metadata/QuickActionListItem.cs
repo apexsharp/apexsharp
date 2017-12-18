@@ -46,7 +46,7 @@ namespace Apex.Metadata
 
         public QuickActionListItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

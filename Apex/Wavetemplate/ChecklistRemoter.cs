@@ -29,7 +29,7 @@ namespace Apex.WaveTemplate
         // API
         public ChecklistRemoter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

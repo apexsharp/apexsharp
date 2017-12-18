@@ -30,7 +30,7 @@ namespace Apex.System
         // API
         public SupportPredictiveService()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

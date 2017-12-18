@@ -29,7 +29,7 @@ namespace Apex.Browser
         // API
         public Browser()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

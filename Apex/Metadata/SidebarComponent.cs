@@ -142,7 +142,7 @@ namespace Apex.Metadata
 
         public SidebarComponent()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

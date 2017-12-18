@@ -40,7 +40,7 @@ namespace Apex.System
 
         public Answers()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public InvalidParameterValueException(string param1, string param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()

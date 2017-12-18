@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public QuestionAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public QuestionAndAnswersCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

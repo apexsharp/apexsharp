@@ -118,7 +118,7 @@ namespace Apex.Approval
 
         public ProcessSubmitRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getComments()

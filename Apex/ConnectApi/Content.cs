@@ -365,7 +365,7 @@ namespace Apex.ConnectApi
 
         public Content()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

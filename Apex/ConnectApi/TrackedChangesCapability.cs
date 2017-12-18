@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public TrackedChangesCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

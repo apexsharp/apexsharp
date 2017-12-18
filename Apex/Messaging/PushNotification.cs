@@ -29,12 +29,12 @@ namespace Apex.Messaging
         // API
         public PushNotification()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public PushNotification(Map<string, object> payload)
         {
-            Implementation.Constructor(payload);
+            Self = Implementation.Constructor(payload);
         }
 
         public object clone()

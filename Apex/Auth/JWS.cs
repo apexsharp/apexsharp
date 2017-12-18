@@ -29,12 +29,12 @@ namespace Apex.Auth
         // API
         public JWS(JWT jwt, string certDevName)
         {
-            Implementation.Constructor(jwt, certDevName);
+            Self = Implementation.Constructor(jwt, certDevName);
         }
 
         public JWS(string payload, string certDevName)
         {
-            Implementation.Constructor(payload, certDevName);
+            Self = Implementation.Constructor(payload, certDevName);
         }
 
         public object clone()

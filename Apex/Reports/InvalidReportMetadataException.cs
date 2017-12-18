@@ -29,22 +29,22 @@ namespace Apex.Reports
         // API
         public InvalidReportMetadataException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public InvalidReportMetadataException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReportMetadataException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReportMetadataException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

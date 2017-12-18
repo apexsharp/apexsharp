@@ -31,7 +31,7 @@ namespace Apex.UserProvisioning
         // API
         public LinkingBatchable(string uprId)
         {
-            Implementation.Constructor(uprId);
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()

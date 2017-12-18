@@ -29,7 +29,7 @@ namespace Apex.Dom
         // API
         public Document()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public XmlNode createRootElement(string name, string @namespace, string prefix)

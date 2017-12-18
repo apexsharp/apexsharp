@@ -29,7 +29,7 @@ namespace Apex.WaveTemplate
         // API
         public WaveTemplateConfigurationModifier()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void beforeAppCreate(WaveTemplateInfo template, Answers answers)

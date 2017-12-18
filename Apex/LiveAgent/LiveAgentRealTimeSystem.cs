@@ -29,7 +29,7 @@ namespace Apex.LiveAgent
         // API
         public LiveAgentRealTimeSystem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static void cancelChatRequests(List<string> requests)

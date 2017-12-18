@@ -69,12 +69,12 @@ namespace Apex.Reports
 
         public StandardDateFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public StandardDateFilter(string column, string durationValue, string startDate, string endDate)
         {
-            Implementation.Constructor(column, durationValue, startDate, endDate);
+            Self = Implementation.Constructor(column, durationValue, startDate, endDate);
         }
 
         public object clone()

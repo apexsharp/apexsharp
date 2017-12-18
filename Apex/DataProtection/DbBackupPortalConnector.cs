@@ -29,7 +29,7 @@ namespace Apex.DataProtection
         // API
         public DbBackupPortalConnector()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

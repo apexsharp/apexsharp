@@ -29,7 +29,7 @@ namespace Apex.Messaging
         // API
         public PushNotificationPayload()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static Map<string, object> apple(string alert, string sound, int badgeCount, Map<string, object> userData)

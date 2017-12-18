@@ -65,7 +65,7 @@ namespace Apex.ConnectApi
 
         public UpDownVoteCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -74,7 +74,7 @@ namespace Apex.System
 
         public JSON()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -101,7 +101,7 @@ namespace Apex.ConnectApi
 
         public Announcement()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

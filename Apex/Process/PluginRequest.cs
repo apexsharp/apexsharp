@@ -41,7 +41,7 @@ namespace Apex.Process
 
         public PluginRequest(Map<string, object> inputParameters)
         {
-            Implementation.Constructor(inputParameters);
+            Self = Implementation.Constructor(inputParameters);
         }
 
         public object clone()

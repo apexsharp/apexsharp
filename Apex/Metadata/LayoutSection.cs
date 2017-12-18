@@ -106,7 +106,7 @@ namespace Apex.Metadata
 
         public LayoutSection()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

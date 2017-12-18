@@ -30,17 +30,17 @@ namespace Apex.System
         // API
         public List()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public List(List<T> listToCopy)
         {
-            Implementation.Constructor(listToCopy);
+            Self = Implementation.Constructor(listToCopy);
         }
 
         public List(Set<T> setToCopy)
         {
-            Implementation.Constructor(setToCopy);
+            Self = Implementation.Constructor(setToCopy);
         }
 
         public void add(object listElement)
@@ -130,7 +130,7 @@ namespace Apex.System
 
         public List(int param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public List<object> deepClone(bool preserveId, bool preserveReadOnlyTimestamps)

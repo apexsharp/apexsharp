@@ -29,22 +29,22 @@ namespace Apex.WaveTemplate
         // API
         public TemplateInterruptException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public TemplateInterruptException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public TemplateInterruptException(string msg)
         {
-            Implementation.Constructor(msg);
+            Self = Implementation.Constructor(msg);
         }
 
         public TemplateInterruptException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public ModerationCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

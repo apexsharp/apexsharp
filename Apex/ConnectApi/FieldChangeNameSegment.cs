@@ -29,7 +29,7 @@ namespace Apex.ConnectApi
         // API
         public FieldChangeNameSegment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

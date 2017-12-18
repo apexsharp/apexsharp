@@ -54,7 +54,7 @@ namespace Apex.VisualEditor
 
         public DynamicPickList()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

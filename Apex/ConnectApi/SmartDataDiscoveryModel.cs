@@ -197,7 +197,7 @@ namespace Apex.ConnectApi
 
         public SmartDataDiscoveryModel()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

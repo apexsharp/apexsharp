@@ -220,12 +220,12 @@ namespace Apex.Reports
 
         public ReportMetadata()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ReportMetadata(string name, string developerName, ID id, List<GroupingInfo> groupingsAcross, List<GroupingInfo> groupingsDown, List<string> aggregates, List<BucketField> buckets, List<string> detailColumns, string reportBooleanFilter, List<ReportFilter> reportFilters, List<string> historicalSnapshotDates, ReportFormat reportFormat, ReportType reportType, string currencyCode, string scope, string division, List<SortColumn> sortBy, StandardDateFilter standardDateFilter, bool hasDetailRows, bool hasRecordCount, List<StandardFilter> standardFilters, string description, bool showSubtotals, bool showGrandTotal, TopRows topRows, Map<string, ReportCsf> customSummaryFormula, List<CrossFilter> crossFilters)
         {
-            Implementation.Constructor(name, developerName, id, groupingsAcross, groupingsDown, aggregates, buckets, detailColumns, reportBooleanFilter, reportFilters, historicalSnapshotDates, reportFormat, reportType, currencyCode, scope, division, sortBy, standardDateFilter, hasDetailRows, hasRecordCount, standardFilters, description, showSubtotals, showGrandTotal, topRows, customSummaryFormula, crossFilters);
+            Self = Implementation.Constructor(name, developerName, id, groupingsAcross, groupingsDown, aggregates, buckets, detailColumns, reportBooleanFilter, reportFilters, historicalSnapshotDates, reportFormat, reportType, currencyCode, scope, division, sortBy, standardDateFilter, hasDetailRows, hasRecordCount, standardFilters, description, showSubtotals, showGrandTotal, topRows, customSummaryFormula, crossFilters);
         }
 
         public object clone()

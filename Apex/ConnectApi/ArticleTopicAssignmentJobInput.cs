@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public ArticleTopicAssignmentJobInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

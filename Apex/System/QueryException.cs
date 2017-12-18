@@ -29,22 +29,22 @@ namespace Apex.System
         // API
         public QueryException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public QueryException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public QueryException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public QueryException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()

@@ -29,7 +29,7 @@ namespace Apex.Process
         // API
         public PluginDescribeResult()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         string description

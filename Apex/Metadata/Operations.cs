@@ -45,7 +45,7 @@ namespace Apex.Metadata
 
         public Operations()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

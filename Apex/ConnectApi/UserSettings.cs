@@ -353,7 +353,7 @@ namespace Apex.ConnectApi
 
         public UserSettings()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

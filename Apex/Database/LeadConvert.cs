@@ -30,7 +30,7 @@ namespace Apex.Database
         // API
         public LeadConvert()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ID getAccountId()

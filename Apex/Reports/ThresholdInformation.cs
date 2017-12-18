@@ -29,7 +29,7 @@ namespace Apex.Reports
         // API
         public ThresholdInformation(List<EvaluatedCondition> evaluatedConditions)
         {
-            Implementation.Constructor(evaluatedConditions);
+            Self = Implementation.Constructor(evaluatedConditions);
         }
 
         public List<EvaluatedCondition> getEvaluatedConditions()

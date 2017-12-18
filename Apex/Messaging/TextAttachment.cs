@@ -101,7 +101,7 @@ namespace Apex.Messaging
 
         public TextAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

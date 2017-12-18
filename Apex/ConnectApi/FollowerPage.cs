@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public FollowerPage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

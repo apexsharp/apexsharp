@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public MentionCompletionPage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

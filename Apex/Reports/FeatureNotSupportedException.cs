@@ -29,17 +29,17 @@ namespace Apex.Reports
         // API
         public FeatureNotSupportedException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public FeatureNotSupportedException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public FeatureNotSupportedException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

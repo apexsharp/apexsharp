@@ -49,7 +49,7 @@ namespace Apex.System
 
         public RemoteObjectController()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

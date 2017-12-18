@@ -77,7 +77,7 @@ namespace Apex.Messaging
 
         public EmailAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public Blob getBody()

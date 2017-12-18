@@ -30,7 +30,7 @@ namespace Apex.ApexPages
         // API
         public KnowledgeArticleVersionStandardController(SObject article)
         {
-            Implementation.Constructor(article);
+            Self = Implementation.Constructor(article);
         }
 
         public string getSourceId()

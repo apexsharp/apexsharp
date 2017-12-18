@@ -89,7 +89,7 @@ namespace Apex.UserProvisioning
 
         public ProvisioningProcessHandlerInput(string userProvisioningRequestId, string userId, string namedCredDevName, string reconFilter, string reconOffset)
         {
-            Implementation.Constructor(userProvisioningRequestId, userId, namedCredDevName, reconFilter, reconOffset);
+            Self = Implementation.Constructor(userProvisioningRequestId, userId, namedCredDevName, reconFilter, reconOffset);
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.Schema
         // API
         public DataCategoryGroupSobjectTypePair()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getDataCategoryGroupName()

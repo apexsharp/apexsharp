@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public RepositoryFolderItemsCollection()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

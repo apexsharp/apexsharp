@@ -55,7 +55,7 @@ namespace Apex.System
 
         public BusinessHours()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static Datetime add(ID businessHoursId, Datetime startDate, long interval)

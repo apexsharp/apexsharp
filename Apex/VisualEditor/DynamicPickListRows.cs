@@ -29,17 +29,17 @@ namespace Apex.VisualEditor
         // API
         public DynamicPickListRows(List<DataRow> rows, bool containsAllRows)
         {
-            Implementation.Constructor(rows, containsAllRows);
+            Self = Implementation.Constructor(rows, containsAllRows);
         }
 
         public DynamicPickListRows(List<DataRow> rows)
         {
-            Implementation.Constructor(rows);
+            Self = Implementation.Constructor(rows);
         }
 
         public DynamicPickListRows()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void addAllRows(List<DataRow> rows)

@@ -29,12 +29,12 @@ namespace Apex.DataSource
         // API
         public SearchContext(List<Table> metadata, int offset, int maxResults, List<TableSelection> tableSelections, string searchPhrase)
         {
-            Implementation.Constructor(metadata, offset, maxResults, tableSelections, searchPhrase);
+            Self = Implementation.Constructor(metadata, offset, maxResults, tableSelections, searchPhrase);
         }
 
         public SearchContext()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         string searchPhrase

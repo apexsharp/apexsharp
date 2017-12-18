@@ -154,7 +154,7 @@ namespace Apex.Metadata
 
         public FeedLayout()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

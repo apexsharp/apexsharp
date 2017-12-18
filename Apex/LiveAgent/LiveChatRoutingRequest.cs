@@ -29,7 +29,7 @@ namespace Apex.LiveAgent
         // API
         public LiveChatRoutingRequest(string chatKey, string liveChatButtonId, string liveChatTranscriptId)
         {
-            Implementation.Constructor(chatKey, liveChatButtonId, liveChatTranscriptId);
+            Self = Implementation.Constructor(chatKey, liveChatButtonId, liveChatTranscriptId);
         }
 
         public object clone()

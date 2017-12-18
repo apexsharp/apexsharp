@@ -31,12 +31,12 @@ namespace Apex.ApexPages
         // API
         public StandardSetController(QueryLocator queryLocator)
         {
-            Implementation.Constructor(queryLocator);
+            Self = Implementation.Constructor(queryLocator);
         }
 
         public StandardSetController(List<SObject> controllerSObjects)
         {
-            Implementation.Constructor(controllerSObjects);
+            Self = Implementation.Constructor(controllerSObjects);
         }
 
         public PageReference cancel()

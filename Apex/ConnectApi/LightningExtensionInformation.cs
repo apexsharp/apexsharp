@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public LightningExtensionInformation()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,17 +29,17 @@ namespace Apex.Wave
         // API
         public InvalidParameterException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public InvalidParameterException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidParameterException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

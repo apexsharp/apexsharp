@@ -29,12 +29,12 @@ namespace Apex.Auth
         // API
         public OAuthRefreshResult(string accessToken, string refreshToken, string error)
         {
-            Implementation.Constructor(accessToken, refreshToken, error);
+            Self = Implementation.Constructor(accessToken, refreshToken, error);
         }
 
         public OAuthRefreshResult(string accessToken, string refreshToken)
         {
-            Implementation.Constructor(accessToken, refreshToken);
+            Self = Implementation.Constructor(accessToken, refreshToken);
         }
 
         string accessToken

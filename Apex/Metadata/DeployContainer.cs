@@ -54,7 +54,7 @@ namespace Apex.Metadata
 
         public DeployContainer()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

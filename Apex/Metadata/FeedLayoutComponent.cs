@@ -70,7 +70,7 @@ namespace Apex.Metadata
 
         public FeedLayoutComponent()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

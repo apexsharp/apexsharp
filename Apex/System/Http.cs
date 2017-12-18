@@ -39,7 +39,7 @@ namespace Apex.System
 
         public Http()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public HttpResponse send(object request)

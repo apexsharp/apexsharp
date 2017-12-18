@@ -29,7 +29,7 @@ namespace Apex.Auth
         // API
         public UserData(string identifier, string firstName, string lastName, string fullName, string email, string link, string userName, string locale, string provider, string siteLoginUrl, Map<string, string> attributeMap)
         {
-            Implementation.Constructor(identifier, firstName, lastName, fullName, email, link, userName, locale, provider, siteLoginUrl, attributeMap);
+            Self = Implementation.Constructor(identifier, firstName, lastName, fullName, email, link, userName, locale, provider, siteLoginUrl, attributeMap);
         }
 
         string identifier

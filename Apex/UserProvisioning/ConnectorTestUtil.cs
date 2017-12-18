@@ -29,7 +29,7 @@ namespace Apex.UserProvisioning
         // API
         public ConnectorTestUtil()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

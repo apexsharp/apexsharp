@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Set()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         ////public Set(object param1)
@@ -39,12 +39,12 @@ namespace Apex.System
 
         public Set(Set<T> setToCopy)
         {
-            Implementation.Constructor(setToCopy);
+            Self = Implementation.Constructor(setToCopy);
         }
 
         public Set(List<T> listToCopy)
         {
-            Implementation.Constructor(listToCopy);
+            Self = Implementation.Constructor(listToCopy);
         }
 
         public bool add(object setElement)

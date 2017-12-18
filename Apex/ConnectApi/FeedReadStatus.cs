@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public FeedReadStatus()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

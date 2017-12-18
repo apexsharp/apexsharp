@@ -30,7 +30,7 @@ namespace Apex.QuickAction
         // API
         public QuickActionRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ID getContextId()

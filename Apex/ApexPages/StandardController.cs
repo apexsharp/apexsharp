@@ -30,7 +30,7 @@ namespace Apex.ApexPages
         // API
         public StandardController(SObject controllerSObject)
         {
-            Implementation.Constructor(controllerSObject);
+            Self = Implementation.Constructor(controllerSObject);
         }
 
         public void addFields(List<string> fieldNames)

@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public RecordSnapshotAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

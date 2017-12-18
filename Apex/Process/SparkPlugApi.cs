@@ -29,7 +29,7 @@ namespace Apex.Process
         // API
         public SparkPlugApi()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

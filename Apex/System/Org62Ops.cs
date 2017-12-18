@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Org62Ops()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

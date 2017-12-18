@@ -31,7 +31,7 @@ namespace Apex.UserProvisioning
         // API
         public ProvisioningBatchable(List<SObject> newRows)
         {
-            Implementation.Constructor(newRows);
+            Self = Implementation.Constructor(newRows);
         }
 
         public object clone()

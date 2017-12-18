@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public CrossFilter(List<ReportFilter> criteria, bool includesObject, string primaryEntityField, string relatedEntity, string relatedEntityJoinField)
         {
-            Implementation.Constructor(criteria, includesObject, primaryEntityField, relatedEntity, relatedEntityJoinField);
+            Self = Implementation.Constructor(criteria, includesObject, primaryEntityField, relatedEntity, relatedEntityJoinField);
         }
 
         public CrossFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public List<ReportFilter> getCriteria()

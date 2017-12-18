@@ -30,7 +30,7 @@ namespace Apex.Messaging
         // API
         public EmailFileAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         Blob body

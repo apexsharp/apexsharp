@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public LayoutColumn()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

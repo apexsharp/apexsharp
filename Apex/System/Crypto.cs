@@ -90,7 +90,7 @@ namespace Apex.System
 
         public Crypto()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

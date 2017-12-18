@@ -29,22 +29,22 @@ namespace Apex.Cache
         // API
         public InvalidCacheBuilderException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public InvalidCacheBuilderException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidCacheBuilderException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidCacheBuilderException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

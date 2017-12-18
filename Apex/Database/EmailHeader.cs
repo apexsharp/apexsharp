@@ -65,7 +65,7 @@ namespace Apex.Database
 
         public EmailHeader()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

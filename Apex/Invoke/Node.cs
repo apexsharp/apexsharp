@@ -29,7 +29,7 @@ namespace Apex.Invoke
         // API
         public Node()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

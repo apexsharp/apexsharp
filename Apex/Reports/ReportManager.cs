@@ -30,7 +30,7 @@ namespace Apex.Reports
         // API
         public ReportManager()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

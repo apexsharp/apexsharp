@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public TopicsCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -180,7 +180,7 @@ namespace Apex.System
 
         public Address()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

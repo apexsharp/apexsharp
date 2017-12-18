@@ -154,7 +154,7 @@ namespace Apex.Metadata
 
         public AnalyticsCloudComponentLayoutItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

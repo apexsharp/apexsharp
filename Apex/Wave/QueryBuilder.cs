@@ -56,7 +56,7 @@ namespace Apex.Wave
 
         public QueryBuilder()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

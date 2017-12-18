@@ -29,22 +29,22 @@ namespace Apex.Reports
         // API
         public InvalidSnapshotDateException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public InvalidSnapshotDateException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidSnapshotDateException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidSnapshotDateException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

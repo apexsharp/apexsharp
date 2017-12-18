@@ -39,7 +39,7 @@ namespace Apex.Search
 
         public SuggestionOption()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void setFilter(object filter)

@@ -311,7 +311,7 @@ namespace Apex.Metadata
 
         public DeployResult()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

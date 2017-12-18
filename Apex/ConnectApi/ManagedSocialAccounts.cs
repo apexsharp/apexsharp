@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public ManagedSocialAccounts()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

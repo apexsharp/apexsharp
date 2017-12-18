@@ -29,12 +29,12 @@ namespace Apex.VisualEditor
         // API
         public DataRow(string label, object value, bool selected)
         {
-            Implementation.Constructor(label, value, selected);
+            Self = Implementation.Constructor(label, value, selected);
         }
 
         public DataRow(string label, object value)
         {
-            Implementation.Constructor(label, value);
+            Self = Implementation.Constructor(label, value);
         }
 
         public object clone()

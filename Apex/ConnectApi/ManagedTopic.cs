@@ -101,7 +101,7 @@ namespace Apex.ConnectApi
 
         public ManagedTopic()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

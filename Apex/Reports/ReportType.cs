@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public ReportType()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ReportType(string type, string label)
         {
-            Implementation.Constructor(type, label);
+            Self = Implementation.Constructor(type, label);
         }
 
         public object clone()

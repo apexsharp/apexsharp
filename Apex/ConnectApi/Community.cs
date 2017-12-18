@@ -233,7 +233,7 @@ namespace Apex.ConnectApi
 
         public Community()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

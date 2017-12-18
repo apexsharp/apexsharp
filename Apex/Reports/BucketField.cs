@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public BucketField(BucketType bucketType, string devloperName, string label, bool nullTreatedAsZero, string otherBucketLabel, string sourceColumnName, List<BucketFieldValue> values)
         {
-            Implementation.Constructor(bucketType, devloperName, label, nullTreatedAsZero, otherBucketLabel, sourceColumnName, values);
+            Self = Implementation.Constructor(bucketType, devloperName, label, nullTreatedAsZero, otherBucketLabel, sourceColumnName, values);
         }
 
         public BucketField()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public BucketType getBucketType()

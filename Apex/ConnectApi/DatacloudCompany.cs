@@ -305,7 +305,7 @@ namespace Apex.ConnectApi
 
         public DatacloudCompany()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -30,7 +30,7 @@ namespace Apex.Messaging
         // API
         public MassEmailMessage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void setDescription(string description)

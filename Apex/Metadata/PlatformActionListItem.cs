@@ -82,7 +82,7 @@ namespace Apex.Metadata
 
         public PlatformActionListItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

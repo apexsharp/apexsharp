@@ -345,7 +345,7 @@ namespace Apex.System
 
         public Math()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

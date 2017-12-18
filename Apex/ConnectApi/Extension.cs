@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public Extension()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

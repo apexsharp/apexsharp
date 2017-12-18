@@ -101,7 +101,7 @@ namespace Apex.ConnectApi
 
         public GroupMemberPage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

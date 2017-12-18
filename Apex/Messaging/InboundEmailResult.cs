@@ -53,7 +53,7 @@ namespace Apex.Messaging
 
         public InboundEmailResult()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

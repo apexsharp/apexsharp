@@ -29,7 +29,7 @@ namespace Apex.UserProvisioning
         // API
         public FlowProvisionBase(string uprId)
         {
-            Implementation.Constructor(uprId);
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()

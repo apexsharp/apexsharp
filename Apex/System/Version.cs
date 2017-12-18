@@ -29,12 +29,12 @@ namespace Apex.System
         // API
         public Version(int major, int minor)
         {
-            Implementation.Constructor(major, minor);
+            Self = Implementation.Constructor(major, minor);
         }
 
         public Version(int major, int minor, int patch)
         {
-            Implementation.Constructor(major, minor, patch);
+            Self = Implementation.Constructor(major, minor, patch);
         }
 
         public int compareTo(Version version)

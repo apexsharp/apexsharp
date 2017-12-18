@@ -53,7 +53,7 @@ namespace Apex.Messaging
 
         public InboundEnvelope()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public SocialAccount()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

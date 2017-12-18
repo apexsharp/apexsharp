@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public CompoundRecordField()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

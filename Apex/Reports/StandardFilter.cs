@@ -49,12 +49,12 @@ namespace Apex.Reports
 
         public StandardFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public StandardFilter(string name, string value)
         {
-            Implementation.Constructor(name, value);
+            Self = Implementation.Constructor(name, value);
         }
 
         public object clone()

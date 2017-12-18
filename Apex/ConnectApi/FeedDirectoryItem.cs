@@ -101,7 +101,7 @@ namespace Apex.ConnectApi
 
         public FeedDirectoryItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

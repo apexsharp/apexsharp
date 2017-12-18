@@ -30,12 +30,12 @@ namespace Apex.System
         // API
         public PageReference(SObject sobject)
         {
-            Implementation.Constructor(sobject);
+            Self = Implementation.Constructor(sobject);
         }
 
         public PageReference(string url)
         {
-            Implementation.Constructor(url);
+            Self = Implementation.Constructor(url);
         }
 
         public static PageReference forResource(string resourceName)

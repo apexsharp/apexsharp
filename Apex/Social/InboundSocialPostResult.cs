@@ -29,7 +29,7 @@ namespace Apex.Social
         // API
         public InboundSocialPostResult()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

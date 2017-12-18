@@ -202,7 +202,7 @@ namespace Apex.Metadata
 
         public LayoutItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

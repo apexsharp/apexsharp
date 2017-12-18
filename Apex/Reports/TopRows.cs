@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public TopRows(int rowLimit, ColumnSortOrder direction)
         {
-            Implementation.Constructor(rowLimit, direction);
+            Self = Implementation.Constructor(rowLimit, direction);
         }
 
         public TopRows()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ColumnSortOrder getDirection()

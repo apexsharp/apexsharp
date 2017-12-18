@@ -78,7 +78,7 @@ namespace Apex.System
 
         public Location()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

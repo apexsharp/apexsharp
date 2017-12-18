@@ -29,7 +29,7 @@ namespace Apex.Auth
         // API
         public AuthProviderTokenResponse(string provider, string oauthToken, string oauthSecretOrRefreshToken, string state)
         {
-            Implementation.Constructor(provider, oauthToken, oauthSecretOrRefreshToken, state);
+            Self = Implementation.Constructor(provider, oauthToken, oauthSecretOrRefreshToken, state);
         }
 
         string oauthSecretOrRefreshToken

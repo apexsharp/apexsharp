@@ -53,7 +53,7 @@ namespace Apex.Database
 
         public AssignmentRuleHeader()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

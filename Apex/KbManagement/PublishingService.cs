@@ -119,7 +119,7 @@ namespace Apex.KbManagement
 
         public PublishingService()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

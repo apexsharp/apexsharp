@@ -94,7 +94,7 @@ namespace Apex.Metadata
 
         public SummaryLayoutItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

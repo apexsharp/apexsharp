@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public BookmarksCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

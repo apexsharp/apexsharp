@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public RestResponse()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         Blob responseBody

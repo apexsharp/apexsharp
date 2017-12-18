@@ -29,7 +29,7 @@ namespace Apex.ConnectApi
         // API
         public FeedBody()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

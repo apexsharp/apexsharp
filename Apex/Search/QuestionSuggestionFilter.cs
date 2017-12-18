@@ -64,7 +64,7 @@ namespace Apex.Search
 
         public QuestionSuggestionFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

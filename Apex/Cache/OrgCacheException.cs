@@ -29,22 +29,22 @@ namespace Apex.Cache
         // API
         public OrgCacheException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public OrgCacheException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public OrgCacheException(string msg)
         {
-            Implementation.Constructor(msg);
+            Self = Implementation.Constructor(msg);
         }
 
         public OrgCacheException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

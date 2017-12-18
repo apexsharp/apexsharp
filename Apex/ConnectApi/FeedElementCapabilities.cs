@@ -449,7 +449,7 @@ namespace Apex.ConnectApi
 
         public FeedElementCapabilities()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

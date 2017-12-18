@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public ModerationFlags()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

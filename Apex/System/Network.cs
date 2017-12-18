@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Network()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static string communitiesLanding()

@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public RecordSummaryList()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

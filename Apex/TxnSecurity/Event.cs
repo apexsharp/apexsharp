@@ -29,7 +29,7 @@ namespace Apex.TxnSecurity
         // API
         public Event()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         string action
@@ -130,7 +130,7 @@ namespace Apex.TxnSecurity
 
         public Event(string organizationId, string userId, string entityName, string action, string resourceType, string entityId, Datetime timeStamp, Map<string, string> data)
         {
-            Implementation.Constructor(organizationId, userId, entityName, action, resourceType, entityId, timeStamp, data);
+            Self = Implementation.Constructor(organizationId, userId, entityName, action, resourceType, entityId, timeStamp, data);
         }
 
         public object clone()

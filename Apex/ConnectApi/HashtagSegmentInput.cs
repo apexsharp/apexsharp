@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public HashtagSegmentInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

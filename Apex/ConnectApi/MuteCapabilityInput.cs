@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public MuteCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

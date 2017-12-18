@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public CustomListAudienceCriteriaInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

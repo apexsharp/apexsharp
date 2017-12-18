@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public ContentCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

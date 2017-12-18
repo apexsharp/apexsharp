@@ -130,7 +130,7 @@ namespace Apex.Metadata
 
         public ReportChartComponentLayoutItem()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

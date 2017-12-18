@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public DigestJobRepresentation()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

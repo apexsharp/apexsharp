@@ -221,7 +221,7 @@ namespace Apex.ConnectApi
 
         public UserDetail()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

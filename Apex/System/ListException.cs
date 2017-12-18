@@ -29,22 +29,22 @@ namespace Apex.System
         // API
         public ListException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ListException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public ListException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public ListException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public Exception getCause()

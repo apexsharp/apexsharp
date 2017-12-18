@@ -29,17 +29,17 @@ namespace Apex.ApexPages
         // API
         public Message(Severity severity, string summary)
         {
-            Implementation.Constructor(severity, summary);
+            Self = Implementation.Constructor(severity, summary);
         }
 
         public Message(Severity severity, string summary, string detail)
         {
-            Implementation.Constructor(severity, summary, detail);
+            Self = Implementation.Constructor(severity, summary, detail);
         }
 
         public Message(Severity severity, string summary, string detail, string id)
         {
-            Implementation.Constructor(severity, summary, detail, id);
+            Self = Implementation.Constructor(severity, summary, detail, id);
         }
 
         public string getComponentLabel()

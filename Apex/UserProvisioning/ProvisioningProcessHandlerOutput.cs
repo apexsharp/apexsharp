@@ -149,12 +149,12 @@ namespace Apex.UserProvisioning
 
         public ProvisioningProcessHandlerOutput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ProvisioningProcessHandlerOutput(string status, string details, string externalUserId, string externalUsername, string externalEmail, string externalFirstName, string externalLastName, string UPAStatus, string nextReconOffset)
         {
-            Implementation.Constructor(status, details, externalUserId, externalUsername, externalEmail, externalFirstName, externalLastName, UPAStatus, nextReconOffset);
+            Self = Implementation.Constructor(status, details, externalUserId, externalUsername, externalEmail, externalFirstName, externalLastName, UPAStatus, nextReconOffset);
         }
 
         public object clone()

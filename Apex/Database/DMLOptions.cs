@@ -173,7 +173,7 @@ namespace Apex.Database
 
         public DMLOptions()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

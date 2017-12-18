@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public ReportCsf(string label, string description, FormulaType formulaType, int decimalPlaces, string downGroup, CsfGroupType downGroupType, string acrossGroup, CsfGroupType acrossGroupType, string formula)
         {
-            Implementation.Constructor(label, description, formulaType, decimalPlaces, downGroup, downGroupType, acrossGroup, acrossGroupType, formula);
+            Self = Implementation.Constructor(label, description, formulaType, decimalPlaces, downGroup, downGroupType, acrossGroup, acrossGroupType, formula);
         }
 
         public ReportCsf()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getAcrossGroup()

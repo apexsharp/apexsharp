@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public PrimaryTabComponents()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

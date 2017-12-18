@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public Subscription()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

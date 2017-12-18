@@ -209,7 +209,7 @@ namespace Apex.ConnectApi
 
         public ActionLinkDefinition()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

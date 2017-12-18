@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public GroupRecordInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

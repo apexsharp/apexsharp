@@ -29,12 +29,12 @@ namespace Apex.System
         // API
         public SelectOption(string value, string label)
         {
-            Implementation.Constructor(value, label);
+            Self = Implementation.Constructor(value, label);
         }
 
         public SelectOption(string value, string label, bool isDisabled)
         {
-            Implementation.Constructor(value, label, isDisabled);
+            Self = Implementation.Constructor(value, label, isDisabled);
         }
 
         public bool getDisabled()

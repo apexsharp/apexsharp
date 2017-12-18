@@ -44,7 +44,7 @@ namespace Apex.UserProvisioning
 
         public UserProvisioningLog()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

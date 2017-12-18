@@ -45,7 +45,7 @@ namespace Apex.AppLauncher
 
         public AppMenu()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

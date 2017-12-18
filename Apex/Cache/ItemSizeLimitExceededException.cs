@@ -29,22 +29,22 @@ namespace Apex.Cache
         // API
         public ItemSizeLimitExceededException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ItemSizeLimitExceededException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public ItemSizeLimitExceededException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public ItemSizeLimitExceededException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public RecommendationDefinitionInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

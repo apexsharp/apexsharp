@@ -127,7 +127,7 @@ namespace Apex.System
 
         public Test()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

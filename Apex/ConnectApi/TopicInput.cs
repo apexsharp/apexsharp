@@ -65,7 +65,7 @@ namespace Apex.ConnectApi
 
         public TopicInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -191,7 +191,7 @@ namespace Apex.Metadata
 
         public DeployMessage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

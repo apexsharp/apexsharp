@@ -29,7 +29,7 @@ namespace Apex.WaveTemplate
         // API
         public ServiceWaveConfigurationModifier()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

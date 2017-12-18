@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public BucketFieldValue(string label, List<string> sourceDimensionValues, double rangeUpperBound)
         {
-            Implementation.Constructor(label, sourceDimensionValues, rangeUpperBound);
+            Self = Implementation.Constructor(label, sourceDimensionValues, rangeUpperBound);
         }
 
         public BucketFieldValue()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getLabel()

@@ -100,7 +100,7 @@ namespace Apex.System
 
         public HttpResponse()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

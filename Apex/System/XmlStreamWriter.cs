@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public XmlStreamWriter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void close()

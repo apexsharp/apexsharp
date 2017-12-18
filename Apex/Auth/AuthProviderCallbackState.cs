@@ -29,7 +29,7 @@ namespace Apex.Auth
         // API
         public AuthProviderCallbackState(Map<string, string> headers, string body, Map<string, string> queryParameters)
         {
-            Implementation.Constructor(headers, body, queryParameters);
+            Self = Implementation.Constructor(headers, body, queryParameters);
         }
 
         string body

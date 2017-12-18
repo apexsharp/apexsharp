@@ -53,7 +53,7 @@ namespace Apex.ConnectApi
 
         public DatacloudImportStatus()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

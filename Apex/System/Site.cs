@@ -906,7 +906,7 @@ namespace Apex.System
 
         public Site()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public static PageReference changePassword(string newPassword, string verifyNewPassword)

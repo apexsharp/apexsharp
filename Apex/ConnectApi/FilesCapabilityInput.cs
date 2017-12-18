@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public FilesCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

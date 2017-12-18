@@ -31,17 +31,17 @@ namespace Apex.System
         // API
         public Map()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public Map(Map<T1, T2> mapToCopy)
         {
-            Implementation.Constructor(mapToCopy);
+            Self = Implementation.Constructor(mapToCopy);
         }
 
         public Map(List<SObject> recordList)
         {
-            Implementation.Constructor(recordList);
+            Self = Implementation.Constructor(recordList);
         }
 
         public void clear()

@@ -29,12 +29,12 @@ namespace Apex.Auth
         // API
         public JWTBearerTokenExchange(string tokenEndpoint, JWS jws)
         {
-            Implementation.Constructor(tokenEndpoint, jws);
+            Self = Implementation.Constructor(tokenEndpoint, jws);
         }
 
         public JWTBearerTokenExchange()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

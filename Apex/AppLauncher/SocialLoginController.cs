@@ -40,7 +40,7 @@ namespace Apex.AppLauncher
 
         public SocialLoginController()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

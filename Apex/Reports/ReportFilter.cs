@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public ReportFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public ReportFilter(string column, string @operator, string value)
         {
-            Implementation.Constructor(column, @operator, value);
+            Self = Implementation.Constructor(column, @operator, value);
         }
 
         public object clone()

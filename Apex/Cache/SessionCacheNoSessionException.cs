@@ -29,22 +29,22 @@ namespace Apex.Cache
         // API
         public SessionCacheNoSessionException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public SessionCacheNoSessionException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public SessionCacheNoSessionException(string msg)
         {
-            Implementation.Constructor(msg);
+            Self = Implementation.Constructor(msg);
         }
 
         public SessionCacheNoSessionException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

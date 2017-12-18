@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public StatusCapabilityInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

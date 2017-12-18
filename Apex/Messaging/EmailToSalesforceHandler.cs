@@ -29,7 +29,7 @@ namespace Apex.Messaging
         // API
         public EmailToSalesforceHandler()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

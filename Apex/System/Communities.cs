@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Communities()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

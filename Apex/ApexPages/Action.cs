@@ -29,7 +29,7 @@ namespace Apex.ApexPages
         // API
         public Action(string action)
         {
-            Implementation.Constructor(action);
+            Self = Implementation.Constructor(action);
         }
 
         public string getExpression()

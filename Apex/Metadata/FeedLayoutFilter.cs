@@ -70,7 +70,7 @@ namespace Apex.Metadata
 
         public FeedLayoutFilter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

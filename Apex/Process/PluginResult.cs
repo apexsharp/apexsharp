@@ -41,12 +41,12 @@ namespace Apex.Process
 
         public PluginResult(Map<string, object> outputParameters)
         {
-            Implementation.Constructor(outputParameters);
+            Self = Implementation.Constructor(outputParameters);
         }
 
         public PluginResult(string outputKey, object outputValue)
         {
-            Implementation.Constructor(outputKey, outputValue);
+            Self = Implementation.Constructor(outputKey, outputValue);
         }
 
         public object clone()

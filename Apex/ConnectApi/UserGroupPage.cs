@@ -89,7 +89,7 @@ namespace Apex.ConnectApi
 
         public UserGroupPage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

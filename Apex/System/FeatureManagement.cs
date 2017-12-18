@@ -69,7 +69,7 @@ namespace Apex.System
 
         public FeatureManagement()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

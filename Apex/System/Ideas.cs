@@ -55,7 +55,7 @@ namespace Apex.System
 
         public Ideas()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

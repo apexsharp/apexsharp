@@ -29,7 +29,7 @@ namespace Apex.ConnectApi
         // API
         public GenericBundleCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

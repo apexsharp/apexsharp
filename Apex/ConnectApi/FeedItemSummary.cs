@@ -113,7 +113,7 @@ namespace Apex.ConnectApi
 
         public FeedItemSummary()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

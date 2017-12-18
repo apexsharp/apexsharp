@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public SubtabComponents()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

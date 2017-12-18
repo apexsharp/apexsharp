@@ -39,7 +39,7 @@ namespace Apex.AppLauncher
 
         public CommunityLogoController()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

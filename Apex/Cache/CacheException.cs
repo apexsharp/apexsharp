@@ -29,22 +29,22 @@ namespace Apex.Cache
         // API
         public CacheException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public CacheException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public CacheException(string msg)
         {
-            Implementation.Constructor(msg);
+            Self = Implementation.Constructor(msg);
         }
 
         public CacheException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

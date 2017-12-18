@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public TopicSuggestionPage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

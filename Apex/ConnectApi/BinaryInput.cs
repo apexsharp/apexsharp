@@ -29,7 +29,7 @@ namespace Apex.ConnectApi
         // API
         public BinaryInput(Blob blobValue, string contentType, string filename)
         {
-            Implementation.Constructor(blobValue, contentType, filename);
+            Self = Implementation.Constructor(blobValue, contentType, filename);
         }
 
         public object clone()

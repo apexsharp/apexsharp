@@ -67,7 +67,7 @@ namespace Apex.Database
 
         public MergeRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public List<AdditionalInformationMap> getAdditionalInformationMap()

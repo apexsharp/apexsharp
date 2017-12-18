@@ -77,7 +77,7 @@ namespace Apex.Messaging
 
         public BinaryAttachment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

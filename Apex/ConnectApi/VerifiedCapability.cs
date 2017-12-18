@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public VerifiedCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

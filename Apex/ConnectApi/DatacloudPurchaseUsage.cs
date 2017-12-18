@@ -77,7 +77,7 @@ namespace Apex.ConnectApi
 
         public DatacloudPurchaseUsage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

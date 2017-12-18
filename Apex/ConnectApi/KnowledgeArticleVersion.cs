@@ -113,7 +113,7 @@ namespace Apex.ConnectApi
 
         public KnowledgeArticleVersion()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

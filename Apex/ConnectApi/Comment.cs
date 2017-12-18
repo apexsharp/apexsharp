@@ -245,7 +245,7 @@ namespace Apex.ConnectApi
 
         public Comment()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

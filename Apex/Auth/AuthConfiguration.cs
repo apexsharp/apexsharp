@@ -30,12 +30,12 @@ namespace Apex.Auth
         // API
         public AuthConfiguration(string communityOrCustomUrl, string startUrl)
         {
-            Implementation.Constructor(communityOrCustomUrl, startUrl);
+            Self = Implementation.Constructor(communityOrCustomUrl, startUrl);
         }
 
         public AuthConfiguration(ID networkId, string startUrl)
         {
-            Implementation.Constructor(networkId, startUrl);
+            Self = Implementation.Constructor(networkId, startUrl);
         }
 
         public bool getAllowInternalUserLoginEnabled()

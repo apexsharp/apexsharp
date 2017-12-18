@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public ContentAttachmentInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

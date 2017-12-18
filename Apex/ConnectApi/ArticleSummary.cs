@@ -125,7 +125,7 @@ namespace Apex.ConnectApi
 
         public ArticleSummary()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

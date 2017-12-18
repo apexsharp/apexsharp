@@ -29,22 +29,22 @@ namespace Apex.Invoke
         // API
         public InvokeException()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public InvokeException(Exception param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvokeException(string param1)
         {
-            Implementation.Constructor(param1);
+            Self = Implementation.Constructor(param1);
         }
 
         public InvokeException(string param1, Exception param2)
         {
-            Implementation.Constructor(param1, param2);
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public object clone()

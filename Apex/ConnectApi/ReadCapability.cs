@@ -24,7 +24,7 @@ namespace Apex.ConnectApi
         // API
         public ReadCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -141,7 +141,7 @@ namespace Apex.Cache
 
         public Session()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.Reports
         // API
         public NotificationActionContext(ReportInstance reportInstance, ThresholdInformation thresholdInformation)
         {
-            Implementation.Constructor(reportInstance, thresholdInformation);
+            Self = Implementation.Constructor(reportInstance, thresholdInformation);
         }
 
         public ReportInstance getReportInstance()

@@ -29,12 +29,12 @@ namespace Apex.Reports
         // API
         public GroupingInfo()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public GroupingInfo(string name, ColumnSortOrder sortOrder, DateGranularity dateGranularity, string sortAggregate)
         {
-            Implementation.Constructor(name, sortOrder, dateGranularity, sortAggregate);
+            Self = Implementation.Constructor(name, sortOrder, dateGranularity, sortAggregate);
         }
 
         public object clone()

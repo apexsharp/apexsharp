@@ -233,7 +233,7 @@ namespace Apex.ConnectApi
 
         public SocialPostCapability()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

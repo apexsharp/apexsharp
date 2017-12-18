@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Cookie(string name, string value, string path, int maxAge, bool isSecure)
         {
-            Implementation.Constructor(name, value, path, maxAge, isSecure);
+            Self = Implementation.Constructor(name, value, path, maxAge, isSecure);
         }
 
         public string getDomain()

@@ -74,7 +74,7 @@ namespace Apex.Approval
 
         public ProcessWorkitemRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getComments()

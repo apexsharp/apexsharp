@@ -82,7 +82,7 @@ namespace Apex.Metadata
 
         public ConsoleComponent()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

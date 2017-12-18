@@ -30,7 +30,7 @@ namespace Apex.System
         // API
         public HttpRequest()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public string getBody()

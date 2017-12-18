@@ -118,7 +118,7 @@ namespace Apex.Metadata
 
         public Container()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

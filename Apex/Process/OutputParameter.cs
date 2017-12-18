@@ -65,12 +65,12 @@ namespace Apex.Process
 
         public OutputParameter(string name, ParameterType parameterType)
         {
-            Implementation.Constructor(name, parameterType);
+            Self = Implementation.Constructor(name, parameterType);
         }
 
         public OutputParameter(string name, string description, ParameterType parameterType)
         {
-            Implementation.Constructor(name, description, parameterType);
+            Self = Implementation.Constructor(name, description, parameterType);
         }
 
         public object clone()

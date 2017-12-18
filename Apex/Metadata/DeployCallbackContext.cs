@@ -40,7 +40,7 @@ namespace Apex.Metadata
 
         public DeployCallbackContext()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

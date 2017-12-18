@@ -65,7 +65,7 @@ namespace Apex.Process
 
         public SparkPlugParameter()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

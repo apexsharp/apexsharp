@@ -49,12 +49,12 @@ namespace Apex.Reports
 
         public SortColumn()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public SortColumn(string sortColumn, ColumnSortOrder sortOrder)
         {
-            Implementation.Constructor(sortColumn, sortOrder);
+            Self = Implementation.Constructor(sortColumn, sortOrder);
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.NetworksPulse
         // API
         public PulseApexActionsUtil()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

@@ -29,7 +29,7 @@ namespace Apex.System
         // API
         public Continuation(int timeout)
         {
-            Implementation.Constructor(timeout);
+            Self = Implementation.Constructor(timeout);
         }
 
         string continuationMethod

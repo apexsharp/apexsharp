@@ -41,7 +41,7 @@ namespace Apex.ConnectApi
 
         public TextSegmentInput()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

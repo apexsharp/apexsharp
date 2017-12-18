@@ -59,7 +59,7 @@ namespace Apex.System
 
         public EncodingUtil()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

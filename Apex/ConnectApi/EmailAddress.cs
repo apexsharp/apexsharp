@@ -65,7 +65,7 @@ namespace Apex.ConnectApi
 
         public EmailAddress()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public object clone()

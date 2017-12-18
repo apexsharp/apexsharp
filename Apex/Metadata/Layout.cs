@@ -310,7 +310,7 @@ namespace Apex.Metadata
 
         public Layout()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

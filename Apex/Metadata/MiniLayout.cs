@@ -58,7 +58,7 @@ namespace Apex.Metadata
 
         public MiniLayout()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
     }
 }

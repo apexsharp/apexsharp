@@ -30,7 +30,7 @@ namespace Apex.Messaging
         // API
         public SingleEmailMessage()
         {
-            Implementation.Constructor();
+            Self = Implementation.Constructor();
         }
 
         public void setBccAddresses(string[] bccAddresses)
