@@ -3,13 +3,14 @@ namespace Apex.System
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using ApexSharpApi;
     using global::Apex.Schema;
     using global::Apex.System;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list
     /// </summary>
-    public class List<T>
+    public class List<T> : global::System.Collections.Generic.IEnumerable<T>
     {
         // infrastructure
         public List(dynamic self)
@@ -33,6 +34,11 @@ namespace Apex.System
             Self = Implementation.Constructor();
         }
 
+        public List(int param1)
+        {
+            Self = Implementation.Constructor(param1);
+        }
+
         public List(List<T> listToCopy)
         {
             Self = Implementation.Constructor(listToCopy);
@@ -43,12 +49,12 @@ namespace Apex.System
             Self = Implementation.Constructor(setToCopy);
         }
 
-        public void add(object listElement)
+        public void add(T listElement)
         {
             Self.add(listElement);
         }
 
-        public void add(int index, object listElement)
+        public void add(int index, T listElement)
         {
             Self.add(index, listElement);
         }
@@ -68,12 +74,12 @@ namespace Apex.System
             Self.clear();
         }
 
-        public List<object> clone()
+        public List<T> clone()
         {
             return Self.clone();
         }
 
-        public List<object> deepClone(bool preserveId, bool preserveReadonlyTimestamps, bool preserveAutonumber)
+        public List<T> deepClone(bool preserveId, bool preserveReadonlyTimestamps, bool preserveAutonumber)
         {
             return Self.deepClone(preserveId, preserveReadonlyTimestamps, preserveAutonumber);
         }
@@ -83,7 +89,7 @@ namespace Apex.System
             return Self.equals(list2);
         }
 
-        public object get(int index)
+        public T get(int index)
         {
             return Self.get(index);
         }
@@ -108,12 +114,12 @@ namespace Apex.System
             return Self.iterator();
         }
 
-        public object remove(int index)
+        public T remove(int index)
         {
             return Self.remove(index);
         }
 
-        public void set(int index, object listElement)
+        public void set(int index, T listElement)
         {
             Self.set(index, listElement);
         }
@@ -128,22 +134,17 @@ namespace Apex.System
             Self.sort();
         }
 
-        public List(int param1)
-        {
-            Self = Implementation.Constructor(param1);
-        }
-
-        public List<object> deepClone(bool preserveId, bool preserveReadOnlyTimestamps)
+        public List<T> deepClone(bool preserveId, bool preserveReadOnlyTimestamps)
         {
             return Self.deepClone(preserveId, preserveReadOnlyTimestamps);
         }
 
-        public List<object> deepClone(bool preserveId)
+        public List<T> deepClone(bool preserveId)
         {
             return Self.deepClone(preserveId);
         }
 
-        public List<object> deepClone()
+        public List<T> deepClone()
         {
             return Self.deepClone();
         }
@@ -151,6 +152,29 @@ namespace Apex.System
         public bool equals(object obj)
         {
             return Self.equals(obj);
+        }
+
+        // initializer support
+
+        global::System.Collections.Generic.IEnumerator<T> global::System.Collections.Generic.IEnumerable<T>.GetEnumerator() =>
+            Self.GetEnumerator();
+
+        global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator() =>
+            Self.GetEnumerator();
+
+        public void Add(T item) => add(item);
+
+        public T this[int index] => get(index);
+
+        public static implicit operator List<T>(SoqlQuery<T> query)
+        {
+            var result = new List<T>();
+            foreach (var row in query.QueryResult.Value)
+            {
+                result.add(row);
+            }
+
+            return result;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_set.htm#apex_methods_system_set
     /// </summary>
-    public class Set<T>
+    public class Set<T> : global::System.Collections.Generic.IEnumerable<T>
     {
         // infrastructure
         public Set(dynamic self)
@@ -141,5 +141,15 @@ namespace Apex.System
         {
             return Self.iterator();
         }
+
+        // initializer support
+
+        global::System.Collections.Generic.IEnumerator<T> global::System.Collections.Generic.IEnumerable<T>.GetEnumerator() =>
+            Self.GetEnumerator();
+
+        global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator() =>
+            Self.GetEnumerator();
+
+        public void Add(T item) => add(item);
     }
 }
