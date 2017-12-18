@@ -7,7 +7,7 @@ namespace Demo
 {
     public class Logging
     {
-        public static void EnableLogging()
+        public static void StartLogging()
         {
             // Verbose - tracing information and debugging minutiae; generally only switched on in unusual situations
             // Debug - internal control flow and diagnostic state dumps to facilitate pinpointing of recognized problems
@@ -25,7 +25,7 @@ namespace Demo
             Log.ForContext<Setup>().Debug("One Time Setup Got Called");
         }
 
-        public static void CloseLogging()
+        public static void StopLogging()
         {
             Log.CloseAndFlush();
         }

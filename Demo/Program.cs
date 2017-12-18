@@ -15,10 +15,13 @@
 
         public static void Main(string[] args)
         {
+            Start();
+        }
+
+        public static void Start()
+        {
             // Start Logging
-            Logging.EnableLogging();
-
-
+            Logging.StartLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
             Setup.Init();
@@ -39,7 +42,7 @@
             Console.WriteLine("Done");
 
             // Flush and Close
-            Logging.CloseLogging();
+            Logging.StopLogging();
         }
 
         public static void CreateOffLineClasses()
