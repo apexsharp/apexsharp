@@ -22,7 +22,7 @@ namespace Apex
 
         public DemoApexClass(string name, int age)
         {
-            Console.WriteLine("You Called the Real Constructor");
+            //Console.WriteLine("You Called the Real Constructor");
             Self = Implementation.Constructor(name, age);
         }
 
