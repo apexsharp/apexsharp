@@ -1,0 +1,35 @@
+2017-12-18 10:53:05.947 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 10:53:07.768 [Information] [ApexSharpApi.ConnectionUtil] Session Expired, Creating a New Session 
+2017-12-18 10:53:09.917 [Information] [ApexSharpApi.ConnectionUtil] Login Success "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns=\"urn:enterprise.soap.sforce.com\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><soapenv:Body><loginResponse><result><metadataServerUrl>https://dx.my.salesforce.com/services/Soap/m/40.0/00D1I000003oQHJ</metadataServerUrl><passwordExpired>false</passwordExpired><sandbox>false</sandbox><serverUrl>https://dx.my.salesforce.com/services/Soap/c/40.0/00D1I000003oQHJ</serverUrl><sessionId>00D1I000003oQHJ!ARoAQOeDS.SJsTfhQSnUxN.IQxcbadT2YO3aY7bNGpFoqMGVGMkm1INAtmzAHwny1lbivTTqOVjAjr9TOrD9kzwY34NcL_3e</sessionId><userId>0051I000001h7qmQAA</userId><userInfo><accessibilityMode>false</accessibilityMode><chatterExternal>false</chatterExternal><currencySymbol>$</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode><orgDefaultCurrencyLocale>en_US</orgDefaultCurrencyLocale><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00D1I000003oQHJUA2</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>JayOnSoftware</organizationName><profileId>00e1I000001qNz0QAE</profileId><roleId xsi:nil=\"true\"/><sessionSecondsValid>7200</sessionSecondsValid><userDefaultCurrencyIsoCode xsi:nil=\"true\"/><userEmail>jay@jayonsoftware.com</userEmail><userFullName>Jay Janarthanan</userFullName><userId>0051I000001h7qmQAA</userId><userLanguage>en_US</userLanguage><userLocale>en_US</userLocale><userName>apexsharpdx@jayonsoftware.com</userName><userTimeZone>America/Los_Angeles</userTimeZone><userType>Standard</userType><userUiSkin>Theme3</userUiSkin></userInfo></result></loginResponse></soapenv:Body></soapenv:Envelope>" 
+2017-12-18 11:01:52.826 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:01:53.428 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:13:05.026 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:13:06.020 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:14:00.049 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:14:00.141 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:14:00.270 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:15:22.210 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:15:22.417 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:15:23.990 [Debug] [ApexSharpApi.SoqlApi] SOQL Query "SELECT Id, Email, Phone FROM Contact WHERE Email = 'nojay@jay.com'" 
+2017-12-18 11:15:24.222 [Debug] [ApexSharpApi.SoqlApi] SOQL Query "SELECT ID, Email, Phone FROM Contact WHERE Email = 'nojay@jay.com'" 
+2017-12-18 11:15:24.857 [Error] [ApexSharpApi.HttpManager] [{"message":"Use one of these records?","errorCode":"DUPLICATES_DETECTED","fields":[]}] 
+2017-12-18 11:15:24.924 [Debug] [ApexSharpApi.SoqlApi] SOQL Query "SELECT ID FROM Contact LIMIT 1" 
+2017-12-18 11:15:25.117 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:16:12.576 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:16:12.709 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:16:13.248 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:17:06.944 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:17:07.251 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:17:07.751 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:17:56.406 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:17:56.646 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:17:57.587 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:22:41.292 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:22:41.451 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:22:41.654 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:42:58.879 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:42:59.100 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:42:59.708 [Debug] [Demo.Setup] Logging Stopped 
+2017-12-18 11:43:46.846 [Debug] [Demo.Setup] Logging Started 
+2017-12-18 11:43:47.055 [Information] [ApexSharpApi.ConnectionUtil] Found Session On "C:\apexsharp\config.json" 
+2017-12-18 11:43:47.450 [Debug] [Demo.Setup] Logging Stopped 
