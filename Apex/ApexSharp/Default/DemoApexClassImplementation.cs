@@ -24,9 +24,9 @@ namespace Apex.ApexSharp.Default
             return new DemoApexClassInstance { Name = name, Age = age };
         }
 
-        public void StaticMethod(int a, string b)
+        public void StaticMethod(string name)
         {
-            WriteLine($"Real.StaticMethod: {a}, {b}");
+            WriteLine($"Real.StaticMethod: {name}");
         }
 
         public void AnotherStaticMethod(string name)
@@ -34,9 +34,9 @@ namespace Apex.ApexSharp.Default
             WriteLine($"Real.AnotherStaticMethod: {name}");
         }
 
-        public void StaticMethodMokAndReal(string name)
+        public void StaticMethodWithMokAndReal(string name)
         {
-            WriteLine($"Real.StaticMethodMokAndReal: {name}");
+            WriteLine($"Real.StaticMethodWithMokAndReal: {name}");
         }
     }
 }

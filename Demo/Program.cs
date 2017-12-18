@@ -45,7 +45,7 @@ namespace Demo
             Logging.StopLogging();
 
             Console.WriteLine("Done, Press Any Key To Exit");
-            Console.ReadLine();       
+            Console.ReadLine();
         }
 
         public static void MokDemo()
@@ -59,7 +59,6 @@ namespace Demo
             Console.WriteLine("Age = {0}", demo.Age);
 
             Console.WriteLine(demo.NonStaticMethod());
-
 
             DemoApexClass.StaticMethod("Hello");
             DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
@@ -82,9 +81,9 @@ namespace Demo
 
             try
             {
-                DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
+                DemoApexClass.StaticMethodWithMokAndReal("apexSharpMok");
                 // This line falls back to the default implementation
-                DemoApexClass.StaticMethodWithMokAndReal("apexSharp"); 
+                DemoApexClass.StaticMethodWithMokAndReal("apexSharp");
             }
             catch (Exception ex)
             {

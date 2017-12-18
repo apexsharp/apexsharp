@@ -28,7 +28,7 @@ namespace ApexMok
             return new RealDemoApexClass { Name = name, Age = age };
         }
 
-        public static void StaticMethod(string name)
+        public void StaticMethod(string name)
         {
             Console.WriteLine("MOK StaticMethod " + name);
         }
