@@ -121,8 +121,12 @@ namespace ApexSharpApi
     {
         public static void CreateInstanceBinder()
         {
-            string xml = File.ReadAllText(@"C:\apexsharp\salesforce\src\\labels\CustomLabels.labels");
+            string xml = File.ReadAllText(ApexSharp.GetSession().SalesForceLocation + @"\labels\CustomLabels.labels");
             var customLabels = UtilXml.DeSerilizeFromXML<CustomLabels>(xml);
+            foreach (var customLabel in customLabels.labels)
+            {
+                Console.WriteLine(customLabel.fullName + "  " + customLabel.value);
+            }
         }
     }
 }

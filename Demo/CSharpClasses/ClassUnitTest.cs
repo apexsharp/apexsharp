@@ -24,6 +24,7 @@ namespace Demo.CSharpClasses
             System.assert(true, "Assert True");
         }
 
+
         [Test]
         public static void assertTestMethod()
         {

@@ -19,14 +19,18 @@ namespace Demo
                 .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
                 .MinimumLevel.Debug()
                 // If you are using https://getseq.net
-                .WriteTo.Seq("http://localhost:9999")
+                //.WriteTo.Seq("http://localhost:9999")
+                .WriteTo.File(@"\apexsharp\log.txt", rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
                 .CreateLogger();
 
-            Log.ForContext<Setup>().Debug("One Time Setup Got Called");
+            Log.ForContext<Setup>().Debug("Logging Started");
+
         }
 
         public static void StopLogging()
         {
+
+            Log.ForContext<Setup>().Debug("Logging Stopped");
             Log.CloseAndFlush();
         }
     }

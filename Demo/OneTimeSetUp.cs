@@ -11,7 +11,6 @@
         {
             // Start Logging
             Logging.StartLogging();
-            
             // Always Initialize your settings before using it.
             Setup.Init();
 
