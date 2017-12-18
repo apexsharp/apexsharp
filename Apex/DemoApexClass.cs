@@ -40,7 +40,8 @@ namespace Apex
 
         public string NonStaticMethod()
         {
-            return "Real NonStaticMethod";
+            //return "Real NonStaticMethod";
+            return Self.NonStaticMethod();
         }
 
         public static void StaticMethod(string name)
