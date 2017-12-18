@@ -15,9 +15,9 @@ namespace ApexMok
 
             public int Age { get; set; }
 
-            public void NonStaticMethod()
+            public string  NonStaticMethod()
             {
-                Console.WriteLine("MOK NonStaticMethod");
+                return "MOK NonStaticMethod";
             }
         }
 

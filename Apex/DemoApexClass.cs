@@ -56,4 +56,44 @@ namespace Apex
             Implementation.StaticMethodWithMokAndReal(name);
         }
     }
+
+    [Implements(typeof(DemoApexClass))]
+    public class DemoApexClassImplementation
+    {
+        // Self
+
+        public class DemoApexClassInstance
+        {
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+
+            public string NonStaticMethod()
+            {
+                return "Real NonStatic Method";
+            }
+        }
+
+        // Implementation
+
+        public dynamic Constructor(string name, int age)
+        {
+            return new DemoApexClassInstance { Name = name, Age = age };
+        }
+
+        public void StaticMethod(string name)
+        {
+            Console.WriteLine($"Real.StaticMethod: {name}");
+        }
+
+        public void AnotherStaticMethod(string name)
+        {
+            Console.WriteLine($"Real.AnotherStaticMethod: {name}");
+        }
+
+        public void StaticMethodWithMokAndReal(string name)
+        {
+            Console.WriteLine($"Real.StaticMethodWithMokAndReal: {name}");
+        }
+    }
 }
