@@ -11,7 +11,7 @@ namespace Demo.CSharpClasses
         /**
          * A simple CRUD Example
          */
-        public static void crudExample()
+        public static void CrudExample()
         {
             // Contact contactNew = new Contact(LastName = 'Jay', Email = 'abc@abc.com');
             Contact contactNew = new Contact();
@@ -39,13 +39,13 @@ namespace Demo.CSharpClasses
             }
         }
 
-        public static void oneVsListDemo()
+        public static void OneVsListDemo()
         {
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact LIMIT 5");
             List<Contact> contact = Soql.query<Contact>("SELECT Id, Email FROM Contact LIMIT 1");
         }
 
-        public static void variableScope(int x)
+        public static void VariableScope(int x)
         {
             if (x == 5)
             {
@@ -59,7 +59,7 @@ namespace Demo.CSharpClasses
             }
         }
 
-        public static void inClauseTest()
+        public static void InClauseTest()
         {
             Contact[] contactList = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact WHERE Email IN ('rose@edge.com', 'sean@edge.com')");
             string[] emails = new string[]{"rose@edge.com", "sean@edge.com"};
@@ -68,7 +68,7 @@ namespace Demo.CSharpClasses
             Contact[] contactListTwo = Soql.query<Contact>("SELECT Id FROM Contact WHERE Id IN :contactListOne", contactListOne);
         }
 
-        public static void forSoql()
+        public static void ForSoql()
         {
             foreach (Contact contactList in Soql.query<Contact>("SELECT Id, Name FROM Contact"))
             {

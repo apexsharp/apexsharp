@@ -14,8 +14,7 @@ namespace Demo.CSharpClasses
 
         public Date MyDate = Date.today();
 
-        public DateTime MyDateTime = DateTime.now();
-
+        // public DateTime MyDateTime = DateTime.now();
         // public Decimal MyDecimal = 12.4567;
         public double d = 3.133433;
 

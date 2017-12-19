@@ -1,3 +1,5 @@
+using System;
+
 namespace Apex.System
 {
     public class Math
@@ -209,7 +211,16 @@ namespace Apex.System
 
         public static double random()
         {
-            throw new global::System.NotImplementedException("Math.Random");
+            Random rnd = new Random();
+            int month = rnd.Next(1, 1000); // creates a number between 1 and 12
+            return month;
+        }
+
+        public static string randomString()
+        {
+            Random rnd = new Random();
+            int month = rnd.Next(1, 1000);
+            return month + "";
         }
 
         public static decimal rint(decimal x)

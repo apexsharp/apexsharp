@@ -8,7 +8,7 @@ namespace Demo.CSharpClasses
 
     public class ClassNoApex
     {
-        // Any MetodName that starts with noApex will be commented out. In this example the whole method will be commented out. 
+        // Any MetodName that starts with noApex will be commented out. In this example the whole method will be commented out.
         public static void noApexMethodOne(string name)
         {
             System.debug(name);
@@ -18,8 +18,11 @@ namespace Demo.CSharpClasses
         public static void methodTwo(string name)
         {
             System.debug(name);
+
             NoApex.Serilog.LogInfo(name);
             System.debug(name);
+
+            NoApex.Serilog.LogInfo(name);
         }
     }
 }

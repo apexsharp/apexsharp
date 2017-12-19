@@ -10,29 +10,48 @@ namespace Demo.CSharpClasses
     [TestFixture]
     public class DemoTest
     {
-        [SetUp]
-        public static void setup()
-        {
-            Contact contactNew = new Contact();
-            contactNew.LastName = "Jay";
-            contactNew.Email = "jay@jay.com";
-            Soql.insert(contactNew);
-        }
-
         [Test]
         public static void updatePhoneTestValidEmail()
         {
-            Demo.updatePhone("jay@jay.com", "555-1212");
-            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'jay@jay.com'");
+            Contact contact = new Contact();
+            contact.Email = randomWithLimit()+ "@jay.com";
+            contact.Phone = "111-111=1111";
+            contact.LastName = "jay";
+            Soql.insert(contact);
+            Demo.updatePhone(contact.Email, "555-1212");
+            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = :contact.Email", contact.Email);
             System.assertEquals(contacts[0].Phone, "555-1212");
         }
 
         [Test]
         public static void updatePhoneTestNotValidEmail()
         {
-            Demo.updatePhone("nojay@jay.com", "555-1212");
-            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = 'nojay@jay.com'");
+            Contact contact = new Contact();
+            contact.Email = randomWithLimit()+ "@jay.com";
+            contact.Phone = "111-111=1111";
+            contact.LastName = "jay";
+            Soql.insert(contact);
+            Demo.updatePhone(contact.Email, "555-1212");
+            List<Contact> contacts = Soql.query<Contact>("SELECT ID, Email, Phone FROM Contact WHERE Email = '@jay.com'");
             System.assertEquals(contacts.size(), 0);
+        }
+
+        [Test]
+        public static void getContactsTest()
+        {
+            Contact contact = new Contact();
+            contact.Email = randomWithLimit()+ "@jay.com";
+            contact.Phone = "111-111=1111";
+            contact.LastName = "jay";
+            Soql.insert(contact);
+            List<Contact> contacts = Demo.getContacts();
+            System.assert(contacts.size()> 0);
+        }
+
+        public static double randomWithLimit()
+        {
+            double randomNumber = Math.random();
+            return randomNumber;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Demo.CSharpClasses
             System.debug(classInterface.getName());
             System.debug(new ClassInternal.InternalClassOne());
             System.debug(new ClassInternal.InternalClassTwo());
+            ClassNoApex.methodTwo("Apex");
             System.debug(new ClassUnitTestSeeAllData());
             System.debug(new ClassWithOutSharing());
             System.debug(new ClassWithSharing());

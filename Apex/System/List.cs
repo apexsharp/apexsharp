@@ -8,7 +8,7 @@ using ApexSharpApi;
 
 namespace Apex.System
 {
-    public class List<T> : global::System.Collections.Generic.List<T>
+    public class List<T> : IEnumerable<T>
     {
         private global::System.Collections.Generic.List<T> list;
         public List()
@@ -41,7 +41,7 @@ namespace Apex.System
         {
             foreach (var element in elements)
             {
-                Add(element);
+                list.Add(element);
             }
         }
 
@@ -142,10 +142,20 @@ namespace Apex.System
             var result = new List<T>();
             foreach (var row in query.QueryResult.Value)
             {
-                result.Add(row);
+                result.add(row);
             }
 
             return result;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return list.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

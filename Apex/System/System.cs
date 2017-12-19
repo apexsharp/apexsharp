@@ -25,7 +25,7 @@ namespace Apex.System
 
         public static void assert(bool condition)
         {
-            throw new global::System.NotImplementedException("System.Assert : Use NUnit Asserts");
+            NUnitAssert.True(condition);
         }
 
         public static void assert(bool condition, object msg)
