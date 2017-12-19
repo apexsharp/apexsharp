@@ -34,12 +34,12 @@ namespace Demo
             // Create Offline classes for SObjects
             // CreateOffLineClasses();
 
-            ConvertToCSharp();
+            //ConvertToCSharp();
 
             // foreach (var contact in CSharpClasses.Demo.getContacts()) Console.WriteLine(contact.Email);
            
 
-            //ConvertToApex();
+            ConvertToApex();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");

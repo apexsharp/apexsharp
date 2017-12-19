@@ -46,8 +46,6 @@ public class Demo
     {
         List<Contact> contacts = [SELECT Id, Email, Phone FROM Contact];
         return contacts;
-
-        //:NoApex NoApex.Serilog.LogInfo(contacts.size().ToString());
     }
 
     public static void updateContacts(List<Contact> contacts)

@@ -20,10 +20,8 @@ namespace Demo
             // Fatal - critical errors causing complete failure of the application
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .MinimumLevel.Debug()
-                // If you are using https://getseq.net
-                //.WriteTo.Seq("http://localhost:9999")
                 .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
+                .MinimumLevel.Debug()
                 .CreateLogger();
 
             Log.ForContext<Setup>().Debug("Logging Started");

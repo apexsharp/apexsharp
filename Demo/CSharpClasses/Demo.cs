@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace Demo.CSharpClasses
 {
     using Apex.ApexSharp;
@@ -47,17 +49,14 @@ namespace Demo.CSharpClasses
         public static List<Contact> getContactByEMail(string email)
         {
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact WHERE Email = :email", email);
+            contacts.Where(x => x.LastName == "jay");
             return contacts;
         }
 
         public static List<Contact> getContacts()
         {
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact");
-
-            NoApex.Serilog.LogInfo(contacts.size().ToString());
-
             return contacts;
-
         }
 
         public static void updateContacts(List<Contact> contacts)
