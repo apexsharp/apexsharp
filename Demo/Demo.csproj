@@ -20,6 +20,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
-    <Folder Include="SObjects\" />
   </ItemGroup>
 </Project>

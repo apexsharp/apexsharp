@@ -23,7 +23,7 @@ namespace Demo
         public static void Start()
         {
             // Start Logging
-            Logging.StartLogging();
+            Setup.StartLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
             //Setup.Init();
@@ -42,7 +42,7 @@ namespace Demo
             Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
 
             // Flush and Close
-            Logging.StopLogging();
+            Setup.StopLogging();
 
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadLine();
@@ -61,6 +61,7 @@ namespace Demo
             Console.WriteLine(demo.NonStaticMethod());
 
             DemoApexClass.StaticMethod("Hello");
+            DemoApexClass.AnotherStaticMethod("apexSharp");
             DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
 
 
@@ -82,6 +83,7 @@ namespace Demo
             try
             {
                 DemoApexClass.StaticMethodWithMokAndReal("apexSharpMok");
+                DemoApexClass.AnotherStaticMethod("apexSharp");
                 // This line falls back to the default implementation
                 DemoApexClass.StaticMethodWithMokAndReal("apexSharp");
             }

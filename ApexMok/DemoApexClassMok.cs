@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Apex.ApexSharp.Implementation;
 
 namespace ApexMok
@@ -24,7 +22,7 @@ namespace ApexMok
         // Implementation
         public dynamic Constructor(string name, int age)
         {
-            Console.WriteLine("You Called the Mok Constructor");
+            Console.WriteLine("MOK Constructor");
             return new RealDemoApexClass { Name = name, Age = age };
         }
 
@@ -36,7 +34,7 @@ namespace ApexMok
         // Example to show you can call Mok and based on value you can call Real
         public void StaticMethodWithMokAndReal(string name)
         {
-            // If name is Jay stick to Mok, if not call Real
+            // If name is "apexSharpMok" stick to Mok, if not call Real
             if (name == "apexSharpMok")
             {
                 Console.WriteLine("MOK StaticMethodWithMokAndReal " + name);
@@ -48,19 +46,6 @@ namespace ApexMok
                 {
                     Apex.DemoApexClass.StaticMethodWithMokAndReal(name);
                 }
-
-                //// temporarily switch all API classes to their original implementations:
-                //using (Implementor.UseDefaultImplementations())
-                //{
-                //    Apex.DemoApexClass.StaticMethodWithMokAndReal(name);
-                //}
-
-                //// temporarily switch the UserInfo to the stub implementation
-                //using (Implementor.UseStubImplementation<Apex.DemoApexClass>())
-                //{
-                //    // throws a NotImplementedException
-                //    Apex.DemoApexClass.StaticMethodWithMokAndReal(name);
-                //}
             }
         }
     }
