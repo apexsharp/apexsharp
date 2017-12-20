@@ -1,7 +1,7 @@
 namespace Demo.SObjects
 {
 	using Apex.System;
-	using ApexSharpApi.ApexApi;
+	
 
 	public class UserRole : SObject
 	{
