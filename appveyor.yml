@@ -2,7 +2,7 @@
 image: Visual Studio 2017
 
 before_build:
-- nuget restore Apex.sln
+- nuget restore apex.sln
 - choco install opencover.portable
 - choco install codecov
 
