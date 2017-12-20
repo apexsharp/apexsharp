@@ -66,5 +66,20 @@ namespace Apex.System
         {
             return Self.clone();
         }
+
+        // interoperability
+        public static global::System.Type GetSystemType(Type apexType)
+        {
+            return Implementation.GetSystemType(apexType);
+        }
+
+        public static Type GetApexType(global::System.Type systemType)
+        {
+            return Implementation.GetApexType(systemType);
+        }
+
+        public static implicit operator global::System.Type(Type apexType) => GetSystemType(apexType);
+
+        public static implicit operator Type(global::System.Type systemType) => GetApexType(systemType);
     }
 }
