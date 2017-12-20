@@ -1,4 +1,5 @@
 ﻿using Apex;
+using Demo.CSharpClasses;
 
 namespace Demo
 {
@@ -37,9 +38,9 @@ namespace Demo
             //ConvertToCSharp();
 
             // foreach (var contact in CSharpClasses.Demo.getContacts()) Console.WriteLine(contact.Email);
-           
+           DmlTest.UpsertTest();
 
-            ConvertToApex();
+            //ConvertToApex();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");

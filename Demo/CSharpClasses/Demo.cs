@@ -49,7 +49,6 @@ namespace Demo.CSharpClasses
         public static List<Contact> getContactByEMail(string email)
         {
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email, Phone FROM Contact WHERE Email = :email", email);
-            contacts.Where(x => x.LastName == "jay");
             return contacts;
         }
 
