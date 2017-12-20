@@ -10,28 +10,35 @@ namespace ApexSharpApi
     {
         public static void ConvertToCSharp(DirectoryInfo apexLocation, DirectoryInfo cSharpLocation, string nameSpace)
         {
+            if (!apexLocation.Exists)
+            {
+                throw new DirectoryNotFoundException(apexLocation.FullName);
+            }
+
+            if (!cSharpLocation.Exists)
+            {
+                throw new DirectoryNotFoundException(cSharpLocation.FullName);
+            }
+
             // Convert APEX to C#
-            if (apexLocation.Exists && cSharpLocation.Exists)
-            {
-                ApexSharpParser.ConvertToCSharp(apexLocation.FullName, cSharpLocation.FullName, "Demo.CSharpClasses");
-            }
-            else
-            {
-                Console.WriteLine("Missing Directory");
-            }
+            ApexSharpParser.ConvertToCSharp(apexLocation.FullName, cSharpLocation.FullName, nameSpace);      
         }
 
         public static void ConvertToApex(DirectoryInfo cSharpLocation, DirectoryInfo apexLocation, int version)
         {
-            // Convert to C# to Apex
-            if (apexLocation.Exists && cSharpLocation.Exists)
+
+            if (!apexLocation.Exists)
             {
-                ApexSharpParser.ConvertToApex(cSharpLocation.FullName, apexLocation.FullName, 40);
+                throw new DirectoryNotFoundException(apexLocation.FullName);
             }
-            else
+
+            if (!cSharpLocation.Exists)
             {
-                Console.WriteLine("Missing Directory");
+                throw new DirectoryNotFoundException(cSharpLocation.FullName);
             }
+
+            // Convert C# to Apex
+            ApexSharpParser.ConvertToApex(cSharpLocation.FullName, apexLocation.FullName, version);
         }
     }
 }
