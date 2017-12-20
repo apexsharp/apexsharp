@@ -4,7 +4,7 @@ using ApexSharpApi;
 namespace Apex.ApexSharp
 {
 
-    using ApexSharpApi.ApexApi;
+
 
     public class Soql
     {
@@ -18,27 +18,27 @@ namespace Apex.ApexSharp
             return SoqlApi.Query<T>(soql);
         }
 
-        public static void Insert<T>(T sObject) where T : SObject
+        public static void Insert<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Insert(sObject);
         }
 
-        public static void Update<T>(T sObject) where T : SObject
+        public static void Update<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Update(sObject);
         }
 
-        public static void Update<T>(List<T> sObjectList) where T : SObject
+        public static void Update<T>(List<T> sObjectList) where T : System.SObject
         {
             SoqlApi.Update(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
 
-        public static void Delete<T>(T sObject) where T : SObject
+        public static void Delete<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Delete(sObject);
         }
 
-        public static void Delete<T>(List<T> sObjectList) where T : SObject
+        public static void Delete<T>(List<T> sObjectList) where T : System.SObject
         {
             SoqlApi.Delete(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
@@ -53,37 +53,37 @@ namespace Apex.ApexSharp
             return SoqlApi.Query<T>(soql);
         }
 
-        public static void insert<T>(T sObject) where T : SObject
+        public static void insert<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Insert(sObject);
         }
 
-        public static void update<T>(T sObject) where T : SObject
+        public static void update<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Update(sObject);
         }
 
-        public static void update<T>(List<T> sObjectList) where T : SObject
+        public static void update<T>(List<T> sObjectList) where T : System.SObject
         {
             SoqlApi.Update(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
 
-        public static void delete<T>(T sObject) where T : SObject
+        public static void delete<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Delete(sObject);
         }
 
-        public static void delete<T>(List<T> sObjectList) where T : SObject
+        public static void delete<T>(List<T> sObjectList) where T : System.SObject
         {
             SoqlApi.Delete(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
 
-        public static void upsert<T>(List<T> sObjectList) where T : SObject
+        public static void upsert<T>(List<T> sObjectList) where T : System.SObject
         {
             SoqlApi.Upsert(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
 
-        public static void upsert<T>(T sObject) where T : SObject
+        public static void upsert<T>(T sObject) where T : System.SObject
         {
             SoqlApi.Upsert(sObject);
         }

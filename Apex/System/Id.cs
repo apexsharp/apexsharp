@@ -1,71 +1,41 @@
-namespace Apex.System
+namespace ApexSharpApi.ApexApi
 {
-    using ApexSharp;
-    using ApexSharp.ApexAttributes;
-    using ApexSharp.Implementation;
-    using global::Apex.Schema;
-    using global::Apex.System;
-
-    /// <summary>
-    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_id.htm#apex_methods_system_id
-    /// </summary>
-    public class ID
+    public class ID : System.IEquatable<ID>
     {
-        // infrastructure
-        public ID(dynamic self)
-        {
-            Self = self;
-        }
+        private string _id;
 
-        dynamic Self { get; set; }
+        public static implicit operator ID(string v) => new ID(v);
 
-        static dynamic Implementation
-        {
-            get
-            {
-                return Implementor.GetImplementation(typeof(ID));
-            }
-        }
+        public ID(ID other) => _id = other._id;
 
-        // API
-        public void addError(string errorMsg)
-        {
-            Self.addError(errorMsg);
-        }
+        public ID(string other) => _id = other;
 
-        public void addError(string errorMsg, bool escape)
-        {
-            Self.addError(errorMsg, escape);
-        }
+        public string toString() => _id;
 
-        public void addError(Exception exceptionError)
-        {
-            Self.addError(exceptionError);
-        }
+        public void addError(object msg) => throw new global::System.NotImplementedException("ID.AddError");
 
-        public void addError(Exception exceptionError, bool escape)
-        {
-            Self.addError(exceptionError, escape);
-        }
+        public void addError(object msg, bool escape) => throw new global::System.NotImplementedException("ID.AddError");
 
-        public SObjectType getSObjectType()
-        {
-            return Self.getSObjectType();
-        }
+        public void addError(string msg) => throw new global::System.NotImplementedException("ID.AddError");
 
-        public static ID valueOf(string toID)
-        {
-            return Implementation.valueOf(toID);
-        }
+        public void addError(string msg, bool escape) => throw new global::System.NotImplementedException("ID.AddError");
 
-        public bool equals(string o)
-        {
-            return Self.equals(o);
-        }
+        //public SObjectType GetSobjectType() { throw new global::System.NotImplementedException("ID.GetSobjectType"); }
 
-        public SObjectType getSobjectType()
-        {
-            return Self.getSobjectType();
-        }
+        public static ID valueOf(string v) => new ID(v);
+
+        public bool equals(string other) => Equals(other);
+
+        public bool equals(ID other) => Equals(other);
+
+        public bool Equals(string o) => _id == o;
+
+        public bool Equals(ID other) => other != null && other._id == _id;
+
+        public override bool Equals(object obj) => Equals(obj as ID);
+
+        public override int GetHashCode() => $"{_id}".GetHashCode();
+
+        public override string ToString() => _id;
     }
 }

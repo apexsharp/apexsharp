@@ -1,5 +1,4 @@
-﻿using Apex;
-using Demo.CSharpClasses;
+﻿
 
 namespace Demo
 {
@@ -9,12 +8,13 @@ namespace Demo
     using System.Linq;
     using ApexParser;
     using ApexSharpApi;
+    using Apex;
+    using CSharpClasses;
 
     public class Program
     {
-        // Location of your APEX and C# Files that we will be converting
-        public static DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
-        public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
+
+
 
         public static void Main(string[] args)
         {
@@ -23,6 +23,10 @@ namespace Demo
 
         public static void Start()
         {
+            // Location of your APEX and C# Files that we will be converting
+            DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
+            DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
+
             // Start Logging
             Setup.StartLogging();
 
@@ -35,12 +39,11 @@ namespace Demo
             // Create Offline classes for SObjects
             // CreateOffLineClasses();
 
-            //ConvertToCSharp();
+            CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
+         
+            DmlTest.UpsertTest();
 
-            // foreach (var contact in CSharpClasses.Demo.getContacts()) Console.WriteLine(contact.Email);
-           DmlTest.UpsertTest();
-
-            //ConvertToApex();
+            CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
@@ -127,30 +130,6 @@ namespace Demo
             }
         }
 
-        public static void ConvertToCSharp()
-        {
-            // Convert APEX to C#
-            if (apexLocation.Exists && cSharpLocation.Exists)
-            {
-                ApexSharpParser.ConvertToCSharp(apexLocation.FullName, cSharpLocation.FullName, "Demo.CSharpClasses");
-            }
-            else
-            {
-                Console.WriteLine("Missing Directory");
-            }
-        }
 
-        public static void ConvertToApex()
-        {
-            // Convert to C# to Apex
-            if (apexLocation.Exists && cSharpLocation.Exists)
-            {
-                ApexSharpParser.ConvertToApex(cSharpLocation.FullName, apexLocation.FullName, 40);
-            }
-            else
-            {
-                Console.WriteLine("Missing Directory");
-            }
-        }
     }
 }
