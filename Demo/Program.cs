@@ -14,8 +14,6 @@ namespace Demo
     public class Program
     {
 
-
-
         public static void Main(string[] args)
         {
             Start();
@@ -41,9 +39,9 @@ namespace Demo
 
             CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
          
-            DmlTest.UpsertTest();
+            //DmlTest.UpsertTest();
 
-            CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+            //CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");

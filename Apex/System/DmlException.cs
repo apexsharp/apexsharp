@@ -9,7 +9,7 @@ namespace Apex.System
     /// <summary>
     ///
     /// </summary>
-    public class DmlException
+    public class DmlException : Exception
     {
         // infrastructure
         public DmlException(dynamic self)

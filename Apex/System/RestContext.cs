@@ -27,7 +27,7 @@ namespace Apex.System
         }
 
         // API
-        RestRequest request
+        public RestRequest request
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Apex.System
             }
         }
 
-        RestResponse response
+        public RestResponse response
         {
             get
             {

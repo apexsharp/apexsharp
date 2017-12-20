@@ -73,7 +73,7 @@ namespace Apex.System
             Self.addHeader(name, value);
         }
 
-        int statusCode
+        public int statusCode
         {
             get
             {

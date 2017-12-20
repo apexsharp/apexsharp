@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     ///
     /// </summary>
-    public class MathException
+    public class MathException : Exception
     {
         // infrastructure
         public MathException(dynamic self)
