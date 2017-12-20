@@ -1,7 +1,6 @@
 namespace Apex.Predictive
 {
     using ApexSharp.Implementation;
-    using ApexSharpApi.ApexApi;
     using System;
 
     public class SimilarRecord

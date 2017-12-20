@@ -3,6 +3,7 @@ namespace Apex.System
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
+    using global::Apex.ApexPages;
     using global::Apex.System;
 
     /// <summary>
@@ -27,34 +28,34 @@ namespace Apex.System
         }
 
         // API
-        public void addMessage(global::Apex.ApexPages.Message message)
+        public static void addMessage(Message message)
         {
-            Self.addMessage(message);
+            Implementation.addMessage(message);
         }
 
-        public void addMessages(Exception exceptionThrown)
+        public static void addMessages(Exception exceptionThrown)
         {
-            Self.addMessages(exceptionThrown);
+            Implementation.addMessages(exceptionThrown);
         }
 
-        public PageReference currentPage()
+        public static PageReference currentPage()
         {
-            return Self.currentPage();
+            return Implementation.currentPage();
         }
 
-        public global::Apex.ApexPages.Message[] getMessages()
+        public List<Message> getMessages()
         {
-            return Self.getMessages();
+            return Implementation.getMessages();
         }
 
-        public bool hasMessages()
+        public static bool hasMessages()
         {
-            return Self.hasMessages();
+            return Implementation.hasMessages();
         }
 
-        public bool hasMessages(global::Apex.ApexPages.Severity severity)
+        public bool hasMessages(Severity severity)
         {
-            return Self.hasMessages(severity);
+            return Implementation.hasMessages(severity);
         }
     }
 }

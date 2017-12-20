@@ -17,5 +17,5 @@ build:
 #    - ApexTest/**/*.dll
 
 test_script:
-- OpenCover.Console.exe -register:user -target:"nunit3-console.exe" -targetargs:".\ApexTest\bin\Debug\ApexTest.dll" -filter:"+[*]* -[ApexSharpDemo]* -[ApexSharpApi]*" -output:".\Apex_coverage.xml"
+- OpenCover.Console.exe -register:user -target:"dotnet.exe" -targetargs:"test -c Debug .\ApexTest\ApexTest.csproj" -filter:"+[*]* -[ApexSharpDemo]* -[ApexSharpApi]*" -output:".\Apex_coverage.xml"
 - codecov -f "Apex_coverage.xml"

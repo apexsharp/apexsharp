@@ -3,15 +3,15 @@ namespace Apex.System
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
-    using ApexSharpApi.ApexApi;
     using global::Apex.ConnectApi;
     using global::Apex.Database;
     using global::Apex.System;
+    using IDisposable = global::System.IDisposable;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_system.htm#apex_methods_system_system
     /// </summary>
-    public class System
+    public class System : IDisposable
     {
         // infrastructure
         public System(dynamic self)
@@ -27,6 +27,10 @@ namespace Apex.System
             {
                 return Implementor.GetImplementation(typeof(System));
             }
+        }
+
+        public void Dispose()
+        {
         }
 
         // API
@@ -140,14 +144,24 @@ namespace Apex.System
             return Implementation.resetPassword(userId, sendUserEmail);
         }
 
-        public static void runAs(Version version)
+        public static IDisposable runAs(Version version)
         {
-            Implementation.runAs(version);
+            return Implementation.runAs(version);
         }
 
-        public static void runAs(User userSObject)
+        public static IDisposable runAs(User userSObject)
         {
-            Implementation.runAs(userSObject);
+            return Implementation.runAs(userSObject);
+        }
+
+        public static IDisposable runAs(SObject userSObject)
+        {
+            return Implementation.runAs(userSObject);
+        }
+
+        public static IDisposable runAs(SObject user, object block)
+        {
+            return Implementation.runAs(user, block);
         }
 
         public static string schedule(string jobName, string cronExpression, object schedulableClass)
@@ -203,11 +217,6 @@ namespace Apex.System
         public static ResetPasswordResult resetPasswordWithEmailTemplate(ID userId, bool sendUserEmail, string emailTemplateName)
         {
             return Implementation.resetPasswordWithEmailTemplate(userId, sendUserEmail, emailTemplateName);
-        }
-
-        public static void runAs(SObject user, object block)
-        {
-            Implementation.runAs(user, block);
         }
 
         public static string schedule(string jobName, string cronExp, Schedulable schedulable)

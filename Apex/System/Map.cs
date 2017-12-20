@@ -3,7 +3,6 @@ namespace Apex.System
     using ApexSharp;
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
-    using ApexSharpApi.ApexApi;
     using global::Apex.Schema;
     using global::Apex.System;
 
@@ -49,17 +48,17 @@ namespace Apex.System
             Self.clear();
         }
 
-        public Map<object, object> clone()
+        public Map<T1, T2> clone()
         {
             return Self.clone();
         }
 
-        public bool containsKey(object key)
+        public bool containsKey(T1 key)
         {
             return Self.containsKey(key);
         }
 
-        public Map<object, object> deepClone()
+        public Map<T1, T2> deepClone()
         {
             return Self.deepClone();
         }
@@ -69,7 +68,7 @@ namespace Apex.System
             return Self.equals(map2);
         }
 
-        public object get(object key)
+        public T2 get(T1 key)
         {
             return Self.get(key);
         }
@@ -89,12 +88,12 @@ namespace Apex.System
             return Self.isEmpty();
         }
 
-        public Set<object> keySet()
+        public Set<T1> keySet()
         {
             return Self.keySet();
         }
 
-        public object put(object key, object value)
+        public T2 put(T1 key, T2 value)
         {
             return Self.put(key, value);
         }
@@ -109,7 +108,12 @@ namespace Apex.System
             Self.putAll(sobjectArray);
         }
 
-        public object remove(T1 key)
+        public void putAll(List<SObject> entries)
+        {
+            Self.putAll(entries);
+        }
+
+        public T2 remove(T1 key)
         {
             return Self.remove(key);
         }
@@ -119,7 +123,7 @@ namespace Apex.System
             return Self.size();
         }
 
-        public List<object> values()
+        public List<T2> values()
         {
             return Self.values();
         }
@@ -127,16 +131,6 @@ namespace Apex.System
         public bool equals(object obj)
         {
             return Self.equals(obj);
-        }
-
-        public void putAll(List<SObject> entries)
-        {
-            Self.putAll(entries);
-        }
-
-        public string remove(object key)
-        {
-            return Self.remove(key);
         }
     }
 }

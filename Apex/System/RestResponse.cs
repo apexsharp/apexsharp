@@ -32,7 +32,7 @@ namespace Apex.System
             Self = Implementation.Constructor();
         }
 
-        Blob responseBody
+        public Blob responseBody
         {
             get
             {
@@ -44,7 +44,7 @@ namespace Apex.System
             }
         }
 
-        Map<string, string> headers
+        public Map<string, string> headers
         {
             get
             {
@@ -54,23 +54,6 @@ namespace Apex.System
             {
                 Self.headers = value;
             }
-        }
-
-        int statuscode
-        {
-            get
-            {
-                return Self.statuscode;
-            }
-            set
-            {
-                Self.statuscode = value;
-            }
-        }
-
-        public void addHeader(string name, string value)
-        {
-            Self.addHeader(name, value);
         }
 
         public int statusCode
@@ -83,6 +66,11 @@ namespace Apex.System
             {
                 Self.statusCode = value;
             }
+        }
+
+        public void addHeader(string name, string value)
+        {
+            Self.addHeader(name, value);
         }
 
         public object clone()

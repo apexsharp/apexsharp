@@ -8,15 +8,13 @@ namespace Apex.ConnectApi
     /// <summary>
     ///
     /// </summary>
-    public class NotFoundException
+    public class NotFoundException : Exception
     {
         // infrastructure
         public NotFoundException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -27,14 +25,9 @@ namespace Apex.ConnectApi
         }
 
         // API
-        public object clone()
+        public NotFoundException(string message)
         {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
+            Self = Implementation.Constructor(message);
         }
     }
 }

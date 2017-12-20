@@ -32,7 +32,7 @@ namespace Apex.System
             Self = Implementation.Constructor();
         }
 
-        Map<string, string> headers
+        public Map<string, string> headers
         {
             get
             {
@@ -44,7 +44,7 @@ namespace Apex.System
             }
         }
 
-        string httpMethod
+        public string httpMethod
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Apex.System
             }
         }
 
-        Map<string, string> @params
+        public Map<string, string> @params
         {
             get
             {
@@ -68,7 +68,7 @@ namespace Apex.System
             }
         }
 
-        string remoteAddress
+        public string remoteAddress
         {
             get
             {
@@ -80,7 +80,7 @@ namespace Apex.System
             }
         }
 
-        Blob requestBody
+        public Blob requestBody
         {
             get
             {
@@ -92,7 +92,7 @@ namespace Apex.System
             }
         }
 
-        string requestURI
+        public string requestURI
         {
             get
             {
@@ -104,7 +104,7 @@ namespace Apex.System
             }
         }
 
-        string resourcePath
+        public string resourcePath
         {
             get
             {

@@ -8,15 +8,13 @@ namespace Apex.Canvas
     /// <summary>
     ///
     /// </summary>
-    public class CanvasRenderException
+    public class CanvasRenderException : Exception
     {
         // infrastructure
         public CanvasRenderException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -45,16 +43,6 @@ namespace Apex.Canvas
         public CanvasRenderException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

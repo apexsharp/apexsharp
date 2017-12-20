@@ -8,15 +8,13 @@ namespace Apex.Reports
     /// <summary>
     ///
     /// </summary>
-    public class InvalidSnapshotDateException
+    public class InvalidSnapshotDateException : Exception
     {
         // infrastructure
         public InvalidSnapshotDateException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -47,19 +45,9 @@ namespace Apex.Reports
             Self = Implementation.Constructor(param1, param2);
         }
 
-        public object clone()
-        {
-            return Self.clone();
-        }
-
         public List<string> getSnapshotDateErrors()
         {
             return Self.getSnapshotDateErrors();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

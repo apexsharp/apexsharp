@@ -8,15 +8,13 @@ namespace Apex.Cache
     /// <summary>
     ///
     /// </summary>
-    public class ItemSizeLimitExceededException
+    public class ItemSizeLimitExceededException : Exception
     {
         // infrastructure
         public ItemSizeLimitExceededException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -45,16 +43,6 @@ namespace Apex.Cache
         public ItemSizeLimitExceededException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

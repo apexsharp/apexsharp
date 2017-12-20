@@ -47,17 +47,17 @@ namespace Apex.System
             Self = Implementation.Constructor(listToCopy);
         }
 
-        public bool add(object setElement)
+        public bool add(T setElement)
         {
             return Self.add(setElement);
         }
 
-        public bool addAll(List<object> fromList)
+        public bool addAll(List<T> fromList)
         {
             return Self.addAll(fromList);
         }
 
-        public bool addAll(Set<object> fromSet)
+        public bool addAll(Set<T> fromSet)
         {
             return Self.addAll(fromSet);
         }
@@ -67,27 +67,27 @@ namespace Apex.System
             Self.clear();
         }
 
-        public Set<object> clone()
+        public Set<T> clone()
         {
             return Self.clone();
         }
 
-        public bool contains(object setElement)
+        public bool contains(T setElement)
         {
             return Self.contains(setElement);
         }
 
-        public bool containsAll(List<object> listToCompare)
+        public bool containsAll(List<T> listToCompare)
         {
             return Self.containsAll(listToCompare);
         }
 
-        public bool containsAll(Set<object> setToCompare)
+        public bool containsAll(Set<T> setToCompare)
         {
             return Self.containsAll(setToCompare);
         }
 
-        public bool equals(Set<object> set2)
+        public bool equals(Set<T> set2)
         {
             return Self.equals(set2);
         }
@@ -102,27 +102,27 @@ namespace Apex.System
             return Self.isEmpty();
         }
 
-        public bool remove(object setElement)
+        public bool remove(T setElement)
         {
             return Self.remove(setElement);
         }
 
-        public bool removeAll(List<object> listOfElementsToRemove)
+        public bool removeAll(List<T> listOfElementsToRemove)
         {
             return Self.removeAll(listOfElementsToRemove);
         }
 
-        public bool removeAll(Set<object> setOfElementsToRemove)
+        public bool removeAll(Set<T> setOfElementsToRemove)
         {
             return Self.removeAll(setOfElementsToRemove);
         }
 
-        public bool retainAll(List<object> listOfElementsToRetain)
+        public bool retainAll(List<T> listOfElementsToRetain)
         {
             return Self.retainAll(listOfElementsToRetain);
         }
 
-        public bool retainAll(Set<object> setOfElementsToRetain)
+        public bool retainAll(Set<T> setOfElementsToRetain)
         {
             return Self.retainAll(setOfElementsToRetain);
         }
