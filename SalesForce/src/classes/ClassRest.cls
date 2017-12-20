@@ -11,13 +11,13 @@ global class ClassRest
     {
         try
         {
-            ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.Request.RequestBody.ToString(), ContactDTO.class);
+            ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.requestBody.toString(), ContactDTO.class);
             insertContact(contact);
-            RestContext.Response.StatusCode = 200;
+            RestContext.response.statusCode = 200;
         }
         catch (Exception e)
         {
-            RestContext.Response.StatusCode = 500;
+            RestContext.response.statusCode = 500;
         }
     }
 

@@ -21,8 +21,7 @@ namespace Demo.CSharpClasses
         {
             try
             {
-                RestContext x;
-                ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.requestBody.ToString(), typeof(ContactDTO));
+                ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.requestBody.toString(), typeof(ContactDTO));
                 insertContact(contact);
                 RestContext.response.statusCode = 200;
             }

@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApexMok\ApexMok.csproj" />
+    <ProjectReference Include="..\ApexSharpApi\ApexSharpApi.csproj" />
     <ProjectReference Include="..\Apex\Apex.csproj" />
   </ItemGroup>
   <ItemGroup>
