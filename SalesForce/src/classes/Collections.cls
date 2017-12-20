@@ -1,11 +1,11 @@
 public with sharing class Collections
 {
-    // public List<String> StringList = new List<String>{'one', 'two'};
+    public List<String> StringList = new List<String>{'one', 'two'};
     public Integer[] IntegerArray = new Integer[]{1, 2, 3};
 
     public void arrayDemo()
     {
-        // List<String> stringListLocal = new List<String>{'one', 'two'};
+        List<String> stringListLocal = new List<String>{'one', 'two'};
         Integer[] integerArrayLocal = new Integer[]{1, 2, 3};
     }
 
@@ -42,7 +42,6 @@ public with sharing class Collections
 
     public void mapSoqlExample()
     {
-        // Map<Id, Contact> m = new Map<Id, Contact>(Soql.Query<Contact>("SELECT Id FROM Jay__c"));
         Map<ID, Contact> m = new Map<ID, Contact>([SELECT Id, Name FROM Contact LIMIT 10]);
         for (ID idKey : m.keySet())
         {

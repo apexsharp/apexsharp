@@ -21,13 +21,14 @@ namespace Demo.CSharpClasses
         {
             try
             {
-                ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.requestBody.toString(), typeof(ContactDTO));
-                insertContact(contact);
-                RestContext.response.statusCode = 200;
+                // ToDo
+                //ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.requestBody.toString(), typeof(ContactDTO));
+                //insertContact(contact);
+                //RestContext.response.statusCode = 200;
             }
             catch (Exception e)
             {
-                RestContext.response.statusCode = 500;
+                //RestContext.response.statusCode = 500;
             }
         }
 

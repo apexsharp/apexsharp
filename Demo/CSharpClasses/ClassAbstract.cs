@@ -6,7 +6,6 @@ namespace Demo.CSharpClasses
     using ApexSharpApi.ApexApi;
     using SObjects;
 
-    // sample abstract class
     public abstract class ClassAbstract
     {
     }

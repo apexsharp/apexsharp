@@ -8,11 +8,11 @@ namespace Demo.CSharpClasses
 
     public class ClassInitialization
     {
-        public List<Contact> contactList;
+        public List<string> names;
 
         public ClassInitialization()
         {
-            contactList = Soql.query<Contact>("SELECT ID FROM Contact LIMIT 1");
+            names = new List<string>{"a", "b", "c"};
         }
 
         public static Map<string, string> colorMap = new Map<string, string>();

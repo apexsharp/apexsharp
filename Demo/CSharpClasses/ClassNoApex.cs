@@ -21,8 +21,6 @@ namespace Demo.CSharpClasses
 
             NoApex.Serilog.LogInfo(name);
             System.debug(name);
-
-            NoApex.Serilog.LogInfo(name);
         }
     }
 }

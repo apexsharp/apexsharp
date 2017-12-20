@@ -9,12 +9,13 @@ namespace Demo.CSharpClasses
     [WithSharing]
     public class Collections
     {
-        // public List<String> StringList = new List<String>{'one', 'two'};
+        public List<string> StringList = new List<string>{"one", "two"};
+
         public int[] IntegerArray = new int[]{1, 2, 3};
 
         public void arrayDemo()
         {
-            // List<String> stringListLocal = new List<String>{'one', 'two'};
+            List<string> stringListLocal = new List<string>{"one", "two"};
             int[] integerArrayLocal = new int[]{1, 2, 3};
         }
 
@@ -46,16 +47,17 @@ namespace Demo.CSharpClasses
             Map<int, string> m = new Map<int, string>();
             m.put(1, "First entry");
             m.put(2, "Second entry");
-            string value = m.get(2);
+            // ToDo
+            // string value = m.get(2);
         }
 
         public void mapSoqlExample()
         {
-            // Map<Id, Contact> m = new Map<Id, Contact>(Soql.Query<Contact>("SELECT Id FROM Jay__c"));
             Map<ID, Contact> m = new Map<ID, Contact>(Soql.query<Contact>("SELECT Id, Name FROM Contact LIMIT 10"));
             foreach (ID idKey in m.keySet())
             {
-                Contact contact = m.get(idKey);
+                // ToDo
+                // Contact contact = m.get(idKey);
             }
         }
     }

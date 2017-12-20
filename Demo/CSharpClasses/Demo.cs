@@ -23,7 +23,8 @@ namespace Demo.CSharpClasses
             }
             catch (DmlException e)
             {
-                ApexPages.addMessages(e);
+                // ToDo
+                // ApexPages.addMessages(e);
             }
 
             return null;
