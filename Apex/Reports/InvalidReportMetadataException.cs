@@ -8,15 +8,13 @@ namespace Apex.Reports
     /// <summary>
     ///
     /// </summary>
-    public class InvalidReportMetadataException
+    public class InvalidReportMetadataException : Exception
     {
         // infrastructure
         public InvalidReportMetadataException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -47,19 +45,9 @@ namespace Apex.Reports
             Self = Implementation.Constructor(param1, param2);
         }
 
-        public object clone()
-        {
-            return Self.clone();
-        }
-
         public List<string> getReportMetadataErrors()
         {
             return Self.getReportMetadataErrors();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

@@ -8,15 +8,13 @@ namespace Apex.Reports
     /// <summary>
     ///
     /// </summary>
-    public class InstanceAccessException
+    public class InstanceAccessException : Exception
     {
         // infrastructure
         public InstanceAccessException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -40,16 +38,6 @@ namespace Apex.Reports
         public InstanceAccessException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

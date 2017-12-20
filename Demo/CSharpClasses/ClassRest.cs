@@ -3,7 +3,7 @@ namespace Demo.CSharpClasses
     using Apex.ApexSharp;
     using Apex.ApexSharp.ApexAttributes;
     using Apex.System;
-    
+
     using SObjects;
 
     [RestResource(urlMapping="/api/RestDemo")]
@@ -21,9 +21,10 @@ namespace Demo.CSharpClasses
         {
             try
             {
-                ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.Request.RequestBody.ToString(), typeof(ContactDTO));
+                RestContext x;
+                ContactDTO contact = (ContactDTO)JSON.deserialize(RestContext.request.RequestBody.ToString(), typeof(ContactDTO));
                 insertContact(contact);
-                RestContext.Response.StatusCode = 200;
+                RestContext.response.StatusCode = 200;
             }
             catch (Exception e)
             {

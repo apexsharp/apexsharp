@@ -8,15 +8,13 @@ namespace Apex.Cache
     /// <summary>
     ///
     /// </summary>
-    public class InvalidParamException
+    public class InvalidParamException : Exception
     {
         // infrastructure
         public InvalidParamException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -45,16 +43,6 @@ namespace Apex.Cache
         public InvalidParamException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

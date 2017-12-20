@@ -8,15 +8,13 @@ namespace Apex.System
     /// <summary>
     ///
     /// </summary>
-    public class InvalidHeaderException
+    public class InvalidHeaderException : Exception
     {
         // infrastructure
         public InvalidHeaderException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -45,16 +43,6 @@ namespace Apex.System
         public InvalidHeaderException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

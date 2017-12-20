@@ -27,27 +27,27 @@ namespace Apex.System
         }
 
         // API
-        RestRequest request
+        public static RestRequest request
         {
             get
             {
-                return Self.request;
+                return Implementation.request;
             }
             set
             {
-                Self.request = value;
+                Implementation.request = value;
             }
         }
 
-        RestResponse response
+        public static RestResponse response
         {
             get
             {
-                return Self.response;
+                return Implementation.response;
             }
             set
             {
-                Self.response = value;
+                Implementation.response = value;
             }
         }
 

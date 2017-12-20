@@ -8,15 +8,13 @@ namespace Apex.ConnectApi
     /// <summary>
     ///
     /// </summary>
-    public class ConnectApiException
+    public class ConnectApiException : Exception
     {
         // infrastructure
         public ConnectApiException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -27,19 +25,9 @@ namespace Apex.ConnectApi
         }
 
         // API
-        public object clone()
-        {
-            return Self.clone();
-        }
-
         public string getErrorCode()
         {
             return Self.getErrorCode();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

@@ -8,15 +8,13 @@ namespace Apex.Invoke
     /// <summary>
     ///
     /// </summary>
-    public class InvokeException
+    public class InvokeException : Exception
     {
         // infrastructure
         public InvokeException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -47,11 +45,6 @@ namespace Apex.Invoke
             Self = Implementation.Constructor(param1, param2);
         }
 
-        public object clone()
-        {
-            return Self.clone();
-        }
-
         public string getErrorMessage()
         {
             return Self.getErrorMessage();
@@ -65,11 +58,6 @@ namespace Apex.Invoke
         public string getStackTrace()
         {
             return Self.getStackTrace();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }

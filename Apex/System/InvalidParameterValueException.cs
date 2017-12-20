@@ -8,15 +8,13 @@ namespace Apex.System
     /// <summary>
     ///
     /// </summary>
-    public class InvalidParameterValueException
+    public class InvalidParameterValueException : Exception
     {
         // infrastructure
         public InvalidParameterValueException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -30,41 +28,6 @@ namespace Apex.System
         public InvalidParameterValueException(string param1, string param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public Exception getCause()
-        {
-            return Self.getCause();
-        }
-
-        public int getLineNumber()
-        {
-            return Self.getLineNumber();
-        }
-
-        public string getMessage()
-        {
-            return Self.getMessage();
-        }
-
-        public string getStackTraceString()
-        {
-            return Self.getStackTraceString();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
-        }
-
-        public void initCause(Exception cause)
-        {
-            Self.initCause(cause);
-        }
-
-        public void setMessage(string message)
-        {
-            Self.setMessage(message);
         }
     }
 }

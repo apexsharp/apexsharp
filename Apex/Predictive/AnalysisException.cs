@@ -3,15 +3,13 @@ namespace Apex.Predictive
     using ApexSharp.Implementation;
     using System;
 
-    public class AnalysisException
+    public class AnalysisException : Exception
     {
         // infrastructure
         public AnalysisException(dynamic self)
         {
             Self = self;
         }
-
-        dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -40,16 +38,6 @@ namespace Apex.Predictive
         public AnalysisException(string param1, Exception param2)
         {
             Self = Implementation.Constructor(param1, param2);
-        }
-
-        public object clone()
-        {
-            return Self.clone();
-        }
-
-        public string getTypeName()
-        {
-            return Self.getTypeName();
         }
     }
 }
