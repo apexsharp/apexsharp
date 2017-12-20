@@ -9,21 +9,22 @@ namespace Demo.CSharpClasses
     [WithSharing]
     public class MethodComplex
     {
-        public static void methodOne()
-        {
-            foreach (Account a in Soql.query<Account>("SELECT Id FROM Account"))
-            {
-                System.debug(a.Id);
-            }
+        //public static void methodOne()
+        //{
+        //    foreach (Account a in Soql.query<Account>("SELECT Id FROM Account"))
+        //    {
+        //        System.debug(a.ID);
+        //    }
 
-            for (int i = 0; i<10; i++)
-            {
-            }
-        }
+        //    for (int i = 0; i<10; i++)
+        //    {
+        //    }
+        //}
 
-        public Database.QueryLocator queryLocator(Database.BatchableContext bc)
-        {
-            return Database.getQueryLocator(Soql.query<Contact>("SELECT Id FROM Contact"));
-        }
+        //public Database.QueryLocator queryLocator(Database.BatchableContext bc)
+        //{
+        //    return Database.getQueryLocator(Soql.query<Contact>("SELECT Id FROM Contact"));
+        //}
     }
 }
+
