@@ -9,13 +9,12 @@ namespace Demo.CSharpClasses
     [WithSharing]
     public class Collections
     {
-        public List<string> StringList = new List<string>{"one", "two"};
-
+        // public List<String> StringList = new List<String>{'one', 'two'};
         public int[] IntegerArray = new int[]{1, 2, 3};
 
         public void arrayDemo()
         {
-            List<string> stringListLocal = new List<string>{"one", "two"};
+            // List<String> stringListLocal = new List<String>{'one', 'two'};
             int[] integerArrayLocal = new int[]{1, 2, 3};
         }
 

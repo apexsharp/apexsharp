@@ -43,9 +43,6 @@ namespace Apex.ApexSharp
             SoqlApi.Delete(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
         }
 
-
-
-
         public static SoqlQuery<T> query<T>(string soql, params object[] parameters)
         {
             return SoqlApi.Query<T>(soql, parameters);
@@ -79,6 +76,16 @@ namespace Apex.ApexSharp
         public static void delete<T>(List<T> sObjectList) where T : SObject
         {
             SoqlApi.Delete(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
+        }
+
+        public static void upsert<T>(List<T> sObjectList) where T : SObject
+        {
+            SoqlApi.Upsert(sObjectList as global::System.Collections.Generic.IEnumerable<T>);
+        }
+
+        public static void upsert<T>(T sObject) where T : SObject
+        {
+            SoqlApi.Upsert(sObject);
         }
     }
 }

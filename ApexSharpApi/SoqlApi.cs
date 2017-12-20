@@ -135,5 +135,25 @@ namespace ApexSharpApi
                 UnitTestDataManager.RemoveId(obj.Id.ToString());
             }
         }
+
+        public static void Upsert<T>(T obj) where T : SObject
+        {
+            if (obj.Id is null)
+            {
+                Insert(obj);
+            }
+            else
+            {
+                Update(obj);
+            }
+        }
+
+        public static void Upsert<T>(IEnumerable<T> objects) where T : SObject
+        {
+            foreach (var obj in objects)
+            {
+                Upsert(obj);
+            }
+        }
     }
 }

@@ -7,7 +7,6 @@ public with sharing class DemoController
     {
     }
 
-    
     /**
     * Set the contact for the page using the lastName parameter, if there is one
      */

@@ -8,20 +8,19 @@ namespace Demo.CSharpClasses
 
     public class PropertyAndField
     {
-        public DateTime DateTimeGetSet { get; set; }
-
-        public List<DateTime> DateTimeGetSetGeneric { get; set; }
-
-        public DateTime[] DateTimeGetSetArray { get; set; }
-
-        public DateTime DateTimeEmpty;
-
-        public DateTime DateTimeInitialized = DateTime.now();
-
-        public List<DateTime> DateTimeList = new List<DateTime>();
-
-        public DateTime[] DateTimeArray = new DateTime[5];
-
+        //    public DateTime DateTimeGetSet { get; set; }
+        //
+        //    public List<DateTime> DateTimeGetSetGeneric { get; set; }
+        //
+        //    public DateTime[] DateTimeGetSetArray { get; set; }
+        //
+        //    public DateTime DateTimeEmpty;
+        //
+        //    public DateTime DateTimeInitialized = DateTime.now();
+        //
+        //    public List<DateTime> DateTimeList = new List<DateTime>();
+        //
+        //    public DateTime[] DateTimeArray = new DateTime[5];
         public string Name = "jay";
 
         public readonly string nameFinal = "jay";
@@ -40,13 +39,6 @@ namespace Demo.CSharpClasses
 
         public void MethodOne()
         {
-            DateTime dateTimeEmpty;
-            dateTimeEmpty = DateTime.now();
-            DateTime dateTimeInitilized = DateTime.now();
-            List<DateTime> dateTimeList = new List<DateTime>();
-            DateTime[] dateTimeArrary = new DateTime[5];
-            string name;
-            name = "Jay";
         }
     }
 }

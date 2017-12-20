@@ -1,4 +1,6 @@
-﻿namespace Demo.NoApex
+﻿using Serilog;
+
+namespace Demo.NoApex
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +10,7 @@
     {
         public static void LogInfo(string log) 
         {
-            Console.WriteLine();
+            Log.ForContext<Serilog>().Debug(log);
         }
     }
 }

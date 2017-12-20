@@ -5,7 +5,6 @@ namespace Apex
 {
     public class DemoApexClass
     {
-        // infrastructure methods and properties — the same code for all API classes
         public DemoApexClass(dynamic self)
         {
             Self = self;
@@ -15,14 +14,8 @@ namespace Apex
 
         public static dynamic Implementation => Implementor.GetImplementation(typeof(DemoApexClass));
 
-        // generated API methods and properties — all follow the same pattern
-        // 1) static methods use Implementation object
-        // 2) instance methods use Self object
-        // 3) the default stub implementation always throws a NotImplementedException
-
         public DemoApexClass(string name, int age)
         {
-            //Console.WriteLine("You Called the Real Constructor");
             Self = Implementation.Constructor(name, age);
         }
 
@@ -40,19 +33,21 @@ namespace Apex
 
         public string NonStaticMethod()
         {
-            //return "Real NonStaticMethod";
             return Self.NonStaticMethod();
         }
 
         public static void StaticMethod(string name)
         {
-            //Console.WriteLine("Real StaticMethod " +name);
             Implementation.StaticMethod(name);
+        }
+
+        public static void AnotherStaticMethod(string name)
+        {
+            Implementation.AnotherStaticMethod(name);
         }
 
         public static void StaticMethodWithMokAndReal(string name)
         {
-            //Console.WriteLine("Real StaticMethodWithMokAndReal " + name);
             Implementation.StaticMethodWithMokAndReal(name);
         }
     }
@@ -60,8 +55,6 @@ namespace Apex
     [Implements(typeof(DemoApexClass))]
     public class DemoApexClassImplementation
     {
-        // Self
-
         public class DemoApexClassInstance
         {
             public string Name { get; set; }
@@ -70,14 +63,13 @@ namespace Apex
 
             public string NonStaticMethod()
             {
-                return "Real NonStatic Method";
+                return "Real.Method";
             }
         }
 
-        // Implementation
-
         public dynamic Constructor(string name, int age)
         {
+            Console.WriteLine("Real.Constructor");
             return new DemoApexClassInstance { Name = name, Age = age };
         }
 

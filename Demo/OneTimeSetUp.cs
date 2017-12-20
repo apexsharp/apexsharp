@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using ApexSharpApi;
+
+namespace Demo
 {
     using NUnit.Framework;
 
@@ -10,20 +12,20 @@
         public static void Init()
         {
             // Start Logging
-            Logging.StartLogging();
+            Setup.StartLogging();
             // Always Initialize your settings before using it.
             Setup.Init();
 
-            //UnitTestDataManager.UnitTestDataManagerOn();
+            UnitTestDataManager.UnitTestDataManagerOn();
         }
 
         [OneTimeTearDown]
         public void Cleanup()
         {
-            //UnitTestDataManager.UnitTestDataManagerOff();
+            UnitTestDataManager.UnitTestDataManagerOff();
 
             // Flush and Close
-            Logging.StopLogging();
+            Setup.StopLogging();
         }
     }
 }

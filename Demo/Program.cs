@@ -1,4 +1,5 @@
 ﻿using Apex;
+using Demo.CSharpClasses;
 
 namespace Demo
 {
@@ -17,32 +18,35 @@ namespace Demo
 
         public static void Main(string[] args)
         {
-            MokDemo();
+            Start();
         }
 
         public static void Start()
         {
             // Start Logging
-            Logging.StartLogging();
+            Setup.StartLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
-            //Setup.Init();
+            Setup.Init();
 
             // Keep Track of the API Limits
-            Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
             // CreateOffLineClasses();
 
-            // ConvertToCSharp();
-            // CSharpClasses.RunAll.TestClassess();
-            // ConvertToApex();
+            //ConvertToCSharp();
+
+            // foreach (var contact in CSharpClasses.Demo.getContacts()) Console.WriteLine(contact.Email);
+           DmlTest.UpsertTest();
+
+            //ConvertToApex();
 
             // Keep Track of the API Limits
-            Console.WriteLine(Limits.GetApiLimits().DailyApiRequests.Remaining);
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
-            Logging.StopLogging();
+            Setup.StopLogging();
 
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadLine();
@@ -61,6 +65,7 @@ namespace Demo
             Console.WriteLine(demo.NonStaticMethod());
 
             DemoApexClass.StaticMethod("Hello");
+            DemoApexClass.AnotherStaticMethod("apexSharp");
             DemoApexClass.StaticMethodWithMokAndReal("apexsharpMok");
 
 
@@ -82,6 +87,7 @@ namespace Demo
             try
             {
                 DemoApexClass.StaticMethodWithMokAndReal("apexSharpMok");
+                DemoApexClass.AnotherStaticMethod("apexSharp");
                 // This line falls back to the default implementation
                 DemoApexClass.StaticMethodWithMokAndReal("apexSharp");
             }
@@ -113,7 +119,7 @@ namespace Demo
                     "UserLicense",
                 };
 
-                modelGen.CreateOfflineSymbolTable(onlyObjects);
+                modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
             }
             catch (ApexSharpHttpException exp)
             {

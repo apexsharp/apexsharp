@@ -300,3 +300,4 @@ advanceConfig.json
 /SalesForce/IlluminatedCloud
 .idea
 /AdvanceSalesForce
+*.DotSettings
