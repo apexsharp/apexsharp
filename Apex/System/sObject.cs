@@ -1,4 +1,4 @@
-namespace ApexSharpApi.ApexApi
+namespace Apex.System
 {
     public abstract class SObject
     {

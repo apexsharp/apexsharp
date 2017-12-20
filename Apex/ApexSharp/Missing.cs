@@ -1,4 +1,4 @@
-﻿namespace Apex.ApexSharp.ApexAttributes
+﻿namespace ApexSharpApi.ApexApi // quick fix
 {
 }
 

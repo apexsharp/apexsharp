@@ -1,6 +1,6 @@
-namespace ApexSharpApi.ApexApi
+namespace Apex.System
 {
-    public class ID : System.IEquatable<ID>
+    public class ID : global::System.IEquatable<ID>
     {
         private string _id;
 
