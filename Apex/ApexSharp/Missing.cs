@@ -1,8 +1,4 @@
-﻿namespace ApexSharpApi.ApexApi // quick fix
-{
-}
-
-namespace Apex.ConnectApi
+﻿namespace Apex.ConnectApi
 {
     public class ChatterGroupSummaryPage { }
 
@@ -26,8 +22,6 @@ namespace Apex.Auth
 
 namespace Apex.System
 {
-    using ApexSharpApi.ApexApi;
-
     public class Id : ID
     {
         public Id(string id) : base(id)

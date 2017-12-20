@@ -4,7 +4,6 @@ namespace Apex.Schema
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
     using global::Apex.System;
-    using ApexSharpApi.ApexApi;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Schema_SObjectType.htm#apex_class_Schema_SObjectType
