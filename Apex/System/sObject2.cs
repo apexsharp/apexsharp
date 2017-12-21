@@ -1,3 +1,5 @@
+/* This file is a duplicate.
+
 using Apex.ApexSharp.Implementation;
 using Apex.Database;
 using Apex.Schema;
@@ -96,4 +98,4 @@ namespace Apex.System
 
         public void setOptions(object options) => NotImplemented.setOptions();
     }
-}
+} */
