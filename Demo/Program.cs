@@ -1,30 +1,23 @@
-﻿
-
-namespace Demo
+﻿namespace Demo
 {
+    using Apex;
+    using ApexSharpApi;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using ApexParser;
-    using ApexSharpApi;
-    using Apex;
-    using CSharpClasses;
 
     public class Program
     {
-
         public static void Main(string[] args)
         {
             Start();
+
+            Console.WriteLine("Done, Press Any Key To Exit");
+            Console.ReadLine();
         }
 
         public static void Start()
         {
-            // Location of your APEX and C# Files that we will be converting
-            DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
-            DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
-
             // Start Logging
             Setup.StartLogging();
 
@@ -37,20 +30,54 @@ namespace Demo
             // Create Offline classes for SObjects
             // CreateOffLineClasses();
 
-            CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
-         
-            //DmlTest.UpsertTest();
+            try
+            {
+                // Location of your APEX and C# Files that we will be converting
+                DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
+                DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
-            // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+                // Convert Apex to C#
+                CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
+                
+                // Convert C# to APEX
+                // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
-            Setup.StopLogging();
+            Setup.StopLogging(); 
+        }
 
-            Console.WriteLine("Done, Press Any Key To Exit");
-            Console.ReadLine();
+        public static void CreateOffLineClasses()
+        {
+            try
+            {
+                ModelGen modelGen = new ModelGen();
+
+                // To save time we will only create objects we are going to work with
+                List<string> onlyObjects = new List<string>
+                {
+                    "Contact",
+                    "Account",
+                    "User",
+                    "UserRole",
+                    "Profile",
+                    "UserLicense",
+                };
+
+                modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
+            }
+            catch (ApexSharpHttpException exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
         }
 
         public static void MokDemo()
@@ -102,32 +129,5 @@ namespace Demo
             Console.WriteLine("Done, Press any key to exit");
             Console.ReadKey();
         }
-
-        public static void CreateOffLineClasses()
-        {
-            try
-            {
-                ModelGen modelGen = new ModelGen();
-
-                // To save time we will only create objects we are going to work with
-                List<string> onlyObjects = new List<string>
-                {
-                    "Contact",
-                    "Account",
-                    "User",
-                    "UserRole",
-                    "Profile",
-                    "UserLicense",
-                };
-
-                modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
-            }
-            catch (ApexSharpHttpException exp)
-            {
-                Console.WriteLine(exp.Message);
-            }
-        }
-
-
     }
 }

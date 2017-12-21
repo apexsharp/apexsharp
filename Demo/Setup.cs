@@ -10,7 +10,7 @@ namespace Demo
     {
         public static void StartLogging()
         {
-            var logPath = Path.GetFullPath(@"/apexsharp/log.log");
+            var logPath = Path.GetFullPath(@"../log.log");
 
             // Verbose - tracing information and debugging minutiae; generally only switched on in unusual situations
             // Debug - internal control flow and diagnostic state dumps to facilitate pinpointing of recognized problems
@@ -41,11 +41,11 @@ namespace Demo
             // This example assumes you cloned your GIT repo to the root level.
 
             // SessionLocation is where your SF session will be Saved
-            var sessionLocation = Path.GetFullPath(@"/apexsharp/config.json");
+            var sessionLocation = Path.GetFullPath(@"../config.json");
             // SalesForceLocation is the location of your Salesofrce project
-            var salesForceLocation = Path.GetFullPath(@"/apexsharp/SalesForce/src/");
+            var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
             // VsProjectLocation is the location of your Visual Studio Project
-            var vSprojectocation = Path.GetFullPath(@"/apexsharp/Demo/");
+            var vSprojectocation = Path.GetFullPath(@"../Demo/");
 
             try
             {
@@ -76,7 +76,6 @@ namespace Demo
                     return false;
                 }
             }
-
             return true;
         }
     }
