@@ -2,11 +2,10 @@
 using Apex.ConnectApi;
 using Apex.Database;
 using Apex.System;
-using Action = System.Action;
+using static System.Console;
 using DateTime = System.DateTime;
 using IDisposable = System.IDisposable;
 using NUnitAssert = NUnit.Framework.Assert;
-using static System.Console;
 
 namespace Apex.ApexSharp.Default.System
 {

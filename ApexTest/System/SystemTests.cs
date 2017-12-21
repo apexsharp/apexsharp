@@ -38,7 +38,7 @@ namespace ApexTest.System
                 var millis = System.currentTimeMillis();
                 Assert.NotZero(millis);
 
-                //var now = System.now();
+                var now = System.now();
                 //var today = System.today();
             });
         }
