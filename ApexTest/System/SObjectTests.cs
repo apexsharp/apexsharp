@@ -46,6 +46,28 @@ namespace ApexTest.System
         }
 
         [Test]
+        public void GetAndPutMethodsAreCaseInsensitiveAndPutReturnsTheOldValueOfAProperty()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                var ul = License;
+                var value = ul.get(nameof(UserLicense.LicenseDefinitionKey).ToLower());
+                Assert.AreEqual("Hello", value);
+
+                value = ul.get(nameof(UserLicense.MasterLabel).ToUpper());
+                Assert.AreEqual("Master", value);
+
+                var oldValue = ul.put(nameof(UserLicense.LicenseDefinitionKey).ToUpper(), "World");
+                Assert.AreEqual("Hello", oldValue);
+                Assert.AreEqual("World", ul.LicenseDefinitionKey);
+
+                oldValue = ul.put(nameof(UserLicense.MasterLabel).ToLower(), "Slave");
+                Assert.AreEqual("Master", oldValue);
+                Assert.AreEqual("Slave", ul.MasterLabel);
+            });
+        }
+
+        [Test]
         public void GetPopulatedFieldsAsMapIsImplemented()
         {
             Assert.DoesNotThrow(() =>

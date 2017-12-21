@@ -1,3 +1,4 @@
+using System.Reflection;
 using Apex.ApexSharp.Implementation;
 using Apex.Database;
 using Apex.Schema;
@@ -34,7 +35,11 @@ namespace Apex.System
 
         public object get(SObjectField field) => NotImplemented.get(field);
 
-        public object get(string field) => GetType().GetProperty(field).GetValue(this, null);
+        public object get(string field)
+        {
+            var property = GetType().GetProperty(field, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            return property.GetValue(this, null);
+        }
 
         public Map<string, SObject> getAll() => NotImplemented.getAll();
 
@@ -84,8 +89,10 @@ namespace Apex.System
 
         public object put(string field, object value)
         {
-            GetType().GetProperty(field).SetValue(this, value);
-            return value;
+            var property = GetType().GetProperty(field, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            var oldValue = property.GetValue(this);
+            property.SetValue(this, value);
+            return oldValue;
         }
 
         public SObject putSObject(SObjectField field, SObject value) => NotImplemented.putSObject(field, value);
