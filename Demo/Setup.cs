@@ -58,12 +58,12 @@ namespace Demo
                 try
                 {                    
                     ConnectionUtil.Session = new ApexSharp().
-                         SalesForceUrl("https://test.salesforce.com/")
+                         SalesForceUrl("https://test.salesforce.com/")  // your org....prod/dev is login.salesforce.com and sandbox is test.salesforce.com
                         .AndSalesForceApiVersion(40)
                         
-                        .WithUserId("allison@healthclx.com.test")
-                        .AndPassword("healthclxer007")
-                        .AndToken("")
+                        .WithUserId("YOUR USER ID")
+                        .AndPassword("YOUR PASSWORD")
+                        .AndToken("YOUR TOKEN")
 
                         .SalesForceLocation(salesForceLocation)
                         .VsProjectLocation(vSprojectocation)
