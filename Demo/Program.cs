@@ -15,7 +15,7 @@ namespace Demo
             Start();
 
             Console.WriteLine("Done, Press Any Key To Exit");
-            Console.ReadLine();
+            // Console.ReadLine();
         }
 
         public static void Start()
@@ -49,6 +49,7 @@ namespace Demo
                 Console.WriteLine(e.Message);
             }
 
+            CSharpClasses.DmlTest.UpsertTest();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
