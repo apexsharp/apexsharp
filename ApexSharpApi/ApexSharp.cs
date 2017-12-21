@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
+using Serilog;
 
 namespace ApexSharpApi
 {
@@ -13,14 +12,15 @@ namespace ApexSharpApi
         public void CreateSession()
         {
             FileInfo configLocation = new FileInfo(_apexSharpConfigSettings.ConfigLocation);
-
-            DirectoryInfo configDirectory = configLocation.Directory;
+            Log.ForContext<ApexSharp>().Debug(configLocation.FullName);
 
             DirectoryInfo vsProjectLocation = new DirectoryInfo(_apexSharpConfigSettings.VsProjectLocation);
+            Log.ForContext<ApexSharp>().Debug(vsProjectLocation.FullName);
 
             DirectoryInfo salesForceLocation = new DirectoryInfo(_apexSharpConfigSettings.SalesForceLocation);
+            Log.ForContext<ApexSharp>().Debug(salesForceLocation.FullName);
 
-            // Only Create If we do not have it
+            // ToDo: Only Create If we do not have it
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "CSharpClasses");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "NoApex");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "Cache");
