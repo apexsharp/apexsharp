@@ -59,7 +59,7 @@ namespace Apex.System
 
         public Date date()
         {
-            return Self.Date();
+            return Self.date();
         }
 
         public Date dateGMT()

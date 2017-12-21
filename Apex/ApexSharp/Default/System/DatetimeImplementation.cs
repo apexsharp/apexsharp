@@ -12,11 +12,13 @@ namespace Apex.ApexSharp.Default.System
 
         public class DatetimeInstance
         {
+            public static implicit operator Datetime(DatetimeInstance self) => new Datetime(self);
+
+            private dynamic NotImplemented { get; } = new StubImplementation(typeof(Datetime));
+
             private SysDateTime dateTime;
 
             private SysDateTime dateTimeGmt => dateTime.ToUniversalTime();
-
-            private dynamic NotImplemented { get; } = new StubImplementation(typeof(Datetime));
 
             internal DatetimeInstance(SysDateTime dt) => dateTime = dt;
 
@@ -34,8 +36,6 @@ namespace Apex.ApexSharp.Default.System
 
             public void addError(string msg, bool escape) => NotImplemented.addError(msg, escape);
 
-            public static implicit operator Datetime(DatetimeInstance self) => new Datetime(self);
-
             public Datetime addDays(int days) => new DatetimeInstance(dateTime.AddDays(days));
 
             public Datetime addHours(int hours) => new DatetimeInstance(dateTime.AddHours(hours));
@@ -48,9 +48,9 @@ namespace Apex.ApexSharp.Default.System
 
             public Datetime addYears(int years) => new DatetimeInstance(dateTime.AddYears(years));
 
-            public Date date() => new Date(dateTime.Date);
+            public Date date() => Date.newInstance(dateTime.Year, dateTime.Month, dateTime.Day);
 
-            public Date dateGmt() => new Date(dateTimeGmt);
+            public Date dateGmt() => Date.newInstance(dateTimeGmt.Year, dateTimeGmt.Month, dateTimeGmt.Day);
 
             public int day() => dateTime.Day;
 
@@ -76,7 +76,7 @@ namespace Apex.ApexSharp.Default.System
 
             public int hourGmt() => dateTimeGmt.Hour;
 
-            public bool isSameDay(Datetime other) => NotImplemented.isSameDay(other);
+            public bool isSameDay(Datetime other) => date().isSameDay(other.date());
 
             public int millisecond() => dateTime.Millisecond;
 

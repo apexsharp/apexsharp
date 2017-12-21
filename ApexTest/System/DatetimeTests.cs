@@ -37,6 +37,7 @@ namespace ApexTest.System
                 var now = Datetime.now();
                 var tomorrow = now.addDays(1);
                 Assert.AreNotEqual(now, tomorrow);
+                Assert.False(now.isSameDay(tomorrow));
 
                 var prevMonth = now.addMonths(-1);
                 Assert.AreNotEqual(now, prevMonth);
@@ -50,7 +51,7 @@ namespace ApexTest.System
                 var nextMinutes = now.addMinutes(15);
                 Assert.AreNotEqual(now, nextMinutes);
 
-                var prevSeconds = now.addSeconds(30);
+                var prevSeconds = now.addSeconds(-30);
                 Assert.AreNotEqual(now, prevSeconds);
             });
         }
