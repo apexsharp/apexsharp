@@ -318,39 +318,21 @@ namespace Apex.System
         }
 
         [Final]
-        static double E
+        public static double E
         {
             get
             {
                 return Implementation.E;
             }
-            set
-            {
-                Implementation.E = value;
-            }
         }
 
         [Final]
-        static double PI
+        public static double PI
         {
             get
             {
                 return Implementation.PI;
             }
-            set
-            {
-                Implementation.PI = value;
-            }
-        }
-
-        public Math()
-        {
-            Self = Implementation.Constructor();
-        }
-
-        public object clone()
-        {
-            return Self.clone();
         }
     }
 }
