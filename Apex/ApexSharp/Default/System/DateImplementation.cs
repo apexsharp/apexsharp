@@ -14,7 +14,7 @@ namespace Apex.ApexSharp.Default.System
         {
             public static implicit operator Date(DateInstance self) => new Date(self);
 
-            private dynamic NotImplemented { get; } = new StubImplementation(typeof(Datetime));
+            private dynamic NotImplemented { get; } = new StubImplementation(typeof(Date));
 
             internal SysDateTime date;
 

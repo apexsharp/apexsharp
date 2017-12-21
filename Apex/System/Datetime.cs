@@ -219,7 +219,7 @@ namespace Apex.System
 
         public Time time()
         {
-            return Self.Time();
+            return Self.time();
         }
 
         public Time timeGmt()

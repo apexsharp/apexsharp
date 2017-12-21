@@ -94,9 +94,11 @@ namespace Apex.ApexSharp.Default.System
 
             public int secondGmt() => dateTimeGmt.Second;
 
-            public Time time() => new Time(dateTime.TimeOfDay);
+            public Time time() =>
+                Time.newInstance(dateTime.Hour, dateTime.Minute, dateTime.Second, dateTime.Millisecond);
 
-            public Time timeGmt() => new Time(dateTimeGmt.TimeOfDay);
+            public Time timeGmt() =>
+                Time.newInstance(dateTimeGmt.Hour, dateTimeGmt.Minute, dateTimeGmt.Second, dateTimeGmt.Millisecond);
 
             public int year() => dateTime.Year;
 
