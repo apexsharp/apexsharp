@@ -5,11 +5,14 @@ namespace Apex.System
     using ApexSharp.Implementation;
     using global::Apex.Schema;
     using global::Apex.System;
+    using global::System.Collections.Generic;
+    using IEnumerable = global::System.Collections.IEnumerable;
+    using IEnumerator = global::System.Collections.IEnumerator;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm#apex_methods_system_map
     /// </summary>
-    public class Map<T1, T2>
+    public class Map<T1, T2> : IEnumerable<KeyValuePair<T1, T2>>
     {
         // infrastructure
         public Map(dynamic self)
@@ -41,6 +44,11 @@ namespace Apex.System
         public Map(List<SObject> recordList)
         {
             Self = Implementation.Constructor(recordList);
+        }
+
+        public Map(ApexSharpApi.SoqlQuery<T2> soqlQuery)
+        {
+            Self = Implementation.Constructor(soqlQuery);
         }
 
         public void clear()
@@ -132,5 +140,19 @@ namespace Apex.System
         {
             return Self.equals(obj);
         }
+
+        // interoperability
+
+        public IEnumerator<KeyValuePair<T1, T2>> GetEnumerator() => Self.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public void Add(T1 key, T2 value) => put(key, value);
+
+        public T2 this[T1 key] => get(key);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
     }
 }

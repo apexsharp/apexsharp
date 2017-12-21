@@ -166,6 +166,10 @@ namespace Apex.System
 
         public T this[int index] => get(index);
 
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
         public static implicit operator List<T>(SoqlQuery<T> query)
         {
             var result = new List<T>();
