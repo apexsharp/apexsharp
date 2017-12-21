@@ -1,5 +1,6 @@
 using Apex.System;
-using ApexSharpApi.ApexApi;
+
+using SObject = Apex.System.SObject;
 using String = System.String;
 
 namespace Apex.ConnectApi
