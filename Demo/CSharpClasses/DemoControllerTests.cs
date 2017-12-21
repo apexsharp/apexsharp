@@ -10,12 +10,12 @@ namespace Demo.CSharpClasses
     public class DemoControllerTests
     {
         [Test]
-        static void testConstructor()
+        public static void testConstructor()
         {
         }
 
         [Test]
-        static void testGetAppVersion()
+        public static void testGetAppVersion()
         {
             DemoController demo = new DemoController();
         }

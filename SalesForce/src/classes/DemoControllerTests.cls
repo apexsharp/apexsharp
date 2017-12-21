@@ -2,12 +2,12 @@
 public class DemoControllerTests
 {
     @IsTest
-    static void testConstructor()
+    public static void testConstructor()
     {
     }
 
     @IsTest
-    static void testGetAppVersion()
+    public static void testGetAppVersion()
     {
         DemoController demo = new DemoController();
     }
