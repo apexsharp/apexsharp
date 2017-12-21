@@ -3,7 +3,6 @@ namespace Demo.CSharpClasses
     using Apex.ApexSharp;
     using Apex.ApexSharp.ApexAttributes;
     using Apex.System;
-    using ApexSharpApi.ApexApi;
     using SObjects;
 
     public class DmlTest
@@ -22,7 +21,7 @@ namespace Demo.CSharpClasses
                 c.Email = "new@new.com";
             }
 
-            //upsert contacts;
+           // upsert contacts;
             contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact WHERE Id = :contactNew.Id", contactNew.Id);
             foreach (Contact c in contacts)
             {
