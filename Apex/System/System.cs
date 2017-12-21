@@ -31,6 +31,7 @@ namespace Apex.System
 
         public void Dispose()
         {
+            Self.Dispose();
         }
 
         // API
