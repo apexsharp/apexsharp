@@ -117,10 +117,8 @@ namespace Demo
                     "UserRole",
                     "Profile",
                     "UserLicense",
-                    "Form__c",
-                    "Form_Field__c",
-                    "Form_Log__c",
-                    "Form_Section__c"
+                    "RecordType"
+
                 };
 
                 modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
