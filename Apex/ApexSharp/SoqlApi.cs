@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using ApexSharpApi.ApexApi;
+using Apex.System;
+using ApexSharpApi;
 using ApexSharpApi.Model.RestApi;
 using Newtonsoft.Json;
 using Serilog;
 
-namespace ApexSharpApi
+namespace Apex.ApexSharp
 {
     public class SoqlApi
     {
@@ -17,7 +18,7 @@ namespace ApexSharpApi
             var soql = soqlCreator.GetSoql<T>();
 
             // prepare query result
-            var lasyResult = new Lazy<List<T>>(() =>
+            var lasyResult = new Lazy<global::System.Collections.Generic.List<T>>(() =>
             {
                 return PerformQuery<T>(soql);
             });
@@ -30,7 +31,7 @@ namespace ApexSharpApi
         {
             // prepare query result
             var newSoql = ConvertSoql(soql, parameters);
-            var lasyResult = new Lazy<List<T>>(() =>
+            var lasyResult = new Lazy<global::System.Collections.Generic.List<T>>(() =>
             {
                 return PerformQuery<T>(newSoql);
             });
@@ -63,7 +64,7 @@ namespace ApexSharpApi
             return soql;
         }
 
-        private static List<T> PerformQuery<T>(string query)
+        private static global::System.Collections.Generic.List<T> PerformQuery<T>(string query)
         {
             Log.ForContext<SoqlApi>().Debug("SOQL Query {query}", query);
 

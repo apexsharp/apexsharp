@@ -1,5 +1,5 @@
 using Apex.System;
-using ApexSharpApi.ApexApi;
+using SObject = Apex.System.SObject;
 
 namespace Apex.ApexPages
 {
