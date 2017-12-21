@@ -13,8 +13,8 @@ namespace Demo
     public class Program
     {
         // Location of your APEX and C# Files that we will be converting
-        public static DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
-        public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
+        public static DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
+        public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
         public static void Main(string[] args)
         {
@@ -33,12 +33,12 @@ namespace Demo
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
-            // CreateOffLineClasses();
+            CreateOffLineClasses();
 
-            //ConvertToCSharp();
+            ConvertToCSharp();
 
             // foreach (var contact in CSharpClasses.Demo.getContacts()) Console.WriteLine(contact.Email);
-           DmlTest.UpsertTest();
+           //DmlTest.UpsertTest();
 
             //ConvertToApex();
 
@@ -49,7 +49,7 @@ namespace Demo
             Setup.StopLogging();
 
             Console.WriteLine("Done, Press Any Key To Exit");
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         public static void MokDemo()
@@ -117,6 +117,10 @@ namespace Demo
                     "UserRole",
                     "Profile",
                     "UserLicense",
+                    "Form__c",
+                    "Form_Field__c",
+                    "Form_Log__c",
+                    "Form_Section__c"
                 };
 
                 modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
