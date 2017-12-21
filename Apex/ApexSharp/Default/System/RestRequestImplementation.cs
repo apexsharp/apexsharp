@@ -14,11 +14,11 @@ namespace Apex.ApexSharp.Default.System
 
             private dynamic NotImplemented { get; } = new StubImplementation(typeof(RestRequest));
 
-            public Map<string, string> headers { get; set; }
+            public Map<string, string> headers { get; set; } = new Map<string, string>();
 
             public string httpMethod { get; set; }
 
-            public Map<string, string> @params { get; set; }
+            public Map<string, string> @params { get; set; } = new Map<string, string>();
 
             public string remoteAddress { get; set; }
 

@@ -12,7 +12,7 @@ namespace Apex.ApexSharp.Default.System
         {
             public static implicit operator RestResponse(RestResponseInstance self) => new RestResponse(self);
 
-            public Map<string, string> headers { get; set; }
+            public Map<string, string> headers { get; set; } = new Map<string, string>();
 
             public Blob responseBody { get; set; }
 
