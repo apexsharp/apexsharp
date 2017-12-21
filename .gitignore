@@ -301,3 +301,4 @@ advanceConfig.json
 .idea
 /AdvanceSalesForce
 *.DotSettings
+*.json
