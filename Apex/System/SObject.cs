@@ -61,7 +61,7 @@ namespace Apex.System
 
         public object get(string field)
         {
-            throw new global::System.NotImplementedException("SObject.Get");
+            return this.GetType().GetProperty(field).GetValue(this, null);
         }
 
         //public Map<String, SObject> getAll()

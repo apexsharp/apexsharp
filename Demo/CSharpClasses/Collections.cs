@@ -47,8 +47,7 @@ namespace Demo.CSharpClasses
             Map<int, string> m = new Map<int, string>();
             m.put(1, "First entry");
             m.put(2, "Second entry");
-            // ToDo
-            // string value = m.get(2);
+            string value = m.get(2);
         }
 
         public void mapSoqlExample()
@@ -56,8 +55,7 @@ namespace Demo.CSharpClasses
             Map<ID, Contact> m = new Map<ID, Contact>(Soql.query<Contact>("SELECT Id, Name FROM Contact LIMIT 10"));
             foreach (ID idKey in m.keySet())
             {
-                // ToDo
-                // Contact contact = m.get(idKey);
+                Contact contact = m.get(idKey);
             }
         }
     }

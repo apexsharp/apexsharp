@@ -11,10 +11,9 @@ namespace Demo.CSharpClasses
         static void RunAsExample()
         {
             User newUser = Soql.query<User>("SELECT Id FROM User LIMIT 1");
-            // ToDo
-            //using (System.runAs(newUser))
-            //{
-            //}
+            using (System.runAs(newUser))
+            {
+            }
         }
     }
 }

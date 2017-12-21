@@ -17,9 +17,8 @@ namespace Demo.CSharpClasses
             contact.LastName = "Jay";
             contact.Email = "jay@jay.com";
             string jsonString = JSON.serialize(contact);
-            // Todo
-            // Contact newContact = (Contact)JSON.deserialize(jsonString, typeof(Contact));
-            // System.assertEquals("jay@jay.com", newContact.Email);
+            Contact newContact = (Contact)JSON.deserialize(jsonString, typeof(Contact));
+            System.assertEquals("jay@jay.com", newContact.Email);
         }
     }
 }
