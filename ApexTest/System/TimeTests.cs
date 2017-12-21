@@ -41,6 +41,14 @@ namespace ApexTest.System
 
                 var nextMillis = now.addMilliseconds(534);
                 Assert.AreNotEqual(now, nextMillis);
+
+                var now2 = Datetime.newInstance(Date.today(), now).time();
+                Assert.AreEqual(now, now2);
+
+                var hash1 = now.hashCode();
+                var hash2 = now2.hashCode();
+                Assert.AreEqual(hash1, hash2);
+                Assert.NotNull(now.toString());
             });
         }
     }

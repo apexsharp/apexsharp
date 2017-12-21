@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_date.htm#apex_methods_system_date
     /// </summary>
-    public class Date
+    public class Date : global::System.IEquatable<Date>
     {
         // infrastructure
         public Date(dynamic self)
@@ -62,6 +62,16 @@ namespace Apex.System
             return Implementation.daysInMonth(year, month);
         }
 
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public int hashCode()
+        {
+            return Self.hashCode();
+        }
+
         public string format()
         {
             return Self.format();
@@ -112,6 +122,11 @@ namespace Apex.System
             return Self.toStartOfWeek();
         }
 
+        public string toString()
+        {
+            return Self.toString();
+        }
+
         public static Date valueOf(string stringDate)
         {
             return Implementation.valueOf(stringDate);
@@ -136,5 +151,15 @@ namespace Apex.System
         {
             Self.addError(msg);
         }
+
+        // interoperability
+
+        public bool Equals(Date other) => equals(other);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
+        public override string ToString() => toString();
     }
 }

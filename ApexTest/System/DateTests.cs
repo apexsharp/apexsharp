@@ -41,6 +41,14 @@ namespace ApexTest.System
 
                 var nextYears = today.addYears(10);
                 Assert.AreNotEqual(today, nextYears);
+
+                var today2 = Datetime.newInstance(today, Datetime.now().time()).date();
+                Assert.AreEqual(today, today2);
+
+                var hash1 = today.hashCode();
+                var hash2 = today2.hashCode();
+                Assert.AreEqual(hash1, hash2);
+                Assert.NotNull(today.toString());
             });
         }
     }

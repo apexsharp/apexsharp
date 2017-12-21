@@ -266,5 +266,14 @@ namespace ApexTest
                 Assert.AreEqual(nameof(DateTime), list.TypeName);
             });
         }
+
+        [Test]
+        public void GetDefaultTests()
+        {
+            Assert.AreEqual(default(string), Implementor.GetDefault<string>());
+            Assert.AreEqual(default(int), Implementor.GetDefault<int>());
+            Assert.AreEqual(default(bool), Implementor.GetDefault<bool>());
+            Assert.AreEqual(default(DateTime), Implementor.GetDefault<DateTime>());
+        }
     }
 }

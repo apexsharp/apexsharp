@@ -42,6 +42,19 @@ namespace Apex.ApexSharp.Default.System
 
             public int daysBetween(Date other) => NotImplemented.daysBetween(other);
 
+            public bool equals(object obj)
+            {
+                var other = obj as Date;
+                if (other == null)
+                {
+                    return false;
+                }
+
+                return year() == other.year() && month() == other.month() && day() == other.day();
+            }
+
+            public int hashCode() => $"{date}".GetHashCode();
+
             public string format() => NotImplemented.format();
 
             public bool isSameDay(Date other) =>
@@ -54,6 +67,8 @@ namespace Apex.ApexSharp.Default.System
             public Date toStartOfMonth() => NotImplemented.toStartOfMonth();
 
             public Date toStartOfWeek() => NotImplemented.toStartOfWeek();
+
+            public string toString() => date.ToString();
 
             public int year() => date.Year;
         }

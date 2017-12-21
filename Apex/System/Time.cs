@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_time.htm#apex_methods_system_time
     /// </summary>
-    public class Time
+    public class Time : global::System.IEquatable<Time>
     {
         // infrastructure
         public Time(dynamic self)
@@ -47,6 +47,16 @@ namespace Apex.System
             return Self.addSeconds(additionalSeconds);
         }
 
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public int hashCode()
+        {
+            return Self.hashCode();
+        }
+
         public int hour()
         {
             return Self.hour();
@@ -81,5 +91,20 @@ namespace Apex.System
         {
             Self.addError(msg);
         }
+
+        public string toString()
+        {
+            return Self.toString();
+        }
+
+        // interoperability
+
+        public bool Equals(Time other) => equals(other);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
+        public override string ToString() => toString();
     }
 }

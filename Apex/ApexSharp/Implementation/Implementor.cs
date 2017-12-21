@@ -130,5 +130,17 @@ namespace Apex.ApexSharp.Implementation
             ImplementationRepository[type] = new StubImplementation(type);
             return result;
         }
+
+        public static T GetDefault<T>() => (T)GetDefault(typeof(T));
+
+        public static object GetDefault(Type type)
+        {
+            if (type.IsValueType)
+            {
+                return Activator.CreateInstance(type);
+            }
+
+            return null;
+        }
     }
 }
