@@ -41,11 +41,11 @@ namespace Demo
             // This example assumes you cloned your GIT repo to the root level.
 
             // SessionLocation is where your SF session will be Saved
-            var sessionLocation = Path.GetFullPath(@"/apexsharp/config.json");
+            var sessionLocation = Path.GetFullPath(@"../config.json");
             // SalesForceLocation is the location of your Salesofrce project
-            var salesForceLocation = Path.GetFullPath(@"/apexsharp/SalesForce/src/");
+            var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
             // VsProjectLocation is the location of your Visual Studio Project
-            var vSprojectocation = Path.GetFullPath(@"/apexsharp/Demo/");
+            var vSprojectocation = Path.GetFullPath(@"../Demo/");
 
             try
             {
@@ -58,12 +58,12 @@ namespace Demo
                 try
                 {                    
                     ConnectionUtil.Session = new ApexSharp().
-                         SalesForceUrl("https://login.salesforce.com/")
+                         SalesForceUrl("https://test.salesforce.com/")
                         .AndSalesForceApiVersion(40)
                         
-                        .WithUserId("SF Login ID")
-                        .AndPassword("Password")
-                        .AndToken("Token")
+                        .WithUserId("allison@healthclx.com.test")
+                        .AndPassword("healthclxer007")
+                        .AndToken("")
 
                         .SalesForceLocation(salesForceLocation)
                         .VsProjectLocation(vSprojectocation)
