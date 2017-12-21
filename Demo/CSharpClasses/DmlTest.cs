@@ -12,7 +12,7 @@ namespace Demo.CSharpClasses
             Contact contactNew = new Contact();
             contactNew.LastName = "apexSharp";
             contactNew.Email = "abc@abc.com";
-            //upsert contactNew;
+            Soql.upsert(contactNew);
             System.debug(contactNew.Id);
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact WHERE Id = :contactNew.Id", contactNew.Id);
             foreach (Contact c in contacts)
@@ -21,7 +21,7 @@ namespace Demo.CSharpClasses
                 c.Email = "new@new.com";
             }
 
-           // upsert contacts;
+            Soql.upsert(contacts);
             contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact WHERE Id = :contactNew.Id", contactNew.Id);
             foreach (Contact c in contacts)
             {
