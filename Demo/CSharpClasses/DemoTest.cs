@@ -48,10 +48,10 @@ namespace Demo.CSharpClasses
             System.assert(contacts.size()> 0);
         }
 
-        public static double randomWithLimit()
+        public static int randomWithLimit()
         {
             double randomNumber = Math.random();
-            return randomNumber;
+            return Math.round(randomNumber * 1000000);
         }
     }
 }
