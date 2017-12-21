@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.Linq;
+
+namespace Demo
 {
     using Apex;
     using ApexSharpApi;
@@ -37,7 +39,7 @@
                 DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
                 // Convert Apex to C#
-                CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
+                // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
                 
                 // Convert C# to APEX
                 // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
@@ -55,6 +57,21 @@
             Setup.StopLogging(); 
         }
 
+        // Create Offline DTO for all the Salesforce Objects
+        public static void CreateAllOffLineClasses()
+        {
+            try
+            {
+                ModelGen modelGen = new ModelGen();
+                modelGen.CreateOfflineSymbolTable(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
+            }
+            catch (ApexSharpHttpException exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
+        }
+
+        // Create Offline DTO for a set of Salesforce objects
         public static void CreateOffLineClasses()
         {
             try
