@@ -8,7 +8,7 @@ namespace Apex.System
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_datetime.htm#apex_methods_system_datetime
     /// </summary>
-    public class Datetime
+    public class Datetime : global::System.IEquatable<Datetime>
     {
         // infrastructure
         public Datetime(dynamic self)
@@ -85,6 +85,16 @@ namespace Apex.System
         public int dayOfYearGmt()
         {
             return Self.dayOfYearGmt();
+        }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public int hashCode()
+        {
+            return Self.hashCode();
         }
 
         public string format()
@@ -227,6 +237,11 @@ namespace Apex.System
             return Self.timeGmt();
         }
 
+        public string toString()
+        {
+            return Self.toString();
+        }
+
         public static Datetime valueOf(string dateTimeString)
         {
             return Implementation.valueOf(dateTimeString);
@@ -266,5 +281,15 @@ namespace Apex.System
         {
             return Self.dateGmt();
         }
+
+        // interoperability
+
+        public bool Equals(Datetime other) => equals(other);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
+        public override string ToString() => toString();
     }
 }

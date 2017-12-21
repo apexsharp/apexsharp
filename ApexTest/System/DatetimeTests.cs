@@ -39,6 +39,13 @@ namespace ApexTest.System
                 Assert.AreNotEqual(now, tomorrow);
                 Assert.False(now.isSameDay(tomorrow));
 
+                var nowAgain = Datetime.newInstance(now.date(), now.time());
+                Assert.AreEqual(now, nowAgain);
+
+                var hash1 = now.hashCode();
+                var hash2 = nowAgain.hashCode();
+                Assert.AreEqual(hash1, hash2);
+
                 var prevMonth = now.addMonths(-1);
                 Assert.AreNotEqual(now, prevMonth);
 
@@ -53,6 +60,7 @@ namespace ApexTest.System
 
                 var prevSeconds = now.addSeconds(-30);
                 Assert.AreNotEqual(now, prevSeconds);
+                Assert.NotNull(now.toString());
             });
         }
     }

@@ -41,6 +41,20 @@ namespace Apex.ApexSharp.Default.System
             public Time addSeconds(int seconds) =>
                 new TimeInstance(time + TimeSpan.FromSeconds(seconds));
 
+            public bool equals(object obj)
+            {
+                var other = obj as Time;
+                if (other == null)
+                {
+                    return false;
+                }
+
+                return hour() == other.hour() && minute() == other.minute() &&
+                    second() == other.second() && millisecond() == other.millisecond();
+            }
+
+            public int hashCode() => $"{time}".GetHashCode();
+
             public int hour() => time.Hours;
 
             public int millisecond() => time.Milliseconds;
@@ -48,6 +62,8 @@ namespace Apex.ApexSharp.Default.System
             public int minute() => time.Minutes;
 
             public int second() => time.Seconds;
+
+            public string toString() => time.ToString();
         }
 
         // Implementation

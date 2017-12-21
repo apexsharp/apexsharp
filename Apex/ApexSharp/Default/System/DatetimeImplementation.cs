@@ -25,8 +25,8 @@ namespace Apex.ApexSharp.Default.System
             internal DatetimeInstance(int year, int month, int day) =>
                 dateTime = new SysDateTime(year, month, day);
 
-            internal DatetimeInstance(int year, int month, int day, int hour, int minute, int second) =>
-                dateTime = new SysDateTime(year, month, day, hour, minute, second);
+            internal DatetimeInstance(int year, int month, int day, int hour, int minute, int second, int millisecond) =>
+                dateTime = new SysDateTime(year, month, day, hour, minute, second, millisecond);
 
             public void addError(object msg) => NotImplemented.addError(msg);
 
@@ -59,6 +59,21 @@ namespace Apex.ApexSharp.Default.System
             public int dayOfYear() => dateTime.DayOfYear;
 
             public int dayOfYearGmt() => dateTimeGmt.DayOfYear;
+
+            public bool equals(object obj)
+            {
+                var other = obj as Datetime;
+                if (other == null)
+                {
+                    return false;
+                }
+
+                return year() == other.year() && month() == other.month() &&
+                    day() == other.day() && hour() == other.hour() && minute() == other.minute() &&
+                    second() == other.second() && millisecond() == other.millisecond();
+            }
+
+            public int hashCode() => $"{dateTime}".GetHashCode();
 
             public string format() => NotImplemented.format();
 
@@ -100,6 +115,8 @@ namespace Apex.ApexSharp.Default.System
             public Time timeGmt() =>
                 Time.newInstance(dateTimeGmt.Hour, dateTimeGmt.Minute, dateTimeGmt.Second, dateTimeGmt.Millisecond);
 
+            public string toString() => dateTime.ToString();
+
             public int year() => dateTime.Year;
 
             public int yearGmt() => dateTimeGmt.Year;
@@ -112,13 +129,13 @@ namespace Apex.ApexSharp.Default.System
         public Datetime now() => new DatetimeInstance(SysDateTime.Now);
 
         public Datetime newInstance(Date date, Time time) =>
-            new DatetimeInstance(date.year(), date.month(), date.day(), time.hour(), time.minute(), time.second());
+            new DatetimeInstance(date.year(), date.month(), date.day(), time.hour(), time.minute(), time.second(), time.millisecond());
 
         public Datetime newInstance(int year, int month, int day) =>
             new DatetimeInstance(year, month, day);
 
         public Datetime newInstance(int year, int month, int day, int hour, int minute, int second) =>
-            new DatetimeInstance(year, month, day, hour, minute, second);
+            new DatetimeInstance(year, month, day, hour, minute, second, 0);
 
         public Datetime newInstance(long time) => NotImplemented.newInstance(time);
 
