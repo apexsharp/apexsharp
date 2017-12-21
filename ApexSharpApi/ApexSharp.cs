@@ -9,8 +9,8 @@ namespace ApexSharpApi
 
         private readonly ApexSharpConfig _apexSharpConfigSettings = new ApexSharpConfig();
 
-        // Double Check For All These Values
-        public ApexSharpConfig CreateSession()
+        // ToDo: Double Check For All These Values
+        public void CreateSession()
         {
             FileInfo configLocation = new FileInfo(_apexSharpConfigSettings.ConfigLocation);
 
@@ -26,7 +26,7 @@ namespace ApexSharpApi
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "Cache");
             Directory.CreateDirectory(_apexSharpConfigSettings.VsProjectLocation + "SObjects");
 
-            return ConnectionUtil.CreateSession(_apexSharpConfigSettings);
+            ConnectionUtil.CreateSession(_apexSharpConfigSettings);
         }
 
         public static ApexSharpConfig GetSession(string configFileLocation)
@@ -41,7 +41,7 @@ namespace ApexSharpApi
 
         public ApexSharp SalesForceUrl(string salesForceUrl)
         {
-            _apexSharpConfigSettings.SalesForceUrl = salesForceUrl;
+            _apexSharpConfigSettings.SalesForceSoapUrl = salesForceUrl;
             return this;
         }
 

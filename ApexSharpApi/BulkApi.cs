@@ -196,7 +196,7 @@ namespace ApexSharpApi
                 Method = HttpMethod.Post,
             };
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.Add("X-SFDC-Session", _connectionDetail.SessionId);
+            //request.Headers.Add("X-SFDC-Session", _connectionDetail.SessionId);
 
             Console.WriteLine(UtilXml.FormatXml(json));
             request.Content = new StringContent(json, Encoding.UTF8, dataType);
@@ -231,7 +231,7 @@ namespace ApexSharpApi
                 Method = HttpMethod.Get,
             };
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.Add("X-SFDC-Session", _connectionDetail.SessionId);
+            //request.Headers.Add("X-SFDC-Session", _connectionDetail.SessionId);
 
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage responseMessage = await httpClient.SendAsync(request);

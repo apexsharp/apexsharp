@@ -12,10 +12,10 @@ namespace ApexSharpApi
 
     }
 
-    public class SalesForceNoFileFoundException : Exception
+    public class ApexSharpNoConfigFoundException : Exception
     {
 
-        public SalesForceNoFileFoundException(string message)
+        public ApexSharpNoConfigFoundException(string message)
         : base(message)
         {
         }

@@ -13,8 +13,9 @@ namespace Demo
         {
             // Start Logging
             Setup.StartLogging();
+
             // Always Initialize your settings before using it.
-            Setup.Init();
+            Setup.InitializeSession();
 
             UnitTestDataManager.UnitTestDataManagerOn();
         }

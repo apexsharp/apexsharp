@@ -13,15 +13,13 @@ namespace ApexSharpApi
     {
         public static ApexSharpConfig Session { get; set; }
 
- 
-
         public static ApexSharpConfig GetSession(string configFileLocation)
         {
             if (configFileLocation == null)
             {
                 if (Session == null)
                 {
-                    throw new SalesForceNoFileFoundException("No Session Exists Create One");
+                    throw new ApexSharpNoConfigFoundException("No Session Exists Create One");
                 }
 
                 if (Session.SessionCreationDateTime <= DateTimeOffset.Now.ToUnixTimeSeconds())
@@ -48,16 +46,15 @@ namespace ApexSharpApi
                 Log.ForContext<ConnectionUtil>().Information("Found Session On {configFileLocation}", configFileLocation);
                 return Session;
             }
-            throw new SalesForceNoFileFoundException(loadFileInfo.FullName);
+            throw new ApexSharpNoConfigFoundException(loadFileInfo.FullName);
         }
 
         public static ApexSharpConfig CreateSession(ApexSharpConfig config)
         {
-            config.SalesForceUrl = config.SalesForceUrl + "services/Soap/c/" + config.SalesForceApiVersion + ".0/";
+            config.SalesForceSoapUrl = config.SalesForceSoapUrl + "services/Soap/c/" + config.SalesForceApiVersion + ".0/";
             config = GetNewConnection(config);
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
-            Console.WriteLine(Path.GetDirectoryName(config.ConfigLocation));
             Directory.CreateDirectory(Path.GetDirectoryName(config.ConfigLocation));
             File.WriteAllText(config.ConfigLocation, json);
 
@@ -83,7 +80,7 @@ namespace ApexSharpApi
                 "</soapenv:Envelope>";
 
 
-            var retrunXml = PostLoginTask(config.SalesForceUrl, xml);
+            var retrunXml = PostLoginTask(config.SalesForceSoapUrl, xml);
 
             if (retrunXml.Contains("INVALID_LOGIN"))
             {
@@ -96,8 +93,7 @@ namespace ApexSharpApi
             var restSessionId = "Bearer " + envelope.Body.loginResponse.result.sessionId;
 
 
-            config.SalesForceUrl = envelope.Body.loginResponse.result.serverUrl;
-            config.SessionId = envelope.Body.loginResponse.result.sessionId;
+            config.SalesForceSoapUrl = envelope.Body.loginResponse.result.serverUrl;
             config.RestUrl = restUrl;
             config.RestSessionId = restSessionId;
             config.SessionCreationDateTime = DateTimeOffset.Now.ToUnixTimeSeconds() + envelope.Body.loginResponse.result.userInfo.sessionSecondsValid;

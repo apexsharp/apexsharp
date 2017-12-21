@@ -24,7 +24,7 @@ namespace Demo
             Setup.StartLogging();
 
             // Always Initialize your settings when ever you are connecting to SF
-            Setup.Init();
+            Setup.InitializeSession();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");

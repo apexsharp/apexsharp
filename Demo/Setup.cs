@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Microsoft.Extensions.Configuration;
+using Serilog;
 
 namespace Demo
 {
@@ -35,48 +36,67 @@ namespace Demo
             Log.CloseAndFlush();
         }
 
-        public static bool Init()
-        { 
-            // Due to different OS and how they manage file paths, its best to to use the Path.GetFullPath Method.
-            // This example assumes you cloned your GIT repo to the root level.
-
-            // SessionLocation is where your SF session will be Saved
+        public static bool InitializeSession()
+        {
+            // SessionLocation is where your SF session will be saved or located
             var sessionLocation = Path.GetFullPath(@"../config.json");
             // SalesForceLocation is the location of your Salesofrce project
             var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
             // VsProjectLocation is the location of your Visual Studio Project
             var vSprojectocation = Path.GetFullPath(@"../Demo/");
 
+            // You can del the existing session if needed.
+            // File.Delete(sessionLocation);
+
             try
             {
-                // See if we have an existing connection use it.
                 ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
             }
             // Else Create a new session
-            catch (SalesForceNoFileFoundException)
+            catch (ApexSharpNoConfigFoundException)
             {
-                try
-                {                    
-                    ConnectionUtil.Session = new ApexSharp().
-                         SalesForceUrl("https://login.salesforce.com/")
-                        .AndSalesForceApiVersion(40)
-                        
-                        .WithUserId("SF Login ID")
-                        .AndPassword("Password")
-                        .AndToken("Token")
-
-                        .SalesForceLocation(salesForceLocation)
-                        .VsProjectLocation(vSprojectocation)
-                        .SaveConfigAt(sessionLocation)
-                        .CreateSession();
-                }
-                catch (SalesForceInvalidLoginException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return false;
-                }
+                CreateSession(sessionLocation, salesForceLocation, vSprojectocation);
             }
             return true;
+        }
+
+        private static void CreateSession(string sessionLocation, string salesForceLocation, string vSprojectocation)
+        {
+            try
+            {
+                // You need to have a JSON File names appsettings.json with your SF credential. For example
+                // {
+                //    "SalesForceUserId": "Your SF Id",
+                //    "SalesForcePassword": "SF Password",
+                //    "SalesForcePasswordToken": "SF Token"
+                // }
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json");
+
+                var configuration = builder.Build();
+
+                new ApexSharp()
+                    .SalesForceUrl("https://login.salesforce.com/")
+                    .AndSalesForceApiVersion(40)
+                    .WithUserId(configuration["SalesForceUserId"])
+                    .AndPassword(configuration["SalesForcePassword"])
+                    .AndToken(configuration["SalesForcePasswordToken"])
+                    .SalesForceLocation(salesForceLocation)
+                    .VsProjectLocation(vSprojectocation)
+                    .SaveConfigAt(sessionLocation)
+                    .CreateSession();
+
+                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Log.ForContext<Setup>().Debug(ex.Message);
+            }
+            catch (SalesForceInvalidLoginException ex)
+            {
+                Log.ForContext<Setup>().Debug(ex.Message);
+            }
         }
     }
 }
