@@ -40,7 +40,7 @@ namespace Demo
 
                 // Convert Apex to C#
                 // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
-                
+
                 // Convert C# to APEX
                 // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
             }
@@ -54,7 +54,7 @@ namespace Demo
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
-            Setup.StopLogging(); 
+            Setup.StopLogging();
         }
 
         // Create Offline DTO for all the Salesforce Objects
