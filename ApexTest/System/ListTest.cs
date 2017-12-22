@@ -6,7 +6,7 @@
     [TestFixture]
     public class ListTest
     {
-        [Test, Ignore("TODO")]
+        [Test]
         public static void addTest()
         {
             List<string> newList = new List<string>();
