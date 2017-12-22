@@ -24,8 +24,8 @@ namespace Demo
             // Error - indicating a failure within the application or connected system
             // Fatal - critical errors causing complete failure of the application
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
+                .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
+                .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
                 .MinimumLevel.Debug()
                 .CreateLogger();
 
