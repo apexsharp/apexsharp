@@ -1,4 +1,5 @@
-﻿using Apex.System;
+﻿using Apex.ApexSharp.Implementation;
+using Apex.System;
 using Activator = System.Activator;
 
 namespace Apex.ApexSharp.Default.System
@@ -14,7 +15,9 @@ namespace Apex.ApexSharp.Default.System
 
         public class ExceptionInstance
         {
-            public Exception Cause { get; set; }
+            private dynamic NotImplemented { get; } = new StubImplementation(typeof(T));
+
+            internal Exception Cause { get; set; }
 
             public Exception getCause() => Cause;
 
@@ -24,15 +27,13 @@ namespace Apex.ApexSharp.Default.System
 
             public int getLineNumber() => LineNumber;
 
-            public string Message { get; set; }
+            internal string Message { get; set; }
 
             public string getMessage() => Message;
 
             public void setMessage(string message) => Message = message;
 
-            public string StackTrace { get; set; }
-
-            public string getStackTraceString() => StackTrace;
+            public string getStackTraceString() => NotImplemented.getStackTraceString();
 
             public string TypeName => typeof(T).Name;
 
@@ -45,7 +46,7 @@ namespace Apex.ApexSharp.Default.System
 
         public BaseExceptionImplementation(string defaultMessage = null)
         {
-            DefaultMessage = defaultMessage ?? "Exception occured.";
+            DefaultMessage = defaultMessage ?? "Exception is thrown.";
         }
 
         private string DefaultMessage { get; set; }

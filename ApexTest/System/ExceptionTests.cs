@@ -17,7 +17,7 @@ namespace ApexTest.System
                 // parameterless constructor
                 var exc = new Exception();
                 Assert.NotNull(exc);
-                Assert.AreEqual("Exception occured.", exc.getMessage());
+                Assert.AreEqual("Exception is thrown.", exc.getMessage());
 
                 // constructor with string parameter
                 exc = new Exception("Custom message");
@@ -33,7 +33,7 @@ namespace ApexTest.System
                 // constructor with Exception parameter
                 var lastExc = new Exception(newExc);
                 Assert.NotNull(lastExc);
-                Assert.AreEqual("Exception occured.", lastExc.getMessage());
+                Assert.AreEqual("Exception is thrown.", lastExc.getMessage());
                 Assert.AreEqual(newExc, lastExc.getCause());
                 Assert.AreEqual(exc, lastExc.getCause().getCause());
             });
@@ -88,6 +88,20 @@ namespace ApexTest.System
                     Assert.NotNull(exc);
                     Assert.AreEqual(customMessage, exc.getMessage());
                 });
+            }
+        }
+
+        [Test]
+        public void ExceptionHasRealMessageAndStackTrace()
+        {
+            try
+            {
+                Type.forName("System.ThisTypeDoesNotExist");
+            }
+            catch (TypeException ex)
+            {
+                Assert.False(string.IsNullOrWhiteSpace(ex.getMessage()));
+                Assert.False(string.IsNullOrWhiteSpace(ex.getStackTraceString()));
             }
         }
     }

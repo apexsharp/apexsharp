@@ -69,7 +69,7 @@ namespace Apex.System
 
         public string getStackTraceString()
         {
-            return Self.getStackTraceString();
+            return base.StackTrace; // Self.getStackTraceString() is not compatible with the throw statement
         }
 
         public virtual string getTypeName()
@@ -86,5 +86,8 @@ namespace Apex.System
         {
             Self.setMessage(message);
         }
+
+        // interoperability
+        public override string Message => getMessage();
     }
 }

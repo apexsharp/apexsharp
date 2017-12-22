@@ -4,11 +4,12 @@ namespace Apex.System
     using ApexSharp.ApexAttributes;
     using ApexSharp.Implementation;
     using global::Apex.System;
+    using IEquatableOfType = global::System.IEquatable<Type>;
 
     /// <summary>
     /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_type.htm#apex_methods_system_type
     /// </summary>
-    public class Type
+    public class Type : IEquatableOfType
     {
         // infrastructure
         public Type(dynamic self)
@@ -16,7 +17,7 @@ namespace Apex.System
             Self = self;
         }
 
-        dynamic Self { get; set; }
+        internal dynamic Self { get; set; }
 
         static dynamic Implementation
         {
@@ -68,18 +69,21 @@ namespace Apex.System
         }
 
         // interoperability
-        public static global::System.Type GetSystemType(Type apexType)
-        {
-            return Implementation.GetSystemType(apexType);
-        }
-
-        public static Type GetApexType(global::System.Type systemType)
-        {
-            return Implementation.GetApexType(systemType);
-        }
 
         public static implicit operator global::System.Type(Type apexType) => GetSystemType(apexType);
 
         public static implicit operator Type(global::System.Type systemType) => GetApexType(systemType);
+
+        public static global::System.Type GetSystemType(Type apexType) => Implementation.GetSystemType(apexType);
+
+        public static Type GetApexType(global::System.Type systemType) => Implementation.GetApexType(systemType);
+
+        public bool Equals(Type other) => Self.equals(other);
+
+        public override bool Equals(object obj) => Self.equals(obj);
+
+        public override int GetHashCode() => Self.hashCode();
+
+        public override string ToString() => Self.toString();
     }
 }
