@@ -2,6 +2,8 @@
 using Apex.ApexSharp.Implementation;
 using Apex.Schema;
 using Apex.System;
+using IEnumerable = System.Collections.IEnumerable;
+using IEnumerator = System.Collections.IEnumerator;
 
 namespace Apex.ApexSharp.Default.System
 {
@@ -12,6 +14,8 @@ namespace Apex.ApexSharp.Default.System
 
         public class ListInstance<T> : global::System.Collections.Generic.IEnumerable<T>
         {
+            private dynamic NotImplemented { get; } = new StubImplementation(typeof(List<T>));
+
             private global::System.Collections.Generic.List<T> list;
 
             public ListInstance() => list = new global::System.Collections.Generic.List<T>();
@@ -43,8 +47,6 @@ namespace Apex.ApexSharp.Default.System
             public List<T> deepClone(bool preserveId, bool preserveReadOnlyTimestamps) => deepClone();
 
             public List<T> deepClone(bool preserveId, bool preserveReadOnlyTimestamps, bool preserveAutoNumbers) => deepClone();
-
-            public global::System.Collections.Generic.IEnumerator<T> GetEnumerator() => list.GetEnumerator();
 
             public int size() => list.Count;
 
@@ -89,13 +91,13 @@ namespace Apex.ApexSharp.Default.System
 
             public void sort() => list.Sort();
 
-            public SObjectType getSObjectType() =>
-                throw new global::System.NotImplementedException("List.getSObjectType()");
+            public SObjectType getSObjectType() => NotImplemented.getSObjectType();
 
-            public Iterable iterator() =>
-                throw new global::System.NotImplementedException("List.Iterator");
+            public Iterable iterator() => NotImplemented.iterator();
 
-            global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+            public global::System.Collections.Generic.IEnumerator<T> GetEnumerator() => list.GetEnumerator();
+
+            IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
 
         // Implementation
