@@ -12,7 +12,11 @@ namespace Demo
         public static void StartLogging()
         {
             var logPath = Path.GetFullPath(@"../log.log");
+            StartLogging(logPath);
+        }
 
+        public static void StartLogging(string logPath)
+        {    
             // Verbose - tracing information and debugging minutiae; generally only switched on in unusual situations
             // Debug - internal control flow and diagnostic state dumps to facilitate pinpointing of recognized problems
             // Information - events of interest or that have relevance to outside observers; the default enabled minimum logging level
@@ -22,7 +26,7 @@ namespace Demo
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
                 .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .MinimumLevel.Verbose()
+                .MinimumLevel.Debug()
                 .CreateLogger();
 
             Log.ForContext<Setup>().Debug("Logging Started");
@@ -31,7 +35,6 @@ namespace Demo
 
         public static void StopLogging()
         {
-
             Log.ForContext<Setup>().Debug("Logging Stopped");
             Log.CloseAndFlush();
         }
@@ -39,23 +42,23 @@ namespace Demo
         public static bool InitializeSession()
         {
             // SessionLocation is where your SF session will be saved or located
-            var sessionLocation = Path.GetFullPath(@"../config.json");
+            var sessionFileInfo = new FileInfo(Path.GetFullPath(@"../config.json"));
             // SalesForceLocation is the location of your Salesofrce project
             var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
             // VsProjectLocation is the location of your Visual Studio Project
             var vSprojectocation = Path.GetFullPath(@"../Demo/");
 
             // You can del the existing session if needed.
-            // File.Delete(sessionLocation);
+            // File.Delete(sessionFileInfo.FullName);
 
-            try
+            if (sessionFileInfo.Exists)
             {
-                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
+                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
             }
             // Else Create a new session
-            catch (ApexSharpNoConfigFoundException)
+            else
             {
-                CreateSession(sessionLocation, salesForceLocation, vSprojectocation);
+                CreateSession(sessionFileInfo.FullName, salesForceLocation, vSprojectocation);
             }
             return true;
         }
@@ -64,12 +67,13 @@ namespace Demo
         {
             try
             {
-                // You need to have a JSON File names appsettings.json with your SF credential. For example
+                // You need to have a JSON File names appsettings.json with your SF credential in your project. For example
                 // {
                 //    "SalesForceUserId": "Your SF Id",
                 //    "SalesForcePassword": "SF Password",
                 //    "SalesForcePasswordToken": "SF Token"
                 // }
+
                 var builder = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json");

@@ -1,17 +1,21 @@
+
+
 namespace Demo.CSharpClasses
 {
     using Apex.ApexSharp;
-    using Apex.ApexSharp.ApexAttributes;
+    using Apex.ApexSharp.NUnit;
     using Apex.System;
     using SObjects;
 
+    [TestFixture]
     public class DmlTest
     {
+        [Test]
         public static void UpsertTest()
         {
             Contact contactNew = new Contact();
-            contactNew.LastName = "apexSharp1111111";
-            contactNew.Email = "abc@abc.com111111111";
+            contactNew.LastName = "apexSharp" + Math.random();
+            contactNew.Email = Math.random() + "abc@abc.com";
             Soql.upsert(contactNew);
             System.debug(contactNew.Id);
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact WHERE Id = :contactNew.Id", contactNew.Id);
