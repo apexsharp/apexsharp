@@ -16,7 +16,8 @@ namespace Demo
         {
             // Start Logging
             Setup.StartLogging(@"c:/apexSharp/log.log");
-            // SessionLocation is where your SF session will be saved or located
+
+            // SessionFileInfo is where your SF session will be saved or located
             var sessionFileInfo = new FileInfo(Path.GetFullPath(@"c:/apexSharp/config.json"));
             // SalesForceLocation is the location of your Salesofrce project
             var salesForceLocation = Path.GetFullPath(@"c:/apexSharp/SalesForce/src/");

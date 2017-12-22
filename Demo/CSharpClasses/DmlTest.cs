@@ -1,5 +1,3 @@
-
-
 namespace Demo.CSharpClasses
 {
     using Apex.ApexSharp;
