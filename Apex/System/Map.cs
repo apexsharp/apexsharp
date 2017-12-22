@@ -15,11 +15,6 @@ namespace Apex.System
     public class Map<T1, T2> : IEnumerable<KeyValuePair<T1, T2>>
     {
         // infrastructure
-        public Map(dynamic self)
-        {
-            Self = self;
-        }
-
         dynamic Self { get; set; }
 
         static dynamic Implementation
@@ -39,6 +34,11 @@ namespace Apex.System
         public Map(Map<T1, T2> mapToCopy)
         {
             Self = Implementation.Constructor(mapToCopy);
+        }
+
+        public Map(IEnumerable<KeyValuePair<T1, T2>> dictionary)
+        {
+            Self = Implementation.Constructor(dictionary);
         }
 
         public Map(List<SObject> recordList)

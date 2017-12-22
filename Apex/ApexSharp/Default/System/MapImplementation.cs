@@ -17,13 +17,13 @@ namespace Apex.ApexSharp.Default.System
 
         public class MapInstance<T1, T2> : IEnumerable<KeyValuePair<T1, T2>>
         {
-            public static explicit operator Map<T1, T2>(MapInstance<T1, T2> self) => new Map<T1, T2>((dynamic)self);
-
             private dynamic NotImplemented { get; } = new StubImplementation(typeof(Map<T1, T2>));
 
             private Dictionary<T1, T2> map;
 
             public MapInstance() => map = new Dictionary<T1, T2>();
+
+            public MapInstance(IEnumerable<KeyValuePair<T1, T2>> dictionary) => map = dictionary.ToDictionary(p => p.Key, p => p.Value);
 
             public MapInstance(MapInstance<T1, T2> mapToCopy) => map = mapToCopy.ToDictionary(p => p.Key, p => p.Value);
 
@@ -63,7 +63,7 @@ namespace Apex.ApexSharp.Default.System
 
             public void clear() => map.Clear();
 
-            public Map<T1, T2> clone() => (Map<T1, T2>)new MapInstance<T1, T2>(this);
+            public Map<T1, T2> clone() => new Map<T1, T2>(map);
 
             public bool containsKey(T1 key) => map.ContainsKey(key);
 
@@ -155,6 +155,8 @@ namespace Apex.ApexSharp.Default.System
         public dynamic Constructor() => new MapInstance<T1Outer, T2Outer>();
 
         public dynamic Constructor(Map<T1Outer, T2Outer> mapToCopy) => new MapInstance<T1Outer, T2Outer>(mapToCopy);
+
+        public dynamic Constructor(IEnumerable<KeyValuePair<T1Outer, T2Outer>> dictionary) => new MapInstance<T1Outer, T2Outer>(dictionary);
 
         public dynamic Constructor(ListOfSObject recordList) => new MapInstance<T1Outer, T2Outer>(recordList);
 
