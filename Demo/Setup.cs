@@ -11,7 +11,7 @@ namespace Demo
     {
         public static void StartLogging()
         {
-            var logPath = Path.GetFullPath(@"../log.log");
+            var logPath = Path.GetFullPath(@"log.log");
             StartLogging(logPath);
         }
 
@@ -75,7 +75,7 @@ namespace Demo
                 // }
 
                 var builder = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location))
                     .AddJsonFile("appsettings.json");
 
                 var configuration = builder.Build();

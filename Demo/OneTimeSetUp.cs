@@ -15,7 +15,7 @@ namespace Demo
         public static void Init()
         {
             // Start Logging
-            Setup.StartLogging(@"c:/apexSharp/log.log");
+            Setup.StartLogging(@"log.log");
 
             // SessionFileInfo is where your SF session will be saved or located
             var sessionFileInfo = new FileInfo(Path.GetFullPath(@"c:/apexSharp/config.json"));
@@ -61,8 +61,10 @@ namespace Demo
                 // }
 
                 var builder = new ConfigurationBuilder()
-                    .SetBasePath(@"c:/apexSharp/Demo/")
+                    .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location))
                     .AddJsonFile("appsettings.json");
+
+
 
                 var configuration = builder.Build();
 
