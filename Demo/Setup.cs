@@ -9,27 +9,71 @@ namespace Demo
 
     public class Setup
     {
-        public static void StartLogging()
+        public static void InitializeSession()
         {
-            var logPath = Path.GetFullPath(@"log.log");
-            StartLogging(logPath);
-        }
+            // You need to have a JSON File name appsettings.json with your SF credential in your project.
+            // See https://github.com/apexsharp/apexsharp/blob/master/README.md
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location))
+                .AddJsonFile("appsettings.json");
 
-        public static void StartLogging(string logPath)
-        {    
-            // Verbose - tracing information and debugging minutiae; generally only switched on in unusual situations
-            // Debug - internal control flow and diagnostic state dumps to facilitate pinpointing of recognized problems
-            // Information - events of interest or that have relevance to outside observers; the default enabled minimum logging level
-            // Warning - indicators of possible issues or service/functionality degradation
-            // Error - indicating a failure within the application or connected system
-            // Fatal - critical errors causing complete failure of the application
-            Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
-                .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
-                .MinimumLevel.Debug()
-                .CreateLogger();
+            var configuration = builder.Build();
 
-            Log.ForContext<Setup>().Debug("Logging Started");
+            var logFile = new FileInfo(Path.GetFullPath(configuration["LogFile"]));
+            if (logFile.Directory.Exists)
+            {
+                // Make sure you enable logging. We use Serilog loggign library. 
+                // See https://github.com/serilog/serilog/wiki/Configuration-Basics
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Console(outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
+                    .WriteTo.File(logFile.FullName, rollingInterval: RollingInterval.Day,outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
+                    .MinimumLevel.Debug()
+                    .CreateLogger();
+
+                Log.ForContext<Setup>().Debug("Logging Started");
+
+                var sessionFileInfo = new FileInfo(Path.GetFullPath(configuration["SessionFileInfo"]));
+
+                // You can del the existing session if needed (Ex: you changed the Password), if you delete every time a new session is created which will delay the code. 
+                File.Delete(sessionFileInfo.FullName);
+
+                if (sessionFileInfo.Exists)
+                {
+                    ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
+                }
+                // Else Create a new session
+                else
+                {
+                    try
+                    {
+                        var salesForceLocation = Path.GetFullPath(configuration["SalesForceLocation"]);
+                        var vSprojectocation = Path.GetFullPath(configuration["VsProjectocation"]);
+
+                        new ApexSharp()
+                            .SalesForceUrl("https://login.salesforce.com/")
+                            .AndSalesForceApiVersion(40)
+                            .WithUserId(configuration["SalesForceUserId"])
+                            .AndPassword(configuration["SalesForcePassword"])
+                            .AndToken(configuration["SalesForceToken"])
+                            .SalesForceLocation(salesForceLocation)
+                            .VsProjectLocation(vSprojectocation)
+                            .SaveConfigAt(sessionFileInfo.FullName)
+                            .CreateSession();
+
+                        ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        Log.ForContext<Setup>().Debug(ex.Message);
+                    }
+                    catch (SalesForceInvalidLoginException ex)
+                    {
+                        Log.ForContext<Setup>().Debug(ex.Message);
+                    }
+                }
+            } else {
+                Console.WriteLine("Cant Find the path to the log location");
+            }
 
         }
 
@@ -37,70 +81,6 @@ namespace Demo
         {
             Log.ForContext<Setup>().Debug("Logging Stopped");
             Log.CloseAndFlush();
-        }
-
-        public static bool InitializeSession()
-        {
-            // SessionLocation is where your SF session will be saved or located
-            var sessionFileInfo = new FileInfo(Path.GetFullPath(@"../config.json"));
-            // SalesForceLocation is the location of your Salesofrce project
-            var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
-            // VsProjectLocation is the location of your Visual Studio Project
-            var vSprojectocation = Path.GetFullPath(@"../Demo/");
-
-            // You can del the existing session if needed.
-            // File.Delete(sessionFileInfo.FullName);
-
-            if (sessionFileInfo.Exists)
-            {
-                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
-            }
-            // Else Create a new session
-            else
-            {
-                CreateSession(sessionFileInfo.FullName, salesForceLocation, vSprojectocation);
-            }
-            return true;
-        }
-
-        private static void CreateSession(string sessionLocation, string salesForceLocation, string vSprojectocation)
-        {
-            try
-            {
-                // You need to have a JSON File names appsettings.json with your SF credential in your project. For example
-                // {
-                //    "SalesForceUserId": "Your SF Id",
-                //    "SalesForcePassword": "SF Password",
-                //    "SalesForcePasswordToken": "SF Token"
-                // }
-
-                var builder = new ConfigurationBuilder()
-                    .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location))
-                    .AddJsonFile("appsettings.json");
-
-                var configuration = builder.Build();
-
-                new ApexSharp()
-                    .SalesForceUrl("https://login.salesforce.com/")
-                    .AndSalesForceApiVersion(40)
-                    .WithUserId(configuration["SalesForceUserId"])
-                    .AndPassword(configuration["SalesForcePassword"])
-                    .AndToken(configuration["SalesForcePasswordToken"])
-                    .SalesForceLocation(salesForceLocation)
-                    .VsProjectLocation(vSprojectocation)
-                    .SaveConfigAt(sessionLocation)
-                    .CreateSession();
-
-                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
-            }
-            catch (FileNotFoundException ex)
-            {
-                Log.ForContext<Setup>().Debug(ex.Message);
-            }
-            catch (SalesForceInvalidLoginException ex)
-            {
-                Log.ForContext<Setup>().Debug(ex.Message);
-            }
         }
     }
 }

@@ -20,10 +20,7 @@ namespace Demo
 
         public static void Start()
         {
-            // Start Logging
-            Setup.StartLogging();
-
-            // Always Initialize your settings when ever you are connecting to SF
+            // Always Initialize your settings
             Setup.InitializeSession();
 
             // Keep Track of the API Limits
