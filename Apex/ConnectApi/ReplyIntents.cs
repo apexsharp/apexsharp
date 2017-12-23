@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ReplyIntents
     {
+        // infrastructure
+        public ReplyIntents(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReplyIntents));
+            }
+        }
+
+        // API
+        object replies
+        {
+            get
+            {
+                return Self.replies;
+            }
+            set
+            {
+                Self.replies = value;
+            }
+        }
+
         public ReplyIntents()
         {
-            throw new global::System.NotImplementedException("ReplyIntents");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReplyIntents.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ReplyIntents.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ReplyIntents.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ReplyIntents.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReplyIntents.ToString");
+            return Self.toString();
         }
     }
 }

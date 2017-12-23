@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DatacloudContacts
     {
+        // infrastructure
+        public DatacloudContacts(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatacloudContacts));
+            }
+        }
+
+        // API
+        object contacts
+        {
+            get
+            {
+                return Self.contacts;
+            }
+            set
+            {
+                Self.contacts = value;
+            }
+        }
+
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
+        object total
+        {
+            get
+            {
+                return Self.total;
+            }
+            set
+            {
+                Self.total = value;
+            }
+        }
+
         public DatacloudContacts()
         {
-            throw new global::System.NotImplementedException("DatacloudContacts");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DatacloudContacts.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DatacloudContacts.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DatacloudContacts.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DatacloudContacts.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DatacloudContacts.ToString");
+            return Self.toString();
         }
     }
 }

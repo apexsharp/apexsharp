@@ -1,31 +1,55 @@
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class WaveTemplateConfigurationModifier
     {
+        // infrastructure
+        public WaveTemplateConfigurationModifier(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(WaveTemplateConfigurationModifier));
+            }
+        }
+
+        // API
         public WaveTemplateConfigurationModifier()
         {
-            throw new global::System.NotImplementedException("WaveTemplateConfigurationModifier");
+            Self = Implementation.Constructor();
         }
 
         public void beforeAppCreate(WaveTemplateInfo template, Answers answers)
         {
-            throw new global::System.NotImplementedException("WaveTemplateConfigurationModifier.BeforeAppCreate");
+            Self.beforeAppCreate(template, answers);
         }
 
         public void beforeAppUpdate(WaveTemplateInfo template, string previousAppVersion, Answers answers)
         {
-            throw new global::System.NotImplementedException("WaveTemplateConfigurationModifier.BeforeAppUpdate");
+            Self.beforeAppUpdate(template, previousAppVersion, answers);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("WaveTemplateConfigurationModifier.Clone");
+            return Self.clone();
         }
 
         public void onConfigurationRetrieval(WaveTemplateInfo template)
         {
-            throw new global::System.NotImplementedException(
-                "WaveTemplateConfigurationModifier.OnConfigurationRetrieval");
+            Self.onConfigurationRetrieval(template);
         }
     }
 }

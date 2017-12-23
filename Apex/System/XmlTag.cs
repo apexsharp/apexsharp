@@ -1,25 +1,29 @@
 namespace Apex.System
 {
-    public class XmlTag
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum XmlTag
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("XmlTag.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("XmlTag.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("XmlTag.Ordinal");
-        }
-
-        public static List<XmlTag> values()
-        {
-            throw new global::System.NotImplementedException("XmlTag.Values");
-        }
+        ATTRIBUTE,
+        CDATA,
+        CHARACTERS,
+        COMMENT,
+        DTD,
+        END_DOCUMENT,
+        END_ELEMENT,
+        ENTITY_DECLARATION,
+        ENTITY_REFERENCE,
+        NAMESPACE,
+        NOTATION_DECLARATION,
+        PROCESSING_INSTRUCTION,
+        SPACE,
+        START_DOCUMENT,
+        START_ELEMENT
     }
 }

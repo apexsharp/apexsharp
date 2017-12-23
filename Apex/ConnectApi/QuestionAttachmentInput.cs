@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class QuestionAttachmentInput
     {
+        // infrastructure
+        public QuestionAttachmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuestionAttachmentInput));
+            }
+        }
+
+        // API
+        object questionTitle
+        {
+            get
+            {
+                return Self.questionTitle;
+            }
+            set
+            {
+                Self.questionTitle = value;
+            }
+        }
+
         public QuestionAttachmentInput()
         {
-            throw new global::System.NotImplementedException("QuestionAttachmentInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("QuestionAttachmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("QuestionAttachmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("QuestionAttachmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("QuestionAttachmentInput.ToString");
+            return Self.toString();
         }
     }
 }

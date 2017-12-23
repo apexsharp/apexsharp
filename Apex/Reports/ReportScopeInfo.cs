@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_ReportScopeInfo.htm#apex_class_reports_ReportScopeInfo
+    /// </summary>
     public class ReportScopeInfo
     {
-        public object clone()
+        // infrastructure
+        public ReportScopeInfo(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportScopeInfo.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportScopeInfo));
+            }
+        }
+
+        // API
         public string getDefaultValue()
         {
-            throw new global::System.NotImplementedException("ReportScopeInfo.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public List<ReportScopeValue> getValues()
         {
-            throw new global::System.NotImplementedException("ReportScopeInfo.GetValues");
+            return Self.getValues();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportScopeInfo.ToString");
+            return Self.toString();
         }
     }
 }

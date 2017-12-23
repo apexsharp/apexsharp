@@ -1,85 +1,110 @@
 namespace Apex.System
 {
-    using TimeSpan = global::System.TimeSpan;
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-    public class Time
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_time.htm#apex_methods_system_time
+    /// </summary>
+    public class Time : global::System.IEquatable<Time>
     {
-        internal TimeSpan time;
-
-        internal Time(TimeSpan ts) => time = ts;
-
-        public void addError(object msg)
+        // infrastructure
+        public Time(dynamic self)
         {
-            throw new global::System.NotImplementedException("Time.AddError");
+            Self = self;
         }
 
-        public void addError(object msg, bool escape)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Time.AddError");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Time));
+            }
         }
 
-        public void addError(string msg)
+        // API
+        public Time addHours(int additionalHours)
         {
-            throw new global::System.NotImplementedException("Time.AddError");
+            return Self.addHours(additionalHours);
         }
 
-        public void addError(string msg, bool escape)
+        public Time addMilliseconds(int additionalMilliseconds)
         {
-            throw new global::System.NotImplementedException("Time.AddError");
+            return Self.addMilliseconds(additionalMilliseconds);
         }
 
-        public Time addHours(int hours)
+        public Time addMinutes(int additionalMinutes)
         {
-            ////throw new global::System.NotImplementedException("Time.AddHours");
-            return new Time(time + TimeSpan.FromHours(hours));
+            return Self.addMinutes(additionalMinutes);
         }
 
-        public Time addMilliseconds(int milliseconds)
+        public Time addSeconds(int additionalSeconds)
         {
-            ////throw new global::System.NotImplementedException("Time.AddMilliseconds");
-            return new Time(time + TimeSpan.FromMilliseconds(milliseconds));
+            return Self.addSeconds(additionalSeconds);
         }
 
-        public Time addMinutes(int minutes)
+        public bool equals(object obj)
         {
-            ////throw new global::System.NotImplementedException("Time.AddMinutes");
-            return new Time(time + TimeSpan.FromMinutes(minutes));
+            return Self.equals(obj);
         }
 
-        public Time addSeconds(int seconds)
+        public int hashCode()
         {
-            ////throw new global::System.NotImplementedException("Time.AddSeconds");
-            return new Time(time + TimeSpan.FromSeconds(seconds));
+            return Self.hashCode();
         }
 
         public int hour()
         {
-            ////throw new global::System.NotImplementedException("Time.Hour");
-            return time.Hours;
+            return Self.hour();
         }
 
         public int millisecond()
         {
-            ////throw new global::System.NotImplementedException("Time.Millisecond");
-            return time.Milliseconds;
+            return Self.millisecond();
         }
 
         public int minute()
         {
-            ////throw new global::System.NotImplementedException("Time.Minute");
-            return time.Minutes;
+            return Self.minute();
         }
 
-        public static Time newInstance(int hour, int minute, int second, int millisecond)
+        public static Time newInstance(int hour, int minutes, int seconds, int milliseconds)
         {
-            ////throw new global::System.NotImplementedException("Time.NewInstance");
-            return new Time(new TimeSpan(hour, minute, second) + TimeSpan.FromMilliseconds(millisecond));
+            return Implementation.newInstance(hour, minutes, seconds, milliseconds);
         }
 
         public int second()
         {
-            ////throw new global::System.NotImplementedException("Time.Second");
-            return time.Seconds;
+            return Self.second();
         }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
+        }
+
+        public string toString()
+        {
+            return Self.toString();
+        }
+
+        // interoperability
+
+        public bool Equals(Time other) => equals(other);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
+        public override string ToString() => toString();
     }
 }

@@ -1,33 +1,133 @@
-using Apex.System;
-
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_quickaction_quickactionresult.htm#apex_class_quickaction_quickactionresult
+    /// </summary>
     public class QuickActionResult
     {
-        public ID getContextId()
+        // infrastructure
+        public QuickActionResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("QuickActionResult.GetContextId");
+            Self = self;
         }
 
-        public List<Database.Error> getErrors()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("QuickActionResult.GetErrors");
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuickActionResult));
+            }
+        }
+
+        // API
+        public List<Error> getErrors()
+        {
+            return Self.getErrors();
         }
 
         public List<ID> getIds()
         {
-            throw new global::System.NotImplementedException("QuickActionResult.GetIds");
+            return Self.getIds();
+        }
+
+        public string getSuccessMessage()
+        {
+            return Self.getSuccessMessage();
         }
 
         public bool isCreated()
         {
-            throw new global::System.NotImplementedException("QuickActionResult.IsCreated");
+            return Self.isCreated();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("QuickActionResult.IsSuccess");
+            return Self.isSuccess();
+        }
+
+        ID contextId
+        {
+            get
+            {
+                return Self.contextId;
+            }
+            set
+            {
+                Self.contextId = value;
+            }
+        }
+
+        bool created
+        {
+            get
+            {
+                return Self.created;
+            }
+            set
+            {
+                Self.created = value;
+            }
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        List<ID> ids
+        {
+            get
+            {
+                return Self.ids;
+            }
+            set
+            {
+                Self.ids = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
+        }
+
+        string successMessage
+        {
+            get
+            {
+                return Self.successMessage;
+            }
+            set
+            {
+                Self.successMessage = value;
+            }
+        }
+
+        public ID getContextId()
+        {
+            return Self.getContextId();
         }
     }
 }

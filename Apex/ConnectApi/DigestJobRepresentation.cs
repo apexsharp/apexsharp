@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DigestJobRepresentation
     {
+        // infrastructure
+        public DigestJobRepresentation(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DigestJobRepresentation));
+            }
+        }
+
+        // API
+        object period
+        {
+            get
+            {
+                return Self.period;
+            }
+            set
+            {
+                Self.period = value;
+            }
+        }
+
         public DigestJobRepresentation()
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DigestJobRepresentation.ToString");
+            return Self.toString();
         }
     }
 }

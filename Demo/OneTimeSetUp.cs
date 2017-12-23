@@ -1,7 +1,6 @@
-﻿using ApexSharpApi;
-
-namespace Demo
+﻿namespace Demo
 {
+    using ApexSharpApi;
     using NUnit.Framework;
 
     // This class gets called once every time any Unit Test runs. 
@@ -11,11 +10,7 @@ namespace Demo
         [OneTimeSetUp]
         public static void Init()
         {
-            // Start Logging
-            Setup.StartLogging();
-            // Always Initialize your settings before using it.
-            Setup.Init();
-
+            Setup.InitializeSession();
             UnitTestDataManager.UnitTestDataManagerOn();
         }
 

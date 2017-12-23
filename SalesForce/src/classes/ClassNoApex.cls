@@ -10,10 +10,8 @@ public class ClassNoApex
     public static void methodTwo(String name)
     {
         System.debug(name);
-
         //:NoApex NoApex.Serilog.LogInfo(name);
         System.debug(name);
 
-        //:NoApex NoApex.Serilog.LogInfo(name);
     }
 }

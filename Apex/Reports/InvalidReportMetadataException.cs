@@ -1,42 +1,53 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class InvalidReportMetadataException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class InvalidReportMetadataException : Exception
     {
+        // infrastructure
+        public InvalidReportMetadataException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidReportMetadataException));
+            }
+        }
+
+        // API
         public InvalidReportMetadataException()
         {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException");
+            Self = Implementation.Constructor();
         }
 
         public InvalidReportMetadataException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReportMetadataException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReportMetadataException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException.Clone");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public List<string> getReportMetadataErrors()
         {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException.GetReportMetadataErrors");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("InvalidReportMetadataException.GetTypeName");
+            return Self.getReportMetadataErrors();
         }
     }
 }

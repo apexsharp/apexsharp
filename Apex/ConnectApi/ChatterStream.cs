@@ -1,35 +1,144 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ChatterStream
     {
+        // infrastructure
+        public ChatterStream(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterStream));
+            }
+        }
+
+        // API
+        object community
+        {
+            get
+            {
+                return Self.community;
+            }
+            set
+            {
+                Self.community = value;
+            }
+        }
+
+        object createdDate
+        {
+            get
+            {
+                return Self.createdDate;
+            }
+            set
+            {
+                Self.createdDate = value;
+            }
+        }
+
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object subscriptions
+        {
+            get
+            {
+                return Self.subscriptions;
+            }
+            set
+            {
+                Self.subscriptions = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public ChatterStream()
         {
-            throw new global::System.NotImplementedException("ChatterStream");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ChatterStream.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ChatterStream.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ChatterStream.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ChatterStream.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ChatterStream.ToString");
+            return Self.toString();
         }
     }
 }

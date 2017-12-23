@@ -1,27 +1,86 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ContentHubExternalItemSharingType
     {
+        // infrastructure
+        public ContentHubExternalItemSharingType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ContentHubExternalItemSharingType));
+            }
+        }
+
+        // API
+        object DomainSharing
+        {
+            get
+            {
+                return Self.DomainSharing;
+            }
+            set
+            {
+                Self.DomainSharing = value;
+            }
+        }
+
+        object PrivateSharing
+        {
+            get
+            {
+                return Self.PrivateSharing;
+            }
+            set
+            {
+                Self.PrivateSharing = value;
+            }
+        }
+
+        object PublicSharing
+        {
+            get
+            {
+                return Self.PublicSharing;
+            }
+            set
+            {
+                Self.PublicSharing = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ContentHubExternalItemSharingType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ContentHubExternalItemSharingType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("ContentHubExternalItemSharingType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<ContentHubExternalItemSharingType> values()
         {
-            throw new global::System.NotImplementedException("ContentHubExternalItemSharingType.Values");
+            return Implementation.values();
         }
     }
 }

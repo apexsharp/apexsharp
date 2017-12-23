@@ -1,10 +1,15 @@
 namespace Apex.TxnSecurity
 {
-    public class PolicyCondition
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_TxnSecurity_PolicyCondition.htm#apex_interface_TxnSecurity_PolicyCondition
+    /// </summary>
+    public interface PolicyCondition
     {
-        public bool evaluate(TxnSecurity.Event param1)
-        {
-            throw new global::System.NotImplementedException("PolicyCondition.Evaluate");
-        }
+        bool evaluate(Event @event);
     }
 }

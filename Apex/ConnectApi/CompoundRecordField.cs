@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CompoundRecordField
     {
+        // infrastructure
+        public CompoundRecordField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CompoundRecordField));
+            }
+        }
+
+        // API
+        object fields
+        {
+            get
+            {
+                return Self.fields;
+            }
+            set
+            {
+                Self.fields = value;
+            }
+        }
+
         public CompoundRecordField()
         {
-            throw new global::System.NotImplementedException("CompoundRecordField");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CompoundRecordField.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("CompoundRecordField.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("CompoundRecordField.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("CompoundRecordField.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CompoundRecordField.ToString");
+            return Self.toString();
         }
     }
 }

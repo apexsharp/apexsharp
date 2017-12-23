@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ExternalSocialAccountRelationship
     {
+        // infrastructure
+        public ExternalSocialAccountRelationship(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ExternalSocialAccountRelationship));
+            }
+        }
+
+        // API
+        object externalSocialAccountId
+        {
+            get
+            {
+                return Self.externalSocialAccountId;
+            }
+            set
+            {
+                Self.externalSocialAccountId = value;
+            }
+        }
+
+        object isFollowed
+        {
+            get
+            {
+                return Self.isFollowed;
+            }
+            set
+            {
+                Self.isFollowed = value;
+            }
+        }
+
+        object isFollowing
+        {
+            get
+            {
+                return Self.isFollowing;
+            }
+            set
+            {
+                Self.isFollowing = value;
+            }
+        }
+
+        object socialPersonaId
+        {
+            get
+            {
+                return Self.socialPersonaId;
+            }
+            set
+            {
+                Self.socialPersonaId = value;
+            }
+        }
+
         public ExternalSocialAccountRelationship()
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ExternalSocialAccountRelationship.ToString");
+            return Self.toString();
         }
     }
 }

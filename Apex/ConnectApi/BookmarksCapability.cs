@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BookmarksCapability
     {
+        // infrastructure
+        public BookmarksCapability(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BookmarksCapability));
+            }
+        }
+
+        // API
+        object isBookmarkedByCurrentUser
+        {
+            get
+            {
+                return Self.isBookmarkedByCurrentUser;
+            }
+            set
+            {
+                Self.isBookmarkedByCurrentUser = value;
+            }
+        }
+
         public BookmarksCapability()
         {
-            throw new global::System.NotImplementedException("BookmarksCapability");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BookmarksCapability.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("BookmarksCapability.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("BookmarksCapability.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("BookmarksCapability.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BookmarksCapability.ToString");
+            return Self.toString();
         }
     }
 }

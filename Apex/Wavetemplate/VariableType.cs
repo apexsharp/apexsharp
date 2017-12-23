@@ -1,37 +1,60 @@
-using Apex.System;
-
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class VariableType
     {
+        // infrastructure
+        public VariableType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(VariableType));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("VariableType.Clone");
+            return Self.clone();
         }
 
         public string getDataType()
         {
-            throw new global::System.NotImplementedException("VariableType.GetDataType");
+            return Self.getDataType();
         }
 
         public List<object> getEnums()
         {
-            throw new global::System.NotImplementedException("VariableType.GetEnums");
+            return Self.getEnums();
         }
 
         public VariableType getItemsType()
         {
-            throw new global::System.NotImplementedException("VariableType.GetItemsType");
+            return Self.getItemsType();
         }
 
         public VariableTypeEnum getType()
         {
-            throw new global::System.NotImplementedException("VariableType.GetType");
+            return Self.getType();
         }
 
         public void setEnums(List<object> enums)
         {
-            throw new global::System.NotImplementedException("VariableType.SetEnums");
+            Self.setEnums(enums);
         }
     }
 }

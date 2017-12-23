@@ -1,55 +1,75 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class RelatedField
     {
+        // infrastructure
+        public RelatedField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RelatedField));
+            }
+        }
+
+        // API
         public RelatedField()
         {
-            throw new global::System.NotImplementedException("RelatedField");
+            Self = Implementation.Constructor();
         }
 
         public RelatedField(string fieldName, double score, Reason reason)
         {
-            throw new global::System.NotImplementedException("RelatedField");
+            Self = Implementation.Constructor(fieldName, score, reason);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RelatedField.Clone");
+            return Self.clone();
         }
 
         public string getFieldName()
         {
-            throw new global::System.NotImplementedException("RelatedField.GetFieldName");
+            return Self.getFieldName();
         }
 
         public Reason getReason()
         {
-            throw new global::System.NotImplementedException("RelatedField.GetReason");
+            return Self.getReason();
         }
 
         public double getScore()
         {
-            throw new global::System.NotImplementedException("RelatedField.GetScore");
+            return Self.getScore();
         }
 
         public void setFieldName(string fieldName)
         {
-            throw new global::System.NotImplementedException("RelatedField.SetFieldName");
+            Self.setFieldName(fieldName);
         }
 
         public void setReason(Reason reason)
         {
-            throw new global::System.NotImplementedException("RelatedField.SetReason");
+            Self.setFieldName(reason);
         }
 
         public void setScore(double score)
         {
-            throw new global::System.NotImplementedException("RelatedField.SetScore");
+            Self.setScore(score);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RelatedField.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,28 +1,50 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardDateFilterDurationGroup.htm#apex_class_reports_StandardDateFilterDurationGroup
+    /// </summary>
     public class StandardDateFilterDurationGroup
     {
-        public object clone()
+        // infrastructure
+        public StandardDateFilterDurationGroup(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDurationGroup.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardDateFilterDurationGroup));
+            }
+        }
+
+        // API
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDurationGroup.GetLabel");
+            return Self.getLabel();
         }
 
         public List<StandardDateFilterDuration> getStandardDateFilterDurations()
         {
-            throw new global::System.NotImplementedException(
-                "StandardDateFilterDurationGroup.GetStandardDateFilterDurations");
+            return Self.getStandardDateFilterDurations();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardDateFilterDurationGroup.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class GlobalInfluence
     {
+        // infrastructure
+        public GlobalInfluence(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(GlobalInfluence));
+            }
+        }
+
+        // API
+        object percentile
+        {
+            get
+            {
+                return Self.percentile;
+            }
+            set
+            {
+                Self.percentile = value;
+            }
+        }
+
+        object rank
+        {
+            get
+            {
+                return Self.rank;
+            }
+            set
+            {
+                Self.rank = value;
+            }
+        }
+
         public GlobalInfluence()
         {
-            throw new global::System.NotImplementedException("GlobalInfluence");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("GlobalInfluence.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("GlobalInfluence.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("GlobalInfluence.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("GlobalInfluence.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GlobalInfluence.ToString");
+            return Self.toString();
         }
     }
 }

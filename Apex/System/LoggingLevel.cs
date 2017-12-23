@@ -1,25 +1,23 @@
 namespace Apex.System
 {
-    public class LoggingLevel
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum LoggingLevel
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("LoggingLevel.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("LoggingLevel.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("LoggingLevel.Ordinal");
-        }
-
-        public static List<LoggingLevel> values()
-        {
-            throw new global::System.NotImplementedException("LoggingLevel.Values");
-        }
+        DEBUG,
+        ERROR,
+        FINE,
+        FINER,
+        FINEST,
+        INFO,
+        INTERNAL,
+        NONE,
+        WARN
     }
 }

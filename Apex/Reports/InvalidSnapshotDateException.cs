@@ -1,42 +1,53 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class InvalidSnapshotDateException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class InvalidSnapshotDateException : Exception
     {
+        // infrastructure
+        public InvalidSnapshotDateException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidSnapshotDateException));
+            }
+        }
+
+        // API
         public InvalidSnapshotDateException()
         {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException");
+            Self = Implementation.Constructor();
         }
 
         public InvalidSnapshotDateException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidSnapshotDateException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidSnapshotDateException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException.Clone");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public List<string> getSnapshotDateErrors()
         {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException.GetSnapshotDateErrors");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("InvalidSnapshotDateException.GetTypeName");
+            return Self.getSnapshotDateErrors();
         }
     }
 }

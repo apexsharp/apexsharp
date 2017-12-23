@@ -1,27 +1,26 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class FeedItemAttachmentType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum FeedItemAttachmentType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FeedItemAttachmentType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FeedItemAttachmentType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FeedItemAttachmentType.Ordinal");
-        }
-
-        public static List<FeedItemAttachmentType> values()
-        {
-            throw new global::System.NotImplementedException("FeedItemAttachmentType.Values");
-        }
+        Approval,
+        BasicTemplate,
+        Canvas,
+        CaseComment,
+        Content,
+        DashboardComponent,
+        EmailMessage,
+        Link,
+        Poll,
+        Question,
+        RecordSnapshot,
+        TrackedChange
     }
 }

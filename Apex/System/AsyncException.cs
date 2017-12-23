@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class AsyncException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class AsyncException : Exception
     {
+        // infrastructure
+        public AsyncException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AsyncException));
+            }
+        }
+
+        // API
         public AsyncException()
         {
-            throw new global::System.NotImplementedException("AsyncException");
+            Self = Implementation.Constructor();
         }
 
         public AsyncException(Exception param1)
         {
-            throw new global::System.NotImplementedException("AsyncException");
+            Self = Implementation.Constructor(param1);
         }
 
         public AsyncException(string param1)
         {
-            throw new global::System.NotImplementedException("AsyncException");
+            Self = Implementation.Constructor(param1);
         }
 
         public AsyncException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("AsyncException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("AsyncException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("AsyncException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("AsyncException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("AsyncException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("AsyncException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("AsyncException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("AsyncException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

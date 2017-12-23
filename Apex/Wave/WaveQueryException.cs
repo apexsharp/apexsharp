@@ -1,37 +1,43 @@
-using Apex.System;
-
 namespace Apex.Wave
 {
-    public class WaveQueryException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class WaveQueryException : Exception
     {
+        // infrastructure
+        public WaveQueryException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(WaveQueryException));
+            }
+        }
+
+        // API
         public WaveQueryException()
         {
-            throw new global::System.NotImplementedException("WaveQueryException");
+            Self = Implementation.Constructor();
         }
 
         public WaveQueryException(Exception param1)
         {
-            throw new global::System.NotImplementedException("WaveQueryException");
-        }
-
-        public WaveQueryException(string msg)
-        {
-            throw new global::System.NotImplementedException("WaveQueryException");
+            Self = Implementation.Constructor(param1);
         }
 
         public WaveQueryException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("WaveQueryException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("WaveQueryException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("WaveQueryException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

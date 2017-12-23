@@ -1,227 +1,228 @@
-
-using Action = System.Action;
-using IDisposable = System.IDisposable;
-using NUnitAssert = NUnit.Framework.Assert;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.ConnectApi;
+    using global::Apex.Database;
+    using global::Apex.System;
+    using IDisposable = global::System.IDisposable;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_system.htm#apex_methods_system_system
+    /// </summary>
     public class System : IDisposable
     {
-        public static System runAs(SObject user)
+        // infrastructure
+        public System(dynamic self)
         {
-            return new System();
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(System));
+            }
+        }
 
         public void Dispose()
         {
-
+            Self.Dispose();
         }
 
+        // API
         public static void abortJob(string jobId)
         {
-            throw new global::System.NotImplementedException("System.AbortJob");
-        }
-
-        public static void assert(bool condition)
-        {
-            NUnitAssert.True(condition);
+            Implementation.abortJob(jobId);
         }
 
         public static void assert(bool condition, object msg)
         {
-            ////throw new global::System.NotImplementedException("System.Assert : Use NUnit Asserts");
-            NUnitAssert.True(condition, "{0}", msg);
-        }
-
-        public static void assertEquals(object expected, object actual)
-        {
-            ////throw new global::System.NotImplementedException("System.AssertEquals : Use NUnit Asserts");
-            NUnitAssert.AreEqual(expected, actual);
+            Implementation.assert(condition, msg);
         }
 
         public static void assertEquals(object expected, object actual, object msg)
         {
-            ////throw new global::System.NotImplementedException("System.AssertEquals : Use NUnit Asserts");
-            NUnitAssert.AreEqual(expected, actual, "{0}", msg);
-        }
-
-        public static void assertNotEquals(object expected, object actual)
-        {
-            ////throw new global::System.NotImplementedException("System.AssertNotEquals : Use NUnit Asserts");
-            NUnitAssert.AreNotEqual(expected, actual);
+            Implementation.assertEquals(expected, actual, msg);
         }
 
         public static void assertNotEquals(object expected, object actual, object msg)
         {
-            ////throw new global::System.NotImplementedException("System.AssertNotEquals : Use NUnit Asserts");
-            NUnitAssert.AreNotEqual(expected, actual, "{0}", msg);
-        }
-
-        public static void changeProtection(string apiName, string typeApiName, string protection)
-        {
-            throw new global::System.NotImplementedException("System.ChangeProtection");
-        }
-
-        public static bool checkPackageBooleanValue(string apiName)
-        {
-            throw new global::System.NotImplementedException("System.CheckPackageBooleanValue");
-        }
-
-        public static Date checkPackageDateValue(string apiName)
-        {
-            throw new global::System.NotImplementedException("System.CheckPackageDateValue");
-        }
-
-        public static int checkPackageIntegerValue(string apiName)
-        {
-            throw new global::System.NotImplementedException("System.CheckPackageIntegerValue");
-        }
-
-        public static bool checkPermission(string apiName)
-        {
-            throw new global::System.NotImplementedException("System.CheckPermission");
+            Implementation.assertNotEquals(expected, actual, msg);
         }
 
         public static PageReference currentPageReference()
         {
-            throw new global::System.NotImplementedException("System.CurrentPageReference");
+            return Implementation.currentPageReference();
         }
 
         public static long currentTimeMillis()
         {
-            throw new global::System.NotImplementedException("System.CurrentTimeMillis");
+            return Implementation.currentTimeMillis();
         }
 
-        public static void debug(object o)
+        public static void debug(object msg)
         {
-            global::System.Console.WriteLine(o);
+            Implementation.debug(msg);
         }
 
-        public static void debug(object logLevel, object o)
+        public static void debug(LoggingLevel logLevel, object msg)
         {
-            global::System.Console.WriteLine(o);
+            Implementation.debug(logLevel, msg);
         }
 
-        public static ID enqueueJob(object queueable)
+        public static ID enqueueJob(object queueableObj)
         {
-            throw new global::System.NotImplementedException("System.EnqueueJob");
+            return Implementation.enqueueJob(queueableObj);
         }
 
-        public static bool equals(object left, object right)
+        public static bool equals(object obj1, object obj2)
         {
-            throw new global::System.NotImplementedException("System.Equals");
+            return Implementation.equals(obj1, obj2);
         }
 
-        //public static ApplicationReadWriteMode GetApplicationReadWriteMode(){throw new global::System.NotImplementedException("System.GetApplicationReadWriteMode");}
+        public static ApplicationReadWriteMode getApplicationReadWriteMode()
+        {
+            return Implementation.getApplicationReadWriteMode();
+        }
+
         public static int hashCode(object obj)
         {
-            throw new global::System.NotImplementedException("System.HashCode");
+            return Implementation.hashCode(obj);
         }
 
         public static bool isBatch()
         {
-            throw new global::System.NotImplementedException("System.IsBatch");
+            return Implementation.isBatch();
         }
 
         public static bool isFuture()
         {
-            throw new global::System.NotImplementedException("System.IsFuture");
+            return Implementation.isFuture();
         }
 
         public static bool isQueueable()
         {
-            throw new global::System.NotImplementedException("System.IsQueueable");
+            return Implementation.isQueueable();
         }
 
         public static bool isScheduled()
         {
-            throw new global::System.NotImplementedException("System.IsScheduled");
+            return Implementation.isScheduled();
         }
 
         public static void movePassword(ID targetUserId, ID sourceUserId)
         {
-            throw new global::System.NotImplementedException("System.MovePassword");
+            Implementation.movePassword(targetUserId, sourceUserId);
         }
 
-        public static DateTime now()
+        public static Datetime now()
         {
-            throw new global::System.NotImplementedException("System.Now");
+            return Implementation.now();
         }
 
-        public static List<ID> process(List<ID> workitemIds, string action, string commments, string nextApprover)
+        public static List<ID> process(List<ID> workItemIds, string action, string comments, string nextApprover)
         {
-            throw new global::System.NotImplementedException("System.Process");
+            return Implementation.process(workItemIds, action, comments, nextApprover);
         }
 
-        public static int purgeOldAsyncJobs(Date date)
+        public static int purgeOldAsyncJobs(Date dt)
         {
-            throw new global::System.NotImplementedException("System.PurgeOldAsyncJobs");
+            return Implementation.purgeOldAsyncJobs(dt);
         }
 
         public static Version requestVersion()
         {
-            throw new global::System.NotImplementedException("System.RequestVersion");
+            return Implementation.requestVersion();
         }
 
         public static ResetPasswordResult resetPassword(ID userId, bool sendUserEmail)
         {
-            throw new global::System.NotImplementedException("System.ResetPassword");
+            return Implementation.resetPassword(userId, sendUserEmail);
         }
 
-        public static void runAs(Package.Version version)
+        public static IDisposable runAs(Version version)
         {
-            throw new global::System.NotImplementedException("System.RunAs");
+            return Implementation.runAs(version);
         }
 
-        public static void runAs(SObject user, object block)
+        public static IDisposable runAs(User userSObject)
         {
-            throw new global::System.NotImplementedException("System.RunAs");
+            return Implementation.runAs(userSObject);
         }
 
-        public static string schedule(string jobName, string cronExp, object schedulable)
+        public static IDisposable runAs(SObject userSObject)
         {
-            throw new global::System.NotImplementedException("System.Schedule");
+            return Implementation.runAs(userSObject);
         }
 
-        public static string scheduleBatch(object batchable, string jobName, int minutesFromNow)
+        public static IDisposable runAs(SObject user, object block)
         {
-            throw new global::System.NotImplementedException("System.ScheduleBatch");
+            return Implementation.runAs(user, block);
         }
 
-        public static string scheduleBatch(object batchable, string jobName, int minutesFromNow, int scopeSize)
+        public static string schedule(string jobName, string cronExpression, object schedulableClass)
         {
-            throw new global::System.NotImplementedException("System.ScheduleBatch");
+            return Implementation.schedule(jobName, cronExpression, schedulableClass);
         }
 
-        public static void setPackageBooleanValue(string apiName, bool value)
+        public static string scheduleBatch(Batchable batchable, string jobName, int minutesFromNow)
         {
-            throw new global::System.NotImplementedException("System.SetPackageBooleanValue");
+            return Implementation.scheduleBatch(batchable, jobName, minutesFromNow);
         }
 
-        public static void setPackageDateValue(string apiName, Date value)
+        public static string scheduleBatch(Batchable batchable, string jobName, int minutesFromNow, int scopeSize)
         {
-            throw new global::System.NotImplementedException("System.SetPackageDateValue");
-        }
-
-        public static void setPackageIntegerValue(string apiName, int value)
-        {
-            throw new global::System.NotImplementedException("System.SetPackageIntegerValue");
+            return Implementation.scheduleBatch(batchable, jobName, minutesFromNow, scopeSize);
         }
 
         public static void setPassword(ID userId, string password)
         {
-            throw new global::System.NotImplementedException("System.SetPassword");
+            Implementation.setPassword(userId, password);
         }
 
-        public static List<ID> submit(List<ID> ids, string commments, string nextApprover)
+        public static List<ID> submit(List<ID> workItemIds, string comments, string nextApprover)
         {
-            throw new global::System.NotImplementedException("System.Submit");
+            return Implementation.submit(workItemIds, comments, nextApprover);
         }
 
         public static Date today()
         {
-            throw new global::System.NotImplementedException("System.Today");
+            return Implementation.today();
+        }
+
+        public static void assert(bool condition)
+        {
+            Implementation.assert(condition);
+        }
+
+        public static void assertEquals(object expected, object actual)
+        {
+            Implementation.assertEquals(expected, actual);
+        }
+
+        public static void assertNotEquals(object expected, object actual)
+        {
+            Implementation.assertNotEquals(expected, actual);
+        }
+
+        public static void changeOwnPassword(string oldPassword, string newPassword)
+        {
+            Implementation.changeOwnPassword(oldPassword, newPassword);
+        }
+
+        public static ResetPasswordResult resetPasswordWithEmailTemplate(ID userId, bool sendUserEmail, string emailTemplateName)
+        {
+            return Implementation.resetPasswordWithEmailTemplate(userId, sendUserEmail, emailTemplateName);
+        }
+
+        public static string schedule(string jobName, string cronExp, Schedulable schedulable)
+        {
+            return Implementation.schedule(jobName, cronExp, schedulable);
         }
     }
 }

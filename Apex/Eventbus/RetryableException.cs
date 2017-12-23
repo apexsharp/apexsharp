@@ -1,37 +1,48 @@
-using Apex.System;
-
-namespace Apex.Eventbus
+namespace Apex.EventBus
 {
-    public class RetryableException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class RetryableException : Exception
     {
+        // infrastructure
+        public RetryableException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RetryableException));
+            }
+        }
+
+        // API
         public RetryableException()
         {
-            throw new global::System.NotImplementedException("RetryableException");
+            Self = Implementation.Constructor();
         }
 
         public RetryableException(Exception param1)
         {
-            throw new global::System.NotImplementedException("RetryableException");
+            Self = Implementation.Constructor(param1);
         }
 
         public RetryableException(string param1)
         {
-            throw new global::System.NotImplementedException("RetryableException");
+            Self = Implementation.Constructor(param1);
         }
 
         public RetryableException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("RetryableException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("RetryableException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("RetryableException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

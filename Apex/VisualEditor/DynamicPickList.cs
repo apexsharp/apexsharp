@@ -1,35 +1,60 @@
 namespace Apex.VisualEditor
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_VisualEditor_DynamicPickList.htm#apex_class_VisualEditor_DynamicPickList
+    /// </summary>
     public class DynamicPickList
     {
-        public DynamicPickList()
+        // infrastructure
+        public DynamicPickList(dynamic self)
         {
-            throw new global::System.NotImplementedException("DynamicPickList");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DynamicPickList));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("DynamicPickList.Clone");
+            return Self.clone();
         }
 
-        public VisualEditor.DataRow getDefaultValue()
+        public DataRow getDefaultValue()
         {
-            throw new global::System.NotImplementedException("DynamicPickList.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public string getLabel(object attributeValue)
         {
-            throw new global::System.NotImplementedException("DynamicPickList.GetLabel");
+            return Self.getLabel(attributeValue);
         }
 
-        public VisualEditor.DynamicPickListRows getValues()
+        public DynamicPickListRows getValues()
         {
-            throw new global::System.NotImplementedException("DynamicPickList.GetValues");
+            return Self.getValues();
         }
 
         public bool isValid(object attributeValue)
         {
-            throw new global::System.NotImplementedException("DynamicPickList.IsValid");
+            return Self.isValid(attributeValue);
+        }
+
+        public DynamicPickList()
+        {
+            Self = Implementation.Constructor();
         }
     }
 }

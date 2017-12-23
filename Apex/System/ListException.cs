@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class ListException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class ListException : Exception
     {
+        // infrastructure
+        public ListException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ListException));
+            }
+        }
+
+        // API
         public ListException()
         {
-            throw new global::System.NotImplementedException("ListException");
+            Self = Implementation.Constructor();
         }
 
         public ListException(Exception param1)
         {
-            throw new global::System.NotImplementedException("ListException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ListException(string param1)
         {
-            throw new global::System.NotImplementedException("ListException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ListException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("ListException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("ListException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("ListException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("ListException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("ListException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("ListException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("ListException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("ListException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

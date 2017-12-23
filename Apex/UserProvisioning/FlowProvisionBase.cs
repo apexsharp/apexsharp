@@ -1,35 +1,60 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FlowProvisionBase
     {
+        // infrastructure
+        public FlowProvisionBase(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FlowProvisionBase));
+            }
+        }
+
+        // API
         public FlowProvisionBase(string uprId)
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase");
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase.Clone");
+            return Self.clone();
         }
 
         public string getFlowName()
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase.GetFlowName");
+            return Self.getFlowName();
         }
 
         public string getFlowNamespace()
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase.GetFlowNamespace");
+            return Self.getFlowNamespace();
         }
 
         public bool hasFlow()
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase.HasFlow");
+            return Self.hasFlow();
         }
 
         public bool hasFlowOrApex()
         {
-            throw new global::System.NotImplementedException("FlowProvisionBase.HasFlowOrApex");
+            return Self.hasFlowOrApex();
         }
     }
 }

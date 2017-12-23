@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ReferenceRecordField
     {
+        // infrastructure
+        public ReferenceRecordField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReferenceRecordField));
+            }
+        }
+
+        // API
+        object reference
+        {
+            get
+            {
+                return Self.reference;
+            }
+            set
+            {
+                Self.reference = value;
+            }
+        }
+
         public ReferenceRecordField()
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReferenceRecordField.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,27 +1,17 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class BucketType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_enum_reports_BucketType.htm
+    /// </summary>
+    public enum BucketType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("BucketType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("BucketType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("BucketType.Ordinal");
-        }
-
-        public static List<BucketType> values()
-        {
-            throw new global::System.NotImplementedException("BucketType.Values");
-        }
+        NUMBER,
+        PICKLIST,
+        TEXT
     }
 }

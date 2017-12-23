@@ -1,82 +1,105 @@
-using Apex.System;
-
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class VariableDefinition
     {
+        // infrastructure
+        public VariableDefinition(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(VariableDefinition));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.Clone");
+            return Self.clone();
         }
 
         public object getComputedValue()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetComputedValue");
+            return Self.getComputedValue();
         }
 
         public object getDefaultValue()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public string getDescription()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetDescription");
+            return Self.getDescription();
         }
 
-        public Set<String> getExcludes()
+        public Set<string> getExcludes()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetExcludes");
+            return Self.getExcludes();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetLabel");
+            return Self.getLabel();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetName");
+            return Self.getName();
         }
 
         public VariableType getVariableType()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.GetVariableType");
+            return Self.getVariableType();
         }
 
         public bool isExcludeSelected()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.IsExcludeSelected");
+            return Self.isExcludeSelected();
         }
 
         public bool isRequired()
         {
-            throw new global::System.NotImplementedException("VariableDefinition.IsRequired");
+            return Self.isRequired();
         }
 
         public void setComputedValue(object computedValue)
         {
-            throw new global::System.NotImplementedException("VariableDefinition.SetComputedValue");
+            Self.setComputedValue(computedValue);
         }
 
         public void setDescription(string description)
         {
-            throw new global::System.NotImplementedException("VariableDefinition.SetDescription");
+            Self.setDescription(description);
         }
 
-        public void setExcludes(Set<String> excludes)
+        public void setExcludes(Set<string> excludes)
         {
-            throw new global::System.NotImplementedException("VariableDefinition.SetExcludes");
+            Self.setExcludes(excludes);
         }
 
         public void setLabel(string label)
         {
-            throw new global::System.NotImplementedException("VariableDefinition.SetLabel");
+            Self.setLabel(label);
         }
 
         public void setRequired(bool required)
         {
-            throw new global::System.NotImplementedException("VariableDefinition.SetRequired");
+            Self.setRequired(required);
         }
     }
 }

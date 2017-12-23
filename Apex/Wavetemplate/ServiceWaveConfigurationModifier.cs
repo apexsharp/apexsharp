@@ -1,20 +1,40 @@
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ServiceWaveConfigurationModifier
     {
-        public ServiceWaveConfigurationModifier()
+        // infrastructure
+        public ServiceWaveConfigurationModifier(dynamic self)
         {
-            throw new global::System.NotImplementedException("ServiceWaveConfigurationModifier");
+            Self = self;
         }
 
-        public void beforeAppUpdate(WaveTemplateInfo template, string previousAppVersion, Answers answers)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ServiceWaveConfigurationModifier.BeforeAppUpdate");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ServiceWaveConfigurationModifier));
+            }
+        }
+
+        // API
+        public ServiceWaveConfigurationModifier()
+        {
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ServiceWaveConfigurationModifier.Clone");
+            return Self.clone();
         }
     }
 }

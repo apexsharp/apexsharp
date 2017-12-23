@@ -1,25 +1,45 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class PresenceFlagFieldTreatment
     {
+        // infrastructure
+        public PresenceFlagFieldTreatment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PresenceFlagFieldTreatment));
+            }
+        }
+
+        // API
         public PresenceFlagFieldTreatment()
         {
-            throw new global::System.NotImplementedException("PresenceFlagFieldTreatment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PresenceFlagFieldTreatment.Clone");
+            return Self.clone();
         }
 
         public FieldTreatmentType getType()
         {
-            throw new global::System.NotImplementedException("PresenceFlagFieldTreatment.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("PresenceFlagFieldTreatment.ToString");
+            return Self.toString();
         }
     }
 }

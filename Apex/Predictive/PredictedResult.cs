@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class PredictedResult
     {
+        // infrastructure
+        public PredictedResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PredictedResult));
+            }
+        }
+
+        // API
+        public PredictedResult()
+        {
+            Self = Implementation.Constructor();
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("PredictedResult.Clone");
+            return Self.clone();
         }
 
         public Map<String, PredictedField> getPredictedFields()
         {
-            throw new global::System.NotImplementedException("PredictedResult.GetPredictedFields");
+            return Self.getPredictedFields();
         }
 
         public List<string> getWarnings()
         {
-            throw new global::System.NotImplementedException("PredictedResult.GetWarnings");
+            return Self.getWarnings();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("PredictedResult.ToString");
+            return Self.toString();
         }
     }
 }

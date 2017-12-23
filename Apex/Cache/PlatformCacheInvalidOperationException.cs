@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class PlatformCacheInvalidOperationException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class PlatformCacheInvalidOperationException : Exception
     {
+        // infrastructure
+        public PlatformCacheInvalidOperationException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PlatformCacheInvalidOperationException));
+            }
+        }
+
+        // API
         public PlatformCacheInvalidOperationException()
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Self = Implementation.Constructor();
         }
 
         public PlatformCacheInvalidOperationException(Exception param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Self = Implementation.Constructor(param1);
         }
 
         public PlatformCacheInvalidOperationException(string param1)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
+            Self = Implementation.Constructor(param1);
         }
 
         public PlatformCacheInvalidOperationException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("PlatformCacheInvalidOperationException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

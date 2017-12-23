@@ -1,22 +1,45 @@
-
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Cases
     {
+        // infrastructure
+        public Cases(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Cases));
+            }
+        }
+
+        // API
         public Cases()
         {
-            throw new global::System.NotImplementedException("Cases");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Cases.Clone");
+            return Self.clone();
         }
 
         public static ID getCaseIdFromEmailThreadId(string emailThreadId)
         {
-            throw new global::System.NotImplementedException("Cases.GetCaseIdFromEmailThreadId");
+            return Implementation.getCaseIdFromEmailThreadId(emailThreadId);
         }
     }
 }

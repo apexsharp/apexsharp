@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserProfileTab
     {
+        // infrastructure
+        public UserProfileTab(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserProfileTab));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object isDefault
+        {
+            get
+            {
+                return Self.isDefault;
+            }
+            set
+            {
+                Self.isDefault = value;
+            }
+        }
+
+        object tabType
+        {
+            get
+            {
+                return Self.tabType;
+            }
+            set
+            {
+                Self.tabType = value;
+            }
+        }
+
+        object tabUrl
+        {
+            get
+            {
+                return Self.tabUrl;
+            }
+            set
+            {
+                Self.tabUrl = value;
+            }
+        }
+
         public UserProfileTab()
         {
-            throw new global::System.NotImplementedException("UserProfileTab");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserProfileTab.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UserProfileTab.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UserProfileTab.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UserProfileTab.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UserProfileTab.ToString");
+            return Self.toString();
         }
     }
 }

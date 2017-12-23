@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Announcement
     {
+        // infrastructure
+        public Announcement(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Announcement));
+            }
+        }
+
+        // API
+        object expirationDate
+        {
+            get
+            {
+                return Self.expirationDate;
+            }
+            set
+            {
+                Self.expirationDate = value;
+            }
+        }
+
+        object feedElement
+        {
+            get
+            {
+                return Self.feedElement;
+            }
+            set
+            {
+                Self.feedElement = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object isArchived
+        {
+            get
+            {
+                return Self.isArchived;
+            }
+            set
+            {
+                Self.isArchived = value;
+            }
+        }
+
+        object sendEmails
+        {
+            get
+            {
+                return Self.sendEmails;
+            }
+            set
+            {
+                Self.sendEmails = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public Announcement()
         {
-            throw new global::System.NotImplementedException("Announcement");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Announcement.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Announcement.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Announcement.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Announcement.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Announcement.ToString");
+            return Self.toString();
         }
     }
 }

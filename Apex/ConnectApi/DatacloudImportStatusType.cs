@@ -1,27 +1,86 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DatacloudImportStatusType
     {
+        // infrastructure
+        public DatacloudImportStatusType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatacloudImportStatusType));
+            }
+        }
+
+        // API
+        object Duplicate
+        {
+            get
+            {
+                return Self.Duplicate;
+            }
+            set
+            {
+                Self.Duplicate = value;
+            }
+        }
+
+        object Error
+        {
+            get
+            {
+                return Self.Error;
+            }
+            set
+            {
+                Self.Error = value;
+            }
+        }
+
+        object Success
+        {
+            get
+            {
+                return Self.Success;
+            }
+            set
+            {
+                Self.Success = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DatacloudImportStatusType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DatacloudImportStatusType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("DatacloudImportStatusType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<DatacloudImportStatusType> values()
         {
-            throw new global::System.NotImplementedException("DatacloudImportStatusType.Values");
+            return Implementation.values();
         }
     }
 }

@@ -1,42 +1,65 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectAnalysis
     {
-        public object clone()
+        // infrastructure
+        public ObjectAnalysis(dynamic self)
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.Clone");
+            Self = self;
         }
 
-        public SimilarResult findSimilar(Row target, string fieldName)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.FindSimilar");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectAnalysis));
+            }
+        }
+
+        // API
+        public ObjectAnalysis()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string getObjectName()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.GetObjectName");
+            return Self.getObjectName();
+        }
+
+        public SimilarResult findSimilar(Row target, string fieldName)
+        {
+            return Self.findSimilar(target, fieldName);
         }
 
         public ObjectRefreshStatus getRefreshStatus()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.GetRefreshStatus");
+            return Self.getRefreshStatus();
         }
 
         public PredictedResult predict(Row fixedApex, List<string> predict)
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.Predict");
+            return Self.predict(fixedApex, predict);
         }
 
         public void refresh(ObjectTreatment objectTreatment)
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.Refresh");
+            Self.refresh(objectTreatment);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysis.ToString");
+            return Self.toString();
         }
     }
 }

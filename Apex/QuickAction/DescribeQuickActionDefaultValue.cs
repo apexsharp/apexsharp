@@ -1,15 +1,64 @@
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_quickaction_describequickactiondefaultvalue.htm#apex_class_quickaction_describequickactiondefaultvalue
+    /// </summary>
     public class DescribeQuickActionDefaultValue
     {
+        // infrastructure
+        public DescribeQuickActionDefaultValue(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeQuickActionDefaultValue));
+            }
+        }
+
+        // API
         public string getDefaultValue()
         {
-            throw new global::System.NotImplementedException("DescribeQuickActionDefaultValue.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public string getField()
         {
-            throw new global::System.NotImplementedException("DescribeQuickActionDefaultValue.GetField");
+            return Self.getField();
+        }
+
+        string defaultValue
+        {
+            get
+            {
+                return Self.defaultValue;
+            }
+            set
+            {
+                Self.defaultValue = value;
+            }
+        }
+
+        string field
+        {
+            get
+            {
+                return Self.field;
+            }
+            set
+            {
+                Self.field = value;
+            }
         }
     }
 }

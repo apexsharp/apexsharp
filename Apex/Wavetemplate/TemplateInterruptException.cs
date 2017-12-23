@@ -1,37 +1,48 @@
-using Apex.System;
-
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
-    public class TemplateInterruptException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class TemplateInterruptException : Exception
     {
+        // infrastructure
+        public TemplateInterruptException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TemplateInterruptException));
+            }
+        }
+
+        // API
         public TemplateInterruptException()
         {
-            throw new global::System.NotImplementedException("TemplateInterruptException");
+            Self = Implementation.Constructor();
         }
 
         public TemplateInterruptException(Exception param1)
         {
-            throw new global::System.NotImplementedException("TemplateInterruptException");
+            Self = Implementation.Constructor(param1);
         }
 
         public TemplateInterruptException(string msg)
         {
-            throw new global::System.NotImplementedException("TemplateInterruptException");
+            Self = Implementation.Constructor(msg);
         }
 
         public TemplateInterruptException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("TemplateInterruptException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("TemplateInterruptException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("TemplateInterruptException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

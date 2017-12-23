@@ -1,25 +1,50 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_NotificationActionContext.htm#apex_class_reports_NotificationActionContext
+    /// </summary>
     public class NotificationActionContext
     {
-        public NotificationActionContext(ReportInstance reportInstance, ThresholdInformation thresholdInformation)
+        // infrastructure
+        public NotificationActionContext(dynamic self)
         {
-            throw new global::System.NotImplementedException("NotificationActionContext");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("NotificationActionContext.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(NotificationActionContext));
+            }
+        }
+
+        // API
+        public NotificationActionContext(ReportInstance reportInstance, ThresholdInformation thresholdInformation)
+        {
+            Self = Implementation.Constructor(reportInstance, thresholdInformation);
         }
 
         public ReportInstance getReportInstance()
         {
-            throw new global::System.NotImplementedException("NotificationActionContext.GetReportInstance");
+            return Self.getReportInstance();
         }
 
         public ThresholdInformation getThresholdInformation()
         {
-            throw new global::System.NotImplementedException("NotificationActionContext.GetThresholdInformation");
+            return Self.getThresholdInformation();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

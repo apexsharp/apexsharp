@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RecommendationAudienceMemberOperationType
     {
+        // infrastructure
+        public RecommendationAudienceMemberOperationType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RecommendationAudienceMemberOperationType));
+            }
+        }
+
+        // API
+        object Add
+        {
+            get
+            {
+                return Self.Add;
+            }
+            set
+            {
+                Self.Add = value;
+            }
+        }
+
+        object Remove
+        {
+            get
+            {
+                return Self.Remove;
+            }
+            set
+            {
+                Self.Remove = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceMemberOperationType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceMemberOperationType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceMemberOperationType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<RecommendationAudienceMemberOperationType> values()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceMemberOperationType.Values");
+            return Implementation.values();
         }
     }
 }

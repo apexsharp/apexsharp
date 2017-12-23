@@ -1,96 +1,84 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DmlException : Exception
     {
+        // infrastructure
+        public DmlException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DmlException));
+            }
+        }
+
+        // API
         public DmlException()
         {
-            throw new global::System.NotImplementedException("DmlException");
+            Self = Implementation.Constructor();
         }
 
         public DmlException(Exception param1)
         {
-            throw new global::System.NotImplementedException("DmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public DmlException(string param1)
         {
-            throw new global::System.NotImplementedException("DmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public DmlException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("DmlException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetCause");
+            Self = Implementation.Constructor(param1, param2);
         }
 
         public List<string> getDmlFieldNames(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlFieldNames");
+            return Self.getDmlFieldNames(index);
         }
 
-        //public List<Schema.SObjectField> GetDmlFields(int index){throw new global::System.NotImplementedException("DmlException.GetDmlFields");}
+        public List<SObjectField> getDmlFields(int index)
+        {
+            return Self.getDmlFields(index);
+        }
+
         public string getDmlId(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlId");
+            return Self.getDmlId(index);
         }
 
         public int getDmlIndex(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlIndex");
+            return Self.getDmlIndex(index);
         }
 
         public string getDmlMessage(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlMessage");
+            return Self.getDmlMessage(index);
         }
 
         public string getDmlStatusCode(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlStatusCode");
+            return Self.getDmlStatusCode(index);
         }
 
         public StatusCode getDmlType(int index)
         {
-            throw new global::System.NotImplementedException("DmlException.GetDmlType");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetMessage");
-        }
-
-        public int getNumDml()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetNumDml");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("DmlException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("DmlException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("DmlException.SetMessage");
+            return Self.getDmlType(index);
         }
     }
 }

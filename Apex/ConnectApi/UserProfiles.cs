@@ -1,78 +1,100 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_UserProfiles_static_methods.htm#apex_ConnectAPI_UserProfiles_static_methods
+    /// </summary>
     public class UserProfiles
     {
-        public object clone()
+        // infrastructure
+        public UserProfiles(dynamic self)
         {
-            throw new global::System.NotImplementedException("UserProfiles.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserProfiles));
+            }
+        }
+
+        // API
         public static void deleteBannerPhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("UserProfiles.DeleteBannerPhoto");
+            Implementation.deleteBannerPhoto(communityId, userId);
         }
 
         public static void deletePhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("UserProfiles.DeletePhoto");
+            Implementation.deletePhoto(communityId, userId);
         }
 
         public static BannerPhoto getBannerPhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("UserProfiles.GetBannerPhoto");
+            return Implementation.getBannerPhoto(communityId, userId);
         }
 
         public static Photo getPhoto(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("UserProfiles.GetPhoto");
+            return Implementation.getPhoto(communityId, userId);
         }
 
         public static UserProfile getUserProfile(string communityId, string userId)
         {
-            throw new global::System.NotImplementedException("UserProfiles.GetUserProfile");
-        }
-
-        public static BannerPhoto setBannerPhoto(string communityId, string userId, BinaryInput fileUpload)
-        {
-            throw new global::System.NotImplementedException("UserProfiles.SetBannerPhoto");
+            return Implementation.getUserProfile(communityId, userId);
         }
 
         public static BannerPhoto setBannerPhoto(string communityId, string userId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetBannerPhoto");
+            return Implementation.setBannerPhoto(communityId, userId, fileId, versionNumber);
         }
 
-        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string userId,
-            BannerPhotoInput bannerPhoto)
+        public static BannerPhoto setBannerPhoto(string communityId, string userId, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetBannerPhotoWithAttributes");
+            return Implementation.setBannerPhoto(communityId, userId, fileUpload);
         }
 
-        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string userId,
-            BannerPhotoInput bannerPhoto, BinaryInput fileUpload)
+        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string userId, BannerPhotoInput bannerPhoto)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetBannerPhotoWithAttributes");
+            return Implementation.setBannerPhotoWithAttributes(communityId, userId, bannerPhoto);
         }
 
-        public static Photo setPhoto(string communityId, string userId, BinaryInput fileUpload)
+        public static BannerPhoto setBannerPhotoWithAttributes(string communityId, string userId, BannerPhotoInput bannerPhoto, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetPhoto");
+            return Implementation.setBannerPhotoWithAttributes(communityId, userId, bannerPhoto, fileUpload);
         }
 
         public static Photo setPhoto(string communityId, string userId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetPhoto");
+            return Implementation.setPhoto(communityId, userId, fileId, versionNumber);
+        }
+
+        public static Photo setPhoto(string communityId, string userId, BinaryInput fileUpload)
+        {
+            return Implementation.setPhoto(communityId, userId, fileUpload);
         }
 
         public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, userId, photo);
         }
 
-        public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo,
-            BinaryInput fileUpload)
+        public static Photo setPhotoWithAttributes(string communityId, string userId, PhotoInput photo, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("UserProfiles.SetPhotoWithAttributes");
+            return Implementation.setPhotoWithAttributes(communityId, userId, photo, fileUpload);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

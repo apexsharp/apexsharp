@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Canvas
 {
-    public class CanvasRenderException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class CanvasRenderException : Exception
     {
+        // infrastructure
+        public CanvasRenderException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CanvasRenderException));
+            }
+        }
+
+        // API
         public CanvasRenderException()
         {
-            throw new global::System.NotImplementedException("CanvasRenderException");
+            Self = Implementation.Constructor();
         }
 
         public CanvasRenderException(Exception param1)
         {
-            throw new global::System.NotImplementedException("CanvasRenderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public CanvasRenderException(string param1)
         {
-            throw new global::System.NotImplementedException("CanvasRenderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public CanvasRenderException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("CanvasRenderException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("CanvasRenderException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("CanvasRenderException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FilePreviewUrl
     {
+        // infrastructure
+        public FilePreviewUrl(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FilePreviewUrl));
+            }
+        }
+
+        // API
+        object pageNumber
+        {
+            get
+            {
+                return Self.pageNumber;
+            }
+            set
+            {
+                Self.pageNumber = value;
+            }
+        }
+
+        object previewUrl
+        {
+            get
+            {
+                return Self.previewUrl;
+            }
+            set
+            {
+                Self.previewUrl = value;
+            }
+        }
+
         public FilePreviewUrl()
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FilePreviewUrl.ToString");
+            return Self.toString();
         }
     }
 }

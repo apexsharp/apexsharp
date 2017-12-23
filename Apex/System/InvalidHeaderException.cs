@@ -1,35 +1,48 @@
 namespace Apex.System
 {
-    public class InvalidHeaderException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class InvalidHeaderException : Exception
     {
+        // infrastructure
+        public InvalidHeaderException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidHeaderException));
+            }
+        }
+
+        // API
         public InvalidHeaderException()
         {
-            throw new global::System.NotImplementedException("InvalidHeaderException");
+            Self = Implementation.Constructor();
         }
 
         public InvalidHeaderException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidHeaderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidHeaderException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidHeaderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidHeaderException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidHeaderException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("InvalidHeaderException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("InvalidHeaderException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

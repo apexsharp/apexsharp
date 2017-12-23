@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class UnexpectedException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class UnexpectedException : Exception
     {
+        // infrastructure
+        public UnexpectedException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UnexpectedException));
+            }
+        }
+
+        // API
         public UnexpectedException()
         {
-            throw new global::System.NotImplementedException("UnexpectedException");
+            Self = Implementation.Constructor();
         }
 
         public UnexpectedException(Exception param1)
         {
-            throw new global::System.NotImplementedException("UnexpectedException");
+            Self = Implementation.Constructor(param1);
         }
 
         public UnexpectedException(string param1)
         {
-            throw new global::System.NotImplementedException("UnexpectedException");
+            Self = Implementation.Constructor(param1);
         }
 
         public UnexpectedException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("UnexpectedException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("UnexpectedException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

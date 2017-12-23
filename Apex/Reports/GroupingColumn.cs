@@ -1,35 +1,60 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_groupingcolumn.htm#apex_class_reports_groupingcolumn
+    /// </summary>
     public class GroupingColumn
     {
+        // infrastructure
+        public GroupingColumn(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(GroupingColumn));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.Clone");
+            return Self.clone();
         }
 
         public ColumnDataType getDataType()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.GetDataType");
+            return Self.getDataType();
         }
 
         public int getGroupingLevel()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.GetGroupingLevel");
+            return Self.getGroupingLevel();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.GetLabel");
+            return Self.getLabel();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.GetName");
+            return Self.getName();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GroupingColumn.ToString");
+            return Self.toString();
         }
     }
 }

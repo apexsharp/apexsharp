@@ -1,32 +1,43 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class UnsupportedOperationException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class UnsupportedOperationException : Exception
     {
+        // infrastructure
+        public UnsupportedOperationException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UnsupportedOperationException));
+            }
+        }
+
+        // API
         public UnsupportedOperationException()
         {
-            throw new global::System.NotImplementedException("UnsupportedOperationException");
+            Self = Implementation.Constructor();
         }
 
         public UnsupportedOperationException(Exception param1)
         {
-            throw new global::System.NotImplementedException("UnsupportedOperationException");
+            Self = Implementation.Constructor(param1);
         }
 
         public UnsupportedOperationException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("UnsupportedOperationException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("UnsupportedOperationException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("UnsupportedOperationException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

@@ -1,15 +1,33 @@
 namespace Apex.ConnectApi
 {
-    public class NotFoundException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class NotFoundException : Exception
     {
-        public object clone()
+        // infrastructure
+        public NotFoundException(dynamic self)
         {
-            throw new global::System.NotImplementedException("NotFoundException.Clone");
+            Self = self;
         }
 
-        public string getTypeName()
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("NotFoundException.GetTypeName");
+            get
+            {
+                return Implementor.GetImplementation(typeof(NotFoundException));
+            }
+        }
+
+        // API
+        public NotFoundException(string message)
+        {
+            Self = Implementation.Constructor(message);
         }
     }
 }

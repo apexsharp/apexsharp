@@ -1,30 +1,79 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class InlineImageSegmentInput
     {
+        // infrastructure
+        public InlineImageSegmentInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InlineImageSegmentInput));
+            }
+        }
+
+        // API
+        object altText
+        {
+            get
+            {
+                return Self.altText;
+            }
+            set
+            {
+                Self.altText = value;
+            }
+        }
+
+        object fileId
+        {
+            get
+            {
+                return Self.fileId;
+            }
+            set
+            {
+                Self.fileId = value;
+            }
+        }
+
         public InlineImageSegmentInput()
         {
-            throw new global::System.NotImplementedException("InlineImageSegmentInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("InlineImageSegmentInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("InlineImageSegmentInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("InlineImageSegmentInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("InlineImageSegmentInput.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,27 +1,20 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class EvaluatedConditionOperator
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum EvaluatedConditionOperator
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("EvaluatedConditionOperator.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("EvaluatedConditionOperator.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("EvaluatedConditionOperator.Ordinal");
-        }
-
-        public static List<EvaluatedConditionOperator> values()
-        {
-            throw new global::System.NotImplementedException("EvaluatedConditionOperator.Values");
-        }
+        EQUAL,
+        GREATER_THAN,
+        GREATER_THAN_EQUAL,
+        LESS_THAN,
+        LESS_THAN_EQUAL,
+        NOT_EQUAL
     }
 }

@@ -1,23 +1,45 @@
-using Apex.System;
-
-
 namespace Apex.Wave
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TrendedDatasetProcessor
     {
+        // infrastructure
+        public TrendedDatasetProcessor(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TrendedDatasetProcessor));
+            }
+        }
+
+        // API
         public string getDescription()
         {
-            throw new global::System.NotImplementedException("TrendedDatasetProcessor.GetDescription");
+            return Self.getDescription();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("TrendedDatasetProcessor.GetLabel");
+            return Self.getLabel();
         }
 
         public void processTrendedDataset(ID param1, ID param2)
         {
-            throw new global::System.NotImplementedException("TrendedDatasetProcessor.ProcessTrendedDataset");
+            Self.processTrendedDataset(param1, param2);
         }
     }
 }

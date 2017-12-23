@@ -1,32 +1,43 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class MetadataException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class MetadataException : Exception
     {
+        // infrastructure
+        public MetadataException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MetadataException));
+            }
+        }
+
+        // API
         public MetadataException()
         {
-            throw new global::System.NotImplementedException("MetadataException");
+            Self = Implementation.Constructor();
         }
 
         public MetadataException(Exception param1)
         {
-            throw new global::System.NotImplementedException("MetadataException");
+            Self = Implementation.Constructor(param1);
         }
 
         public MetadataException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("MetadataException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("MetadataException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("MetadataException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

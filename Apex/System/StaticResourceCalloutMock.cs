@@ -1,40 +1,65 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_staticresourcecalloutmock.htm#apex_methods_system_staticresourcecalloutmock
+    /// </summary>
     public class StaticResourceCalloutMock
     {
+        // infrastructure
+        public StaticResourceCalloutMock(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StaticResourceCalloutMock));
+            }
+        }
+
+        // API
         public StaticResourceCalloutMock()
         {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock");
+            Self = Implementation.Constructor();
+        }
+
+        public void setHeader(string headerName, string headerValue)
+        {
+            Self.setHeader(headerName, headerValue);
+        }
+
+        public void setStaticResource(string resourceName)
+        {
+            Self.setStaticResource(resourceName);
+        }
+
+        public void setStatus(string httpStatus)
+        {
+            Self.setStatus(httpStatus);
+        }
+
+        public void setStatusCode(int httpStatusCode)
+        {
+            Self.setStatusCode(httpStatusCode);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.Clone");
+            return Self.clone();
         }
 
         public HttpResponse respond(HttpRequest request)
         {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.Respond");
-        }
-
-        public void setHeader(string key, string val)
-        {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.SetHeader");
-        }
-
-        public void setStaticResource(string staticResourceName)
-        {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.SetStaticResource");
-        }
-
-        public void setStatus(string status)
-        {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.SetStatus");
-        }
-
-        public void setStatusCode(int code)
-        {
-            throw new global::System.NotImplementedException("StaticResourceCalloutMock.SetStatusCode");
+            return Self.respond(request);
         }
     }
 }

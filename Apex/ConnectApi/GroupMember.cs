@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class GroupMember
     {
+        // infrastructure
+        public GroupMember(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(GroupMember));
+            }
+        }
+
+        // API
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object lastFeedAccessDate
+        {
+            get
+            {
+                return Self.lastFeedAccessDate;
+            }
+            set
+            {
+                Self.lastFeedAccessDate = value;
+            }
+        }
+
+        object role
+        {
+            get
+            {
+                return Self.role;
+            }
+            set
+            {
+                Self.role = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
+        object user
+        {
+            get
+            {
+                return Self.user;
+            }
+            set
+            {
+                Self.user = value;
+            }
+        }
+
         public GroupMember()
         {
-            throw new global::System.NotImplementedException("GroupMember");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("GroupMember.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("GroupMember.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("GroupMember.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("GroupMember.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("GroupMember.ToString");
+            return Self.toString();
         }
     }
 }

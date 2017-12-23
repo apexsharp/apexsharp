@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.Messaging
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PushNotification
     {
-        public PushNotification()
+        // infrastructure
+        public PushNotification(dynamic self)
         {
-            throw new global::System.NotImplementedException("PushNotification");
+            Self = self;
         }
 
-        public PushNotification(Map<String, object> payload)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("PushNotification");
+            get
+            {
+                return Implementor.GetImplementation(typeof(PushNotification));
+            }
+        }
+
+        // API
+        public PushNotification()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public PushNotification(Map<string, object> payload)
+        {
+            Self = Implementation.Constructor(payload);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PushNotification.Clone");
+            return Self.clone();
         }
 
-        public void send(string application, Set<String> users)
+        public void send(string application, Set<string> users)
         {
-            throw new global::System.NotImplementedException("PushNotification.Send");
+            Self.send(application, users);
         }
 
-        public void setPayload(Map<String, object> payload)
+        public void setPayload(Map<string, object> payload)
         {
-            throw new global::System.NotImplementedException("PushNotification.SetPayload");
+            Self.setPayload(payload);
         }
 
         public void setTtl(int ttl)
         {
-            throw new global::System.NotImplementedException("PushNotification.SetTtl");
+            Self.setTtl(ttl);
         }
     }
 }

@@ -1,103 +1,380 @@
-using Apex.System;
-
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dml_convertLead.htm#apex_dml_convertLead
+    /// </summary>
     public class LeadConvert
     {
+        // infrastructure
+        public LeadConvert(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LeadConvert));
+            }
+        }
+
+        // API
         public LeadConvert()
         {
-            throw new global::System.NotImplementedException("LeadConvert");
+            Self = Implementation.Constructor();
         }
 
         public ID getAccountId()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetAccountId");
+            return Self.getAccountId();
         }
 
         public ID getContactId()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetContactId");
+            return Self.getContactId();
         }
 
         public string getConvertedStatus()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetConvertedStatus");
+            return Self.getConvertedStatus();
         }
 
-        public ID getLeadId()
+        public ID getLeadID()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetLeadId");
+            return Self.getLeadID();
         }
 
         public string getOpportunityName()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetOpportunityName");
+            return Self.getOpportunityName();
         }
 
-        public ID getOwnerId()
+        public ID getOwnerID()
         {
-            throw new global::System.NotImplementedException("LeadConvert.GetOwnerId");
+            return Self.getOwnerID();
         }
 
         public bool isDoNotCreateOpportunity()
         {
-            throw new global::System.NotImplementedException("LeadConvert.IsDoNotCreateOpportunity");
+            return Self.isDoNotCreateOpportunity();
         }
 
-        public bool isOverwriteLeadSource()
+        public bool isOverWriteLeadSource()
         {
-            throw new global::System.NotImplementedException("LeadConvert.IsOverwriteLeadSource");
+            return Self.isOverWriteLeadSource();
         }
 
         public bool isSendNotificationEmail()
         {
-            throw new global::System.NotImplementedException("LeadConvert.IsSendNotificationEmail");
+            return Self.isSendNotificationEmail();
         }
 
-        public void setAccountId(ID param1)
+        public void setAccountId(ID accountId)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetAccountId");
+            Self.setAccountId(accountId);
         }
 
-        public void setContactId(ID param1)
+        public void setContactId(ID contactId)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetContactId");
+            Self.setContactId(contactId);
         }
 
-        public void setConvertedStatus(string param1)
+        public void setConvertedStatus(string status)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetConvertedStatus");
+            Self.setConvertedStatus(status);
         }
 
-        public void setDoNotCreateOpportunity(bool param1)
+        public void setDoNotCreateOpportunity(bool createOpportunity)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetDoNotCreateOpportunity");
+            Self.setDoNotCreateOpportunity(createOpportunity);
         }
 
-        public void setLeadId(ID param1)
+        public void setLeadId(ID leadId)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetLeadId");
+            Self.setLeadId(leadId);
         }
 
-        public void setOpportunityName(string param1)
+        public void setOpportunityName(string opportunityName)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetOpportunityName");
+            Self.setOpportunityName(opportunityName);
         }
 
-        public void setOverwriteLeadSource(bool param1)
+        public void setOverwriteLeadSource(bool overwriteLeadSource)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetOverwriteLeadSource");
+            Self.setOverwriteLeadSource(overwriteLeadSource);
         }
 
-        public void setOwnerId(ID param1)
+        public void setOwnerId(ID ownerId)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetOwnerId");
+            Self.setOwnerId(ownerId);
         }
 
-        public void setSendNotificationEmail(bool param1)
+        public void setSendNotificationEmail(bool sendEmail)
         {
-            throw new global::System.NotImplementedException("LeadConvert.SetSendNotificationEmail");
+            Self.setSendNotificationEmail(sendEmail);
+        }
+
+        ID accountId
+        {
+            get
+            {
+                return Self.accountId;
+            }
+            set
+            {
+                Self.accountId = value;
+            }
+        }
+
+        SObject accountRecord
+        {
+            get
+            {
+                return Self.accountRecord;
+            }
+            set
+            {
+                Self.accountRecord = value;
+            }
+        }
+
+        bool bypassAccountDedupeCheck
+        {
+            get
+            {
+                return Self.bypassAccountDedupeCheck;
+            }
+            set
+            {
+                Self.bypassAccountDedupeCheck = value;
+            }
+        }
+
+        bool bypassContactDedupeCheck
+        {
+            get
+            {
+                return Self.bypassContactDedupeCheck;
+            }
+            set
+            {
+                Self.bypassContactDedupeCheck = value;
+            }
+        }
+
+        ID contactId
+        {
+            get
+            {
+                return Self.contactId;
+            }
+            set
+            {
+                Self.contactId = value;
+            }
+        }
+
+        SObject contactRecord
+        {
+            get
+            {
+                return Self.contactRecord;
+            }
+            set
+            {
+                Self.contactRecord = value;
+            }
+        }
+
+        string convertedStatus
+        {
+            get
+            {
+                return Self.convertedStatus;
+            }
+            set
+            {
+                Self.convertedStatus = value;
+            }
+        }
+
+        bool doNotCreateOpportunity
+        {
+            get
+            {
+                return Self.doNotCreateOpportunity;
+            }
+            set
+            {
+                Self.doNotCreateOpportunity = value;
+            }
+        }
+
+        ID leadId
+        {
+            get
+            {
+                return Self.leadId;
+            }
+            set
+            {
+                Self.leadId = value;
+            }
+        }
+
+        ID opportunityId
+        {
+            get
+            {
+                return Self.opportunityId;
+            }
+            set
+            {
+                Self.opportunityId = value;
+            }
+        }
+
+        string opportunityName
+        {
+            get
+            {
+                return Self.opportunityName;
+            }
+            set
+            {
+                Self.opportunityName = value;
+            }
+        }
+
+        SObject opportunityRecord
+        {
+            get
+            {
+                return Self.opportunityRecord;
+            }
+            set
+            {
+                Self.opportunityRecord = value;
+            }
+        }
+
+        bool overwriteLeadSource
+        {
+            get
+            {
+                return Self.overwriteLeadSource;
+            }
+            set
+            {
+                Self.overwriteLeadSource = value;
+            }
+        }
+
+        ID ownerId
+        {
+            get
+            {
+                return Self.ownerId;
+            }
+            set
+            {
+                Self.ownerId = value;
+            }
+        }
+
+        bool sendNotificationEmail
+        {
+            get
+            {
+                return Self.sendNotificationEmail;
+            }
+            set
+            {
+                Self.sendNotificationEmail = value;
+            }
+        }
+
+        public SObject getAccountRecord()
+        {
+            return Self.getAccountRecord();
+        }
+
+        public bool getBypassAccountDedupeCheck()
+        {
+            return Self.getBypassAccountDedupeCheck();
+        }
+
+        public bool getBypassContactDedupeCheck()
+        {
+            return Self.getBypassContactDedupeCheck();
+        }
+
+        public SObject getContactRecord()
+        {
+            return Self.getContactRecord();
+        }
+
+        public ID getLeadId()
+        {
+            return Self.getLeadId();
+        }
+
+        public ID getOpportunityId()
+        {
+            return Self.getOpportunityId();
+        }
+
+        public SObject getOpportunityRecord()
+        {
+            return Self.getOpportunityRecord();
+        }
+
+        public ID getOwnerId()
+        {
+            return Self.getOwnerId();
+        }
+
+        public bool isOverwriteLeadSource()
+        {
+            return Self.isOverwriteLeadSource();
+        }
+
+        public void setAccountRecord(SObject param1)
+        {
+            Self.setAccountRecord(param1);
+        }
+
+        public void setBypassAccountDedupeCheck(bool param1)
+        {
+            Self.setBypassAccountDedupeCheck(param1);
+        }
+
+        public void setBypassContactDedupeCheck(bool param1)
+        {
+            Self.setBypassContactDedupeCheck(param1);
+        }
+
+        public void setContactRecord(SObject param1)
+        {
+            Self.setContactRecord(param1);
+        }
+
+        public void setOpportunityId(ID param1)
+        {
+            Self.setOpportunityId(param1);
+        }
+
+        public void setOpportunityRecord(SObject param1)
+        {
+            Self.setOpportunityRecord(param1);
         }
     }
 }

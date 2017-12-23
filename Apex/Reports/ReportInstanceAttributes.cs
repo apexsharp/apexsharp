@@ -1,43 +1,65 @@
-using Apex.System;
-
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ReportInstanceAttributes
     {
-        public object clone()
+        // infrastructure
+        public ReportInstanceAttributes(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.Clone");
+            Self = self;
         }
 
-        public DateTime getCompletionDate()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.GetCompletionDate");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportInstanceAttributes));
+            }
+        }
+
+        // API
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public Datetime getCompletionDate()
+        {
+            return Self.getCompletionDate();
         }
 
         public ID getId()
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.GetId");
+            return Self.getId();
         }
 
         public ID getOwnerId()
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.GetOwnerId");
+            return Self.getOwnerId();
         }
 
-        public DateTime getRequestDate()
+        public Datetime getRequestDate()
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.GetRequestDate");
+            return Self.getRequestDate();
         }
 
         public string getStatus()
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.GetStatus");
+            return Self.getStatus();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportInstanceAttributes.ToString");
+            return Self.toString();
         }
     }
 }

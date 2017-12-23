@@ -1,7 +1,7 @@
 ﻿namespace ApexTest.System
 {
-    using Apex.ApexSharp.NUnit;
-    using Apex.System;
+    using global::Apex.ApexSharp.NUnit;
+    using global::Apex.System;
 
     [TestFixture]
     public class ListTest
@@ -12,7 +12,6 @@
             List<string> newList = new List<string>();
             newList.add("apexSharp");
             System.assert(newList.size() == 1);
-          
         }
     }
 }

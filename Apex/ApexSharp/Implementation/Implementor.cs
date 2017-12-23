@@ -7,8 +7,8 @@ using Type = System.Type;
 
 namespace Apex.ApexSharp.Implementation
 {
-    public class Implementor
-    {
+	public class Implementor
+	{
         public static ConcurrentDictionary<Type, Type> DefaultImplementations { get; } =
             DiscoverDefaultImplementations();
 
@@ -41,6 +41,18 @@ namespace Apex.ApexSharp.Implementation
             if (DefaultImplementations.TryGetValue(type, out var implType))
             {
                 return Activator.CreateInstance(implType);
+            }
+
+            // if the type is generic — try to deconstruct it
+            if (type.IsGenericType)
+            {
+                var typeDef = type.GetGenericTypeDefinition();
+                if (DefaultImplementations.TryGetValue(typeDef, out var getImplType))
+                {
+                    // and reconstruct the implementation type with the same parameters
+                    implType = getImplType.MakeGenericType(type.GetGenericArguments());
+                    return Activator.CreateInstance(implType);
+                }
             }
 
             // no default implementation — create the stub
@@ -117,6 +129,18 @@ namespace Apex.ApexSharp.Implementation
             var result = UseDefaultImplementation(type);
             ImplementationRepository[type] = new StubImplementation(type);
             return result;
+        }
+
+        public static T GetDefault<T>() => (T)GetDefault(typeof(T));
+
+        public static object GetDefault(Type type)
+        {
+            if (type.IsValueType)
+            {
+                return Activator.CreateInstance(type);
+            }
+
+            return null;
         }
     }
 }

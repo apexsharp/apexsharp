@@ -1,40 +1,55 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_integer.htm#apex_methods_system_integer
+    /// </summary>
     public class Integer
     {
-        public void addError(object msg)
+        // infrastructure
+        public Integer(dynamic self)
         {
-            throw new global::System.NotImplementedException("Integer.AddError");
+            Self = self;
         }
 
-        public void addError(object msg, bool escape)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Integer.AddError");
+            get
+            {
+                return Implementor.GetImplementation(typeof(int));
+            }
         }
 
-        public void addError(string msg)
-        {
-            throw new global::System.NotImplementedException("Integer.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Integer.AddError");
-        }
-
+        // API
         public string format()
         {
-            throw new global::System.NotImplementedException("Integer.Format");
+            return Self.format();
         }
 
-        public static int valueOf(object o)
+        public static int valueOf(string stringToInteger)
         {
-            throw new global::System.NotImplementedException("Integer.ValueOf");
+            return Implementation.valueOf(stringToInteger);
         }
 
-        public static int valueOf(string i)
+        public static int valueOf(object fieldValue)
         {
-            throw new global::System.NotImplementedException("Integer.ValueOf");
+            return Implementation.valueOf(fieldValue);
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

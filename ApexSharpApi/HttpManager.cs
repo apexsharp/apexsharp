@@ -30,7 +30,14 @@ namespace ApexSharpApi
                 Method = HttpMethod.Post,
                 Content = new StringContent(json, Encoding.UTF8, "application/json"),
             };
-            return Http(request);
+            try
+            {
+                return Http(request);
+            }
+            catch (ApexSharpHttpException ex)
+            {
+                return ex.Message;
+            }
         }
 
         public string Patch(string uriFunction, string json)
@@ -63,15 +70,13 @@ namespace ApexSharpApi
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             request.Headers.Add("Authorization", ApexSharp.GetSession().RestSessionId);
 
-            //WebProxy proxy = new WebProxy { Address = new Uri("http://naproxy.gm.com:80") };
-
+            //WebProxy proxy = new WebProxy { Address = new Uri("") };
             //HttpClientHandler httpClientHandler = new HttpClientHandler()
             //{
             //    Proxy = proxy,
             //    PreAuthenticate = true,
             //    UseDefaultCredentials = false,
             //};
-
             //HttpClient httpClient = new HttpClient(httpClientHandler);
 
 
@@ -92,9 +97,8 @@ namespace ApexSharpApi
                 case HttpStatusCode.OK:
                     return jsonData;
                 default:
-                    var exp = new ApexSharpHttpException(Environment.StackTrace);
-                    Log.ForContext<HttpManager>().Error(exp, jsonData);
-                    throw exp;
+                    Log.ForContext<HttpManager>().Error(jsonData);
+                    return jsonData;
             }
         }
     }

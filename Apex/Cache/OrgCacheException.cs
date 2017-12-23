@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class OrgCacheException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class OrgCacheException : Exception
     {
+        // infrastructure
+        public OrgCacheException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(OrgCacheException));
+            }
+        }
+
+        // API
         public OrgCacheException()
         {
-            throw new global::System.NotImplementedException("OrgCacheException");
+            Self = Implementation.Constructor();
         }
 
         public OrgCacheException(Exception param1)
         {
-            throw new global::System.NotImplementedException("OrgCacheException");
+            Self = Implementation.Constructor(param1);
         }
 
         public OrgCacheException(string msg)
         {
-            throw new global::System.NotImplementedException("OrgCacheException");
+            Self = Implementation.Constructor(msg);
         }
 
         public OrgCacheException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("OrgCacheException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("OrgCacheException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("OrgCacheException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

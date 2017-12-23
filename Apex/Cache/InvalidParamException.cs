@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class InvalidParamException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class InvalidParamException : Exception
     {
+        // infrastructure
+        public InvalidParamException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidParamException));
+            }
+        }
+
+        // API
         public InvalidParamException()
         {
-            throw new global::System.NotImplementedException("InvalidParamException");
+            Self = Implementation.Constructor();
         }
 
         public InvalidParamException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidParamException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidParamException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidParamException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidParamException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidParamException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("InvalidParamException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("InvalidParamException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

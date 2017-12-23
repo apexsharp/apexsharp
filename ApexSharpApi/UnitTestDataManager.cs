@@ -8,7 +8,7 @@ namespace ApexSharpApi
     {
         private static bool _unitTestDataManagerEnabled;
 
-        private static string IdFileName => Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", "ApexSharp.UnitTestDataManager.id.txt");
+        private static string IdFileName => Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", "ApexSharp.UnitTestDataManager.json");
 
         public static void UnitTestDataManagerOn()
         {

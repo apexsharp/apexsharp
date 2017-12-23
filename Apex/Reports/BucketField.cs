@@ -1,103 +1,125 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_BucketField.htm#apex_class_reports_BucketField
+    /// </summary>
     public class BucketField
     {
+        // infrastructure
+        public BucketField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BucketField));
+            }
+        }
+
+        // API
+        public BucketField(BucketType bucketType, string devloperName, string label, bool nullTreatedAsZero, string otherBucketLabel, string sourceColumnName, List<BucketFieldValue> values)
+        {
+            Self = Implementation.Constructor(bucketType, devloperName, label, nullTreatedAsZero, otherBucketLabel, sourceColumnName, values);
+        }
+
         public BucketField()
         {
-            throw new global::System.NotImplementedException("BucketField");
-        }
-
-        public BucketField(BucketType bucketType, string devloperName, string label, bool nullTreatedAsZero,
-            string otherBucketLabel, string sourceColumnName, List<BucketFieldValue> values)
-        {
-            throw new global::System.NotImplementedException("BucketField");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("BucketField.Clone");
+            Self = Implementation.Constructor();
         }
 
         public BucketType getBucketType()
         {
-            throw new global::System.NotImplementedException("BucketField.GetBucketType");
+            return Self.getBucketType();
         }
 
         public string getDevloperName()
         {
-            throw new global::System.NotImplementedException("BucketField.GetDevloperName");
+            return Self.getDevloperName();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("BucketField.GetLabel");
+            return Self.getLabel();
         }
 
         public bool getNullTreatedAsZero()
         {
-            throw new global::System.NotImplementedException("BucketField.GetNullTreatedAsZero");
+            return Self.getNullTreatedAsZero();
         }
 
         public string getOtherBucketLabel()
         {
-            throw new global::System.NotImplementedException("BucketField.GetOtherBucketLabel");
+            return Self.getOtherBucketLabel();
         }
 
         public string getSourceColumnName()
         {
-            throw new global::System.NotImplementedException("BucketField.GetSourceColumnName");
+            return Self.getSourceColumnName();
         }
 
         public List<BucketFieldValue> getValues()
         {
-            throw new global::System.NotImplementedException("BucketField.GetValues");
+            return Self.getValues();
         }
 
         public void setBucketType(string value)
         {
-            throw new global::System.NotImplementedException("BucketField.SetBucketType");
+            Self.setBucketType(value);
         }
 
         public void setBucketType(BucketType bucketType)
         {
-            throw new global::System.NotImplementedException("BucketField.SetBucketType");
+            Self.setBucketType(bucketType);
         }
 
         public void setDevloperName(string devloperName)
         {
-            throw new global::System.NotImplementedException("BucketField.SetDevloperName");
+            Self.setDevloperName(devloperName);
         }
 
         public void setLabel(string label)
         {
-            throw new global::System.NotImplementedException("BucketField.SetLabel");
+            Self.setLabel(label);
         }
 
         public void setNullTreatedAsZero(bool nullTreatedAsZero)
         {
-            throw new global::System.NotImplementedException("BucketField.SetNullTreatedAsZero");
+            Self.setNullTreatedAsZero(nullTreatedAsZero);
         }
 
         public void setOtherBucketLabel(string otherBucketLabel)
         {
-            throw new global::System.NotImplementedException("BucketField.SetOtherBucketLabel");
+            Self.setOtherBucketLabel(otherBucketLabel);
         }
 
         public void setSourceColumnName(string sourceColumnName)
         {
-            throw new global::System.NotImplementedException("BucketField.SetSourceColumnName");
+            Self.setSourceColumnName(sourceColumnName);
         }
 
         public void setValues(List<BucketFieldValue> values)
         {
-            throw new global::System.NotImplementedException("BucketField.SetValues");
+            Self.setValues(values);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BucketField.ToString");
+            return Self.toString();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

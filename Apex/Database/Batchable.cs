@@ -1,22 +1,19 @@
-using Apex.System;
-
 namespace Apex.Database
 {
-    public class Batchable
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_database_batchable.htm#apex_interface_database_batchable
+    /// </summary>
+    public interface Batchable
     {
-        public void execute(Database.BatchableContext param1, List<object> param2)
-        {
-            throw new global::System.NotImplementedException("Batchable.Execute");
-        }
+        void execute(BatchableContext jobId, List<SObject> recordList);
 
-        public void finish(Database.BatchableContext param1)
-        {
-            throw new global::System.NotImplementedException("Batchable.Finish");
-        }
+        void finish(BatchableContext jobId);
 
-        public System.Iterable start(Database.BatchableContext param1)
-        {
-            throw new global::System.NotImplementedException("Batchable.Start");
-        }
+        Iterable start(BatchableContext jobId);
     }
 }

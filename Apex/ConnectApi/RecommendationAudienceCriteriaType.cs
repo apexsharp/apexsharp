@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RecommendationAudienceCriteriaType
     {
+        // infrastructure
+        public RecommendationAudienceCriteriaType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RecommendationAudienceCriteriaType));
+            }
+        }
+
+        // API
+        object CustomList
+        {
+            get
+            {
+                return Self.CustomList;
+            }
+            set
+            {
+                Self.CustomList = value;
+            }
+        }
+
+        object MaxDaysInCommunity
+        {
+            get
+            {
+                return Self.MaxDaysInCommunity;
+            }
+            set
+            {
+                Self.MaxDaysInCommunity = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceCriteriaType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceCriteriaType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceCriteriaType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<RecommendationAudienceCriteriaType> values()
         {
-            throw new global::System.NotImplementedException("RecommendationAudienceCriteriaType.Values");
+            return Implementation.values();
         }
     }
 }

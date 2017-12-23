@@ -1,20 +1,40 @@
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ValueReason
     {
+        // infrastructure
+        public ValueReason(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ValueReason));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ValueReason.Clone");
+            return Self.clone();
         }
 
         public ReasonType getType()
         {
-            throw new global::System.NotImplementedException("ValueReason.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ValueReason.ToString");
+            return Self.toString();
         }
     }
 }

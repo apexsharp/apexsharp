@@ -1,35 +1,60 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_system_remoteobjectcontroller.htm#apex_methods_system_remoteobjectcontroller
+    /// </summary>
     public class RemoteObjectController
     {
+        // infrastructure
+        public RemoteObjectController(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RemoteObjectController));
+            }
+        }
+
+        // API
+        public static Map<string, object> create(string type, Map<string, object> fields)
+        {
+            return Implementation.create(type, fields);
+        }
+
+        public static Map<string, object> del(string type, List<string> recordIds)
+        {
+            return Implementation.del(type, recordIds);
+        }
+
+        public static Map<string, object> retrieve(string type, List<string> fields, Map<string, object> criteria)
+        {
+            return Implementation.retrieve(type, fields, criteria);
+        }
+
+        public static Map<string, object> updat(string type, List<string> recordIds, Map<string, object> fields)
+        {
+            return Implementation.updat(type, recordIds, fields);
+        }
+
         public RemoteObjectController()
         {
-            throw new global::System.NotImplementedException("RemoteObjectController");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RemoteObjectController.Clone");
-        }
-
-        public static Map<String, object> create(string type, Map<String, object> fields)
-        {
-            throw new global::System.NotImplementedException("RemoteObjectController.Create");
-        }
-
-        public static Map<String, object> del(string type, List<string> ids)
-        {
-            throw new global::System.NotImplementedException("RemoteObjectController.Del");
-        }
-
-        public static Map<String, object> retrieve(string type, List<string> fields, Map<String, object> criteria)
-        {
-            throw new global::System.NotImplementedException("RemoteObjectController.Retrieve");
-        }
-
-        public static Map<String, object> updat(string type, List<string> ids, Map<String, object> fields)
-        {
-            throw new global::System.NotImplementedException("RemoteObjectController.Updat");
+            return Self.clone();
         }
     }
 }

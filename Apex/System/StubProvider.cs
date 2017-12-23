@@ -1,11 +1,15 @@
 namespace Apex.System
 {
-    public class StubProvider
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_System_StubProvider.htm#apex_interface_System_StubProvider
+    /// </summary>
+    public interface StubProvider
     {
-        public object handleMethodCall(object param1, string param2, Type param3, List<Type> param4,
-            List<string> param5, List<object> param6)
-        {
-            throw new global::System.NotImplementedException("StubProvider.HandleMethodCall");
-        }
+        object handleMethodCall(object stubbedObject, string stubbedMethodName, Type returnType, List<Type> listOfParamTypes, List<string> listOfParamNames, List<object> var6);
     }
 }

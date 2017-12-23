@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FolderItemType
     {
+        // infrastructure
+        public FolderItemType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FolderItemType));
+            }
+        }
+
+        // API
+        object File
+        {
+            get
+            {
+                return Self.File;
+            }
+            set
+            {
+                Self.File = value;
+            }
+        }
+
+        object Folder
+        {
+            get
+            {
+                return Self.Folder;
+            }
+            set
+            {
+                Self.Folder = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FolderItemType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FolderItemType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("FolderItemType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<FolderItemType> values()
         {
-            throw new global::System.NotImplementedException("FolderItemType.Values");
+            return Implementation.values();
         }
     }
 }

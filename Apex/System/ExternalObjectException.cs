@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class ExternalObjectException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class ExternalObjectException : Exception
     {
+        // infrastructure
+        public ExternalObjectException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ExternalObjectException));
+            }
+        }
+
+        // API
         public ExternalObjectException()
         {
-            throw new global::System.NotImplementedException("ExternalObjectException");
+            Self = Implementation.Constructor();
         }
 
         public ExternalObjectException(Exception param1)
         {
-            throw new global::System.NotImplementedException("ExternalObjectException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ExternalObjectException(string param1)
         {
-            throw new global::System.NotImplementedException("ExternalObjectException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ExternalObjectException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("ExternalObjectException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("ExternalObjectException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

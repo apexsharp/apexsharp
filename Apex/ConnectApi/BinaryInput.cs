@@ -1,37 +1,60 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BinaryInput
     {
+        // infrastructure
+        public BinaryInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BinaryInput));
+            }
+        }
+
+        // API
         public BinaryInput(Blob blobValue, string contentType, string filename)
         {
-            throw new global::System.NotImplementedException("BinaryInput");
+            Self = Implementation.Constructor(blobValue, contentType, filename);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BinaryInput.Clone");
+            return Self.clone();
         }
 
         public Blob getBlobValue()
         {
-            throw new global::System.NotImplementedException("BinaryInput.GetBlobValue");
+            return Self.getBlobValue();
         }
 
         public string getContentType()
         {
-            throw new global::System.NotImplementedException("BinaryInput.GetContentType");
+            return Self.getContentType();
         }
 
         public string getFilename()
         {
-            throw new global::System.NotImplementedException("BinaryInput.GetFilename");
+            return Self.getFilename();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BinaryInput.ToString");
+            return Self.toString();
         }
     }
 }

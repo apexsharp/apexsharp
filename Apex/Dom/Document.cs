@@ -1,30 +1,55 @@
 namespace Apex.Dom
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_xml_dom_document.htm#apex_classes_xml_dom_document
+    /// </summary>
     public class Document
     {
-        public Document()
+        // infrastructure
+        public Document(dynamic self)
         {
-            throw new global::System.NotImplementedException("Document");
+            Self = self;
         }
 
-        public XmlNode createRootElement(string name, string namespaceApex, string prefix)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Document.CreateRootElement");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Document));
+            }
+        }
+
+        // API
+        public Document()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public XmlNode createRootElement(string name, string @namespace, string prefix)
+        {
+            return Self.createRootElement(name, @namespace, prefix);
         }
 
         public XmlNode getRootElement()
         {
-            throw new global::System.NotImplementedException("Document.GetRootElement");
+            return Self.getRootElement();
         }
 
         public void load(string xml)
         {
-            throw new global::System.NotImplementedException("Document.Load");
+            Self.load(xml);
         }
 
         public string toXmlString()
         {
-            throw new global::System.NotImplementedException("Document.ToXmlString");
+            return Self.toXmlString();
         }
     }
 }

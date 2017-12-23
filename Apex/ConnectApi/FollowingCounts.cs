@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FollowingCounts
     {
+        // infrastructure
+        public FollowingCounts(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FollowingCounts));
+            }
+        }
+
+        // API
+        object people
+        {
+            get
+            {
+                return Self.people;
+            }
+            set
+            {
+                Self.people = value;
+            }
+        }
+
+        object records
+        {
+            get
+            {
+                return Self.records;
+            }
+            set
+            {
+                Self.records = value;
+            }
+        }
+
+        object total
+        {
+            get
+            {
+                return Self.total;
+            }
+            set
+            {
+                Self.total = value;
+            }
+        }
+
         public FollowingCounts()
         {
-            throw new global::System.NotImplementedException("FollowingCounts");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FollowingCounts.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FollowingCounts.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FollowingCounts.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FollowingCounts.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FollowingCounts.ToString");
+            return Self.toString();
         }
     }
 }

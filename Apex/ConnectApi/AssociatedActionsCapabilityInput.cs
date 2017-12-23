@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class AssociatedActionsCapabilityInput
     {
+        // infrastructure
+        public AssociatedActionsCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AssociatedActionsCapabilityInput));
+            }
+        }
+
+        // API
+        object actionLinkGroupIds
+        {
+            get
+            {
+                return Self.actionLinkGroupIds;
+            }
+            set
+            {
+                Self.actionLinkGroupIds = value;
+            }
+        }
+
         public AssociatedActionsCapabilityInput()
         {
-            throw new global::System.NotImplementedException("AssociatedActionsCapabilityInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("AssociatedActionsCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("AssociatedActionsCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("AssociatedActionsCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("AssociatedActionsCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

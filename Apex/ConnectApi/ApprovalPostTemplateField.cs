@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ApprovalPostTemplateField
     {
+        // infrastructure
+        public ApprovalPostTemplateField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ApprovalPostTemplateField));
+            }
+        }
+
+        // API
+        object displayName
+        {
+            get
+            {
+                return Self.displayName;
+            }
+            set
+            {
+                Self.displayName = value;
+            }
+        }
+
+        object displayValue
+        {
+            get
+            {
+                return Self.displayValue;
+            }
+            set
+            {
+                Self.displayValue = value;
+            }
+        }
+
+        object record
+        {
+            get
+            {
+                return Self.record;
+            }
+            set
+            {
+                Self.record = value;
+            }
+        }
+
         public ApprovalPostTemplateField()
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ApprovalPostTemplateField.ToString");
+            return Self.toString();
         }
     }
 }

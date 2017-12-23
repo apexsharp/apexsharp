@@ -4,7 +4,6 @@ namespace Demo.CSharpClasses
     using Apex.ApexSharp.ApexAttributes;
     using Apex.ApexSharp.NUnit;
     using Apex.System;
-    
     using SObjects;
 
     [TestFixture]
@@ -48,9 +47,9 @@ namespace Demo.CSharpClasses
             System.assert(contacts.size()> 0);
         }
 
-        public static double randomWithLimit()
+        public static int randomWithLimit()
         {
-            double randomNumber = Math.random();
+            int randomNumber = Math.round(Math.random() * 1000000);
             return randomNumber;
         }
     }

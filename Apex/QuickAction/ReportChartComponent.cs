@@ -1,60 +1,169 @@
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ReportChartComponent
     {
+        // infrastructure
+        public ReportChartComponent(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportChartComponent));
+            }
+        }
+
+        // API
+        bool cacheData
+        {
+            get
+            {
+                return Self.cacheData;
+            }
+            set
+            {
+                Self.cacheData = value;
+            }
+        }
+
+        string contextFilterableField
+        {
+            get
+            {
+                return Self.contextFilterableField;
+            }
+            set
+            {
+                Self.contextFilterableField = value;
+            }
+        }
+
+        string error
+        {
+            get
+            {
+                return Self.error;
+            }
+            set
+            {
+                Self.error = value;
+            }
+        }
+
+        bool hideOnError
+        {
+            get
+            {
+                return Self.hideOnError;
+            }
+            set
+            {
+                Self.hideOnError = value;
+            }
+        }
+
+        bool includeContext
+        {
+            get
+            {
+                return Self.includeContext;
+            }
+            set
+            {
+                Self.includeContext = value;
+            }
+        }
+
+        bool showTitle
+        {
+            get
+            {
+                return Self.showTitle;
+            }
+            set
+            {
+                Self.showTitle = value;
+            }
+        }
+
+        string size
+        {
+            get
+            {
+                return Self.size;
+            }
+            set
+            {
+                Self.size = value;
+            }
+        }
+
         public bool getCacheData()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetCacheData");
+            return Self.getCacheData();
         }
 
         public string getContextFilterableField()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetContextFilterableField");
+            return Self.getContextFilterableField();
         }
 
         public int getDisplayLines()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetDisplayLines");
+            return Self.getDisplayLines();
         }
 
         public string getError()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetError");
+            return Self.getError();
         }
 
         public bool getHideOnError()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetHideOnError");
+            return Self.getHideOnError();
         }
 
         public bool getIncludeContext()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetIncludeContext");
+            return Self.getIncludeContext();
         }
 
         public bool getShowTitle()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetShowTitle");
+            return Self.getShowTitle();
         }
 
         public string getSize()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetSize");
+            return Self.getSize();
         }
 
         public int getTabOrder()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetTabOrder");
+            return Self.getTabOrder();
         }
 
         public string getType()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetType");
+            return Self.getType();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("ReportChartComponent.GetValue");
+            return Self.getValue();
         }
     }
 }

@@ -1,35 +1,120 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ChatterConversationPage
     {
+        // infrastructure
+        public ChatterConversationPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChatterConversationPage));
+            }
+        }
+
+        // API
+        object conversations
+        {
+            get
+            {
+                return Self.conversations;
+            }
+            set
+            {
+                Self.conversations = value;
+            }
+        }
+
+        object currentPageToken
+        {
+            get
+            {
+                return Self.currentPageToken;
+            }
+            set
+            {
+                Self.currentPageToken = value;
+            }
+        }
+
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageToken
+        {
+            get
+            {
+                return Self.nextPageToken;
+            }
+            set
+            {
+                Self.nextPageToken = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
         public ChatterConversationPage()
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ChatterConversationPage.ToString");
+            return Self.toString();
         }
     }
 }

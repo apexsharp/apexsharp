@@ -1,32 +1,55 @@
-using Apex.System;
-
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UIPage
     {
+        // infrastructure
+        public UIPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UIPage));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("UIPage.Clone");
+            return Self.clone();
         }
 
         public string getCondition()
         {
-            throw new global::System.NotImplementedException("UIPage.GetCondition");
+            return Self.getCondition();
         }
 
         public string getTitle()
         {
-            throw new global::System.NotImplementedException("UIPage.GetTitle");
+            return Self.getTitle();
         }
 
-        public Map<String, Variable> getVariables()
+        public Map<string, Variable> getVariables()
         {
-            throw new global::System.NotImplementedException("UIPage.GetVariables");
+            return Self.getVariables();
         }
 
         public void setTitle(string title)
         {
-            throw new global::System.NotImplementedException("UIPage.SetTitle");
+            Self.setTitle(title);
         }
     }
 }

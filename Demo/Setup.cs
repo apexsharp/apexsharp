@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Microsoft.Extensions.Configuration;
+using Serilog;
 
 namespace Demo
 {
@@ -8,38 +9,30 @@ namespace Demo
 
     public class Setup
     {
-        public static void StartLogging()
+        public static void InitializeSession()
         {
-            var logPath = Path.GetFullPath(@"/apexsharp/log.log");
+            // You need to have a JSON File name appsettings.json with your SF credential in your project.
+            // See https://github.com/apexsharp/apexsharp/blob/master/README.md
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location))
+                .AddJsonFile("appsettings.json");
 
-            // Verbose - tracing information and debugging minutiae; generally only switched on in unusual situations
-            // Debug - internal control flow and diagnostic state dumps to facilitate pinpointing of recognized problems
-            // Information - events of interest or that have relevance to outside observers; the default enabled minimum logging level
-            // Warning - indicators of possible issues or service/functionality degradation
-            // Error - indicating a failure within the application or connected system
-            // Fatal - critical errors causing complete failure of the application
-            Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] [{SourceContext}] {Message} {NewLine}")
-                .MinimumLevel.Debug()
-                .CreateLogger();
+            var configuration = builder.Build();
 
-            Log.ForContext<Setup>().Debug("Logging Started");
+            var logFile = new FileInfo(Path.GetFullPath(configuration["LogFile"]));
+            if (logFile.Directory.Exists)
+            {
+                // Make sure you enable logging. We use Serilog loggign library. 
+                // See https://github.com/serilog/serilog/wiki/Configuration-Basics
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Console(outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
+                    .WriteTo.File(logFile.FullName, rollingInterval: RollingInterval.Day,outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
+                    .MinimumLevel.Debug()
+                    .CreateLogger();
 
-        }
+                Log.ForContext<Setup>().Debug("Logging Started");
 
-        public static void StopLogging()
-        {
-
-            Log.ForContext<Setup>().Debug("Logging Stopped");
-            Log.CloseAndFlush();
-        }
-
-        public static bool Init()
-        { 
-            // Due to different OS and how they manage file paths, its best to to use the Path.GetFullPath Method.
-            // This example assumes you cloned your GIT repo to the root level.
-
+<<<<<<< HEAD
             // SessionLocation is where your SF session will be Saved
             var sessionLocation = Path.GetFullPath(@"../config.json");
             // SalesForceLocation is the location of your Salesofrce project
@@ -64,20 +57,57 @@ namespace Demo
                         .WithUserId("YOUR USER ID")
                         .AndPassword("YOUR PASSWORD")
                         .AndToken("YOUR TOKEN")
+=======
+                var sessionFileInfo = new FileInfo(Path.GetFullPath(configuration["SessionFileInfo"]));
 
-                        .SalesForceLocation(salesForceLocation)
-                        .VsProjectLocation(vSprojectocation)
-                        .SaveConfigAt(sessionLocation)
-                        .CreateSession();
-                }
-                catch (SalesForceInvalidLoginException ex)
+                // You can del the existing session if needed (Ex: you changed the Password), if you delete every time a new session is created which will delay the code. 
+                File.Delete(sessionFileInfo.FullName);
+>>>>>>> dev
+
+                if (sessionFileInfo.Exists)
                 {
-                    Console.WriteLine(ex.Message);
-                    return false;
+                    ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
                 }
+                // Else Create a new session
+                else
+                {
+                    try
+                    {
+                        var salesForceLocation = Path.GetFullPath(configuration["SalesForceLocation"]);
+                        var vSprojectocation = Path.GetFullPath(configuration["VsProjectocation"]);
+
+                        new ApexSharp()
+                            .SalesForceUrl("https://login.salesforce.com/")
+                            .AndSalesForceApiVersion(40)
+                            .WithUserId(configuration["SalesForceUserId"])
+                            .AndPassword(configuration["SalesForcePassword"])
+                            .AndToken(configuration["SalesForceToken"])
+                            .SalesForceLocation(salesForceLocation)
+                            .VsProjectLocation(vSprojectocation)
+                            .SaveConfigAt(sessionFileInfo.FullName)
+                            .CreateSession();
+
+                        ConnectionUtil.Session = ConnectionUtil.GetSession(sessionFileInfo.FullName);
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        Log.ForContext<Setup>().Debug(ex.Message);
+                    }
+                    catch (SalesForceInvalidLoginException ex)
+                    {
+                        Log.ForContext<Setup>().Debug(ex.Message);
+                    }
+                }
+            } else {
+                Console.WriteLine("Cant Find the path to the log location");
             }
 
-            return true;
+        }
+
+        public static void StopLogging()
+        {
+            Log.ForContext<Setup>().Debug("Logging Stopped");
+            Log.CloseAndFlush();
         }
     }
 }

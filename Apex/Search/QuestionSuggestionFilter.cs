@@ -1,47 +1,70 @@
-using Apex.System;
-
 namespace Apex.Search
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Search_QuestionSuggestionFilter.htm#apex_class_Search_QuestionSuggestionFilter
+    /// </summary>
     public class QuestionSuggestionFilter
     {
-        public QuestionSuggestionFilter()
+        // infrastructure
+        public QuestionSuggestionFilter(dynamic self)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QuestionSuggestionFilter));
+            }
+        }
+
+        // API
         public void addGroupId(string groupId)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.AddGroupId");
+            Self.addGroupId(groupId);
         }
 
         public void addNetworkId(string networkId)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.AddNetworkId");
+            Self.addNetworkId(networkId);
         }
 
         public void addUserId(string userId)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.AddUserId");
+            Self.addUserId(userId);
         }
 
         public void setGroupIds(List<string> groupIds)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.SetGroupIds");
+            Self.setGroupIds(groupIds);
         }
 
         public void setNetworkIds(List<string> networkIds)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.SetNetworkIds");
+            Self.setNetworkIds(networkIds);
         }
 
         public void setTopicId(string topicId)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.SetTopicId");
+            Self.setTopicId(topicId);
         }
 
         public void setUserIds(List<string> userIds)
         {
-            throw new global::System.NotImplementedException("QuestionSuggestionFilter.SetUserIds");
+            Self.setUserIds(userIds);
+        }
+
+        public QuestionSuggestionFilter()
+        {
+            Self = Implementation.Constructor();
         }
     }
 }

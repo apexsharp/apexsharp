@@ -1,12 +1,15 @@
-
-
 namespace Apex.System
 {
-    public class SchedulableContext
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_system_schedulablecontext.htm#apex_interface_system_schedulablecontext
+    /// </summary>
+    public interface SchedulableContext
     {
-        public ID getTriggerId()
-        {
-            throw new global::System.NotImplementedException("SchedulableContext.GetTriggerId");
-        }
+        ID getTriggerId();
     }
 }

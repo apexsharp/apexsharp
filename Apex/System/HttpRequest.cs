@@ -1,100 +1,131 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Dom;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_httprequest.htm#apex_classes_restful_http_httprequest
+    /// </summary>
     public class HttpRequest
     {
+        // infrastructure
+        public HttpRequest(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(HttpRequest));
+            }
+        }
+
+        // API
         public HttpRequest()
         {
-            throw new global::System.NotImplementedException("HttpRequest");
+            Self = Implementation.Constructor();
         }
 
         public string getBody()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetBody");
+            return Self.getBody();
         }
 
         public Blob getBodyAsBlob()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetBodyAsBlob");
+            return Self.getBodyAsBlob();
         }
 
-        public Dom.Document getBodyDocument()
+        public Document getBodyDocument()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetBodyDocument");
+            return Self.getBodyDocument();
         }
 
         public bool getCompressed()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetCompressed");
+            return Self.getCompressed();
         }
 
         public string getEndpoint()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetEndpoint");
+            return Self.getEndpoint();
         }
 
         public string getHeader(string key)
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetHeader");
+            return Self.getHeader(key);
         }
 
         public string getMethod()
         {
-            throw new global::System.NotImplementedException("HttpRequest.GetMethod");
+            return Self.getMethod();
         }
 
         public void setBody(string body)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetBody");
+            Self.setBody(body);
         }
 
         public void setBodyAsBlob(Blob body)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetBodyAsBlob");
+            Self.setBodyAsBlob(body);
         }
 
-        public void setBodyDocument(object body)
+        public void setBodyDocument(Document document)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetBodyDocument");
+            Self.setBodyDocument(document);
         }
 
         public void setClientCertificate(string clientCert, string password)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetClientCertificate");
+            Self.setClientCertificate(clientCert, password);
         }
 
         public void setClientCertificateName(string certDevName)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetClientCertificateName");
+            Self.setClientCertificateName(certDevName);
         }
 
-        public void setCompressed(bool compressed)
+        public void setCompressed(bool flag)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetCompressed");
+            Self.setCompressed(flag);
         }
 
         public void setEndpoint(string endpoint)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetEndpoint");
+            Self.setEndpoint(endpoint);
         }
 
         public void setHeader(string key, string value)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetHeader");
+            Self.setHeader(key, value);
         }
 
         public void setMethod(string method)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetMethod");
+            Self.setMethod(method);
         }
 
         public void setTimeout(int timeout)
         {
-            throw new global::System.NotImplementedException("HttpRequest.SetTimeout");
+            Self.setTimeout(timeout);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("HttpRequest.ToString");
+            return Self.toString();
+        }
+
+        public void setBodyDocument(object body)
+        {
+            Self.setBodyDocument(body);
         }
     }
 }

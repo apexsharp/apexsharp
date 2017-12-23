@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class MoreChangesSegment
     {
+        // infrastructure
+        public MoreChangesSegment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MoreChangesSegment));
+            }
+        }
+
+        // API
+        object moreChanges
+        {
+            get
+            {
+                return Self.moreChanges;
+            }
+            set
+            {
+                Self.moreChanges = value;
+            }
+        }
+
+        object moreChangesCount
+        {
+            get
+            {
+                return Self.moreChangesCount;
+            }
+            set
+            {
+                Self.moreChangesCount = value;
+            }
+        }
+
         public MoreChangesSegment()
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("MoreChangesSegment.ToString");
+            return Self.toString();
         }
     }
 }

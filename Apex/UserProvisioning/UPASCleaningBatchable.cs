@@ -1,34 +1,56 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UPASCleaningBatchable
     {
+        // infrastructure
+        public UPASCleaningBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UPASCleaningBatchable));
+            }
+        }
+
+        // API
         public UPASCleaningBatchable(string uprId)
         {
-            throw new global::System.NotImplementedException("UPASCleaningBatchable");
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UPASCleaningBatchable.Clone");
+            return Self.clone();
         }
 
-        public void execute(Database.BatchableContext BC, List<SObject> scope)
+        public void execute(BatchableContext BC, List<SObject> scope)
         {
-            throw new global::System.NotImplementedException("UPASCleaningBatchable.Execute");
+            Self.execute(BC, scope);
         }
 
-        public void finish(Database.BatchableContext BC)
+        public void finish(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("UPASCleaningBatchable.Finish");
+            Self.finish(BC);
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public QueryLocator start(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("UPASCleaningBatchable.Start");
+            return Self.start(BC);
         }
     }
 }

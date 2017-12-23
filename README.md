@@ -9,19 +9,31 @@ We are working on a detail documentation, but for now we assume you are a C# dev
 
 
 0. Create a new SF Dev org, get your API Token
-1. Download the whole Git Repo, save it in a folder at root under \ApexSharp
+1. Download this Repo (If you want to contribute please work on the dev branch)
 3. This is a Net 2.0 project thus you can open this on Visual Studio, Visual Studio Code, Visual Studio for Mac or [JetBrains Rider](https://www.jetbrains.com/rider/). 
-4. Start the apexSharpDemo Solution
-5. Demo Project is the project you want to work on
-6. On Setup.cs, set your SF Id, PW, Token
+4. Open the apexSharp Solution
+5. Create an appsettings.json file with the following info. Here we assume you save the git repo to your C: drive and you are using Windows. 
 
- ```csharp
-.WithUserId("You SF Id")
-.AndPassword("You SF Password")
-.AndToken("Token")
+```json
+{
+  // The location of your log File
+  "LogFile": "c:/apexsharp/Demo/log.log", 
+  // SessionFileInfo is where your SF session will be saved or located
+  "SessionFileInfo": "c:/apexSharp/config.json",
+  // SalesForceLocation is the location of your Salesofrce project
+  "SalesForceLocation": "c:/apexSharp/SalesForce/src/",
+  // VsProjectLocation is the location of your Visual Studio Project
+  "VsProjectocation": "c:/apexSharp/Demo/",
+  // Your SF Id
+  "SalesForceUserId": "Your SF Id",
+  // Your SF Password
+  "SalesForcePassword": "SF Password",
+  // Your SF Token
+  "SalesForceToken": "SF Token"
+}
 ```
-
-5. Run the demo project.
+6. Open the Demo Project. You can find examples in the /CSharpClasses Folder
+6. Run Program.cs
 
 Folder Structure
 

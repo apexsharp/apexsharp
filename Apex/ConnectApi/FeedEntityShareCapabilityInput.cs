@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedEntityShareCapabilityInput
     {
+        // infrastructure
+        public FeedEntityShareCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedEntityShareCapabilityInput));
+            }
+        }
+
+        // API
+        object feedEntityId
+        {
+            get
+            {
+                return Self.feedEntityId;
+            }
+            set
+            {
+                Self.feedEntityId = value;
+            }
+        }
+
         public FeedEntityShareCapabilityInput()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapabilityInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedEntityShareCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

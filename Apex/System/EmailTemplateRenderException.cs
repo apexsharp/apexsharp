@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class EmailTemplateRenderException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class EmailTemplateRenderException : Exception
     {
+        // infrastructure
+        public EmailTemplateRenderException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EmailTemplateRenderException));
+            }
+        }
+
+        // API
         public EmailTemplateRenderException()
         {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException");
+            Self = Implementation.Constructor();
         }
 
         public EmailTemplateRenderException(Exception param1)
         {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public EmailTemplateRenderException(string param1)
         {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException");
+            Self = Implementation.Constructor(param1);
         }
 
         public EmailTemplateRenderException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("EmailTemplateRenderException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

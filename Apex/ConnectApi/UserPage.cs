@@ -1,35 +1,144 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UserPage
     {
+        // infrastructure
+        public UserPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserPage));
+            }
+        }
+
+        // API
+        object currentPageToken
+        {
+            get
+            {
+                return Self.currentPageToken;
+            }
+            set
+            {
+                Self.currentPageToken = value;
+            }
+        }
+
+        object currentPageUrl
+        {
+            get
+            {
+                return Self.currentPageUrl;
+            }
+            set
+            {
+                Self.currentPageUrl = value;
+            }
+        }
+
+        object nextPageToken
+        {
+            get
+            {
+                return Self.nextPageToken;
+            }
+            set
+            {
+                Self.nextPageToken = value;
+            }
+        }
+
+        object nextPageUrl
+        {
+            get
+            {
+                return Self.nextPageUrl;
+            }
+            set
+            {
+                Self.nextPageUrl = value;
+            }
+        }
+
+        object previousPageToken
+        {
+            get
+            {
+                return Self.previousPageToken;
+            }
+            set
+            {
+                Self.previousPageToken = value;
+            }
+        }
+
+        object previousPageUrl
+        {
+            get
+            {
+                return Self.previousPageUrl;
+            }
+            set
+            {
+                Self.previousPageUrl = value;
+            }
+        }
+
+        object users
+        {
+            get
+            {
+                return Self.users;
+            }
+            set
+            {
+                Self.users = value;
+            }
+        }
+
         public UserPage()
         {
-            throw new global::System.NotImplementedException("UserPage");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UserPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UserPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UserPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UserPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UserPage.ToString");
+            return Self.toString();
         }
     }
 }

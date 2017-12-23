@@ -1,30 +1,55 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_ReportScopeValue.htm#apex_class_reports_ReportScopeValue
+    /// </summary>
     public class ReportScopeValue
     {
-        public object clone()
+        // infrastructure
+        public ReportScopeValue(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportScopeValue.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportScopeValue));
+            }
+        }
+
+        // API
         public bool getAllowsDivision()
         {
-            throw new global::System.NotImplementedException("ReportScopeValue.GetAllowsDivision");
+            return Self.getAllowsDivision();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("ReportScopeValue.GetLabel");
+            return Self.getLabel();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("ReportScopeValue.GetValue");
+            return Self.getValue();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportScopeValue.ToString");
+            return Self.toString();
         }
     }
 }

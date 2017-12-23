@@ -1,27 +1,74 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class OperationType
     {
+        // infrastructure
+        public OperationType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(OperationType));
+            }
+        }
+
+        // API
+        object Add
+        {
+            get
+            {
+                return Self.Add;
+            }
+            set
+            {
+                Self.Add = value;
+            }
+        }
+
+        object Remove
+        {
+            get
+            {
+                return Self.Remove;
+            }
+            set
+            {
+                Self.Remove = value;
+            }
+        }
+
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("OperationType.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("OperationType.HashCode");
+            return Self.hashCode();
         }
 
         public int ordinal()
         {
-            throw new global::System.NotImplementedException("OperationType.Ordinal");
+            return Self.ordinal();
         }
 
         public static List<OperationType> values()
         {
-            throw new global::System.NotImplementedException("OperationType.Values");
+            return Implementation.values();
         }
     }
 }

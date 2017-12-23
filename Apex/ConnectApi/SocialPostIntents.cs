@@ -1,35 +1,132 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SocialPostIntents
     {
+        // infrastructure
+        public SocialPostIntents(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SocialPostIntents));
+            }
+        }
+
+        // API
+        object approvalIntent
+        {
+            get
+            {
+                return Self.approvalIntent;
+            }
+            set
+            {
+                Self.approvalIntent = value;
+            }
+        }
+
+        object deleteIntent
+        {
+            get
+            {
+                return Self.deleteIntent;
+            }
+            set
+            {
+                Self.deleteIntent = value;
+            }
+        }
+
+        object followIntent
+        {
+            get
+            {
+                return Self.followIntent;
+            }
+            set
+            {
+                Self.followIntent = value;
+            }
+        }
+
+        object hideIntent
+        {
+            get
+            {
+                return Self.hideIntent;
+            }
+            set
+            {
+                Self.hideIntent = value;
+            }
+        }
+
+        object likeIntent
+        {
+            get
+            {
+                return Self.likeIntent;
+            }
+            set
+            {
+                Self.likeIntent = value;
+            }
+        }
+
+        object replyIntent
+        {
+            get
+            {
+                return Self.replyIntent;
+            }
+            set
+            {
+                Self.replyIntent = value;
+            }
+        }
+
         public SocialPostIntents()
         {
-            throw new global::System.NotImplementedException("SocialPostIntents");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("SocialPostIntents.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("SocialPostIntents.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("SocialPostIntents.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("SocialPostIntents.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("SocialPostIntents.ToString");
+            return Self.toString();
         }
     }
 }

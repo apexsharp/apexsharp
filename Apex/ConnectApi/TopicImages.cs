@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TopicImages
     {
+        // infrastructure
+        public TopicImages(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TopicImages));
+            }
+        }
+
+        // API
+        object coverImageUrl
+        {
+            get
+            {
+                return Self.coverImageUrl;
+            }
+            set
+            {
+                Self.coverImageUrl = value;
+            }
+        }
+
+        object featuredImageUrl
+        {
+            get
+            {
+                return Self.featuredImageUrl;
+            }
+            set
+            {
+                Self.featuredImageUrl = value;
+            }
+        }
+
         public TopicImages()
         {
-            throw new global::System.NotImplementedException("TopicImages");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("TopicImages.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("TopicImages.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("TopicImages.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("TopicImages.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TopicImages.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TermsOfService
     {
+        // infrastructure
+        public TermsOfService(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TermsOfService));
+            }
+        }
+
+        // API
+        object acceptingUserId
+        {
+            get
+            {
+                return Self.acceptingUserId;
+            }
+            set
+            {
+                Self.acceptingUserId = value;
+            }
+        }
+
+        object termsOfServiceUrl
+        {
+            get
+            {
+                return Self.termsOfServiceUrl;
+            }
+            set
+            {
+                Self.termsOfServiceUrl = value;
+            }
+        }
+
         public TermsOfService()
         {
-            throw new global::System.NotImplementedException("TermsOfService");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("TermsOfService.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("TermsOfService.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("TermsOfService.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("TermsOfService.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TermsOfService.ToString");
+            return Self.toString();
         }
     }
 }

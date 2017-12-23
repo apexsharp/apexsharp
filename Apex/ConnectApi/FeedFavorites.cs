@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FeedFavorites
     {
+        // infrastructure
+        public FeedFavorites(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeedFavorites));
+            }
+        }
+
+        // API
+        object favorites
+        {
+            get
+            {
+                return Self.favorites;
+            }
+            set
+            {
+                Self.favorites = value;
+            }
+        }
+
+        object total
+        {
+            get
+            {
+                return Self.total;
+            }
+            set
+            {
+                Self.total = value;
+            }
+        }
+
         public FeedFavorites()
         {
-            throw new global::System.NotImplementedException("FeedFavorites");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FeedFavorites.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FeedFavorites.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("FeedFavorites.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FeedFavorites.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FeedFavorites.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,23 +1,81 @@
-using Apex.System;
-
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database_deleteresult.htm#apex_methods_system_database_deleteresult
+    /// </summary>
     public class DeleteResult
     {
-        public List<Database.Error> getErrors()
+        // infrastructure
+        public DeleteResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("DeleteResult.GetErrors");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DeleteResult));
+            }
+        }
+
+        // API
+        public Error[] getErrors()
+        {
+            return Self.getErrors();
         }
 
         public ID getId()
         {
-            throw new global::System.NotImplementedException("DeleteResult.GetId");
+            return Self.getId();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("DeleteResult.IsSuccess");
+            return Self.isSuccess();
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        ID id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
         }
     }
 }

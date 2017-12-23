@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class SessionCacheException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class SessionCacheException : Exception
     {
+        // infrastructure
+        public SessionCacheException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SessionCacheException));
+            }
+        }
+
+        // API
         public SessionCacheException()
         {
-            throw new global::System.NotImplementedException("SessionCacheException");
+            Self = Implementation.Constructor();
         }
 
         public SessionCacheException(Exception param1)
         {
-            throw new global::System.NotImplementedException("SessionCacheException");
+            Self = Implementation.Constructor(param1);
         }
 
         public SessionCacheException(string msg)
         {
-            throw new global::System.NotImplementedException("SessionCacheException");
+            Self = Implementation.Constructor(msg);
         }
 
         public SessionCacheException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("SessionCacheException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("SessionCacheException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("SessionCacheException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

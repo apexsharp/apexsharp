@@ -1,17 +1,40 @@
-using Apex.System;
-
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UI
     {
+        // infrastructure
+        public UI(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UI));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("UI.Clone");
+            return Self.clone();
         }
 
         public List<UIPage> getPages()
         {
-            throw new global::System.NotImplementedException("UI.GetPages");
+            return Self.getPages();
         }
     }
 }

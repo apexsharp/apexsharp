@@ -1,27 +1,17 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class FormulaType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_enum_reports_FormulaType.htm
+    /// </summary>
+    public enum FormulaType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("FormulaType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("FormulaType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("FormulaType.Ordinal");
-        }
-
-        public static List<FormulaType> values()
-        {
-            throw new global::System.NotImplementedException("FormulaType.Values");
-        }
+        CURRENCY,
+        NUMBER,
+        PERCENT
     }
 }

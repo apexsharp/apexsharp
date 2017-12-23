@@ -1,15 +1,35 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Aura
     {
-        public static object getComponent()
+        // infrastructure
+        public Aura(dynamic self)
         {
-            throw new global::System.NotImplementedException("Aura.GetComponent");
+            Self = self;
         }
 
-        public static void redirect(object pageReference)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Aura.Redirect");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Aura));
+            }
+        }
+
+        // API
+        public static void redirect(PageReference pageReference)
+        {
+            Implementation.redirect(pageReference);
         }
     }
 }

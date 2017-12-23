@@ -1,32 +1,43 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
-    public class AnalysisException
+    using ApexSharp.Implementation;
+    using System;
+
+    public class AnalysisException : Exception
     {
+        // infrastructure
+        public AnalysisException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AnalysisException));
+            }
+        }
+
+        // API
         public AnalysisException()
         {
-            throw new global::System.NotImplementedException("AnalysisException");
+            Self = Implementation.Constructor();
         }
 
         public AnalysisException(Exception param1)
         {
-            throw new global::System.NotImplementedException("AnalysisException");
+            Self = Implementation.Constructor(param1);
+        }
+
+        public AnalysisException(string param1)
+        {
+            Self = Implementation.Constructor(param1);
         }
 
         public AnalysisException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("AnalysisException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("AnalysisException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("AnalysisException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

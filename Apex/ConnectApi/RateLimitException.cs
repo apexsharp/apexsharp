@@ -1,20 +1,33 @@
 namespace Apex.ConnectApi
 {
-    public class RateLimitException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class RateLimitException : Exception
     {
-        public object clone()
+        // infrastructure
+        public RateLimitException(dynamic self)
         {
-            throw new global::System.NotImplementedException("RateLimitException.Clone");
+            Self = self;
         }
 
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RateLimitException));
+            }
+        }
+
+        // API
         public string getErrorCode()
         {
-            throw new global::System.NotImplementedException("RateLimitException.GetErrorCode");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("RateLimitException.GetTypeName");
+            return Self.getErrorCode();
         }
     }
 }

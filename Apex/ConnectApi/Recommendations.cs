@@ -1,299 +1,270 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Recommendations_static_methods.htm#apex_ConnectAPI_Recommendations_static_methods
+    /// </summary>
     public class Recommendations
     {
-        public object clone()
+        // infrastructure
+        public Recommendations(dynamic self)
         {
-            throw new global::System.NotImplementedException("Recommendations.Clone");
+            Self = self;
         }
 
-        public static RecommendationAudience createRecommendationAudience(string communityId,
-            RecommendationAudienceInput recommendationAudience)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateRecommendationAudience");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Recommendations));
+            }
+        }
+
+        // API
+        public static RecommendationAudience createRecommendationAudience(string communityId, RecommendationAudienceInput recommendationAudience)
+        {
+            return Implementation.createRecommendationAudience(communityId, recommendationAudience);
         }
 
         public static RecommendationAudience createRecommendationAudience(string communityId, string name)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateRecommendationAudience");
+            return Implementation.createRecommendationAudience(communityId, name);
         }
 
-        public static RecommendationDefinition createRecommendationDefinition(string communityId,
-            RecommendationDefinitionInput recommendationDefinition)
+        public static RecommendationDefinition createRecommendationDefinition(string communityId, RecommendationDefinitionInput recommendationDefinition)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateRecommendationDefinition");
+            return Implementation.createRecommendationDefinition(communityId, recommendationDefinition);
         }
 
-        public static RecommendationDefinition createRecommendationDefinition(string communityId, string name,
-            string title, string actionUrl, string actionUrlName, string explanation)
+        public static RecommendationDefinition createRecommendationDefinition(string communityId, string name, string title, string actionUrl, string actionUrlName, string explanation)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateRecommendationDefinition");
+            return Implementation.createRecommendationDefinition(communityId, name, title, actionUrl, actionUrlName, explanation);
         }
 
-        public static ScheduledRecommendation createScheduledRecommendation(string communityId,
-            ScheduledRecommendationInput scheduledRecommendation)
+        public static ScheduledRecommendation createScheduledRecommendation(string communityId, ScheduledRecommendationInput scheduledRecommendation)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateScheduledRecommendation");
+            return Implementation.createScheduledRecommendation(communityId, scheduledRecommendation);
         }
 
-        public static ScheduledRecommendation createScheduledRecommendation(string communityId,
-            string recommendationDefinitionId, int rank, bool enabled, string recommendationAudienceId)
+        public static ScheduledRecommendation createScheduledRecommendation(string communityId, string recommendationDefinitionId, int rank, bool enabled, string recommendationAudienceId)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateScheduledRecommendation");
+            return Implementation.createScheduledRecommendation(communityId, recommendationDefinitionId, rank, enabled, recommendationAudienceId);
         }
 
-        public static ScheduledRecommendation createScheduledRecommendation(string communityId,
-            string recommendationDefinitionId, int rank, bool enabled, string recommendationAudienceId,
-            RecommendationChannel channel)
+        public static ScheduledRecommendation createScheduledRecommendation(string communityId, string recommendationDefinitionId, int rank, bool enabled, string recommendationAudienceId, RecommendationChannel channel)
         {
-            throw new global::System.NotImplementedException("Recommendations.CreateScheduledRecommendation");
+            return Implementation.createScheduledRecommendation(communityId, recommendationDefinitionId, rank, enabled, recommendationAudienceId, channel);
         }
 
         public static void deleteRecommendationAudience(string communityId, string recommendationAudienceId)
         {
-            throw new global::System.NotImplementedException("Recommendations.DeleteRecommendationAudience");
+            Implementation.deleteRecommendationAudience(communityId, recommendationAudienceId);
         }
 
         public static void deleteRecommendationDefinition(string communityId, string recommendationDefinitionId)
         {
-            throw new global::System.NotImplementedException("Recommendations.DeleteRecommendationDefinition");
+            Implementation.deleteRecommendationDefinition(communityId, recommendationDefinitionId);
         }
 
         public static void deleteRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId)
         {
-            throw new global::System.NotImplementedException("Recommendations.DeleteRecommendationDefinitionPhoto");
+            Implementation.deleteRecommendationDefinitionPhoto(communityId, recommendationDefinitionId);
         }
 
-        public static void deleteScheduledRecommendation(string communityId, string scheduledRecommendationId,
-            bool deleteDefinitionIfLast)
+        public static void deleteScheduledRecommendation(string communityId, string scheduledRecommendationId, bool deleteDefinitionIfLast)
         {
-            throw new global::System.NotImplementedException("Recommendations.DeleteScheduledRecommendation");
+            Implementation.deleteScheduledRecommendation(communityId, scheduledRecommendationId, deleteDefinitionIfLast);
         }
 
-        public static RecommendationAudience getRecommendationAudience(string communityId,
-            string recommendationAudienceId)
+        public static RecommendationAudience getRecommendationAudience(string communityId, string recommendationAudienceId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationAudience");
+            return Implementation.getRecommendationAudience(communityId, recommendationAudienceId);
         }
 
-        public static UserReferencePage getRecommendationAudienceMembership(string communityId,
-            string recommendationAudienceId)
+        public static UserReferencePage getRecommendationAudienceMembership(string communityId, string recommendationAudienceId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationAudienceMembership");
+            return Implementation.getRecommendationAudienceMembership(communityId, recommendationAudienceId);
         }
 
-        public static UserReferencePage getRecommendationAudienceMembership(string communityId,
-            string recommendationAudienceId, int pageParam, int pageSize)
+        public static UserReferencePage getRecommendationAudienceMembership(string communityId, string recommendationAudienceId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationAudienceMembership");
+            return Implementation.getRecommendationAudienceMembership(communityId, recommendationAudienceId, pageParam, pageSize);
         }
 
         public static RecommendationAudiencePage getRecommendationAudiences(string communityId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationAudiences");
+            return Implementation.getRecommendationAudiences(communityId);
         }
 
-        public static RecommendationAudiencePage getRecommendationAudiences(string communityId, int pageParam,
-            int pageSize)
+        public static RecommendationAudiencePage getRecommendationAudiences(string communityId, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationAudiences");
+            return Implementation.getRecommendationAudiences(communityId, pageParam, pageSize);
         }
 
-        public static RecommendationDefinition getRecommendationDefinition(string communityId,
-            string recommendationDefinitionId)
+        public static RecommendationDefinition getRecommendationDefinition(string communityId, string recommendationDefinitionId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationDefinition");
+            return Implementation.getRecommendationDefinition(communityId, recommendationDefinitionId);
         }
 
         public static Photo getRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationDefinitionPhoto");
+            return Implementation.getRecommendationDefinitionPhoto(communityId, recommendationDefinitionId);
         }
 
         public static RecommendationDefinitionPage getRecommendationDefinitions(string communityId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationDefinitions");
+            return Implementation.getRecommendationDefinitions(communityId);
         }
 
-        public static RecommendationCollection getRecommendationForUser(string communityId, string userId,
-            RecommendationActionType action, string objectId)
+        public static RecommendationCollection getRecommendationForUser(string communityId, string userId, RecommendationActionType action, string objectId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationForUser");
+            return Implementation.getRecommendationForUser(communityId, userId, action, objectId);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId,
-            RecommendationChannel channel, int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType contextAction, string contextObjectId, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, contextAction, contextObjectId, maxResults);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId,
-            int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, contextAction, contextObjectId, channel, maxResults);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, string objectCategory, RecommendationActionType contextAction,
-            string contextObjectId, RecommendationChannel channel, int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, action, contextAction, contextObjectId, maxResults);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, string objectCategory, RecommendationActionType contextAction,
-            string contextObjectId, int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, action, contextAction, contextObjectId, channel, maxResults);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel,
-            int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType action, string objectCategory, RecommendationActionType contextAction, string contextObjectId, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, action, objectCategory, contextAction, contextObjectId, maxResults);
         }
 
-        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType contextAction, string contextObjectId, int maxResults)
+        public static RecommendationCollection getRecommendationsForUser(string communityId, string userId, RecommendationActionType action, string objectCategory, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetRecommendationsForUser");
+            return Implementation.getRecommendationsForUser(communityId, userId, action, objectCategory, contextAction, contextObjectId, channel, maxResults);
         }
 
-        public static ScheduledRecommendation getScheduledRecommendation(string communityId,
-            string scheduledRecommendationId)
+        public static ScheduledRecommendation getScheduledRecommendation(string communityId, string scheduledRecommendationId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetScheduledRecommendation");
+            return Implementation.getScheduledRecommendation(communityId, scheduledRecommendationId);
         }
 
         public static ScheduledRecommendationPage getScheduledRecommendations(string communityId)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetScheduledRecommendations");
+            return Implementation.getScheduledRecommendations(communityId);
         }
 
-        public static ScheduledRecommendationPage getScheduledRecommendations(string communityId,
-            RecommendationChannel channel)
+        public static ScheduledRecommendationPage getScheduledRecommendations(string communityId, RecommendationChannel channel)
         {
-            throw new global::System.NotImplementedException("Recommendations.GetScheduledRecommendations");
+            return Implementation.getScheduledRecommendations(communityId, channel);
         }
 
-        public static void rejectRecommendationForUser(string communityId, string userId,
-            RecommendationActionType action, RecommendedObjectType objectEnum)
+        public static void rejectRecommendationForUser(string communityId, string userId, RecommendationActionType action, string objectId)
         {
-            throw new global::System.NotImplementedException("Recommendations.RejectRecommendationForUser");
+            Implementation.rejectRecommendationForUser(communityId, userId, action, objectId);
         }
 
-        public static void rejectRecommendationForUser(string communityId, string userId,
-            RecommendationActionType action, string objectId)
+        public static void rejectRecommendationForUser(string communityId, string userId, RecommendationActionType action, RecommendedObjectType objectEnum)
         {
-            throw new global::System.NotImplementedException("Recommendations.RejectRecommendationForUser");
+            Implementation.rejectRecommendationForUser(communityId, userId, action, objectEnum);
         }
 
-        public static void setTestGetRecommendationForUser(string communityId, string userId,
-            RecommendationActionType action, string objectId, RecommendationCollection result)
+        public static RecommendationAudience updateRecommendationAudience(string communityId, string recommendationAudienceId, RecommendationAudienceInput recommendationAudience)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationForUser");
+            return Implementation.updateRecommendationAudience(communityId, recommendationAudienceId, recommendationAudience);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId,
-            RecommendationChannel channel, int maxResults, RecommendationCollection result)
+        public static RecommendationDefinition updateRecommendationDefinition(string communityId, string recommendationDefinitionId, string name, string title, string actionUrl, string actionUrlName, string explanation)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinition(communityId, recommendationDefinitionId, name, title, actionUrl, actionUrlName, explanation);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId,
-            int maxResults, RecommendationCollection result)
+        public static RecommendationDefinition updateRecommendationDefinition(string communityId, string recommendationDefinitionId, RecommendationDefinitionInput recommendationDefinition)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinition(communityId, recommendationDefinitionId, recommendationDefinition);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, string objectCategory, RecommendationActionType contextAction,
-            string contextObjectId, RecommendationChannel channel, int maxResults, RecommendationCollection result)
+        public static Photo updateRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinitionPhoto(communityId, recommendationDefinitionId, fileUpload);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType action, string objectCategory, RecommendationActionType contextAction,
-            string contextObjectId, int maxResults, RecommendationCollection result)
+        public static Photo updateRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId, string fileId, int versionNumber)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinitionPhoto(communityId, recommendationDefinitionId, fileId, versionNumber);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel,
-            int maxResults, RecommendationCollection result)
+        public static Photo updateRecommendationDefinitionPhotoWithAttributes(string communityId, string recommendationDefinitionId, PhotoInput photo)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinitionPhotoWithAttributes(communityId, recommendationDefinitionId, photo);
         }
 
-        public static void setTestGetRecommendationsForUser(string communityId, string userId,
-            RecommendationActionType contextAction, string contextObjectId, int maxResults,
-            RecommendationCollection result)
+        public static Photo updateRecommendationDefinitionPhotoWithAttributes(string communityId, string recommendationDefinitionId, PhotoInput photo, BinaryInput fileUpload)
         {
-            throw new global::System.NotImplementedException("Recommendations.SetTestGetRecommendationsForUser");
+            return Implementation.updateRecommendationDefinitionPhotoWithAttributes(communityId, recommendationDefinitionId, photo, fileUpload);
         }
 
-        public static RecommendationAudience updateRecommendationAudience(string communityId,
-            string recommendationAudienceId, RecommendationAudienceInput recommendationAudience)
+        public static ScheduledRecommendation updateScheduledRecommendation(string communityId, string scheduledRecommendationId, ScheduledRecommendationInput scheduledRecommendation)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateRecommendationAudience");
+            return Implementation.updateScheduledRecommendation(communityId, scheduledRecommendationId, scheduledRecommendation);
         }
 
-        public static RecommendationDefinition updateRecommendationDefinition(string communityId,
-            string recommendationDefinitionId, RecommendationDefinitionInput recommendationDefinition)
+        public static ScheduledRecommendation updateScheduledRecommendation(string communityId, string scheduledRecommendationId, int rank, bool enabled, string recommendationAudienceId)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateRecommendationDefinition");
+            return Implementation.updateScheduledRecommendation(communityId, scheduledRecommendationId, rank, enabled, recommendationAudienceId);
         }
 
-        public static RecommendationDefinition updateRecommendationDefinition(string communityId,
-            string recommendationDefinitionId, string name, string title, string actionUrl, string actionUrlName,
-            string explanation)
+        public static void setTestGetRecommendationForUser(string communityId, string userId, RecommendationActionType action, string objectId, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateRecommendationDefinition");
+            Implementation.setTestGetRecommendationForUser(communityId, userId, action, objectId, result);
         }
 
-        public static Photo updateRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId,
-            BinaryInput fileUpload)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType contextAction, string contextObjectId, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateRecommendationDefinitionPhoto");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, contextAction, contextObjectId, maxResults, result);
         }
 
-        public static Photo updateRecommendationDefinitionPhoto(string communityId, string recommendationDefinitionId,
-            string fileId, int versionNumber)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateRecommendationDefinitionPhoto");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, contextAction, contextObjectId, channel, maxResults, result);
         }
 
-        public static Photo updateRecommendationDefinitionPhotoWithAttributes(string communityId,
-            string recommendationDefinitionId, PhotoInput photo)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException(
-                "Recommendations.UpdateRecommendationDefinitionPhotoWithAttributes");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, action, contextAction, contextObjectId, maxResults, result);
         }
 
-        public static Photo updateRecommendationDefinitionPhotoWithAttributes(string communityId,
-            string recommendationDefinitionId, PhotoInput photo, BinaryInput fileUpload)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType action, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException(
-                "Recommendations.UpdateRecommendationDefinitionPhotoWithAttributes");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, action, contextAction, contextObjectId, channel, maxResults, result);
         }
 
-        public static ScheduledRecommendation updateScheduledRecommendation(string communityId,
-            string scheduledRecommendationId, ScheduledRecommendationInput scheduledRecommendation)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType action, string objectCategory, RecommendationActionType contextAction, string contextObjectId, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateScheduledRecommendation");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, action, objectCategory, contextAction, contextObjectId, maxResults, result);
         }
 
-        public static ScheduledRecommendation updateScheduledRecommendation(string communityId,
-            string scheduledRecommendationId, int rank, bool enabled, string recommendationAudienceId)
+        public static void setTestGetRecommendationsForUser(string communityId, string userId, RecommendationActionType action, string objectCategory, RecommendationActionType contextAction, string contextObjectId, RecommendationChannel channel, int maxResults, RecommendationCollection result)
         {
-            throw new global::System.NotImplementedException("Recommendations.UpdateScheduledRecommendation");
+            Implementation.setTestGetRecommendationsForUser(communityId, userId, action, objectCategory, contextAction, contextObjectId, channel, maxResults, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

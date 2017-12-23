@@ -1,117 +1,167 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_cache_Org.htm#apex_class_cache_Org
+    /// </summary>
     public class Org
     {
-        public Org()
+        // infrastructure
+        public Org(dynamic self)
         {
-            throw new global::System.NotImplementedException("Org");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Org.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Org));
+            }
         }
 
-        public static List<Boolean> contains(List<string> keys)
-        {
-            throw new global::System.NotImplementedException("Org.Contains");
-        }
-
+        // API
         public static bool contains(string key)
         {
-            throw new global::System.NotImplementedException("Org.Contains");
+            return Implementation.contains(key);
         }
 
-        public static List<object> get(List<string> keys)
+        public static List<bool> contains(Set<string> keys)
         {
-            throw new global::System.NotImplementedException("Org.Get");
+            return Implementation.contains(keys);
         }
 
         public static object get(string key)
         {
-            throw new global::System.NotImplementedException("Org.Get");
+            return Implementation.get(key);
+        }
+
+        public static object get(Type cacheBuilder, string key)
+        {
+            return Implementation.get(cacheBuilder, key);
         }
 
         public static long getAvgGetTime()
         {
-            throw new global::System.NotImplementedException("Org.GetAvgGetTime");
+            return Implementation.getAvgGetTime();
         }
 
         public static long getAvgValueSize()
         {
-            throw new global::System.NotImplementedException("Org.GetAvgValueSize");
+            return Implementation.getAvgValueSize();
         }
 
         public static double getCapacity()
         {
-            throw new global::System.NotImplementedException("Org.GetCapacity");
+            return Implementation.getCapacity();
         }
 
-        public static Set<String> getKeys()
+        public static Set<string> getKeys()
         {
-            throw new global::System.NotImplementedException("Org.GetKeys");
+            return Implementation.getKeys();
         }
 
         public static long getMaxGetTime()
         {
-            throw new global::System.NotImplementedException("Org.GetMaxGetTime");
+            return Implementation.getMaxGetTime();
         }
 
         public static long getMaxValueSize()
         {
-            throw new global::System.NotImplementedException("Org.GetMaxValueSize");
+            return Implementation.getMaxValueSize();
         }
 
         public static double getMissRate()
         {
-            throw new global::System.NotImplementedException("Org.GetMissRate");
+            return Implementation.getMissRate();
         }
 
-        public static string getName()
+        public string getName()
         {
-            throw new global::System.NotImplementedException("Org.GetName");
+            return Self.getName();
         }
 
         public static long getNumKeys()
         {
-            throw new global::System.NotImplementedException("Org.GetNumKeys");
+            return Implementation.getNumKeys();
         }
 
-        public static Cache.OrgPartition getPartition(string partitionName)
+        public static OrgPartition getPartition(string partitionName)
         {
-            throw new global::System.NotImplementedException("Org.GetPartition");
+            return Implementation.getPartition(partitionName);
         }
 
         public static void put(string key, object value)
         {
-            throw new global::System.NotImplementedException("Org.Put");
+            Implementation.put(key, value);
+        }
+
+        public static void put(string key, object value, Visibility visibility)
+        {
+            Implementation.put(key, value, visibility);
         }
 
         public static void put(string key, object value, int ttlSecs)
         {
-            throw new global::System.NotImplementedException("Org.Put");
+            Implementation.put(key, value, ttlSecs);
         }
 
-        public static void put(string key, object value, int ttlSecs, Cache.Visibility visibility, bool immutable)
+        public static void put(string key, object value, int ttlSecs, Visibility visibility, bool immutable)
         {
-            throw new global::System.NotImplementedException("Org.Put");
-        }
-
-        public static void put(string key, object value, Cache.Visibility visibility)
-        {
-            throw new global::System.NotImplementedException("Org.Put");
-        }
-
-        public static List<Boolean> remove(List<string> keys)
-        {
-            throw new global::System.NotImplementedException("Org.Remove");
+            Implementation.put(key, value, ttlSecs, visibility, immutable);
         }
 
         public static bool remove(string key)
         {
-            throw new global::System.NotImplementedException("Org.Remove");
+            return Implementation.remove(key);
+        }
+
+        public static bool remove(Type cacheBuilder, string key)
+        {
+            return Implementation.remove(cacheBuilder, key);
+        }
+
+        object MAX_TTL_SECS
+        {
+            get
+            {
+                return Self.MAX_TTL_SECS;
+            }
+            set
+            {
+                Self.MAX_TTL_SECS = value;
+            }
+        }
+
+        public Org()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static List<bool> contains(List<string> keys)
+        {
+            return Implementation.contains(keys);
+        }
+
+        public static List<object> get(List<string> keys)
+        {
+            return Implementation.get(keys);
+        }
+
+        public static List<bool> remove(List<string> keys)
+        {
+            return Implementation.remove(keys);
         }
     }
 }

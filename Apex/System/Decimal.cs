@@ -1,120 +1,135 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_decimal.htm#apex_methods_system_decimal
+    /// </summary>
     public class Decimal
     {
+        // infrastructure
+        public Decimal(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(decimal));
+            }
+        }
+
+        // API
         public decimal abs()
         {
-            throw new global::System.NotImplementedException("Decimal.Abs");
-        }
-
-        public void addError(object msg)
-        {
-            throw new global::System.NotImplementedException("Decimal.AddError");
-        }
-
-        public void addError(object msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Decimal.AddError");
-        }
-
-        public void addError(string msg)
-        {
-            throw new global::System.NotImplementedException("Decimal.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Decimal.AddError");
+            return Self.abs();
         }
 
         public decimal divide(decimal divisor, int scale)
         {
-            throw new global::System.NotImplementedException("Decimal.Divide");
+            return Self.divide(divisor, scale);
         }
 
-        public decimal divide(decimal divisor, int scale, object roundingMode)
+        public decimal divide(decimal divisor, int scale, RoundingMode roundingMode)
         {
-            throw new global::System.NotImplementedException("Decimal.Divide");
+            return Self.divide(divisor, scale, roundingMode);
         }
 
         public double doubleValue()
         {
-            throw new global::System.NotImplementedException("Decimal.DoubleValue");
+            return Self.doubleValue();
         }
 
         public string format()
         {
-            throw new global::System.NotImplementedException("Decimal.Format");
+            return Self.format();
         }
 
         public int intValue()
         {
-            throw new global::System.NotImplementedException("Decimal.IntValue");
+            return Self.intValue();
         }
 
         public long longValue()
         {
-            throw new global::System.NotImplementedException("Decimal.LongValue");
+            return Self.longValue();
         }
 
         public decimal pow(int exponent)
         {
-            throw new global::System.NotImplementedException("Decimal.Pow");
+            return Self.pow(exponent);
         }
 
         public int precision()
         {
-            throw new global::System.NotImplementedException("Decimal.Precision");
+            return Self.precision();
         }
 
         public long round()
         {
-            throw new global::System.NotImplementedException("Decimal.Round");
+            return Self.round();
         }
 
         public long round(RoundingMode roundingMode)
         {
-            throw new global::System.NotImplementedException("Decimal.Round");
+            return Self.round(roundingMode);
         }
 
         public int scale()
         {
-            throw new global::System.NotImplementedException("Decimal.Scale");
+            return Self.scale();
         }
 
         public decimal setScale(int scale)
         {
-            throw new global::System.NotImplementedException("Decimal.SetScale");
+            return Self.setScale(scale);
         }
 
         public decimal setScale(int scale, RoundingMode roundingMode)
         {
-            throw new global::System.NotImplementedException("Decimal.SetScale");
+            return Self.setScale(scale, roundingMode);
         }
 
         public decimal stripTrailingZeros()
         {
-            throw new global::System.NotImplementedException("Decimal.StripTrailingZeros");
+            return Self.stripTrailingZeros();
         }
 
         public string toPlainString()
         {
-            throw new global::System.NotImplementedException("Decimal.ToPlainString");
+            return Self.toPlainString();
         }
 
-        public static decimal valueOf(double dbl)
+        public static decimal valueOf(double doubleToDecimal)
         {
-            throw new global::System.NotImplementedException("Decimal.ValueOf");
+            return Implementation.valueOf(doubleToDecimal);
         }
 
-        public static decimal valueOf(long lng)
+        public static decimal valueOf(long longToDecimal)
         {
-            throw new global::System.NotImplementedException("Decimal.ValueOf");
+            return Implementation.valueOf(longToDecimal);
         }
 
-        public static decimal valueOf(string str)
+        public static decimal valueOf(string stringToDecimal)
         {
-            throw new global::System.NotImplementedException("Decimal.ValueOf");
+            return Implementation.valueOf(stringToDecimal);
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class InvalidReadOnlyUserDmlException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class InvalidReadOnlyUserDmlException : Exception
     {
+        // infrastructure
+        public InvalidReadOnlyUserDmlException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(InvalidReadOnlyUserDmlException));
+            }
+        }
+
+        // API
         public InvalidReadOnlyUserDmlException()
         {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException");
+            Self = Implementation.Constructor();
         }
 
         public InvalidReadOnlyUserDmlException(Exception param1)
         {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReadOnlyUserDmlException(string param1)
         {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public InvalidReadOnlyUserDmlException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("InvalidReadOnlyUserDmlException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

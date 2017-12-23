@@ -1,34 +1,56 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DeletingBatchable
     {
+        // infrastructure
+        public DeletingBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DeletingBatchable));
+            }
+        }
+
+        // API
         public DeletingBatchable(string uprId)
         {
-            throw new global::System.NotImplementedException("DeletingBatchable");
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DeletingBatchable.Clone");
+            return Self.clone();
         }
 
-        public void execute(Database.BatchableContext BC, List<SObject> scope)
+        public void execute(BatchableContext BC, List<SObject> scope)
         {
-            throw new global::System.NotImplementedException("DeletingBatchable.Execute");
+            Self.execute(BC, scope);
         }
 
-        public void finish(Database.BatchableContext BC)
+        public void finish(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("DeletingBatchable.Finish");
+            Self.finish(BC);
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public QueryLocator start(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("DeletingBatchable.Start");
+            return Self.start(BC);
         }
     }
 }

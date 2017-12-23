@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class TopicSuggestionPage
     {
+        // infrastructure
+        public TopicSuggestionPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TopicSuggestionPage));
+            }
+        }
+
+        // API
+        object topicSuggestions
+        {
+            get
+            {
+                return Self.topicSuggestions;
+            }
+            set
+            {
+                Self.topicSuggestions = value;
+            }
+        }
+
         public TopicSuggestionPage()
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TopicSuggestionPage.ToString");
+            return Self.toString();
         }
     }
 }

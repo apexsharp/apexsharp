@@ -1,50 +1,75 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_TopRows.htm#apex_class_reports_TopRows
+    /// </summary>
     public class TopRows
     {
-        public TopRows()
+        // infrastructure
+        public TopRows(dynamic self)
         {
-            throw new global::System.NotImplementedException("TopRows");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TopRows));
+            }
+        }
+
+        // API
         public TopRows(int rowLimit, ColumnSortOrder direction)
         {
-            throw new global::System.NotImplementedException("TopRows");
+            Self = Implementation.Constructor(rowLimit, direction);
         }
 
-        public object clone()
+        public TopRows()
         {
-            throw new global::System.NotImplementedException("TopRows.Clone");
+            Self = Implementation.Constructor();
         }
 
         public ColumnSortOrder getDirection()
         {
-            throw new global::System.NotImplementedException("TopRows.GetDirection");
+            return Self.getDirection();
         }
 
         public int getRowLimit()
         {
-            throw new global::System.NotImplementedException("TopRows.GetRowLimit");
+            return Self.getRowLimit();
         }
 
         public void setDirection(string value)
         {
-            throw new global::System.NotImplementedException("TopRows.SetDirection");
+            Self.setDirection(value);
         }
 
         public void setDirection(ColumnSortOrder direction)
         {
-            throw new global::System.NotImplementedException("TopRows.SetDirection");
+            Self.setDirection(direction);
         }
 
         public void setRowLimit(int rowLimit)
         {
-            throw new global::System.NotImplementedException("TopRows.SetRowLimit");
+            Self.setRowLimit(rowLimit);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("TopRows.ToString");
+            return Self.toString();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

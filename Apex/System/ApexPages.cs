@@ -1,37 +1,61 @@
-using Apex.ApexPages;
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.ApexPages;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_apexpages.htm#apex_methods_system_apexpages
+    /// </summary>
     public class ApexPages
     {
-        public static void addMessage(Message message)
+        // infrastructure
+        public ApexPages(dynamic self)
         {
-            throw new global::System.NotImplementedException("ApexPages.AddMessage");
+            Self = self;
         }
 
-        public static void addMessages(object ex)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ApexPages.AddMessages");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ApexPages));
+            }
+        }
+
+        // API
+        public static void addMessage(Message message)
+        {
+            Implementation.addMessage(message);
+        }
+
+        public static void addMessages(Exception exceptionThrown)
+        {
+            Implementation.addMessages(exceptionThrown);
         }
 
         public static PageReference currentPage()
         {
-            throw new global::System.NotImplementedException("ApexPages.CurrentPage");
+            return Implementation.currentPage();
         }
 
-        public static List<Message> getMessages()
+        public List<Message> getMessages()
         {
-            throw new global::System.NotImplementedException("ApexPages.GetMessages");
+            return Implementation.getMessages();
         }
 
         public static bool hasMessages()
         {
-            throw new global::System.NotImplementedException("ApexPages.HasMessages");
+            return Implementation.hasMessages();
         }
 
-        public static bool hasMessages(Severity severity)
+        public bool hasMessages(Severity severity)
         {
-            throw new global::System.NotImplementedException("ApexPages.HasMessages");
+            return Implementation.hasMessages(severity);
         }
     }
 }

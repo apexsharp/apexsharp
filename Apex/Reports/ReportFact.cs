@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportfact.htm#apex_class_reports_reportfact
+    /// </summary>
     public class ReportFact
     {
+        // infrastructure
+        public ReportFact(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportFact));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportFact.Clone");
+            return Self.clone();
         }
 
         public List<SummaryValue> getAggregates()
         {
-            throw new global::System.NotImplementedException("ReportFact.GetAggregates");
+            return Self.getAggregates();
         }
 
         public string getKey()
         {
-            throw new global::System.NotImplementedException("ReportFact.GetKey");
+            return Self.getKey();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportFact.ToString");
+            return Self.toString();
         }
     }
 }

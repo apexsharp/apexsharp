@@ -1,30 +1,50 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_boolean.htm#apex_methods_system_boolean
+    /// </summary>
     public class Boolean
     {
-        public void addError(object msg)
+        // infrastructure
+        public Boolean(dynamic self)
         {
-            throw new global::System.NotImplementedException("Boolean.AddError");
+            Self = self;
         }
 
-        public void addError(object msg, bool escape)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Boolean.AddError");
+            get
+            {
+                return Implementor.GetImplementation(typeof(bool));
+            }
         }
 
-        public void addError(string msg)
+        // API
+        public static bool valueOf(string stringToBoolean)
         {
-            throw new global::System.NotImplementedException("Boolean.AddError");
+            return Implementation.valueOf(stringToBoolean);
         }
 
-        public void addError(string msg, bool escape)
+        public static bool valueOf(object fieldValue)
         {
-            throw new global::System.NotImplementedException("Boolean.AddError");
+            return Implementation.valueOf(fieldValue);
         }
 
-        public static bool valueOf(object a)
+        public void addError(Exception msg, bool escape)
         {
-            throw new global::System.NotImplementedException("Boolean.ValueOf");
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

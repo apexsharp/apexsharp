@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class CalloutException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class CalloutException : Exception
     {
+        // infrastructure
+        public CalloutException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CalloutException));
+            }
+        }
+
+        // API
         public CalloutException()
         {
-            throw new global::System.NotImplementedException("CalloutException");
+            Self = Implementation.Constructor();
         }
 
         public CalloutException(Exception param1)
         {
-            throw new global::System.NotImplementedException("CalloutException");
+            Self = Implementation.Constructor(param1);
         }
 
         public CalloutException(string param1)
         {
-            throw new global::System.NotImplementedException("CalloutException");
+            Self = Implementation.Constructor(param1);
         }
 
         public CalloutException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("CalloutException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("CalloutException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("CalloutException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("CalloutException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("CalloutException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("CalloutException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("CalloutException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("CalloutException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

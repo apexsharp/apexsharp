@@ -1,54 +1,76 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LinkingBatchable
     {
+        // infrastructure
+        public LinkingBatchable(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LinkingBatchable));
+            }
+        }
+
+        // API
         public LinkingBatchable(string uprId)
         {
-            throw new global::System.NotImplementedException("LinkingBatchable");
+            Self = Implementation.Constructor(uprId);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.Clone");
+            return Self.clone();
         }
 
-        public void execute(Database.BatchableContext BC, List<SObject> scope)
+        public void execute(BatchableContext BC, List<SObject> scope)
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.Execute");
+            Self.execute(BC, scope);
         }
 
-        public void finish(Database.BatchableContext BC)
+        public void finish(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.Finish");
+            Self.finish(BC);
         }
 
         public string getFlowName()
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.GetFlowName");
+            return Self.getFlowName();
         }
 
         public string getFlowNamespace()
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.GetFlowNamespace");
+            return Self.getFlowNamespace();
         }
 
         public bool hasFlow()
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.HasFlow");
+            return Self.hasFlow();
         }
 
         public bool hasFlowOrApex()
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.HasFlowOrApex");
+            return Self.hasFlowOrApex();
         }
 
-        public Database.QueryLocator start(Database.BatchableContext BC)
+        public QueryLocator start(BatchableContext BC)
         {
-            throw new global::System.NotImplementedException("LinkingBatchable.Start");
+            return Self.start(BC);
         }
     }
 }

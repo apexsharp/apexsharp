@@ -1,65 +1,90 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardDateFilter.htm#apex_class_reports_StandardDateFilter
+    /// </summary>
     public class StandardDateFilter
     {
-        public StandardDateFilter()
+        // infrastructure
+        public StandardDateFilter(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardDateFilter");
+            Self = self;
         }
 
-        public StandardDateFilter(string column, string durationValue, string startDate, string endDate)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("StandardDateFilter");
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardDateFilter));
+            }
         }
 
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("StandardDateFilter.Clone");
-        }
-
+        // API
         public string getColumn()
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.GetColumn");
+            return Self.getColumn();
         }
 
         public string getDurationValue()
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.GetDurationValue");
+            return Self.getDurationValue();
         }
 
         public string getEndDate()
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.GetEndDate");
+            return Self.getEndDate();
         }
 
         public string getStartDate()
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.GetStartDate");
+            return Self.getStartDate();
         }
 
-        public void setColumn(string column)
+        public void setColumn(string standardDateFilterColumnName)
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.SetColumn");
+            Self.setColumn(standardDateFilterColumnName);
         }
 
-        public void setDurationValue(string durationValue)
+        public void setDurationValue(string durationName)
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.SetDurationValue");
+            Self.setDurationValue(durationName);
         }
 
         public void setEndDate(string endDate)
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.SetEndDate");
+            Self.setEndDate(endDate);
         }
 
         public void setStartDate(string startDate)
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.SetStartDate");
+            Self.setStartDate(startDate);
+        }
+
+        public StandardDateFilter()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public StandardDateFilter(string column, string durationValue, string startDate, string endDate)
+        {
+            Self = Implementation.Constructor(column, durationValue, startDate, endDate);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardDateFilter.ToString");
+            return Self.toString();
         }
     }
 }

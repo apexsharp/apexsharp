@@ -1,35 +1,144 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CaseComment
     {
+        // infrastructure
+        public CaseComment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CaseComment));
+            }
+        }
+
+        // API
+        object actorType
+        {
+            get
+            {
+                return Self.actorType;
+            }
+            set
+            {
+                Self.actorType = value;
+            }
+        }
+
+        object createdBy
+        {
+            get
+            {
+                return Self.createdBy;
+            }
+            set
+            {
+                Self.createdBy = value;
+            }
+        }
+
+        object createdDate
+        {
+            get
+            {
+                return Self.createdDate;
+            }
+            set
+            {
+                Self.createdDate = value;
+            }
+        }
+
+        object eventType
+        {
+            get
+            {
+                return Self.eventType;
+            }
+            set
+            {
+                Self.eventType = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object published
+        {
+            get
+            {
+                return Self.published;
+            }
+            set
+            {
+                Self.published = value;
+            }
+        }
+
+        object text
+        {
+            get
+            {
+                return Self.text;
+            }
+            set
+            {
+                Self.text = value;
+            }
+        }
+
         public CaseComment()
         {
-            throw new global::System.NotImplementedException("CaseComment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CaseComment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("CaseComment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("CaseComment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("CaseComment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CaseComment.ToString");
+            return Self.toString();
         }
     }
 }

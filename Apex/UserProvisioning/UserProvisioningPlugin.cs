@@ -1,35 +1,61 @@
 namespace Apex.UserProvisioning
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Process;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_UserProvisioning_UserProvisioningPlugin.htm#apex_class_UserProvisioning_UserProvisioningPlugin
+    /// </summary>
     public class UserProvisioningPlugin
     {
-        public UserProvisioningPlugin()
+        // infrastructure
+        public UserProvisioningPlugin(dynamic self)
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin");
+            Self = self;
         }
 
-        public Process.PluginDescribeResult buildDescribeCall()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin.BuildDescribeCall");
+            get
+            {
+                return Implementor.GetImplementation(typeof(UserProvisioningPlugin));
+            }
         }
 
-        public object clone()
+        // API
+        public PluginDescribeResult buildDescribeCall()
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin.Clone");
+            return Self.buildDescribeCall();
         }
 
-        public Process.PluginDescribeResult describe()
+        public PluginDescribeResult describe()
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin.Describe");
+            return Self.describe();
         }
 
         public string getPluginClassName()
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin.GetPluginClassName");
+            return Self.getPluginClassName();
         }
 
-        public Process.PluginResult invoke(Process.PluginRequest param1)
+        public PluginResult invoke(PluginRequest request)
         {
-            throw new global::System.NotImplementedException("UserProvisioningPlugin.Invoke");
+            return Self.invoke(request);
+        }
+
+        public UserProvisioningPlugin()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

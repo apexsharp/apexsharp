@@ -1,25 +1,50 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SfdcOps
     {
+        // infrastructure
+        public SfdcOps(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SfdcOps));
+            }
+        }
+
+        // API
         public SfdcOps()
         {
-            throw new global::System.NotImplementedException("SfdcOps");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("SfdcOps.Clone");
+            return Self.clone();
         }
 
-        public static Map<String, String> getCustomerInfo(string orgId, string userId)
+        public static Map<string, string> getCustomerInfo(string userName)
         {
-            throw new global::System.NotImplementedException("SfdcOps.GetCustomerInfo");
+            return Implementation.getCustomerInfo(userName);
         }
 
-        public static Map<String, String> getCustomerInfo(string userName)
+        public static Map<string, string> getCustomerInfo(string orgId, string userId)
         {
-            throw new global::System.NotImplementedException("SfdcOps.GetCustomerInfo");
+            return Implementation.getCustomerInfo(orgId, userId);
         }
     }
 }

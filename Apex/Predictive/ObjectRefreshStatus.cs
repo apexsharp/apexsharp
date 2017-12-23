@@ -1,57 +1,80 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectRefreshStatus
     {
+        // infrastructure
+        public ObjectRefreshStatus(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectRefreshStatus));
+            }
+        }
+
+        // API
+        public ObjectRefreshStatus()
+        {
+            Self = Implementation.Constructor();
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.Clone");
+            return Self.clone();
         }
 
         public List<string> getDebugInfo()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetDebugInfo");
+            return Self.getDebugInfo();
         }
 
-        public DateTime getEndTime()
+        public Datetime getEndTime()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetEndTime");
+            return Self.getEndTime();
         }
 
         public List<string> getErrors()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetErrors");
+            return Self.getErrors();
         }
 
         public ObjectTreatment getObjectTreatment()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetObjectTreatment");
+            return Self.getObjectTreatment();
         }
 
         public string getRefreshId()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetRefreshId");
+            return Self.getRefreshId();
         }
 
-        public DateTime getStartTime()
+        public Datetime getStartTime()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetStartTime");
+            return Self.getStartTime();
         }
 
         public ObjectRefreshState getState()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetState");
+            return Self.getState();
         }
 
         public List<string> getWarnings()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.GetWarnings");
+            return Self.getWarnings();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ObjectRefreshStatus.ToString");
+            return Self.toString();
         }
     }
 }

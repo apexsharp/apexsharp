@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ScheduledRecommendationPage
     {
+        // infrastructure
+        public ScheduledRecommendationPage(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ScheduledRecommendationPage));
+            }
+        }
+
+        // API
+        object scheduledRecommendations
+        {
+            get
+            {
+                return Self.scheduledRecommendations;
+            }
+            set
+            {
+                Self.scheduledRecommendations = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public ScheduledRecommendationPage()
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ScheduledRecommendationPage.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,45 +1,70 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_StandardFilter.htm#apex_class_reports_StandardFilter
+    /// </summary>
     public class StandardFilter
     {
-        public StandardFilter()
+        // infrastructure
+        public StandardFilter(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardFilter");
+            Self = self;
         }
 
-        public StandardFilter(string name, string value)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("StandardFilter");
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardFilter));
+            }
         }
 
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("StandardFilter.Clone");
-        }
-
+        // API
         public string getName()
         {
-            throw new global::System.NotImplementedException("StandardFilter.GetName");
+            return Self.getName();
         }
 
         public string getValue()
         {
-            throw new global::System.NotImplementedException("StandardFilter.GetValue");
+            return Self.getValue();
         }
 
         public void setName(string name)
         {
-            throw new global::System.NotImplementedException("StandardFilter.SetName");
+            Self.setName(name);
         }
 
         public void setValue(string value)
         {
-            throw new global::System.NotImplementedException("StandardFilter.SetValue");
+            Self.setValue(value);
+        }
+
+        public StandardFilter()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public StandardFilter(string name, string value)
+        {
+            Self = Implementation.Constructor(name, value);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("StandardFilter.ToString");
+            return Self.toString();
         }
     }
 }

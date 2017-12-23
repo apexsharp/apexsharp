@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class SearchException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class SearchException : Exception
     {
+        // infrastructure
+        public SearchException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SearchException));
+            }
+        }
+
+        // API
         public SearchException()
         {
-            throw new global::System.NotImplementedException("SearchException");
+            Self = Implementation.Constructor();
         }
 
         public SearchException(Exception param1)
         {
-            throw new global::System.NotImplementedException("SearchException");
+            Self = Implementation.Constructor(param1);
         }
 
         public SearchException(string param1)
         {
-            throw new global::System.NotImplementedException("SearchException");
+            Self = Implementation.Constructor(param1);
         }
 
         public SearchException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("SearchException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("SearchException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("SearchException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("SearchException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("SearchException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("SearchException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("SearchException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("SearchException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

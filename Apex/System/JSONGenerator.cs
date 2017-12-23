@@ -1,182 +1,205 @@
-
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_System_JsonGenerator.htm#apex_class_System_JsonGenerator
+    /// </summary>
     public class JSONGenerator
     {
-        public object clone()
+        // infrastructure
+        public JSONGenerator(dynamic self)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(JSONGenerator));
+            }
+        }
+
+        // API
         public void close()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.Close");
+            Self.close();
         }
 
         public string getAsString()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.GetAsString");
+            return Self.getAsString();
         }
 
         public bool isClosed()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.IsClosed");
+            return Self.isClosed();
         }
 
-        public void writeBlob(Blob b)
+        public void writeBlob(Blob blobValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteBlob");
+            Self.writeBlob(blobValue);
         }
 
-        public void writeBlobField(string fieldName, Blob b)
+        public void writeBlobField(string fieldName, Blob blobValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteBlobField");
+            Self.writeBlobField(fieldName, blobValue);
         }
 
-        public void writeBoolean(bool b)
+        public void writeBoolean(bool blobValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteBoolean");
+            Self.writeBoolean(blobValue);
         }
 
-        public void writeBooleanField(string fieldName, bool b)
+        public void writeBooleanField(string fieldName, bool booleanValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteBooleanField");
+            Self.writeBooleanField(fieldName, booleanValue);
         }
 
-        public void writeDate(Date d)
+        public void writeDate(Date dateValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteDate");
+            Self.writeDate(dateValue);
         }
 
-        public void writeDateField(string fieldName, Date d)
+        public void writeDateField(string fieldName, Date dateValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteDateField");
+            Self.writeDateField(fieldName, dateValue);
         }
 
-        public void writeDateTime(DateTime dt)
+        public void writeDateTime(Datetime datetimeValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteDateTime");
+            Self.writeDateTime(datetimeValue);
         }
 
-        public void writeDateTimeField(string fieldName, DateTime dt)
+        public void writeDateTimeField(string fieldName, Datetime datetimeValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteDateTimeField");
+            Self.writeDateTimeField(fieldName, datetimeValue);
         }
 
         public void writeEndArray()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteEndArray");
+            Self.writeEndArray();
         }
 
         public void writeEndObject()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteEndObject");
+            Self.writeEndObject();
         }
 
         public void writeFieldName(string fieldName)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteFieldName");
+            Self.writeFieldName(fieldName);
         }
 
-        public void writeId(ID id)
+        public void writeId(ID identifier)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteId");
+            Self.writeId(identifier);
         }
 
-        public void writeIdField(string fieldName, ID id)
+        public void writeIdField(string fieldName, ID identifier)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteIdField");
+            Self.writeIdField(fieldName, identifier);
         }
 
         public void writeNull()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNull");
+            Self.writeNull();
         }
 
         public void writeNullField(string fieldName)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNullField");
+            Self.writeNullField(fieldName);
         }
 
-        public void writeNumber(decimal d)
+        public void writeNumber(decimal number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumber");
+            Self.writeNumber(number);
         }
 
-        public void writeNumber(double d)
+        public void writeNumber(double number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumber");
+            Self.writeNumber(number);
         }
 
-        public void writeNumber(int i)
+        public void writeNumber(int number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumber");
+            Self.writeNumber(number);
         }
 
-        public void writeNumber(long lng)
+        public void writeNumber(long number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumber");
+            Self.writeNumber(number);
         }
 
-        public void writeNumberField(string fieldName, decimal d)
+        public void writeNumberField(string fieldName, decimal number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumberField");
+            Self.writeNumberField(fieldName, number);
         }
 
-        public void writeNumberField(string fieldName, double d)
+        public void writeNumberField(string fieldName, double number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumberField");
+            Self.writeNumberField(fieldName, number);
         }
 
-        public void writeNumberField(string fieldName, int i)
+        public void writeNumberField(string fieldName, int number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumberField");
+            Self.writeNumberField(fieldName, number);
         }
 
-        public void writeNumberField(string fieldName, long lng)
+        public void writeNumberField(string fieldName, long number)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteNumberField");
+            Self.writeNumberField(fieldName, number);
         }
 
-        public void writeObject(object o)
+        public void writeObject(object anyObject)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteObject");
+            Self.writeObject(anyObject);
         }
 
-        public void writeObjectField(string fieldName, object o)
+        public void writeObjectField(string fieldName, object value)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteObjectField");
+            Self.writeObjectField(fieldName, value);
         }
 
         public void writeStartArray()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteStartArray");
+            Self.writeStartArray();
         }
 
         public void writeStartObject()
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteStartObject");
+            Self.writeStartObject();
         }
 
-        public void writeString(string str)
+        public void writeString(string stringValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteString");
+            Self.writeString(stringValue);
         }
 
-        public void writeStringField(string fieldName, string str)
+        public void writeStringField(string fieldName, string stringValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteStringField");
+            Self.writeStringField(fieldName, stringValue);
         }
 
-        public void writeTime(Time t)
+        public void writeTime(Time timeValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteTime");
+            Self.writeTime(timeValue);
         }
 
-        public void writeTimeField(string fieldName, Time t)
+        public void writeTimeField(string fieldName, Time timeValue)
         {
-            throw new global::System.NotImplementedException("JSONGenerator.WriteTimeField");
+            Self.writeTimeField(fieldName, timeValue);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

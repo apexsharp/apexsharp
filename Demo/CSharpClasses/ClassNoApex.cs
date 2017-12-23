@@ -3,7 +3,6 @@ namespace Demo.CSharpClasses
     using Apex.ApexSharp;
     using Apex.ApexSharp.ApexAttributes;
     using Apex.System;
-    
     using SObjects;
 
     public class ClassNoApex
@@ -21,8 +20,6 @@ namespace Demo.CSharpClasses
 
             NoApex.Serilog.LogInfo(name);
             System.debug(name);
-
-            NoApex.Serilog.LogInfo(name);
         }
     }
 }

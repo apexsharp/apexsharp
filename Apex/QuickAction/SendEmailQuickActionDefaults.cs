@@ -1,59 +1,80 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.QuickAction
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_QuickAction_SendEmailQuickActionDefaults.htm#apex_class_QuickAction_SendEmailQuickActionDefaults
+    /// </summary>
     public class SendEmailQuickActionDefaults
     {
-        public object clone()
+        // infrastructure
+        public SendEmailQuickActionDefaults(dynamic self)
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.Clone");
+            Self = self;
         }
 
-        public string getActionName()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetActionName");
+            get
+            {
+                return Implementor.GetImplementation(typeof(SendEmailQuickActionDefaults));
+            }
         }
 
-        public string getActionType()
-        {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetActionType");
-        }
-
-        public ID getContextId()
-        {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetContextId");
-        }
-
+        // API
         public List<string> getFromAddressList()
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetFromAddressList");
+            return Self.getFromAddressList();
         }
 
         public ID getInReplyToId()
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetInReplyToId");
+            return Self.getInReplyToId();
         }
 
-        public SObject getTargetSObject()
+        public void setIgnoreTemplateSubject(bool useOriginalSubject)
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.GetTargetSObject");
+            Self.setIgnoreTemplateSubject(useOriginalSubject);
         }
 
-        public void setIgnoreTemplateSubject(bool ignoreSubject)
+        public void setInsertTemplateBody(bool keepOriginalBodyContent)
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.SetIgnoreTemplateSubject");
-        }
-
-        public void setInsertTemplateBody(bool insertBody)
-        {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.SetInsertTemplateBody");
+            Self.setInsertTemplateBody(keepOriginalBodyContent);
         }
 
         public void setTemplateId(ID templateId)
         {
-            throw new global::System.NotImplementedException("SendEmailQuickActionDefaults.SetTemplateId");
+            Self.setTemplateId(templateId);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public string getActionName()
+        {
+            return Self.getActionName();
+        }
+
+        public string getActionType()
+        {
+            return Self.getActionType();
+        }
+
+        public ID getContextId()
+        {
+            return Self.getContextId();
+        }
+
+        public SObject getTargetSObject()
+        {
+            return Self.getTargetSObject();
         }
     }
 }

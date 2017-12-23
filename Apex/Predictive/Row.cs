@@ -1,32 +1,50 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class Row
     {
+        // infrastructure
+        public Row(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Row));
+            }
+        }
+
+        // API
         public Row()
         {
-            throw new global::System.NotImplementedException("Row");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Row.Clone");
+            return Self.clone();
         }
 
         public Map<String, object> getCells()
         {
-            throw new global::System.NotImplementedException("Row.GetCells");
+            return Self.getCells();
         }
 
         public void setCells(Map<String, object> cells)
         {
-            throw new global::System.NotImplementedException("Row.SetCells");
+            Self.setCells(cells);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Row.ToString");
+            return Self.toString();
         }
     }
 }

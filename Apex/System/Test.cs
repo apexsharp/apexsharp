@@ -1,105 +1,167 @@
-
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.QuickAction;
+    using global::Apex.Schema;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_test.htm#apex_methods_system_test
+    /// </summary>
     public class Test
     {
-        public Test()
+        // infrastructure
+        public Test(dynamic self)
         {
-            throw new global::System.NotImplementedException("Test");
+            Self = self;
         }
 
-        public object clone()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Test.Clone");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Test));
+            }
         }
 
+        // API
         public static object createStub(Type parentType, StubProvider stubProvider)
         {
-            throw new global::System.NotImplementedException("Test.CreateStub");
+            return Implementation.createStub(parentType, stubProvider);
         }
 
-        public static List<ID> enqueueBatchJobs(int n)
+        public static List<ID> enqueueBatchJobs(int numberOfJobs)
         {
-            throw new global::System.NotImplementedException("Test.EnqueueBatchJobs");
+            return Implementation.enqueueBatchJobs(numberOfJobs);
         }
 
         public static List<ID> getFlexQueueOrder()
         {
-            throw new global::System.NotImplementedException("Test.GetFlexQueueOrder");
+            return Implementation.getFlexQueueOrder();
         }
 
         public static ID getStandardPricebookId()
         {
-            throw new global::System.NotImplementedException("Test.GetStandardPricebookId");
+            return Implementation.getStandardPricebookId();
         }
 
-        public static object invokeContinuationMethod(object controller, Continuation continuation)
+        public static object invokeContinuationMethod(object controller, Continuation request)
         {
-            throw new global::System.NotImplementedException("Test.InvokeContinuationMethod");
+            return Implementation.invokeContinuationMethod(controller, request);
         }
 
-        //public static Apex.page InvokePage(PageReference p){throw new global::System.NotImplementedException("Test.InvokePage");}
         public static bool isRunningTest()
         {
-            throw new global::System.NotImplementedException("Test.IsRunningTest");
+            return Implementation.isRunningTest();
         }
 
-        //public static List<SObject> LoadData(Schema.SObjectType sobjectType,string staticResourceName){throw new global::System.NotImplementedException("Test.LoadData");}
-        //public static QuickAction.SendEmailQuickActionDefaults NewSendEmailQuickActionDefaults(ID contextId,ID replyToId){throw new global::System.NotImplementedException("Test.NewSendEmailQuickActionDefaults");}
-        public static void setContinuationResponse(string label, HttpResponse response)
+        public static List<SObject> loadData(SObjectType sObjectToken, string resourceName)
         {
-            throw new global::System.NotImplementedException("Test.SetContinuationResponse");
+            return Implementation.loadData(sObjectToken, resourceName);
         }
 
-        public static void setCreatedDate(ID id, DateTime dt)
+        public static SendEmailQuickActionDefaults newSendEmailQuickActionDefaults(ID contextId, ID replyToId)
         {
-            throw new global::System.NotImplementedException("Test.SetCreatedDate");
+            return Implementation.newSendEmailQuickActionDefaults(contextId, replyToId);
         }
 
-        public static void setCurrentPage(object pageReference)
+        public static void setContinuationResponse(string requestLabel, HttpResponse mockResponse)
         {
-            throw new global::System.NotImplementedException("Test.SetCurrentPage");
+            Implementation.setContinuationResponse(requestLabel, mockResponse);
         }
 
-        public static void setCurrentPageReference(object pageReference)
+        public static void setCreatedDate(ID recordId, Datetime createdDatetime)
         {
-            throw new global::System.NotImplementedException("Test.SetCurrentPageReference");
+            Implementation.setCreatedDate(recordId, createdDatetime);
         }
 
-        public static void setFixedSearchResults(List<string> searchResultsIds)
+        public static void setCurrentPage(PageReference page)
         {
-            throw new global::System.NotImplementedException("Test.SetFixedSearchResults");
+            Implementation.setCurrentPage(page);
         }
 
-        public static void setMock(global::System.Type interfaceType, object mock)
+        public static void setCurrentPageReference(PageReference page)
         {
-            throw new global::System.NotImplementedException("Test.SetMock");
+            Implementation.setCurrentPageReference(page);
         }
 
-        public static void setReadOnlyApplicationMode(bool readOnlyApplicationMode)
+        public static void setFixedSearchResults(ID[] fixedSearchResults)
         {
-            throw new global::System.NotImplementedException("Test.SetReadOnlyApplicationMode");
+            Implementation.setFixedSearchResults(fixedSearchResults);
+        }
+
+        public static void setMock(Type interfaceType, object instance)
+        {
+            Implementation.setMock(interfaceType, instance);
+        }
+
+        public static void setReadOnlyApplicationMode(bool applicationMode)
+        {
+            Implementation.setReadOnlyApplicationMode(applicationMode);
         }
 
         public static void startTest()
         {
-            throw new global::System.NotImplementedException("Test.StartTest");
+            Implementation.startTest();
         }
 
         public static void stopTest()
         {
-            throw new global::System.NotImplementedException("Test.StopTest");
+            Implementation.stopTest();
         }
 
-        //public static void TestInstall(InstallHandler script,Version version){throw new global::System.NotImplementedException("Test.TestInstall");}
-        //public static void TestInstall(InstallHandler script,Version version,bool isPush){throw new global::System.NotImplementedException("Test.TestInstall");}
-        public static void testSandboxPostCopyScript(SandboxPostCopy script, ID organizationId, ID sandboxId,
-            string sandboxName)
+        public static void testInstall(InstallHandler installImplementation, Version version, bool isPush)
         {
-            throw new global::System.NotImplementedException("Test.TestSandboxPostCopyScript");
+            Implementation.testInstall(installImplementation, version, isPush);
         }
 
-        //public static void TestUninstall(UninstallHandler script){throw new global::System.NotImplementedException("Test.TestUninstall");}
+        public static void testUninstall(UninstallHandler uninstallImplementation)
+        {
+            Implementation.testUninstall(uninstallImplementation);
+        }
+
+        public Test()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static object invokePage(PageReference p)
+        {
+            return Implementation.invokePage(p);
+        }
+
+        public static void setCurrentPage(object pageReference)
+        {
+            Implementation.setCurrentPage(pageReference);
+        }
+
+        public static void setCurrentPageReference(object pageReference)
+        {
+            Implementation.setCurrentPageReference(pageReference);
+        }
+
+        public static void setFixedSearchResults(List<string> searchResultsIds)
+        {
+            Implementation.setFixedSearchResults(searchResultsIds);
+        }
+
+        public static void testInstall(InstallHandler script, Version version)
+        {
+            Implementation.testInstall(script, version);
+        }
+
+        public static void testSandboxPostCopyScript(SandboxPostCopy script, ID organizationId, ID sandboxId, string sandboxName)
+        {
+            Implementation.testSandboxPostCopyScript(script, organizationId, sandboxId, sandboxName);
+        }
     }
 }

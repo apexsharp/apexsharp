@@ -1,27 +1,45 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ObjectAnalysisService
     {
+        // infrastructure
+        public ObjectAnalysisService(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ObjectAnalysisService));
+            }
+        }
+
+        // API
         public ObjectAnalysisService()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysisService");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysisService.Clone");
+            return Self.clone();
         }
 
         public static ObjectAnalysis get(string objectName)
         {
-            throw new global::System.NotImplementedException("ObjectAnalysisService.Get");
+            return Implementation.get(objectName);
         }
 
         public static List<ObjectAnalysis> getAll()
         {
-            throw new global::System.NotImplementedException("ObjectAnalysisService.GetAll");
+            return Implementation.getAll();
         }
     }
 }

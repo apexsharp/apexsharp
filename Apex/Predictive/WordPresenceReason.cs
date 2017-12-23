@@ -1,27 +1,45 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class WordPresenceReason
     {
+        // infrastructure
+        public WordPresenceReason(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(WordPresenceReason));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("WordPresenceReason.Clone");
+            return Self.clone();
         }
 
         public ReasonType getType()
         {
-            throw new global::System.NotImplementedException("WordPresenceReason.GetType");
+            return Self.getType();
         }
 
         public List<string> getWords()
         {
-            throw new global::System.NotImplementedException("WordPresenceReason.GetWords");
+            return Self.getWords();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("WordPresenceReason.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,96 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class HashtagSegment
     {
+        // infrastructure
+        public HashtagSegment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(HashtagSegment));
+            }
+        }
+
+        // API
+        object tag
+        {
+            get
+            {
+                return Self.tag;
+            }
+            set
+            {
+                Self.tag = value;
+            }
+        }
+
+        object topicUrl
+        {
+            get
+            {
+                return Self.topicUrl;
+            }
+            set
+            {
+                Self.topicUrl = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
         public HashtagSegment()
         {
-            throw new global::System.NotImplementedException("HashtagSegment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("HashtagSegment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("HashtagSegment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("HashtagSegment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("HashtagSegment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("HashtagSegment.ToString");
+            return Self.toString();
         }
     }
 }

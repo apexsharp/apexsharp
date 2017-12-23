@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class DeleteIntents
     {
+        // infrastructure
+        public DeleteIntents(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DeleteIntents));
+            }
+        }
+
+        // API
+        object deletes
+        {
+            get
+            {
+                return Self.deletes;
+            }
+            set
+            {
+                Self.deletes = value;
+            }
+        }
+
         public DeleteIntents()
         {
-            throw new global::System.NotImplementedException("DeleteIntents");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("DeleteIntents.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("DeleteIntents.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("DeleteIntents.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("DeleteIntents.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DeleteIntents.ToString");
+            return Self.toString();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ApexSharpApi
             var jObject = (JObject)JsonConvert.DeserializeObject(requestJson);
 
 
-            jObject.Remove("Id"); // type is "ID", field is "Id"
+            //jObject.Remove("Id"); // type is "ID", field is "Id"
             jObject.Remove("OwnerId");
             jObject.Remove("IsDeleted");
             jObject.Remove("CreatedDate");
@@ -34,8 +34,12 @@ namespace ApexSharpApi
             jObject.Remove("SystemModstamp");
             jObject.Remove("LastViewedDate");
             jObject.Remove("LastReferencedDate");
+            jObject.Remove("EmailBouncedDate");
             jObject.Remove("IsEmailBounced");
             jObject.Remove("Birthdate");
+            jObject.Remove("LastActivityDate");
+            jObject.Remove("LastCUUpdateDate");
+            jObject.Remove("LastCURequestDate");
 
             requestJson = jObject.ToString();
 
@@ -70,8 +74,11 @@ namespace ApexSharpApi
             jObject.Remove("LastViewedDate");
             jObject.Remove("LastReferencedDate");
             jObject.Remove("IsEmailBounced");
-
-
+            jObject.Remove("EmailBouncedDate");
+            jObject.Remove("LastActivityDate");
+            jObject.Remove("LastCUUpdateDate");
+            jObject.Remove("LastCURequestDate");
+            jObject.Remove("Birthdate");
 
             requestJson = jObject.ToString();
 

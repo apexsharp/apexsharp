@@ -1,27 +1,22 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class RecommendationType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum RecommendationType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("RecommendationType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("RecommendationType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("RecommendationType.Ordinal");
-        }
-
-        public static List<RecommendationType> values()
-        {
-            throw new global::System.NotImplementedException("RecommendationType.Values");
-        }
+        apps,
+        articles,
+        custom,
+        files,
+        groups,
+        records,
+        topics,
+        users
     }
 }

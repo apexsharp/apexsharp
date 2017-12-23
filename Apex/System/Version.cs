@@ -1,35 +1,60 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_version.htm#apex_methods_system_version
+    /// </summary>
     public class Version
     {
+        // infrastructure
+        public Version(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Version));
+            }
+        }
+
+        // API
         public Version(int major, int minor)
         {
-            throw new global::System.NotImplementedException("Version");
+            Self = Implementation.Constructor(major, minor);
         }
 
         public Version(int major, int minor, int patch)
         {
-            throw new global::System.NotImplementedException("Version");
+            Self = Implementation.Constructor(major, minor, patch);
         }
 
-        public int compareTo(Version other)
+        public int compareTo(Version version)
         {
-            throw new global::System.NotImplementedException("Version.CompareTo");
+            return Self.compareTo(version);
         }
 
         public int major()
         {
-            throw new global::System.NotImplementedException("Version.Major");
+            return Self.major();
         }
 
         public int minor()
         {
-            throw new global::System.NotImplementedException("Version.Minor");
+            return Self.minor();
         }
 
         public int patch()
         {
-            throw new global::System.NotImplementedException("Version.Patch");
+            return Self.patch();
         }
     }
 }

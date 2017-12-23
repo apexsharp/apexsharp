@@ -1,80 +1,106 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Dom;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_httpresponse.htm#apex_classes_restful_http_httpresponse
+    /// </summary>
     public class HttpResponse
     {
-        public HttpResponse()
+        // infrastructure
+        public HttpResponse(dynamic self)
         {
-            throw new global::System.NotImplementedException("HttpResponse");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(HttpResponse));
+            }
+        }
+
+        // API
         public string getBody()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetBody");
+            return Self.getBody();
         }
 
         public Blob getBodyAsBlob()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetBodyAsBlob");
+            return Self.getBodyAsBlob();
         }
 
-        public Dom.Document getBodyDocument()
+        public Document getBodyDocument()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetBodyDocument");
+            return Self.getBodyDocument();
         }
 
         public string getHeader(string key)
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetHeader");
+            return Self.getHeader(key);
         }
 
-        public List<string> getHeaderKeys()
+        public string[] getHeaderKeys()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetHeaderKeys");
+            return Self.getHeaderKeys();
         }
 
         public string getStatus()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetStatus");
+            return Self.getStatus();
         }
 
         public int getStatusCode()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetStatusCode");
+            return Self.getStatusCode();
         }
 
         public XmlStreamReader getXmlStreamReader()
         {
-            throw new global::System.NotImplementedException("HttpResponse.GetXmlStreamReader");
+            return Self.getXmlStreamReader();
         }
 
         public void setBody(string body)
         {
-            throw new global::System.NotImplementedException("HttpResponse.SetBody");
+            Self.setBody(body);
         }
 
         public void setBodyAsBlob(Blob body)
         {
-            throw new global::System.NotImplementedException("HttpResponse.SetBodyAsBlob");
+            Self.setBodyAsBlob(body);
         }
 
         public void setHeader(string key, string value)
         {
-            throw new global::System.NotImplementedException("HttpResponse.SetHeader");
+            Self.setHeader(key, value);
         }
 
         public void setStatus(string status)
         {
-            throw new global::System.NotImplementedException("HttpResponse.SetStatus");
+            Self.setStatus(status);
         }
 
         public void setStatusCode(int statusCode)
         {
-            throw new global::System.NotImplementedException("HttpResponse.SetStatusCode");
+            Self.setStatusCode(statusCode);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("HttpResponse.ToString");
+            return Self.toString();
+        }
+
+        public HttpResponse()
+        {
+            Self = Implementation.Constructor();
         }
     }
 }

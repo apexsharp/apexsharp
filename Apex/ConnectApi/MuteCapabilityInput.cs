@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class MuteCapabilityInput
     {
+        // infrastructure
+        public MuteCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(MuteCapabilityInput));
+            }
+        }
+
+        // API
+        object isMutedByMe
+        {
+            get
+            {
+                return Self.isMutedByMe;
+            }
+            set
+            {
+                Self.isMutedByMe = value;
+            }
+        }
+
         public MuteCapabilityInput()
         {
-            throw new global::System.NotImplementedException("MuteCapabilityInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("MuteCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("MuteCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("MuteCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("MuteCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

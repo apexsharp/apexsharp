@@ -1,52 +1,200 @@
-using Apex.System;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_schema_describetabresult.htm#apex_class_schema_describetabresult
+    /// </summary>
     public class DescribeTabResult
     {
-        public List<Schema.DescribeColorResult> getColors()
+        // infrastructure
+        public DescribeTabResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetColors");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeTabResult));
+            }
+        }
+
+        // API
+        public List<DescribeColorResult> getColors()
+        {
+            return Self.getColors();
         }
 
         public string getIconUrl()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetIconUrl");
+            return Self.getIconUrl();
         }
 
-        public List<Schema.DescribeIconResult> getIcons()
+        public List<DescribeIconResult> getIcons()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetIcons");
+            return Self.getIcons();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetLabel");
+            return Self.getLabel();
         }
 
         public string getMiniIconUrl()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetMiniIconUrl");
-        }
-
-        public string getName()
-        {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetName");
+            return Self.getMiniIconUrl();
         }
 
         public string getSobjectName()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetSobjectName");
+            return Self.getSobjectName();
         }
 
         public string getUrl()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.GetUrl");
+            return Self.getUrl();
         }
 
         public bool isCustom()
         {
-            throw new global::System.NotImplementedException("DescribeTabResult.IsCustom");
+            return Self.isCustom();
+        }
+
+        List<DescribeColorResult> colors
+        {
+            get
+            {
+                return Self.colors;
+            }
+            set
+            {
+                Self.colors = value;
+            }
+        }
+
+        bool custom
+        {
+            get
+            {
+                return Self.custom;
+            }
+            set
+            {
+                Self.custom = value;
+            }
+        }
+
+        List<DescribeIconResult> icons
+        {
+            get
+            {
+                return Self.icons;
+            }
+            set
+            {
+                Self.icons = value;
+            }
+        }
+
+        string iconUrl
+        {
+            get
+            {
+                return Self.iconUrl;
+            }
+            set
+            {
+                Self.iconUrl = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        string miniIconUrl
+        {
+            get
+            {
+                return Self.miniIconUrl;
+            }
+            set
+            {
+                Self.miniIconUrl = value;
+            }
+        }
+
+        string name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        string sobjectName
+        {
+            get
+            {
+                return Self.sobjectName;
+            }
+            set
+            {
+                Self.sobjectName = value;
+            }
+        }
+
+        string tabEnumOrId
+        {
+            get
+            {
+                return Self.tabEnumOrId;
+            }
+            set
+            {
+                Self.tabEnumOrId = value;
+            }
+        }
+
+        string url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
+        public string getName()
+        {
+            return Self.getName();
+        }
+
+        public string getTabEnumOrId()
+        {
+            return Self.getTabEnumOrId();
         }
     }
 }

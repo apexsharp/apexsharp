@@ -1,122 +1,158 @@
-using System;
-using ApexSharpApi;
-
-
 namespace Apex.System
 {
-    public class Map<T, K> : global::System.Collections.Generic.SortedDictionary<T, K>
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Schema;
+    using global::Apex.System;
+    using global::System.Collections.Generic;
+    using IEnumerable = global::System.Collections.IEnumerable;
+    using IEnumerator = global::System.Collections.IEnumerator;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm#apex_methods_system_map
+    /// </summary>
+    public class Map<T1, T2> : IEnumerable<KeyValuePair<T1, T2>>
     {
+        // infrastructure
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Map<T1, T2>));
+            }
+        }
+
+        // API
         public Map()
         {
+            Self = Implementation.Constructor();
         }
 
-        public Map(SoqlQuery<K> soqlQuery)
+        public Map(Map<T1, T2> mapToCopy)
         {
-            // make sure that Map<T, K> is Map<ID, SObject>
-            if (!typeof(SObject).IsAssignableFrom(typeof(K)) ||
-                !typeof(ID).IsAssignableFrom(typeof(T)))
-            {
-                throw new NotSupportedException("Only Map<ID, SObject> can be initialized via SOQL query data.");
-            }
-
-            foreach (object row in soqlQuery.QueryResult.Value)
-            {
-                var sobj = (SObject)row;
-                object key = sobj.Id;
-                this[(T)key] = (K)row;
-            }
+            Self = Implementation.Constructor(mapToCopy);
         }
 
-        public Map(List<K> objectList)
+        public Map(IEnumerable<KeyValuePair<T1, T2>> dictionary)
         {
-
+            Self = Implementation.Constructor(dictionary);
         }
 
-        public Map(List<object> param1)
+        public Map(List<SObject> recordList)
         {
-            throw new global::System.NotImplementedException("Map");
+            Self = Implementation.Constructor(recordList);
         }
 
-        public Map(Map<object, object> param1)
+        public Map(ApexSharpApi.SoqlQuery<T2> soqlQuery)
         {
-            throw new global::System.NotImplementedException("Map");
+            Self = Implementation.Constructor(soqlQuery);
         }
 
         public void clear()
         {
-            throw new global::System.NotImplementedException("Map.Clear");
+            Self.clear();
         }
 
-        public Map<String, String> clone()
+        public Map<T1, T2> clone()
         {
-            throw new global::System.NotImplementedException("Map.Clone");
+            return Self.clone();
         }
 
-        public bool containsKey(object key)
+        public bool containsKey(T1 key)
         {
-            throw new global::System.NotImplementedException("Map.ContainsKey");
+            return Self.containsKey(key);
         }
 
-        public Map<String, String> deepClone()
+        public Map<T1, T2> deepClone()
         {
-            throw new global::System.NotImplementedException("Map.DeepClone");
+            return Self.deepClone();
         }
 
-        public bool equals(object obj)
+        public bool equals(Map<T1, T2> map2)
         {
-            throw new global::System.NotImplementedException("Map.Equals");
+            return Self.equals(map2);
         }
 
-        public K get(T key)
+        public T2 get(T1 key)
         {
-            return default(K);
+            return Self.get(key);
         }
 
-        //public Schema.SObjectType GetSObjectType() { throw new global::System.NotImplementedException("Map.GetSObjectType"); }
+        public SObjectType getSObjectType()
+        {
+            return Self.getSObjectType();
+        }
+
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Map.HashCode");
+            return Self.hashCode();
         }
 
         public bool isEmpty()
         {
-            throw new global::System.NotImplementedException("Map.IsEmpty");
+            return Self.isEmpty();
         }
 
-        public Set<T> keySet()
+        public Set<T1> keySet()
         {
-            return new Set<T>();
+            return Self.keySet();
         }
 
-        public string put(object key, object value)
+        public T2 put(T1 key, T2 value)
         {
-            //throw new global::System.NotImplementedException("Map.Put");
-            return "";
+            return Self.put(key, value);
         }
 
-        public void putAll(List<T> entries)
+        public void putAll(Map<T1, T2> fromMap)
         {
-            throw new global::System.NotImplementedException("Map.PutAll");
+            Self.putAll(fromMap);
         }
 
-        public void putAll(Map<T, K> entries)
+        public void putAll(SObject[] sobjectArray)
         {
-            throw new global::System.NotImplementedException("Map.PutAll");
+            Self.putAll(sobjectArray);
         }
 
-        public string remove(object key)
+        public void putAll(List<SObject> entries)
         {
-            throw new global::System.NotImplementedException("Map.Remove");
+            Self.putAll(entries);
+        }
+
+        public T2 remove(T1 key)
+        {
+            return Self.remove(key);
         }
 
         public int size()
         {
-            throw new global::System.NotImplementedException("Map.Size");
+            return Self.size();
         }
 
-        public List<string> values()
+        public List<T2> values()
         {
-            throw new global::System.NotImplementedException("Map.Values");
+            return Self.values();
         }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        // interoperability
+
+        public IEnumerator<KeyValuePair<T1, T2>> GetEnumerator() => Self.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public void Add(T1 key, T2 value) => put(key, value);
+
+        public T2 this[T1 key] => get(key);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
     }
 }

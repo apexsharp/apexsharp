@@ -295,8 +295,10 @@ config.json
 *.bak
 /JayPrivate
 JayPrivate.sln
+/.axoCover
 advanceConfig.json
 /SalesForce/IlluminatedCloud
 .idea
 /AdvanceSalesForce
 *.DotSettings
+*.json

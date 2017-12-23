@@ -1,446 +1,465 @@
-using Apex.Database;
-
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.DataSource;
+    using global::Apex.Schema;
+    using global::Apex.System;
+    using DeleteResult = global::Apex.Database.DeleteResult;
+    using UpsertResult = global::Apex.Database.UpsertResult;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database.htm#apex_methods_system_database
+    /// </summary>
     public class Database
     {
-        public class QueryLocator
+        // infrastructure
+        public Database(dynamic self)
         {
-            public string getQuery()
-            {
-                throw new global::System.NotImplementedException("QueryLocator.GetQuery");
-            }
+            Self = self;
+        }
 
-            //public Database.QueryLocatorIterator Iterator()
-            //{
-            //    throw new global::System.NotImplementedException("QueryLocator.Iterator");
-            //}
+        dynamic Self { get; set; }
 
-            public List<SObject> querymore(int num)
+        static dynamic Implementation
+        {
+            get
             {
-                throw new global::System.NotImplementedException("QueryLocator.Querymore");
+                return Implementor.GetImplementation(typeof(Database));
             }
         }
 
-        public class BatchableContext
+        // API
+        public static LeadConvertResult convertLead(LeadConvert leadToConvert, bool allOrNone)
         {
-            public ID getChildJobId()
-            {
-                throw new global::System.NotImplementedException("BatchableContext.GetChildJobId");
-            }
-
-            public ID getJobId()
-            {
-                throw new global::System.NotImplementedException("BatchableContext.GetJobId");
-            }
-        }
-
-        public static LeadConvertResult convertLead(LeadConvert leadConvert)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
-        }
-
-        public static LeadConvertResult convertLead(LeadConvert leadConvert, object DmlOptions)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
-        }
-
-        public static LeadConvertResult convertLead(LeadConvert leadConvert, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
-        }
-
-        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
-        }
-
-        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts, object DmlOptions)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
-        }
-
-        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.ConvertLead");
+            return Implementation.convertLead(leadToConvert, allOrNone);
         }
 
         public static int countQuery(string query)
         {
-            throw new global::System.NotImplementedException("Database.CountQuery");
+            return Implementation.countQuery(query);
         }
 
-        public static DeleteResult delete(ID id)
+        public static DeleteResult delete(SObject recordToDelete, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Delete");
+            return Implementation.delete(recordToDelete, allOrNone);
         }
 
-        public static DeleteResult delete(ID id, bool allOrNothing)
+        public static DeleteResult delete(ID recordID, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Delete");
+            return Implementation.delete(recordID, allOrNone);
         }
 
-        public static List<DeleteResult> delete(List<ID> ids)
+        public static List<DeleteResult> deleteAsync(List<SObject> sobjects, AsyncDeleteCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Delete");
+            return Implementation.deleteAsync(sobjects, callback);
         }
 
-        public static List<DeleteResult> delete(List<ID> ids, bool allOrNothing)
+        public static DeleteResult deleteAsync(SObject sobject, AsyncDeleteCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Delete");
-        }
-
-        public static List<DeleteResult> delete(List<SObject> sobjects)
-        {
-            throw new global::System.NotImplementedException("Database.Delete");
-        }
-
-        public static List<DeleteResult> delete(List<SObject> sobjects, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Delete");
-        }
-
-        public static DeleteResult delete(SObject sobject)
-        {
-            throw new global::System.NotImplementedException("Database.Delete");
-        }
-
-        public static DeleteResult delete(SObject sobject, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Delete");
+            return Implementation.deleteAsync(sobject, callback);
         }
 
         public static List<DeleteResult> deleteAsync(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("Database.DeleteAsync");
-        }
-
-        public static List<DeleteResult> deleteAsync(List<SObject> sobjects, object callback)
-        {
-            throw new global::System.NotImplementedException("Database.DeleteAsync");
+            return Implementation.deleteAsync(sobjects);
         }
 
         public static DeleteResult deleteAsync(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.DeleteAsync");
-        }
-
-        public static DeleteResult deleteAsync(SObject sobject, object callback)
-        {
-            throw new global::System.NotImplementedException("DeleteAsync");
+            return Implementation.deleteAsync(sobject);
         }
 
         public static List<DeleteResult> deleteImmediate(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("Database.DeleteImmediate");
+            return Implementation.deleteImmediate(sobjects);
         }
 
         public static DeleteResult deleteImmediate(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.DeleteImmediate");
+            return Implementation.deleteImmediate(sobject);
         }
 
-        public static List<EmptyRecycleBinResult> emptyRecycleBin(List<ID> ids)
+        public static EmptyRecycleBinResult[] emptyRecycleBin(ID[] recordIds)
         {
-            throw new global::System.NotImplementedException("Database.EmptyRecycleBin");
+            return Implementation.emptyRecycleBin(recordIds);
         }
 
-        public static List<EmptyRecycleBinResult> emptyRecycleBin(List<SObject> sobjects)
+        public static EmptyRecycleBinResult emptyRecycleBin(SObject obj)
         {
-            throw new global::System.NotImplementedException("Database.EmptyRecycleBin");
+            return Implementation.emptyRecycleBin(obj);
         }
 
-        public static EmptyRecycleBinResult emptyRecycleBin(SObject sobject)
+        public static ID executeBatch(object batchClassObject)
         {
-            throw new global::System.NotImplementedException("Database.EmptyRecycleBin");
+            return Implementation.executeBatch(batchClassObject);
         }
 
-        public static string executeBatch(object batchable)
+        public static ID executeBatch(object batchClassObject, int scope)
         {
-            throw new global::System.NotImplementedException("Database.ExecuteBatch");
+            return Implementation.executeBatch(batchClassObject, scope);
         }
 
-        public static string executeBatch(object batchable, int batchSize)
+        public static DeleteResult getAsyncDeleteResult(DeleteResult deleteResult)
         {
-            throw new global::System.NotImplementedException("Database.ExecuteBatch");
-        }
-
-        public static DeleteResult getAsyncDeleteResult(object deleteResult)
-        {
-            throw new global::System.NotImplementedException("Database.GetAsyncDeleteResult");
+            return Implementation.getAsyncDeleteResult(deleteResult);
         }
 
         public static DeleteResult getAsyncDeleteResult(string asyncLocator)
         {
-            throw new global::System.NotImplementedException("Database.GetAsyncDeleteResult");
+            return Implementation.getAsyncDeleteResult(asyncLocator);
         }
 
         public static string getAsyncLocator(object result)
         {
-            throw new global::System.NotImplementedException("Database.GetAsyncLocator");
+            return Implementation.getAsyncLocator(result);
         }
 
-        public static SaveResult getAsyncSaveResult(object saveResult)
+        public static SaveResult getAsyncSaveResult(SaveResult saveResult)
         {
-            throw new global::System.NotImplementedException("Database.GetAsyncSaveResult");
+            return Implementation.getAsyncSaveResult(saveResult);
         }
 
         public static SaveResult getAsyncSaveResult(string asyncLocator)
         {
-            throw new global::System.NotImplementedException("Database.GetAsyncSaveResult");
+            return Implementation.getAsyncSaveResult(asyncLocator);
         }
 
-        public static GetDeletedResult getDeleted(string sobjectType, DateTime startDate, DateTime endDate)
+        public static GetDeletedResult getDeleted(string sObjectType, Datetime startDate, Datetime endDate)
         {
-            throw new global::System.NotImplementedException("Database.GetDeleted");
+            return Implementation.getDeleted(sObjectType, startDate, endDate);
         }
 
-        public static QueryLocator getQueryLocator(List<SObject> query)
+        public static QueryLocator getQueryLocator(SObject[] listOfQueries)
         {
-            throw new global::System.NotImplementedException("Database.GetQueryLocator");
+            return Implementation.getQueryLocator(listOfQueries);
         }
 
         public static QueryLocator getQueryLocator(string query)
         {
-            throw new global::System.NotImplementedException("Database.GetQueryLocator");
+            return Implementation.getQueryLocator(query);
         }
 
-        public static GetUpdatedResult getUpdated(string sobjectType, DateTime startDate, DateTime endDate)
+        public static GetUpdatedResult getUpdated(string sobjectType, Datetime startDate, Datetime endDate)
         {
-            throw new global::System.NotImplementedException("Database.GetUpdated");
+            return Implementation.getUpdated(sobjectType, startDate, endDate);
         }
 
-        public static List<SaveResult> insert(List<SObject> sobjects)
+        public static SaveResult insert(SObject recordToInsert, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Insert");
+            return Implementation.insert(recordToInsert, allOrNone);
         }
 
-        public static List<SaveResult> insert(List<SObject> sobjects, object DmlOptions)
+        public static SaveResult insert(SObject recordToInsert, DMLOptions dmlOptions)
         {
-            throw new global::System.NotImplementedException("Database.Insert");
+            return Implementation.insert(recordToInsert, dmlOptions);
         }
 
-        public static List<SaveResult> insert(List<SObject> sobjects, bool allOrNothing)
+        public static List<SaveResult> insertAsync(List<SObject> sobjects, AsyncSaveCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Insert");
+            return Implementation.insertAsync(sobjects, callback);
         }
 
-        public static SaveResult insert(SObject sobject)
+        public static SaveResult insertAsync(SObject sobject, AsyncSaveCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Insert");
-        }
-
-        public static SaveResult insert(SObject sobject, object DmlOptions)
-        {
-            throw new global::System.NotImplementedException("Database.Insert");
-        }
-
-        public static SaveResult insert(SObject sobject, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Insert");
+            return Implementation.insertAsync(sobject, callback);
         }
 
         public static List<SaveResult> insertAsync(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("InsertAsync");
-        }
-
-        public static List<SaveResult> insertAsync(List<SObject> sobjects, object callback)
-        {
-            throw new global::System.NotImplementedException("Database.InsertAsync");
+            return Implementation.insertAsync(sobjects);
         }
 
         public static SaveResult insertAsync(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.InsertAsync");
-        }
-
-        public static SaveResult insertAsync(SObject sobject, object callback)
-        {
-            throw new global::System.NotImplementedException("Database.InsertAsync");
+            return Implementation.insertAsync(sobject);
         }
 
         public static List<SaveResult> insertImmediate(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("Database.InsertImmediate");
+            return Implementation.insertImmediate(sobjects);
         }
 
         public static SaveResult insertImmediate(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.InsertImmediate");
+            return Implementation.insertImmediate(sobject);
         }
 
-        public static MergeResult merge(SObject master, ID duplicate)
+        public static MergeResult merge(SObject masterRecord, ID duplicateId)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateId);
         }
 
-        public static MergeResult merge(SObject master, ID duplicate, bool allOrNothing)
+        public static MergeResult merge(SObject masterRecord, SObject duplicateRecord)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateRecord);
         }
 
-        public static List<MergeResult> merge(SObject master, List<ID> duplicates)
+        public static List<MergeResult> merge(SObject masterRecord, List<ID> duplicateIds)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateIds);
         }
 
-        public static List<MergeResult> merge(SObject master, List<ID> duplicates, bool allOrNothing)
+        public static MergeResult merge(SObject masterRecord, ID duplicateId, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateId, allOrNone);
         }
 
-        public static List<MergeResult> merge(SObject master, List<SObject> duplicates)
+        public static MergeResult merge(SObject masterRecord, SObject duplicateRecord, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateRecord, allOrNone);
         }
 
-        public static List<MergeResult> merge(SObject master, List<SObject> duplicates, bool allOrNothing)
+        public static List<MergeResult> merge(SObject masterRecord, List<ID> duplicateIds, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.merge(masterRecord, duplicateIds, allOrNone);
         }
 
-        public static MergeResult merge(SObject master, SObject duplicate)
+        public static SObject[] query(string queryString)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            return Implementation.query(queryString);
         }
 
-        public static MergeResult merge(SObject master, SObject duplicate, bool allOrNothing)
+        public static void rollback(Savepoint databaseSavepoint)
         {
-            throw new global::System.NotImplementedException("Database.Merge");
+            Implementation.rollback(databaseSavepoint);
         }
 
-        public static List<SObject> query(string query)
+        public static Savepoint setSavepoint()
         {
-            throw new global::System.NotImplementedException("Database.Query");
+            return Implementation.setSavepoint();
         }
 
-        //public static void Rollback(Savepoint savepoint){throw new global::System.NotImplementedException("Database.Rollback");}
-        //public static Savepoint SetSavepoint(){throw new global::System.NotImplementedException("Database.SetSavepoint");}
-        public static UndeleteResult undelete(ID id)
+        public static UndeleteResult undelete(SObject recordToUndelete, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
+            return Implementation.undelete(recordToUndelete, allOrNone);
         }
 
-        public static UndeleteResult undelete(ID id, bool allOrNothing)
+        public static UndeleteResult undelete(ID recordID, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
+            return Implementation.undelete(recordID, allOrNone);
         }
 
-        public static List<UndeleteResult> undelete(List<ID> ids)
+        public static SaveResult update(SObject recordToUpdate, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
+            return Implementation.update(recordToUpdate, allOrNone);
         }
 
-        public static List<UndeleteResult> undelete(List<ID> ids, bool allOrNothing)
+        public static SaveResult update(SObject recordToUpdate, DMLOptions dmlOptions)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
+            return Implementation.update(recordToUpdate, dmlOptions);
         }
 
-        public static List<UndeleteResult> undelete(List<SObject> sobjects)
+        public static UpsertResult upsert(SObject recordToUpsert, SObjectField externalIDField, bool allOrNone)
         {
-            throw new global::System.NotImplementedException("Undelete");
+            return Implementation.upsert(recordToUpsert, externalIDField, allOrNone);
         }
 
-        public static List<UndeleteResult> undelete(List<SObject> sobjects, bool allOrNothing)
+        public static List<SaveResult> updateAsync(List<SObject> sobjects, AsyncSaveCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
+            return Implementation.updateAsync(sobjects, callback);
         }
 
-        public static UndeleteResult undelete(SObject sobject)
+        public static SaveResult updateAsync(SObject sobject, AsyncSaveCallback callback)
         {
-            throw new global::System.NotImplementedException("Database.Undelete");
-        }
-
-        public static UndeleteResult undelete(SObject sobject, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Undelete");
-        }
-
-        public static List<SaveResult> update(List<SObject> sobjects)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
-        }
-
-        public static List<SaveResult> update(List<SObject> sobjects, object allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
-        }
-
-        public static List<SaveResult> update(List<SObject> sobjects, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
-        }
-
-        public static SaveResult update(SObject sobject)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
-        }
-
-        public static SaveResult update(SObject sobject, object allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
-        }
-
-        public static SaveResult update(SObject sobject, bool allOrNothing)
-        {
-            throw new global::System.NotImplementedException("Database.Update");
+            return Implementation.updateAsync(sobject, callback);
         }
 
         public static List<SaveResult> updateAsync(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("Database.UpdateAsync");
-        }
-
-        public static List<SaveResult> updateAsync(List<SObject> sobjects, object callback)
-        {
-            throw new global::System.NotImplementedException("Database.UpdateAsync");
+            return Implementation.updateAsync(sobjects);
         }
 
         public static SaveResult updateAsync(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.UpdateAsync");
-        }
-
-        public static SaveResult updateAsync(SObject sobject, object callback)
-        {
-            throw new global::System.NotImplementedException("Database.UpdateAsync");
+            return Implementation.updateAsync(sobject);
         }
 
         public static List<SaveResult> updateImmediate(List<SObject> sobjects)
         {
-            throw new global::System.NotImplementedException("Database.UpdateImmediate");
+            return Implementation.updateImmediate(sobjects);
         }
 
         public static SaveResult updateImmediate(SObject sobject)
         {
-            throw new global::System.NotImplementedException("Database.UpdateImmediate");
+            return Implementation.updateImmediate(sobject);
         }
 
-        public static List<UpsertResult> upsert(List<SObject> sobjects)
+        public static LeadConvertResult convertLead(LeadConvert leadConvert, DMLOptions DmlOptions)
         {
-            throw new global::System.NotImplementedException("Database.Upsert");
+            return Implementation.convertLead(leadConvert, DmlOptions);
+        }
+
+        public static LeadConvertResult convertLead(LeadConvert leadConvert)
+        {
+            return Implementation.convertLead(leadConvert);
+        }
+
+        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts, bool allOrNothing)
+        {
+            return Implementation.convertLead(leadConverts, allOrNothing);
+        }
+
+        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts, DMLOptions DmlOptions)
+        {
+            return Implementation.convertLead(leadConverts, DmlOptions);
+        }
+
+        public static List<LeadConvertResult> convertLead(List<LeadConvert> leadConverts)
+        {
+            return Implementation.convertLead(leadConverts);
+        }
+
+        public static DeleteResult delete(ID id)
+        {
+            return Implementation.delete(id);
+        }
+
+        public static List<DeleteResult> delete(List<ID> ids, bool allOrNothing)
+        {
+            return Implementation.delete(ids, allOrNothing);
+        }
+
+        public static List<DeleteResult> delete(List<ID> ids)
+        {
+            return Implementation.delete(ids);
+        }
+
+        public static DeleteResult delete(SObject sobject)
+        {
+            return Implementation.delete(sobject);
+        }
+
+        public static List<EmptyRecycleBinResult> emptyRecycleBin(List<ID> ids)
+        {
+            return Implementation.emptyRecycleBin(ids);
+        }
+
+        public static string executeBatch(Batchable batchable, int batchSize)
+        {
+            return Implementation.executeBatch(batchable, batchSize);
+        }
+
+        public static string executeBatch(Batchable batchable)
+        {
+            return Implementation.executeBatch(batchable);
+        }
+
+        public static QueryLocator getQueryLocator(List<SObject> query)
+        {
+            return Implementation.getQueryLocator(query);
+        }
+
+        public static List<SaveResult> insert(List<SObject> sobjects, bool allOrNothing)
+        {
+            return Implementation.insert(sobjects, allOrNothing);
+        }
+
+        public static List<SaveResult> insert(List<SObject> sobjects, DMLOptions DmlOptions)
+        {
+            return Implementation.insert(sobjects, DmlOptions);
+        }
+
+        public static List<SaveResult> insert(List<SObject> sobjects)
+        {
+            return Implementation.insert(sobjects);
+        }
+
+        public static SaveResult insert(SObject sobject)
+        {
+            return Implementation.insert(sobject);
+        }
+
+        public static List<SaveResult> insertAsync(List<SObject> sobjects, AsyncInsertCallback callback)
+        {
+            return Implementation.insertAsync(sobjects, callback);
+        }
+
+        public static SaveResult insertAsync(SObject sobject, AsyncInsertCallback callback)
+        {
+            return Implementation.insertAsync(sobject, callback);
+        }
+
+        public static UndeleteResult undelete(ID id)
+        {
+            return Implementation.undelete(id);
+        }
+
+        public static List<UndeleteResult> undelete(List<ID> ids, bool allOrNothing)
+        {
+            return Implementation.undelete(ids, allOrNothing);
+        }
+
+        public static List<UndeleteResult> undelete(List<ID> ids)
+        {
+            return Implementation.undelete(ids);
+        }
+
+        public static UndeleteResult undelete(SObject sobject)
+        {
+            return Implementation.undelete(sobject);
+        }
+
+        public static List<SaveResult> update(List<SObject> sobjects, bool allOrNothing)
+        {
+            return Implementation.update(sobjects, allOrNothing);
+        }
+
+        public static List<SaveResult> update(List<SObject> sobjects)
+        {
+            return Implementation.update(sobjects);
+        }
+
+        public static SaveResult update(SObject sobject)
+        {
+            return Implementation.update(sobject);
+        }
+
+        public static List<SaveResult> updateAsync(List<SObject> sobjects, AsyncUpdateCallback callback)
+        {
+            return Implementation.updateAsync(sobjects, callback);
+        }
+
+        public static SaveResult updateAsync(SObject sobject, AsyncUpdateCallback callback)
+        {
+            return Implementation.updateAsync(sobject, callback);
         }
 
         public static List<UpsertResult> upsert(List<SObject> sobjects, bool allOrNothing)
         {
-            throw new global::System.NotImplementedException("Database.Upsert");
+            return Implementation.upsert(sobjects, allOrNothing);
         }
 
-        //public static List<UpsertResult> Upsert(List<SObject> sobjects,Schema.SObjectField field){throw new global::System.NotImplementedException("Database.Upsert");}
-        //public static List<UpsertResult> Upsert(List<SObject> sobjects,Schema.SObjectField field,bool allOrNothing){throw new global::System.NotImplementedException("Database.Upsert");}
-        public static UpsertResult upsert(SObject sobject)
+        public static List<UpsertResult> upsert(List<SObject> sobjects, SObjectField field, bool allOrNothing)
         {
-            throw new global::System.NotImplementedException("Database.Upsert");
+            return Implementation.upsert(sobjects, field, allOrNothing);
+        }
+
+        public static List<UpsertResult> upsert(List<SObject> sobjects, SObjectField field)
+        {
+            return Implementation.upsert(sobjects, field);
+        }
+
+        public static List<UpsertResult> upsert(List<SObject> sobjects)
+        {
+            return Implementation.upsert(sobjects);
         }
 
         public static UpsertResult upsert(SObject sobject, bool allOrNothing)
         {
-            throw new global::System.NotImplementedException("Database.Upsert");
+            return Implementation.upsert(sobject, allOrNothing);
         }
 
-        //public static UpsertResult Upsert(SObject sobject,Schema.SObjectField field,bool allOrNothing){throw new global::System.NotImplementedException("Database.Upsert");}
-        //public static UpsertResult Upsert(SObject sobject,Schema.SObjectField field){throw new global::System.NotImplementedException("Database.Upsert");}
+        public static UpsertResult upsert(SObject sobject, SObjectField field)
+        {
+            return Implementation.upsert(sobject, field);
+        }
+
+        public static UpsertResult upsert(SObject sobject)
+        {
+            return Implementation.upsert(sobject);
+        }
     }
 }

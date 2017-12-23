@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class VisualforceException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class VisualforceException : Exception
     {
+        // infrastructure
+        public VisualforceException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(VisualforceException));
+            }
+        }
+
+        // API
         public VisualforceException()
         {
-            throw new global::System.NotImplementedException("VisualforceException");
+            Self = Implementation.Constructor();
         }
 
         public VisualforceException(Exception param1)
         {
-            throw new global::System.NotImplementedException("VisualforceException");
+            Self = Implementation.Constructor(param1);
         }
 
         public VisualforceException(string param1)
         {
-            throw new global::System.NotImplementedException("VisualforceException");
+            Self = Implementation.Constructor(param1);
         }
 
         public VisualforceException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("VisualforceException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("VisualforceException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("VisualforceException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("VisualforceException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("VisualforceException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("VisualforceException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("VisualforceException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("VisualforceException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

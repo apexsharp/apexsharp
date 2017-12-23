@@ -1,24 +1,45 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_database_querylocatoriterator.htm#apex_class_database_querylocatoriterator
+    /// </summary>
     public class QueryLocatorIterator
     {
-        public object clone()
+        // infrastructure
+        public QueryLocatorIterator(dynamic self)
         {
-            throw new global::System.NotImplementedException("QueryLocatorIterator.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(QueryLocatorIterator));
+            }
+        }
+
+        // API
         public bool hasNext()
         {
-            throw new global::System.NotImplementedException("QueryLocatorIterator.HasNext");
+            return Self.hasNext();
         }
 
         public SObject next()
         {
-            throw new global::System.NotImplementedException("QueryLocatorIterator.Next");
+            return Self.next();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

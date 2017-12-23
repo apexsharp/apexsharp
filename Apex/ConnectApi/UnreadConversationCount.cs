@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class UnreadConversationCount
     {
+        // infrastructure
+        public UnreadConversationCount(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(UnreadConversationCount));
+            }
+        }
+
+        // API
+        object hasMore
+        {
+            get
+            {
+                return Self.hasMore;
+            }
+            set
+            {
+                Self.hasMore = value;
+            }
+        }
+
+        object unreadCount
+        {
+            get
+            {
+                return Self.unreadCount;
+            }
+            set
+            {
+                Self.unreadCount = value;
+            }
+        }
+
         public UnreadConversationCount()
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("UnreadConversationCount.ToString");
+            return Self.toString();
         }
     }
 }

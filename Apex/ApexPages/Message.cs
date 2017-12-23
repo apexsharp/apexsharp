@@ -1,40 +1,65 @@
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_message.htm#apex_pages_message
+    /// </summary>
     public class Message
     {
-        public Message(ApexPages.Severity severity, string message)
+        // infrastructure
+        public Message(dynamic self)
         {
-            throw new global::System.NotImplementedException("Message");
+            Self = self;
         }
 
-        public Message(ApexPages.Severity severity, string summary, string detail)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Message");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Message));
+            }
         }
 
-        public Message(ApexPages.Severity severity, string summary, string detail, string id)
+        // API
+        public Message(Severity severity, string summary)
         {
-            throw new global::System.NotImplementedException("Message");
+            Self = Implementation.Constructor(severity, summary);
+        }
+
+        public Message(Severity severity, string summary, string detail)
+        {
+            Self = Implementation.Constructor(severity, summary, detail);
+        }
+
+        public Message(Severity severity, string summary, string detail, string id)
+        {
+            Self = Implementation.Constructor(severity, summary, detail, id);
         }
 
         public string getComponentLabel()
         {
-            throw new global::System.NotImplementedException("Message.GetComponentLabel");
+            return Self.getComponentLabel();
         }
 
         public string getDetail()
         {
-            throw new global::System.NotImplementedException("Message.GetDetail");
+            return Self.getDetail();
         }
 
-        public ApexPages.Severity getSeverity()
+        public Severity getSeverity()
         {
-            throw new global::System.NotImplementedException("Message.GetSeverity");
+            return Self.getSeverity();
         }
 
         public string getSummary()
         {
-            throw new global::System.NotImplementedException("Message.GetSummary");
+            return Self.getSummary();
         }
     }
 }

@@ -1,60 +1,90 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_network.htm#apex_classes_network
+    /// </summary>
     public class Network
     {
+        // infrastructure
+        public Network(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Network));
+            }
+        }
+
+        // API
         public Network()
         {
-            throw new global::System.NotImplementedException("Network");
+            Self = Implementation.Constructor();
         }
 
-        public object clone()
+        public static string communitiesLanding()
         {
-            throw new global::System.NotImplementedException("Network.Clone");
+            return Implementation.communitiesLanding();
         }
 
-        public static PageReference communitiesLanding()
+        public static PageReference forwardToAuthPage(string startURL)
         {
-            throw new global::System.NotImplementedException("Network.CommunitiesLanding");
-        }
-
-        public static PageReference forwardToAuthPage(string startUrl)
-        {
-            throw new global::System.NotImplementedException("Network.ForwardToAuthPage");
-        }
-
-        public static PageReference forwardToAuthPage(string startUrl, string displayType)
-        {
-            throw new global::System.NotImplementedException("Network.ForwardToAuthPage");
+            return Implementation.forwardToAuthPage(startURL);
         }
 
         public static string getLoginUrl(string networkId)
         {
-            throw new global::System.NotImplementedException("Network.GetLoginUrl");
+            return Implementation.getLoginUrl(networkId);
         }
 
         public static string getLogoutUrl(string networkId)
         {
-            throw new global::System.NotImplementedException("Network.GetLogoutUrl");
+            return Implementation.getLogoutUrl(networkId);
         }
 
         public static string getNetworkId()
         {
-            throw new global::System.NotImplementedException("Network.GetNetworkId");
+            return Implementation.getNetworkId();
         }
 
         public static string getSelfRegUrl(string networkId)
         {
-            throw new global::System.NotImplementedException("Network.GetSelfRegUrl");
+            return Implementation.getSelfRegUrl(networkId);
         }
 
         public static int loadAllPackageDefaultNetworkDashboardSettings()
         {
-            throw new global::System.NotImplementedException("Network.LoadAllPackageDefaultNetworkDashboardSettings");
+            return Implementation.loadAllPackageDefaultNetworkDashboardSettings();
         }
 
         public static int loadAllPackageDefaultNetworkPulseSettings()
         {
-            throw new global::System.NotImplementedException("Network.LoadAllPackageDefaultNetworkPulseSettings");
+            return Implementation.loadAllPackageDefaultNetworkPulseSettings();
+        }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public static PageReference forwardToAuthPage(string startUrl, string displayType)
+        {
+            return Implementation.forwardToAuthPage(startUrl, displayType);
+        }
+
+        public static int loadAllPackageDefaultNetworkWorkspaceMetricSettings()
+        {
+            return Implementation.loadAllPackageDefaultNetworkWorkspaceMetricSettings();
         }
     }
 }

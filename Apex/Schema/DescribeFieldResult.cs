@@ -1,272 +1,997 @@
-using Apex.System;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_fields_describe.htm#apex_methods_system_fields_describe
+    /// </summary>
     public class DescribeFieldResult
     {
+        // infrastructure
+        public DescribeFieldResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeFieldResult));
+            }
+        }
+
+        // API
         public int getByteLength()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetByteLength");
+            return Self.getByteLength();
         }
 
         public string getCalculatedFormula()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetCalculatedFormula");
+            return Self.getCalculatedFormula();
         }
 
-        public Schema.SObjectField getController()
+        public SObjectField getController()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetController");
+            return Self.getController();
         }
 
         public object getDefaultValue()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetDefaultValue");
+            return Self.getDefaultValue();
         }
 
         public string getDefaultValueFormula()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetDefaultValueFormula");
+            return Self.getDefaultValueFormula();
         }
 
         public int getDigits()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetDigits");
-        }
-
-        public Schema.FilteredLookupInfo getFilteredLookupInfo()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetFilteredLookupInfo");
+            return Self.getDigits();
         }
 
         public string getInlineHelpText()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetInlineHelpText");
+            return Self.getInlineHelpText();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetLabel");
+            return Self.getLabel();
         }
 
         public int getLength()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetLength");
+            return Self.getLength();
         }
 
         public string getLocalName()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetLocalName");
-        }
-
-        public string getMask()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetMask");
-        }
-
-        public string getMaskType()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetMaskType");
+            return Self.getLocalName();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetName");
+            return Self.getName();
         }
 
-        public List<Schema.PicklistEntry> getPicklistValues()
+        public List<PicklistEntry> getPicklistValues()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetPicklistValues");
+            return Self.getPicklistValues();
         }
 
         public int getPrecision()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetPrecision");
+            return Self.getPrecision();
         }
 
         public string getReferenceTargetField()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetReferenceTargetField");
+            return Self.getReferenceTargetField();
         }
 
-        public List<Schema.SObjectType> getReferenceTo()
+        public List<SObjectType> getReferenceTo()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetReferenceTo");
+            return Self.getReferenceTo();
         }
 
         public string getRelationshipName()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetRelationshipName");
+            return Self.getRelationshipName();
         }
 
         public int getRelationshipOrder()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetRelationshipOrder");
+            return Self.getRelationshipOrder();
         }
 
         public int getScale()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetScale");
+            return Self.getScale();
         }
 
-        public Schema.SoapType getSoapType()
+        public SoapType getSOAPType()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetSoapType");
+            return Self.getSOAPType();
         }
 
-        public Schema.SObjectField getSobjectField()
+        public SObjectField getSObjectField()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetSobjectField");
+            return Self.getSObjectField();
         }
 
-        public Schema.DisplayType getType()
+        public DisplayType getType()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.GetType");
+            return Self.getType();
         }
 
         public bool isAccessible()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsAccessible");
+            return Self.isAccessible();
         }
 
         public bool isAutoNumber()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsAutoNumber");
+            return Self.isAutoNumber();
         }
 
         public bool isCalculated()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsCalculated");
+            return Self.isCalculated();
         }
 
         public bool isCascadeDelete()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsCascadeDelete");
+            return Self.isCascadeDelete();
         }
 
         public bool isCaseSensitive()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsCaseSensitive");
+            return Self.isCaseSensitive();
         }
 
         public bool isCreateable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsCreateable");
+            return Self.isCreateable();
         }
 
         public bool isCustom()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsCustom");
+            return Self.isCustom();
         }
 
         public bool isDefaultedOnCreate()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsDefaultedOnCreate");
+            return Self.isDefaultedOnCreate();
         }
 
         public bool isDependentPicklist()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsDependentPicklist");
+            return Self.isDependentPicklist();
         }
 
         public bool isDeprecatedAndHidden()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsDeprecatedAndHidden");
+            return Self.isDeprecatedAndHidden();
         }
 
-        public bool isDisplayLocationInDecimal()
+        public bool isExternalID()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsDisplayLocationInDecimal");
-        }
-
-        public bool isEncrypted()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsEncrypted");
-        }
-
-        public bool isExternalId()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsExternalId");
+            return Self.isExternalID();
         }
 
         public bool isFilterable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsFilterable");
+            return Self.isFilterable();
         }
 
         public bool isGroupable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsGroupable");
-        }
-
-        public bool isHighScaleNumber()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsHighScaleNumber");
+            return Self.isGroupable();
         }
 
         public bool isHtmlFormatted()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsHtmlFormatted");
+            return Self.isHtmlFormatted();
         }
 
         public bool isIdLookup()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsIdLookup");
+            return Self.isIdLookup();
         }
 
         public bool isNameField()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsNameField");
+            return Self.isNameField();
         }
 
         public bool isNamePointing()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsNamePointing");
+            return Self.isNamePointing();
         }
 
         public bool isNillable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsNillable");
+            return Self.isNillable();
         }
 
         public bool isPermissionable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsPermissionable");
-        }
-
-        public bool isQueryByDistance()
-        {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsQueryByDistance");
+            return Self.isPermissionable();
         }
 
         public bool isRestrictedDelete()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsRestrictedDelete");
+            return Self.isRestrictedDelete();
         }
 
         public bool isRestrictedPicklist()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsRestrictedPicklist");
+            return Self.isRestrictedPicklist();
+        }
+
+        public bool isSearchPrefilterable()
+        {
+            return Self.isSearchPrefilterable();
         }
 
         public bool isSortable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsSortable");
+            return Self.isSortable();
         }
 
         public bool isUnique()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsUnique");
+            return Self.isUnique();
         }
 
         public bool isUpdateable()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsUpdateable");
+            return Self.isUpdateable();
         }
 
         public bool isWriteRequiresMasterRead()
         {
-            throw new global::System.NotImplementedException("DescribeFieldResult.IsWriteRequiresMasterRead");
+            return Self.isWriteRequiresMasterRead();
+        }
+
+        bool accessible
+        {
+            get
+            {
+                return Self.accessible;
+            }
+            set
+            {
+                Self.accessible = value;
+            }
+        }
+
+        bool aggregatable
+        {
+            get
+            {
+                return Self.aggregatable;
+            }
+            set
+            {
+                Self.aggregatable = value;
+            }
+        }
+
+        bool autoNumber
+        {
+            get
+            {
+                return Self.autoNumber;
+            }
+            set
+            {
+                Self.autoNumber = value;
+            }
+        }
+
+        int byteLength
+        {
+            get
+            {
+                return Self.byteLength;
+            }
+            set
+            {
+                Self.byteLength = value;
+            }
+        }
+
+        bool calculated
+        {
+            get
+            {
+                return Self.calculated;
+            }
+            set
+            {
+                Self.calculated = value;
+            }
+        }
+
+        string calculatedFormula
+        {
+            get
+            {
+                return Self.calculatedFormula;
+            }
+            set
+            {
+                Self.calculatedFormula = value;
+            }
+        }
+
+        bool cascadeDelete
+        {
+            get
+            {
+                return Self.cascadeDelete;
+            }
+            set
+            {
+                Self.cascadeDelete = value;
+            }
+        }
+
+        bool caseSensitive
+        {
+            get
+            {
+                return Self.caseSensitive;
+            }
+            set
+            {
+                Self.caseSensitive = value;
+            }
+        }
+
+        string compoundFieldName
+        {
+            get
+            {
+                return Self.compoundFieldName;
+            }
+            set
+            {
+                Self.compoundFieldName = value;
+            }
+        }
+
+        SObjectField controller
+        {
+            get
+            {
+                return Self.controller;
+            }
+            set
+            {
+                Self.controller = value;
+            }
+        }
+
+        bool createable
+        {
+            get
+            {
+                return Self.createable;
+            }
+            set
+            {
+                Self.createable = value;
+            }
+        }
+
+        bool custom
+        {
+            get
+            {
+                return Self.custom;
+            }
+            set
+            {
+                Self.custom = value;
+            }
+        }
+
+        bool defaultedOnCreate
+        {
+            get
+            {
+                return Self.defaultedOnCreate;
+            }
+            set
+            {
+                Self.defaultedOnCreate = value;
+            }
+        }
+
+        object defaultValue
+        {
+            get
+            {
+                return Self.defaultValue;
+            }
+            set
+            {
+                Self.defaultValue = value;
+            }
+        }
+
+        string defaultValueFormula
+        {
+            get
+            {
+                return Self.defaultValueFormula;
+            }
+            set
+            {
+                Self.defaultValueFormula = value;
+            }
+        }
+
+        bool dependentPicklist
+        {
+            get
+            {
+                return Self.dependentPicklist;
+            }
+            set
+            {
+                Self.dependentPicklist = value;
+            }
+        }
+
+        bool deprecatedAndHidden
+        {
+            get
+            {
+                return Self.deprecatedAndHidden;
+            }
+            set
+            {
+                Self.deprecatedAndHidden = value;
+            }
+        }
+
+        int digits
+        {
+            get
+            {
+                return Self.digits;
+            }
+            set
+            {
+                Self.digits = value;
+            }
+        }
+
+        bool displayLocationInDecimal
+        {
+            get
+            {
+                return Self.displayLocationInDecimal;
+            }
+            set
+            {
+                Self.displayLocationInDecimal = value;
+            }
+        }
+
+        bool encrypted
+        {
+            get
+            {
+                return Self.encrypted;
+            }
+            set
+            {
+                Self.encrypted = value;
+            }
+        }
+
+        bool externalId
+        {
+            get
+            {
+                return Self.externalId;
+            }
+            set
+            {
+                Self.externalId = value;
+            }
+        }
+
+        bool filterable
+        {
+            get
+            {
+                return Self.filterable;
+            }
+            set
+            {
+                Self.filterable = value;
+            }
+        }
+
+        FilteredLookupInfo filteredLookupInfo
+        {
+            get
+            {
+                return Self.filteredLookupInfo;
+            }
+            set
+            {
+                Self.filteredLookupInfo = value;
+            }
+        }
+
+        bool groupable
+        {
+            get
+            {
+                return Self.groupable;
+            }
+            set
+            {
+                Self.groupable = value;
+            }
+        }
+
+        bool highScaleNumber
+        {
+            get
+            {
+                return Self.highScaleNumber;
+            }
+            set
+            {
+                Self.highScaleNumber = value;
+            }
+        }
+
+        bool htmlFormatted
+        {
+            get
+            {
+                return Self.htmlFormatted;
+            }
+            set
+            {
+                Self.htmlFormatted = value;
+            }
+        }
+
+        bool idLookup
+        {
+            get
+            {
+                return Self.idLookup;
+            }
+            set
+            {
+                Self.idLookup = value;
+            }
+        }
+
+        string inlineHelpText
+        {
+            get
+            {
+                return Self.inlineHelpText;
+            }
+            set
+            {
+                Self.inlineHelpText = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        int length
+        {
+            get
+            {
+                return Self.length;
+            }
+            set
+            {
+                Self.length = value;
+            }
+        }
+
+        string localName
+        {
+            get
+            {
+                return Self.localName;
+            }
+            set
+            {
+                Self.localName = value;
+            }
+        }
+
+        string mask
+        {
+            get
+            {
+                return Self.mask;
+            }
+            set
+            {
+                Self.mask = value;
+            }
+        }
+
+        string maskType
+        {
+            get
+            {
+                return Self.maskType;
+            }
+            set
+            {
+                Self.maskType = value;
+            }
+        }
+
+        string name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        bool nameField
+        {
+            get
+            {
+                return Self.nameField;
+            }
+            set
+            {
+                Self.nameField = value;
+            }
+        }
+
+        bool namePointing
+        {
+            get
+            {
+                return Self.namePointing;
+            }
+            set
+            {
+                Self.namePointing = value;
+            }
+        }
+
+        bool nillable
+        {
+            get
+            {
+                return Self.nillable;
+            }
+            set
+            {
+                Self.nillable = value;
+            }
+        }
+
+        bool permissionable
+        {
+            get
+            {
+                return Self.permissionable;
+            }
+            set
+            {
+                Self.permissionable = value;
+            }
+        }
+
+        List<PicklistEntry> picklistValues
+        {
+            get
+            {
+                return Self.picklistValues;
+            }
+            set
+            {
+                Self.picklistValues = value;
+            }
+        }
+
+        int precision
+        {
+            get
+            {
+                return Self.precision;
+            }
+            set
+            {
+                Self.precision = value;
+            }
+        }
+
+        bool queryByDistance
+        {
+            get
+            {
+                return Self.queryByDistance;
+            }
+            set
+            {
+                Self.queryByDistance = value;
+            }
+        }
+
+        string referenceTargetField
+        {
+            get
+            {
+                return Self.referenceTargetField;
+            }
+            set
+            {
+                Self.referenceTargetField = value;
+            }
+        }
+
+        List<SObjectType> referenceTo
+        {
+            get
+            {
+                return Self.referenceTo;
+            }
+            set
+            {
+                Self.referenceTo = value;
+            }
+        }
+
+        string relationshipName
+        {
+            get
+            {
+                return Self.relationshipName;
+            }
+            set
+            {
+                Self.relationshipName = value;
+            }
+        }
+
+        int relationshipOrder
+        {
+            get
+            {
+                return Self.relationshipOrder;
+            }
+            set
+            {
+                Self.relationshipOrder = value;
+            }
+        }
+
+        bool restrictedDelete
+        {
+            get
+            {
+                return Self.restrictedDelete;
+            }
+            set
+            {
+                Self.restrictedDelete = value;
+            }
+        }
+
+        bool restrictedPicklist
+        {
+            get
+            {
+                return Self.restrictedPicklist;
+            }
+            set
+            {
+                Self.restrictedPicklist = value;
+            }
+        }
+
+        int scale
+        {
+            get
+            {
+                return Self.scale;
+            }
+            set
+            {
+                Self.scale = value;
+            }
+        }
+
+        bool searchPrefilterable
+        {
+            get
+            {
+                return Self.searchPrefilterable;
+            }
+            set
+            {
+                Self.searchPrefilterable = value;
+            }
+        }
+
+        SoapType soapType
+        {
+            get
+            {
+                return Self.soapType;
+            }
+            set
+            {
+                Self.soapType = value;
+            }
+        }
+
+        SObjectField sobjectField
+        {
+            get
+            {
+                return Self.sobjectField;
+            }
+            set
+            {
+                Self.sobjectField = value;
+            }
+        }
+
+        bool sortable
+        {
+            get
+            {
+                return Self.sortable;
+            }
+            set
+            {
+                Self.sortable = value;
+            }
+        }
+
+        DisplayType type
+        {
+            get
+            {
+                return Self.type;
+            }
+            set
+            {
+                Self.type = value;
+            }
+        }
+
+        bool unique
+        {
+            get
+            {
+                return Self.unique;
+            }
+            set
+            {
+                Self.unique = value;
+            }
+        }
+
+        bool updateable
+        {
+            get
+            {
+                return Self.updateable;
+            }
+            set
+            {
+                Self.updateable = value;
+            }
+        }
+
+        bool writeRequiresMasterRead
+        {
+            get
+            {
+                return Self.writeRequiresMasterRead;
+            }
+            set
+            {
+                Self.writeRequiresMasterRead = value;
+            }
+        }
+
+        public string getCompoundFieldName()
+        {
+            return Self.getCompoundFieldName();
+        }
+
+        public FilteredLookupInfo getFilteredLookupInfo()
+        {
+            return Self.getFilteredLookupInfo();
+        }
+
+        public string getMask()
+        {
+            return Self.getMask();
+        }
+
+        public string getMaskType()
+        {
+            return Self.getMaskType();
+        }
+
+        public SoapType getSoapType()
+        {
+            return Self.getSoapType();
+        }
+
+        public SObjectField getSobjectField()
+        {
+            return Self.getSobjectField();
+        }
+
+        public bool isAggregatable()
+        {
+            return Self.isAggregatable();
+        }
+
+        public bool isDisplayLocationInDecimal()
+        {
+            return Self.isDisplayLocationInDecimal();
+        }
+
+        public bool isEncrypted()
+        {
+            return Self.isEncrypted();
+        }
+
+        public bool isExternalId()
+        {
+            return Self.isExternalId();
+        }
+
+        public bool isHighScaleNumber()
+        {
+            return Self.isHighScaleNumber();
+        }
+
+        public bool isQueryByDistance()
+        {
+            return Self.isQueryByDistance();
         }
     }
 }

@@ -1,53 +1,75 @@
-using Apex.System;
-
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportinstance.htm#apex_class_reports_reportinstance
+    /// </summary>
     public class ReportInstance
     {
-        public object clone()
+        // infrastructure
+        public ReportInstance(dynamic self)
         {
-            throw new global::System.NotImplementedException("ReportInstance.Clone");
+            Self = self;
         }
 
-        public DateTime getCompletionDate()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetCompletionDate");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportInstance));
+            }
+        }
+
+        // API
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        public Datetime getCompletionDate()
+        {
+            return Self.getCompletionDate();
         }
 
         public ID getId()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetId");
+            return Self.getId();
         }
 
         public ID getOwnerId()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetOwnerId");
+            return Self.getOwnerId();
         }
 
         public ID getReportId()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetReportId");
+            return Self.getReportId();
         }
 
         public ReportResults getReportResults()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetReportResults");
+            return Self.getReportResults();
         }
 
-        public DateTime getRequestDate()
+        public Datetime getRequestDate()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetRequestDate");
+            return Self.getRequestDate();
         }
 
         public string getStatus()
         {
-            throw new global::System.NotImplementedException("ReportInstance.GetStatus");
+            return Self.getStatus();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportInstance.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,45 +1,33 @@
 namespace Apex.System
 {
-    public class TouchHandledException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class TouchHandledException : Exception
     {
+        // infrastructure
+        public TouchHandledException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(TouchHandledException));
+            }
+        }
+
+        // API
         public TouchHandledException(string param1)
         {
-            throw new global::System.NotImplementedException("TouchHandledException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("TouchHandledException.SetMessage");
+            Self = Implementation.Constructor(param1);
         }
     }
 }

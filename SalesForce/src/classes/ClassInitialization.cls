@@ -1,10 +1,11 @@
 public class ClassInitialization
 {
-    public List<Contact> contactList;
+    public List<String> names;
 
     public ClassInitialization()
     {
-        contactList = [SELECT ID FROM Contact LIMIT 1];
+        names = new list<String> { 'a' , 'b' , 'c'};
+
     }
 
     public static Map<String, String> colorMap = new Map<String, String>();

@@ -1,13 +1,15 @@
-using Apex.System;
-
-
 namespace Apex.ChatterAnswers
 {
-    public class AccountCreator
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_chatteranswers_accountcreator.htm#apex_interface_chatteranswers_accountcreator
+    /// </summary>
+    public interface AccountCreator
     {
-        public string createAccount(string param1, string param2, ID param3)
-        {
-            throw new global::System.NotImplementedException("AccountCreator.CreateAccount");
-        }
+        string createAccount(string firstName, string lastName, ID siteAdminId);
     }
 }

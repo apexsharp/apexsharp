@@ -1,41 +1,60 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ConnectAPI_Mentions_static_methods.htm#apex_ConnectAPI_Mentions_static_methods
+    /// </summary>
     public class Mentions
     {
-        public object clone()
+        // infrastructure
+        public Mentions(dynamic self)
         {
-            throw new global::System.NotImplementedException("Mentions.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Mentions));
+            }
+        }
+
+        // API
         public static MentionCompletionPage getMentionCompletions(string communityId, string q, string contextId)
         {
-            throw new global::System.NotImplementedException("Mentions.GetMentionCompletions");
+            return Implementation.getMentionCompletions(communityId, q, contextId);
         }
 
-        public static MentionCompletionPage getMentionCompletions(string communityId, string q, string contextId,
-            MentionCompletionType type, int pageParam, int pageSize)
+        public static Mentions getMentionCompletions(string communityId, string q, string contextId, MentionCompletionType type, int pageParam, int pageSize)
         {
-            throw new global::System.NotImplementedException("Mentions.GetMentionCompletions");
+            return Implementation.getMentionCompletions(communityId, q, contextId, type, pageParam, pageSize);
         }
 
-        public static MentionValidations getMentionValidations(string communityId, string parentId,
-            List<string> recordIds, FeedItemVisibilityType visibility)
+        public static Mentions getMentionValidations(string communityId, string parentId, List<string> recordIds, FeedItemVisibilityType visibility)
         {
-            throw new global::System.NotImplementedException("Mentions.GetMentionValidations");
+            return Implementation.getMentionValidations(communityId, parentId, recordIds, visibility);
         }
 
-        public static void setTestGetMentionCompletions(string communityId, string q, string contextId,
-            MentionCompletionPage result)
+        public static void setTestGetMentionCompletions(string communityId, string q, string contextId, MentionCompletionPage result)
         {
-            throw new global::System.NotImplementedException("Mentions.SetTestGetMentionCompletions");
+            Implementation.setTestGetMentionCompletions(communityId, q, contextId, result);
         }
 
-        public static void setTestGetMentionCompletions(string communityId, string q, string contextId,
-            MentionCompletionType type, int pageParam, int pageSize, MentionCompletionPage result)
+        public static void setTestGetMentionCompletions(string communityId, string q, string contextId, MentionCompletionType type, int pageParam, int pageSize, MentionCompletionPage result)
         {
-            throw new global::System.NotImplementedException("Mentions.SetTestGetMentionCompletions");
+            Implementation.setTestGetMentionCompletions(communityId, q, contextId, type, pageParam, pageSize, result);
+        }
+
+        public object clone()
+        {
+            return Self.clone();
         }
     }
 }

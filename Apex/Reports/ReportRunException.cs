@@ -1,32 +1,43 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class ReportRunException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class ReportRunException : Exception
     {
+        // infrastructure
+        public ReportRunException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportRunException));
+            }
+        }
+
+        // API
         public ReportRunException()
         {
-            throw new global::System.NotImplementedException("ReportRunException");
+            Self = Implementation.Constructor();
         }
 
         public ReportRunException(Exception param1)
         {
-            throw new global::System.NotImplementedException("ReportRunException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ReportRunException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("ReportRunException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("ReportRunException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("ReportRunException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

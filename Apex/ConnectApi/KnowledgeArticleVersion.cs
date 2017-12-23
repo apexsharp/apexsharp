@@ -1,35 +1,144 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class KnowledgeArticleVersion
     {
+        // infrastructure
+        public KnowledgeArticleVersion(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(KnowledgeArticleVersion));
+            }
+        }
+
+        // API
+        object articleType
+        {
+            get
+            {
+                return Self.articleType;
+            }
+            set
+            {
+                Self.articleType = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object knowledgeArticleId
+        {
+            get
+            {
+                return Self.knowledgeArticleId;
+            }
+            set
+            {
+                Self.knowledgeArticleId = value;
+            }
+        }
+
+        object lastPublishedDate
+        {
+            get
+            {
+                return Self.lastPublishedDate;
+            }
+            set
+            {
+                Self.lastPublishedDate = value;
+            }
+        }
+
+        object summary
+        {
+            get
+            {
+                return Self.summary;
+            }
+            set
+            {
+                Self.summary = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
+        object urlName
+        {
+            get
+            {
+                return Self.urlName;
+            }
+            set
+            {
+                Self.urlName = value;
+            }
+        }
+
         public KnowledgeArticleVersion()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("KnowledgeArticleVersion.ToString");
+            return Self.toString();
         }
     }
 }

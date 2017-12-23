@@ -1,17 +1,19 @@
-using Apex.System;
-
 namespace Apex.Site
 {
-    public class UrlRewriter
-    {
-        public List<System.PageReference> generateUrlFor(List<System.PageReference> param1)
-        {
-            throw new global::System.NotImplementedException("UrlRewriter.GenerateUrlFor");
-        }
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-        public System.PageReference mapRequestUrl(System.PageReference param1)
-        {
-            throw new global::System.NotImplementedException("UrlRewriter.MapRequestUrl");
-        }
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_site_urlRewriter_reference.htm#apex_site_urlRewriter_reference
+    /// </summary>
+    public interface UrlRewriter
+    {
+        PageReference[] generateUrlFor(PageReference[] salesforceUrls);
+
+        PageReference mapRequestUrl(PageReference userFriendlyUrl);
+
+        List<PageReference> generateUrlFor(List<PageReference> param1);
     }
 }

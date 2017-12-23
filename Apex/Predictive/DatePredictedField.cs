@@ -1,27 +1,45 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class DatePredictedField
     {
+        // infrastructure
+        public DatePredictedField(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DatePredictedField));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("DatePredictedField.Clone");
+            return Self.clone();
         }
 
         public Date getPointEstimate()
         {
-            throw new global::System.NotImplementedException("DatePredictedField.GetPointEstimate");
+            return Self.getPointEstimate();
         }
 
         public PredictedFieldType getType()
         {
-            throw new global::System.NotImplementedException("DatePredictedField.GetType");
+            return Self.getType();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DatePredictedField.ToString");
+            return Self.toString();
         }
     }
 }

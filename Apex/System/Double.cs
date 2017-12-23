@@ -1,55 +1,70 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_double.htm#apex_methods_system_double
+    /// </summary>
     public class Double
     {
-        public void addError(object msg)
+        // infrastructure
+        public Double(dynamic self)
         {
-            throw new global::System.NotImplementedException("Double.AddError");
+            Self = self;
         }
 
-        public void addError(object msg, bool escape)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Double.AddError");
+            get
+            {
+                return Implementor.GetImplementation(typeof(double));
+            }
         }
 
-        public void addError(string msg)
-        {
-            throw new global::System.NotImplementedException("Double.AddError");
-        }
-
-        public void addError(string msg, bool escape)
-        {
-            throw new global::System.NotImplementedException("Double.AddError");
-        }
-
+        // API
         public string format()
         {
-            throw new global::System.NotImplementedException("Double.Format");
+            return Self.format();
         }
 
         public int intValue()
         {
-            throw new global::System.NotImplementedException("Double.IntValue");
+            return Self.intValue();
         }
 
         public long longValue()
         {
-            throw new global::System.NotImplementedException("Double.LongValue");
+            return Self.longValue();
         }
 
         public long round()
         {
-            throw new global::System.NotImplementedException("Double.Round");
+            return Self.round();
         }
 
-        public static double valueOf(object o)
+        public static double valueOf(string stringToDouble)
         {
-            throw new global::System.NotImplementedException("Double.ValueOf");
+            return Implementation.valueOf(stringToDouble);
         }
 
-        public static double valueOf(string str)
+        public static double valueOf(object fieldValue)
         {
-            throw new global::System.NotImplementedException("Double.ValueOf");
+            return Implementation.valueOf(fieldValue);
+        }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
         }
     }
 }

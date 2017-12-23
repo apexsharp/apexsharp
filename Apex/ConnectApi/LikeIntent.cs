@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LikeIntent
     {
+        // infrastructure
+        public LikeIntent(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LikeIntent));
+            }
+        }
+
+        // API
+        object isLiked
+        {
+            get
+            {
+                return Self.isLiked;
+            }
+            set
+            {
+                Self.isLiked = value;
+            }
+        }
+
+        object managedSocialAccount
+        {
+            get
+            {
+                return Self.managedSocialAccount;
+            }
+            set
+            {
+                Self.managedSocialAccount = value;
+            }
+        }
+
         public LikeIntent()
         {
-            throw new global::System.NotImplementedException("LikeIntent");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LikeIntent.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("LikeIntent.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("LikeIntent.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("LikeIntent.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("LikeIntent.ToString");
+            return Self.toString();
         }
     }
 }

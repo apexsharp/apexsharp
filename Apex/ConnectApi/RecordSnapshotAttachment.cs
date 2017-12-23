@@ -1,35 +1,72 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class RecordSnapshotAttachment
     {
+        // infrastructure
+        public RecordSnapshotAttachment(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(RecordSnapshotAttachment));
+            }
+        }
+
+        // API
+        object recordView
+        {
+            get
+            {
+                return Self.recordView;
+            }
+            set
+            {
+                Self.recordView = value;
+            }
+        }
+
         public RecordSnapshotAttachment()
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("RecordSnapshotAttachment.ToString");
+            return Self.toString();
         }
     }
 }

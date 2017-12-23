@@ -1,45 +1,89 @@
 namespace Apex.System
 {
-    public class Type
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+    using IEquatableOfType = global::System.IEquatable<Type>;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_type.htm#apex_methods_system_type
+    /// </summary>
+    public class Type : IEquatableOfType
     {
-        public object clone()
+        // infrastructure
+        public Type(dynamic self)
         {
-            throw new global::System.NotImplementedException("Type.Clone");
+            Self = self;
         }
 
-        public bool equals(object o)
+        internal dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("Type.Equals");
+            get
+            {
+                return Implementor.GetImplementation(typeof(Type));
+            }
         }
 
-        public static Type forName(string clsName)
+        // API
+        public bool equals(object typeToCompare)
         {
-            throw new global::System.NotImplementedException("Type.ForName");
+            return Self.equals(typeToCompare);
         }
 
-        public static Type forName(string namespaceApex, string clsName)
+        public static Type forName(string fullyQualifiedName)
         {
-            throw new global::System.NotImplementedException("Type.ForName");
+            return Implementation.forName(fullyQualifiedName);
+        }
+
+        public static Type forName(string @namespace, string name)
+        {
+            return Implementation.forName(@namespace, name);
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("Type.GetName");
+            return Self.getName();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Type.HashCode");
+            return Self.hashCode();
         }
 
         public object newInstance()
         {
-            throw new global::System.NotImplementedException("Type.NewInstance");
+            return Self.newInstance();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Type.ToString");
+            return Self.toString();
         }
+
+        public object clone()
+        {
+            return Self.clone();
+        }
+
+        // interoperability
+
+        public static implicit operator global::System.Type(Type apexType) => GetSystemType(apexType);
+
+        public static implicit operator Type(global::System.Type systemType) => GetApexType(systemType);
+
+        public static global::System.Type GetSystemType(Type apexType) => Implementation.GetSystemType(apexType);
+
+        public static Type GetApexType(global::System.Type systemType) => Implementation.GetApexType(systemType);
+
+        public bool Equals(Type other) => Self.equals(other);
+
+        public override bool Equals(object obj) => Self.equals(obj);
+
+        public override int GetHashCode() => Self.hashCode();
+
+        public override string ToString() => Self.toString();
     }
 }

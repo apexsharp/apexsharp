@@ -1,32 +1,43 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
-    public class FeatureNotSupportedException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class FeatureNotSupportedException : Exception
     {
+        // infrastructure
+        public FeatureNotSupportedException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FeatureNotSupportedException));
+            }
+        }
+
+        // API
         public FeatureNotSupportedException()
         {
-            throw new global::System.NotImplementedException("FeatureNotSupportedException");
+            Self = Implementation.Constructor();
         }
 
         public FeatureNotSupportedException(Exception param1)
         {
-            throw new global::System.NotImplementedException("FeatureNotSupportedException");
+            Self = Implementation.Constructor(param1);
         }
 
         public FeatureNotSupportedException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("FeatureNotSupportedException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("FeatureNotSupportedException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("FeatureNotSupportedException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

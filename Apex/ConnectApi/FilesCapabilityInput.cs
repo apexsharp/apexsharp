@@ -1,30 +1,67 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class FilesCapabilityInput
     {
+        // infrastructure
+        public FilesCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(FilesCapabilityInput));
+            }
+        }
+
+        // API
+        object items
+        {
+            get
+            {
+                return Self.items;
+            }
+            set
+            {
+                Self.items = value;
+            }
+        }
+
         public FilesCapabilityInput()
         {
-            throw new global::System.NotImplementedException("FilesCapabilityInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("FilesCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("FilesCapabilityInput.Equals");
+            return Self.equals(obj);
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("FilesCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("FilesCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

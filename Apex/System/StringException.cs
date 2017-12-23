@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class StringException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class StringException : Exception
     {
+        // infrastructure
+        public StringException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StringException));
+            }
+        }
+
+        // API
         public StringException()
         {
-            throw new global::System.NotImplementedException("StringException");
+            Self = Implementation.Constructor();
         }
 
         public StringException(Exception param1)
         {
-            throw new global::System.NotImplementedException("StringException");
+            Self = Implementation.Constructor(param1);
         }
 
         public StringException(string param1)
         {
-            throw new global::System.NotImplementedException("StringException");
+            Self = Implementation.Constructor(param1);
         }
 
         public StringException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("StringException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("StringException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("StringException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("StringException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("StringException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("StringException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("StringException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("StringException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

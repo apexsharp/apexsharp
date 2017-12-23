@@ -1,20 +1,33 @@
 namespace Apex.ConnectApi
 {
-    public class ConnectApiException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class ConnectApiException : Exception
     {
-        public object clone()
+        // infrastructure
+        public ConnectApiException(dynamic self)
         {
-            throw new global::System.NotImplementedException("ConnectApiException.Clone");
+            Self = self;
         }
 
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ConnectApiException));
+            }
+        }
+
+        // API
         public string getErrorCode()
         {
-            throw new global::System.NotImplementedException("ConnectApiException.GetErrorCode");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("ConnectApiException.GetTypeName");
+            return Self.getErrorCode();
         }
     }
 }

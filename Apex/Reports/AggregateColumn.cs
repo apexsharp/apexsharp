@@ -1,40 +1,65 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_aggregatecolumn.htm#apex_class_reports_aggregatecolumn
+    /// </summary>
     public class AggregateColumn
     {
+        // infrastructure
+        public AggregateColumn(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AggregateColumn));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.Clone");
+            return Self.clone();
         }
 
         public string getAcrossGroupingContext()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.GetAcrossGroupingContext");
+            return Self.getAcrossGroupingContext();
         }
 
-        public Reports.ColumnDataType getDataType()
+        public ColumnDataType getDataType()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.GetDataType");
+            return Self.getDataType();
         }
 
         public string getDownGroupingContext()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.GetDownGroupingContext");
+            return Self.getDownGroupingContext();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.GetLabel");
+            return Self.getLabel();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.GetName");
+            return Self.getName();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("AggregateColumn.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,45 +1,70 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reporttype.htm#apex_class_reports_reporttype
+    /// </summary>
     public class ReportType
     {
+        // infrastructure
+        public ReportType(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportType));
+            }
+        }
+
+        // API
         public ReportType()
         {
-            throw new global::System.NotImplementedException("ReportType");
+            Self = Implementation.Constructor();
         }
 
         public ReportType(string type, string label)
         {
-            throw new global::System.NotImplementedException("ReportType");
+            Self = Implementation.Constructor(type, label);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportType.Clone");
+            return Self.clone();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("ReportType.GetLabel");
+            return Self.getLabel();
         }
 
         public string getType()
         {
-            throw new global::System.NotImplementedException("ReportType.GetType");
+            return Self.getType();
         }
 
         public void setLabel(string label)
         {
-            throw new global::System.NotImplementedException("ReportType.SetLabel");
+            Self.setLabel(label);
         }
 
         public void setType(string type)
         {
-            throw new global::System.NotImplementedException("ReportType.SetType");
+            Self.setType(type);
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportType.ToString");
+            return Self.toString();
         }
     }
 }

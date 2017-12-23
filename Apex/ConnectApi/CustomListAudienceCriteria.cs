@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class CustomListAudienceCriteria
     {
+        // infrastructure
+        public CustomListAudienceCriteria(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(CustomListAudienceCriteria));
+            }
+        }
+
+        // API
+        object memberCount
+        {
+            get
+            {
+                return Self.memberCount;
+            }
+            set
+            {
+                Self.memberCount = value;
+            }
+        }
+
+        object members
+        {
+            get
+            {
+                return Self.members;
+            }
+            set
+            {
+                Self.members = value;
+            }
+        }
+
         public CustomListAudienceCriteria()
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("CustomListAudienceCriteria.ToString");
+            return Self.toString();
         }
     }
 }

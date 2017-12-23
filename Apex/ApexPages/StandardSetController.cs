@@ -1,129 +1,166 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.Database;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_standardsetcontroller.htm#apex_pages_standardsetcontroller
+    /// </summary>
     public class StandardSetController
     {
-        public StandardSetController(Database.QueryLocator queryLocator)
+        // infrastructure
+        public StandardSetController(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardSetController");
+            Self = self;
         }
 
-        public StandardSetController(List<SObject> records)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("StandardSetController");
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardSetController));
+            }
         }
 
-        public void addFields(List<string> fieldNames)
+        // API
+        public StandardSetController(QueryLocator queryLocator)
         {
-            throw new global::System.NotImplementedException("StandardSetController.AddFields");
+            Self = Implementation.Constructor(queryLocator);
         }
 
-        public System.PageReference cancel()
+        public StandardSetController(List<SObject> controllerSObjects)
         {
-            throw new global::System.NotImplementedException("StandardSetController.Cancel");
+            Self = Implementation.Constructor(controllerSObjects);
+        }
+
+        public PageReference cancel()
+        {
+            return Self.cancel();
         }
 
         public void first()
         {
-            throw new global::System.NotImplementedException("StandardSetController.First");
+            Self.first();
         }
 
         public bool getCompleteResult()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetCompleteResult");
+            return Self.getCompleteResult();
         }
 
         public string getFilterId()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetFilterId");
+            return Self.getFilterId();
         }
 
         public bool getHasNext()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetHasNext");
+            return Self.getHasNext();
         }
 
         public bool getHasPrevious()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetHasPrevious");
+            return Self.getHasPrevious();
         }
 
-        public List<System.SelectOption> getListViewOptions()
+        public SelectOption getListViewOptions()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetListViewOptions");
+            return Self.getListViewOptions();
         }
 
         public int getPageNumber()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetPageNumber");
+            return Self.getPageNumber();
         }
 
         public int getPageSize()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetPageSize");
+            return Self.getPageSize();
         }
 
         public SObject getRecord()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetRecord");
+            return Self.getRecord();
         }
 
-        public List<SObject> getRecords()
+        public SObject[] getRecords()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetRecords");
+            return Self.getRecords();
         }
 
         public int getResultSize()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetResultSize");
+            return Self.getResultSize();
         }
 
-        public List<SObject> getSelected()
+        public SObject[] getSelected()
         {
-            throw new global::System.NotImplementedException("StandardSetController.GetSelected");
+            return Self.getSelected();
         }
 
         public void last()
         {
-            throw new global::System.NotImplementedException("StandardSetController.Last");
+            Self.last();
         }
 
         public void next()
         {
-            throw new global::System.NotImplementedException("StandardSetController.Next");
+            Self.next();
         }
 
         public void previous()
         {
-            throw new global::System.NotImplementedException("StandardSetController.Previous");
+            Self.previous();
         }
 
-        public System.PageReference save()
+        public PageReference save()
         {
-            throw new global::System.NotImplementedException("StandardSetController.Save");
+            return Self.save();
         }
 
-        public void setFilterId(string filterId)
+        public void setFilterID(string filterId)
         {
-            throw new global::System.NotImplementedException("StandardSetController.SetFilterId");
+            Self.setFilterID(filterId);
         }
 
-        public void setPageNumber(int pageNumber)
+        public void setpageNumber(int pageNumber)
         {
-            throw new global::System.NotImplementedException("StandardSetController.SetPageNumber");
+            Self.setpageNumber(pageNumber);
         }
 
         public void setPageSize(int pageSize)
         {
-            throw new global::System.NotImplementedException("StandardSetController.SetPageSize");
+            Self.setPageSize(pageSize);
+        }
+
+        public void setSelected(SObject[] selectedRecords)
+        {
+            Self.setSelected(selectedRecords);
+        }
+
+        public void addFields(List<string> fieldNames)
+        {
+            Self.addFields(fieldNames);
+        }
+
+        public void setFilterId(string filterId)
+        {
+            Self.setFilterId(filterId);
+        }
+
+        public void setPageNumber(int pageNumber)
+        {
+            Self.setPageNumber(pageNumber);
         }
 
         public void setSelected(List<SObject> selected)
         {
-            throw new global::System.NotImplementedException("StandardSetController.SetSelected");
+            Self.setSelected(selected);
         }
     }
 }

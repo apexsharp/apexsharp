@@ -1,53 +1,85 @@
-using Apex.System;
-using SObject = Apex.System.SObject;
-
 namespace Apex.ApexPages
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_pages_standardcontroller.htm#apex_pages_standardcontroller
+    /// </summary>
     public class StandardController
     {
-        public StandardController(SObject sobject)
+        // infrastructure
+        public StandardController(dynamic self)
         {
-            throw new global::System.NotImplementedException("StandardController");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(StandardController));
+            }
+        }
+
+        // API
+        public StandardController(SObject controllerSObject)
+        {
+            Self = Implementation.Constructor(controllerSObject);
         }
 
         public void addFields(List<string> fieldNames)
         {
-            throw new global::System.NotImplementedException("StandardController.AddFields");
+            Self.addFields(fieldNames);
         }
 
-        public System.PageReference cancel()
+        public PageReference cancel()
         {
-            throw new global::System.NotImplementedException("StandardController.Cancel");
+            return Self.cancel();
         }
 
-        public System.PageReference delete()
+        public PageReference delete()
         {
-            throw new global::System.NotImplementedException("StandardController.Delete");
+            return Self.delete();
         }
 
-        public System.PageReference edit()
+        public PageReference edit()
         {
-            throw new global::System.NotImplementedException("StandardController.Edit");
+            return Self.edit();
         }
 
         public string getId()
         {
-            throw new global::System.NotImplementedException("StandardController.GetId");
+            return Self.getId();
         }
 
         public SObject getRecord()
         {
-            throw new global::System.NotImplementedException("StandardController.GetRecord");
+            return Self.getRecord();
         }
 
-        public System.PageReference save()
+        public void reset()
         {
-            throw new global::System.NotImplementedException("StandardController.Save");
+            Self.reset();
         }
 
-        public System.PageReference view()
+        public PageReference save()
         {
-            throw new global::System.NotImplementedException("StandardController.View");
+            return Self.save();
+        }
+
+        public PageReference view()
+        {
+            return Self.view();
+        }
+
+        public SObject getSubject()
+        {
+            return Self.getSubject();
         }
     }
 }

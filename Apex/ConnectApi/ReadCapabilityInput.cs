@@ -1,30 +1,55 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class ReadCapabilityInput
     {
+        // infrastructure
+        public ReadCapabilityInput(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReadCapabilityInput));
+            }
+        }
+
+        // API
         public ReadCapabilityInput()
         {
-            throw new global::System.NotImplementedException("ReadCapabilityInput");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReadCapabilityInput.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ReadCapabilityInput.Equals");
+            return Self.equals(obj);
+        }
+
+        public double getBuildVersion()
+        {
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ReadCapabilityInput.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReadCapabilityInput.ToString");
+            return Self.toString();
         }
     }
 }

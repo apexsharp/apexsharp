@@ -1,35 +1,108 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class PhoneNumber
     {
+        // infrastructure
+        public PhoneNumber(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(PhoneNumber));
+            }
+        }
+
+        // API
+        object label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        object phoneNumber
+        {
+            get
+            {
+                return Self.phoneNumber;
+            }
+            set
+            {
+                Self.phoneNumber = value;
+            }
+        }
+
+        object phoneType
+        {
+            get
+            {
+                return Self.phoneType;
+            }
+            set
+            {
+                Self.phoneType = value;
+            }
+        }
+
+        object type
+        {
+            get
+            {
+                return Self.type;
+            }
+            set
+            {
+                Self.type = value;
+            }
+        }
+
         public PhoneNumber()
         {
-            throw new global::System.NotImplementedException("PhoneNumber");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("PhoneNumber.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("PhoneNumber.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("PhoneNumber.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("PhoneNumber.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("PhoneNumber.ToString");
+            return Self.toString();
         }
     }
 }

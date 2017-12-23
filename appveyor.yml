@@ -1,0 +1,21 @@
+﻿version: 1.0.{build}
+image: Visual Studio 2017
+
+before_build:
+- nuget restore apex.sln
+- choco install opencover.portable
+- choco install codecov
+
+build:
+  project: Apex.sln
+  parallel: true
+  verbosity: minimal
+
+#test:
+#  assemblies:
+#    only:
+#    - ApexTest/**/*.dll
+
+test_script:
+- OpenCover.Console.exe -register:user -target:"dotnet.exe" -targetargs:"test -c Debug .\ApexTest\ApexTest.csproj" -filter:"+[*]* -[ApexSharpDemo]* -[ApexSharpApi]*" -output:".\Apex_coverage.xml"
+- codecov -f "Apex_coverage.xml"

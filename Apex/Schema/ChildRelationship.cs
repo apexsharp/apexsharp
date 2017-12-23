@@ -1,47 +1,166 @@
-using Apex.System;
-
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Schema_ChildRelationship.htm#apex_class_Schema_ChildRelationship
+    /// </summary>
     public class ChildRelationship
     {
-        public Schema.SObjectType getChildSObject()
+        // infrastructure
+        public ChildRelationship(dynamic self)
         {
-            throw new global::System.NotImplementedException("ChildRelationship.GetChildSObject");
+            Self = self;
         }
 
-        public Schema.SObjectField getField()
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            throw new global::System.NotImplementedException("ChildRelationship.GetField");
+            get
+            {
+                return Implementor.GetImplementation(typeof(ChildRelationship));
+            }
         }
 
-        public string getJunctionIdListName()
+        // API
+        public SObjectType getChildSObject()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.GetJunctionIdListName");
+            return Self.getChildSObject();
         }
 
-        public List<Schema.SObjectType> getJunctionReferenceTo()
+        public SObjectField getField()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.GetJunctionReferenceTo");
+            return Self.getField();
         }
 
         public string getRelationshipName()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.GetRelationshipName");
+            return Self.getRelationshipName();
         }
 
         public bool isCascadeDelete()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.IsCascadeDelete");
+            return Self.isCascadeDelete();
         }
 
         public bool isDeprecatedAndHidden()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.IsDeprecatedAndHidden");
+            return Self.isDeprecatedAndHidden();
         }
 
         public bool isRestrictedDelete()
         {
-            throw new global::System.NotImplementedException("ChildRelationship.IsRestrictedDelete");
+            return Self.isRestrictedDelete();
+        }
+
+        bool cascadeDelete
+        {
+            get
+            {
+                return Self.cascadeDelete;
+            }
+            set
+            {
+                Self.cascadeDelete = value;
+            }
+        }
+
+        SObjectType childSObject
+        {
+            get
+            {
+                return Self.childSObject;
+            }
+            set
+            {
+                Self.childSObject = value;
+            }
+        }
+
+        bool deprecatedAndHidden
+        {
+            get
+            {
+                return Self.deprecatedAndHidden;
+            }
+            set
+            {
+                Self.deprecatedAndHidden = value;
+            }
+        }
+
+        SObjectField field
+        {
+            get
+            {
+                return Self.field;
+            }
+            set
+            {
+                Self.field = value;
+            }
+        }
+
+        List<string> junctionIdListNames
+        {
+            get
+            {
+                return Self.junctionIdListNames;
+            }
+            set
+            {
+                Self.junctionIdListNames = value;
+            }
+        }
+
+        List<SObjectType> junctionReferenceTo
+        {
+            get
+            {
+                return Self.junctionReferenceTo;
+            }
+            set
+            {
+                Self.junctionReferenceTo = value;
+            }
+        }
+
+        string relationshipName
+        {
+            get
+            {
+                return Self.relationshipName;
+            }
+            set
+            {
+                Self.relationshipName = value;
+            }
+        }
+
+        bool restrictedDelete
+        {
+            get
+            {
+                return Self.restrictedDelete;
+            }
+            set
+            {
+                Self.restrictedDelete = value;
+            }
+        }
+
+        public List<string> getJunctionIdListNames()
+        {
+            return Self.getJunctionIdListNames();
+        }
+
+        public List<SObjectType> getJunctionReferenceTo()
+        {
+            return Self.getJunctionReferenceTo();
         }
     }
 }

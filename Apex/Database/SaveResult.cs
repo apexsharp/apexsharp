@@ -1,23 +1,81 @@
-using Apex.System;
-
-
 namespace Apex.Database
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_database_saveresult.htm#apex_methods_system_database_saveresult
+    /// </summary>
     public class SaveResult
     {
-        public List<Database.Error> getErrors()
+        // infrastructure
+        public SaveResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("SaveResult.GetErrors");
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SaveResult));
+            }
+        }
+
+        // API
+        public Error[] getErrors()
+        {
+            return Self.getErrors();
         }
 
         public ID getId()
         {
-            throw new global::System.NotImplementedException("SaveResult.GetId");
+            return Self.getId();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("SaveResult.IsSuccess");
+            return Self.isSuccess();
+        }
+
+        List<Error> errors
+        {
+            get
+            {
+                return Self.errors;
+            }
+            set
+            {
+                Self.errors = value;
+            }
+        }
+
+        ID id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        bool success
+        {
+            get
+            {
+                return Self.success;
+            }
+            set
+            {
+                Self.success = value;
+            }
         }
     }
 }

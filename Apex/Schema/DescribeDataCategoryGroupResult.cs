@@ -1,30 +1,115 @@
 namespace Apex.Schema
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Schema_DescribeDataCategoryGroupResult.htm#apex_class_Schema_DescribeDataCategoryGroupResult
+    /// </summary>
     public class DescribeDataCategoryGroupResult
     {
+        // infrastructure
+        public DescribeDataCategoryGroupResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DescribeDataCategoryGroupResult));
+            }
+        }
+
+        // API
         public int getCategoryCount()
         {
-            throw new global::System.NotImplementedException("DescribeDataCategoryGroupResult.GetCategoryCount");
+            return Self.getCategoryCount();
         }
 
         public string getDescription()
         {
-            throw new global::System.NotImplementedException("DescribeDataCategoryGroupResult.GetDescription");
+            return Self.getDescription();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DescribeDataCategoryGroupResult.GetLabel");
+            return Self.getLabel();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("DescribeDataCategoryGroupResult.GetName");
+            return Self.getName();
         }
 
         public string getSobject()
         {
-            throw new global::System.NotImplementedException("DescribeDataCategoryGroupResult.GetSobject");
+            return Self.getSobject();
+        }
+
+        int categoryCount
+        {
+            get
+            {
+                return Self.categoryCount;
+            }
+            set
+            {
+                Self.categoryCount = value;
+            }
+        }
+
+        string description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        string label
+        {
+            get
+            {
+                return Self.label;
+            }
+            set
+            {
+                Self.label = value;
+            }
+        }
+
+        string name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        string sobject
+        {
+            get
+            {
+                return Self.sobject;
+            }
+            set
+            {
+                Self.sobject = value;
+            }
         }
     }
 }

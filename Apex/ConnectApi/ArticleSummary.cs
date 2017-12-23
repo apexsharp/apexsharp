@@ -1,35 +1,156 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ArticleSummary
     {
+        // infrastructure
+        public ArticleSummary(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ArticleSummary));
+            }
+        }
+
+        // API
+        object articleType
+        {
+            get
+            {
+                return Self.articleType;
+            }
+            set
+            {
+                Self.articleType = value;
+            }
+        }
+
+        object knowledgeArticleVersionId
+        {
+            get
+            {
+                return Self.knowledgeArticleVersionId;
+            }
+            set
+            {
+                Self.knowledgeArticleVersionId = value;
+            }
+        }
+
+        object lastPublishedDate
+        {
+            get
+            {
+                return Self.lastPublishedDate;
+            }
+            set
+            {
+                Self.lastPublishedDate = value;
+            }
+        }
+
+        object rating
+        {
+            get
+            {
+                return Self.rating;
+            }
+            set
+            {
+                Self.rating = value;
+            }
+        }
+
+        object summary
+        {
+            get
+            {
+                return Self.summary;
+            }
+            set
+            {
+                Self.summary = value;
+            }
+        }
+
+        object title
+        {
+            get
+            {
+                return Self.title;
+            }
+            set
+            {
+                Self.title = value;
+            }
+        }
+
+        object urlName
+        {
+            get
+            {
+                return Self.urlName;
+            }
+            set
+            {
+                Self.urlName = value;
+            }
+        }
+
+        object viewCount
+        {
+            get
+            {
+                return Self.viewCount;
+            }
+            set
+            {
+                Self.viewCount = value;
+            }
+        }
+
         public ArticleSummary()
         {
-            throw new global::System.NotImplementedException("ArticleSummary");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("ArticleSummary.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("ArticleSummary.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("ArticleSummary.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("ArticleSummary.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ArticleSummary.ToString");
+            return Self.toString();
         }
     }
 }

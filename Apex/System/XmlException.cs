@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class XmlException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class XmlException : Exception
     {
+        // infrastructure
+        public XmlException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(XmlException));
+            }
+        }
+
+        // API
         public XmlException()
         {
-            throw new global::System.NotImplementedException("XmlException");
+            Self = Implementation.Constructor();
         }
 
         public XmlException(Exception param1)
         {
-            throw new global::System.NotImplementedException("XmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public XmlException(string param1)
         {
-            throw new global::System.NotImplementedException("XmlException");
+            Self = Implementation.Constructor(param1);
         }
 
         public XmlException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("XmlException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("XmlException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("XmlException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("XmlException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("XmlException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("XmlException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("XmlException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("XmlException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

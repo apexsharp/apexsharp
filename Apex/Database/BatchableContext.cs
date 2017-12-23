@@ -1,18 +1,17 @@
-using Apex.System;
-
-
 namespace Apex.Database
 {
-    public class BatchableContext
-    {
-        public ID getChildJobId()
-        {
-            throw new global::System.NotImplementedException("BatchableContext.GetChildJobId");
-        }
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-        public ID getJobId()
-        {
-            throw new global::System.NotImplementedException("BatchableContext.GetJobId");
-        }
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_database_batchablecontext.htm#apex_interface_database_batchablecontext
+    /// </summary>
+    public interface BatchableContext
+    {
+        ID getChildJobId();
+
+        ID getJobId();
     }
 }

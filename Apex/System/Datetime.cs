@@ -1,298 +1,295 @@
 namespace Apex.System
 {
-    using SysDateTime = global::System.DateTime;
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
 
-    public class DateTime
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_datetime.htm#apex_methods_system_datetime
+    /// </summary>
+    public class Datetime : global::System.IEquatable<Datetime>
     {
-        private SysDateTime dateTime;
-
-        private SysDateTime dateTimeGmt => dateTime.ToUniversalTime();
-
-        internal DateTime(SysDateTime dt) => dateTime = dt;
-
-        internal DateTime(int year, int month, int day)
+        // infrastructure
+        public Datetime(dynamic self)
         {
-            dateTime = new SysDateTime(year, month, day);
+            Self = self;
         }
 
-        internal DateTime(int year, int month, int day, int hour, int minute, int second)
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
         {
-            dateTime = new SysDateTime(year, month, day, hour, minute, second);
+            get
+            {
+                return Implementor.GetImplementation(typeof(Datetime));
+            }
         }
 
-        public static DateTime now()
+        // API
+        public Datetime addDays(int additionalDays)
         {
-            return new DateTime(SysDateTime.Now);
+            return Self.addDays(additionalDays);
         }
 
-        public DateTime addDays(int days)
+        public Datetime addHours(int additionalHours)
         {
-            ////throw new global::System.NotImplementedException("DateTime.AddDays");
-            return new DateTime(dateTime.AddDays(days));
+            return Self.addHours(additionalHours);
         }
 
-        public void addError(object msg)
+        public Datetime addMinutes(int additionalMinutes)
         {
-            throw new global::System.NotImplementedException("DateTime.AddError");
+            return Self.addMinutes(additionalMinutes);
         }
 
-        public void addError(object msg, bool escape)
+        public Datetime addMonths(int additionalMonths)
         {
-            throw new global::System.NotImplementedException("DateTime.AddError");
+            return Self.addMonths(additionalMonths);
         }
 
-        public void addError(string msg)
+        public Datetime addSeconds(int additionalSeconds)
         {
-            throw new global::System.NotImplementedException("DateTime.AddError");
+            return Self.addSeconds(additionalSeconds);
         }
 
-        public void addError(string msg, bool escape)
+        public Datetime addYears(int additionalYears)
         {
-            throw new global::System.NotImplementedException("DateTime.AddError");
-        }
-
-        public DateTime addHours(int hours)
-        {
-            ////throw new global::System.NotImplementedException("DateTime.AddHours");
-            return new DateTime(dateTime.AddHours(hours));
-        }
-
-        public DateTime addMinutes(int minutes)
-        {
-            ////throw new global::System.NotImplementedException("DateTime.AddMinutes");
-            return new DateTime(dateTime.AddMinutes(minutes));
-        }
-
-        public DateTime addMonths(int months)
-        {
-            ////throw new global::System.NotImplementedException("DateTime.AddMonths");
-            return new DateTime(dateTime.AddMonths(months));
-        }
-
-        public DateTime addSeconds(int seconds)
-        {
-            ////throw new global::System.NotImplementedException("DateTime.AddSeconds");
-            return new DateTime(dateTime.AddSeconds(seconds));
-        }
-
-        public DateTime addYears(int years)
-        {
-            ////throw new global::System.NotImplementedException("DateTime.AddYears");
-            return new DateTime(dateTime.AddYears(years));
+            return Self.addYears(additionalYears);
         }
 
         public Date date()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Date");
-            return new Date(dateTime.Date);
+            return Self.date();
         }
 
-        public Date dateGmt()
+        public Date dateGMT()
         {
-            ////throw new global::System.NotImplementedException("DateTime.DateGmt");
-            return new Date(dateTimeGmt);
+            return Self.dateGMT();
         }
 
         public int day()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Day");
-            return dateTime.Day;
+            return Self.day();
         }
 
         public int dayGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.DayGmt");
-            return dateTimeGmt.Day;
+            return Self.dayGmt();
         }
 
         public int dayOfYear()
         {
-            ////throw new global::System.NotImplementedException("DateTime.DayOfYear");
-            return dateTime.DayOfYear;
+            return Self.dayOfYear();
         }
 
         public int dayOfYearGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.DayOfYearGmt");
-            return dateTimeGmt.DayOfYear;
+            return Self.dayOfYearGmt();
+        }
+
+        public bool equals(object obj)
+        {
+            return Self.equals(obj);
+        }
+
+        public int hashCode()
+        {
+            return Self.hashCode();
         }
 
         public string format()
         {
-            throw new global::System.NotImplementedException("DateTime.Format");
+            return Self.format();
         }
 
-        public string format(string dateformat)
+        public string format(string dateFormatString)
         {
-            throw new global::System.NotImplementedException("DateTime.Format");
+            return Self.format(dateFormatString);
         }
 
-        public string format(string dateformat, string timezone)
+        public string format(string dateFormatString, string timezone)
         {
-            throw new global::System.NotImplementedException("DateTime.Format");
+            return Self.format(dateFormatString, timezone);
         }
 
-        public string formatGmt(string dateformat)
+        public string formatGmt(string dateFormatString)
         {
-            throw new global::System.NotImplementedException("DateTime.FormatGmt");
+            return Self.formatGmt(dateFormatString);
         }
 
         public string formatLong()
         {
-            throw new global::System.NotImplementedException("DateTime.FormatLong");
+            return Self.formatLong();
         }
 
         public long getTime()
         {
-            throw new global::System.NotImplementedException("DateTime.GetTime");
+            return Self.getTime();
         }
 
         public int hour()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Hour");
-            return dateTime.Hour;
+            return Self.hour();
         }
 
         public int hourGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.HourGmt");
-            return dateTimeGmt.Hour;
+            return Self.hourGmt();
         }
 
-        public bool isSameDay(DateTime other)
+        public bool isSameDay(Datetime dateToCompare)
         {
-            throw new global::System.NotImplementedException("DateTime.IsSameDay");
+            return Self.isSameDay(dateToCompare);
         }
 
         public int millisecond()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Millisecond");
-            return dateTime.Millisecond;
+            return Self.millisecond();
         }
 
         public int millisecondGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.MillisecondGmt");
-            return dateTimeGmt.Millisecond; // doesn't make much sense
+            return Self.millisecondGmt();
         }
 
         public int minute()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Minute");
-            return dateTime.Minute;
+            return Self.minute();
         }
 
         public int minuteGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.MinuteGmt");
-            return dateTimeGmt.Minute; // doesn't make much sense
+            return Self.minuteGmt();
         }
 
         public int month()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Month");
-            return dateTime.Month;
+            return Self.month();
         }
 
         public int monthGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.MonthGmt");
-            return dateTimeGmt.Month;
+            return Self.monthGmt();
         }
 
-        public static DateTime newInstance(Date date, Time time)
+        public static Datetime newInstance(long milliseconds)
         {
-            ////throw new global::System.NotImplementedException("DateTime.NewInstance");
-            return new DateTime(date.date + time.time);
+            return Implementation.newInstance(milliseconds);
         }
 
-        public static DateTime newInstance(int year, int month, int day)
+        public static Datetime newInstance(Date date, Time time)
         {
-            ////throw new global::System.NotImplementedException("DateTime.NewInstance");
-            return new DateTime(year, month, day);
+            return Implementation.newInstance(date, time);
         }
 
-        public static DateTime newInstance(int year, int month, int day, int hour, int minute, int second)
+        public static Datetime newInstance(int year, int month, int day)
         {
-            ////throw new global::System.NotImplementedException("DateTime.NewInstance");
-            return new DateTime(year, month, day, hour, minute, second);
+            return Implementation.newInstance(year, month, day);
         }
 
-        public static DateTime newInstance(long time)
+        public static Datetime newInstance(int year, int month, int day, int hour, int minute, int second)
         {
-            throw new global::System.NotImplementedException("DateTime.NewInstance");
+            return Implementation.newInstance(year, month, day, hour, minute, second);
         }
 
-        public static DateTime newInstanceGmt(Date date, Time time)
+        public static Datetime newInstanceGmt(Date date, Time time)
         {
-            throw new global::System.NotImplementedException("DateTime.NewInstanceGmt");
+            return Implementation.newInstanceGmt(date, time);
         }
 
-        public static DateTime newInstanceGmt(int year, int month, int day)
+        public static Datetime newInstanceGmt(int year, int month, int date)
         {
-            throw new global::System.NotImplementedException("DateTime.NewInstanceGmt");
+            return Implementation.newInstanceGmt(year, month, date);
         }
 
-        public static DateTime newInstanceGmt(int year, int month, int day, int hour, int minute, int second)
+        public static Datetime newInstanceGmt(int year, int month, int date, int hour, int minute, int second)
         {
-            throw new global::System.NotImplementedException("DateTime.NewInstanceGmt");
+            return Implementation.newInstanceGmt(year, month, date, hour, minute, second);
         }
 
-        public static DateTime parse(string str)
+        public static Datetime now()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Parse");
-            return new DateTime(SysDateTime.Parse(str));
+            return Implementation.now();
+        }
+
+        public static Datetime parse(string datetimeString)
+        {
+            return Implementation.parse(datetimeString);
         }
 
         public int second()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Second");
-            return dateTime.Second;
+            return Self.second();
         }
 
         public int secondGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.SecondGmt");
-            return dateTimeGmt.Second;
+            return Self.secondGmt();
         }
 
         public Time time()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Time");
-            return new Time(dateTime.TimeOfDay);
+            return Self.time();
         }
 
         public Time timeGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.TimeGmt");
-            return new Time(dateTimeGmt.TimeOfDay);
+            return Self.timeGmt();
         }
 
-        public static DateTime valueOf(object o)
+        public string toString()
         {
-            throw new global::System.NotImplementedException("DateTime.ValueOf");
+            return Self.toString();
         }
 
-        public static DateTime valueOf(string str)
+        public static Datetime valueOf(string dateTimeString)
         {
-            throw new global::System.NotImplementedException("DateTime.ValueOf");
+            return Implementation.valueOf(dateTimeString);
         }
 
-        public static DateTime valueOfGmt(string str)
+        public static Datetime valueOf(object fieldValue)
         {
-            throw new global::System.NotImplementedException("DateTime.ValueOfGmt");
+            return Implementation.valueOf(fieldValue);
+        }
+
+        public static Datetime valueOfGmt(string dateTimeString)
+        {
+            return Implementation.valueOfGmt(dateTimeString);
         }
 
         public int year()
         {
-            ////throw new global::System.NotImplementedException("DateTime.Year");
-            return dateTime.Year;
+            return Self.year();
         }
 
         public int yearGmt()
         {
-            ////throw new global::System.NotImplementedException("DateTime.YearGmt");
-            return dateTimeGmt.Year;
+            return Self.yearGmt();
         }
+
+        public void addError(Exception msg, bool escape)
+        {
+            Self.addError(msg, escape);
+        }
+
+        public void addError(Exception msg)
+        {
+            Self.addError(msg);
+        }
+
+        public Date dateGmt()
+        {
+            return Self.dateGmt();
+        }
+
+        // interoperability
+
+        public bool Equals(Datetime other) => equals(other);
+
+        public override bool Equals(object obj) => equals(obj);
+
+        public override int GetHashCode() => hashCode();
+
+        public override string ToString() => toString();
     }
 }

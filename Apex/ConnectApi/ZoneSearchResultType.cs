@@ -1,27 +1,16 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
-    public class ZoneSearchResultType
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public enum ZoneSearchResultType
     {
-        public bool equals(object obj)
-        {
-            throw new global::System.NotImplementedException("ZoneSearchResultType.Equals");
-        }
-
-        public int hashCode()
-        {
-            throw new global::System.NotImplementedException("ZoneSearchResultType.HashCode");
-        }
-
-        public int ordinal()
-        {
-            throw new global::System.NotImplementedException("ZoneSearchResultType.Ordinal");
-        }
-
-        public static List<ZoneSearchResultType> values()
-        {
-            throw new global::System.NotImplementedException("ZoneSearchResultType.Values");
-        }
+        Article,
+        Question
     }
 }

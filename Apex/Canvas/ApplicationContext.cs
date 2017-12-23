@@ -1,35 +1,25 @@
 namespace Apex.Canvas
 {
-    public class ApplicationContext
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public interface ApplicationContext
     {
-        public string getCanvasUrl()
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.GetCanvasUrl");
-        }
+        string getCanvasUrl();
 
-        public string getDeveloperName()
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.GetDeveloperName");
-        }
+        string getDeveloperName();
 
-        public string getName()
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.GetName");
-        }
+        string getName();
 
-        public string getNamespace()
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.GetNamespace");
-        }
+        string getNamespace();
 
-        public string getVersion()
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.GetVersion");
-        }
+        string getVersion();
 
-        public void setCanvasUrlPath(string param1)
-        {
-            throw new global::System.NotImplementedException("ApplicationContext.SetCanvasUrlPath");
-        }
+        void setCanvasUrlPath(string param1);
     }
 }

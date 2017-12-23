@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class AssertException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class AssertException : Exception
     {
+        // infrastructure
+        public AssertException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(AssertException));
+            }
+        }
+
+        // API
         public AssertException()
         {
-            throw new global::System.NotImplementedException("AssertException");
+            Self = Implementation.Constructor();
         }
 
         public AssertException(Exception param1)
         {
-            throw new global::System.NotImplementedException("AssertException");
+            Self = Implementation.Constructor(param1);
         }
 
         public AssertException(string param1)
         {
-            throw new global::System.NotImplementedException("AssertException");
+            Self = Implementation.Constructor(param1);
         }
 
         public AssertException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("AssertException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("AssertException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("AssertException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("AssertException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("AssertException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("AssertException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("AssertException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("AssertException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

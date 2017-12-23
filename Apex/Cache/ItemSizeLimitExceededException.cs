@@ -1,37 +1,48 @@
-using Apex.System;
-
 namespace Apex.Cache
 {
-    public class ItemSizeLimitExceededException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class ItemSizeLimitExceededException : Exception
     {
+        // infrastructure
+        public ItemSizeLimitExceededException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ItemSizeLimitExceededException));
+            }
+        }
+
+        // API
         public ItemSizeLimitExceededException()
         {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException");
+            Self = Implementation.Constructor();
         }
 
         public ItemSizeLimitExceededException(Exception param1)
         {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ItemSizeLimitExceededException(string param1)
         {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException");
+            Self = Implementation.Constructor(param1);
         }
 
         public ItemSizeLimitExceededException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException");
-        }
-
-        public object clone()
-        {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException.Clone");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("ItemSizeLimitExceededException.GetTypeName");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

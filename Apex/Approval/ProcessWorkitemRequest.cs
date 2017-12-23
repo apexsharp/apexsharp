@@ -1,53 +1,99 @@
-using Apex.System;
-
-
 namespace Apex.Approval
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_ProcessWorkitemRequest.htm#apex_ProcessWorkitemRequest
+    /// </summary>
     public class ProcessWorkitemRequest
     {
-        public ProcessWorkitemRequest()
+        // infrastructure
+        public ProcessWorkitemRequest(dynamic self)
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ProcessWorkitemRequest));
+            }
+        }
+
+        // API
         public string getAction()
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.GetAction");
-        }
-
-        public string getComments()
-        {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.GetComments");
-        }
-
-        public List<ID> getNextApproverIds()
-        {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.GetNextApproverIds");
+            return Self.getAction();
         }
 
         public string getWorkitemId()
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.GetWorkitemId");
+            return Self.getWorkitemId();
         }
 
-        public void setAction(string param1)
+        public void setAction(string actionType)
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.SetAction");
+            Self.setAction(actionType);
+        }
+
+        public void setWorkitemId(string id)
+        {
+            Self.setWorkitemId(id);
+        }
+
+        string action
+        {
+            get
+            {
+                return Self.action;
+            }
+            set
+            {
+                Self.action = value;
+            }
+        }
+
+        string workitemId
+        {
+            get
+            {
+                return Self.workitemId;
+            }
+            set
+            {
+                Self.workitemId = value;
+            }
+        }
+
+        public ProcessWorkitemRequest()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public string getComments()
+        {
+            return Self.getComments();
+        }
+
+        public List<ID> getNextApproverIds()
+        {
+            return Self.getNextApproverIds();
         }
 
         public void setComments(string param1)
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.SetComments");
+            Self.setComments(param1);
         }
 
         public void setNextApproverIds(List<ID> param1)
         {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.SetNextApproverIds");
-        }
-
-        public void setWorkitemId(string param1)
-        {
-            throw new global::System.NotImplementedException("ProcessWorkitemRequest.SetWorkitemId");
+            Self.setNextApproverIds(param1);
         }
     }
 }

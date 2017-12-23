@@ -1,10 +1,15 @@
 namespace Apex.System
 {
-    public class SandboxPostCopy
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_interface_System_SandboxPostCopy.htm#apex_interface_System_SandboxPostCopy
+    /// </summary>
+    public interface SandboxPostCopy
     {
-        public void runApexClass(SandboxContext param1)
-        {
-            throw new global::System.NotImplementedException("SandboxPostCopy.RunApexClass");
-        }
+        void runApexClass(SandboxContext context);
     }
 }

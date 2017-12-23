@@ -1,35 +1,156 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Zone
     {
+        // infrastructure
+        public Zone(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Zone));
+            }
+        }
+
+        // API
+        object description
+        {
+            get
+            {
+                return Self.description;
+            }
+            set
+            {
+                Self.description = value;
+            }
+        }
+
+        object id
+        {
+            get
+            {
+                return Self.id;
+            }
+            set
+            {
+                Self.id = value;
+            }
+        }
+
+        object isActive
+        {
+            get
+            {
+                return Self.isActive;
+            }
+            set
+            {
+                Self.isActive = value;
+            }
+        }
+
+        object isChatterAnswers
+        {
+            get
+            {
+                return Self.isChatterAnswers;
+            }
+            set
+            {
+                Self.isChatterAnswers = value;
+            }
+        }
+
+        object name
+        {
+            get
+            {
+                return Self.name;
+            }
+            set
+            {
+                Self.name = value;
+            }
+        }
+
+        object url
+        {
+            get
+            {
+                return Self.url;
+            }
+            set
+            {
+                Self.url = value;
+            }
+        }
+
+        object visibility
+        {
+            get
+            {
+                return Self.visibility;
+            }
+            set
+            {
+                Self.visibility = value;
+            }
+        }
+
+        object visibilityId
+        {
+            get
+            {
+                return Self.visibilityId;
+            }
+            set
+            {
+                Self.visibilityId = value;
+            }
+        }
+
         public Zone()
         {
-            throw new global::System.NotImplementedException("Zone");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("Zone.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("Zone.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("Zone.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("Zone.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("Zone.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,22 +1,45 @@
-
-
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class SupportPredictiveService
     {
+        // infrastructure
+        public SupportPredictiveService(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SupportPredictiveService));
+            }
+        }
+
+        // API
         public SupportPredictiveService()
         {
-            throw new global::System.NotImplementedException("SupportPredictiveService");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("SupportPredictiveService.Clone");
+            return Self.clone();
         }
 
         public static List<ID> findSimilarCases(string caseId)
         {
-            throw new global::System.NotImplementedException("SupportPredictiveService.FindSimilarCases");
+            return Implementation.findSimilarCases(caseId);
         }
     }
 }

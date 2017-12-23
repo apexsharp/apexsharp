@@ -1,29 +1,50 @@
-using Apex.System;
-
-using SObject = Apex.System.SObject;
-
 namespace Apex.Search
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_Search_SearchResult.htm#apex_class_Search_SearchResult
+    /// </summary>
     public class SearchResult
     {
-        public object clone()
+        // infrastructure
+        public SearchResult(dynamic self)
         {
-            throw new global::System.NotImplementedException("SearchResult.Clone");
+            Self = self;
         }
 
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SearchResult));
+            }
+        }
+
+        // API
         public SObject getSObject()
         {
-            throw new global::System.NotImplementedException("SearchResult.GetSObject");
+            return Self.getSObject();
+        }
+
+        public string getSnippet(string fieldName)
+        {
+            return Self.getSnippet(fieldName);
         }
 
         public string getSnippet()
         {
-            throw new global::System.NotImplementedException("SearchResult.GetSnippet");
+            return Self.getSnippet();
         }
 
-        public string getSnippet(string field)
+        public object clone()
         {
-            throw new global::System.NotImplementedException("SearchResult.GetSnippet");
+            return Self.clone();
         }
     }
 }

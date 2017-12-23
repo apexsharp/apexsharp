@@ -1,40 +1,36 @@
-﻿
+﻿using System.Linq;
 
 namespace Demo
 {
+    using Apex;
+    using ApexSharpApi;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using ApexParser;
-    using ApexSharpApi;
-    using Apex;
-    using CSharpClasses;
 
     public class Program
     {
+<<<<<<< HEAD
 
         // Location of your APEX and C# Files that we will be converting
         public static DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
         public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
 
+=======
+>>>>>>> dev
         public static void Main(string[] args)
         {
             Start();
+
+            Console.WriteLine("Done, Press Any Key To Exit");
+            // Console.ReadLine();
         }
 
         public static void Start()
         {
-            // Location of your APEX and C# Files that we will be converting
-            DirectoryInfo apexLocation = new DirectoryInfo(@"/ApexSharp/SalesForce/src/classes/");
-            DirectoryInfo cSharpLocation = new DirectoryInfo(@"/ApexSharp/Demo/CSharpClasses/");
-
-            // Start Logging
-            Setup.StartLogging();
-
-            // Always Initialize your settings when ever you are connecting to SF
-            Setup.Init();
+            // Always Initialize your settings
+            Setup.InitializeSession();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
@@ -43,21 +39,82 @@ namespace Demo
             CreateOffLineClasses();
 
 
+<<<<<<< HEAD
             CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
          
             //DmlTest.UpsertTest();
 
+=======
+            try
+            {
+                // Location of your APEX and C# Files that we will be converting
+                DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
+                DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
-            CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+                // Convert Apex to C#
+                // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
+
+                // Convert C# to APEX
+                // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+>>>>>>> dev
+
+            CSharpClasses.DmlTest.UpsertTest();
 
             // Keep Track of the API Limits
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();
+        }
 
+<<<<<<< HEAD
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadKey();
+=======
+        // Create Offline DTO for all the Salesforce Objects
+        public static void CreateAllOffLineClasses()
+        {
+            try
+            {
+                ModelGen modelGen = new ModelGen();
+                modelGen.CreateOfflineSymbolTable(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
+            }
+            catch (ApexSharpHttpException exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
+        }
+
+        // Create Offline DTO for a set of Salesforce objects
+        public static void CreateOffLineClasses()
+        {
+            try
+            {
+                ModelGen modelGen = new ModelGen();
+
+                // To save time we will only create objects we are going to work with
+                List<string> onlyObjects = new List<string>
+                {
+                    "Contact",
+                    "Account",
+                    "User",
+                    "UserRole",
+                    "Profile",
+                    "UserLicense",
+                };
+
+                modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
+            }
+            catch (ApexSharpHttpException exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
+>>>>>>> dev
         }
 
         public static void MokDemo()
@@ -109,6 +166,7 @@ namespace Demo
             Console.WriteLine("Done, Press any key to exit");
             Console.ReadKey();
         }
+<<<<<<< HEAD
 
         public static void CreateOffLineClasses()
         {
@@ -138,5 +196,7 @@ namespace Demo
         }
 
 
+=======
+>>>>>>> dev
     }
 }

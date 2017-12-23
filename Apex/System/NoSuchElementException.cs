@@ -1,60 +1,48 @@
 namespace Apex.System
 {
-    public class NoSuchElementException
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
+    public class NoSuchElementException : Exception
     {
+        // infrastructure
+        public NoSuchElementException(dynamic self)
+        {
+            Self = self;
+        }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(NoSuchElementException));
+            }
+        }
+
+        // API
         public NoSuchElementException()
         {
-            throw new global::System.NotImplementedException("NoSuchElementException");
+            Self = Implementation.Constructor();
         }
 
         public NoSuchElementException(Exception param1)
         {
-            throw new global::System.NotImplementedException("NoSuchElementException");
+            Self = Implementation.Constructor(param1);
         }
 
         public NoSuchElementException(string param1)
         {
-            throw new global::System.NotImplementedException("NoSuchElementException");
+            Self = Implementation.Constructor(param1);
         }
 
         public NoSuchElementException(string param1, Exception param2)
         {
-            throw new global::System.NotImplementedException("NoSuchElementException");
-        }
-
-        public Exception getCause()
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.GetCause");
-        }
-
-        public int getLineNumber()
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.GetLineNumber");
-        }
-
-        public string getMessage()
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.GetMessage");
-        }
-
-        public string getStackTraceString()
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.GetStackTraceString");
-        }
-
-        public string getTypeName()
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.GetTypeName");
-        }
-
-        public void initCause(Exception cause)
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.InitCause");
-        }
-
-        public void setMessage(string message)
-        {
-            throw new global::System.NotImplementedException("NoSuchElementException.SetMessage");
+            Self = Implementation.Constructor(param1, param2);
         }
     }
 }

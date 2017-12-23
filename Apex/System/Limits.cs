@@ -1,255 +1,310 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_limits.htm#apex_methods_system_limits
+    /// </summary>
     public class Limits
     {
+        // infrastructure
+        public Limits(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Limits));
+            }
+        }
+
+        // API
         public static int getAggregateQueries()
         {
-            throw new global::System.NotImplementedException("Limits.GetAggregateQueries");
-        }
-
-        public static int getCallouts()
-        {
-            throw new global::System.NotImplementedException("Limits.GetCallouts");
-        }
-
-        public static int getChildRelationshipsDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetChildRelationshipsDescribes");
-        }
-
-        public static int getCpuTime()
-        {
-            throw new global::System.NotImplementedException("Limits.GetCpuTime");
-        }
-
-        public static int getDatabaseTime()
-        {
-            throw new global::System.NotImplementedException("Limits.GetDatabaseTime");
-        }
-
-        public static int getDmlRows()
-        {
-            throw new global::System.NotImplementedException("Limits.GetDmlRows");
-        }
-
-        public static int getDmlStatements()
-        {
-            throw new global::System.NotImplementedException("Limits.GetDmlStatements");
-        }
-
-        public static int getEmailInvocations()
-        {
-            throw new global::System.NotImplementedException("Limits.GetEmailInvocations");
-        }
-
-        public static int getFieldSetsDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetFieldSetsDescribes");
-        }
-
-        public static int getFieldsDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetFieldsDescribes");
-        }
-
-        public static int getFindSimilarCalls()
-        {
-            throw new global::System.NotImplementedException("Limits.GetFindSimilarCalls");
-        }
-
-        public static int getFutureCalls()
-        {
-            throw new global::System.NotImplementedException("Limits.GetFutureCalls");
-        }
-
-        public static int getHeapSize()
-        {
-            throw new global::System.NotImplementedException("Limits.GetHeapSize");
+            return Implementation.getAggregateQueries();
         }
 
         public static int getLimitAggregateQueries()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitAggregateQueries");
+            return Implementation.getLimitAggregateQueries();
+        }
+
+        public static int getAsyncCalls()
+        {
+            return Implementation.getAsyncCalls();
+        }
+
+        public static int getLimitAsyncCalls()
+        {
+            return Implementation.getLimitAsyncCalls();
+        }
+
+        public static int getCallouts()
+        {
+            return Implementation.getCallouts();
+        }
+
+        public static int getChildRelationshipsDescribes()
+        {
+            return Implementation.getChildRelationshipsDescribes();
         }
 
         public static int getLimitCallouts()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitCallouts");
+            return Implementation.getLimitCallouts();
         }
 
-        public static int getLimitChildRelationshipsDescribes()
+        public static int getCpuTime()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitChildRelationshipsDescribes");
+            return Implementation.getCpuTime();
         }
 
         public static int getLimitCpuTime()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitCpuTime");
+            return Implementation.getLimitCpuTime();
         }
 
-        public static int getLimitDatabaseTime()
+        public static int getDMLRows()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitDatabaseTime");
+            return Implementation.getDMLRows();
         }
 
-        public static int getLimitDmlRows()
+        public static int getLimitDMLRows()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitDmlRows");
+            return Implementation.getLimitDMLRows();
         }
 
-        public static int getLimitDmlStatements()
+        public static int getDMLStatements()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitDmlStatements");
+            return Implementation.getDMLStatements();
+        }
+
+        public static int getLimitDMLStatements()
+        {
+            return Implementation.getLimitDMLStatements();
+        }
+
+        public static int getEmailInvocations()
+        {
+            return Implementation.getEmailInvocations();
         }
 
         public static int getLimitEmailInvocations()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitEmailInvocations");
+            return Implementation.getLimitEmailInvocations();
         }
 
-        public static int getLimitFieldSetsDescribes()
+        public static int getFindSimilarCalls()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitFieldSetsDescribes");
-        }
-
-        public static int getLimitFieldsDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitFieldsDescribes");
+            return Implementation.getFindSimilarCalls();
         }
 
         public static int getLimitFindSimilarCalls()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitFindSimilarCalls");
+            return Implementation.getLimitFindSimilarCalls();
+        }
+
+        public static int getFutureCalls()
+        {
+            return Implementation.getFutureCalls();
         }
 
         public static int getLimitFutureCalls()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitFutureCalls");
+            return Implementation.getLimitFutureCalls();
+        }
+
+        public static int getHeapSize()
+        {
+            return Implementation.getHeapSize();
         }
 
         public static int getLimitHeapSize()
         {
-            throw new global::System.NotImplementedException("Limits.GetLimitHeapSize");
-        }
-
-        public static int getLimitMobilePushApexCalls()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitMobilePushApexCalls");
-        }
-
-        public static int getLimitPicklistDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitPicklistDescribes");
-        }
-
-        public static int getLimitQueries()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitQueries");
-        }
-
-        public static int getLimitQueryLocatorRows()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitQueryLocatorRows");
-        }
-
-        public static int getLimitQueryRows()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitQueryRows");
-        }
-
-        public static int getLimitQueueableJobs()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitQueueableJobs");
-        }
-
-        public static int getLimitRecordTypesDescribes()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitRecordTypesDescribes");
-        }
-
-        public static int getLimitRunAs()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitRunAs");
-        }
-
-        public static int getLimitSavepointRollbacks()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitSavepointRollbacks");
-        }
-
-        public static int getLimitSavepoints()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitSavepoints");
-        }
-
-        public static int getLimitScriptStatements()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitScriptStatements");
-        }
-
-        public static int getLimitSoslQueries()
-        {
-            throw new global::System.NotImplementedException("Limits.GetLimitSoslQueries");
+            return Implementation.getLimitHeapSize();
         }
 
         public static int getMobilePushApexCalls()
         {
-            throw new global::System.NotImplementedException("Limits.GetMobilePushApexCalls");
+            return Implementation.getMobilePushApexCalls();
         }
 
-        public static int getPicklistDescribes()
+        public static int getLimitMobilePushApexCalls()
         {
-            throw new global::System.NotImplementedException("Limits.GetPicklistDescribes");
+            return Implementation.getLimitMobilePushApexCalls();
         }
 
         public static int getQueries()
         {
-            throw new global::System.NotImplementedException("Limits.GetQueries");
+            return Implementation.getQueries();
+        }
+
+        public static int getLimitQueries()
+        {
+            return Implementation.getLimitQueries();
         }
 
         public static int getQueryLocatorRows()
         {
-            throw new global::System.NotImplementedException("Limits.GetQueryLocatorRows");
+            return Implementation.getQueryLocatorRows();
+        }
+
+        public static int getLimitQueryLocatorRows()
+        {
+            return Implementation.getLimitQueryLocatorRows();
         }
 
         public static int getQueryRows()
         {
-            throw new global::System.NotImplementedException("Limits.GetQueryRows");
+            return Implementation.getQueryRows();
+        }
+
+        public static int getLimitQueryRows()
+        {
+            return Implementation.getLimitQueryRows();
         }
 
         public static int getQueueableJobs()
         {
-            throw new global::System.NotImplementedException("Limits.GetQueueableJobs");
+            return Implementation.getQueueableJobs();
         }
 
-        public static int getRecordTypesDescribes()
+        public static int getLimitQueueableJobs()
         {
-            throw new global::System.NotImplementedException("Limits.GetRecordTypesDescribes");
+            return Implementation.getLimitQueueableJobs();
         }
 
         public static int getRunAs()
         {
-            throw new global::System.NotImplementedException("Limits.GetRunAs");
+            return Implementation.getRunAs();
+        }
+
+        public static int getLimitRunAs()
+        {
+            return Implementation.getLimitRunAs();
         }
 
         public static int getSavepointRollbacks()
         {
-            throw new global::System.NotImplementedException("Limits.GetSavepointRollbacks");
+            return Implementation.getSavepointRollbacks();
+        }
+
+        public static int getLimitSavepointRollbacks()
+        {
+            return Implementation.getLimitSavepointRollbacks();
         }
 
         public static int getSavepoints()
         {
-            throw new global::System.NotImplementedException("Limits.GetSavepoints");
+            return Implementation.getSavepoints();
         }
 
-        public static int getScriptStatements()
+        public static int getLimitSavepoints()
         {
-            throw new global::System.NotImplementedException("Limits.GetScriptStatements");
+            return Implementation.getLimitSavepoints();
         }
 
         public static int getSoslQueries()
         {
-            throw new global::System.NotImplementedException("Limits.GetSoslQueries");
+            return Implementation.getSoslQueries();
+        }
+
+        public static int getLimitSoslQueries()
+        {
+            return Implementation.getLimitSoslQueries();
+        }
+
+        public static int getDatabaseTime()
+        {
+            return Implementation.getDatabaseTime();
+        }
+
+        public static int getDmlRows()
+        {
+            return Implementation.getDmlRows();
+        }
+
+        public static int getDmlStatements()
+        {
+            return Implementation.getDmlStatements();
+        }
+
+        public static int getFieldsDescribes()
+        {
+            return Implementation.getFieldsDescribes();
+        }
+
+        public static int getFieldSetsDescribes()
+        {
+            return Implementation.getFieldSetsDescribes();
+        }
+
+        public static int getLimitChildRelationshipsDescribes()
+        {
+            return Implementation.getLimitChildRelationshipsDescribes();
+        }
+
+        public static int getLimitDatabaseTime()
+        {
+            return Implementation.getLimitDatabaseTime();
+        }
+
+        public static int getLimitDmlRows()
+        {
+            return Implementation.getLimitDmlRows();
+        }
+
+        public static int getLimitDmlStatements()
+        {
+            return Implementation.getLimitDmlStatements();
+        }
+
+        public static int getLimitFieldsDescribes()
+        {
+            return Implementation.getLimitFieldsDescribes();
+        }
+
+        public static int getLimitFieldSetsDescribes()
+        {
+            return Implementation.getLimitFieldSetsDescribes();
+        }
+
+        public static int getLimitPicklistDescribes()
+        {
+            return Implementation.getLimitPicklistDescribes();
+        }
+
+        public static int getLimitRecordTypesDescribes()
+        {
+            return Implementation.getLimitRecordTypesDescribes();
+        }
+
+        public static int getLimitScriptStatements()
+        {
+            return Implementation.getLimitScriptStatements();
+        }
+
+        public static int getPicklistDescribes()
+        {
+            return Implementation.getPicklistDescribes();
+        }
+
+        public static int getRecordTypesDescribes()
+        {
+            return Implementation.getRecordTypesDescribes();
+        }
+
+        public static int getScriptStatements()
+        {
+            return Implementation.getScriptStatements();
         }
     }
 }

@@ -1,27 +1,50 @@
-using Apex.System;
-
 namespace Apex.Predictive
 {
+    using ApexSharp.Implementation;
+    using System;
+
     public class SimilarResult
     {
+        // infrastructure
+        public SimilarResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(SimilarResult));
+            }
+        }
+
+        // API
+        public SimilarResult()
+        {
+            Self = Implementation.Constructor();
+        }
+
         public object clone()
         {
-            throw new global::System.NotImplementedException("SimilarResult.Clone");
+            return Self.clone();
         }
 
         public List<SimilarRecord> getSimilarRecords()
         {
-            throw new global::System.NotImplementedException("SimilarResult.GetSimilarRecords");
+            return Self.getSimilarRecords();
         }
 
         public List<string> getWarnings()
         {
-            throw new global::System.NotImplementedException("SimilarResult.GetWarnings");
+            return Self.getWarnings();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("SimilarResult.ToString");
+            return Self.toString();
         }
     }
 }

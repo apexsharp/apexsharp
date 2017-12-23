@@ -1,47 +1,130 @@
-using Apex.System;
-
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class BatchResult
     {
+        // infrastructure
+        public BatchResult(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(BatchResult));
+            }
+        }
+
+        // API
+        Exception error
+        {
+            get
+            {
+                return Self.error;
+            }
+            set
+            {
+                Self.error = value;
+            }
+        }
+
+        string errorMessage
+        {
+            get
+            {
+                return Self.errorMessage;
+            }
+            set
+            {
+                Self.errorMessage = value;
+            }
+        }
+
+        string errorTypeName
+        {
+            get
+            {
+                return Self.errorTypeName;
+            }
+            set
+            {
+                Self.errorTypeName = value;
+            }
+        }
+
+        object IsSuccess
+        {
+            get
+            {
+                return Self.IsSuccess;
+            }
+            set
+            {
+                Self.IsSuccess = value;
+            }
+        }
+
+        object result
+        {
+            get
+            {
+                return Self.result;
+            }
+            set
+            {
+                Self.result = value;
+            }
+        }
+
         public BatchResult(object result, Exception error)
         {
-            throw new global::System.NotImplementedException("BatchResult");
+            Self = Implementation.Constructor(result, error);
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("BatchResult.Clone");
+            return Self.clone();
         }
 
         public Exception getError()
         {
-            throw new global::System.NotImplementedException("BatchResult.GetError");
+            return Self.getError();
         }
 
         public string getErrorMessage()
         {
-            throw new global::System.NotImplementedException("BatchResult.GetErrorMessage");
+            return Self.getErrorMessage();
         }
 
         public string getErrorTypeName()
         {
-            throw new global::System.NotImplementedException("BatchResult.GetErrorTypeName");
+            return Self.getErrorTypeName();
         }
 
         public object getResult()
         {
-            throw new global::System.NotImplementedException("BatchResult.GetResult");
+            return Self.getResult();
         }
 
         public bool isSuccess()
         {
-            throw new global::System.NotImplementedException("BatchResult.IsSuccess");
+            return Self.isSuccess();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("BatchResult.ToString");
+            return Self.toString();
         }
     }
 }

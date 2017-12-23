@@ -1,40 +1,93 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class Exception : global::System.Exception
     {
+        // infrastructure
+        public Exception(dynamic self)
+        {
+            Self = self;
+        }
+
+        protected virtual dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(Exception));
+            }
+        }
+
+        // API
+        public Exception()
+        {
+            Self = Implementation.Constructor();
+        }
+
+        public Exception(string message)
+        {
+            Self = Implementation.Constructor(message);
+        }
+
+        public Exception(string message, Exception cause)
+        {
+            Self = Implementation.Constructor(message, cause);
+        }
+
+        public Exception(Exception cause)
+        {
+            Self = Implementation.Constructor(cause);
+        }
+
+        public virtual object clone()
+        {
+            return Self.clone();
+        }
+
         public Exception getCause()
         {
-            throw new global::System.NotImplementedException("Exception.GetCause");
+            return Self.getCause();
         }
 
         public int getLineNumber()
         {
-            throw new global::System.NotImplementedException("Exception.GetLineNumber");
+            return Self.getLineNumber();
         }
 
         public string getMessage()
         {
-            throw new global::System.NotImplementedException("Exception.GetMessage");
+            return Self.getMessage();
         }
 
         public string getStackTraceString()
         {
-            throw new global::System.NotImplementedException("Exception.GetStackTraceString");
+            return base.StackTrace; // Self.getStackTraceString() is not compatible with the throw statement
         }
 
-        public string getTypeName()
+        public virtual string getTypeName()
         {
-            throw new global::System.NotImplementedException("Exception.GetTypeName");
+            return Self.getTypeName();
         }
 
         public void initCause(Exception cause)
         {
-            throw new global::System.NotImplementedException("Exception.InitCause");
+            Self.initCause(cause);
         }
 
         public void setMessage(string message)
         {
-            throw new global::System.NotImplementedException("Exception.SetMessage");
+            Self.setMessage(message);
         }
+
+        // interoperability
+        public override string Message => getMessage();
     }
 }

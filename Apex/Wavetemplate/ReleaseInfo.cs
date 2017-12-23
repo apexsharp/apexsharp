@@ -1,15 +1,40 @@
-namespace Apex.Wavetemplate
+namespace Apex.WaveTemplate
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class ReleaseInfo
     {
+        // infrastructure
+        public ReleaseInfo(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReleaseInfo));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReleaseInfo.Clone");
+            return Self.clone();
         }
 
         public string getTemplateVersion()
         {
-            throw new global::System.NotImplementedException("ReleaseInfo.GetTemplateVersion");
+            return Self.getTemplateVersion();
         }
     }
 }

@@ -39,9 +39,9 @@ public class DemoTest
         System.assert(contacts.size()> 0);
     }
 
-    public static Double randomWithLimit()
+    public static Integer randomWithLimit()
     {
-        Double randomNumber = Math.random();
+        Integer randomNumber = Math.round(Math.random() * 1000000);
         return randomNumber;
     }
 }

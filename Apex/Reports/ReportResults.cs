@@ -1,52 +1,75 @@
-using Apex.System;
-
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_reportresults.htm#apex_class_reports_reportresults
+    /// </summary>
     public class ReportResults
     {
+        // infrastructure
+        public ReportResults(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(ReportResults));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("ReportResults.Clone");
+            return Self.clone();
         }
 
         public bool getAllData()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetAllData");
+            return Self.getAllData();
         }
 
-        public Map<String, ReportFact> getFactMap()
+        public Map<string, ReportFact> getFactMap()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetFactMap");
+            return Self.getFactMap();
         }
 
         public Dimension getGroupingsAcross()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetGroupingsAcross");
+            return Self.getGroupingsAcross();
         }
 
         public Dimension getGroupingsDown()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetGroupingsDown");
+            return Self.getGroupingsDown();
         }
 
         public bool getHasDetailRows()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetHasDetailRows");
+            return Self.getHasDetailRows();
         }
 
         public ReportExtendedMetadata getReportExtendedMetadata()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetReportExtendedMetadata");
+            return Self.getReportExtendedMetadata();
         }
 
         public ReportMetadata getReportMetadata()
         {
-            throw new global::System.NotImplementedException("ReportResults.GetReportMetadata");
+            return Self.getReportMetadata();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("ReportResults.ToString");
+            return Self.toString();
         }
     }
 }

@@ -1,35 +1,84 @@
 namespace Apex.ConnectApi
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    ///
+    /// </summary>
     public class LikeSocialPostIntent
     {
+        // infrastructure
+        public LikeSocialPostIntent(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(LikeSocialPostIntent));
+            }
+        }
+
+        // API
+        object externalSocialAccountId
+        {
+            get
+            {
+                return Self.externalSocialAccountId;
+            }
+            set
+            {
+                Self.externalSocialAccountId = value;
+            }
+        }
+
+        object socialPostId
+        {
+            get
+            {
+                return Self.socialPostId;
+            }
+            set
+            {
+                Self.socialPostId = value;
+            }
+        }
+
         public LikeSocialPostIntent()
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent.Clone");
+            return Self.clone();
         }
 
         public bool equals(object obj)
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent.Equals");
+            return Self.equals(obj);
         }
 
         public double getBuildVersion()
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent.GetBuildVersion");
+            return Self.getBuildVersion();
         }
 
         public int hashCode()
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent.HashCode");
+            return Self.hashCode();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("LikeSocialPostIntent.ToString");
+            return Self.toString();
         }
     }
 }

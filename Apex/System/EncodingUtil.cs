@@ -1,45 +1,70 @@
 namespace Apex.System
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_encodingUtil.htm#apex_classes_restful_encodingutil
+    /// </summary>
     public class EncodingUtil
     {
+        // infrastructure
+        public EncodingUtil(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(EncodingUtil));
+            }
+        }
+
+        // API
+        public static Blob base64Decode(string inputString)
+        {
+            return Implementation.base64Decode(inputString);
+        }
+
+        public static string base64Encode(Blob inputBlob)
+        {
+            return Implementation.base64Encode(inputBlob);
+        }
+
+        public static Blob convertFromHex(string inputString)
+        {
+            return Implementation.convertFromHex(inputString);
+        }
+
+        public static string convertToHex(Blob inputBlob)
+        {
+            return Implementation.convertToHex(inputBlob);
+        }
+
+        public static string urlDecode(string inputString, string encodingScheme)
+        {
+            return Implementation.urlDecode(inputString, encodingScheme);
+        }
+
+        public static string urlEncode(string inputString, string encodingScheme)
+        {
+            return Implementation.urlEncode(inputString, encodingScheme);
+        }
+
         public EncodingUtil()
         {
-            throw new global::System.NotImplementedException("EncodingUtil");
-        }
-
-        public static Blob base64Decode(string s)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.Base64Decode");
-        }
-
-        public static string base64Encode(Blob s)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.Base64Encode");
+            Self = Implementation.Constructor();
         }
 
         public object clone()
         {
-            throw new global::System.NotImplementedException("EncodingUtil.Clone");
-        }
-
-        public static Blob convertFromHex(string input)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.ConvertFromHex");
-        }
-
-        public static string convertToHex(Blob s)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.ConvertToHex");
-        }
-
-        public static string urlDecode(string s, string enc)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.UrlDecode");
-        }
-
-        public static string urlEncode(string s, string enc)
-        {
-            throw new global::System.NotImplementedException("EncodingUtil.UrlEncode");
+            return Self.clone();
         }
     }
 }

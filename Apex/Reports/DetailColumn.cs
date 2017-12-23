@@ -1,30 +1,55 @@
 namespace Apex.Reports
 {
+    using ApexSharp;
+    using ApexSharp.ApexAttributes;
+    using ApexSharp.Implementation;
+    using global::Apex.System;
+
+    /// <summary>
+    /// https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_class_reports_detailcolumn.htm#apex_class_reports_detailcolumn
+    /// </summary>
     public class DetailColumn
     {
+        // infrastructure
+        public DetailColumn(dynamic self)
+        {
+            Self = self;
+        }
+
+        dynamic Self { get; set; }
+
+        static dynamic Implementation
+        {
+            get
+            {
+                return Implementor.GetImplementation(typeof(DetailColumn));
+            }
+        }
+
+        // API
         public object clone()
         {
-            throw new global::System.NotImplementedException("DetailColumn.Clone");
+            return Self.clone();
         }
 
         public ColumnDataType getDataType()
         {
-            throw new global::System.NotImplementedException("DetailColumn.GetDataType");
+            return Self.getDataType();
         }
 
         public string getLabel()
         {
-            throw new global::System.NotImplementedException("DetailColumn.GetLabel");
+            return Self.getLabel();
         }
 
         public string getName()
         {
-            throw new global::System.NotImplementedException("DetailColumn.GetName");
+            return Self.getName();
         }
 
         public string toString()
         {
-            throw new global::System.NotImplementedException("DetailColumn.ToString");
+            return Self.toString();
         }
     }
 }
