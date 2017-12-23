@@ -32,37 +32,12 @@ namespace Demo
 
                 Log.ForContext<Setup>().Debug("Logging Started");
 
-<<<<<<< HEAD
-            // SessionLocation is where your SF session will be Saved
-            var sessionLocation = Path.GetFullPath(@"../config.json");
-            // SalesForceLocation is the location of your Salesofrce project
-            var salesForceLocation = Path.GetFullPath(@"../SalesForce/src/");
-            // VsProjectLocation is the location of your Visual Studio Project
-            var vSprojectocation = Path.GetFullPath(@"../Demo/");
 
-            try
-            {
-                // See if we have an existing connection use it.
-                ConnectionUtil.Session = ConnectionUtil.GetSession(sessionLocation);
-            }
-            // Else Create a new session
-            catch (SalesForceNoFileFoundException)
-            {
-                try
-                {                    
-                    ConnectionUtil.Session = new ApexSharp().
-                         SalesForceUrl("https://test.salesforce.com/")  // your org....prod/dev is login.salesforce.com and sandbox is test.salesforce.com
-                        .AndSalesForceApiVersion(40)
-                        
-                        .WithUserId("YOUR USER ID")
-                        .AndPassword("YOUR PASSWORD")
-                        .AndToken("YOUR TOKEN")
-=======
                 var sessionFileInfo = new FileInfo(Path.GetFullPath(configuration["SessionFileInfo"]));
 
                 // You can del the existing session if needed (Ex: you changed the Password), if you delete every time a new session is created which will delay the code. 
                 File.Delete(sessionFileInfo.FullName);
->>>>>>> dev
+
 
                 if (sessionFileInfo.Exists)
                 {
