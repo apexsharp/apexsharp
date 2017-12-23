@@ -10,15 +10,6 @@ namespace Demo
 
     public class Program
     {
-<<<<<<< HEAD
-
-        // Location of your APEX and C# Files that we will be converting
-        public static DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
-        public static DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
-
-
-=======
->>>>>>> dev
         public static void Main(string[] args)
         {
             Start();
@@ -39,12 +30,7 @@ namespace Demo
             CreateOffLineClasses();
 
 
-<<<<<<< HEAD
-            CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
-         
-            //DmlTest.UpsertTest();
 
-=======
             try
             {
                 // Location of your APEX and C# Files that we will be converting
@@ -61,7 +47,6 @@ namespace Demo
             {
                 Console.WriteLine(e.Message);
             }
->>>>>>> dev
 
             CSharpClasses.DmlTest.UpsertTest();
 
@@ -72,10 +57,6 @@ namespace Demo
             Setup.StopLogging();
         }
 
-<<<<<<< HEAD
-            Console.WriteLine("Done, Press Any Key To Exit");
-            Console.ReadKey();
-=======
         // Create Offline DTO for all the Salesforce Objects
         public static void CreateAllOffLineClasses()
         {
@@ -106,6 +87,7 @@ namespace Demo
                     "UserRole",
                     "Profile",
                     "UserLicense",
+                    "RecordType"
                 };
 
                 modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
@@ -114,7 +96,6 @@ namespace Demo
             {
                 Console.WriteLine(exp.Message);
             }
->>>>>>> dev
         }
 
         public static void MokDemo()
@@ -166,37 +147,5 @@ namespace Demo
             Console.WriteLine("Done, Press any key to exit");
             Console.ReadKey();
         }
-<<<<<<< HEAD
-
-        public static void CreateOffLineClasses()
-        {
-            try
-            {
-                ModelGen modelGen = new ModelGen();
-
-                // To save time we will only create objects we are going to work with
-                List<string> onlyObjects = new List<string>
-                {
-                    "Contact",
-                    "Account",
-                    "User",
-                    "UserRole",
-                    "Profile",
-                    "UserLicense",
-                    "RecordType"
-
-                };
-
-                modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");
-            }
-            catch (ApexSharpHttpException exp)
-            {
-                Console.WriteLine(exp.Message);
-            }
-        }
-
-
-=======
->>>>>>> dev
     }
 }
