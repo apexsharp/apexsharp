@@ -1,9 +1,15 @@
-﻿using Apex.System;
+﻿using System.Linq;
+using Apex.System;
+using ApexSharpApi;
 using NUnit.Framework;
 using NotImplementedException = System.NotImplementedException;
+using NotSupportedException = System.NotSupportedException;
 
 namespace ApexTest.System
 {
+    using LazyOfListOfSample = global::System.Lazy<global::System.Collections.Generic.List<MapTests.SampleSObject>>;
+    using ListOfSample = global::System.Collections.Generic.List<MapTests.SampleSObject>;
+
     [TestFixture]
     public class MapTests
     {
@@ -86,6 +92,130 @@ namespace ApexTest.System
             });
         }
 
+        public class SampleSObject : SObject
+        {
+            public string Name { get; set; }
+        }
+
+        [Test]
+        public void MapCanBeInitializedWithListOfSObjects()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                var map = new Map<ID, SampleSObject>(new List<SampleSObject>
+                {
+                    new SampleSObject { Id = "111", Name = "One" },
+                    new SampleSObject { Id = "222", Name = "Two" },
+                });
+
+                var item111 = map.get("111");
+                Assert.NotNull(item111);
+                Assert.AreEqual("One", item111.Name);
+
+                var item222 = map.get("222");
+                Assert.NotNull(item222);
+                Assert.AreEqual("Two", item222.Name);
+            });
+        }
+
+        [Test]
+        public void PutAllMethodsAreImplemented()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                void validateMap(Map<ID, SampleSObject> map)
+                {
+                    Assert.NotNull(map);
+                    Assert.AreEqual(2, map.size());
+
+                    var item111 = map.get("111");
+                    Assert.NotNull(item111);
+                    Assert.AreEqual("One", item111.Name);
+
+                    var item222 = map.get("222");
+                    Assert.NotNull(item222);
+                    Assert.AreEqual("Two", item222.Name);
+                };
+
+                var list = new List<SampleSObject>
+                {
+                    new SampleSObject { Id = "111", Name = "One" },
+                    new SampleSObject { Id = "222", Name = "Two" },
+                };
+
+                var array = list.ToArray();
+                var srcMap = new Map<ID, SampleSObject>(list);
+
+                var map1 = new Map<ID, SampleSObject>();
+                map1.putAll(srcMap);
+                validateMap(map1);
+
+                var map2 = new Map<ID, SampleSObject>();
+                map2.putAll(list);
+                validateMap(map2);
+
+                var map3 = new Map<ID, SampleSObject>();
+                map3.putAll(array);
+                validateMap(map3);
+            });
+        }
+
+        private ListOfSample GetSampleObjects() => new ListOfSample
+        {
+            new SampleSObject { Id = "123", Name = "OneTwoThree" },
+            new SampleSObject { Id = "321", Name = "ThreeTwoOne" },
+        };
+
+        [Test]
+        public void MapCanBeInitializedWithSoqlQueryResults()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                var lazyData = new LazyOfListOfSample(GetSampleObjects);
+                var query = new SoqlQuery<SampleSObject>(lazyData, string.Empty);
+                var map = new Map<ID, SampleSObject>(query);
+
+                var item123 = map.get("123");
+                Assert.NotNull(item123);
+                Assert.AreEqual("OneTwoThree", item123.Name);
+
+                var item321 = map.get("321");
+                Assert.NotNull(item321);
+                Assert.AreEqual("ThreeTwoOne", item321.Name);
+            });
+        }
+
+        [Test]
+        public void IncompatibleMapTypeIsReported()
+        {
+            var lazyData = new LazyOfListOfSample(GetSampleObjects);
+            var query = new SoqlQuery<SampleSObject>(lazyData, string.Empty);
+
+            Assert.Throws<NotSupportedException>(() =>
+            {
+                new Map<int, SampleSObject>(query);
+            });
+        }
+
+        [Test]
+        public void KeySetMethodIsImplemented()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                var lazyData = new LazyOfListOfSample(GetSampleObjects);
+                var query = new SoqlQuery<SampleSObject>(lazyData, string.Empty);
+                var map = new Map<ID, SampleSObject>(query);
+
+                var keySet = map.keySet();
+                Assert.NotNull(keySet);
+                Assert.AreEqual(2, keySet.size());
+
+                Assert.IsTrue(keySet.contains("123"));
+                Assert.IsTrue(keySet.contains("321"));
+                Assert.IsFalse(keySet.contains("111"));
+            });
+        }
+
         [Test]
         public void OtherMethodsAreNotImplemented()
         {
@@ -94,7 +224,6 @@ namespace ApexTest.System
                 var map = new Map<int, object>();
 
                 Assert.Throws<NotImplementedException>(() => map.getSObjectType());
-                Assert.Throws<NotImplementedException>(() => map.keySet());
             });
         }
     }
