@@ -14,21 +14,22 @@ We are working on a detail documentation, but for now we assume you are a C# dev
 4. Open the apexSharp Solution
 5. Create an appsettings.json file with the following info. Here we assume you save the git repo to your C: drive and you are using Windows. 
 
+* The location of your log File
+* SessionFileInfo is where your SF session will be saved or located
+* SalesForceLocation is the location of your Salesofrce project
+* VsProjectLocation is the location of your Visual Studio Project
+* Your SF Id
+* Your SF Password
+* Your SF Token
+
 ```json
-{
-  // The location of your log File
+{ 
   "LogFile": "c:/apexsharp/Demo/log.log", 
-  // SessionFileInfo is where your SF session will be saved or located
   "SessionFileInfo": "c:/apexSharp/config.json",
-  // SalesForceLocation is the location of your Salesofrce project
   "SalesForceLocation": "c:/apexSharp/SalesForce/src/",
-  // VsProjectLocation is the location of your Visual Studio Project
   "VsProjectocation": "c:/apexSharp/Demo/",
-  // Your SF Id
   "SalesForceUserId": "Your SF Id",
-  // Your SF Password
   "SalesForcePassword": "SF Password",
-  // Your SF Token
   "SalesForceToken": "SF Token"
 }
 ```
