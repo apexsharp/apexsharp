@@ -132,10 +132,9 @@ namespace ApexSharpApiTest
 
             // Accounts references User, Contact, etc.
             var seed = new List<string> { "Account" };
-            var ignored = new List<string> { "Address" };
-            mg.CreateOfflineSymbolTable(seed, "TestNamespace", ignoreList: ignored);
+            mg.CreateOfflineSymbolTable(seed, "TestNamespace");
 
-            // Check that
+            // Check that referenced classes are added recursively
             Assert.True(savedClasses.ContainsKey("Account"));
             Assert.True(savedClasses.ContainsKey("Contact"));
             Assert.True(savedClasses.ContainsKey("Profile"));
