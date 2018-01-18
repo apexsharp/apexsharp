@@ -1,9 +1,7 @@
-using System;
-
 namespace Demo.SObjects
 {
 	using Apex.System;
-	
+	using DateTime = global::System.DateTime;
 
 	public class Profile : SObject
 	{

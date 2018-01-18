@@ -123,6 +123,7 @@ namespace ApexSharpApi
             sb.AppendLine("{");
             sb.AppendLine("\tusing Apex.System;");
             sb.AppendLine("\tusing ApexSharpApi.ApexApi;");
+            sb.AppendLine("\tusing DateTime = global::System.DateTime;");
             sb.AppendLine();
             sb.AppendLine($"\tpublic class {objectDetail.name} : SObject");
             sb.AppendLine("\t{");

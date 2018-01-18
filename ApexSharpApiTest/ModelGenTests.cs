@@ -55,7 +55,7 @@ namespace ApexSharpApiTest
                     {
                         name = "OwnerId",
                         type = "reference",
-                        referenceTo = new[] { "?", "AnotherSampleClass" }, // for OwnerId, referenceTo[1] is used, if present
+                        referenceTo = new[] { "AnotherSampleClass" },
                         relationshipName = "AnotherSampleInstance",
                     },
                     new Field { name = "Name", type = "string" },
@@ -64,7 +64,7 @@ namespace ApexSharpApiTest
                     {
                         name = "OrgId",
                         type = "reference",
-                        referenceTo = new[] { "SampleOrg" }, // for other names, referenceTo[0] is used
+                        referenceTo = new[] { "SampleOrg" },
                         relationshipName = "Org",
                     },
                 },
@@ -81,6 +81,7 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using DateTime = global::System.DateTime;
 
                 public class SampleClass : SObject
                 {
