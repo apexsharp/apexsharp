@@ -147,5 +147,11 @@ namespace Apex.ApexSharp.Default.System
             NotImplemented.newInstanceGmt(year, month, day, hour, minute, second);
 
         public Datetime parse(string str) => new DatetimeInstance(SysDateTime.Parse(str, CultureInfo.InvariantCulture));
+
+        public SysDateTime ToSystemDateTime(Datetime value) =>
+            new SysDateTime(value.year(), value.month(), value.day(), value.hour(), value.minute(), value.second(), value.millisecond());
+
+        public Datetime ToApexDatetime(SysDateTime value) =>
+            new DatetimeInstance(value.Year, value.Month, value.Day, value.Hour, value.Minute, value.Second, value.Millisecond);
     }
 }

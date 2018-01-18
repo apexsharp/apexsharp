@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,29 +34,85 @@ namespace ApexSharpApi
             return objectList;
         }
 
-        public void CreateOfflineSymbolTable(List<string> sobjectList, string nameSpace)
+        private static SObjectDetail LoadSObjectImpl(string sobject)
         {
-            Parallel.ForEach(sobjectList, sobject =>
+            var httpManager = new HttpManager();
+            var objectDetailjson = httpManager.Get($"sobjects/{sobject}/describe");
+
+            var sObjectDetail = JsonConvert.DeserializeObject<SObjectDetail>(objectDetailjson);
+
+            objectDetailjson = JsonConvert.SerializeObject(sObjectDetail, Formatting.Indented);
+            var jsonFileName = sobject + ".json";
+            var cacheLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", jsonFileName);
+
+            File.WriteAllText(cacheLocation, objectDetailjson);
+            return sObjectDetail;
+        }
+
+        private static void SaveSObjectImpl(string sobject, string sObjectClass)
+        {
+            var saveFileName = sobject + ".cs";
+            var sobjectLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "SObjects", saveFileName);
+
+            File.WriteAllText(sobjectLocation, sObjectClass);
+
+            Log.ForContext<ModelGen>().Debug("Saved {sobject}", saveFileName);
+        }
+
+        internal Func<string, SObjectDetail> LoadSObject { get; set; } = LoadSObjectImpl;
+
+        internal Action<string, string> SaveSObject { get; set; } = SaveSObjectImpl;
+
+        public void CreateOfflineSymbolTable(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null)
+        {
+            // populate the list of pending objects
+            var ignoreCase = StringComparer.InvariantCultureIgnoreCase;
+            var processedObjects = new HashSet<string>(ignoreCase);
+            var pendingObjects = new ConcurrentSet<string>(ignoreCase);
+            pendingObjects.UnionWith(sobjectList);
+
+            // add "Address" class to the list of ignored objects by default
+            var ignoredObjects = new HashSet<string>(ignoreCase);
+            ignoredObjects.UnionWith(ignoreList ?? new List<string> { "Address" });
+
+            // process pending object
+            while (pendingObjects.Any())
             {
-                var httpManager = new HttpManager();
-                var objectDetailjson = httpManager.Get($"sobjects/{sobject}/describe");
+                // mark current pending objects as processed
+                var currentList = pendingObjects.ToList();
+                processedObjects.UnionWith(currentList);
+                pendingObjects.Clear();
 
-                var sObjectDetail = JsonConvert.DeserializeObject<SObjectDetail>(objectDetailjson);
+                // load and generate pending objects
+                Parallel.ForEach(currentList, sobject =>
+                {
+                    var sObjectDetail = LoadSObject(sobject);
+                    var sObjectClass = CreateSalesForceClass(nameSpace, sObjectDetail);
+                    SaveSObject(sobject, sObjectClass);
 
-                objectDetailjson = JsonConvert.SerializeObject(sObjectDetail, Formatting.Indented);
-                var jsonFileName =  sobject + ".json";
-                var cacheLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", jsonFileName);
+                    // schedule the referenced objects
+                    var references = GetReferencedSObjects(sObjectDetail).ToArray();
+                    if (recursive && references.Any())
+                    {
+                        foreach (var refObject in references)
+                            if (!processedObjects.Contains(refObject) && !ignoredObjects.Contains(refObject))
+                                pendingObjects.Add(refObject);
+                    }
+                });
+            }
+        }
 
-                File.WriteAllText(cacheLocation, objectDetailjson);
+        internal List<string> GetReferencedSObjects(SObjectDetail sobject)
+        {
+            var refs =
+                from field in sobject.fields
+                where field.type == ReferenceType &&
+                    field.referenceTo != null &&
+                    field.referenceTo.Any() &&
+                    !string.IsNullOrWhiteSpace(field.relationshipName)
+                select field.referenceTo[0];
 
-                var sObjectClass = CreateSalesForceClass(nameSpace, sObjectDetail);
-                var saveFileName = sobject + ".cs";
-                var sobjectLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "SObjects", saveFileName);
-
-                File.WriteAllText(sobjectLocation, sObjectClass);
-
-                Log.ForContext<ModelGen>().Debug("Saved {sobject}", saveFileName);
-            });
+            return refs.Distinct().ToList();
         }
 
         internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail)
@@ -73,13 +130,13 @@ namespace ApexSharpApi
             var setGet = "{set;get;}";
             foreach (var objectField in objectDetail.fields)
             {
-                if ((objectField.type == "reference") && (objectField.name == "OwnerId") && (objectField.referenceTo.Length > 1))
+                if ((objectField.type == ReferenceType) && (objectField.name == "OwnerId") && (objectField.referenceTo.Length > 1))
                 {
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
                     sb.AppendLine($"\t\tpublic {objectField.referenceTo[1]} {objectField.relationshipName} {setGet}");
                 }
-                else if (objectField.type == "reference" && objectField.referenceTo.Length > 0)
+                else if (objectField.type == ReferenceType && objectField.referenceTo.Length > 0)
                 {
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
@@ -124,8 +181,11 @@ namespace ApexSharpApi
             return "NOT FOUND";
         }
 
+        private const string ReferenceType = "reference";
+
         private static readonly Dictionary<string, string> FieldDictionary = new Dictionary<string, string>
         {
+            { ReferenceType, "string" },
             {"address", "Address" },
             {"id","ID" },
             {"string","string" },
@@ -134,7 +194,6 @@ namespace ApexSharpApi
             {"textarea","string" },
             {"phone","string" },
             {"url","string" },
-            {"reference","string" },
             {"combobox","string" },
             {"multipicklist","string" },
             {"anytype","object" },

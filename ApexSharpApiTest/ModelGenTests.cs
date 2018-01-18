@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using ApexSharpApi;
 using ApexSharpApi.Model.RestApi;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using static System.Math;
 
@@ -40,10 +44,9 @@ namespace ApexSharpApiTest
             Assert.AreEqual("NOT FOUND", type);
         }
 
-        [Test]
-        public void CreateSalesForceClassEmitsValidCSharpCode()
+        private SObjectDetail SampleSObjectDetail
         {
-            var detail = new SObjectDetail
+            get => new SObjectDetail
             {
                 name = "SampleClass",
                 fields = new Field[]
@@ -52,26 +55,93 @@ namespace ApexSharpApiTest
                     {
                         name = "OwnerId",
                         type = "reference",
-                        referenceTo = new[] { "?", "AnotherSampleClass" },
+                        referenceTo = new[] { "?", "AnotherSampleClass" }, // for OwnerId, referenceTo[1] is used, if present
                         relationshipName = "AnotherSampleInstance",
+                    },
+                    new Field { name = "Name", type = "string" },
+                    new Field { name = "Age", type = "int" },
+                    new Field
+                    {
+                        name = "OrgId",
+                        type = "reference",
+                        referenceTo = new[] { "SampleOrg" }, // for other names, referenceTo[0] is used
+                        relationshipName = "Org",
                     },
                 },
             };
+        }
 
-            var code = new ModelGen().CreateSalesForceClass("Test", detail);
+        [Test]
+        public void CreateSalesForceClassEmitsValidCSharpCode()
+        {
+            var code = new ModelGen().CreateSalesForceClass("Test", SampleSObjectDetail);
             Assert.NotNull(code);
 
             CompareLineByLine(code, @"namespace Test
             {
-	            using Apex.System;
-	            using ApexSharpApi.ApexApi;
+                using Apex.System;
+                using ApexSharpApi.ApexApi;
 
-	            public class SampleClass : SObject
-	            {
-		            public string OwnerId {set;get;}
-		            public AnotherSampleClass AnotherSampleInstance {set;get;}
-	            }
+                public class SampleClass : SObject
+                {
+                    public string OwnerId {set;get;}
+                    public AnotherSampleClass AnotherSampleInstance {set;get;}
+                    public string Name {set;get;}
+                    public int Age {set;get;}
+                    public string OrgId {set;get;}
+                    public SampleOrg Org {set;get;}
+                }
             }");
+        }
+
+        [Test]
+        public void GetReferencedSObjectsReturnsListOfReferencedObjects()
+        {
+            var refs = new ModelGen().GetReferencedSObjects(SampleSObjectDetail);
+            Assert.AreEqual("AnotherSampleClass", refs[0]);
+            Assert.AreEqual("SampleOrg", refs[1]);
+        }
+
+        private string GetJsonResource(string name)
+        {
+            var assembly = typeof(ModelGenTests).GetTypeInfo().Assembly;
+            var rstream = assembly.GetManifestResourceStream($"{assembly.GetName().Name}.JsonSamples.{name}.json");
+            using (var streamReader = new StreamReader(rstream))
+            {
+                return streamReader.ReadToEnd();
+            }
+        }
+
+        [Test]
+        public void GenerateCodeFromJsonResourceFiles()
+        {
+            // loads SObjectDetail from resources
+            SObjectDetail loadSObject(string sobject) =>
+                JsonConvert.DeserializeObject<SObjectDetail>(GetJsonResource(sobject));
+
+            // saves the generated class locally
+            var savedClasses = new ConcurrentDictionary<string, string>();
+            void saveSObject(string fileName, string text) => savedClasses[fileName] = text;
+
+            // unit test version of the model generator
+            var mg = new ModelGen()
+            {
+                LoadSObject = loadSObject,
+                SaveSObject = saveSObject
+            };
+
+            // Accounts references User, Contact, etc.
+            var seed = new List<string> { "Account" };
+            var ignored = new List<string> { "Address" };
+            mg.CreateOfflineSymbolTable(seed, "TestNamespace", ignoreList: ignored);
+
+            // Check that
+            Assert.True(savedClasses.ContainsKey("Account"));
+            Assert.True(savedClasses.ContainsKey("Contact"));
+            Assert.True(savedClasses.ContainsKey("Profile"));
+            Assert.True(savedClasses.ContainsKey("User"));
+            Assert.True(savedClasses.ContainsKey("UserLicense"));
+            Assert.True(savedClasses.ContainsKey("UserRole"));
         }
     }
 }

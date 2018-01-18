@@ -25,4 +25,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="JsonSamples\*.json" />
+  </ItemGroup>
+
 </Project>

@@ -30,6 +30,22 @@ namespace ApexTest.System
         }
 
         [Test]
+        public void DatetimeImplicitConstructionFromDateTime()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                Datetime apexNow = global::System.DateTime.Now;
+                global::System.DateTime systemNow = apexNow;
+                Datetime anotherApexNow = apexNow;
+                Assert.AreEqual(apexNow, anotherApexNow);
+
+                Datetime date1 = new global::System.DateTime(2018, 01, 18, 18, 27, 35);
+                Datetime date2 = Datetime.newInstance(2018, 01, 18, 18, 27, 35);
+                Assert.AreEqual(date1, date2);
+            });
+        }
+
+        [Test]
         public void DatetimeInstancePropertiesAndMethods()
         {
             Assert.DoesNotThrow(() =>
