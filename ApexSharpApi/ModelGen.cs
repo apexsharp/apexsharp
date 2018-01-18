@@ -45,20 +45,20 @@ namespace ApexSharpApi
                 objectDetailjson = JsonConvert.SerializeObject(sObjectDetail, Formatting.Indented);
                 var jsonFileName =  sobject + ".json";
                 var cacheLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "Cache", jsonFileName);
-                
+
                 File.WriteAllText(cacheLocation, objectDetailjson);
 
-                var sObjectClass = CreateSalesForceClasses(nameSpace, sObjectDetail);
+                var sObjectClass = CreateSalesForceClass(nameSpace, sObjectDetail);
                 var saveFileName = sobject + ".cs";
                 var sobjectLocation = Path.Combine(ApexSharp.GetSession().VsProjectLocation, "SObjects", saveFileName);
-                
+
                 File.WriteAllText(sobjectLocation, sObjectClass);
 
                 Log.ForContext<ModelGen>().Debug("Saved {sobject}", saveFileName);
             });
         }
 
-        private string CreateSalesForceClasses(string nameSpace, SObjectDetail objectDetail)
+        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail)
         {
             var sb = new StringBuilder();
 
@@ -90,7 +90,7 @@ namespace ApexSharpApi
                 }
                 else if (objectField.type != "id")
                 {
-                    sb.AppendLine($"\t\tpublic {GetField(objectField)} {objectField.name} {setGet}");
+                    sb.AppendLine($"\t\tpublic {GetFieldType(objectField)} {objectField.name} {setGet}");
                 }
             }
 
@@ -98,7 +98,6 @@ namespace ApexSharpApi
             sb.AppendLine("}");
 
             return sb.ToString();
-
         }
 
         public List<Sobject> GetAllObjects()
@@ -114,7 +113,7 @@ namespace ApexSharpApi
             return sObjectList.sobjects.ToList();
         }
 
-        private string GetField(Field salesForceField)
+        internal string GetFieldType(Field salesForceField)
         {
             var valueFound = FieldDictionary.TryGetValue(salesForceField.type, out var value);
             if (valueFound)

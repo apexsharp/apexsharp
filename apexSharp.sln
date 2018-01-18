@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apex", "Apex\Apex.csproj", "{110596AD-94E9-41F1-BA9E-F0BFDB0BF588}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "Demo\Demo.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApexMok", "ApexMok\ApexMok.csproj", "{E14D8C6B-ED3A-4BD7-8E55-50D2CAFB261E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexTest", "ApexTest\ApexTest.csproj", "{0B530A8C-3C5D-4A0A-95CA-BA7CE044DD88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApexTest", "ApexTest\ApexTest.csproj", "{0B530A8C-3C5D-4A0A-95CA-BA7CE044DD88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApexSharpApiTest", "ApexSharpApiTest\ApexSharpApiTest.csproj", "{10F9BBA2-465B-49FD-BEA2-4A88D695E871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,18 @@ Global
 		{0B530A8C-3C5D-4A0A-95CA-BA7CE044DD88}.Release|x64.Build.0 = Release|Any CPU
 		{0B530A8C-3C5D-4A0A-95CA-BA7CE044DD88}.Release|x86.ActiveCfg = Release|Any CPU
 		{0B530A8C-3C5D-4A0A-95CA-BA7CE044DD88}.Release|x86.Build.0 = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|x64.Build.0 = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Debug|x86.Build.0 = Debug|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|x64.ActiveCfg = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|x64.Build.0 = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|x86.ActiveCfg = Release|Any CPU
+		{10F9BBA2-465B-49FD-BEA2-4A88D695E871}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
