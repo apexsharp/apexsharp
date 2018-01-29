@@ -31,27 +31,27 @@ namespace Demo
 
 
 
-            try
-            {
-                // Location of your APEX and C# Files that we will be converting
-                DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
-                DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
+            //try
+            //{
+            //    // Location of your APEX and C# Files that we will be converting
+            //    DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
+            //    DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
-                // Convert Apex to C#
-                // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
+            //    // Convert Apex to C#
+            //    // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
 
-                // Convert C# to APEX
-                // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
-            }
-            catch (DirectoryNotFoundException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //    // Convert C# to APEX
+            //    // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+            //}
+            //catch (DirectoryNotFoundException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
-            CSharpClasses.DmlTest.UpsertTest();
+            //CSharpClasses.DmlTest.UpsertTest();
 
-            // Keep Track of the API Limits
-            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            //// Keep Track of the API Limits
+            //Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();
@@ -77,17 +77,12 @@ namespace Demo
             try
             {
                 ModelGen modelGen = new ModelGen();
+                modelGen.GetAllObjectNames();
 
                 // To save time we will only create objects we are going to work with
                 List<string> onlyObjects = new List<string>
                 {
                     "Contact",
-                    "Account",
-                    "User",
-                    "UserRole",
-                    "Profile",
-                    "UserLicense",
-                    "RecordType"
                 };
 
                 modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");

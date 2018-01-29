@@ -1,6 +1,7 @@
 namespace Demo.SObjects
 {
 	using Apex.System;
+	using ApexSharpApi.ApexApi;
 	using DateTime = global::System.DateTime;
 
 	public class Contact : SObject
@@ -49,6 +50,9 @@ namespace Demo.SObjects
 		public string Description {set;get;}
 		public string OwnerId {set;get;}
 		public User Owner {set;get;}
+		public bool HasOptedOutOfEmail {set;get;}
+		public bool HasOptedOutOfFax {set;get;}
+		public bool DoNotCall {set;get;}
 		public DateTime CreatedDate {set;get;}
 		public string CreatedById {set;get;}
 		public User CreatedBy {set;get;}
@@ -67,5 +71,8 @@ namespace Demo.SObjects
 		public string PhotoUrl {set;get;}
 		public string Jigsaw {set;get;}
 		public string JigsawContactId {set;get;}
+		public string CleanStatus {set;get;}
+		public string Level__c {set;get;}
+		public string Languages__c {set;get;}
 	}
 }

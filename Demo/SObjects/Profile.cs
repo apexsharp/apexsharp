@@ -1,6 +1,7 @@
 namespace Demo.SObjects
 {
 	using Apex.System;
+	using ApexSharpApi.ApexApi;
 	using DateTime = global::System.DateTime;
 
 	public class Profile : SObject
@@ -12,12 +13,13 @@ namespace Demo.SObjects
 		public bool PermissionsEditEvent {set;get;}
 		public bool PermissionsExportReport {set;get;}
 		public bool PermissionsImportPersonal {set;get;}
-		public bool PermissionsDataExport {set;get;}
 		public bool PermissionsManageUsers {set;get;}
 		public bool PermissionsEditPublicTemplates {set;get;}
 		public bool PermissionsModifyAllData {set;get;}
 		public bool PermissionsManageCases {set;get;}
 		public bool PermissionsMassInlineEdit {set;get;}
+		public bool PermissionsEditKnowledge {set;get;}
+		public bool PermissionsManageKnowledge {set;get;}
 		public bool PermissionsManageSolutions {set;get;}
 		public bool PermissionsCustomizeApplication {set;get;}
 		public bool PermissionsEditReadonlyFields {set;get;}
@@ -36,10 +38,10 @@ namespace Demo.SObjects
 		public bool PermissionsEditBrandTemplates {set;get;}
 		public bool PermissionsEditHtmlTemplates {set;get;}
 		public bool PermissionsChatterInternalUser {set;get;}
+		public bool PermissionsManageEncryptionKeys {set;get;}
 		public bool PermissionsDeleteActivatedContract {set;get;}
 		public bool PermissionsChatterInviteExternalUsers {set;get;}
 		public bool PermissionsSendSitRequests {set;get;}
-		public bool PermissionsApiUserOnly {set;get;}
 		public bool PermissionsManageRemoteAccess {set;get;}
 		public bool PermissionsCanUseNewDashboardBuilder {set;get;}
 		public bool PermissionsManageCategories {set;get;}
@@ -53,11 +55,9 @@ namespace Demo.SObjects
 		public bool PermissionsEditOppLineItemUnitPrice {set;get;}
 		public bool PermissionsCreateMultiforce {set;get;}
 		public bool PermissionsBulkApiHardDelete {set;get;}
-		public bool PermissionsInboundMigrationToolsUser {set;get;}
 		public bool PermissionsSolutionImport {set;get;}
 		public bool PermissionsManageCallCenters {set;get;}
 		public bool PermissionsManageSynonyms {set;get;}
-		public bool PermissionsOutboundMigrationToolsUser {set;get;}
 		public bool PermissionsViewContent {set;get;}
 		public bool PermissionsManageEmailClientConfig {set;get;}
 		public bool PermissionsEnableNotifications {set;get;}
@@ -76,11 +76,11 @@ namespace Demo.SObjects
 		public bool PermissionsManageContentPermissions {set;get;}
 		public bool PermissionsManageContentProperties {set;get;}
 		public bool PermissionsManageContentTypes {set;get;}
-		public bool PermissionsScheduleJob {set;get;}
 		public bool PermissionsManageExchangeConfig {set;get;}
 		public bool PermissionsManageAnalyticSnapshots {set;get;}
 		public bool PermissionsScheduleReports {set;get;}
 		public bool PermissionsManageBusinessHourHolidays {set;get;}
+		public bool PermissionsManageDynamicDashboards {set;get;}
 		public bool PermissionsCustomSidebarOnAllPages {set;get;}
 		public bool PermissionsManageInteraction {set;get;}
 		public bool PermissionsViewMyTeamsDashboards {set;get;}
@@ -88,6 +88,7 @@ namespace Demo.SObjects
 		public bool PermissionsResetPasswords {set;get;}
 		public bool PermissionsFlowUFLRequired {set;get;}
 		public bool PermissionsCanInsertFeedSystemFields {set;get;}
+		public bool PermissionsManageKnowledgeImportExport {set;get;}
 		public bool PermissionsEmailTemplateManagement {set;get;}
 		public bool PermissionsEmailAdministration {set;get;}
 		public bool PermissionsManageChatterMessages {set;get;}
@@ -109,9 +110,13 @@ namespace Demo.SObjects
 		public bool PermissionsEditMyDashboards {set;get;}
 		public bool PermissionsEditMyReports {set;get;}
 		public bool PermissionsViewAllUsers {set;get;}
+		public bool PermissionsAllowUniversalSearch {set;get;}
 		public bool PermissionsConnectOrgToEnvironmentHub {set;get;}
+		public bool PermissionsWorkCalibrationUser {set;get;}
 		public bool PermissionsCreateCustomizeFilters {set;get;}
+		public bool PermissionsWorkDotComUserPerm {set;get;}
 		public bool PermissionsGovernNetworks {set;get;}
+		public bool PermissionsSalesConsole {set;get;}
 		public bool PermissionsTwoFactorApi {set;get;}
 		public bool PermissionsDeleteTopics {set;get;}
 		public bool PermissionsEditTopics {set;get;}
@@ -119,8 +124,9 @@ namespace Demo.SObjects
 		public bool PermissionsAssignTopics {set;get;}
 		public bool PermissionsIdentityEnabled {set;get;}
 		public bool PermissionsIdentityConnect {set;get;}
+		public bool PermissionsAllowViewKnowledge {set;get;}
 		public bool PermissionsContentWorkspaces {set;get;}
-		public bool PermissionsCreateWorkBadgeDefinition {set;get;}
+		public bool PermissionsManageSearchPromotionRules {set;get;}
 		public bool PermissionsCustomMobileAppsAccess {set;get;}
 		public bool PermissionsViewHelpLink {set;get;}
 		public bool PermissionsManageProfilesPermissionsets {set;get;}
@@ -133,10 +139,14 @@ namespace Demo.SObjects
 		public bool PermissionsManageLoginAccessPolicies {set;get;}
 		public bool PermissionsManageCustomPermissions {set;get;}
 		public bool PermissionsManageUnlistedGroups {set;get;}
+		public bool PermissionsModifySecureAgents {set;get;}
 		public bool PermissionsManageTwoFactor {set;get;}
 		public bool PermissionsChatterForSharePoint {set;get;}
 		public bool PermissionsLightningExperienceUser {set;get;}
 		public bool PermissionsConfigCustomRecs {set;get;}
+		public bool PermissionsSubmitMacrosAllowed {set;get;}
+		public bool PermissionsBulkMacrosAllowed {set;get;}
+		public bool PermissionsShareInternalArticles {set;get;}
 		public bool PermissionsManageSessionPermissionSets {set;get;}
 		public bool PermissionsSendAnnouncementEmails {set;get;}
 		public bool PermissionsChatterEditOwnPost {set;get;}

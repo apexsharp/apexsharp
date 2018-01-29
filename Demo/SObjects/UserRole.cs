@@ -1,6 +1,7 @@
 namespace Demo.SObjects
 {
 	using Apex.System;
+	using ApexSharpApi.ApexApi;
 	using DateTime = global::System.DateTime;
 
 	public class UserRole : SObject

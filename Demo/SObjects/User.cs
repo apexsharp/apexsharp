@@ -1,6 +1,7 @@
 namespace Demo.SObjects
 {
 	using Apex.System;
+	using ApexSharpApi.ApexApi;
 	using DateTime = global::System.DateTime;
 
 	public class User : SObject
@@ -67,11 +68,16 @@ namespace Demo.SObjects
 		public DateTime OfflinePdaTrialExpirationDate {set;get;}
 		public bool UserPermissionsMarketingUser {set;get;}
 		public bool UserPermissionsOfflineUser {set;get;}
-		public bool UserPermissionsAvantgoUser {set;get;}
 		public bool UserPermissionsCallCenterAutoLogin {set;get;}
 		public bool UserPermissionsMobileUser {set;get;}
 		public bool UserPermissionsSFContentUser {set;get;}
+		public bool UserPermissionsKnowledgeUser {set;get;}
 		public bool UserPermissionsInteractionUser {set;get;}
+		public bool UserPermissionsSupportUser {set;get;}
+		public bool UserPermissionsJigsawProspectingUser {set;get;}
+		public bool UserPermissionsSiteforceContributorUser {set;get;}
+		public bool UserPermissionsSiteforcePublisherUser {set;get;}
+		public bool UserPermissionsWorkDotComUserFeature {set;get;}
 		public bool ForecastEnabled {set;get;}
 		public bool UserPreferencesActivityRemindersPopup {set;get;}
 		public bool UserPreferencesEventRemindersCheckboxDefault {set;get;}
@@ -96,6 +102,7 @@ namespace Demo.SObjects
 		public bool UserPreferencesDisableLikeEmail {set;get;}
 		public bool UserPreferencesSortFeedByComment {set;get;}
 		public bool UserPreferencesDisableMessageEmail {set;get;}
+		public bool UserPreferencesJigsawListUser {set;get;}
 		public bool UserPreferencesDisableBookmarkEmail {set;get;}
 		public bool UserPreferencesDisableSharePostEmail {set;get;}
 		public bool UserPreferencesEnableAutoSubForFeeds {set;get;}
@@ -117,6 +124,8 @@ namespace Demo.SObjects
 		public bool UserPreferencesShowStateToGuestUsers {set;get;}
 		public bool UserPreferencesShowPostalCodeToGuestUsers {set;get;}
 		public bool UserPreferencesShowCountryToGuestUsers {set;get;}
+		public bool UserPreferencesDisableFeedbackEmail {set;get;}
+		public bool UserPreferencesDisableWorkEmail {set;get;}
 		public bool UserPreferencesHideS1BrowserUI {set;get;}
 		public bool UserPreferencesDisableEndorsementEmail {set;get;}
 		public bool UserPreferencesPathAssistantCollapsed {set;get;}
@@ -154,6 +163,7 @@ namespace Demo.SObjects
 		public string MediumPhotoUrl {set;get;}
 		public string DigestFrequency {set;get;}
 		public string DefaultGroupNotificationFrequency {set;get;}
+		public int JigsawImportLimitOverride {set;get;}
 		public DateTime LastViewedDate {set;get;}
 		public DateTime LastReferencedDate {set;get;}
 		public string BannerPhotoUrl {set;get;}

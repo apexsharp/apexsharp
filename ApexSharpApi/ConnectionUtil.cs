@@ -90,19 +90,34 @@ namespace ApexSharpApi
                 throw new SalesForceInvalidLoginException("Webservice API is disabled for this login or organization.");
             }
 
-            Envelope envelope = UtilXml.DeSerilizeFromXML<Envelope>(returnXml);
-
-            var soapIndex = envelope.Body.loginResponse.result.serverUrl.IndexOf(@"/Soap", StringComparison.Ordinal);
-            var restUrl = envelope.Body.loginResponse.result.serverUrl.Substring(0, soapIndex);
-            var restSessionId = "Bearer " + envelope.Body.loginResponse.result.sessionId;
+            try
+            {
+                Envelope envelope = UtilXml.DeSerilizeFromXML<Envelope>(returnXml);
 
 
-            config.SalesForceSoapUrl = envelope.Body.loginResponse.result.serverUrl;
-            config.RestUrl = restUrl;
-            config.RestSessionId = restSessionId;
-            config.SessionCreationDateTime = DateTimeOffset.Now.ToUnixTimeSeconds() + envelope.Body.loginResponse.result.userInfo.sessionSecondsValid;
+                var soapIndex =
+                    envelope.Body.loginResponse.result.serverUrl.IndexOf(@"/Soap", StringComparison.Ordinal);
+                var restUrl = envelope.Body.loginResponse.result.serverUrl.Substring(0, soapIndex);
+                var restSessionId = "Bearer " + envelope.Body.loginResponse.result.sessionId;
 
-            return config;
+
+                config.SalesForceSoapUrl = envelope.Body.loginResponse.result.serverUrl;
+                config.RestUrl = restUrl;
+                config.RestSessionId = restSessionId;
+                config.SessionCreationDateTime = DateTimeOffset.Now.ToUnixTimeSeconds() +
+                                                 envelope.Body.loginResponse.result.userInfo.sessionSecondsValid;
+
+                return config;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Fix the error and restart");
+                Console.ReadLine();
+                System.Environment.Exit(0);
+            }
+
+            return null;
         }
 
         private static string PostLoginTask(string url, string json)
