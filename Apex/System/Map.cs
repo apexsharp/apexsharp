@@ -41,7 +41,7 @@ namespace Apex.System
             Self = Implementation.Constructor(dictionary);
         }
 
-        public Map(List<SObject> recordList)
+        public Map(List<T2> recordList)
         {
             Self = Implementation.Constructor(recordList);
         }
@@ -111,12 +111,12 @@ namespace Apex.System
             Self.putAll(fromMap);
         }
 
-        public void putAll(SObject[] sobjectArray)
+        public void putAll(T2[] sobjectArray)
         {
             Self.putAll(sobjectArray);
         }
 
-        public void putAll(List<SObject> entries)
+        public void putAll(List<T2> entries)
         {
             Self.putAll(entries);
         }

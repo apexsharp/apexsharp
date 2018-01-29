@@ -5,7 +5,6 @@ using Apex.ApexSharp.Implementation;
 using Apex.Schema;
 using Apex.System;
 using ApexSharpApi;
-using ListOfSObject = Apex.System.List<Apex.System.SObject>;
 using NotSupportedException = System.NotSupportedException;
 
 namespace Apex.ApexSharp.Default.System
@@ -29,35 +28,23 @@ namespace Apex.ApexSharp.Default.System
 
             public MapInstance(Map<T1, T2> mapToCopy) => map = mapToCopy.ToDictionary(p => p.Key, p => p.Value);
 
-            public MapInstance(ListOfSObject recordList)
+            public MapInstance(global::Apex.System.List<T2> recordList) : this()
             {
-                // make sure that Map<T1, T2> is Map<ID, SObject>
-                if (!typeof(SObject).IsAssignableFrom(typeof(T2)) || !typeof(ID).IsAssignableFrom(typeof(T1)))
-                {
-                    throw new NotSupportedException("Only Map<ID, SObject> can be initialized via List<SObject> data.");
-                }
-
-                foreach (object row in recordList)
-                {
-                    SObject sobj = (SObject)row;
-                    object key = sobj.Id;
-                    map[(T1)key] = (T2)row;
-                }
+                AddItems(recordList);
             }
 
-            public MapInstance(SoqlQuery<T2> soqlQuery)
+            public MapInstance(SoqlQuery<T2> soqlQuery) : this()
+            {
+                ValidateGenericTypeParameters();
+                AddItems(soqlQuery.QueryResult.Value);
+            }
+
+            private void ValidateGenericTypeParameters()
             {
                 // make sure that Map<T1, T2> is Map<ID, SObject>
                 if (!typeof(SObject).IsAssignableFrom(typeof(T2)) || !typeof(ID).IsAssignableFrom(typeof(T1)))
                 {
-                    throw new NotSupportedException("Only Map<ID, SObject> can be initialized via SOQL query data.");
-                }
-
-                foreach (object row in soqlQuery.QueryResult.Value)
-                {
-                    SObject sobj = (SObject)row;
-                    object key = sobj.Id;
-                    map[(T1)key] = (T2)row;
+                    throw new NotSupportedException("Only Map<ID, SObject> can be initialized via List<SObject> or SOQL query data.");
                 }
             }
 
@@ -107,7 +94,16 @@ namespace Apex.ApexSharp.Default.System
 
             public bool isEmpty() => map.Count == 0;
 
-            public Set<T1> keySet() => NotImplemented.keySet();
+            public Set<T1> keySet()
+            {
+                var set = new Set<T1>();
+                foreach (var key in map.Keys)
+                {
+                    set.add(key);
+                }
+
+                return set;
+            }
 
             public T2 put(T1 key, T2 value) => map[key] = value;
 
@@ -119,9 +115,21 @@ namespace Apex.ApexSharp.Default.System
                 }
             }
 
-            public void putAll(SObject[] sobjectArray) => NotImplemented.putAll(sobjectArray);
+            private void AddItems(IEnumerable<T2> items)
+            {
+                ValidateGenericTypeParameters();
 
-            public void putAll(ListOfSObject entries) => NotImplemented.putAll(entries);
+                foreach (object row in items)
+                {
+                    SObject sobj = (SObject)row;
+                    object key = sobj.Id;
+                    map[(T1)key] = (T2)row;
+                }
+            }
+
+            public void putAll(T2[] sobjectArray) => AddItems(sobjectArray);
+
+            public void putAll(global::Apex.System.List<T2> entries) => AddItems(entries);
 
             public T2 remove(T1 key)
             {
@@ -158,7 +166,7 @@ namespace Apex.ApexSharp.Default.System
 
         public dynamic Constructor(IEnumerable<KeyValuePair<T1Outer, T2Outer>> dictionary) => new MapInstance<T1Outer, T2Outer>(dictionary);
 
-        public dynamic Constructor(ListOfSObject recordList) => new MapInstance<T1Outer, T2Outer>(recordList);
+        public dynamic Constructor(global::Apex.System.List<T2Outer> recordList) => new MapInstance<T1Outer, T2Outer>(recordList);
 
         public dynamic Constructor(SoqlQuery<T2Outer> soqlQuery) => new MapInstance<T1Outer, T2Outer>(soqlQuery);
     }

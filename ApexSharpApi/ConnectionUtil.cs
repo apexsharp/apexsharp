@@ -80,13 +80,17 @@ namespace ApexSharpApi
                 "</soapenv:Envelope>";
 
 
-            var retrunXml = PostLoginTask(config.SalesForceSoapUrl, xml);
-
-            if (retrunXml.Contains("INVALID_LOGIN"))
+            var returnXml = PostLoginTask(config.SalesForceSoapUrl, xml);
+            if (returnXml.Contains("INVALID_LOGIN"))
             {
                 throw new SalesForceInvalidLoginException("Invalid Login");
             }
-            Envelope envelope = UtilXml.DeSerilizeFromXML<Envelope>(retrunXml);
+            else if (returnXml.Contains("API_DISABLED_FOR_ORG"))
+            {
+                throw new SalesForceInvalidLoginException("Webservice API is disabled for this login or organization.");
+            }
+
+            Envelope envelope = UtilXml.DeSerilizeFromXML<Envelope>(returnXml);
 
             var soapIndex = envelope.Body.loginResponse.result.serverUrl.IndexOf(@"/Soap", StringComparison.Ordinal);
             var restUrl = envelope.Body.loginResponse.result.serverUrl.Substring(0, soapIndex);

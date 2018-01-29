@@ -291,5 +291,11 @@ namespace Apex.System
         public override int GetHashCode() => hashCode();
 
         public override string ToString() => toString();
+
+        public static implicit operator global::System.DateTime(Datetime value) =>
+            Implementation.ToSystemDateTime(value);
+
+        public static implicit operator Datetime(global::System.DateTime value) =>
+            Implementation.ToApexDatetime(value);
     }
 }
