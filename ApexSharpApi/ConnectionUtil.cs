@@ -112,7 +112,7 @@ namespace ApexSharpApi
             catch (Exception e)
             {
                 Console.WriteLine();
-                Console.WriteLine("Fix the error and restart");
+                Console.WriteLine("Fix the error and restart " + e);
                 Console.ReadLine();
                 System.Environment.Exit(0);
             }
