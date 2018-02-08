@@ -27,7 +27,7 @@ namespace Demo
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
-            CreateOffLineClasses();
+            // CreateOffLineClasses();
 
 
 

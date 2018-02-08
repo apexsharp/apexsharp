@@ -148,7 +148,7 @@ namespace ApexSharpApi
                 }
                 else if (objectField.type != "id")
                 {
-                    sb.AppendLine($"\t\tpublic {GetFieldType(objectField)} {objectField.name} {setGet}");
+                    sb.AppendLine($"\t\tpublic {GetFieldType(objectField, objectDetail.name)} {objectField.name} {setGet}");
                 }
             }
 
@@ -156,6 +156,17 @@ namespace ApexSharpApi
             sb.AppendLine("}");
 
             return sb.ToString();
+        }
+
+        internal string GetFieldType(Field salesForceField, string objectName)
+        {
+            var valueFound = FieldDictionary.TryGetValue(salesForceField.type, out var value);
+            if (valueFound)
+            {
+                return value;
+            }
+            Log.Logger.Error($"ObjectName: {objectName} Field Type: {salesForceField.type} Field Name : {salesForceField.name} Field Length: {salesForceField.length}");
+            return "string";
         }
 
         public List<Sobject> GetAllObjects()
@@ -171,16 +182,7 @@ namespace ApexSharpApi
             return sObjectList.sobjects.ToList();
         }
 
-        internal string GetFieldType(Field salesForceField)
-        {
-            var valueFound = FieldDictionary.TryGetValue(salesForceField.type, out var value);
-            if (valueFound)
-            {
-                return value;
-            }
-            Log.Logger.Error($"Field Type: {salesForceField.type} Field Name : {salesForceField.name} Field Length: {salesForceField.length}");
-            return "NOT FOUND";
-        }
+
 
         private const string ReferenceType = "reference";
 
