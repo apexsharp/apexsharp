@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net462;netcoreapp2.0</TargetFrameworks>
+    <Authors>yallie</Authors>
+    <Company>ApexSharp</Company>
+    <Description>Analyzes the given project and displays which Apex API classes and methods are used.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApexParser" Version="0.6.7" />
+    <PackageReference Include="CommandLineParser" Version="2.2.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApexSharp\Apex\Apex.csproj" />
+  </ItemGroup>
+
+</Project>

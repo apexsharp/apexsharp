@@ -1,0 +1,23 @@
+public class ExceptionDemo
+{
+    public static void catchDemo()
+    {
+        try
+        {
+            throwDemo();
+        }
+        catch (MathException e)
+        {
+            System.debug(e.getMessage());
+        }
+        finally
+        {
+            System.debug('Finally');
+        }
+    }
+
+    public static void throwDemo()
+    {
+        throw new MathException('something bad happened!');
+    }
+}
