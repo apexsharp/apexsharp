@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using ApexParser;
@@ -45,7 +44,7 @@ namespace ApexSharpApi
         {
             if (!apexFile.Exists)
             {
-                throw new DirectoryNotFoundException(apexFile.FullName);
+                throw new FileNotFoundException(apexFile.FullName);
             }
 
             if (!cSharpLocation.Exists)
@@ -54,12 +53,17 @@ namespace ApexSharpApi
             }
 
             // Convert APEX to C#
-            //ApexSharpParser.ConvertToCSharp(apexLocation.FullName, cSharpLocation.FullName, nameSpace);
+            var apexClass = File.ReadAllText(apexFile.FullName);
+            var csharpClass = ApexSharpParser.ConvertApexToCSharp(apexClass, nameSpace);
+
+            // Write the converted file to the target directory
+            var csharpClassName = Path.ChangeExtension(apexFile.Name, "cs");
+            var csharpFullName = Path.Combine(cSharpLocation.FullName, csharpClassName);
+            File.WriteAllText(csharpFullName, csharpClass);
         }
 
         public static void ConvertToApex(FileInfo cSharpFile, DirectoryInfo apexLocation, int version)
         {
-
             if (!apexLocation.Exists)
             {
                 throw new DirectoryNotFoundException(apexLocation.FullName);
@@ -71,7 +75,26 @@ namespace ApexSharpApi
             }
 
             // Convert C# to Apex
-            // ApexSharpParser.ConvertToApex(cSharpLocation.FullName, apexLocation.FullName, version);
+            var csharpCode = File.ReadAllText(cSharpFile.FullName);
+
+            foreach (var convertedClass in ApexSharpParser.ConvertToApex(csharpCode))
+            {
+                var apexFileName = Path.ChangeExtension(convertedClass.Key, ".cls");
+                var apexFile = Path.Combine(apexLocation.FullName, apexFileName);
+                File.WriteAllText(apexFile, convertedClass.Value);
+
+                var metaFileName = Path.ChangeExtension(apexFile, ".cls-meta.xml");
+                var metaFile = new StringBuilder();
+
+                metaFile.AppendLine("<?xml version = \"1.0\" encoding = \"UTF-8\"?>");
+                metaFile.AppendLine("<ApexClass xmlns = \"http://soap.sforce.com/2006/04/metadata\">");
+                metaFile.AppendLine($"<apiVersion>{version}.0</apiVersion>");
+                metaFile.AppendLine("<status>Active</status>");
+                metaFile.AppendLine("</ApexClass>");
+
+                File.WriteAllText(metaFileName, metaFile.ToString());
+                Console.WriteLine(metaFileName);
+            }
         }
     }
 }
