@@ -165,7 +165,7 @@ namespace ApexSharpApi
             {
                 return value;
             }
-            Log.Logger.Error($"ObjectName: {objectName} Field Type: {salesForceField.type} Field Name : {salesForceField.name} Field Length: {salesForceField.length}");
+            Log.Logger.Fatal($"ObjectName: {objectName} Field Type: {salesForceField.type} Field Name : {salesForceField.name} Field Length: {salesForceField.length}");
             return "string";
         }
 
