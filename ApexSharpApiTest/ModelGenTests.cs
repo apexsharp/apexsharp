@@ -39,9 +39,10 @@ namespace ApexSharpApiTest
             var type = mg.GetFieldType(field);
             Assert.AreEqual("object", type);
 
+            // by default, the type is translated as string
             field = new Field { type = "SomeUnknownType", name = "test" };
             type = mg.GetFieldType(field);
-            Assert.AreEqual("NOT FOUND", type);
+            Assert.AreEqual("string", type);
         }
 
         private SObjectDetail SampleSObjectDetail

@@ -158,7 +158,7 @@ namespace ApexSharpApi
             return sb.ToString();
         }
 
-        internal string GetFieldType(Field salesForceField, string objectName)
+        internal string GetFieldType(Field salesForceField, string objectName = "Not specified")
         {
             var valueFound = FieldDictionary.TryGetValue(salesForceField.type, out var value);
             if (valueFound)
