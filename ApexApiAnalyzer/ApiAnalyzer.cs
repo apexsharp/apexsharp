@@ -6,16 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApexApiAnalyzer
 {
-    public class SalesForceClassInfo
-    {
-        // Is this a SF class or class created by the user.
-        public bool IsCustom { get; set; }
-        public string ClassName { get; set; }
-        public string MethodName { get; set; }
-    }
     public class ApiAnalyzer
     {
-        // Return a list of objects that are used in the code. This assume you have access to objectlist.Json 
+        // Return a list of objects that are used in the code. This assume you have access to objectlist.Json
         public List<String> GetAllObjectsUsed(string cSharpCode)
         {
             return new List<string>();
@@ -29,14 +22,27 @@ namespace ApexApiAnalyzer
 
         public List<SalesForceClassInfo> GetCallingClasses(string cSharpCode)
         {
-            return new List<SalesForceClassInfo>();
-        }
+            var analyzer = new Analyzer();
+            analyzer.ProcessCSharpClasses(cSharpCode);
 
+            // note: this list currently doesn't include custom classes
+            var classes =
+                from classRef in analyzer.Classes.Values
+                from method in classRef.Methods.Values
+                select new SalesForceClassInfo
+                {
+                    IsCustom = false,
+                    ClassName = classRef.Name,
+                    MethodName = method.Name
+                };
+
+            return classes.ToList();
+        }
 
         // Format the apex code
         public string FormatApex(string apexCode)
         {
-            return "";
+            return ApexParser.ApexSharpParser.IndentApex(apexCode);
         }
     }
 }
