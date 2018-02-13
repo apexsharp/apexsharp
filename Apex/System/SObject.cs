@@ -7,7 +7,7 @@ namespace Apex.System
 {
     public abstract class SObject
     {
-        public ID Id { get; set; }
+        public string Id { get; set; }
 
         private dynamic NotImplemented { get; } = new StubImplementation(typeof(SObject));
 

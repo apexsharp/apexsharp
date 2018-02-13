@@ -15,7 +15,7 @@ namespace Demo
             Start();
 
             Console.WriteLine("Done, Press Any Key To Exit");
-            // Console.ReadLine();
+            Console.ReadLine();
         }
 
         public static void Start()
@@ -27,8 +27,12 @@ namespace Demo
             Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
-            // CreateOffLineClasses();
 
+            ModelGen modelGen = new ModelGen();
+            modelGen.CreateOfflineSymbolTableForSqlLite(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
+        
+            SqlLiteDemo.SqlLiteInsert();
+            SqlLiteDemo.InsertIntoSalesForce();
 
 
             //try
@@ -48,10 +52,9 @@ namespace Demo
             //    Console.WriteLine(e.Message);
             //}
 
-            //CSharpClasses.DmlTest.UpsertTest();
 
             //// Keep Track of the API Limits
-            //Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();

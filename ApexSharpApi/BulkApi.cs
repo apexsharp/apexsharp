@@ -38,11 +38,7 @@ namespace ApexSharpApi
 
         public string BulkRequest<T>(int checkIntervel)
         {
-
-
-            SoqlCreator soql = new SoqlCreator();
-            string query = soql.GetSoql<T>();
-
+            string query = "";
             var objectName = GetSalesForceObjectName<T>();
 
             var url = "/async/36.0/job/";

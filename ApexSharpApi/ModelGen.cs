@@ -63,6 +63,12 @@ namespace ApexSharpApi
 
         internal Action<string, string> SaveSObject { get; set; } = SaveSObjectImpl;
 
+        public void CreateOfflineSymbolTableForSqlLite(List<string> sobjectList, string nameSpace,bool recursive = true, List<string> ignoreList = null)
+        {
+
+        }
+    
+
         public void CreateOfflineSymbolTable(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null)
         {
             // populate the list of pending objects

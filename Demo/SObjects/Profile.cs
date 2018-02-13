@@ -13,6 +13,7 @@ namespace Demo.SObjects
 		public bool PermissionsEditEvent {set;get;}
 		public bool PermissionsExportReport {set;get;}
 		public bool PermissionsImportPersonal {set;get;}
+		public bool PermissionsDataExport {set;get;}
 		public bool PermissionsManageUsers {set;get;}
 		public bool PermissionsEditPublicTemplates {set;get;}
 		public bool PermissionsModifyAllData {set;get;}

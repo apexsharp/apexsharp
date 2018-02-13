@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using Apex.System;
 using ApexSharpApi;
@@ -11,11 +13,44 @@ namespace Apex.ApexSharp
 {
     public class SoqlApi
     {
-        public static SoqlQuery<T> Query<T>() where T : SObject
+        private static string GetSoql<T>(int limit)
+        {
+            global::System.Collections.Generic.List<string> supportedTypes =
+                new global::System.Collections.Generic.List<string> {"Boolean", "String", "DateTime", "Double", "Int32"};
+
+            StringBuilder sb = new StringBuilder();
+            var memberProperties = typeof(T).GetProperties().ToList();
+
+            sb.Append("SELECT ");
+
+            foreach (var memberProperty in memberProperties)
+            {
+                Console.WriteLine(memberProperty.PropertyType.Name + " : " + memberProperty.Name);
+
+                if(supportedTypes.Contains(memberProperty.PropertyType.Name))
+                {
+                sb.Append(memberProperty.Name).Append(',');
+                }
+            }
+
+            Console.WriteLine("Any key do move");
+
+            Console.ReadLine();
+
+            var soql = sb.ToString();
+            // Remove the last comma
+            soql = soql.TrimEnd(',');
+            soql = soql + " FROM " + typeof(T).Name + " LIMIT " + limit;
+
+
+            return soql;
+        }
+
+        public static SoqlQuery<T> Query<T>(int limit) where T : SObject
         {
             // prepare query text
-            var soqlCreator = new SoqlCreator();
-            var soql = soqlCreator.GetSoql<T>();
+            var soql = GetSoql<T>(limit);
+
 
             // prepare query result
             var lasyResult = new Lazy<global::System.Collections.Generic.List<T>>(() =>

@@ -1,3 +1,5 @@
+using ServiceStack.DataAnnotations;
+
 namespace Demo.SObjects
 {
 	using Apex.System;
@@ -7,12 +9,21 @@ namespace Demo.SObjects
 	public class Account : SObject
 	{
 		public bool IsDeleted {set;get;}
-		public string MasterRecordId {set;get;}
-		public Account MasterRecord {set;get;}
+
+	    [StringLength(18)]
+        public string MasterRecordId {set;get;}
+	    [Ignore]
+        public Account MasterRecord {set;get;}
+
 		public string Name {set;get;}
 		public string Type {set;get;}
-		public string ParentId {set;get;}
-		public Account Parent {set;get;}
+
+	    [StringLength(18)]
+        public string ParentId {set;get;}
+	    [Ignore]
+        public Account Parent {set;get;}
+
+
 		public string BillingStreet {set;get;}
 		public string BillingCity {set;get;}
 		public string BillingState {set;get;}
