@@ -122,7 +122,7 @@ namespace Apex.ApexSharp.Default.System
                 foreach (object row in items)
                 {
                     SObject sobj = (SObject)row;
-                    object key = sobj.Id;
+                    object key = (ID)sobj.Id;
                     map[(T1)key] = (T2)row;
                 }
             }
