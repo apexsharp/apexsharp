@@ -14,6 +14,8 @@ namespace ApexSharpApi
 {
     public class ModelGen
     {
+        public const int IdStringLength = 18;
+
         public IEnumerable<string> GetAllObjectNames()
         {
             var objectList = new List<string>();
@@ -65,11 +67,15 @@ namespace ApexSharpApi
 
         public void CreateOfflineSymbolTableForSqlLite(List<string> sobjectList, string nameSpace,bool recursive = true, List<string> ignoreList = null)
         {
-
+            CreateOfflineSymbolTableCore(sobjectList, nameSpace, recursive, ignoreList, orm: true);
         }
-    
 
         public void CreateOfflineSymbolTable(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null)
+        {
+            CreateOfflineSymbolTableCore(sobjectList, nameSpace, recursive, ignoreList, orm: false);
+        }
+
+        internal void CreateOfflineSymbolTableCore(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null, bool orm = false)
         {
             // populate the list of pending objects
             var ignoreCase = StringComparer.InvariantCultureIgnoreCase;
@@ -121,7 +127,7 @@ namespace ApexSharpApi
             return refs.Distinct().ToList();
         }
 
-        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail)
+        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail, bool orm = false)
         {
             var sb = new StringBuilder();
 
@@ -129,6 +135,11 @@ namespace ApexSharpApi
             sb.AppendLine("{");
             sb.AppendLine("\tusing Apex.System;");
             sb.AppendLine("\tusing ApexSharpApi.ApexApi;");
+            if (orm)
+            {
+                sb.AppendLine("\tusing ServiceStack.DataAnnotations;");
+            }
+
             sb.AppendLine("\tusing DateTime = global::System.DateTime;");
             sb.AppendLine();
             sb.AppendLine($"\tpublic class {objectDetail.name} : SObject");
@@ -139,21 +150,26 @@ namespace ApexSharpApi
             {
                 if ((objectField.type == ReferenceType) && (objectField.name == "OwnerId") && (objectField.referenceTo.Length > 1))
                 {
+                    AddStringLengthAttribute(sb, IdStringLength, orm);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
+                    AddIgnoreAttribute(sb, orm);
                     sb.AppendLine($"\t\tpublic {objectField.referenceTo[1]} {objectField.relationshipName} {setGet}");
                 }
                 else if (objectField.type == ReferenceType && objectField.referenceTo.Length > 0)
                 {
+                    AddStringLengthAttribute(sb, IdStringLength, orm);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
                     if (objectField.relationshipName != null)
                     {
+                        AddIgnoreAttribute(sb, orm);
                         sb.AppendLine($"\t\tpublic {objectField.referenceTo[0]} {objectField.relationshipName} {setGet}");
                     }
                 }
                 else if (objectField.type != "id")
                 {
+                    AddStringLengthAttribute(sb, objectField, orm);
                     sb.AppendLine($"\t\tpublic {GetFieldType(objectField, objectDetail.name)} {objectField.name} {setGet}");
                 }
             }
@@ -162,6 +178,30 @@ namespace ApexSharpApi
             sb.AppendLine("}");
 
             return sb.ToString();
+        }
+
+        private static void AddIgnoreAttribute(StringBuilder sb, bool orm)
+        {
+            if (orm)
+            {
+                sb.AppendLine("\t\t[Ignore]");
+            }
+        }
+
+        private void AddStringLengthAttribute(StringBuilder sb, Field salesforceField, bool orm)
+        {
+            if (GetFieldType(salesforceField) == "string" && salesforceField.length > 0)
+            {
+                AddStringLengthAttribute(sb, salesforceField.length, orm);
+            }
+        }
+
+        private void AddStringLengthAttribute(StringBuilder sb, int length, bool orm)
+        {
+            if (orm)
+            {
+                sb.AppendLine($"\t\t[StringLength({length})]");
+            }
         }
 
         internal string GetFieldType(Field salesForceField, string objectName = "Not specified")

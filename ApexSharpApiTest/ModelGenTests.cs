@@ -59,7 +59,7 @@ namespace ApexSharpApiTest
                         referenceTo = new[] { "AnotherSampleClass" },
                         relationshipName = "AnotherSampleInstance",
                     },
-                    new Field { name = "Name", type = "string" },
+                    new Field { name = "Name", type = "string", length = 255 },
                     new Field { name = "Age", type = "int" },
                     new Field
                     {
@@ -97,6 +97,36 @@ namespace ApexSharpApiTest
         }
 
         [Test]
+        public void CreateSalesForceClassForSqliteEmitsValidCSharpCode()
+        {
+            var code = new ModelGen().CreateSalesForceClass("Test", SampleSObjectDetail, orm: true);
+            Assert.NotNull(code);
+
+            CompareLineByLine(code, @"namespace Test
+            {
+                using Apex.System;
+                using ApexSharpApi.ApexApi;
+                using ServiceStack.DataAnnotations;
+                using DateTime = global::System.DateTime;
+
+                public class SampleClass : SObject
+                {
+                    [StringLength(18)]
+                    public string OwnerId {set;get;}
+                    [Ignore]
+                    public AnotherSampleClass AnotherSampleInstance {set;get;}
+                    [StringLength(255)]
+                    public string Name {set;get;}
+                    public int Age {set;get;}
+                    [StringLength(18)]
+                    public string OrgId {set;get;}
+                    [Ignore]
+                    public SampleOrg Org {set;get;}
+                }
+            }");
+        }
+
+        [Test]
         public void GetReferencedSObjectsReturnsListOfReferencedObjects()
         {
             var refs = new ModelGen().GetReferencedSObjects(SampleSObjectDetail);
@@ -112,6 +142,90 @@ namespace ApexSharpApiTest
             {
                 return streamReader.ReadToEnd();
             }
+        }
+
+        [Test]
+        public void GenerateCodeFromJsonResource()
+        {
+            var sobject = JsonConvert.DeserializeObject<SObjectDetail>(GetJsonResource("UserRole"));
+            var code = new ModelGen().CreateSalesForceClass("TestNamespace", sobject, orm: false);
+            Assert.NotNull(code);
+
+            CompareLineByLine(code, @"namespace TestNamespace
+            {
+                using Apex.System;
+                using ApexSharpApi.ApexApi;
+                using DateTime = global::System.DateTime;
+
+                public class UserRole : SObject
+                {
+                    public string Name {set;get;}
+                    public string ParentRoleId {set;get;}
+                    public string RollupDescription {set;get;}
+                    public string OpportunityAccessForAccountOwner {set;get;}
+                    public string CaseAccessForAccountOwner {set;get;}
+                    public string ContactAccessForAccountOwner {set;get;}
+                    public string ForecastUserId {set;get;}
+                    public bool MayForecastManagerShare {set;get;}
+                    public DateTime LastModifiedDate {set;get;}
+                    public string LastModifiedById {set;get;}
+                    public User LastModifiedBy {set;get;}
+                    public DateTime SystemModstamp {set;get;}
+                    public string DeveloperName {set;get;}
+                    public string PortalAccountId {set;get;}
+                    public string PortalType {set;get;}
+                    public string PortalAccountOwnerId {set;get;}
+                }
+            }");
+        }
+
+        [Test]
+        public void GenerateOrmSpecificCodeFromJsonResource()
+        {
+            var sobject = JsonConvert.DeserializeObject<SObjectDetail>(GetJsonResource("UserRole"));
+            var code = new ModelGen().CreateSalesForceClass("TestNamespace", sobject, orm: true);
+            Assert.NotNull(code);
+
+            CompareLineByLine(code, @"namespace TestNamespace
+            {
+                using Apex.System;
+                using ApexSharpApi.ApexApi;
+                using ServiceStack.DataAnnotations;
+                using DateTime = global::System.DateTime;
+
+                public class UserRole : SObject
+                {
+                    [StringLength(80)]
+                    public string Name {set;get;}
+                    [StringLength(18)]
+                    public string ParentRoleId {set;get;}
+                    [StringLength(80)]
+                    public string RollupDescription {set;get;}
+                    [StringLength(40)]
+                    public string OpportunityAccessForAccountOwner {set;get;}
+                    [StringLength(40)]
+                    public string CaseAccessForAccountOwner {set;get;}
+                    [StringLength(40)]
+                    public string ContactAccessForAccountOwner {set;get;}
+                    [StringLength(18)]
+                    public string ForecastUserId {set;get;}
+                    public bool MayForecastManagerShare {set;get;}
+                    public DateTime LastModifiedDate {set;get;}
+                    [StringLength(18)]
+                    public string LastModifiedById {set;get;}
+                    [Ignore]
+                    public User LastModifiedBy {set;get;}
+                    public DateTime SystemModstamp {set;get;}
+                    [StringLength(80)]
+                    public string DeveloperName {set;get;}
+                    [StringLength(18)]
+                    public string PortalAccountId {set;get;}
+                    [StringLength(40)]
+                    public string PortalType {set;get;}
+                    [StringLength(18)]
+                    public string PortalAccountOwnerId {set;get;}
+                }
+            }");
         }
 
         [Test]
