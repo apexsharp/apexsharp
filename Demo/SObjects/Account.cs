@@ -86,6 +86,6 @@ namespace Demo.SObjects
 		public double NumberofLocations__c {set;get;}
 		public string UpsellOpportunity__c {set;get;}
 		public string SLASerialNumber__c {set;get;}
-		public DateTime SLAExpirationDate__c {set;get;}
+		public DateTime? SLAExpirationDate__c {set;get;}
 	}
 }
