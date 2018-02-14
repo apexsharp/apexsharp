@@ -17,15 +17,18 @@ namespace Demo
             OrmLiteConfig.DialectProvider = SqliteDialect.Provider;
             using (IDbConnection db = "db.sqlite".OpenDbConnection())
             {
-                //db.CreateTable<Account>(true);
+                db.CreateTable<Account>(true);
 
-                CreateAllTables(db, true);
+                //CreateAllTables(db, true);
 
-                List<Account> accountList = SoqlApi.Query<Account>(5);
+                List<Account> accountList = SoqlApi.Query<Account>(1);
+                Console.WriteLine(accountList[0].Id);
 
+                accountList[0].Name = Guid.NewGuid().ToString();
+             
                 db.InsertAll(accountList);
 
-                var account = db.Select<Account>(x => x.Id == "0013600000Vm91zAAB").FirstOrDefault();
+                var account = db.Select<Account>(x => x.Id == accountList[0].Id).FirstOrDefault();
                 Console.WriteLine(account.Dump());
             }
         }

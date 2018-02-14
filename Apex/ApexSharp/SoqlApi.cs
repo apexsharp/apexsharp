@@ -13,10 +13,38 @@ namespace Apex.ApexSharp
 {
     public class SoqlApi
     {
+        // ToDo: Need to use a single list..may be move to a util class.
+        private static readonly Dictionary<string, string> FieldDictionary = new Dictionary<string, string>
+        {
+            {"address", "Address" },
+            {"id","ID" },
+            {"string","string" },
+            {"picklist","string" },
+            {"email","string" },
+            {"textarea","string" },
+            {"phone","string" },
+            {"url","string" },
+            {"combobox","string" },
+            {"multipicklist","string" },
+            {"anytype","object" },
+            {"location","string" },
+            {"boolean","bool" },
+            {"datetime","Datetime" },
+            {"time","Datetime" },
+            {"date","Datetime" },
+            {"currency","double" },
+            {"percent","double" },
+            {"double","double" },
+            {"int","int" },
+            {"anyType", "object" },
+            {"base64", "string" },
+            {"complexvalue", "string" }
+        };
+
         private static string GetSoql<T>(int limit)
         {
             global::System.Collections.Generic.List<string> supportedTypes =
-                new global::System.Collections.Generic.List<string> {"Boolean", "String", "DateTime", "Double", "Int32"};
+                new global::System.Collections.Generic.List<string> {"Boolean", "String", "Datetime", "DateTime", "Double", "Int32"};
 
             StringBuilder sb = new StringBuilder();
             var memberProperties = typeof(T).GetProperties().ToList();
@@ -25,17 +53,13 @@ namespace Apex.ApexSharp
 
             foreach (var memberProperty in memberProperties)
             {
-                Console.WriteLine(memberProperty.PropertyType.Name + " : " + memberProperty.Name);
+                //Console.WriteLine(memberProperty.PropertyType.Name + " : " + memberProperty.Name);
 
                 if(supportedTypes.Contains(memberProperty.PropertyType.Name))
                 {
-                sb.Append(memberProperty.Name).Append(',');
+                    sb.Append(memberProperty.Name).Append(',');
                 }
             }
-
-            Console.WriteLine("Any key do move");
-
-            Console.ReadLine();
 
             var soql = sb.ToString();
             // Remove the last comma

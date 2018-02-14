@@ -182,15 +182,15 @@ namespace Demo.SObjects
 		public string UserLicenseId {set;get;}
 		public UserLicense UserLicense {set;get;}
 		public string UserType {set;get;}
-		public DateTime CreatedDate {set;get;}
+		public Datetime CreatedDate {set;get;}
 		public string CreatedById {set;get;}
 		public User CreatedBy {set;get;}
-		public DateTime LastModifiedDate {set;get;}
+		public Datetime LastModifiedDate {set;get;}
 		public string LastModifiedById {set;get;}
 		public User LastModifiedBy {set;get;}
-		public DateTime SystemModstamp {set;get;}
+		public Datetime SystemModstamp {set;get;}
 		public string Description {set;get;}
-		public DateTime LastViewedDate {set;get;}
-		public DateTime LastReferencedDate {set;get;}
+		public Datetime LastViewedDate {set;get;}
+		public Datetime LastReferencedDate {set;get;}
 	}
 }

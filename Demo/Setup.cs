@@ -27,7 +27,7 @@ namespace Demo
                 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Console(outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
                     .WriteTo.File(logFile.FullName, rollingInterval: RollingInterval.Day,outputTemplate:"{Timestamp:yyyy-MM-dd HH-mm-ss.fff}:[{Level}]:[{SourceContext}]:{Message}:{NewLine}")
-                    .MinimumLevel.Debug()
+                    .MinimumLevel.Verbose()
                     .CreateLogger();
 
                 Log.ForContext<Setup>().Debug("Logging Started");

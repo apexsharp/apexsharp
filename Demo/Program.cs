@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Demo.CSharpClasses;
 
 namespace Demo
 {
@@ -13,7 +14,7 @@ namespace Demo
         public static void Main(string[] args)
         {
             Start();
-
+            
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadLine();
         }
@@ -24,15 +25,17 @@ namespace Demo
             Setup.InitializeSession();
 
             // Keep Track of the API Limits
-            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            // Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
 
-            ModelGen modelGen = new ModelGen();
-            modelGen.CreateOfflineSymbolTableForSqlLite(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
-        
+            //ModelGen modelGen = new ModelGen();
+            //modelGen.CreateOfflineSymbolTableForSqlLite(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
+            // CreateOffLineClasses();
+            // DateTimeDemo.Demo();
             SqlLiteDemo.SqlLiteInsert();
-            SqlLiteDemo.InsertIntoSalesForce();
+            //SqlLiteDemo.InsertIntoSalesForce();
+
 
 
             //try
@@ -54,7 +57,7 @@ namespace Demo
 
 
             //// Keep Track of the API Limits
-            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            // Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();
@@ -85,7 +88,7 @@ namespace Demo
                 // To save time we will only create objects we are going to work with
                 List<string> onlyObjects = new List<string>
                 {
-                    "Contact",
+                    "Account",
                 };
 
                 modelGen.CreateOfflineSymbolTable(onlyObjects, "Demo.SObjects");

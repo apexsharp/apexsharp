@@ -46,27 +46,27 @@ namespace Demo.SObjects
 		public string Department {set;get;}
 		public string AssistantName {set;get;}
 		public string LeadSource {set;get;}
-		public DateTime Birthdate {set;get;}
+		public Datetime Birthdate {set;get;}
 		public string Description {set;get;}
 		public string OwnerId {set;get;}
 		public User Owner {set;get;}
 		public bool HasOptedOutOfEmail {set;get;}
 		public bool HasOptedOutOfFax {set;get;}
 		public bool DoNotCall {set;get;}
-		public DateTime CreatedDate {set;get;}
+		public Datetime CreatedDate {set;get;}
 		public string CreatedById {set;get;}
 		public User CreatedBy {set;get;}
-		public DateTime LastModifiedDate {set;get;}
+		public Datetime LastModifiedDate {set;get;}
 		public string LastModifiedById {set;get;}
 		public User LastModifiedBy {set;get;}
-		public DateTime SystemModstamp {set;get;}
-		public DateTime LastActivityDate {set;get;}
-		public DateTime LastCURequestDate {set;get;}
-		public DateTime LastCUUpdateDate {set;get;}
-		public DateTime LastViewedDate {set;get;}
-		public DateTime LastReferencedDate {set;get;}
+		public Datetime SystemModstamp {set;get;}
+		public Datetime LastActivityDate {set;get;}
+		public Datetime LastCURequestDate {set;get;}
+		public Datetime LastCUUpdateDate {set;get;}
+		public Datetime LastViewedDate {set;get;}
+		public Datetime LastReferencedDate {set;get;}
 		public string EmailBouncedReason {set;get;}
-		public DateTime EmailBouncedDate {set;get;}
+		public Datetime EmailBouncedDate {set;get;}
 		public bool IsEmailBounced {set;get;}
 		public string PhotoUrl {set;get;}
 		public string Jigsaw {set;get;}

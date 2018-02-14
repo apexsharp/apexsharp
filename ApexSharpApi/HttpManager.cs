@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using Newtonsoft.Json.Linq;
 using Serilog;
 
 namespace ApexSharpApi
@@ -88,7 +89,11 @@ namespace ApexSharpApi
             Log.ForContext<HttpManager>().Verbose("Incoming Response {@responseMessage}", responseMessage);
 
             string jsonData = responseMessage.Content.ReadAsStringAsync().Result;
-            Log.ForContext<HttpManager>().Verbose("Incoming Data {@jsonData}", jsonData);
+            
+
+            JToken jt = JToken.Parse(jsonData);
+            string formattedJson = jt.ToString();
+            Log.ForContext<HttpManager>().Verbose(formattedJson);
 
             switch (responseMessage.StatusCode)
             {
