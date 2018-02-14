@@ -300,3 +300,7 @@ JayPrivate.sln
 /AdvanceSalesForce
 *.DotSettings
 *.json
+
+Demo/db\.sqlite
+
+*.sqlite
