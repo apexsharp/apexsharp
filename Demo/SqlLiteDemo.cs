@@ -12,7 +12,7 @@ namespace Demo
 {
     public class SqlLiteDemo
     {
-        public static void SqlLiteInsert()
+        public static void SqlLiteReadAndInsert()
         {
             OrmLiteConfig.DialectProvider = SqliteDialect.Provider;
             using (IDbConnection db = "db.sqlite".OpenDbConnection())
@@ -22,13 +22,16 @@ namespace Demo
                 //CreateAllTables(db, true);
 
                 List<Account> accountList = SoqlApi.Query<Account>(1);
-                Console.WriteLine(accountList[0].Id);
+                Console.WriteLine(accountList[0].Dump());
 
-                accountList[0].Name = Guid.NewGuid().ToString();
-             
+                accountList[0].Name = Guid.NewGuid().ToString();             
                 db.InsertAll(accountList);
 
-                var account = db.Select<Account>(x => x.Id == accountList[0].Id).FirstOrDefault();
+                var account = db.Select<Account>(x => x.Name == accountList[0].Name).FirstOrDefault();
+                Console.WriteLine(account.Dump());
+
+                Soql.Update(account);
+                account = Soql.query<Account>("SELECT Id, Name FROM Account WHERE Name = :account.Name", account.Name);
                 Console.WriteLine(account.Dump());
             }
         }
@@ -57,21 +60,6 @@ namespace Demo
             foreach (var type in tableTypes)
             {
                 db.CreateTable(overwrite, type);
-            }
-        }
-
-        public static void InsertIntoSalesForce()
-        {
-            OrmLiteConfig.DialectProvider = SqliteDialect.Provider;
-            using (IDbConnection db = "db.sqlite".OpenDbConnection())
-            {
-
-                var account = db.Select<Account>(x => x.Id == "0013600000Vm91zAAB").FirstOrDefault();
-
-                SoqlApi.Upsert(account);
-
-
-                Console.WriteLine(account.Dump());
             }
         }
     }

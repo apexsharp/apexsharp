@@ -32,9 +32,10 @@ namespace Demo
             //ModelGen modelGen = new ModelGen();
             //modelGen.CreateOfflineSymbolTableForSqlLite(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
             // CreateOffLineClasses();
-            // DateTimeDemo.Demo();
-            SqlLiteDemo.SqlLiteInsert();
-            //SqlLiteDemo.InsertIntoSalesForce();
+
+
+            SqlLiteDemo.SqlLiteReadAndInsert();
+
 
 
 
