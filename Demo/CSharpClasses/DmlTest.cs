@@ -13,7 +13,7 @@ namespace Demo.CSharpClasses
         {
             Contact contactNew = new Contact();
             contactNew.LastName = "apexSharp" + Math.random();
-            contactNew.Email = Math.random() + "abc@abc.com";
+            contactNew.Email = Math.round(10000 * Math.random()) + "abc@abc.com";
             Soql.upsert(contactNew);
             System.debug(contactNew.Id);
             List<Contact> contacts = Soql.query<Contact>("SELECT Id, Email FROM Contact WHERE Id = :contactNew.Id", contactNew.Id);
