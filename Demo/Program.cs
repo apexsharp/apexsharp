@@ -14,7 +14,7 @@ namespace Demo
         public static void Main(string[] args)
         {
             Start();
-            
+
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadLine();
         }
@@ -34,7 +34,7 @@ namespace Demo
             // CreateOffLineClasses();
             // DateTimeDemo.Demo();
             SqlLiteDemo.SqlLiteInsert();
-            //SqlLiteDemo.InsertIntoSalesForce();
+            SqlLiteDemo.InsertIntoSalesForce();
 
 
 

@@ -89,11 +89,11 @@ namespace ApexSharpApi
             Log.ForContext<HttpManager>().Verbose("Incoming Response {@responseMessage}", responseMessage);
 
             string jsonData = responseMessage.Content.ReadAsStringAsync().Result;
-            
 
-            JToken jt = JToken.Parse(jsonData);
-            string formattedJson = jt.ToString();
-            Log.ForContext<HttpManager>().Verbose(formattedJson);
+            // The following code fails to parse an empty JSON response:
+            //JToken jt = JToken.Parse(jsonData);
+            //string formattedJson = jt.ToString();
+            //Log.ForContext<HttpManager>().Verbose(formattedJson);
 
             switch (responseMessage.StatusCode)
             {

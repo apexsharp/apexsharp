@@ -62,16 +62,16 @@ namespace ApexSharpApi
 
 
             jObject.Remove("Id"); // type is "ID", field is "Id"
-            jObject.Remove("Name");
+            //jObject.Remove("Name");
             jObject.Remove("OwnerId");
             jObject.Remove("IsDeleted");
-            jObject.Remove("CreatedDate");
+            jObject.Remove("CreatedDate"); // SF forbids updating this
             jObject.Remove("CreatedById");
-            jObject.Remove("LastModifiedDate");
+            jObject.Remove("LastModifiedDate"); // SF forbids updating this
             jObject.Remove("LastModifiedById");
             jObject.Remove("LastModifiedByBy");
             jObject.Remove("SystemModstamp");
-            jObject.Remove("LastViewedDate");
+            jObject.Remove("LastViewedDate"); // SF forbids updating this
             jObject.Remove("LastReferencedDate");
             jObject.Remove("IsEmailBounced");
             jObject.Remove("EmailBouncedDate");

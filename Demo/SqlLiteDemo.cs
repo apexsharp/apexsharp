@@ -25,7 +25,7 @@ namespace Demo
                 Console.WriteLine(accountList[0].Id);
 
                 accountList[0].Name = Guid.NewGuid().ToString();
-             
+
                 db.InsertAll(accountList);
 
                 var account = db.Select<Account>(x => x.Id == accountList[0].Id).FirstOrDefault();
@@ -70,6 +70,7 @@ namespace Demo
 
                 SoqlApi.Upsert(account);
 
+                account = Soql.query<Account>("SELECT Id, Name FROM Account WHERE Name = :account.Name", account.Name);
 
                 Console.WriteLine(account.Dump());
             }
