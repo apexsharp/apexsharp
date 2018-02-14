@@ -8,7 +8,7 @@ namespace Demo.SObjects
 	{
         public string Name { set; get; }
 		public DateTime CreatedDate {set;get;}
-		public string LastModifiedDate {set;get;}
-	    public Datetime LastViewedDate { set; get; }
+		public DateTime LastModifiedDate {set;get;}
+	    public DateTime LastViewedDate { set; get; }
     }
 }
