@@ -55,7 +55,7 @@ namespace Apex.ApexSharp
             {
                 //Console.WriteLine(memberProperty.PropertyType.Name + " : " + memberProperty.Name);
 
-                if(supportedTypes.Contains(memberProperty.PropertyType.Name))
+                if(supportedTypes.Contains(memberProperty.PropertyType.Name) && memberProperty.Name != "ExternalId")
                 {
                     sb.Append(memberProperty.Name).Append(',');
                 }
@@ -136,9 +136,10 @@ namespace Apex.ApexSharp
             return returnData.records;
         }
 
+
         public static T Insert<T>(T obj) where T : SObject
         {
-            var jsonData = JsonFactory.GetJson(obj);
+            var jsonData = JsonFactory.GetJsonForInsert(obj);
 
             var objectName = typeof(T).Name;
             HttpManager httpManager = new HttpManager();
@@ -153,7 +154,7 @@ namespace Apex.ApexSharp
 
         public static void Update<T>(T obj) where T : SObject
         {
-            var jsonData = JsonFactory.GetJsonUpdate(obj);
+            var jsonData = JsonFactory.GetJsonForUpdate(obj);
             var objectName = typeof(T).Name;
 
             HttpManager httpManager = new HttpManager();
@@ -167,7 +168,7 @@ namespace Apex.ApexSharp
 
             foreach (var obj in objects)
             {
-                var jsonData = JsonFactory.GetJsonUpdate(obj);
+                var jsonData = JsonFactory.GetJsonForUpdate(obj);
                 httpManager.Patch($"sobjects/{objectName}/{obj.Id}", jsonData);
             }
         }

@@ -2,66 +2,114 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
 	public class User : SObject
 	{
+		[PrimaryKey]
+		[AutoIncrement]
+		public int ExternalId {set;get;}
+		[StringLength(80)]
 		public string Username {set;get;}
+		[StringLength(80)]
 		public string LastName {set;get;}
+		[StringLength(40)]
 		public string FirstName {set;get;}
+		[StringLength(121)]
 		public string Name {set;get;}
+		[StringLength(80)]
 		public string CompanyName {set;get;}
+		[StringLength(80)]
 		public string Division {set;get;}
+		[StringLength(80)]
 		public string Department {set;get;}
+		[StringLength(80)]
 		public string Title {set;get;}
+		[StringLength(255)]
 		public string Street {set;get;}
+		[StringLength(40)]
 		public string City {set;get;}
+		[StringLength(80)]
 		public string State {set;get;}
+		[StringLength(20)]
 		public string PostalCode {set;get;}
+		[StringLength(80)]
 		public string Country {set;get;}
 		public double Latitude {set;get;}
 		public double Longitude {set;get;}
+		[StringLength(40)]
 		public string GeocodeAccuracy {set;get;}
 		public Address Address {set;get;}
+		[StringLength(128)]
 		public string Email {set;get;}
 		public bool EmailPreferencesAutoBcc {set;get;}
 		public bool EmailPreferencesAutoBccStayInTouch {set;get;}
 		public bool EmailPreferencesStayInTouchReminder {set;get;}
+		[StringLength(80)]
 		public string SenderEmail {set;get;}
+		[StringLength(80)]
 		public string SenderName {set;get;}
+		[StringLength(1333)]
 		public string Signature {set;get;}
+		[StringLength(80)]
 		public string StayInTouchSubject {set;get;}
+		[StringLength(512)]
 		public string StayInTouchSignature {set;get;}
+		[StringLength(512)]
 		public string StayInTouchNote {set;get;}
+		[StringLength(40)]
 		public string Phone {set;get;}
+		[StringLength(40)]
 		public string Fax {set;get;}
+		[StringLength(40)]
 		public string MobilePhone {set;get;}
+		[StringLength(8)]
 		public string Alias {set;get;}
+		[StringLength(40)]
 		public string CommunityNickname {set;get;}
+		[StringLength(80)]
 		public string BadgeText {set;get;}
 		public bool IsActive {set;get;}
+		[StringLength(40)]
 		public string TimeZoneSidKey {set;get;}
+		[StringLength(18)]
 		public string UserRoleId {set;get;}
+		[Ignore]
 		public UserRole UserRole {set;get;}
+		[StringLength(40)]
 		public string LocaleSidKey {set;get;}
 		public bool ReceivesInfoEmails {set;get;}
 		public bool ReceivesAdminInfoEmails {set;get;}
+		[StringLength(40)]
 		public string EmailEncodingKey {set;get;}
+		[StringLength(18)]
 		public string ProfileId {set;get;}
+		[Ignore]
 		public Profile Profile {set;get;}
+		[StringLength(40)]
 		public string UserType {set;get;}
+		[StringLength(40)]
 		public string LanguageLocaleKey {set;get;}
+		[StringLength(20)]
 		public string EmployeeNumber {set;get;}
+		[StringLength(18)]
 		public string DelegatedApproverId {set;get;}
+		[StringLength(18)]
 		public string ManagerId {set;get;}
+		[Ignore]
 		public User Manager {set;get;}
 		public DateTime LastLoginDate {set;get;}
 		public DateTime LastPasswordChangeDate {set;get;}
 		public DateTime CreatedDate {set;get;}
+		[StringLength(18)]
 		public string CreatedById {set;get;}
+		[Ignore]
 		public User CreatedBy {set;get;}
 		public DateTime LastModifiedDate {set;get;}
+		[StringLength(18)]
 		public string LastModifiedById {set;get;}
+		[Ignore]
 		public User LastModifiedBy {set;get;}
 		public DateTime SystemModstamp {set;get;}
 		public DateTime OfflineTrialExpirationDate {set;get;}
@@ -149,25 +197,41 @@ namespace Demo.SObjects
 		public bool UserPreferencesRecordHomeSectionCollapseWTShown {set;get;}
 		public bool UserPreferencesRecordHomeReservedWTShown {set;get;}
 		public bool UserPreferencesFavoritesShowTopFavorites {set;get;}
+		[StringLength(18)]
 		public string ContactId {set;get;}
+		[Ignore]
 		public Contact Contact {set;get;}
+		[StringLength(18)]
 		public string AccountId {set;get;}
+		[Ignore]
 		public Account Account {set;get;}
+		[StringLength(18)]
 		public string CallCenterId {set;get;}
+		[StringLength(40)]
 		public string Extension {set;get;}
+		[StringLength(512)]
 		public string FederationIdentifier {set;get;}
+		[StringLength(1000)]
 		public string AboutMe {set;get;}
+		[StringLength(1024)]
 		public string FullPhotoUrl {set;get;}
+		[StringLength(1024)]
 		public string SmallPhotoUrl {set;get;}
 		public bool IsExtIndicatorVisible {set;get;}
+		[StringLength(1024)]
 		public string MediumPhotoUrl {set;get;}
+		[StringLength(40)]
 		public string DigestFrequency {set;get;}
+		[StringLength(40)]
 		public string DefaultGroupNotificationFrequency {set;get;}
 		public int JigsawImportLimitOverride {set;get;}
 		public DateTime LastViewedDate {set;get;}
 		public DateTime LastReferencedDate {set;get;}
+		[StringLength(1024)]
 		public string BannerPhotoUrl {set;get;}
+		[StringLength(1024)]
 		public string SmallBannerPhotoUrl {set;get;}
+		[StringLength(1024)]
 		public string MediumBannerPhotoUrl {set;get;}
 		public bool IsProfilePhotoActive {set;get;}
 	}

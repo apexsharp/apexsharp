@@ -65,17 +65,17 @@ namespace ApexSharpApi
 
         internal Action<string, string> SaveSObject { get; set; } = SaveSObjectImpl;
 
-        public void CreateOfflineSymbolTableForSqlLite(List<string> sobjectList, string nameSpace,bool recursive = true, List<string> ignoreList = null)
+        public void CreateOfflineSymbolTableForSql(List<string> sobjectList, string nameSpace,bool recursive = true, List<string> ignoreList = null)
         {
-            CreateOfflineSymbolTableCore(sobjectList, nameSpace, recursive, ignoreList, orm: true);
+            CreateOfflineSymbolTableCore(sobjectList, nameSpace, true, recursive, ignoreList);
         }
 
         public void CreateOfflineSymbolTable(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null)
         {
-            CreateOfflineSymbolTableCore(sobjectList, nameSpace, recursive, ignoreList, orm: false);
+            CreateOfflineSymbolTableCore(sobjectList, nameSpace, false, recursive, ignoreList);
         }
 
-        internal void CreateOfflineSymbolTableCore(List<string> sobjectList, string nameSpace, bool recursive = true, List<string> ignoreList = null, bool orm = false)
+        internal void CreateOfflineSymbolTableCore(List<string> sobjectList, string nameSpace, bool orm, bool recursive = true, List<string> ignoreList = null)
         {
             // populate the list of pending objects
             var ignoreCase = StringComparer.InvariantCultureIgnoreCase;
@@ -99,7 +99,7 @@ namespace ApexSharpApi
                 Parallel.ForEach(currentList, sobject =>
                 {
                     var sObjectDetail = LoadSObject(sobject);
-                    var sObjectClass = CreateSalesForceClass(nameSpace, sObjectDetail);
+                    var sObjectClass = CreateSalesForceClass(nameSpace, sObjectDetail, orm);
                     SaveSObject(sobject, sObjectClass);
 
                     // schedule the referenced objects
@@ -127,7 +127,7 @@ namespace ApexSharpApi
             return refs.Distinct().ToList();
         }
 
-        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail, bool orm = false)
+        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail, bool orm)
         {
             var sb = new StringBuilder();
 
@@ -146,6 +146,12 @@ namespace ApexSharpApi
             sb.AppendLine("\t{");
 
             var setGet = "{set;get;}";
+
+            // Add a different name for ID if we are going to use SF Id as SF Id is different between systems
+            sb.AppendLine($"\t\t[PrimaryKey]");
+            sb.AppendLine($"\t\t[AutoIncrement]");
+            sb.AppendLine($"\t\tpublic int ExternalId {setGet}");
+
             foreach (var objectField in objectDetail.fields)
             {
                 if ((objectField.type == ReferenceType) && (objectField.name == "OwnerId") && (objectField.referenceTo.Length > 1))

@@ -2,10 +2,15 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
 	public class Profile : SObject
 	{
+		[PrimaryKey]
+		[AutoIncrement]
+		public int ExternalId {set;get;}
+		[StringLength(255)]
 		public string Name {set;get;}
 		public bool PermissionsEmailSingle {set;get;}
 		public bool PermissionsEmailMass {set;get;}
@@ -179,16 +184,24 @@ namespace Demo.SObjects
 		public bool PermissionsLightningConsoleAllowedForUser {set;get;}
 		public bool PermissionsSubscribeReportsRunAsUser {set;get;}
 		public bool PermissionsEnableCommunityAppLauncher {set;get;}
+		[StringLength(18)]
 		public string UserLicenseId {set;get;}
+		[Ignore]
 		public UserLicense UserLicense {set;get;}
+		[StringLength(40)]
 		public string UserType {set;get;}
 		public DateTime CreatedDate {set;get;}
+		[StringLength(18)]
 		public string CreatedById {set;get;}
+		[Ignore]
 		public User CreatedBy {set;get;}
 		public DateTime LastModifiedDate {set;get;}
+		[StringLength(18)]
 		public string LastModifiedById {set;get;}
+		[Ignore]
 		public User LastModifiedBy {set;get;}
 		public DateTime SystemModstamp {set;get;}
+		[StringLength(255)]
 		public string Description {set;get;}
 		public DateTime LastViewedDate {set;get;}
 		public DateTime LastReferencedDate {set;get;}

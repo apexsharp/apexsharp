@@ -25,7 +25,7 @@ namespace Demo
             Setup.InitializeSession();
 
             // Keep Track of the API Limits
-            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            //Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
 
@@ -37,15 +37,12 @@ namespace Demo
                 "Customer__c",
                 "BankAccount__c"
             };
-
-
-
-            modelGen.CreateOfflineSymbolTableForSqlLite(onlyObjects.ToList(), "Demo.SObjects");
+            // modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
             
             // CreateOffLineClasses();
 
 
-            //SqlLiteDemo.SqlLiteReadAndInsert();
+            SqlLiteDemo.SqlReadAndInsert();
 
 
 
@@ -69,7 +66,7 @@ namespace Demo
 
 
             // Keep Track of the API Limits
-            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            //Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();
