@@ -55,17 +55,17 @@ namespace Demo.SObjects
 		public string DelegatedApproverId {set;get;}
 		public string ManagerId {set;get;}
 		public User Manager {set;get;}
-		public Datetime LastLoginDate {set;get;}
-		public Datetime LastPasswordChangeDate {set;get;}
-		public Datetime CreatedDate {set;get;}
+		public DateTime LastLoginDate {set;get;}
+		public DateTime LastPasswordChangeDate {set;get;}
+		public DateTime CreatedDate {set;get;}
 		public string CreatedById {set;get;}
 		public User CreatedBy {set;get;}
-		public Datetime LastModifiedDate {set;get;}
+		public DateTime LastModifiedDate {set;get;}
 		public string LastModifiedById {set;get;}
 		public User LastModifiedBy {set;get;}
-		public Datetime SystemModstamp {set;get;}
-		public Datetime OfflineTrialExpirationDate {set;get;}
-		public Datetime OfflinePdaTrialExpirationDate {set;get;}
+		public DateTime SystemModstamp {set;get;}
+		public DateTime OfflineTrialExpirationDate {set;get;}
+		public DateTime OfflinePdaTrialExpirationDate {set;get;}
 		public bool UserPermissionsMarketingUser {set;get;}
 		public bool UserPermissionsOfflineUser {set;get;}
 		public bool UserPermissionsCallCenterAutoLogin {set;get;}
@@ -164,8 +164,8 @@ namespace Demo.SObjects
 		public string DigestFrequency {set;get;}
 		public string DefaultGroupNotificationFrequency {set;get;}
 		public int JigsawImportLimitOverride {set;get;}
-		public Datetime LastViewedDate {set;get;}
-		public Datetime LastReferencedDate {set;get;}
+		public DateTime LastViewedDate {set;get;}
+		public DateTime LastReferencedDate {set;get;}
 		public string BannerPhotoUrl {set;get;}
 		public string SmallBannerPhotoUrl {set;get;}
 		public string MediumBannerPhotoUrl {set;get;}

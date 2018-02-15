@@ -14,8 +14,8 @@ namespace Demo.SObjects
 		public string MasterLabel {set;get;}
 		public int MonthlyLoginsUsed {set;get;}
 		public int MonthlyLoginsEntitlement {set;get;}
-		public Datetime CreatedDate {set;get;}
-		public Datetime LastModifiedDate {set;get;}
-		public Datetime SystemModstamp {set;get;}
+		public DateTime CreatedDate {set;get;}
+		public DateTime LastModifiedDate {set;get;}
+		public DateTime SystemModstamp {set;get;}
 	}
 }

@@ -14,10 +14,10 @@ namespace Demo.SObjects
 		public string ContactAccessForAccountOwner {set;get;}
 		public string ForecastUserId {set;get;}
 		public bool MayForecastManagerShare {set;get;}
-		public Datetime LastModifiedDate {set;get;}
+		public DateTime LastModifiedDate {set;get;}
 		public string LastModifiedById {set;get;}
 		public User LastModifiedBy {set;get;}
-		public Datetime SystemModstamp {set;get;}
+		public DateTime SystemModstamp {set;get;}
 		public string DeveloperName {set;get;}
 		public string PortalAccountId {set;get;}
 		public string PortalType {set;get;}

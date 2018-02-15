@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Demo.CSharpClasses;
+
 
 namespace Demo
 {
@@ -25,16 +25,27 @@ namespace Demo
             Setup.InitializeSession();
 
             // Keep Track of the API Limits
-            // Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
 
-            //ModelGen modelGen = new ModelGen();
-            //modelGen.CreateOfflineSymbolTableForSqlLite(modelGen.GetAllObjectNames().ToList(), "Demo.SObjects");
+            ModelGen modelGen = new ModelGen();
+
+            // To save time we will only create objects we are going to work with
+            List<string> onlyObjects = new List<string>
+            {
+                "Customer__c",
+                "BankAccount__c"
+            };
+
+
+
+            modelGen.CreateOfflineSymbolTableForSqlLite(onlyObjects.ToList(), "Demo.SObjects");
+            
             // CreateOffLineClasses();
 
 
-            SqlLiteDemo.SqlLiteReadAndInsert();
+            //SqlLiteDemo.SqlLiteReadAndInsert();
 
 
 
@@ -57,8 +68,8 @@ namespace Demo
             //}
 
 
-            //// Keep Track of the API Limits
-            // Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            // Keep Track of the API Limits
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Flush and Close
             Setup.StopLogging();
