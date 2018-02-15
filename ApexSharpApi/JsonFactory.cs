@@ -79,6 +79,10 @@ namespace ApexSharpApi
             jObject.Remove("LastCUUpdateDate");
             jObject.Remove("LastCURequestDate");
 
+            // Not a good way
+            jObject.Remove("SLAExpirationDate__c");
+            jObject.Remove("PhotoUrl");
+
 
             requestJson = jObject.ToString();
 
