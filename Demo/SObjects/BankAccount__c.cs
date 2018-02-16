@@ -1,3 +1,5 @@
+using Apex.ApexSharp;
+
 namespace Demo.SObjects
 {
 	using Apex.System;
@@ -27,6 +29,9 @@ namespace Demo.SObjects
 		[StringLength(18)]
 		public string Customer__c {set;get;}
 		[Ignore]
-		public Customer__c Customer__r {set;get;}
+		public Customer__c Customer__r {
+		    set {// Alsx please do insert also. };
+		    get { return SoqlApi.QueryById<Customer__c>(Customer__c); }
+		}
 	}
 }

@@ -70,6 +70,41 @@ namespace Apex.ApexSharp
             return soql;
         }
 
+        public static T QueryById<T>(string Id) where T : SObject
+        {
+            global::System.Collections.Generic.List<string> supportedTypes =
+                new global::System.Collections.Generic.List<string> { "Boolean", "String", "Datetime", "DateTime", "Double", "Int32" };
+
+            StringBuilder sb = new StringBuilder();
+            var memberProperties = typeof(T).GetProperties().ToList();
+
+            sb.Append("SELECT ");
+
+            foreach (var memberProperty in memberProperties)
+            {
+                //Console.WriteLine(memberProperty.PropertyType.Name + " : " + memberProperty.Name);
+
+                if (supportedTypes.Contains(memberProperty.PropertyType.Name) && memberProperty.Name != "ExternalId")
+                {
+                    sb.Append(memberProperty.Name).Append(',');
+                }
+            }
+
+            var soql = sb.ToString();
+            // Remove the last comma
+            soql = soql.TrimEnd(',');
+            soql = soql + " FROM " + typeof(T).Name + " WHERE Id = '" + Id + "'";
+
+            var lasyResult = new Lazy<global::System.Collections.Generic.List<T>>(() =>
+            {
+                return PerformQuery<T>(soql);
+            });
+
+            // return as polymorphic query instance
+            return new SoqlQuery<T>(lasyResult, soql);
+      
+        }
+
         public static SoqlQuery<T> Query<T>(int limit) where T : SObject
         {
             // prepare query text

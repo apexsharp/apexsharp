@@ -12,7 +12,7 @@ namespace Demo.SObjects
 		public int ExternalId {set;get;}
 		public bool IsDeleted {set;get;}
 		[StringLength(18)]
-		public string MasterRecordId {set;get;}
+        public string MasterRecordId {set;get;}
 		[Ignore]
 		public Account MasterRecord {set;get;}
 		[StringLength(255)]
