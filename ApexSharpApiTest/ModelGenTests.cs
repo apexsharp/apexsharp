@@ -13,7 +13,7 @@ using static System.Math;
 namespace ApexSharpApiTest
 {
     [TestFixture]
-    public class ModelGenTests
+    public class ModelGenTests : TestBase
     {
         protected void CompareLineByLine(string actual, string expected)
         {
@@ -143,16 +143,6 @@ namespace ApexSharpApiTest
             var refs = new ModelGen().GetReferencedSObjects(SampleSObjectDetail);
             Assert.AreEqual("AnotherSampleClass", refs[0]);
             Assert.AreEqual("SampleOrg", refs[1]);
-        }
-
-        private string GetJsonResource(string name)
-        {
-            var assembly = typeof(ModelGenTests).GetTypeInfo().Assembly;
-            var rstream = assembly.GetManifestResourceStream($"{assembly.GetName().Name}.JsonSamples.{name}.json");
-            using (var streamReader = new StreamReader(rstream))
-            {
-                return streamReader.ReadToEnd();
-            }
         }
 
         [Test]

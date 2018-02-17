@@ -2,6 +2,7 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ApexSharpApi.Attributes;
 	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
@@ -62,6 +63,7 @@ namespace Demo.SObjects
 		[StringLength(255)]
 		public string Website {set;get;}
 		[StringLength(255)]
+		[IgnoreUpdate]
 		public string PhotoUrl {set;get;}
 		[StringLength(20)]
 		public string Sic {set;get;}
@@ -132,6 +134,7 @@ namespace Demo.SObjects
 		public string UpsellOpportunity__c {set;get;}
 		[StringLength(10)]
 		public string SLASerialNumber__c {set;get;}
+		[IgnoreUpdate]
 		public DateTime SLAExpirationDate__c {set;get;}
 	}
 }
