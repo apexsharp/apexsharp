@@ -2,6 +2,7 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ApexSharpApi.Attributes;
 	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
@@ -17,6 +18,7 @@ namespace Demo.SObjects
 		[StringLength(40)]
 		public string FirstName {set;get;}
 		[StringLength(121)]
+		[IgnoreUpdate]
 		public string Name {set;get;}
 		[StringLength(80)]
 		public string CompanyName {set;get;}
@@ -40,6 +42,7 @@ namespace Demo.SObjects
 		public double Longitude {set;get;}
 		[StringLength(40)]
 		public string GeocodeAccuracy {set;get;}
+		[IgnoreUpdate]
 		public Address Address {set;get;}
 		[StringLength(128)]
 		public string Email {set;get;}
@@ -69,10 +72,12 @@ namespace Demo.SObjects
 		[StringLength(40)]
 		public string CommunityNickname {set;get;}
 		[StringLength(80)]
+		[IgnoreUpdate]
 		public string BadgeText {set;get;}
 		public bool IsActive {set;get;}
 		[StringLength(40)]
 		public string TimeZoneSidKey {set;get;}
+		[ApexId("UserRole")]
 		[StringLength(18)]
 		public string UserRoleId {set;get;}
 		[Ignore]
@@ -83,11 +88,13 @@ namespace Demo.SObjects
 		public bool ReceivesAdminInfoEmails {set;get;}
 		[StringLength(40)]
 		public string EmailEncodingKey {set;get;}
+		[ApexId("Profile")]
 		[StringLength(18)]
 		public string ProfileId {set;get;}
 		[Ignore]
 		public Profile Profile {set;get;}
 		[StringLength(40)]
+		[IgnoreUpdate]
 		public string UserType {set;get;}
 		[StringLength(40)]
 		public string LanguageLocaleKey {set;get;}
@@ -95,24 +102,36 @@ namespace Demo.SObjects
 		public string EmployeeNumber {set;get;}
 		[StringLength(18)]
 		public string DelegatedApproverId {set;get;}
+		[ApexId("Manager")]
 		[StringLength(18)]
 		public string ManagerId {set;get;}
 		[Ignore]
 		public User Manager {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastLoginDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastPasswordChangeDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime CreatedDate {set;get;}
+		[ApexId("CreatedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string CreatedById {set;get;}
 		[Ignore]
 		public User CreatedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastModifiedDate {set;get;}
+		[ApexId("LastModifiedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string LastModifiedById {set;get;}
 		[Ignore]
 		public User LastModifiedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime SystemModstamp {set;get;}
+		[IgnoreUpdate]
 		public DateTime OfflineTrialExpirationDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime OfflinePdaTrialExpirationDate {set;get;}
 		public bool UserPermissionsMarketingUser {set;get;}
 		public bool UserPermissionsOfflineUser {set;get;}
@@ -197,11 +216,14 @@ namespace Demo.SObjects
 		public bool UserPreferencesRecordHomeSectionCollapseWTShown {set;get;}
 		public bool UserPreferencesRecordHomeReservedWTShown {set;get;}
 		public bool UserPreferencesFavoritesShowTopFavorites {set;get;}
+		[ApexId("Contact")]
 		[StringLength(18)]
 		public string ContactId {set;get;}
 		[Ignore]
 		public Contact Contact {set;get;}
+		[ApexId("Account")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string AccountId {set;get;}
 		[Ignore]
 		public Account Account {set;get;}
@@ -214,25 +236,35 @@ namespace Demo.SObjects
 		[StringLength(1000)]
 		public string AboutMe {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string FullPhotoUrl {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string SmallPhotoUrl {set;get;}
+		[IgnoreUpdate]
 		public bool IsExtIndicatorVisible {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string MediumPhotoUrl {set;get;}
 		[StringLength(40)]
 		public string DigestFrequency {set;get;}
 		[StringLength(40)]
 		public string DefaultGroupNotificationFrequency {set;get;}
 		public int JigsawImportLimitOverride {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastViewedDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastReferencedDate {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string BannerPhotoUrl {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string SmallBannerPhotoUrl {set;get;}
 		[StringLength(1024)]
+		[IgnoreUpdate]
 		public string MediumBannerPhotoUrl {set;get;}
+		[IgnoreUpdate]
 		public bool IsProfilePhotoActive {set;get;}
 	}
 }

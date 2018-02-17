@@ -2,6 +2,7 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ApexSharpApi.Attributes;
 	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
@@ -10,15 +11,19 @@ namespace Demo.SObjects
 		[PrimaryKey]
 		[AutoIncrement]
 		public int ExternalId {set;get;}
+		[IgnoreUpdate]
 		public bool IsDeleted {set;get;}
+		[ApexId("MasterRecord")]
 		[StringLength(18)]
-        public string MasterRecordId {set;get;}
+		[IgnoreUpdate]
+		public string MasterRecordId {set;get;}
 		[Ignore]
 		public Account MasterRecord {set;get;}
 		[StringLength(255)]
 		public string Name {set;get;}
 		[StringLength(40)]
 		public string Type {set;get;}
+		[ApexId("Parent")]
 		[StringLength(18)]
 		public string ParentId {set;get;}
 		[Ignore]
@@ -37,6 +42,7 @@ namespace Demo.SObjects
 		public double BillingLongitude {set;get;}
 		[StringLength(40)]
 		public string BillingGeocodeAccuracy {set;get;}
+		[IgnoreUpdate]
 		public Address BillingAddress {set;get;}
 		[StringLength(255)]
 		public string ShippingStreet {set;get;}
@@ -52,6 +58,7 @@ namespace Demo.SObjects
 		public double ShippingLongitude {set;get;}
 		[StringLength(40)]
 		public string ShippingGeocodeAccuracy {set;get;}
+		[IgnoreUpdate]
 		public Address ShippingAddress {set;get;}
 		[StringLength(40)]
 		public string Phone {set;get;}
@@ -62,6 +69,7 @@ namespace Demo.SObjects
 		[StringLength(255)]
 		public string Website {set;get;}
 		[StringLength(255)]
+		[IgnoreUpdate]
 		public string PhotoUrl {set;get;}
 		[StringLength(20)]
 		public string Sic {set;get;}
@@ -79,27 +87,39 @@ namespace Demo.SObjects
 		public string Rating {set;get;}
 		[StringLength(80)]
 		public string Site {set;get;}
+		[ApexId("Owner")]
 		[StringLength(18)]
 		public string OwnerId {set;get;}
 		[Ignore]
 		public User Owner {set;get;}
+		[IgnoreUpdate]
 		public DateTime CreatedDate {set;get;}
+		[ApexId("CreatedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string CreatedById {set;get;}
 		[Ignore]
 		public User CreatedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastModifiedDate {set;get;}
+		[ApexId("LastModifiedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string LastModifiedById {set;get;}
 		[Ignore]
 		public User LastModifiedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime SystemModstamp {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastActivityDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastViewedDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastReferencedDate {set;get;}
 		[StringLength(20)]
 		public string Jigsaw {set;get;}
 		[StringLength(20)]
+		[IgnoreUpdate]
 		public string JigsawCompanyId {set;get;}
 		[StringLength(40)]
 		public string CleanStatus {set;get;}
@@ -117,6 +137,7 @@ namespace Demo.SObjects
 		public string YearStarted {set;get;}
 		[StringLength(80)]
 		public string SicDesc {set;get;}
+		[ApexId("DandbCompany")]
 		[StringLength(18)]
 		public string DandbCompanyId {set;get;}
 		[Ignore]

@@ -6,19 +6,15 @@ namespace Demo.SObjects
 	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
-	public class Customer__c : SObject
+	public class AccountType__c : SObject
 	{
 		[PrimaryKey]
 		[AutoIncrement]
 		public int ExternalId {set;get;}
-		[ApexId("Owner")]
-		[StringLength(18)]
-		public string OwnerId {set;get;}
-		[Ignore]
-		public User Owner {set;get;}
 		[IgnoreUpdate]
 		public bool IsDeleted {set;get;}
 		[StringLength(80)]
+		[IgnoreUpdate]
 		public string Name {set;get;}
 		[IgnoreUpdate]
 		public DateTime CreatedDate {set;get;}
@@ -38,9 +34,12 @@ namespace Demo.SObjects
 		public User LastModifiedBy {set;get;}
 		[IgnoreUpdate]
 		public DateTime SystemModstamp {set;get;}
-		[IgnoreUpdate]
-		public DateTime LastViewedDate {set;get;}
-		[IgnoreUpdate]
-		public DateTime LastReferencedDate {set;get;}
+		[StringLength(255)]
+		public string BankAccountType__c {set;get;}
+		[ApexId("BankAccount__r")]
+		[StringLength(18)]
+		public string BankAccount__c {set;get;}
+		[Ignore]
+		public BankAccount__c BankAccount__r {set;get;}
 	}
 }

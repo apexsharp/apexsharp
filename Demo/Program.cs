@@ -36,7 +36,8 @@ namespace Demo
             List<string> onlyObjects = new List<string>
             {
                 "Customer__c",
-                "BankAccount__c"
+                "BankAccount__c",
+                "AccountType__c"
             };
             // modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
 

@@ -2,6 +2,7 @@ namespace Demo.SObjects
 {
 	using Apex.System;
 	using ApexSharpApi.ApexApi;
+	using ApexSharpApi.Attributes;
 	using ServiceStack.DataAnnotations;
 	using DateTime = global::System.DateTime;
 
@@ -10,21 +11,31 @@ namespace Demo.SObjects
 		[PrimaryKey]
 		[AutoIncrement]
 		public int ExternalId {set;get;}
+		[IgnoreUpdate]
 		public bool IsDeleted {set;get;}
 		[StringLength(255)]
 		public string Name {set;get;}
+		[IgnoreUpdate]
 		public DateTime CreatedDate {set;get;}
+		[ApexId("CreatedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string CreatedById {set;get;}
 		[Ignore]
 		public User CreatedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastModifiedDate {set;get;}
+		[ApexId("LastModifiedBy")]
 		[StringLength(18)]
+		[IgnoreUpdate]
 		public string LastModifiedById {set;get;}
 		[Ignore]
 		public User LastModifiedBy {set;get;}
+		[IgnoreUpdate]
 		public DateTime SystemModstamp {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastViewedDate {set;get;}
+		[IgnoreUpdate]
 		public DateTime LastReferencedDate {set;get;}
 		[StringLength(9)]
 		public string DunsNumber {set;get;}
@@ -40,6 +51,7 @@ namespace Demo.SObjects
 		public string Country {set;get;}
 		[StringLength(255)]
 		public string GeocodeAccuracyStandard {set;get;}
+		[IgnoreUpdate]
 		public Address Address {set;get;}
 		[StringLength(40)]
 		public string Phone {set;get;}
@@ -79,6 +91,7 @@ namespace Demo.SObjects
 		public string MailingCountry {set;get;}
 		[StringLength(255)]
 		public string MailingGeocodeAccuracy {set;get;}
+		[IgnoreUpdate]
 		public Address MailingAddress {set;get;}
 		[StringLength(11)]
 		public string Latitude {set;get;}
