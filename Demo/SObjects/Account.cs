@@ -153,6 +153,7 @@ namespace Demo.SObjects
 		public string UpsellOpportunity__c {set;get;}
 		[StringLength(10)]
 		public string SLASerialNumber__c {set;get;}
+		[IgnoreUpdate]
 		public DateTime SLAExpirationDate__c {set;get;}
 	}
 }
