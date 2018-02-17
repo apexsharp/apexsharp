@@ -59,14 +59,15 @@ namespace ApexSharpApiTest
                         referenceTo = new[] { "AnotherSampleClass" },
                         relationshipName = "AnotherSampleInstance",
                     },
-                    new Field { name = "Name", type = "string", length = 255 },
-                    new Field { name = "Age", type = "int" },
+                    new Field { name = "Name", type = "string", length = 255, createable = true },
+                    new Field { name = "Age", type = "int", createable = true },
                     new Field
                     {
                         name = "OrgId",
                         type = "reference",
                         referenceTo = new[] { "SampleOrg" },
                         relationshipName = "Org",
+                        createable = true,
                     },
                 },
             };
@@ -82,10 +83,13 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using DateTime = global::System.DateTime;
 
                 public class SampleClass : SObject
                 {
+                    public int ExternalId {set;get;}
+                    [IgnoreUpdate]
                     public string OwnerId {set;get;}
                     public AnotherSampleClass AnotherSampleInstance {set;get;}
                     public string Name {set;get;}
@@ -106,18 +110,25 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using ServiceStack.DataAnnotations;
                 using DateTime = global::System.DateTime;
 
                 public class SampleClass : SObject
                 {
+                    [PrimaryKey]
+                    [AutoIncrement]
+                    public int ExternalId {set;get;}
+                    [ApexId(""AnotherSampleInstance"")]
                     [StringLength(18)]
+                    [IgnoreUpdate]
                     public string OwnerId {set;get;}
                     [Ignore]
                     public AnotherSampleClass AnotherSampleInstance {set;get;}
                     [StringLength(255)]
                     public string Name {set;get;}
                     public int Age {set;get;}
+                    [ApexId(""Org"")]
                     [StringLength(18)]
                     public string OrgId {set;get;}
                     [Ignore]
@@ -155,25 +166,33 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using DateTime = global::System.DateTime;
 
                 public class UserRole : SObject
                 {
+                    public int ExternalId {set;get;}
                     public string Name {set;get;}
                     public string ParentRoleId {set;get;}
                     public string RollupDescription {set;get;}
                     public string OpportunityAccessForAccountOwner {set;get;}
                     public string CaseAccessForAccountOwner {set;get;}
+                    [IgnoreUpdate]
                     public string ContactAccessForAccountOwner {set;get;}
                     public string ForecastUserId {set;get;}
+                    [IgnoreUpdate]
                     public bool MayForecastManagerShare {set;get;}
+                    [IgnoreUpdate]
                     public DateTime LastModifiedDate {set;get;}
+                    [IgnoreUpdate]
                     public string LastModifiedById {set;get;}
                     public User LastModifiedBy {set;get;}
+                    [IgnoreUpdate]
                     public DateTime SystemModstamp {set;get;}
                     public string DeveloperName {set;get;}
                     public string PortalAccountId {set;get;}
                     public string PortalType {set;get;}
+                    [IgnoreUpdate]
                     public string PortalAccountOwnerId {set;get;}
                 }
             }");
@@ -190,11 +209,15 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using ServiceStack.DataAnnotations;
                 using DateTime = global::System.DateTime;
 
                 public class UserRole : SObject
                 {
+                    [PrimaryKey]
+                    [AutoIncrement]
+                    public int ExternalId {set;get;}
                     [StringLength(80)]
                     public string Name {set;get;}
                     [StringLength(18)]
@@ -206,15 +229,21 @@ namespace ApexSharpApiTest
                     [StringLength(40)]
                     public string CaseAccessForAccountOwner {set;get;}
                     [StringLength(40)]
+                    [IgnoreUpdate]
                     public string ContactAccessForAccountOwner {set;get;}
                     [StringLength(18)]
                     public string ForecastUserId {set;get;}
+                    [IgnoreUpdate]
                     public bool MayForecastManagerShare {set;get;}
+                    [IgnoreUpdate]
                     public DateTime LastModifiedDate {set;get;}
+                    [ApexId(""LastModifiedBy"")]
                     [StringLength(18)]
+                    [IgnoreUpdate]
                     public string LastModifiedById {set;get;}
                     [Ignore]
                     public User LastModifiedBy {set;get;}
+                    [IgnoreUpdate]
                     public DateTime SystemModstamp {set;get;}
                     [StringLength(80)]
                     public string DeveloperName {set;get;}
@@ -223,6 +252,7 @@ namespace ApexSharpApiTest
                     [StringLength(40)]
                     public string PortalType {set;get;}
                     [StringLength(18)]
+                    [IgnoreUpdate]
                     public string PortalAccountOwnerId {set;get;}
                 }
             }");
