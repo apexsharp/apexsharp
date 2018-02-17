@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ApexSharpApi.Attribute
+namespace ApexSharpApi.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class ObjectNameAttribute : System.Attribute

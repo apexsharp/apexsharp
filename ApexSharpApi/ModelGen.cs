@@ -127,7 +127,7 @@ namespace ApexSharpApi
             return refs.Distinct().ToList();
         }
 
-        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail, bool orm)
+        internal string CreateSalesForceClass(string nameSpace, SObjectDetail objectDetail, bool orm = false)
         {
             var sb = new StringBuilder();
 
@@ -135,6 +135,7 @@ namespace ApexSharpApi
             sb.AppendLine("{");
             sb.AppendLine("\tusing Apex.System;");
             sb.AppendLine("\tusing ApexSharpApi.ApexApi;");
+            sb.AppendLine("\tusing ApexSharpApi.Attributes;");
             if (orm)
             {
                 sb.AppendLine("\tusing ServiceStack.DataAnnotations;");
@@ -148,14 +149,19 @@ namespace ApexSharpApi
             var setGet = "{set;get;}";
 
             // Add a different name for ID if we are going to use SF Id as SF Id is different between systems
-            sb.AppendLine($"\t\t[PrimaryKey]");
-            sb.AppendLine($"\t\t[AutoIncrement]");
+            if (orm)
+            {
+                sb.AppendLine($"\t\t[PrimaryKey]");
+                sb.AppendLine($"\t\t[AutoIncrement]");
+            }
+
             sb.AppendLine($"\t\tpublic int ExternalId {setGet}");
 
             foreach (var objectField in objectDetail.fields)
             {
                 if ((objectField.type == ReferenceType) && (objectField.name == "OwnerId") && (objectField.referenceTo.Length > 1))
                 {
+                    AddApexIdAttribute(sb, objectField.relationshipName, orm);
                     AddStringLengthAttribute(sb, IdStringLength, orm);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
@@ -164,6 +170,7 @@ namespace ApexSharpApi
                 }
                 else if (objectField.type == ReferenceType && objectField.referenceTo.Length > 0)
                 {
+                    AddApexIdAttribute(sb, objectField.relationshipName, orm);
                     AddStringLengthAttribute(sb, IdStringLength, orm);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
@@ -184,6 +191,14 @@ namespace ApexSharpApi
             sb.AppendLine("}");
 
             return sb.ToString();
+        }
+
+        private void AddApexIdAttribute(StringBuilder sb, string referencePropertyName, bool orm)
+        {
+            if (orm && referencePropertyName != null)
+            {
+                sb.AppendLine($"\t\t[ApexId(\"{referencePropertyName}\")]");
+            }
         }
 
         private static void AddIgnoreAttribute(StringBuilder sb, bool orm)

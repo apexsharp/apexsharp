@@ -82,10 +82,12 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using DateTime = global::System.DateTime;
 
                 public class SampleClass : SObject
                 {
+                    public int ExternalId {set;get;}
                     public string OwnerId {set;get;}
                     public AnotherSampleClass AnotherSampleInstance {set;get;}
                     public string Name {set;get;}
@@ -106,11 +108,16 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using ServiceStack.DataAnnotations;
                 using DateTime = global::System.DateTime;
 
                 public class SampleClass : SObject
                 {
+                    [PrimaryKey]
+                    [AutoIncrement]
+                    public int ExternalId {set;get;}
+                    [ApexId(""AnotherSampleInstance"")]
                     [StringLength(18)]
                     public string OwnerId {set;get;}
                     [Ignore]
@@ -118,6 +125,7 @@ namespace ApexSharpApiTest
                     [StringLength(255)]
                     public string Name {set;get;}
                     public int Age {set;get;}
+                    [ApexId(""Org"")]
                     [StringLength(18)]
                     public string OrgId {set;get;}
                     [Ignore]
@@ -155,10 +163,12 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using DateTime = global::System.DateTime;
 
                 public class UserRole : SObject
                 {
+                    public int ExternalId {set;get;}
                     public string Name {set;get;}
                     public string ParentRoleId {set;get;}
                     public string RollupDescription {set;get;}
@@ -190,11 +200,15 @@ namespace ApexSharpApiTest
             {
                 using Apex.System;
                 using ApexSharpApi.ApexApi;
+                using ApexSharpApi.Attributes;
                 using ServiceStack.DataAnnotations;
                 using DateTime = global::System.DateTime;
 
                 public class UserRole : SObject
                 {
+                    [PrimaryKey]
+                    [AutoIncrement]
+                    public int ExternalId {set;get;}
                     [StringLength(80)]
                     public string Name {set;get;}
                     [StringLength(18)]
@@ -211,6 +225,7 @@ namespace ApexSharpApiTest
                     public string ForecastUserId {set;get;}
                     public bool MayForecastManagerShare {set;get;}
                     public DateTime LastModifiedDate {set;get;}
+                    [ApexId(""LastModifiedBy"")]
                     [StringLength(18)]
                     public string LastModifiedById {set;get;}
                     [Ignore]

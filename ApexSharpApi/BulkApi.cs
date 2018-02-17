@@ -6,10 +6,11 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using ApexSharpApi.Attribute;
+using ApexSharpApi.Attributes;
 using ApexSharpApi.Model.BulkApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Attrib = ApexSharpApi.Model.BulkApi.Attributes;
 
 namespace ApexSharpApi
 {
@@ -158,7 +159,6 @@ namespace ApexSharpApi
 
             string requestJson = JsonConvert.SerializeObject(request, Formatting.Indented, serializerSettings);
 
-
             // Create JSON Line https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/requests_composite_sobject_tree.htm#topic-title
             JObject obj = JObject.Parse(requestJson);
             JArray reccords = (JArray)obj["records"];
@@ -168,15 +168,14 @@ namespace ApexSharpApi
                 var recordObject = (JObject)reccord;
                 Console.WriteLine(recordObject["ID"]);
 
-                Attributes attribute =
-                    new Attributes
-                    {
-                        type = typeof(T).Name,
-                        referenceId = recordObject["ID"].ToString(),
-                    };
+                var attribute = new Attrib
+                {
+                    type = typeof(T).Name,
+                    referenceId = recordObject["ID"].ToString(),
+                };
+
                 var attributeObject = JObject.FromObject(attribute);
                 recordObject.Add(new JProperty("attributes", attributeObject));
-
                 recordObject.Remove("ID");
             }
 
