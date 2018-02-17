@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Demo.CSharpClasses;
 
 
 namespace Demo
@@ -38,31 +39,31 @@ namespace Demo
                 "BankAccount__c"
             };
             // modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
-            
-            // CreateOffLineClasses();
+
+            //CreateOffLineClasses();
+
+            SoqlParentChild.ParentChildDemo();
+       
 
 
-            SqlLiteDemo.SqlReadAndInsert();
+            try
+            {
+                // Location of your APEX and C# Files that we will be converting
+                DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
+                DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
 
+      
 
+                // Convert Apex to C#
+                // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
 
-
-            //try
-            //{
-            //    // Location of your APEX and C# Files that we will be converting
-            //    DirectoryInfo apexLocation = new DirectoryInfo(@"../SalesForce/src/classes/");
-            //    DirectoryInfo cSharpLocation = new DirectoryInfo(@"../Demo/CSharpClasses/");
-
-            //    // Convert Apex to C#
-            //    // CodeConverter.ConvertToCSharp(apexLocation, cSharpLocation, "Demo.CSharpClasses");
-
-            //    // Convert C# to APEX
-            //    // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
-            //}
-            //catch (DirectoryNotFoundException e)
-            //{
-            //    Console.WriteLine(e.Message);
-            //}
+                // Convert C# to APEX
+                // CodeConverter.ConvertToApex(cSharpLocation, apexLocation, 40);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
 
             // Keep Track of the API Limits
