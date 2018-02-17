@@ -12,27 +12,74 @@ namespace Demo
 {
     public class SqlLiteDemo
     {
+        public static void ParentChildRead()
+        {
+
+            OrmLiteConfig.DialectProvider = SqliteDialect.Provider;
+            using (IDbConnection db = "db.sqlite".OpenDbConnection())
+            {
+                db.CreateTable<AccountType__c>(true);
+                db.CreateTable<BankAccount__c>(true);
+                db.CreateTable<Customer__c>(true);
+
+                List<AccountType__c> accountTypeList = SoqlApi.Query<AccountType__c>(1);
+                db.InsertAll(accountTypeList);
+
+                var accountTypes = db.Select<AccountType__c>();
+                foreach (var accountTypeC in accountTypes)
+                {
+                    var bankAccount = SoqlApi.QueryById<BankAccount__c>(accountTypeC.BankAccount__c);
+                    db.Insert(bankAccount);
+
+
+                    var bankAccounts = db.Select<BankAccount__c>();
+                    foreach (var bankAccountC in bankAccounts)
+                    {
+                        var customer = SoqlApi.QueryById<Customer__c>(bankAccountC.Customer__c);
+                        db.Insert(customer);
+                    }
+                }
+            }
+        }
+
         public static void SqlReadAndInsert()
         {
             OrmLiteConfig.DialectProvider = SqliteDialect.Provider;
             using (IDbConnection db = "db.sqlite".OpenDbConnection())
             {
-                db.CreateTable<Account>(true);
+                db.CreateTable<AccountType__c>(true);
+                db.CreateTable<BankAccount__c>(true);
+                db.CreateTable<Customer__c>(true);
+                
+                List<AccountType__c> accountTypeList = SoqlApi.Query<AccountType__c>(1);
+                db.InsertAll(accountTypeList);
 
-                //CreateAllTables(db, true);
+                var accountTypes = db.Select<AccountType__c>();
+                foreach (var accountTypeC in accountTypes)
+                {
+                    var bankAccount = SoqlApi.QueryById<BankAccount__c>(accountTypeC.BankAccount__c);
+                    db.Insert(bankAccount);
 
-                List<Account> accountList = SoqlApi.Query<Account>(1);
-                Console.WriteLine(accountList[0].Dump());
 
-                accountList[0].Name = Guid.NewGuid().ToString();
-                db.InsertAll(accountList);
+                    var bankAccounts = db.Select<BankAccount__c>();
+                    foreach (var bankAccountC in bankAccounts)
+                    {
+                        var customer = SoqlApi.QueryById<Customer__c>(bankAccountC.Customer__c);
+                        db.Insert(customer);
+                    }
+                }
 
-                var account = db.Select<Account>(x => x.Name == accountList[0].Name).FirstOrDefault();
-                Console.WriteLine(account.Dump());
 
-                Soql.Update(account);
-                account = Soql.query<Account>("SELECT Id, Name FROM Account WHERE Name = :account.Name", account.Name);
-                Console.WriteLine(account.Dump());
+
+                //List<Customer__c> customerList = SoqlApi.Query<Customer__c>(10);
+                //db.InsertAll(customerList);
+
+                //var account = db.Select<Account>(x => x.Name == accountList[0].Name).FirstOrDefault();
+                //Console.WriteLine(account.Dump());
+
+                //Soql.Update(account);
+                //account = Soql.query<Account>("SELECT Id, Name FROM Account WHERE Name = :account.Name", account.Name);
+                //Console.WriteLine(account.Dump());
             }
         }
 

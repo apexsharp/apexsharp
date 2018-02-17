@@ -15,7 +15,7 @@ namespace Demo
         public static void Main(string[] args)
         {
             Start();
-
+          //  SqlLiteDemo.SqlReadAndInsert();
             Console.WriteLine("Done, Press Any Key To Exit");
             Console.ReadLine();
         }
@@ -39,12 +39,12 @@ namespace Demo
                 "BankAccount__c",
                 "AccountType__c"
             };
-            // modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
+            //modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
 
             //CreateOffLineClasses();
 
-            SoqlParentChild.ParentChildDemo();
-       
+            //SoqlParentChild.ParentChildDemo();
+            SqlLiteDemo.ParentChildRead();
 
 
             try
