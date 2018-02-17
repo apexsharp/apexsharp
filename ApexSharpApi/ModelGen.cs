@@ -163,6 +163,7 @@ namespace ApexSharpApi
                 {
                     AddApexIdAttribute(sb, objectField.relationshipName, orm);
                     AddStringLengthAttribute(sb, IdStringLength, orm);
+                    AddIgnoreUpdateAttribute(sb, objectField.createable);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
                     AddIgnoreAttribute(sb, orm);
@@ -172,6 +173,7 @@ namespace ApexSharpApi
                 {
                     AddApexIdAttribute(sb, objectField.relationshipName, orm);
                     AddStringLengthAttribute(sb, IdStringLength, orm);
+                    AddIgnoreUpdateAttribute(sb, objectField.createable);
                     sb.AppendLine($"\t\tpublic string {objectField.name} {setGet}");
 
                     if (objectField.relationshipName != null)
@@ -183,6 +185,7 @@ namespace ApexSharpApi
                 else if (objectField.type != "id")
                 {
                     AddStringLengthAttribute(sb, objectField, orm);
+                    AddIgnoreUpdateAttribute(sb, objectField.createable);
                     sb.AppendLine($"\t\tpublic {GetFieldType(objectField, objectDetail.name)} {objectField.name} {setGet}");
                 }
             }
@@ -191,6 +194,14 @@ namespace ApexSharpApi
             sb.AppendLine("}");
 
             return sb.ToString();
+        }
+
+        private void AddIgnoreUpdateAttribute(StringBuilder sb, bool createable)
+        {
+            if (!createable)
+            {
+                sb.AppendLine($"\t\t[IgnoreUpdate]");
+            }
         }
 
         private void AddApexIdAttribute(StringBuilder sb, string referencePropertyName, bool orm)
