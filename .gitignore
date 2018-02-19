@@ -293,6 +293,7 @@ __pycache__/
 # Jays Files
 *.bak
 /JayPrivate
+/FSB
 JayPrivate.sln
 /.axoCover
 /SalesForce/IlluminatedCloud
