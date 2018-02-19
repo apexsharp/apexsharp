@@ -1,6 +1,4 @@
 ﻿using System.Linq;
-using Demo.CSharpClasses;
-
 
 namespace Demo
 {
@@ -26,7 +24,7 @@ namespace Demo
             Setup.InitializeSession();
 
             // Keep Track of the API Limits
-            //Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
+            Console.WriteLine($"Api Request Remaining {Limits.GetApiLimits().DailyApiRequests.Remaining}");
 
             // Create Offline classes for SObjects
 
@@ -41,10 +39,10 @@ namespace Demo
             };
             //modelGen.CreateOfflineSymbolTableForSql(onlyObjects.ToList(), "Demo.SObjects");
 
-            //CreateOffLineClasses();
+            CreateOffLineClasses();
 
             //SoqlParentChild.ParentChildDemo();
-            SqlLiteDemo.ParentChildRead();
+  
 
 
             try
